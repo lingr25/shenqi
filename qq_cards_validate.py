@@ -30,6 +30,10 @@ DEFAULT_WINDOWS = os.path.join(ROOT_DIR, "qq_info", "windows.jsonl")
 DEFAULT_MESSAGES = os.path.join(ROOT_DIR, "qq_info", "messages_clean.jsonl")
 DEFAULT_SPEAKERS = os.path.join(ROOT_DIR, "qq_info", "speaker_map.json")
 DEFAULT_CARDS_DIR = os.path.join(ROOT_DIR, "qq_info", "llm_results")
+DEFAULT_TRANSCRIPTS = os.path.join(ROOT_DIR, "transcripts_txt")
+DEFAULT_QQ_CARDS = os.path.join(ROOT_DIR, "qq_cards", "cards.jsonl")
+NOVELTY_ENUM = {"group_only", "also_in_vod", "conflict", "unknown"}
+CONF_ENUM = {"high", "medium", "low"}
 
 HOST_QQ = "2580863623"
 EXPERT_QQ = "724873295"
@@ -321,6 +325,142 @@ def validate_card(
     return errs
 
 
+def load_transcript_blobs(dir_path: str) -> list[tuple[str, str]]:
+    out: list[tuple[str, str]] = []
+    if not dir_path or not os.path.isdir(dir_path):
+        return out
+    for name in os.listdir(dir_path):
+        if not name.endswith(".txt"):
+            continue
+        path = os.path.join(dir_path, name)
+        with open(path, "r", encoding="utf-8") as f:
+            out.append((name, f.read()))
+    return out
+
+
+def evidence_in_vod(ev: Any, blobs: list[tuple[str, str]]) -> bool:
+    if isinstance(ev, dict):
+        s = str(ev.get("text") or ev.get("span") or ev.get("quote") or "").strip()
+        src = ev.get("source")
+    else:
+        s = str(ev or "").strip()
+        src = None
+    if not s:
+        return False
+    for name, text in blobs:
+        if src and name != src and not str(src).endswith(name):
+            continue
+        if s in text:
+            return True
+    if src:
+        return any(s in text for _, text in blobs)
+    return False
+
+
+def validate_novelty_card(
+    card: dict[str, Any],
+    windows: dict[str, dict[str, Any]],
+    blobs: list[tuple[str, str]],
+) -> list[str]:
+    errs: list[str] = []
+    if card.get("skip") is True:
+        if not card.get("window_id"):
+            errs.append("skip_missing_window_id")
+        elif card["window_id"] not in windows:
+            errs.append("window_id_unknown")
+        return errs
+    wid = card.get("window_id")
+    if not wid or wid not in windows:
+        errs.append("window_id_unknown")
+    nov = card.get("novelty")
+    if nov not in NOVELTY_ENUM:
+        errs.append(f"bad_novelty:{nov}")
+    conf = card.get("confidence")
+    if conf is not None and conf not in CONF_ENUM:
+        errs.append(f"bad_confidence:{conf}")
+    ev = card.get("vod_evidence")
+    if ev is None:
+        ev = []
+    if not isinstance(ev, list):
+        errs.append("bad_vod_evidence")
+        return errs
+    if not ev and nov == "also_in_vod":
+        errs.append("also_in_vod_without_evidence")
+    for i, item in enumerate(ev):
+        if not evidence_in_vod(item, blobs):
+            errs.append(f"vod_evidence_not_in_transcripts:{i}")
+    return errs
+
+
+def load_cluster_index(cards_dir: str) -> dict[str, set[str]]:
+    path = os.path.join(cards_dir, "clusters.json")
+    if not os.path.exists(path):
+        return {}
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    out: dict[str, set[str]] = {}
+    for row in data:
+        cid = row.get("cluster_id")
+        if cid:
+            out[cid] = set(row.get("source_window_ids") or [])
+    return out
+
+
+def source_card_spans(wids: list[str], cards_by_id: dict[str, dict[str, Any]]) -> list[str]:
+    spans: list[str] = []
+    for wid in wids:
+        c = cards_by_id.get(wid)
+        if not c:
+            continue
+        spans.extend(str(x) for x in (c.get("source_spans") or []) if x)
+        for p in c.get("underlying_parameters") or []:
+            if p.get("source_span"):
+                spans.append(str(p["source_span"]))
+    return spans
+
+
+def validate_merge_card(
+    card: dict[str, Any],
+    windows: dict[str, dict[str, Any]],
+    clusters: dict[str, set[str]],
+    cards_by_id: dict[str, dict[str, Any]],
+) -> list[str]:
+    errs: list[str] = []
+    if card.get("skip") is True:
+        return errs
+    cid = card.get("cluster_id")
+    src = card.get("source_window_ids")
+    if not isinstance(src, list) or not src:
+        errs.append("missing_source_window_ids")
+        src = []
+    unknown = [w for w in src if w not in windows]
+    if unknown:
+        errs.append(f"source_window_ids_unknown:{len(unknown)}")
+    if cid and clusters.get(cid):
+        extra = [w for w in src if w not in clusters[cid]]
+        if extra:
+            errs.append(f"source_window_ids_outside_cluster:{len(extra)}")
+    spans = source_card_spans([str(w) for w in src], cards_by_id)
+    params = card.get("parameters")
+    if params is None:
+        params = []
+    if not isinstance(params, list):
+        errs.append("bad_parameters")
+        return errs
+    for i, p in enumerate(params):
+        if not isinstance(p, dict):
+            errs.append(f"param_not_object:{i}")
+            continue
+        val = str(p.get("value") or "")
+        sp = str(p.get("source_span") or "")
+        if val and not any(normalize_text(val) in normalize_text(s) for s in spans):
+            errs.append(f"merge_param_not_in_source_cards:{i}")
+        if sp and not any(normalize_text(sp) in normalize_text(s) for s in spans + [val]):
+            if not any(normalize_text(sp) in normalize_text(s) for s in spans):
+                errs.append(f"merge_span_not_in_source_cards:{i}")
+    return errs
+
+
 def write_report(path: str, stats: dict[str, Any], details: list[str]) -> None:
     lines = [
         "# 知识卡片验收报告",
@@ -363,22 +503,52 @@ def write_report(path: str, stats: dict[str, Any], details: list[str]) -> None:
         f.write("\n".join(lines) + "\n")
 
 
+def result_glob(cards_dir: str, mode: str) -> list[str]:
+    if mode == "novelty":
+        patt = os.path.join(cards_dir, "cards_novelty_batch_*.jsonl")
+    elif mode == "merge":
+        patt = os.path.join(cards_dir, "cards_merge_batch_*.jsonl")
+    else:
+        patt = os.path.join(cards_dir, "cards_batch_*.jsonl")
+    files = sorted(glob.glob(patt))
+    if not files:
+        files = sorted(
+            p
+            for p in glob.glob(os.path.join(cards_dir, "*.jsonl"))
+            if not os.path.basename(p).startswith("batch_")
+            and os.path.basename(p) != "clusters.json"
+        )
+    return files
+
+
 def run_validate(
     cards_dir: str,
     windows_path: str,
     messages_path: str,
     speakers_path: str,
     report_path: str,
+    mode: str = "cards",
+    transcripts_dir: str = "",
+    qq_cards_path: str = "",
 ) -> dict[str, Any]:
     windows = load_windows(windows_path)
-    msg_idx = load_messages(messages_path)
-    with open(speakers_path, "r", encoding="utf-8") as f:
-        speaker_map = json.load(f)
-    qqs, nicks = privacy_lists(speaker_map)
+    msg_idx = load_messages(messages_path) if mode in {"cards", "ignore"} else {}
+    qqs: list[str] = []
+    nicks: list[str] = []
+    if mode in {"cards", "ignore"}:
+        with open(speakers_path, "r", encoding="utf-8") as f:
+            speaker_map = json.load(f)
+        qqs, nicks = privacy_lists(speaker_map)
+    blobs = load_transcript_blobs(transcripts_dir) if mode == "novelty" else []
+    clusters = load_cluster_index(cards_dir) if mode == "merge" else {}
+    cards_by_id: dict[str, dict[str, Any]] = {}
+    if mode == "merge" and qq_cards_path and os.path.exists(qq_cards_path):
+        for c in load_jsonl(qq_cards_path):
+            obj = json.loads(c["_raw"]) if "_raw" in c else c
+            if isinstance(obj, dict) and obj.get("window_id"):
+                cards_by_id[obj["window_id"]] = obj
 
-    files = sorted(glob.glob(os.path.join(cards_dir, "cards_batch_*.jsonl")))
-    if not files:
-        files = sorted(glob.glob(os.path.join(cards_dir, "*.jsonl")))
+    files = result_glob(cards_dir, mode)
     rows: list[dict[str, Any]] = []
     for fp in files:
         rows.extend(load_jsonl(fp))
@@ -409,7 +579,12 @@ def run_validate(
             stats["skip"] += 1
         else:
             stats["cards"] += 1
-        errs = validate_card(card, windows, msg_idx, qqs, nicks)
+        if mode == "novelty":
+            errs = validate_novelty_card(card, windows, blobs)
+        elif mode == "merge":
+            errs = validate_merge_card(card, windows, clusters, cards_by_id)
+        else:
+            errs = validate_card(card, windows, msg_idx, qqs, nicks)
         if errs:
             stats["fail"] += 1
             for e in errs:
@@ -495,6 +670,14 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--speakers", default=DEFAULT_SPEAKERS)
     p.add_argument("--report", default="", help="默认写到 cards-dir/validation_report.md")
     p.add_argument("--selftest", action="store_true", help="用 1 合法 + 1 幻觉卡自测")
+    p.add_argument(
+        "--mode",
+        default="cards",
+        choices=["cards", "ignore", "novelty", "merge"],
+        help="cards/ignore=主 schema；novelty=novelty 枚举+逐字稿溯源；merge=簇与参数溯源",
+    )
+    p.add_argument("--transcripts", default=DEFAULT_TRANSCRIPTS)
+    p.add_argument("--qq-cards", default=DEFAULT_QQ_CARDS)
     args = p.parse_args(argv)
 
     if args.selftest:
@@ -507,7 +690,9 @@ def main(argv: list[str] | None = None) -> int:
             for c in cards:
                 f.write(json.dumps(c, ensure_ascii=False) + "\n")
         report = os.path.join(tmp, "validation_report.md")
-        stats = run_validate(tmp, args.windows, args.messages, args.speakers, report)
+        stats = run_validate(
+            tmp, args.windows, args.messages, args.speakers, report, mode="cards"
+        )
         print(
             f"selftest dir={tmp} total={stats['total']} pass={stats['pass']} "
             f"fail={stats['fail']} hallucinations={len(stats['hallucinations'])}"
@@ -526,7 +711,14 @@ def main(argv: list[str] | None = None) -> int:
         log(f"cards-dir 不存在: {cards_dir}")
         return 1
     stats = run_validate(
-        cards_dir, args.windows, args.messages, args.speakers, report
+        cards_dir,
+        args.windows,
+        args.messages,
+        args.speakers,
+        report,
+        mode=args.mode,
+        transcripts_dir=args.transcripts,
+        qq_cards_path=args.qq_cards,
     )
     print(
         f"total={stats['total']} skip={stats['skip']} cards={stats['cards']} "
