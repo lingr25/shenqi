@@ -461,6 +461,99 @@ def validate_merge_card(
     return errs
 
 
+def load_qq_cards_by_id(path: str) -> dict[str, dict[str, Any]]:
+    out: dict[str, dict[str, Any]] = {}
+    if not path or not os.path.exists(path):
+        return out
+    for row in load_jsonl(path):
+        obj = json.loads(row["_raw"]) if "_raw" in row else row
+        if isinstance(obj, dict) and obj.get("window_id"):
+            out[obj["window_id"]] = obj
+    return out
+
+
+def validate_glossary_card(
+    card: dict[str, Any], cards_by_id: dict[str, dict[str, Any]]
+) -> list[str]:
+    errs: list[str] = []
+    if not (card.get("term") or "").strip():
+        errs.append("empty_term")
+    if card.get("status") not in (None, "glossary_draft"):
+        if card.get("status") != "glossary_draft":
+            errs.append(f"bad_status:{card.get('status')}")
+    src = card.get("source_window_ids") or []
+    if src and not isinstance(src, list):
+        errs.append("bad_source_window_ids")
+        src = []
+    for w in src:
+        if w not in cards_by_id:
+            errs.append(f"source_window_id_unknown:{w}")
+    return errs
+
+
+FAKE_CD = re.compile(r"不随后续攻速|已有的冷却不会因为后续")
+
+
+def iter_split_entries(obj: Any) -> list[dict[str, Any]]:
+    if isinstance(obj, list):
+        return [x for x in obj if isinstance(x, dict)]
+    if isinstance(obj, dict):
+        if isinstance(obj.get("entries"), list):
+            return [x for x in obj["entries"] if isinstance(x, dict)]
+        return [obj]
+    return []
+
+
+def validate_split_payload(
+    obj: Any, clusters: dict[str, set[str]]
+) -> list[str]:
+    errs: list[str] = []
+    entries = iter_split_entries(obj)
+    if not entries:
+        errs.append("split_empty")
+        return errs
+    parent = None
+    for e in entries:
+        pid = e.get("parent_cluster_id")
+        if pid:
+            parent = pid
+            break
+    allowed = clusters.get(parent or "", set())
+    for i, e in enumerate(entries):
+        pid = e.get("parent_cluster_id") or parent
+        if pid and pid not in clusters:
+            errs.append(f"unknown_parent_cluster:{pid}")
+        src = e.get("source_window_ids") or []
+        if not isinstance(src, list):
+            errs.append(f"bad_source_window_ids:{i}")
+            continue
+        allow = clusters.get(pid, allowed)
+        extra = [w for w in src if allow and w not in allow]
+        if extra:
+            errs.append(f"source_window_ids_outside_parent:{i}:{len(extra)}")
+        if pid == "c0011" and len(entries) < 2:
+            errs.append("c0011_must_split")
+        for cc in e.get("canonical_conclusions") or []:
+            conc = str(cc.get("conclusion") or "")
+            if FAKE_CD.search(conc) and "rejected" not in conc.lower() and not cc.get("rejected"):
+                if "否" not in conc and "录播" not in conc:
+                    errs.append(f"conflict_cooldown_as_fact:{i}")
+    if parent == "c0011" and len(entries) < 2:
+        if "c0011_must_split" not in errs:
+            errs.append("c0011_must_split")
+    return errs
+
+
+def validate_alias_card(card: dict[str, Any]) -> list[str]:
+    errs: list[str] = []
+    for k in ("zh", "canonical_zh", "canonical_en", "merge_into", "note"):
+        if k not in card:
+            errs.append(f"missing_field:{k}")
+    if "canonical_en" in card and card.get("canonical_en") is None:
+        errs.append("canonical_en_null")
+    return errs
+
+
 def write_report(path: str, stats: dict[str, Any], details: list[str]) -> None:
     lines = [
         "# 知识卡片验收报告",
@@ -508,6 +601,12 @@ def result_glob(cards_dir: str, mode: str) -> list[str]:
         patt = os.path.join(cards_dir, "cards_novelty_batch_*.jsonl")
     elif mode == "merge":
         patt = os.path.join(cards_dir, "cards_merge_batch_*.jsonl")
+    elif mode == "glossary":
+        patt = os.path.join(cards_dir, "cards_glossary_batch_*.jsonl")
+    elif mode == "split":
+        patt = os.path.join(cards_dir, "cards_split_batch_*.jsonl")
+    elif mode == "alias":
+        patt = os.path.join(cards_dir, "cards_alias_batch_*.jsonl")
     else:
         patt = os.path.join(cards_dir, "cards_batch_*.jsonl")
     files = sorted(glob.glob(patt))
@@ -540,13 +639,10 @@ def run_validate(
             speaker_map = json.load(f)
         qqs, nicks = privacy_lists(speaker_map)
     blobs = load_transcript_blobs(transcripts_dir) if mode == "novelty" else []
-    clusters = load_cluster_index(cards_dir) if mode == "merge" else {}
+    clusters = load_cluster_index(cards_dir) if mode in {"merge", "split"} else {}
     cards_by_id: dict[str, dict[str, Any]] = {}
-    if mode == "merge" and qq_cards_path and os.path.exists(qq_cards_path):
-        for c in load_jsonl(qq_cards_path):
-            obj = json.loads(c["_raw"]) if "_raw" in c else c
-            if isinstance(obj, dict) and obj.get("window_id"):
-                cards_by_id[obj["window_id"]] = obj
+    if mode in {"merge", "glossary", "split"} and qq_cards_path:
+        cards_by_id = load_qq_cards_by_id(qq_cards_path)
 
     files = result_glob(cards_dir, mode)
     rows: list[dict[str, Any]] = []
@@ -583,6 +679,12 @@ def run_validate(
             errs = validate_novelty_card(card, windows, blobs)
         elif mode == "merge":
             errs = validate_merge_card(card, windows, clusters, cards_by_id)
+        elif mode == "glossary":
+            errs = validate_glossary_card(card, cards_by_id)
+        elif mode == "split":
+            errs = validate_split_payload(card, clusters)
+        elif mode == "alias":
+            errs = validate_alias_card(card)
         else:
             errs = validate_card(card, windows, msg_idx, qqs, nicks)
         if errs:
@@ -673,8 +775,8 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument(
         "--mode",
         default="cards",
-        choices=["cards", "ignore", "novelty", "merge"],
-        help="cards/ignore=主 schema；novelty=novelty 枚举+逐字稿溯源；merge=簇与参数溯源",
+        choices=["cards", "ignore", "novelty", "merge", "glossary", "split", "alias"],
+        help="cards/ignore=主 schema；novelty；merge；glossary；split；alias",
     )
     p.add_argument("--transcripts", default=DEFAULT_TRANSCRIPTS)
     p.add_argument("--qq-cards", default=DEFAULT_QQ_CARDS)
