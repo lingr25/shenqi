@@ -28,13 +28,23 @@
 建议系统提示：优先引用 canonical 词条；遇 conflict 听 vod_wins；黑话（索敌帧、平整化、阻挡偏移等）需用卡片结论解释，勿用泛游戏常识替换。
 
 
+
+## v4 glossary / split / alias 入库
+
+- glossary：`glossary.jsonl` **50** 条（`needs_more_evidence` 7：mechanic_def 推不出精确机制，仅保留人话 short_def）。
+- split：大簇拆词条并入 `canonical.jsonl`，词条 **23 → 46**；新词条带 `parent_cluster_id` / `split_reason`。
+- alias：更新 `entity_aliases.json`，主词 **1487**；隐匿≠迷彩，仇恨≠嘲讽等级。
+- 检索合同：`rag_docs.jsonl` **869** 条（window 773 + canonical 46 + glossary 50）。
+- glossary 的 `mechanic_def=unknown` 不是低质量人话，只表示卡片证据不够写精确定义。
+- 窗卡 `canonical_ids` 为数组（可挂多条词条）；旧字段 `canonical_id` 仍保留。
+
 **数据边界**
 
 - 语料是群聊补充层，不是录播逐字稿；与录播讲解冲突时 **以录播为准**。
 - 发言人已脱敏（主播/专家/群友）。
 - 参数必须能在窗内原文中找到；无过硬数字的卡 `underlying_parameters` 为空。
 
-窗卡 **789**：draft **773**，duplicate **16**，empty **0**。canonical_draft 词条 **23**。
+窗卡 **789**：draft **773**，duplicate **16**，empty **0**。canonical_draft 词条 **46**。
 
 origin：ignore 16，main 484，maybe 289
 
