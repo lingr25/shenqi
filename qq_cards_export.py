@@ -313,6 +313,11 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--top", type=int, default=0, help="最多导出 N 窗，0=全部")
     p.add_argument("--batch-size", type=int, default=25)
     p.add_argument("--out-dir", default=DEFAULT_OUT)
+    p.add_argument(
+        "--prompt-extra",
+        default="",
+        help="追加到 PROMPT.md 末尾的额外约束（如 maybe 档从严 skip）",
+    )
     args = p.parse_args(argv)
 
     log(f"读 windows: {args.windows}")
@@ -350,6 +355,11 @@ def main(argv: list[str] | None = None) -> int:
     prompt_path = os.path.join(args.out_dir, "PROMPT.md")
     with open(prompt_path, "w", encoding="utf-8") as f:
         f.write(PROMPT_MD.lstrip("\n"))
+        extra = (args.prompt_extra or "").strip()
+        if extra:
+            f.write("\n\n## 本批次额外约束\n\n")
+            f.write(extra)
+            f.write("\n")
 
     print(
         f"exported windows={len(selected)} batches={n_batches} "
