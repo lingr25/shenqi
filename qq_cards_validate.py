@@ -54,6 +54,15 @@ REQUIRED = (
 )
 
 WS_RE = re.compile(r"\s+")
+LEADING_AT_RE = re.compile(r"(?m)^(?:@\S+\s*)+")
+PRIVACY_FIELDS = (
+    "topic",
+    "context_question",
+    "core_conclusions",
+    "underlying_parameters",
+    "summary_takeaway",
+    "source_spans",
+)
 
 
 def log(msg: str) -> None:
@@ -62,6 +71,13 @@ def log(msg: str) -> None:
 
 def compact(s: str) -> str:
     return WS_RE.sub("", s or "")
+
+
+def normalize_text(s: str) -> str:
+    """Strip leading @mentions, unify spaces, then drop all whitespace."""
+    t = (s or "").replace("\u3000", " ").replace("\xa0", " ")
+    t = LEADING_AT_RE.sub("", t)
+    return WS_RE.sub("", t)
 
 
 def load_jsonl(path: str) -> list[dict[str, Any]]:
@@ -134,17 +150,17 @@ def window_texts(w: dict[str, Any], msg_idx: dict[str, dict[str, Any]]) -> list[
 
 
 def value_in_texts(value: str, texts: list[str]) -> bool:
-    needle = compact(str(value))
+    needle = normalize_text(str(value))
     if not needle:
         return False
-    return any(needle in compact(t) for t in texts)
+    return any(needle in normalize_text(t) for t in texts)
 
 
 def span_in_texts(span: str, texts: list[str]) -> bool:
-    s = (span or "").strip()
+    s = normalize_text(span or "")
     if not s:
         return False
-    return any(s in (t or "") or s in (t or "").strip() for t in texts)
+    return any(s in normalize_text(t) for t in texts)
 
 
 def privacy_lists(speaker_map: dict[str, Any]) -> tuple[list[str], list[str]]:
@@ -185,16 +201,24 @@ def privacy_lists(speaker_map: dict[str, Any]) -> tuple[list[str], list[str]]:
 
 
 def privacy_hits(card: dict[str, Any], qqs: list[str], nicks: list[str]) -> list[str]:
-    blob = "\n".join(collect_strings(card))
+    parts: list[str] = []
+    for k in PRIVACY_FIELDS:
+        if k in card:
+            parts.extend(collect_strings(card[k]))
+    blob = "\n".join(parts)
     hits: list[str] = []
     for qq in qqs:
-        if qq and qq in blob:
+        if qq and re.search(rf"(?<![0-9]){re.escape(qq)}(?![0-9])", blob):
             hits.append(f"qq:{qq}")
     for nick in nicks:
-        if nick and nick in blob:
+        if not nick:
+            continue
+        if f"@{nick}" in blob:
+            hits.append(f"nick:@{nick}")
+        elif len(nick) >= 4 and nick in blob:
             hits.append(f"nick:{nick}")
-            if len(hits) > 20:
-                break
+        if len(hits) > 20:
+            break
     return hits
 
 
@@ -289,7 +313,7 @@ def validate_card(
             sp = p.get("source_span")
             if sp and not span_in_texts(str(sp), texts):
                 errs.append(f"param_span_not_in_window:{i}")
-            elif sp and compact(str(val)) not in compact(str(sp)):
+            elif sp and normalize_text(str(val)) not in normalize_text(str(sp)):
                 errs.append(f"param_value_not_in_source_span:{i}")
 
     for h in privacy_hits(card, qqs, nicks):
