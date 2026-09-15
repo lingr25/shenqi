@@ -34,8 +34,9 @@ shenqi/
 ├── cloud_clips/            # [实验性/独立层] 云端ASR切片产物：manifest.json 裁剪清单 + 按VAD/草稿过滤后的音频切片（文件名含原音频绝对时间轴），被.gitignore忽略
 ├── plan_cloud_clips.py     # [实验性/独立层] 云端切片清单生成器：VAD段×草稿文本打分过滤→合并→pad→硬切
 ├── cut_cloud_clips.py      # [实验性/独立层] 按 manifest 用 ffmpeg 流拷贝切片
-├── knowledge_pilot/        # [实验性/独立层] 机制知识卡抽取试点：章节大纲(*.chapters.json)、窗口原文(*.windows.jsonl)与draft知识卡(*.claims.jsonl / *.chapter_claims.jsonl)，被.gitignore忽略，人工审核前不得升入权威层或公开发布
-├── chapter_extract_claims.py # [实验性/独立层] 方案2章节优先知识卡抽取管线（grok-4.6 两轮：章节切分→章节内论断抽取）
+├── knowledge_pilot/        # [实验性/独立层] 机制知识卡抽取试点：章节大纲、draft父卡、原子命题(*.atoms.jsonl)、噪声卡(*.noise.jsonl)，被.gitignore忽略，人工审核前不得升入权威层或公开发布
+├── chapter_extract_claims.py # [实验性/独立层] 方案2章节优先知识卡抽取管线
+├── atomize_claims.py       # [实验性/独立层] 父卡→原子命题拆分、证据重绑、类型分权（不合成「正确卡」）
 ├── pilot_extract_claims.py # [实验性/独立层] 方案1固定窗口知识卡抽取试点脚本（对照组）
 ├── audit_timeline.py       # [实验性/独立层] VAD采样时间轴 vs 原媒体时间轴审计，产出 cloud_clips/timeline_audit.json
 └── local_asr_report.md     # [实验性/独立层] 本地实验性 ASR 进展、活跃度与草稿索引报告
