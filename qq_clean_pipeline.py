@@ -8,8 +8,9 @@ qq_clean_pipeline.py
   1. 硬过滤打标后物理删除：empty / bot / flood_dup / 纯占位媒体
      保留 mixed_media 正文（text_stripped）→ messages_clean.jsonl
   2. 弱切簇 + 权威窗（默认 20 分钟间隔，±K 条）
-  3. 召回排序：保送 / score 分档 candidate|maybe|ignore
-  4. 锚点瘦身：保送/词表命中为锚，连续 --slack 条无锚即截断；<5 条降 maybe
+  3. 召回排序：词表三档；保送 candidate 需 ≥2 条权威数字单位/拆包锚 且 ≥3 条权威发言
+  4. 锚点瘦身：条数 slack + 相邻间隔 --max-slack-gap-minutes 截断，
+     时间不连续片段拆成独立窗；无锚片段丢弃；<5 条降 maybe
      并写出 gold_sample.md 分层抽样
 
 群聊原文零纠错，禁止调用 entity_corrector。
@@ -562,46 +563,93 @@ def list_size_stats(sizes: list[int]) -> dict[str, Any]:
     }
 
 
-def slim_recs(
+def crop_to_max(
     recs: list[dict[str, Any]],
-    slack: int,
     authority_qqs: set[str],
     vocab: list[str],
     max_n: int = SLIM_MAX,
 ) -> list[dict[str, Any]]:
-    """Keep messages within `slack` of a fast-track or vocab-hit anchor.
+    if len(recs) <= max_n:
+        return recs
+    fast_idx = [i for i, m in enumerate(recs) if is_fast_anchor(m, authority_qqs)]
+    vocab_idx = [i for i, m in enumerate(recs) if is_vocab_anchor(m, vocab)]
+    prefer = fast_idx[0] if fast_idx else (vocab_idx[0] if vocab_idx else 0)
+    start = max(0, prefer - max_n // 2)
+    start = min(start, len(recs) - max_n)
+    return recs[start : start + max_n]
 
-    If still longer than max_n, center a max_n slice on the first 保送锚
-    (else first vocab anchor). No anchors → leave the window unchanged.
+
+def slim_fragments(
+    recs: list[dict[str, Any]],
+    slack: int,
+    max_gap_sec: int,
+    authority_qqs: set[str],
+    vocab: list[str],
+    max_n: int = SLIM_MAX,
+) -> list[list[dict[str, Any]]] | None:
+    """Expand from anchors with count slack and time-gap cuts.
+
+    Returns None if the raw window has no anchors (caller keeps it as-is).
+    Otherwise returns time-continuous fragments that still contain an anchor;
+    fragments without anchors are dropped. Each fragment is capped at max_n.
     """
     n = len(recs)
     if n == 0:
-        return recs
-    anchors: list[int] = []
-    fast_idx: list[int] = []
+        return []
+    anchor_set: set[int] = set()
     for i, m in enumerate(recs):
-        fa = is_fast_anchor(m, authority_qqs)
-        va = is_vocab_anchor(m, vocab)
-        if fa or va:
-            anchors.append(i)
-            if fa:
-                fast_idx.append(i)
-    if not anchors:
-        return recs
+        if is_fast_anchor(m, authority_qqs) or is_vocab_anchor(m, vocab):
+            anchor_set.add(i)
+    if not anchor_set:
+        return None
     keep = [False] * n
-    for a in anchors:
-        lo = max(0, a - slack)
-        hi = min(n - 1, a + slack)
-        for j in range(lo, hi + 1):
+    for a in sorted(anchor_set):
+        keep[a] = True
+        streak = 0
+        prev_ts = recs[a]["ts"]
+        for j in range(a + 1, n):
+            if recs[j]["ts"] - prev_ts > max_gap_sec:
+                break
+            if j in anchor_set:
+                streak = 0
+            else:
+                streak += 1
+                if streak > slack:
+                    break
             keep[j] = True
-    kept_i = [i for i in range(n) if keep[i]]
-    if len(kept_i) > max_n:
-        prefer = fast_idx[0] if fast_idx else anchors[0]
-        pos = min(range(len(kept_i)), key=lambda j: abs(kept_i[j] - prefer))
-        start = max(0, pos - max_n // 2)
-        start = min(start, len(kept_i) - max_n)
-        kept_i = kept_i[start : start + max_n]
-    return [recs[i] for i in kept_i]
+            prev_ts = recs[j]["ts"]
+        streak = 0
+        prev_ts = recs[a]["ts"]
+        for j in range(a - 1, -1, -1):
+            if prev_ts - recs[j]["ts"] > max_gap_sec:
+                break
+            if j in anchor_set:
+                streak = 0
+            else:
+                streak += 1
+                if streak > slack:
+                    break
+            keep[j] = True
+            prev_ts = recs[j]["ts"]
+    fragments: list[list[dict[str, Any]]] = []
+    i = 0
+    while i < n:
+        if not keep[i]:
+            i += 1
+            continue
+        j = i
+        while j + 1 < n and keep[j + 1]:
+            if recs[j + 1]["ts"] - recs[j]["ts"] > max_gap_sec:
+                break
+            j += 1
+        frag = recs[i : j + 1]
+        if any(
+            is_fast_anchor(m, authority_qqs) or is_vocab_anchor(m, vocab)
+            for m in frag
+        ):
+            fragments.append(crop_to_max(frag, authority_qqs, vocab, max_n))
+        i = j + 1
+    return fragments
 
 
 def summarize_window_recs(
@@ -613,10 +661,10 @@ def summarize_window_recs(
 ) -> dict[str, Any]:
     auths = []
     seen_sid: set[str] = set()
-    fast = False
     term_set: list[str] = []
     seen_terms: set[str] = set()
     n_auth_msgs = 0
+    n_fast_anchors = 0
     n_mixed = 0
     for r in recs:
         if "mixed_media" in r["flags"]:
@@ -634,9 +682,10 @@ def summarize_window_recs(
                 role = role_of(r["qq"], host_qq, expert_qqs) or "authority"
                 auths.append({"speaker_id": sid, "role": role})
             if NUM_UNIT_RE.search(blob) or UNPACK_RE.search(blob):
-                fast = True
+                n_fast_anchors += 1
     score = len(term_set) * (2 if n_auth_msgs >= 1 else 1)
-    if fast or score >= 3:
+    fast_track = n_fast_anchors >= 2 and n_auth_msgs >= 3
+    if fast_track or score >= 3:
         tier = "candidate"
     elif score >= 1:
         tier = "maybe"
@@ -648,9 +697,10 @@ def summarize_window_recs(
         "hit_terms": term_set,
         "score": score,
         "tier": tier,
-        "fast_track": fast,
+        "fast_track": fast_track,
         "evidence_lost": mixed_ratio > 0.30,
         "n_auth_msgs": n_auth_msgs,
+        "n_fast_anchors": n_fast_anchors,
     }
 
 
@@ -663,9 +713,14 @@ def build_windows(
     authority_qqs: set[str],
     vocab: list[str],
     slack: int,
-) -> list[dict[str, Any]]:
+    max_gap_sec: int,
+) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     windows: list[dict[str, Any]] = []
     wid = 0
+    n_raw = 0
+    n_split_parents = 0
+    n_dropped_empty = 0
+    cluster_win_counts: list[int] = []
     for cid, idxs in enumerate(clusters):
         n = len(idxs)
         centers: list[tuple[int, int]] = []
@@ -677,50 +732,75 @@ def build_windows(
             hi = min(n - 1, pos + k)
             centers.append((lo, hi))
         if not centers:
+            cluster_win_counts.append(0)
             continue
+        n_before = wid
         for lo, hi in merge_intervals(centers):
             slice_idxs = idxs[lo : hi + 1]
             recs = [messages[i] for i in slice_idxs]
+            n_raw += 1
             raw = summarize_window_recs(
                 recs, host_qq, expert_qqs, authority_qqs, vocab
             )
             raw_n = len(recs)
-            slim = slim_recs(recs, slack, authority_qqs, vocab)
-            slim_n = len(slim)
-            slim_sum = summarize_window_recs(
-                slim, host_qq, expert_qqs, authority_qqs, vocab
+            frags = slim_fragments(
+                recs, slack, max_gap_sec, authority_qqs, vocab
             )
-            # 分档仍按瘦身前全文；仅 <5 条的 candidate 降 maybe。
-            tier = raw["tier"]
-            demoted = False
-            if slim_n < SLIM_DEMOTE_LT and tier == "candidate":
-                tier = "maybe"
-                demoted = True
-            out_recs = slim if slim else recs
-            wid += 1
-            windows.append(
-                {
-                    "window_id": f"w{wid:06d}",
-                    "cluster_id": cid,
-                    "start_ts": out_recs[0]["ts"],
-                    "end_ts": out_recs[-1]["ts"],
-                    "start_time": out_recs[0]["time_str"],
-                    "end_time": out_recs[-1]["time_str"],
-                    "n_messages": len(out_recs),
-                    "raw_n": raw_n,
-                    "slim_n": slim_n,
-                    "authorities": slim_sum["authorities"],
-                    "hit_terms": raw["hit_terms"],
-                    "score": raw["score"],
-                    "tier": tier,
-                    "raw_tier": raw["tier"],
-                    "fast_track": raw["fast_track"],
-                    "demoted_short": demoted,
-                    "evidence_lost": slim_sum["evidence_lost"],
-                    "source_msg_ids": [r["msg_id"] for r in out_recs],
-                }
-            )
-    return windows
+            if frags is None:
+                out_list = [recs]
+            elif not frags:
+                n_dropped_empty += 1
+                continue
+            else:
+                if len(frags) > 1:
+                    n_split_parents += 1
+                out_list = frags
+            for frag in out_list:
+                scored = summarize_window_recs(
+                    frag, host_qq, expert_qqs, authority_qqs, vocab
+                )
+                slim_n = len(frag)
+                tier = scored["tier"]
+                demoted = False
+                if slim_n < SLIM_DEMOTE_LT and tier == "candidate":
+                    tier = "maybe"
+                    demoted = True
+                wid += 1
+                windows.append(
+                    {
+                        "window_id": f"w{wid:06d}",
+                        "cluster_id": cid,
+                        "start_ts": frag[0]["ts"],
+                        "end_ts": frag[-1]["ts"],
+                        "start_time": frag[0]["time_str"],
+                        "end_time": frag[-1]["time_str"],
+                        "n_messages": slim_n,
+                        "raw_n": raw_n,
+                        "slim_n": slim_n,
+                        "n_fragments": len(out_list),
+                        "authorities": scored["authorities"],
+                        "hit_terms": scored["hit_terms"],
+                        "score": scored["score"],
+                        "tier": tier,
+                        "raw_tier": raw["tier"],
+                        "fast_track": scored["fast_track"],
+                        "n_fast_anchors": scored["n_fast_anchors"],
+                        "n_auth_msgs": scored["n_auth_msgs"],
+                        "demoted_short": demoted,
+                        "evidence_lost": scored["evidence_lost"],
+                        "source_msg_ids": [r["msg_id"] for r in frag],
+                    }
+                )
+        cluster_win_counts.append(wid - n_before)
+    slim_stats = {
+        "n_raw_windows": n_raw,
+        "n_output_windows": len(windows),
+        "n_split_parents": n_split_parents,
+        "n_dropped_empty": n_dropped_empty,
+        "cluster_win": list_size_stats([c for c in cluster_win_counts if c > 0]),
+        "n_clusters_with_windows": sum(1 for c in cluster_win_counts if c > 0),
+    }
+    return windows, slim_stats
 
 
 def dump_jsonl(path: str, rows: list[dict[str, Any]], drop_keys: tuple[str, ...] = ()) -> None:
@@ -766,6 +846,9 @@ def write_report(
     gap_minutes: int,
     k: int,
     slack: int,
+    max_slack_gap_minutes: float,
+    slim_stats: dict[str, Any],
+    case_rows: list[dict[str, Any]],
     windows: list[dict[str, Any]],
     messages: list[dict[str, Any]],
     host_qq: str,
@@ -801,7 +884,7 @@ def write_report(
     a("")
     a("原文零纠错；身份绑定 QQ（空则 UID）；昵称仅作显示名，本报告用 `speaker_id` 脱敏。")
     a("第 1 步打标后物理删除噪音，切簇/开窗/打分与 `messages_clean.jsonl` 均基于删除后语料。")
-    a("第 4 步按保送/词表锚点瘦身，`source_msg_ids` 为瘦身后序列。")
+    a("第 4 步按锚点瘦身（条数 slack + 时间间隔截断并拆窗）；保送 candidate 需 ≥2 条权威数字单位/拆包锚且 ≥3 条权威发言。")
     a("")
     a("## 0. 解析统计")
     a("")
@@ -848,27 +931,36 @@ def write_report(
     a(fmt_cluster_stats("20 分钟", stats_20))
     a("")
     a(f"主产物使用 **{gap_minutes} 分钟** 间隔，权威窗半径 K={k}。")
+    cw = slim_stats.get("cluster_win") or {}
+    a(
+        f"- 切分后有窗的簇：{slim_stats.get('n_clusters_with_windows', 0)}；"
+        f"每簇窗数 mean={cw.get('mean', 0)} / p50={cw.get('p50', 0)} / max={cw.get('max', 0)}"
+    )
     a("")
     a("## 3. 权威窗召回")
     a("")
-    a(f"- 窗总数：{len(windows)}")
+    n_fast_cand = sum(1 for w in windows if w.get("fast_track") and w["tier"] == "candidate")
+    a(f"- 合并权威窗（切分前）：{slim_stats.get('n_raw_windows', len(windows))}")
+    a(f"- 切分后输出窗：{len(windows)}（多片段原窗 {slim_stats.get('n_split_parents', 0)}）")
     a(f"- 瘦身前 raw_tier candidate/maybe/ignore："
       f"{sum(1 for w in windows if w.get('raw_tier') == 'candidate')} / "
       f"{sum(1 for w in windows if w.get('raw_tier') == 'maybe')} / "
       f"{sum(1 for w in windows if w.get('raw_tier') == 'ignore')}")
-    a(f"- 瘦身后 tier `candidate`：{tiers.get('candidate', 0)}")
-    a(f"- 瘦身后 tier `maybe`：{tiers.get('maybe', 0)}")
-    a(f"- 瘦身后 tier `ignore`：{tiers.get('ignore', 0)}")
-    a(f"- 保送（数字+单位 / 拆包词）`fast_track`：{n_fast}")
+    a(f"- 切分后 tier `candidate`：{tiers.get('candidate', 0)}")
+    a(f"- 切分后 tier `maybe`：{tiers.get('maybe', 0)}")
+    a(f"- 切分后 tier `ignore`：{tiers.get('ignore', 0)}")
+    a(f"- 保送 candidate（≥2 权威数字单位/拆包锚 且 ≥3 权威发言）：{n_fast_cand}"
+      f"（旧口径凡含数字单位即保送，约 238）")
     a(f"- 因 slim_n<{SLIM_DEMOTE_LT} 从 candidate 降 maybe：{sum(1 for w in windows if w.get('demoted_short'))}")
-    a(f"- `evidence_lost`（瘦身后窗内 mixed_media >30%）：{n_lost}")
+    a(f"- `evidence_lost`（窗内 mixed_media >30%）：{n_lost}")
     a("")
     raw_st = list_size_stats([int(w.get("raw_n") or w["n_messages"]) for w in windows])
     slim_st = list_size_stats([int(w.get("slim_n") or w["n_messages"]) for w in windows])
     a("## 4. 窗口瘦身")
     a("")
-    a(f"锚点 = 权威保送消息 ∪ 词表命中消息；连续 {slack} 条无锚即截断；"
-      f"超过 {SLIM_MAX} 条时以首个保送（否则首个词表锚）为中心裁到 {SLIM_MAX}。")
+    a(f"锚点 = 权威数字单位/拆包 ∪ 词表命中；连续 {slack} 条无锚即截断；"
+      f"相邻保留消息间隔 > {max_slack_gap_minutes:g} 分钟即截断并拆成独立窗；"
+      f"无锚片段丢弃；超过 {SLIM_MAX} 条时以首个保送（否则首个词表锚）为中心裁到 {SLIM_MAX}。")
     a("")
     a(
         f"- **瘦身前 raw_n**：mean={raw_st['mean']} / min={raw_st['min']} / max={raw_st['max']}，"
@@ -880,6 +972,19 @@ def write_report(
         f"p25={slim_st['p25']} / p50={slim_st['p50']} / p75={slim_st['p75']} / p90={slim_st['p90']}，"
         f">60 条 {slim_st['ge60']}，20–60 条 {slim_st['in_20_60']}，<5 条 {slim_st['lt5']}"
     )
+    a("")
+    a("### 金标案例对照（旧 window_id → 新窗）")
+    a("")
+    a("| 旧 id | 新 id | 时间 | tier | score | fast | slim_n | n_fast_anchors | n_auth |")
+    a("|---|---|---|---|---|---|---|---|---|")
+    if not case_rows:
+        a("| — | — | — | — | — | — | — | — | — |")
+    for row in case_rows:
+        a(
+            f"| `{row['old_id']}` | `{row['new_id']}` | {row['start']} ~ {row['end']} | "
+            f"{row['tier']} | {row['score']} | {row['fast']} | {row['slim_n']} | "
+            f"{row['n_fast_anchors']} | {row['n_auth']} |"
+        )
     a("")
     a("### Score Top 20")
     a("")
@@ -973,6 +1078,74 @@ def take_sample(pool: list[dict[str, Any]], n: int, rng: random.Random, used: se
     return picked
 
 
+# 上一轮金标里用户点名的四个窗：用当时 source 首条消息定位新窗。
+GOLD_CASE_SEEDS = (
+    ("w000028", "7638126404574791093"),
+    ("w000110", "7641183851109847108"),
+    ("w000214", "7645181683538735432"),
+    ("w000233", "7645735219296553435"),
+)
+
+
+def load_old_case_msg_sets(path: str) -> dict[str, set[str]]:
+    seeds = {old: {seed} for old, seed in GOLD_CASE_SEEDS}
+    if not os.path.exists(path):
+        return seeds
+    want = {old for old, _ in GOLD_CASE_SEEDS}
+    with open(path, "r", encoding="utf-8") as f:
+        for line in f:
+            w = json.loads(line)
+            wid = w.get("window_id")
+            if wid in want:
+                seeds[wid] = set(w.get("source_msg_ids") or [])
+    return seeds
+
+
+def match_gold_cases(
+    windows: list[dict[str, Any]], old_msg_sets: dict[str, set[str]]
+) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for old_id, seeds in old_msg_sets.items():
+        hits = [
+            w
+            for w in windows
+            if seeds.intersection(w.get("source_msg_ids") or [])
+        ]
+        hits.sort(key=lambda w: w["start_ts"])
+        if not hits:
+            rows.append(
+                {
+                    "old_id": old_id,
+                    "new_id": "—",
+                    "start": "—",
+                    "end": "—",
+                    "tier": "missing",
+                    "score": "—",
+                    "fast": "—",
+                    "slim_n": "—",
+                    "n_fast_anchors": "—",
+                    "n_auth": "—",
+                }
+            )
+            continue
+        for w in hits:
+            rows.append(
+                {
+                    "old_id": old_id,
+                    "new_id": w["window_id"],
+                    "start": w["start_time"],
+                    "end": w["end_time"],
+                    "tier": w["tier"],
+                    "score": w["score"],
+                    "fast": w.get("fast_track"),
+                    "slim_n": w.get("slim_n"),
+                    "n_fast_anchors": w.get("n_fast_anchors"),
+                    "n_auth": w.get("n_auth_msgs"),
+                }
+            )
+    return rows
+
+
 def write_gold_sample(
     path: str,
     windows: list[dict[str, Any]],
@@ -1051,7 +1224,8 @@ def write_gold_sample(
         )
         a(
             f"- tier={w['tier']} raw_tier={w.get('raw_tier')} score={w['score']} "
-            f"fast_track={w.get('fast_track')} evidence_lost={w.get('evidence_lost')}"
+            f"fast_track={w.get('fast_track')} n_fast_anchors={w.get('n_fast_anchors')} "
+            f"n_auth={w.get('n_auth_msgs')} evidence_lost={w.get('evidence_lost')}"
         )
         a(f"- raw_n={w.get('raw_n')} slim_n={w.get('slim_n')} 权威：{auth_s}")
         a(f"- 命中词：{hits}")
@@ -1095,6 +1269,12 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--gap-minutes", type=float, default=20.0, help="主产物切簇间隔（分钟）")
     p.add_argument("--window-k", type=int, default=15, help="权威窗 ±K 条")
     p.add_argument("--slack", type=int, default=8, help="瘦身：连续无锚点截断条数")
+    p.add_argument(
+        "--max-slack-gap-minutes",
+        type=float,
+        default=5.0,
+        help="瘦身扩展时相邻保留消息的最大间隔（分钟）",
+    )
     p.add_argument("--host-qq", default=HOST_QQ)
     p.add_argument("--expert-qq", default=EXPERT_QQ, help="逗号分隔")
     p.add_argument("--bot-qq", default=",".join(DEFAULT_BOT_QQS), help="逗号分隔")
@@ -1158,10 +1338,11 @@ def main(argv: list[str] | None = None) -> int:
     else:
         main_clusters = make_clusters(messages, gap_sec)
 
-    log("[3] 词表 + 权威窗打分 …")
+    log("[3] 词表 + 权威窗打分 / 时间感知瘦身 …")
     slang_terms = load_shenqi_slangs(args.entities)
     vocab = build_vocab(slang_terms)
-    windows = build_windows(
+    max_gap_sec = int(args.max_slack_gap_minutes * 60)
+    windows, slim_stats = build_windows(
         messages,
         main_clusters,
         k=args.window_k,
@@ -1170,9 +1351,11 @@ def main(argv: list[str] | None = None) -> int:
         authority_qqs=authority_qqs,
         vocab=vocab,
         slack=args.slack,
+        max_gap_sec=max_gap_sec,
     )
 
     win_path = os.path.join(args.outdir, "windows.jsonl")
+    old_msg_sets = load_old_case_msg_sets(win_path)
     dump_jsonl(win_path, windows)
 
     gold_path = os.path.join(args.outdir, "gold_sample.md")
@@ -1180,6 +1363,7 @@ def main(argv: list[str] | None = None) -> int:
         gold_path, windows, messages, host_qq, expert_qqs, args.seed
     )
 
+    case_rows = match_gold_cases(windows, old_msg_sets)
     report_path = os.path.join(args.outdir, "pipeline_report.md")
     write_report(
         report_path,
@@ -1194,6 +1378,9 @@ def main(argv: list[str] | None = None) -> int:
         args.gap_minutes,
         args.window_k,
         args.slack,
+        args.max_slack_gap_minutes,
+        slim_stats,
+        case_rows,
         windows,
         messages,
         host_qq,
