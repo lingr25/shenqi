@@ -4,8 +4,9 @@
 qq_clean_pipeline.py
 --------------------
 桃大将军粉丝群聊天清洗流水线（第 0–3 步）：
-  0. 流式解析 CSV → messages.jsonl + speaker_map.json
-  1. 硬过滤打标（不删）：empty / bot / flood_dup → noise
+  0. 流式解析 CSV → speaker_map.json
+  1. 硬过滤打标后物理删除：empty / bot / flood_dup / 纯占位媒体
+     保留 mixed_media 正文（text_stripped）→ messages_clean.jsonl
   2. 弱切簇 + 权威窗（默认 20 分钟间隔，±K 条）
   3. 召回排序：保送 / score 分档 candidate|maybe|ignore
 
@@ -97,6 +98,7 @@ HARDCORE_TERMS = (
 )
 
 REPORT_MARKERS = ("每日群聊分析报告", "群分析日报告", "每日群聊分析")
+DROP_FLAGS = frozenset({"media_placeholder", "is_bot", "flood_dup", "empty"})
 
 
 def log(msg: str) -> None:
@@ -375,6 +377,30 @@ def apply_noise_and_flood(
     return {"empty": n_empty, "flood_dup": n_flood, "noise": n_noise}
 
 
+def drop_tagged(messages: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    """Physically drop tagged noise; keep mixed_media with stripped body."""
+    kept: list[dict[str, Any]] = []
+    by_flag: Counter[str] = Counter()
+    n_multi = 0
+    for m in messages:
+        hits = [f for f in DROP_FLAGS if f in m["flags"]]
+        if hits:
+            for f in hits:
+                by_flag[f] += 1
+            if len(hits) > 1:
+                n_multi += 1
+            continue
+        if "mixed_media" in m["flags"] and m.get("text_stripped"):
+            m["text"] = m["text_stripped"]
+        kept.append(m)
+    return kept, {
+        "dropped": len(messages) - len(kept),
+        "kept": len(kept),
+        "by_flag": dict(by_flag),
+        "multi_flag": n_multi,
+    }
+
+
 def build_speaker_map(messages: list[dict[str, Any]]) -> dict[str, Any]:
     speakers: dict[str, dict[str, Any]] = {}
     for m in messages:
@@ -422,28 +448,19 @@ def build_speaker_map(messages: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
-def cluster_keep(m: dict[str, Any]) -> bool:
-    flags = m["flags"]
-    return "media_placeholder" not in flags and "is_bot" not in flags
-
-
 def make_clusters(
     messages: list[dict[str, Any]], gap_seconds: int
 ) -> list[list[int]]:
-    """Return clusters as lists of indices into `messages` (kept only)."""
-    kept = [i for i, m in enumerate(messages) if cluster_keep(m)]
-    if not kept:
+    """Return clusters as lists of indices into cleaned `messages`."""
+    if not messages:
         return []
-    clusters: list[list[int]] = []
-    current = [kept[0]]
-    for prev_i, cur_i in zip(kept, kept[1:]):
-        gap = messages[cur_i]["ts"] - messages[prev_i]["ts"]
+    clusters: list[list[int]] = [[0]]
+    for i in range(1, len(messages)):
+        gap = messages[i]["ts"] - messages[i - 1]["ts"]
         if gap > gap_seconds:
-            clusters.append(current)
-            current = [cur_i]
+            clusters.append([i])
         else:
-            current.append(cur_i)
-    clusters.append(current)
+            clusters[-1].append(i)
     return clusters
 
 
@@ -512,8 +529,6 @@ def build_windows(
         for pos, mi in enumerate(idxs):
             m = messages[mi]
             if m["qq"] not in authority_qqs:
-                continue
-            if "noise" in m["flags"]:
                 continue
             lo = max(0, pos - k)
             hi = min(n - 1, pos + k)
@@ -613,6 +628,7 @@ def write_report(
     path: str,
     parse_stats: dict[str, int],
     flag_stats: dict[str, int],
+    drop_stats: dict[str, Any],
     extra_bots: list[tuple[str, int]],
     report_counts: Counter,
     bot_qqs: set[str],
@@ -644,12 +660,17 @@ def write_report(
     media_ph = flag_stats.get("media_placeholder", 0)
     mixed = flag_stats.get("mixed_media", 0)
     n_msg = parse_stats["logical_messages"]
+    n_drop = drop_stats.get("dropped", 0)
+    n_kept = drop_stats.get("kept", len(messages))
+    by_flag = drop_stats.get("by_flag") or {}
+    mixed_kept = sum(1 for m in messages if "mixed_media" in m["flags"])
 
     lines: list[str] = []
     a = lines.append
     a("# 群聊清洗流水线报告（第 0–3 步）")
     a("")
     a("原文零纠错；身份绑定 QQ（空则 UID）；昵称仅作显示名，本报告用 `speaker_id` 脱敏。")
+    a("第 1 步打标后物理删除噪音，切簇/开窗/打分与 `messages_clean.jsonl` 均基于删除后语料。")
     a("")
     a("## 0. 解析统计")
     a("")
@@ -661,15 +682,18 @@ def write_report(
     a(f"- 空 QQ：{parse_stats['empty_qq']}（其中 QQ+UID 皆空：{parse_stats['empty_qq_uid']}）")
     a(f"- 说话人映射条目：见 `speaker_map.json`")
     a("")
-    a("## 1. 过滤打标统计（不删）")
+    a("## 1. 过滤：打标后物理删除")
     a("")
-    a(f"- `media_placeholder`：{media_ph}（{media_ph / n_msg:.1%}）")
-    a(f"- `mixed_media`：{mixed}")
-    a(f"- `is_bot`：{flag_stats.get('is_bot', 0)}")
-    a(f"- `empty`：{flag_stats.get('empty', 0)}")
-    a(f"- `flood_dup`：{flag_stats.get('flood_dup', 0)}（短句 <4 字与权威发言不打）")
-    a(f"- `noise`：{flag_stats.get('noise', 0)}")
-    a(f"- `live_session`：{flag_stats.get('live_session', 0)}（仅标记，不作为切簇边界）")
+    a(f"- 解析总条数：{n_msg}")
+    a(f"- 物理删除：{n_drop}（{n_drop / n_msg:.1%}）")
+    a(f"  - `media_placeholder`：{by_flag.get('media_placeholder', media_ph)}")
+    a(f"  - `is_bot`：{by_flag.get('is_bot', flag_stats.get('is_bot', 0))}")
+    a(f"  - `flood_dup`：{by_flag.get('flood_dup', flag_stats.get('flood_dup', 0))}（短句 <4 字与权威发言不打，保留首条）")
+    a(f"  - `empty`：{by_flag.get('empty', flag_stats.get('empty', 0))}")
+    a(f"  - 同时命中多类（去重计入删除总数）：{drop_stats.get('multi_flag', 0)}")
+    a(f"- 删除后剩余：{n_kept}")
+    a(f"- 保留 `mixed_media`：{mixed_kept}（正文用 `text_stripped`；全量打标 {mixed}）")
+    a(f"- `live_session`（删除后仍在语料中）：{sum(1 for m in messages if 'live_session' in m['flags'])}（仅标记，不作为切簇边界）")
     a("")
     a("### Bot 黑名单")
     a("")
@@ -687,7 +711,7 @@ def write_report(
     a("")
     a("## 2. 弱切簇对比")
     a("")
-    a("相邻保留消息（剔除纯媒体占位与 bot）按时间间隔切簇。")
+    a("在删除后语料上，按相邻消息时间间隔切簇。")
     a("")
     a(fmt_cluster_stats("8 分钟", stats_8))
     a(fmt_cluster_stats("20 分钟", stats_20))
@@ -724,8 +748,6 @@ def write_report(
             m = by_id.get(mid)
             if not m or m["qq"] not in {host_qq, *expert_qqs}:
                 continue
-            if "noise" in m["flags"]:
-                continue
             tag = role_tag(role_of(m["qq"], host_qq, expert_qqs) or "authority")
             a(f"   - {tag}`{m['speaker_id']}` {preview_text(m['text'])}")
             shown += 1
@@ -756,7 +778,7 @@ def write_report(
     a("")
     a("## 产物")
     a("")
-    a("- `qq_info/messages.jsonl`")
+    a("- `qq_info/messages_clean.jsonl`（删除噪音后的唯一消息产物；全量原文见 CSV）")
     a("- `qq_info/speaker_map.json`")
     a("- `qq_info/windows.jsonl`")
     a("- `qq_info/pipeline_report.md`（本文件）")
@@ -822,13 +844,20 @@ def main(argv: list[str] | None = None) -> int:
     flag_stats.update(bot_live)
     flag_stats.update(flood)
 
-    log("[0] 写 speaker_map / messages.jsonl …")
+    log("[1] 物理删除噪音 …")
+    n_parsed = len(messages)
+    messages, drop_stats = drop_tagged(messages)
+
+    log("[0] 写 speaker_map / messages_clean.jsonl …")
     speaker_map = build_speaker_map(messages)
     sm_path = os.path.join(args.outdir, "speaker_map.json")
     with open(sm_path, "w", encoding="utf-8") as f:
         json.dump(speaker_map, f, ensure_ascii=False, indent=2)
 
-    msg_path = os.path.join(args.outdir, "messages.jsonl")
+    stale_full = os.path.join(args.outdir, "messages.jsonl")
+    if os.path.exists(stale_full):
+        os.remove(stale_full)
+    msg_path = os.path.join(args.outdir, "messages_clean.jsonl")
     with open(msg_path, "w", encoding="utf-8") as f:
         for m in messages:
             f.write(json.dumps(public_message(m), ensure_ascii=False) + "\n")
@@ -867,6 +896,7 @@ def main(argv: list[str] | None = None) -> int:
         report_path,
         parse_stats,
         flag_stats,
+        drop_stats,
         extra,
         report_counts,
         bot_qqs,
@@ -883,7 +913,8 @@ def main(argv: list[str] | None = None) -> int:
 
     tiers = Counter(w["tier"] for w in windows)
     log(
-        f"[done] messages={len(messages)} windows={len(windows)} "
+        f"[done] parsed={n_parsed} kept={len(messages)} dropped={drop_stats['dropped']} "
+        f"windows={len(windows)} "
         f"candidate={tiers.get('candidate', 0)} maybe={tiers.get('maybe', 0)} "
         f"ignore={tiers.get('ignore', 0)}"
     )
