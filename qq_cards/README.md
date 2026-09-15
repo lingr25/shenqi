@@ -10,6 +10,24 @@
 - 唯一 conflict 卡 `w001186`：录播否决「已有冷却不随后续攻速变化」；`conflict_resolution=vod_wins`，结论加 `conflict_note`，原文保留。
 - maybe 近重复标记 duplicate 3 张；单图/单干员数字卡 scope=instance 3 张；`w000021` 保留为「旧数值」而非 duplicate。
 
+
+
+
+## v3 RAG 合同
+
+检索用 `rag_docs.jsonl`（796 条：draft 窗卡 + canonical；**duplicate 不进索引**）。
+
+- embedding 只用 `text`（topic/title + 别名主名实体 + context_question + takeaway + 结论 + canonical 的 open_questions）。
+- 过滤只用 `metadata`（category / novelty / scope / credibility_max / canonical_id / origin / status）。
+- 冲突以录播为准：`novelty=conflict` 且 `conflict_resolution=vod_wins` 时听录播，勿把群聊假结论当现行规则。
+- `novelty=unknown` 不是低质量，只表示尚未对照逐字稿。
+- `scope=instance` 不得当全局规则（单图/单干员数字）。
+- 本库是群聊补充层，非 PRTS、非录播百科；与录播冲突以录播为准。
+- 实体别名见 `entity_aliases.json`（1489 个主词）。
+
+建议系统提示：优先引用 canonical 词条；遇 conflict 听 vod_wins；黑话（索敌帧、平整化、阻挡偏移等）需用卡片结论解释，勿用泛游戏常识替换。
+
+
 **数据边界**
 
 - 语料是群聊补充层，不是录播逐字稿；与录播讲解冲突时 **以录播为准**。
