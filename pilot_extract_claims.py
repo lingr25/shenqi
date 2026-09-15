@@ -33,10 +33,9 @@ ROOT = Path(__file__).parent
 OUT_DIR = ROOT / "knowledge_pilot"
 
 # 抽取走 aitreez grok-4.6, 不走百炼 qwen3.8-max
+# 密钥仅在实际调用 LLM 时检查, 方便离线重算 quote_check
 LLM_BASE = os.environ.get("GROK_BASE", "https://aitreez.com/v1")
 LLM_KEY = os.environ.get("GROK_API_KEY", "").strip()
-if not LLM_KEY:
-    raise SystemExit("请设置环境变量 GROK_API_KEY")
 MODEL = os.environ.get("GROK_MODEL", "grok-4.6")
 WINDOW_SEC = 240
 WORKERS = 4
@@ -105,6 +104,8 @@ def make_windows(items):
 
 
 def call_llm(prompt: str, retries=4):
+    if not LLM_KEY:
+        raise SystemExit("请设置环境变量 GROK_API_KEY")
     body = json.dumps({
         "model": MODEL,
         "messages": [{"role": "user", "content": prompt}],
@@ -145,17 +146,26 @@ def _norm(s: str) -> str:
     return re.sub(r"[\s，。、,.!?~…·\-—\"'“”]+", "", s or "")
 
 
+_TS_PREFIX = re.compile(r"\[\d{1,2}:\d{2}(?::\d{2})?\]\s*")
+
+
+def _flatten(win_text: str) -> str:
+    """去掉行首时间戳与换行, 允许引用跨字幕条。"""
+    return _TS_PREFIX.sub("", win_text or "").replace("\n", "")
+
+
 def validate(card, win_text):
-    """程序校验: 引用必须能在窗口原文中找到 (允许标点/空白差异)。"""
-    nt = _norm(win_text)
+    """程序校验: 引用必须能在窗口原文中找到 (允许标点/空白差异与跨行)。"""
+    flat = _flatten(win_text)
+    nt = _norm(flat)
     ok = True
     for ev in card.get("evidence", []):
         q = ev.get("quote", "")
-        if not q or (_norm(q) not in nt and q not in win_text):
+        if not q or (_norm(q) not in nt and q not in flat and q not in win_text):
             ok = False
     for p in card.get("underlying_parameters", []):
         s = p.get("source_span", "")
-        if not s or (_norm(s) not in nt and s not in win_text):
+        if not s or (_norm(s) not in nt and s not in flat and s not in win_text):
             ok = False
     return ok
 

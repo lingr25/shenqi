@@ -24,7 +24,6 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import pilot_extract_claims as base
-from audit_timeline import THRESHOLD_SEC  # noqa: F401  (保持引用, 文档用)
 
 ROOT = Path(__file__).parent
 OUT_DIR = ROOT / "knowledge_pilot"
