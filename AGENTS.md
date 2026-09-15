@@ -16,29 +16,46 @@
 
 ```text
 shenqi/
-├── .gitignore              # 忽略音视频大文件及缓存
+├── .gitignore              # 忽略音视频大文件、本地缓存与实验性ASR草稿
 ├── AGENTS.md               # [本文件] 项目规范与 Agent 行动指南
 ├── entity_corrector.py      # 机制专有名词与高频同音消歧纠错模块
-├── all_search_videos.json  # 空间搜索全量录播视频元数据（当前60部）
+├── all_search_videos.json  # 空间搜索全量录播视频元数据（当前61部）
 ├── all_videos_census.md    # 全量视频时长清单与分类报告
 ├── subtitle_inventory.json # 视频分P与字幕抓取状态清单
-├── subtitles_report.md     # 官方 AI 字幕覆盖率与缺失分P报告
-├── subtitles/              # [原始数据] B 站官方 AI 字幕原始 JSON，保留毫秒级时间戳，严禁破坏
-├── cleaned_subtitles/      # [清洗数据] 经过专有名词与实体消歧校准后的结构化 JSON
-├── transcripts_txt/        # [阅读/LLM] 带 [时:分:秒] 时间戳、自然断句合并的逐字稿纯文本
-└── qq_info/                # [补充语料/本地私有] 桃大将军粉丝群(1097395794)全量聊天记录(22.7万条)，用于机制考据与黑话挖掘
+├── subtitles_report.md     # [权威层] 官方 AI 字幕覆盖率与缺失音频归档报告（严禁混入本地ASR数据）
+├── subtitles/              # [权威层] B 站官方 AI 字幕原始 JSON，保留毫秒级时间戳，严禁破坏
+├── cleaned_subtitles/      # [权威层] 经过专有名词与实体消歧校准后的结构化 JSON
+├── transcripts_txt/        # [权威层] 带 [时:分:秒] 时间戳、自然断句合并的逐字稿纯文本（严禁混入本地ASR草稿）
+├── qq_info/                # [补充语料/本地私有] 桃大将军粉丝群(1097395794)全量聊天记录(22.7万条)，用于机制考据与黑话挖掘
+├── audios/                 # [本地私有/独立层] 缺失官方字幕分P的原画质纯音频(.m4a)，被.gitignore严格忽略
+├── vad_results/            # [实验性/独立层] FSMN-VAD 人声端点检测时间戳与 vad_report.md 人声活跃度大盘
+├── asr_drafts/             # [实验性/独立层] SenseVoiceSmall 本地粗识别转写草稿，完全独立于 transcripts_txt/
+└── local_asr_report.md     # [实验性/独立层] 本地实验性 ASR 进展、活跃度与草稿索引报告
 ```
 
 ---
 
-## 3. 专有名词与实体消歧
+## 3. 双轨语料分层规范（官方AI字幕 vs 本地实验性ASR）
+
+为确保知识库的严谨性与权威性，本仓库严格实施**“权威官方 AI 字幕”**与**“本地实验性 ASR 草稿”**的双轨物理隔离机制：
+
+1. **权威官方 AI 字幕层（生产层）**：
+   - 包括 `subtitles/`、`cleaned_subtitles/`、`transcripts_txt/`、`subtitle_inventory.json` 和 `subtitles_report.md`。
+   - **绝对红线**：严禁将任何本地模型（SenseVoice、Whisper等）推断的非官方文本、字数统计或状态标签混合写入上述四个目录或官方报告中。
+2. **本地实验性 ASR 层（草稿层）**：
+   - 包括 `audios/`、`vad_results/`、`asr_drafts/` 和 `local_asr_report.md`。
+   - 专门用于在官方字幕缺失时，利用极轻量 VAD 与 SenseVoice 进行语音端点定位、粗识别与检索辅助。其生成的文件统一存放在 `asr_drafts/`，并已被 `.gitignore` 保护，不参与生产层逐字稿发布。
+
+---
+
+## 4. 专有名词与实体消歧
 
 明日方舟底层代码逻辑黑话较多，通用 ASR 模型错词率极高，应当注意。
 
 
 ---
 
-## 4. 文本清洗与断句规范
+## 5. 文本清洗与断句规范
 
 1. **时间戳精度**：TXT 逐字稿行首必须保留 `[HH:MM:SS]` 或 `[MM:SS]` 格式时间戳，便于用户直接拉回 B 站进度条核对原视频。
 2. **自然断句合并**：原始字幕以 1~2 秒切片，必须在停顿小于 1.0 秒且长度适中时自然合并，剔除纯无意义结巴，保留原汁原味的推导过程。
@@ -46,7 +63,7 @@ shenqi/
 
 ---
 
-## 5. 群聊补充语料库规范（`qq_info/`）
+## 6. 群聊补充语料库规范（`qq_info/`）
 
 群聊记录 `qq_info/` 汇集了粉丝群内 22.7 万条关于方舟底层机制的深度实操讨论，是录播归档的重要知识补充。Agent 在检索与使用该语料时必须遵循以下规范：
 
@@ -62,7 +79,7 @@ shenqi/
 
 ---
 
-## 6. Git 工作流与版本管理准则
+## 7. Git 工作流与版本管理准则
 
 本仓库已建立 Git 版本控制（`master` 分支），任何修改必须遵循以下纪律：
 
