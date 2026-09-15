@@ -30,6 +30,9 @@ shenqi/
 ├── audios/                 # [本地私有/独立层] 缺失官方字幕分P的原画质纯音频(.m4a)，被.gitignore严格忽略
 ├── vad_results/            # [实验性/独立层] FSMN-VAD 人声端点检测时间戳与 vad_report.md 人声活跃度大盘
 ├── asr_drafts/             # [实验性/独立层] SenseVoiceSmall 本地粗识别转写草稿，完全独立于 transcripts_txt/
+├── cloud_clips/            # [实验性/独立层] 云端ASR切片产物：manifest.json 裁剪清单 + 按VAD/草稿过滤后的音频切片（文件名含原音频绝对时间轴），被.gitignore忽略
+├── plan_cloud_clips.py     # [实验性/独立层] 云端切片清单生成器：VAD段×草稿文本打分过滤→合并→pad→硬切
+├── cut_cloud_clips.py      # [实验性/独立层] 按 manifest 用 ffmpeg 流拷贝切片
 └── local_asr_report.md     # [实验性/独立层] 本地实验性 ASR 进展、活跃度与草稿索引报告
 ```
 
@@ -43,8 +46,8 @@ shenqi/
    - 包括 `subtitles/`、`cleaned_subtitles/`、`transcripts_txt/`、`subtitle_inventory.json` 和 `subtitles_report.md`。
    - **绝对红线**：严禁将任何本地模型（SenseVoice、Whisper等）推断的非官方文本、字数统计或状态标签混合写入上述四个目录或官方报告中。
 2. **本地实验性 ASR 层（草稿层）**：
-   - 包括 `audios/`、`vad_results/`、`asr_drafts/` 和 `local_asr_report.md`。
-   - 专门用于在官方字幕缺失时，利用极轻量 VAD 与 SenseVoice 进行语音端点定位、粗识别与检索辅助。其生成的文件统一存放在 `asr_drafts/`，并已被 `.gitignore` 保护，不参与生产层逐字稿发布。
+   - 包括 `audios/`、`vad_results/`、`asr_drafts/`、`cloud_clips/` 和 `local_asr_report.md`。
+   - 专门用于在官方字幕缺失时，利用极轻量 VAD 与 SenseVoice 进行语音端点定位、粗识别与检索辅助。其生成的文件统一存放在 `asr_drafts/`，并已被 `.gitignore` 保护，不参与生产层逐字稿发布。云端 ASR 重转写前的音频切片统一存放在 `cloud_clips/`（由 `plan_cloud_clips.py` 生成清单、`cut_cloud_clips.py` 执行切片），同样被 `.gitignore` 保护；云端重转写结果在人工验证前也必须留在草稿层，严禁直接写入权威层。
 
 ---
 
