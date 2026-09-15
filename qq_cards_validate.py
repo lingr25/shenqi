@@ -95,13 +95,13 @@ def load_jsonl(path: str) -> list[dict[str, Any]]:
     return rows
 
 
-def parse_card(row: dict[str, Any]) -> tuple[dict[str, Any] | None, str | None]:
+def parse_card(row: dict[str, Any]) -> tuple[dict[str, Any] | list[Any] | None, str | None]:
     try:
         obj = json.loads(row["_raw"])
     except json.JSONDecodeError as e:
         return None, f"json_invalid: {e}"
-    if not isinstance(obj, dict):
-        return None, "json_invalid: not an object"
+    if not isinstance(obj, (dict, list)):
+        return None, "json_invalid: not an object or list"
     return obj, None
 
 
@@ -671,7 +671,7 @@ def run_validate(
             details.append(f"- {loc} {err}")
             continue
         assert card is not None
-        if card.get("skip") is True:
+        if isinstance(card, dict) and card.get("skip") is True:
             stats["skip"] += 1
         else:
             stats["cards"] += 1
@@ -697,8 +697,9 @@ def run_validate(
                     stats["hallucinations"].append(
                         {"window_id": parts[1], "value": parts[2] if len(parts) > 2 else ""}
                     )
+            wid = card.get("window_id") if isinstance(card, dict) else (card[0].get("parent_cluster_id") if isinstance(card, list) and card and isinstance(card[0], dict) else "")
             details.append(
-                f"- {loc} window={card.get('window_id')} " + "; ".join(errs)
+                f"- {loc} window={wid} " + "; ".join(errs)
             )
         else:
             stats["pass"] += 1
