@@ -41,6 +41,15 @@
 
 
 
+
+## v5 子代理入库
+
+- 再分类：96 张原「其他」draft 卡写入新 10 类（干员机制 44，关卡与出怪 15，数值与读图 10，位移 8，拆包数据 5，索敌 5，伤害结算 4，帧时序 4，寻路 1）。未覆盖的仍留「其他」（50）。`prev_category` 保留旧值。
+- 新类别：索敌 / 帧时序 / 位移 / 寻路 / 伤害结算 / 拆包数据 / 干员机制 / 关卡与出怪 / 数值与读图 / 其他。
+- novelty 复核：also_in_vod 升级 6；新 conflict 2（`w000416` 重构体可撤、`w000554` 位移顺序摩擦→推力，均 vod_wins）。
+- glossary：阻挡补完 mechanic_def（confidence=medium）；过伤/入控/免控仍 unknown 但补了用法 short_def。
+- rag_docs 仍 **869** 条，boost 规则不变。
+
 ## v5 RAG 挂载与降权
 
 - glossary 词条带 `linked_doc_ids`（最多 30，优先 canonical / authoritative）：44/50 条至少挂 1 个文档。
