@@ -38,6 +38,16 @@
 - glossary 的 `mechanic_def=unknown` 不是低质量人话，只表示卡片证据不够写精确定义。
 - 窗卡 `canonical_ids` 为数组（可挂多条词条）；旧字段 `canonical_id` 仍保留。
 
+
+
+
+## v5 RAG 挂载与降权
+
+- glossary 词条带 `linked_doc_ids`（最多 30，优先 canonical / authoritative）：44/50 条至少挂 1 个文档。
+- `rag_docs.jsonl` 仍为 **869** 条；window metadata 增加 `retrieval_boost`（group_only 1.2，maybe/ignore+unknown 0.6，canonical 1.5，glossary 1.3）。
+- 提问链路：命中 glossary → 沿 `linked_doc_ids` 取出相关 canonical/window。
+
+
 **数据边界**
 
 - 语料是群聊补充层，不是录播逐字稿；与录播讲解冲突时 **以录播为准**。
