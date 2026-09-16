@@ -5,9 +5,9 @@
 来源构成：主库 484（含修补后 13 张 duplicate）+ maybe 非 skip 289 + ignore 非 skip 16 = **789** 张窗卡。
 
 - 窗卡（`cards.jsonl`）是 citation：指向具体讨论窗。
-- 词条（`canonical.jsonl`）是合并后的机制条目，仅收源窗 ≤4 的小簇；大簇留给人工拆。
-- novelty 标注覆盖主库 draft 卡：group_only 397 / also_in_vod 56 / unknown 17 / conflict 1。
-- 唯一 conflict 卡 `w001186`：录播否决「已有冷却不随后续攻速变化」；`conflict_resolution=vod_wins`，结论加 `conflict_note`，原文保留。
+- 词条（`canonical.jsonl`）是合并后的机制条目，当前 **46** 条（含大簇拆分）；窗卡可挂 `canonical_ids`。
+- novelty 表示「是否群聊独有 / 是否与录播冲突」，**不参与检索排序**。当前全库约 group_only 379 / also_in_vod 72 / unknown 335 / **conflict 3**（`w001186` 冷却、`w000416` 重构体撤退、`w000554` 位移顺序，均 `vod_wins`）。
+- conflict 卡在 `cards.jsonl` 保留群聊原文结论 + `conflict_note`；`rag_docs` 的 text **不索引被否结论**，只索引改写后的 takeaway 与 conflict_note。
 - maybe 近重复标记 duplicate 3 张；单图/单干员数字卡 scope=instance 3 张；`w000021` 保留为「旧数值」而非 duplicate。
 
 
@@ -15,15 +15,17 @@
 
 ## v3 RAG 合同
 
-检索用 `rag_docs.jsonl`（796 条：draft 窗卡 + canonical；**duplicate 不进索引**）。
+检索用 `rag_docs.jsonl`（**869** 条：window 773 + canonical 46 + glossary 50；**duplicate 不进索引**）。
 
-- embedding 只用 `text`（topic/title + 别名主名实体 + context_question + takeaway + 结论 + canonical 的 open_questions）。
-- 过滤只用 `metadata`（category / novelty / scope / credibility_max / canonical_id / origin / status）。
-- 冲突以录播为准：`novelty=conflict` 且 `conflict_resolution=vod_wins` 时听录播，勿把群聊假结论当现行规则。
-- `novelty=unknown` 不是低质量，只表示尚未对照逐字稿。
-- `scope=instance` 不得当全局规则（单图/单干员数字）。
-- 本库是群聊补充层，非 PRTS、非录播百科；与录播冲突以录播为准。
-- 实体别名见 `entity_aliases.json`（1489 个主词）。
+**v5.2 修订（boost / conflict 文本）**
+
+- embedding 只用 `text`。普通窗卡：topic + 别名主名实体 + context_question + takeaway + 结论。**conflict 窗卡不拼 `core_conclusions` 原文**，只拼 topic + 改写 takeaway + conflict_note + entities。
+- 过滤用 `metadata`（category / novelty / scope / credibility_max / canonical_id / origin / status）。`novelty` **只表示是否群聊独有或与录播冲突，不参与排序**。
+- `retrieval_boost`：window 按 `credibility_max`（authoritative 1.2 / expert 1.0 / lead 0.7），有非空 `underlying_parameters` 再 +0.1；canonical 1.5；glossary 1.3。**不再按 origin/novelty 降权。**
+- 冲突以录播为准：`novelty=conflict` 且 `conflict_resolution=vod_wins` 时听录播。
+- `novelty=unknown` 不是低质量。`scope=instance` 不得当全局规则。
+- 本库是群聊补充层，非 PRTS、非录播百科。
+- 实体别名见 `entity_aliases.json`。
 
 建议系统提示：优先引用 canonical 词条；遇 conflict 听 vod_wins；黑话（索敌帧、平整化、阻挡偏移等）需用卡片结论解释，勿用泛游戏常识替换。
 
@@ -49,7 +51,7 @@
 - 新类别：索敌 / 帧时序 / 位移 / 寻路 / 伤害结算 / 拆包数据 / 干员机制 / 关卡与出怪 / 数值与读图 / 其他。
 - novelty 复核：also_in_vod 升级 16；新 conflict 2（`w000416` 重构体可撤、`w000554` 位移顺序摩擦→推力，均 vod_wins）。
 - glossary：阻挡补完 mechanic_def（confidence=medium）；过伤/入控/免控仍 unknown 但补了用法 short_def。
-- rag_docs 仍 **869** 条，boost 规则不变。
+- rag_docs **869** 条；boost 见 v3 合同 v5.2 修订（按 credibility，不按 novelty 降权）。
 
 
 ## v5 RAG 挂载与降权

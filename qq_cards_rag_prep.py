@@ -218,9 +218,23 @@ def entity_index_names(card: dict[str, Any], aliases: dict[str, dict[str, Any]])
 
 
 def window_text(card: dict[str, Any], aliases: dict[str, dict[str, Any]]) -> str:
+    ents = " ".join(entity_index_names(card, aliases))
+    if (card.get("novelty") or "") == "conflict":
+        take = card.get("summary_takeaway") or ""
+        # keep vod ruling; drop quoted rejected group-chat slogans from the index text
+        take = re.split(r"[；;]群聊曾持|群聊「|原群聊", take, maxsplit=1)[0].strip(" ；;")
+        note = card.get("conflict_note") or ""
+        note = re.sub(r"原群聊结论[:：].*$", "群聊结论已否，以录播为准。", note)
+        parts = [
+            card.get("topic") or "",
+            ents,
+            take,
+            note,
+        ]
+        return "\n".join(p for p in parts if p)
     parts = [
         card.get("topic") or "",
-        " ".join(entity_index_names(card, aliases)),
+        ents,
         card.get("context_question") or "",
         card.get("summary_takeaway") or "",
         conclusions_text(card),

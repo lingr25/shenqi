@@ -204,7 +204,7 @@ def main(argv: list[str] | None = None) -> int:
     lookup = alias_lookup(aliases)
     docs = rebuild_rag(cards, canon, glossary, aliases)
     glossary, gstats = link_glossary(glossary, docs, lookup)
-    docs = apply_boost_and_glossary_meta(docs, glossary)
+    docs = apply_boost_and_glossary_meta(docs, glossary, cards)
     dump_jsonl(GLOSSARY_PATH, glossary)
     dump_jsonl(RAG_PATH, docs)
 

@@ -123,22 +123,19 @@ def normalize_term(term: str, lookup: dict[str, str]) -> str:
     return zh or t
 
 
-def retrieval_boost(doc: dict[str, Any]) -> float:
+def retrieval_boost(doc: dict[str, Any], card: dict[str, Any] | None = None) -> float:
     dt = doc.get("doc_type")
     if dt == "canonical":
         return 1.5
     if dt == "glossary":
         return 1.3
     meta = doc.get("metadata") or {}
-    nov = meta.get("novelty") or "unknown"
-    origin = meta.get("origin") or "main"
-    if nov == "group_only":
-        return 1.2
-    if nov in {"also_in_vod", "conflict"}:
-        return 1.0
-    if nov == "unknown" and origin in {"maybe", "ignore"}:
-        return 0.6
-    return 1.0
+    cred = meta.get("credibility_max") or ""
+    boost = {"authoritative": 1.2, "expert": 1.0, "lead": 0.7}.get(str(cred), 1.0)
+    params = (card or {}).get("underlying_parameters")
+    if isinstance(params, list) and params:
+        boost = round(boost + 0.1, 2)
+    return boost
 
 
 def doc_terms(doc: dict[str, Any], lookup: dict[str, str]) -> set[str]:
@@ -229,13 +226,17 @@ def link_glossary(
 
 
 def apply_boost_and_glossary_meta(
-    docs: list[dict[str, Any]], glossary: list[dict[str, Any]]
+    docs: list[dict[str, Any]],
+    glossary: list[dict[str, Any]],
+    cards: list[dict[str, Any]] | None = None,
 ) -> list[dict[str, Any]]:
     by_term = {g.get("term"): g for g in glossary}
+    by_wid = {c.get("window_id"): c for c in (cards or [])}
     out = []
     for doc in docs:
         meta = dict(doc.get("metadata") or {})
-        meta["retrieval_boost"] = retrieval_boost(doc)
+        card = by_wid.get(meta.get("window_id")) if doc.get("doc_type") == "window" else None
+        meta["retrieval_boost"] = retrieval_boost(doc, card)
         if doc.get("doc_type") == "glossary":
             term = meta.get("term") or (doc.get("id") or "").split(":", 1)[-1]
             g = by_term.get(term)
@@ -498,7 +499,7 @@ def main(argv: list[str] | None = None) -> int:
     if len(docs) != 869:
         log(f"warn: rag_docs rebuilt {len(docs)} expected 869")
     glossary, gstats = link_glossary(glossary, docs, lookup)
-    docs = apply_boost_and_glossary_meta(docs, glossary)
+    docs = apply_boost_and_glossary_meta(docs, glossary, cards)
     dump_jsonl(GLOSSARY_PATH, glossary)
     dump_jsonl(RAG_PATH, docs)
 
