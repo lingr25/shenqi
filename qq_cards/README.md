@@ -61,13 +61,25 @@
 - 提问链路：命中 glossary → 沿 `linked_doc_ids` 取出相关 canonical/window。
 
 
+
+## v5.3 六条主题 canonical
+
+子代理合成 6 条词条并入 `canonical.jsonl`，总数 **52**。rag_docs **875**（window 773 + canonical 52 + glossary 50）。glossary 挂载 44/50。
+
+- `c0054` float：近地悬浮的单位定性与击落争议（open_questions 4）
+- `c0055` cost：费用尺、自然回费冷却制与跨帧率满费帧（open_questions 6）
+- `c0056` deploy_hate：同帧部署仇恨增量与同仇恨先创建（open_questions 6）
+- `c0057` gepan：格判与碰撞的分流：接触偏移、相离/相切与物理碰撞箱（open_questions 12）
+- `c0058` redeploy：再部署时间叠算、倒计时刷新与再部署过程定性（open_questions 8）
+- `c0059` spawn：出怪时序：操作表占帧、间隔制顺延与同帧顺序（open_questions 10）
+
 **数据边界**
 
 - 语料是群聊补充层，不是录播逐字稿；与录播讲解冲突时 **以录播为准**。
 - 发言人已脱敏（主播/专家/群友）。
 - 参数必须能在窗内原文中找到；无过硬数字的卡 `underlying_parameters` 为空。
 
-窗卡 **789**：draft **773**，duplicate **16**，empty **0**。canonical_draft 词条 **46**。
+窗卡 **789**：draft **773**，duplicate **16**，empty **0**。canonical_draft 词条 **52**。
 
 origin：ignore 16，main 484，maybe 289
 
