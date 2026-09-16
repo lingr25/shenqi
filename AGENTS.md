@@ -37,6 +37,11 @@ shenqi/
 ├── knowledge_pilot/        # [实验性/独立层] 机制知识卡抽取试点：章节大纲、draft父卡、原子命题(*.atoms.jsonl)、噪声卡(*.noise.jsonl)，被.gitignore忽略，人工审核前不得升入权威层或公开发布
 ├── chapter_extract_claims.py # [实验性/独立层] 方案2章节优先知识卡抽取管线
 ├── atomize_claims.py       # [实验性/独立层] 父卡→原子命题拆分、证据重绑、类型分权（不合成「正确卡」）
+├── cluster_atoms.py        # [实验性/独立层] 原子卡→议题档案(agreed/conflict/open), LLM不裁对错
+├── merge_clusters.py       # [实验性/独立层] 跨批次议题归并(union-find确定合并+canonical门槛重跑)
+├── enrich_atoms.py         # [实验性/独立层] 原子卡增强: claim_id/录制日期/PRTS实体挂接(纯本地)
+├── rag_eval.py             # [实验性/独立层] RAG检索评测(纯本地BM25), 当前基线10/10
+├── KNOWLEDGE_PIPELINE.md   # [实验性/独立层] 知识库生产管线文档, 新视频入库按此操作
 ├── pilot_extract_claims.py # [实验性/独立层] 方案1固定窗口知识卡抽取试点脚本（对照组）
 ├── audit_timeline.py       # [实验性/独立层] VAD采样时间轴 vs 原媒体时间轴审计，产出 cloud_clips/timeline_audit.json
 └── local_asr_report.md     # [实验性/独立层] 本地实验性 ASR 进展、活跃度与草稿索引报告
