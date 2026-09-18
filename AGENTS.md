@@ -28,6 +28,14 @@ shenqi/
 ├── transcripts_txt/        # [权威层] 带 [时:分:秒] 时间戳、自然断句合并的逐字稿纯文本（严禁混入本地ASR草稿）
 ├── qq_info/                # [补充语料/本地私有] 桃大将军粉丝群(1097395794)全量聊天记录(22.7万条)，用于机制考据与黑话挖掘
 ├── qq_cards/               # [补充语料/公开层] LLM 提炼的机制知识卡片，draft 状态，冲突以录播为准
+├── kb/                     # [统一层/draft] 直播轨+QQ轨横向合并的统一知识库: docs.jsonl(统一文档层,gitignore)、entity_index.json(统一实体索引)、cross_links/cross_conflicts(跨轨对齐)、检索评测报告；冲突一律 vod_wins；可直接作 RAG 语料
+├── kb_build_docs.py        # [统一层] 阶段A: 两轨 pack 成统一 schema 文档 (纯本地)
+├── kb_build_entities.py    # [统一层] 阶段B: PRTS+QQ别名统一实体索引与回填 (纯本地)
+├── kb_link_tracks.py       # [统一层] 阶段C: 跨轨确定性弱对齐 (纯本地)
+├── kb_llm_align.py         # [统一层] 阶段C+: LLM 跨轨仲裁 same_issue/agree/conflict, vod_wins (带断点缓存)
+├── kb_atomize_qq.py        # [统一层] 阶段D+: QQ 窗卡原子化 (带断点缓存)
+├── kb_pack_qq_atoms.py     # [统一层] 阶段D+: qq_atom 并入 docs.jsonl
+├── kb_eval.py              # [统一层] 阶段D: 统一检索评测 22 题 (纯本地 BM25)
 ├── audios/                 # [本地私有/独立层] 缺失官方字幕分P的原画质纯音频(.m4a)，被.gitignore严格忽略
 ├── vad_results/            # [实验性/独立层] FSMN-VAD 人声端点检测时间戳与 vad_report.md 人声活跃度大盘
 ├── asr_drafts/             # [实验性/独立层] SenseVoiceSmall 本地粗识别转写草稿，完全独立于 transcripts_txt/
