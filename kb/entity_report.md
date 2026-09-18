@@ -3,21 +3,21 @@
 - mention 总数: **6655**
 - 同名多义 mention: **351**（保留全部候选, 检索不强制消歧）
 - QQ 未入 PRTS 候选(待人工确认入 entity_corrector): **1324**
-- 文本回扫补挂实体: **7344** 处
+- 文本回扫补挂实体: **1247** 处
 
 ## docs.jsonl 回填覆盖
 
-- glossary_none: 50
-- glossary_scan_linked: 49
-- qq_canonical_none: 52
-- qq_canonical_scan_linked: 52
+- glossary_linked: 49
+- glossary_none: 1
+- qq_atom_linked: 5501
+- qq_atom_none: 586
+- qq_atom_scan_linked: 483
+- qq_canonical_linked: 52
 - qq_window_linked: 773
-- vod_atom_linked: 11712
-- vod_atom_none: 2649
-- vod_atom_scan_linked: 1945
-- vod_cluster_linked: 2148
-- vod_cluster_none: 841
-- vod_cluster_scan_linked: 637
+- vod_atom_linked: 13657
+- vod_atom_none: 704
+- vod_cluster_linked: 2785
+- vod_cluster_none: 204
 
 ## 同名多义示例(前20)
 

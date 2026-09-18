@@ -11,8 +11,8 @@
 | qq_window（群聊窗卡） | 773 |
 | qq_canonical（群聊词条） | 52 |
 | glossary（黑话术语） | 50 |
-| qq_atom（QQ 窗卡原子化） | 见 kb/qq_atoms.jsonl |
-| **docs.jsonl 合计** | **≈18k+** |
+| qq_atom（QQ 窗卡原子化，773 窗拆分） | 6,087 |
+| **docs.jsonl 合计** | **24,312** |
 
 ## 实体层（阶段B）
 
@@ -30,7 +30,15 @@
 
 ## 检索评测（阶段D）
 
-- `kb/kb_eval_report.md`：22 题（直播 10 + QQ 5 + glossary 4 + conflict vod_wins 3），**命中 22/22**；top3 轨道分布 vod 35 / qq 31，双轨均衡。
+- `kb/kb_eval_report.md`：22 题（直播 10 + QQ 5 + glossary 4 + conflict vod_wins 3），**命中 22/22**；并入 qq_atom 后 top3 轨道分布 vod 34 / qq 32，双轨均衡。
+- 检索入口：`python kb_search.py "问题"`（BM25 × boost × weight，纯本地）。
+
+## QQ 原子化质量抽样
+
+- 6087 原子：conclusion 4769 / observation 449 / hypothesis 385 / question 256 / derivation 228。
+- 发言人权重：authoritative 2763 / expert 2507 / lead 588 / member 229。
+- 例：`w000006:qa0`「夜半的眠兽撤退时睡眠状态直接消失。」（authoritative conclusion）。
+- 0 窗失败。deepseek 余额中断后切 grok 再切回 deepseek 断点续跑，prompt 约束 JSON 对象。
 
 ## 遗留问题
 
@@ -38,4 +46,4 @@
 2. `game_version` 全 null，跨年机制变更无法自动分行。
 3. 直播 28 场缺 chapter_claims 父卡（不影响 atom 层）。
 4. 12 场 timeline_unverified 云端场次未入库。
-5. QQ 原子化经一次模型切换（deepseek 余额耗尽 → grok-4.6 免费），一致性靠 prompt 约束。
+5. 1,324 个 QQ 俗称候选待人工确认后入 entity_corrector.py。

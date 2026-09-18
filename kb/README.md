@@ -31,5 +31,6 @@ python kb_link_tracks.py      # C: 确定性弱对齐
 python kb_llm_align.py        # C+: LLM 仲裁 (需 GROK_API_KEY/GROK_MODEL 环境变量)
 python kb_atomize_qq.py       # D+: QQ 窗卡原子化
 python kb_pack_qq_atoms.py    # D+: 并入 docs.jsonl
-python kb_eval.py             # D: 检索评测
+python kb_eval.py             # D: 检索评测 22 题
+python kb_search.py "索敌是三帧一索吗"  # RAG 检索入口
 ```

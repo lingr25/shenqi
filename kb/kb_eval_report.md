@@ -1,9 +1,9 @@
 # 统一知识库检索评测报告
 
-- 语料: kb/docs.jsonl **18225** 条 (vod_atom/vod_cluster/qq_window/qq_canonical/glossary)
+- 语料: kb/docs.jsonl **24312** 条 (vod_atom/vod_cluster/qq_window/qq_canonical/glossary)
 - 评分: bigram BM25 × retrieval_boost × retrieval_weight
 - 命中率: **22/22**
-- top3 轨道分布: {'vod_official': 32, 'qq': 31, 'vod_cloud': 3}
+- top3 轨道分布: {'vod_official': 31, 'qq': 32, 'vod_cloud': 3}
 
 ## 寻路第一步按什么顺序推地块
 (vod 算法课定论; 期望: 上右下左)
@@ -27,10 +27,10 @@
 (vod conflict 两面召回; 期望: M3/奶)
 1. [qq_window|group_only] 娜斯提高台与干员同帧/差帧部署限制
 2. [qq_canonical|n/a] 同帧部署仇恨增量与同仇恨先创建
-3. [qq_window|group_only] 同帧部署排序、仇恨权重计算及1000倍仇恨补偿机制
+3. [vod_cluster|vod_only] M3治疗目标是否看仇恨
 4. [vod_atom|vod_only] 同帧部署时打先部署
-5. [qq_canonical|n/a] 长时间部署仇恨相同判定与创建顺序规则
-判定: HIT; top5 轨道: Counter({'qq': 4, 'vod_official': 1})
+5. [qq_window|group_only] 同帧部署排序、仇恨权重计算及1000倍仇恨补偿机制
+判定: HIT; top5 轨道: Counter({'qq': 3, 'vod_official': 2})
 
 ## 索敌是三帧一索吗
 (vod 辟谣; 期望: 三帧/三针)
@@ -44,11 +44,11 @@
 ## 落地隐切换帧是第几帧
 (vod conflict; 期望: 落地隐)
 1. [vod_cluster|vod_only] 祖宗不可选中状态切换
-2. [qq_window|group_only] 落地隐身帧数与技能开启、索敌判定时间点
-3. [vod_atom|vod_only] 第三十一帧是落地隐切换的帧。
-4. [qq_window|group_only] EW落地隐匿与魂灵之影迷彩的帧内结算顺序
-5. [vod_cluster|vod_only] 普通干员被索敌帧31/32与同帧创建顺序 [合并2簇]
-判定: HIT; top5 轨道: Counter({'vod_official': 2, 'qq': 2, 'vod_cloud': 1})
+2. [qq_atom|group_only] 触发2天赋时，落地隐身结束切换发生在第52帧。
+3. [qq_window|group_only] 落地隐身帧数与技能开启、索敌判定时间点
+4. [vod_atom|vod_only] 第三十一帧是落地隐切换的帧。
+5. [qq_window|group_only] EW落地隐匿与魂灵之影迷彩的帧内结算顺序
+判定: HIT; top5 轨道: Counter({'qq': 3, 'vod_official': 1, 'vod_cloud': 1})
 
 ## 穿刺花生命比例相同时看仇恨吗
 (vod conflict; 期望: 穿刺花)
@@ -62,8 +62,8 @@
 ## 冷却计时器剩余多少判定归零
 (vod 推导链; 期望: 冷却/归零)
 1. [vod_cluster|vod_only] 冷却/费用计时器归零判定、过费与残余冷却
-2. [vod_atom|vod_only] 冷却精确记成小数点
-3. [vod_cluster|vod_only] 冷却计时器机制的存在与费用冷却行为
+2. [vod_cluster|vod_only] 冷却计时器机制的存在与费用冷却行为
+3. [vod_atom|vod_only] 冷却精确记成小数点
 4. [vod_atom|vod_only] 冷却是一个可以小于零也可以大于零的数
 5. [vod_cluster|vod_only] 调灵冷却计时器是否属于类似费用条的同类机制
 判定: HIT; top5 轨道: Counter({'vod_official': 3, 'vod_cloud': 2})
@@ -81,8 +81,8 @@
 (vod 版本相关; 期望: 嘲讽/颠倒)
 1. [qq_window|also_in_vod] 浮士德嘲讽异常与仇恨疑似封顶
 2. [qq_canonical|n/a] 嘲讽等级上限、属性机制与特殊地形仇恨抵消
-3. [vod_cluster|vod_only] 多索雷斯刁民船与嘲讽干员的仇恨优先级
-4. [qq_window|also_in_vod] 嘲讽机制数值与仇恨异常表现
+3. [qq_window|also_in_vod] 嘲讽机制数值与仇恨异常表现
+4. [vod_cluster|vod_only] 多索雷斯刁民船与嘲讽干员的仇恨优先级
 5. [qq_window|unknown] 正负嘲讽差异、挂嘲讽与浮士德过滤器
 判定: HIT; top5 轨道: Counter({'qq': 4, 'vod_official': 1})
 
@@ -98,55 +98,55 @@
 ## 夜半眠兽撤退后睡眠什么时候解除
 (qq window w000006; 期望: 眠兽/睡眠)
 1. [qq_window|group_only] 夜半眠兽撤退与开技能出睡帧时序
-2. [qq_window|group_only] 夜半眠兽索敌机制与控人逻辑
-3. [qq_canonical|n/a] 召唤物与衍生单位索敌机制及控人/伤害来源判定
-4. [vod_cluster|vod_only] 开技能后持续与睡眠结束时刻
-5. [vod_cluster|vod_only] 卡夫卡与夜半睡眠结束后的行动与无缝控部署
-判定: HIT; top5 轨道: Counter({'qq': 3, 'vod_official': 2})
+2. [qq_atom|group_only] 夜半的眠兽撤退时睡眠状态直接消失。
+3. [qq_window|group_only] 夜半眠兽索敌机制与控人逻辑
+4. [qq_atom|group_only] 夜半的眠兽重生时立刻生效。
+5. [vod_cluster|vod_only] 开技能后持续与睡眠结束时刻
+判定: HIT; top5 轨道: Counter({'qq': 4, 'vod_official': 1})
 
 ## 祥子的攻击类型按阻挡还是按地面飞行判定
 (qq window w000136; 期望: 阻挡)
-1. [qq_window|also_in_vod] 祥子攻击方式机制判定与攻击间隔帧数争议
-2. [qq_window|group_only] 酒神牢笼阻挡类型与围栏阻挡禁令交互
-3. [qq_window|unknown] 干员阻挡半径由阻挡类型决定，YJ用平方数判定
-4. [glossary|n/a] 阻挡半径
-5. [glossary|n/a] 近地悬浮
+1. [qq_atom|group_only] 祥子的攻击类型机制上应按阻挡/非阻挡进行区分而非套用地面/飞行分类
+2. [qq_window|also_in_vod] 祥子攻击方式机制判定与攻击间隔帧数争议
+3. [qq_window|group_only] 酒神牢笼阻挡类型与围栏阻挡禁令交互
+4. [qq_window|unknown] 干员阻挡半径由阻挡类型决定，YJ用平方数判定
+5. [glossary|n/a] 阻挡半径
 判定: HIT; top5 轨道: Counter({'qq': 5})
 
 ## 传送带的位移本质是修改速度还是传送
 (qq window w001356; 期望: 传送带)
 1. [qq_window|group_only] 传送带位移机制推析与避障交互
 2. [qq_window|also_in_vod] 诱导/恐惧的目标速度改写与传送带的每帧坐标重写机制
-3. [qq_window|also_in_vod] 珊比3技能传送带机制与位移本质
-4. [qq_canonical|n/a] 传送带、阻挡偏移与寻路能否共存
-5. [qq_canonical|n/a] 位移、寻路光标改写与传送带每帧坐标重写机制
+3. [qq_atom|group_only] 单纯修改速度无法做到敌人在抬手期间仍在传送带上位移。
+4. [qq_window|also_in_vod] 珊比3技能传送带机制与位移本质
+5. [qq_canonical|n/a] 传送带、阻挡偏移与寻路能否共存
 判定: HIT; top5 轨道: Counter({'qq': 5})
 
 ## 空A为什么看起来连A两下
 (qq window w000141; 期望: 前摇)
 1. [qq_window|conflict] 空A前摇差异导致视觉连A与Boss战帧率时间流速机制
-2. [qq_canonical|n/a] 连续攻击抬手判定、动画打断与空A长前摇时序
+2. [qq_atom|group_only] 视觉上的连A两下并非索敌重置普攻或模式切换
 3. [vod_cluster|vod_only] 天猫刷客承伤效果
 4. [vod_atom|vod_only] 离开不可通行地块之前走不可通行地块那一套逻辑，离开之后走之外那一套，看起来连贯只是因为数值没什么区别
-5. [qq_window|group_only] 空A索敌地块通行判定异常导致不可锁敌Bug
+5. [qq_canonical|n/a] 连续攻击抬手判定、动画打断与空A长前摇时序
 判定: HIT; top5 轨道: Counter({'qq': 3, 'vod_official': 2})
 
 ## H17-3右上角的花能挤偏移入坑吗
 (qq window w000081; 期望: H17-3/偏移)
 1. [qq_window|also_in_vod] H17-3右上角敌人阻挡偏移入坑可行性讨论
-2. [vod_cluster|vod_only] 能天使打击右上角箱子
-3. [vod_cluster|vod_only] 右上堵截与入坑/再部署可行性
-4. [qq_window|also_in_vod] 阻挡导致敌人偏移掉坑机制
-5. [vod_cluster|vod_only] 火辰1×1右上角转边帧数
-判定: HIT; top5 轨道: Counter({'vod_official': 3, 'qq': 2})
+2. [qq_atom|group_only] 通过挤压从第二个花开始无法使H17-3右上角敌人发生阻挡偏移入坑
+3. [vod_cluster|vod_only] 能天使打击右上角箱子
+4. [vod_cluster|vod_only] 右上堵截与入坑/再部署可行性
+5. [qq_window|also_in_vod] 阻挡导致敌人偏移掉坑机制
+判定: HIT; top5 轨道: Counter({'qq': 3, 'vod_official': 2})
 
 ## 索敌帧是什么
 (glossary; 期望: 索敌帧)
 1. [vod_cluster|vod_only] 索敌帧计算与攻击间隔绑定
 2. [vod_cluster|vod_only] 测试干员索敌帧的方法
 3. [vod_cluster|vod_only] 塞雷亚出奶后索敌时序
-4. [vod_cluster|vod_only] 激光头索敌帧与吃陀螺/技能影响
-5. [vod_cluster|vod_only] 索敌帧的个体差异与计时起点
+4. [vod_cluster|vod_only] 索敌帧的个体差异与计时起点
+5. [vod_cluster|vod_only] 激光头索敌帧与吃陀螺/技能影响
 判定: HIT; top5 轨道: Counter({'vod_official': 5})
 
 ## 平整化算法是什么
@@ -155,35 +155,35 @@
 2. [vod_cluster|vod_only] 平整化扫描与推送顺序
 3. [vod_atom|vod_only] 平整化算法要判定障碍物
 4. [vod_atom|vod_only] 拉直目前可简化为：鹰角会尽可能把走的连线拉直到尽可能远
-5. [qq_window|also_in_vod] 寻路平整化判定的缺陷与尺寸触发条件
+5. [qq_atom|group_only] 寻路平整化问题是由官方平整化算法实现存在缺陷导致的。
 判定: HIT; top5 轨道: Counter({'vod_official': 4, 'qq': 1})
 
 ## 隐匿和迷彩有什么区别
 (glossary 消歧; 期望: 隐匿/迷彩)
 1. [qq_window|group_only] 干员落地迷彩生效时机与忍冬/卡夫卡机制
-2. [qq_window|group_only] EW落地隐匿与魂灵之影迷彩的帧内结算顺序
-3. [qq_canonical|n/a] 索敌双方属性对抗机制与隐匿/伪装/无敌检测判定
-4. [vod_cluster|vod_only] 罗德之门索敌逻辑是否特殊
-5. [qq_window|unknown] 法抗超100时减抗按未封顶值结算；隐匿有阵营区别
+2. [vod_cluster|vod_only] 罗德之门索敌逻辑是否特殊
+3. [qq_window|group_only] EW落地隐匿与魂灵之影迷彩的帧内结算顺序
+4. [qq_canonical|n/a] 索敌双方属性对抗机制与隐匿/伪装/无敌检测判定
+5. [qq_atom|group_only] 同一帧内解除落地隐匿与获得迷彩不等于完全无缝。
 判定: HIT; top5 轨道: Counter({'qq': 4, 'vod_official': 1})
 
 ## visitNodeCenter是什么
 (glossary 拆包; 期望: visitNodeCenter)
 1. [glossary|n/a] visitNodeCenter
-2. [qq_window|group_only] 敌人拐弯寻路逻辑、避障力及中心对齐配置（visitnodecenter/visittilecenter）
-3. [qq_canonical|n/a] 拐弯寻路、避障力与中心对齐配置
-4. [vod_cluster|vod_only] Section Five Two 构造性原理机制
-5. [vod_atom|vod_only] 它在完成所有路径点之前无法进门
-判定: HIT; top5 轨道: Counter({'qq': 3, 'vod_official': 1, 'vod_cloud': 1})
+2. [qq_atom|group_only] visitnodecenter 启动后会强制敌人进入拐角格 0.05 半径之内。
+3. [qq_atom|group_only] 目前没有任何敌人实装使用 visitnodecenter。
+4. [qq_window|group_only] 敌人拐弯寻路逻辑、避障力及中心对齐配置（visitnodecenter/visittilecenter）
+5. [qq_canonical|n/a] 拐弯寻路、避障力与中心对齐配置
+判定: HIT; top5 轨道: Counter({'qq': 5})
 
 ## 重构体撤退返还费用吗
 (conflict vod_wins w000416; 期望: 重构体/撤退)
 1. [qq_window|conflict] 重构体死亡/撤退动画与干员撤退机制差异
-2. [vod_cluster|vod_only] 控制重构体部署轴的可行性与费用
-3. [qq_window|unknown] 死ing死亡状态机与3技能重构体召唤物残留
+2. [qq_atom|conflict] 弧光跳跃判定依据的是重构体播放的撤退/死亡动画。
+3. [vod_cluster|vod_only] 控制重构体部署轴的可行性与费用
 4. [vod_cluster|vod_only] 重构体死后跳跃窗口
-5. [vod_cluster|vod_only] M3开技能童真撤重构体的卡死/跳转行为
-判定: HIT; top5 轨道: Counter({'vod_official': 3, 'qq': 2})
+5. [qq_window|unknown] 死ing死亡状态机与3技能重构体召唤物残留
+判定: HIT; top5 轨道: Counter({'qq': 3, 'vod_official': 2})
 
 ## 位移和伤害的结算顺序是什么
 (conflict vod_wins w000554; 期望: 位移/结算)
@@ -191,15 +191,15 @@
 2. [qq_window|group_only] 传送带同帧结算顺序与浮空前移动现象
 3. [qq_window|group_only] 代理与手动撤退的位移差异为同帧结算顺序不同
 4. [vod_cluster|vod_only] 抬手连续攻击的索敌时点与顺序
-5. [vod_cluster|vod_only] 移动、传送与格判的结算顺序
-判定: HIT; top5 轨道: Counter({'qq': 3, 'vod_official': 2})
+5. [qq_atom|also_in_vod] 弹道位移的结算顺序是先命中后失衡。
+判定: HIT; top5 轨道: Counter({'qq': 4, 'vod_official': 1})
 
 ## 冷却在部署前就开始转吗
 (conflict vod_wins w001186; 期望: 冷却)
 1. [qq_window|also_in_vod] 攻击冷却计时起点与索敌间隔关系
 2. [vod_cluster|vod_only] 零和三出生单位技能冷却转好与技能索敌帧观察
-3. [vod_cluster|vod_only] 费用条问题出现的时间与费用状态条件
-4. [vod_atom|vod_only] 前十秒和后面不一样，前十秒指的不只是局内的前十秒，而是费用从清空开始转、费用冷却从清空开始转的前十秒
-5. [qq_window|group_only] 多堆叠单位的再部署冷却排队与UI显示机制
+3. [vod_atom|vod_only] 前十秒和后面不一样，前十秒指的不只是局内的前十秒，而是费用从清空开始转、费用冷却从清空开始转的前十秒
+4. [qq_atom|group_only] 祥子索敌后开始转攻击冷却。
+5. [vod_cluster|vod_only] 费用条问题出现的时间与费用状态条件
 判定: HIT; top5 轨道: Counter({'qq': 2, 'vod_official': 2, 'vod_cloud': 1})
 

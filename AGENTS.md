@@ -36,6 +36,7 @@ shenqi/
 ├── kb_atomize_qq.py        # [统一层] 阶段D+: QQ 窗卡原子化 (带断点缓存)
 ├── kb_pack_qq_atoms.py     # [统一层] 阶段D+: qq_atom 并入 docs.jsonl
 ├── kb_eval.py              # [统一层] 阶段D: 统一检索评测 22 题 (纯本地 BM25)
+├── kb_search.py            # [统一层] RAG 检索入口: BM25 × boost × weight, 冲突 vod_wins
 ├── audios/                 # [本地私有/独立层] 缺失官方字幕分P的原画质纯音频(.m4a)，被.gitignore严格忽略
 ├── vad_results/            # [实验性/独立层] FSMN-VAD 人声端点检测时间戳与 vad_report.md 人声活跃度大盘
 ├── asr_drafts/             # [实验性/独立层] SenseVoiceSmall 本地粗识别转写草稿，完全独立于 transcripts_txt/
