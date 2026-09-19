@@ -78,6 +78,7 @@ class BM25:
 
 def main():
     docs = [json.loads(l) for l in open("kb/docs.jsonl", encoding="utf-8")]
+    docs = [d for d in docs if d.get("status") != "noise"]
     grams = [bigrams(d["text"]) for d in docs]
     bm25 = BM25(grams)
 
@@ -85,9 +86,16 @@ def main():
         d = docs[i]
         return s * (d.get("retrieval_boost") or 1.0) * (d.get("retrieval_weight") or 1.0)
 
+    # 盲测题集 (自动生成, expect_doc_id 命中 top5 为准)
+    blind = []
+    try:
+        blind = [json.loads(l) for l in open("kb/eval_questions.jsonl", encoding="utf-8")]
+    except FileNotFoundError:
+        pass
+
     lines = ["# 统一知识库检索评测报告", "",
-             f"- 语料: kb/docs.jsonl **{len(docs)}** 条 (vod_atom/vod_cluster/qq_window/qq_canonical/glossary)",
-             f"- 评分: bigram BM25 × retrieval_boost × retrieval_weight", ""]
+             f"- 语料: kb/docs.jsonl **{len(docs)}** 条 (已排除 noise)",
+             "- 评分: bigram BM25 × retrieval_boost × retrieval_weight", ""]
     n_hit = 0
     track_stat = Counter()
     for query, expect, note in QUERIES:
@@ -109,11 +117,34 @@ def main():
         lines.append("")
         n_hit += hit
         track_stat.update(tracks[:3])
-    lines.insert(4, f"- 命中率: **{n_hit}/{len(QUERIES)}**")
-    lines.insert(5, f"- top3 轨道分布: {dict(track_stat)}")
+    lines.insert(4, f"- 手写题命中: **{n_hit}/{len(QUERIES)}**")
+
+    if blind:
+        b_hit5 = b_hit1 = 0
+        miss = []
+        for q in blind:
+            scores = bm25.score(bigrams(q["q"]))
+            top = sorted(range(len(scores)), key=lambda i: -final_score(i, scores[i]))[:5]
+            ids = [docs[i]["id"] for i in top]
+            if q["expect_doc_id"] in ids:
+                b_hit5 += 1
+                if ids[0] == q["expect_doc_id"]:
+                    b_hit1 += 1
+            else:
+                miss.append(q)
+        lines += ["## 盲测题集(自动生成, expect_doc_id 命中)", "",
+                  f"- 题量: **{len(blind)}**",
+                  f"- Recall@5: **{b_hit5}/{len(blind)}** ({b_hit5/len(blind)*100:.0f}%)",
+                  f"- Recall@1: **{b_hit1}/{len(blind)}** ({b_hit1/len(blind)*100:.0f}%)", "",
+                  "### MISS 清单(需分析)", ""]
+        for q in miss:
+            lines.append(f"- {q['q']} → 期望 `{q['expect_doc_id']}` ({q.get('bucket')})")
+    lines.insert(5, f"- 手写题 top3 轨道: {dict(track_stat)}")
     open("kb/kb_eval_report.md", "w", encoding="utf-8").write("\n".join(lines) + "\n")
-    print(json.dumps({"hit": n_hit, "total": len(QUERIES), "top3_tracks": dict(track_stat)},
-                     ensure_ascii=False))
+    out = {"manual_hit": n_hit, "manual_total": len(QUERIES)}
+    if blind:
+        out.update({"blind_total": len(blind), "blind_r5": b_hit5, "blind_r1": b_hit1})
+    print(json.dumps(out, ensure_ascii=False))
 
 
 if __name__ == "__main__":
