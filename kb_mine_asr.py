@@ -29,6 +29,7 @@ PROMPT = """你是明日方舟(Arknights)中文社区的语音识别纠错专家
 - error: 疑似ASR同音/近音错词，correction 给出正确写法（如 赛雷亚→塞雷娅, 翼德→异德, 锁敌→索敌）
 - slang: 社区黑话/昵称，可保留但建议在 correction 里给出正式名（如 杰哥→?）
 - 拿不准的给 ok，宁缺毋滥。只有上下文明显说不通时才给 error。
+- 重要：词典可能不含最新干员。若某词上下文自洽地作为干员/敌人名出现（如带技能、天赋描述），给 ok 或 slang，严禁凭旧知识把它"纠正"成发音相近的老干员（真实事故：新干员"珊比"曾被错改成"山"）。
 
 输入（term \\t 出现次数 \\t 上下文样例）：
 {batch}"""
@@ -50,6 +51,8 @@ def mine_candidates():
                 continue
             if any(g in k for k in known if len(k) >= 2):
                 continue
+            if any(k in g for k in known if len(k) >= 2):
+                continue  # 候选含已知实体(如"珊比三技"), 是切分伪影不是错词
             cand[g] += 1
             if len(ctx[g]) < 2:
                 ctx[g].append(t[max(0, m.start() - 12):m.end() + 12].replace("\n", " "))
