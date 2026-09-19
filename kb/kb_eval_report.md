@@ -1,9 +1,9 @@
 # 统一知识库检索评测报告
 
-- 语料: kb/docs.jsonl **24312** 条 (vod_atom/vod_cluster/qq_window/qq_canonical/glossary)
+- 语料: kb/docs.jsonl **22603** 条 (已排除 noise)
 - 评分: bigram BM25 × retrieval_boost × retrieval_weight
-- 命中率: **22/22**
-- top3 轨道分布: {'vod_official': 30, 'qq': 32, 'vod_cloud': 4}
+- 手写题命中: **22/22**
+- 手写题 top3 轨道: {'vod_official': 30, 'qq': 32, 'vod_cloud': 4}
 
 ## 寻路第一步按什么顺序推地块
 (vod 算法课定论; 期望: 上右下左)
@@ -28,8 +28,8 @@
 1. [vod_cluster|vod_only] 同帧部署转正后其他特例异常（M3、门、刁民船、代理）
 2. [qq_window|group_only] 娜斯提高台与干员同帧/差帧部署限制
 3. [vod_cluster|vod_only] 同帧部署下鼠/伊内斯是否优先打先部署的老马
-4. [vod_atom|vod_only] 同帧部署时打先部署
-5. [vod_cluster|vod_only] M3多目标仇恨判定排序需先算索敌帧 [合并5簇]
+4. [vod_cluster|vod_only] M3多目标仇恨判定排序需先算索敌帧 [合并5簇]
+5. [vod_atom|vod_only] 同帧部署时打先部署
 判定: HIT; top5 轨道: Counter({'vod_official': 4, 'qq': 1})
 
 ## 索敌是三帧一索吗
@@ -136,9 +136,9 @@
 1. [qq_atom|group_only] 通过挤压从第二个花开始无法使H17-3右上角敌人发生阻挡偏移入坑
 2. [qq_window|also_in_vod] H17-3右上角敌人阻挡偏移入坑可行性讨论
 3. [qq_window|also_in_vod] 阻挡导致敌人偏移掉坑机制
-4. [vod_cluster|vod_only] 能天使打击右上角箱子
-5. [vod_cluster|vod_only] 火陈1×1右上角转边帧数
-判定: HIT; top5 轨道: Counter({'qq': 3, 'vod_official': 2})
+4. [vod_cluster|vod_only] 火陈1×1右上角转边帧数
+5. [qq_atom|unknown] 右上角挖掉字后不会形成同样的卡住。
+判定: HIT; top5 轨道: Counter({'qq': 4, 'vod_official': 1})
 
 ## 索敌帧是什么
 (glossary; 期望: 索敌帧)
@@ -146,7 +146,7 @@
 2. [vod_cluster|vod_only] 测试干员索敌帧的方法
 3. [vod_cluster|vod_only] 索敌帧定义及索敌成功/失败表现
 4. [vod_cluster|vod_only] 塞雷娅出奶后索敌时序
-5. [vod_cluster|vod_only] 索敌帧的个体差异与计时起点
+5. [vod_cluster|vod_only] 激光头索敌帧与吃陀螺/技能影响
 判定: HIT; top5 轨道: Counter({'vod_official': 5})
 
 ## 平整化算法是什么
@@ -164,7 +164,7 @@
 2. [vod_cluster|vod_only] 罗德之门索敌逻辑是否特殊
 3. [qq_window|group_only] EW落地隐匿与魂灵之影迷彩的帧内结算顺序
 4. [qq_canonical|n/a] 索敌双方属性对抗机制与隐匿/伪装/无敌检测判定
-5. [qq_atom|group_only] 同一帧内解除落地隐匿与获得迷彩不等于完全无缝。
+5. [qq_atom|group_only] 在实战中，风雪之眼效果结束时挂上的反隐效果除永续隐匿和迷彩外影响较小。
 判定: HIT; top5 轨道: Counter({'qq': 4, 'vod_official': 1})
 
 ## visitNodeCenter是什么
@@ -199,7 +199,20 @@
 1. [qq_window|also_in_vod] 攻击冷却计时起点与索敌间隔关系
 2. [vod_cluster|vod_only] 零和三出生单位技能冷却转好与技能索敌帧观察
 3. [vod_atom|vod_only] 前十秒和后面不一样，前十秒指的不只是局内的前十秒，而是费用从清空开始转、费用冷却从清空开始转的前十秒
-4. [qq_atom|group_only] 祥子索敌后开始转攻击冷却。
-5. [vod_cluster|vod_only] 费用条问题出现的时间与费用状态条件
+4. [vod_cluster|vod_only] 费用条问题出现的时间与费用状态条件
+5. [qq_atom|group_only] 祥子索敌后开始转攻击冷却。
 判定: HIT; top5 轨道: Counter({'qq': 2, 'vod_official': 2, 'vod_cloud': 1})
 
+## 盲测题集(自动生成, expect_doc_id 命中)
+
+- 题量: **74**
+- Recall@5: **69/74** (93%)
+- Recall@1: **58/74** (78%)
+
+### MISS 清单(需分析)
+
+- 敌人沿着路线走的时候，那个路径点是怎么判断踩没踩到的？还有刹车和加速到底怎么算帧数啊？ → 期望 `vod_cluster:寻路-1-11` (寻路)
+- 游戏里干员技能条那个黄条是怎么算出来显示多长的？会不会一格一格跳？ → 期望 `vod_cluster:帧时序与计时器-1-3` (帧时序与计时器)
+- 干员起飞的时候算不算挂隐匿啊？之前听主播说过这个事，到底是不是真的？ → 期望 `window:w001198` (干员机制)
+- 萨尔贡那个本家终端为啥不吃攻速和盟约啊？打Boss是不是真的没用？还有至简和佩佩到底谁当C更好？ → 期望 `window:w001890` (数值与读图)
+- 为啥我晕了那个飘在天上的怪它还不掉下来？是不是所有能飘的怪被晕了都会落地啊？ → 期望 `window:w001263` (位移)
