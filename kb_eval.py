@@ -86,12 +86,27 @@ def main():
         d = docs[i]
         return s * (d.get("retrieval_boost") or 1.0) * (d.get("retrieval_weight") or 1.0)
 
-    # 盲测题集 (自动生成, expect_doc_id 命中 top5 为准)
+    # 盲测题集 (自动生成, expect_doc_id 命中 top5 为准; 簇与其合成词条视为同一知识单元)
     blind = []
     try:
         blind = [json.loads(l) for l in open("kb/eval_questions.jsonl", encoding="utf-8")]
     except FileNotFoundError:
         pass
+    # cluster_id -> vod_entry id 等价映射
+    entry_of = {}
+    for d in docs:
+        if d["doc_type"] == "vod_entry":
+            cid = (d.get("links") or {}).get("cluster_id")
+            if cid:
+                entry_of[cid] = d["id"]
+
+    def equivalent(doc_id):
+        eq = {doc_id}
+        if doc_id.startswith("vod_cluster:"):
+            cid = doc_id.split(":", 1)[1]
+            if cid in entry_of:
+                eq.add(entry_of[cid])
+        return eq
 
     lines = ["# 统一知识库检索评测报告", "",
              f"- 语料: kb/docs.jsonl **{len(docs)}** 条 (已排除 noise)",
@@ -126,9 +141,10 @@ def main():
             scores = bm25.score(bigrams(q["q"]))
             top = sorted(range(len(scores)), key=lambda i: -final_score(i, scores[i]))[:5]
             ids = [docs[i]["id"] for i in top]
-            if q["expect_doc_id"] in ids:
+            want = equivalent(q["expect_doc_id"])
+            if want & set(ids):
                 b_hit5 += 1
-                if ids[0] == q["expect_doc_id"]:
+                if ids[0] in want:
                     b_hit1 += 1
             else:
                 miss.append(q)
