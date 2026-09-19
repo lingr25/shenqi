@@ -118,7 +118,7 @@
 1. [qq_window|group_only] 传送带位移机制推析与避障交互
 2. [qq_window|also_in_vod] 诱导/恐惧的目标速度改写与传送带的每帧坐标重写机制
 3. [qq_atom|group_only] 单纯修改速度无法做到敌人在抬手期间仍在传送带上位移。
-4. [qq_window|also_in_vod] 珊比3技能传送带机制与位移本质
+4. [qq_window|also_in_vod] 山3技能传送带机制与位移本质
 5. [qq_canonical|n/a] 传送带、阻挡偏移与寻路能否共存
 判定: HIT; top5 轨道: Counter({'qq': 5})
 
@@ -137,7 +137,7 @@
 2. [qq_window|also_in_vod] H17-3右上角敌人阻挡偏移入坑可行性讨论
 3. [qq_window|also_in_vod] 阻挡导致敌人偏移掉坑机制
 4. [vod_cluster|vod_only] 能天使打击右上角箱子
-5. [vod_cluster|vod_only] 火辰1×1右上角转边帧数
+5. [vod_cluster|vod_only] 火陈1×1右上角转边帧数
 判定: HIT; top5 轨道: Counter({'qq': 3, 'vod_official': 2})
 
 ## 索敌帧是什么
@@ -145,7 +145,7 @@
 1. [vod_cluster|vod_only] 索敌帧计算与攻击间隔绑定
 2. [vod_cluster|vod_only] 测试干员索敌帧的方法
 3. [vod_cluster|vod_only] 索敌帧定义及索敌成功/失败表现
-4. [vod_cluster|vod_only] 塞雷亚出奶后索敌时序
+4. [vod_cluster|vod_only] 塞雷娅出奶后索敌时序
 5. [vod_cluster|vod_only] 索敌帧的个体差异与计时起点
 判定: HIT; top5 轨道: Counter({'vod_official': 5})
 

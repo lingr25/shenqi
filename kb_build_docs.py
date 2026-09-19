@@ -47,8 +47,13 @@ def atom_text(a, conflict_clusters):
     if a.get("conditions"):
         lines.append("条件: " + "; ".join(norm_cond(c) for c in a["conditions"]))
     if a.get("parameters"):
-        ps = [f"{p.get('name','')}={p.get('value_norm') or p.get('value_raw') or ''}{p.get('unit') or ''}".strip()
-              for p in a["parameters"]]
+        ps = []
+        for p in a["parameters"]:
+            v = str(p.get("value_norm") or p.get("value_raw") or "")
+            u = p.get("unit") or ""
+            if u and v.endswith(u):
+                u = ""  # 值已带单位, 避免 "零点七秒秒"
+            ps.append(f"{p.get('name','')}={v}{u}".strip())
         ps = [p for p in ps if p.strip("=")]
         if ps:
             lines.append("参数: " + "; ".join(ps))
