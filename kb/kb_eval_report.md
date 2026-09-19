@@ -74,7 +74,7 @@
 2. [vod_cluster|vod_only] 萨米双王左右盾位下城防炮与青金索敌差异 [合并2簇]
 3. [vod_atom|vod_only] 双王的城防炮就是因为0.001精度从而可以索敌左大盾
 4. [vod_cluster|vod_only] 零帧部署一帧撤退时城防炮的普攻/技能索敌帧
-5. [vod_cluster|vod_only] 双王/青筋索敌大盾与青筋仇恨精度 [合并2簇]
+5. [vod_cluster|vod_only] 双王/青金索敌大盾与青金仇恨精度 [合并2簇]
 判定: HIT; top5 轨道: Counter({'vod_official': 5})
 
 ## 嘲讽和锁敌表现是不是反了
