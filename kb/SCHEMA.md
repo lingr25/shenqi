@@ -8,7 +8,8 @@
 | `doc_type` | `vod_atom` / `vod_cluster` / `qq_window` / `qq_canonical` / `glossary` |
 | `track` | `vod_official` / `vod_cloud` / `qq` |
 | `status` | `draft` / `canonical_draft` / `duplicate` / `superseded`（全部 draft 层） |
-| `issue_status` | `agreed` / `conflict` / `open` / `n/a`（仅 vod 侧有议题态） |
+| `issue_status` | `agreed` / `conflict` / `open`（仅 vod_cluster 有议题态；QQ 侧无此概念，为空） |
+| `audit_kind` | 质量审计档：`mechanism` / `question` / `opinion` / `trivia` / `noise`（opinion=主播主观观点，RAG 引用须标注非机制事实） |
 | `novelty` | `vod_only` / `group_only` / `also_in_vod` / `conflict` / `unknown` |
 | `conflict_resolution` | `vod_wins` / `open` / `n/a`；**冲突一律以录播为准** |
 | `text` | 检索主文本 |

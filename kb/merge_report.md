@@ -49,6 +49,17 @@
 - ASR 错词产出：真金范围→帧进范围、三针→三帧 等已入 `entity_corrector.py` 并回填 docs（155 条修正）。
 - 效率教训已沉淀到 `KNOWLEDGE_PIPELINE.md` §6（章节 kind 过滤、抽取闸门、单成员不建簇）。
 
+### v2 收紧复审（人工抽审反馈后）
+
+对 v1 判 keep/demote 的 2,487 个 vod_cluster 全量重审（`kb_quality_audit_v2.py`），新增标准：
+**mechanism 必须有明确主语**；新增 `opinion` 档（主播主观评价，低权保留）；trivia 收紧。
+
+- keep/mechanism **787 → 391**（缺主语的全部出局）
+- keep/question 1,414；demote/opinion 333；demote/trivia 116；drop 69
+- 新增 ASR 修正入库：锁敌→索敌、素心→塑心、童真→同帧（426 条文档回填）
+- 「珊比/三匕」未定位到真实干员，存疑暂不修（见 quality_report_v2.md）
+- 清理后评测仍 **22/22**
+
 ## QQ 原子化质量抽样
 
 - 6087 原子：conclusion 4769 / observation 449 / hypothesis 385 / question 256 / derivation 228。

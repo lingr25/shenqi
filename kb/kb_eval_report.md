@@ -3,7 +3,7 @@
 - 语料: kb/docs.jsonl **24312** 条 (vod_atom/vod_cluster/qq_window/qq_canonical/glossary)
 - 评分: bigram BM25 × retrieval_boost × retrieval_weight
 - 命中率: **22/22**
-- top3 轨道分布: {'vod_official': 30, 'qq': 33, 'vod_cloud': 3}
+- top3 轨道分布: {'vod_official': 30, 'qq': 32, 'vod_cloud': 4}
 
 ## 寻路第一步按什么顺序推地块
 (vod 算法课定论; 期望: 上右下左)
@@ -20,26 +20,26 @@
 2. [vod_atom|vod_only] 开120帧不会给费用尺加精度
 3. [vod_atom|vod_only] 开启的120帧是单纯画面，既不动动画帧也不动逻辑帧
 4. [vod_atom|vod_only] 开120帧费用尺不会加精度
-5. [vod_cluster|vod_only] 盯帧/钉帧方法与费用条辅助取舍
+5. [vod_atom|vod_only] 逻辑帧是可以影响费用尺的东西
 判定: HIT; top5 轨道: Counter({'vod_official': 5})
 
 ## M3同帧部署奶谁
 (vod conflict 两面召回; 期望: M3/奶)
-1. [qq_window|group_only] 娜斯提高台与干员同帧/差帧部署限制
-2. [qq_canonical|n/a] 同帧部署仇恨增量与同仇恨先创建
-3. [vod_cluster|vod_only] M3治疗目标是否看仇恨
+1. [vod_cluster|vod_only] 同帧部署转正后其他特例异常（M3、门、刁民船、代理）
+2. [qq_window|group_only] 娜斯提高台与干员同帧/差帧部署限制
+3. [vod_cluster|vod_only] 同帧部署下鼠/伊内斯是否优先打先部署的老马
 4. [vod_atom|vod_only] 同帧部署时打先部署
-5. [qq_window|group_only] 同帧部署排序、仇恨权重计算及1000倍仇恨补偿机制
-判定: HIT; top5 轨道: Counter({'qq': 3, 'vod_official': 2})
+5. [vod_cluster|vod_only] M3多目标仇恨判定排序需先算索敌帧 [合并5簇]
+判定: HIT; top5 轨道: Counter({'vod_official': 4, 'qq': 1})
 
 ## 索敌是三帧一索吗
 (vod 辟谣; 期望: 三帧/三针)
-1. [vod_cluster|vod_only] 第一A从零到落地与落地到索敌帧数 [合并2簇]
-2. [vod_atom|vod_only] 索敌是三帧索敌，索敌周期为三帧
-3. [vod_cluster|vod_only] 索敌周期、三帧索敌是否绝对及相关纠错
-4. [vod_atom|vod_only] 索敌是三帧索敌
-5. [qq_window|group_only] 通用三帧索敌机制与缪缪等特例
-判定: HIT; top5 轨道: Counter({'vod_official': 2, 'vod_cloud': 2, 'qq': 1})
+1. [vod_atom|vod_only] 索敌是三帧索敌，索敌周期为三帧
+2. [vod_cluster|vod_only] 索敌周期、三帧索敌是否绝对及相关纠错
+3. [vod_atom|vod_only] 索敌是三帧索敌
+4. [qq_window|group_only] 通用三帧索敌机制与缪缪等特例
+5. [vod_cluster|vod_only] 索敌流程、三帧索敌与攻击目标决定 [合并2簇]
+判定: HIT; top5 轨道: Counter({'vod_cloud': 2, 'vod_official': 2, 'qq': 1})
 
 ## 落地隐切换帧是第几帧
 (vod conflict; 期望: 落地隐)
@@ -70,9 +70,9 @@
 
 ## 城防炮索敌精度是多少
 (vod 精度条件; 期望: 城防炮)
-1. [vod_cluster|vod_only] 童真部署转正后萨米城防炮/十张城防炮异常
+1. [vod_cluster|vod_only] 同帧部署转正后萨米城防炮/十张城防炮异常
 2. [vod_cluster|vod_only] 萨米双王左右盾位下城防炮与青金索敌差异 [合并2簇]
-3. [vod_atom|vod_only] 双王的城防炮就是因为0.001精度从而可以锁敌左大盾
+3. [vod_atom|vod_only] 双王的城防炮就是因为0.001精度从而可以索敌左大盾
 4. [vod_cluster|vod_only] 零帧部署一帧撤退时城防炮的普攻/技能索敌帧
 5. [vod_cluster|vod_only] 双王/青筋索敌大盾与青筋仇恨精度 [合并2簇]
 判定: HIT; top5 轨道: Counter({'vod_official': 5})
@@ -144,9 +144,9 @@
 (glossary; 期望: 索敌帧)
 1. [vod_cluster|vod_only] 索敌帧计算与攻击间隔绑定
 2. [vod_cluster|vod_only] 测试干员索敌帧的方法
-3. [vod_cluster|vod_only] 塞雷亚出奶后索敌时序
-4. [vod_cluster|vod_only] 索敌帧的个体差异与计时起点
-5. [vod_cluster|vod_only] 激光头索敌帧与吃陀螺/技能影响
+3. [vod_cluster|vod_only] 索敌帧定义及索敌成功/失败表现
+4. [vod_cluster|vod_only] 塞雷亚出奶后索敌时序
+5. [vod_cluster|vod_only] 索敌帧的个体差异与计时起点
 判定: HIT; top5 轨道: Counter({'vod_official': 5})
 
 ## 平整化算法是什么
@@ -182,7 +182,7 @@
 2. [qq_atom|conflict] 弧光跳跃判定依据的是重构体播放的撤退/死亡动画。
 3. [vod_cluster|vod_only] 重构体死后跳跃窗口
 4. [qq_window|unknown] 死ing死亡状态机与3技能重构体召唤物残留
-5. [vod_cluster|vod_only] M3开技能童真撤重构体的卡死/跳转行为
+5. [vod_cluster|vod_only] M3开技能同帧撤重构体的卡死/跳转行为
 判定: HIT; top5 轨道: Counter({'qq': 3, 'vod_official': 2})
 
 ## 位移和伤害的结算顺序是什么
