@@ -3,7 +3,7 @@
 - 语料: kb/docs.jsonl **24312** 条 (vod_atom/vod_cluster/qq_window/qq_canonical/glossary)
 - 评分: bigram BM25 × retrieval_boost × retrieval_weight
 - 命中率: **22/22**
-- top3 轨道分布: {'vod_official': 31, 'qq': 32, 'vod_cloud': 3}
+- top3 轨道分布: {'vod_official': 30, 'qq': 33, 'vod_cloud': 3}
 
 ## 寻路第一步按什么顺序推地块
 (vod 算法课定论; 期望: 上右下左)
@@ -65,8 +65,8 @@
 2. [vod_cluster|vod_only] 冷却计时器机制的存在与费用冷却行为
 3. [vod_atom|vod_only] 冷却精确记成小数点
 4. [vod_atom|vod_only] 冷却是一个可以小于零也可以大于零的数
-5. [vod_cluster|vod_only] 调灵冷却计时器是否属于类似费用条的同类机制
-判定: HIT; top5 轨道: Counter({'vod_official': 3, 'vod_cloud': 2})
+5. [vod_atom|vod_only] 冷却可以大于一，虽然冷却总长度是一
+判定: HIT; top5 轨道: Counter({'vod_cloud': 3, 'vod_official': 2})
 
 ## 城防炮索敌精度是多少
 (vod 精度条件; 期望: 城防炮)
@@ -126,18 +126,18 @@
 (qq window w000141; 期望: 前摇)
 1. [qq_window|conflict] 空A前摇差异导致视觉连A与Boss战帧率时间流速机制
 2. [qq_atom|group_only] 视觉上的连A两下并非索敌重置普攻或模式切换
-3. [vod_cluster|vod_only] 天猫刷客承伤效果
-4. [vod_atom|vod_only] 离开不可通行地块之前走不可通行地块那一套逻辑，离开之后走之外那一套，看起来连贯只是因为数值没什么区别
-5. [qq_canonical|n/a] 连续攻击抬手判定、动画打断与空A长前摇时序
+3. [vod_atom|vod_only] 离开不可通行地块之前走不可通行地块那一套逻辑，离开之后走之外那一套，看起来连贯只是因为数值没什么区别
+4. [qq_canonical|n/a] 连续攻击抬手判定、动画打断与空A长前摇时序
+5. [vod_cluster|vod_only] 偏移导致敌人自认到达格子并拐弯
 判定: HIT; top5 轨道: Counter({'qq': 3, 'vod_official': 2})
 
 ## H17-3右上角的花能挤偏移入坑吗
 (qq window w000081; 期望: H17-3/偏移)
-1. [qq_window|also_in_vod] H17-3右上角敌人阻挡偏移入坑可行性讨论
-2. [qq_atom|group_only] 通过挤压从第二个花开始无法使H17-3右上角敌人发生阻挡偏移入坑
-3. [vod_cluster|vod_only] 能天使打击右上角箱子
-4. [vod_cluster|vod_only] 右上堵截与入坑/再部署可行性
-5. [qq_window|also_in_vod] 阻挡导致敌人偏移掉坑机制
+1. [qq_atom|group_only] 通过挤压从第二个花开始无法使H17-3右上角敌人发生阻挡偏移入坑
+2. [qq_window|also_in_vod] H17-3右上角敌人阻挡偏移入坑可行性讨论
+3. [qq_window|also_in_vod] 阻挡导致敌人偏移掉坑机制
+4. [vod_cluster|vod_only] 能天使打击右上角箱子
+5. [vod_cluster|vod_only] 火辰1×1右上角转边帧数
 判定: HIT; top5 轨道: Counter({'qq': 3, 'vod_official': 2})
 
 ## 索敌帧是什么
@@ -180,9 +180,9 @@
 (conflict vod_wins w000416; 期望: 重构体/撤退)
 1. [qq_window|conflict] 重构体死亡/撤退动画与干员撤退机制差异
 2. [qq_atom|conflict] 弧光跳跃判定依据的是重构体播放的撤退/死亡动画。
-3. [vod_cluster|vod_only] 控制重构体部署轴的可行性与费用
-4. [vod_cluster|vod_only] 重构体死后跳跃窗口
-5. [qq_window|unknown] 死ing死亡状态机与3技能重构体召唤物残留
+3. [vod_cluster|vod_only] 重构体死后跳跃窗口
+4. [qq_window|unknown] 死ing死亡状态机与3技能重构体召唤物残留
+5. [vod_cluster|vod_only] M3开技能童真撤重构体的卡死/跳转行为
 判定: HIT; top5 轨道: Counter({'qq': 3, 'vod_official': 2})
 
 ## 位移和伤害的结算顺序是什么

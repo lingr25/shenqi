@@ -79,6 +79,8 @@ def search(query, k=5, track=None, doc_type=None):
     hits = []
     for i in order:
         d = docs[i]
+        if d.get("status") == "noise":
+            continue
         if track and d.get("track") != track:
             continue
         if doc_type and d.get("doc_type") != doc_type:
