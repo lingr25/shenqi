@@ -1,13 +1,13 @@
 # 统一知识库检索评测报告
 
-- 语料: kb/docs.jsonl **25016** 条 (已排除 noise)
+- 语料: kb/docs.jsonl **25021** 条 (已排除 noise)
 - 评分: bigram BM25 × retrieval_boost × retrieval_weight
 - 手写题命中: **22/22**
-- 手写题 top3 轨道: {'vod_official': 30, 'qq': 32, 'vod_cloud': 4}
+- 手写题 top3 轨道: {'vod_official': 31, 'qq': 30, 'vod_cloud': 5}
 
 ## 寻路第一步按什么顺序推地块
 (vod 算法课定论; 期望: 上右下左)
-1. [vod_entry|vod_only] # 寻路地图的初始遍历与来源记录机制
+1. [vod_entry|vod_only] # 寻路地图的初始遍历与来源记录
 2. [vod_atom|vod_only] 寻路从路径点所在格开始，按上、右、下、左的顺序推地块
 3. [vod_entry|vod_only] # E2 后下一步能否生成 F1
 4. [vod_atom|vod_only] 已经被排过一次的格子不再排
@@ -20,7 +20,7 @@
 2. [vod_atom|vod_only] 开120帧不会给费用尺加精度
 3. [vod_atom|vod_only] 开启的120帧是单纯画面，既不动动画帧也不动逻辑帧
 4. [vod_atom|vod_only] 开120帧费用尺不会加精度
-5. [vod_atom|vod_only] 开120帧不动动画帧
+5. [vod_atom|vod_only] 逻辑帧是可以影响费用尺的东西
 判定: HIT; top5 轨道: Counter({'vod_official': 5})
 
 ## M3同帧部署奶谁
@@ -62,11 +62,11 @@
 ## 冷却计时器剩余多少判定归零
 (vod 推导链; 期望: 冷却/归零)
 1. [vod_entry|vod_only] # 费用/冷却计时器的归零判定、过费与残余冷却机制
-2. [vod_entry|vod_only] # 动画结束剩余冷却判定阈值
-3. [vod_entry|vod_only] # 冷却计时器机制与费用冷却行为
-4. [vod_atom|vod_only] 冷却精确记成小数点
-5. [vod_atom|vod_only] 冷却是一个可以小于零也可以大于零的数
-判定: HIT; top5 轨道: Counter({'vod_official': 3, 'vod_cloud': 2})
+2. [vod_entry|vod_only] # 冷却计时器机制与费用冷却行为
+3. [vod_atom|vod_only] 冷却精确记成小数点
+4. [vod_atom|vod_only] 冷却是一个可以小于零也可以大于零的数
+5. [vod_atom|vod_only] 冷却可以大于一，虽然冷却总长度是一
+判定: HIT; top5 轨道: Counter({'vod_cloud': 3, 'vod_official': 2})
 
 ## 城防炮索敌精度是多少
 (vod 精度条件; 期望: 城防炮)
@@ -90,9 +90,9 @@
 (vod conflict; 期望: 创建)
 1. [vod_entry|vod_only] # 敌人仇恨与同仇恨创建顺序
 2. [vod_entry|vod_only] # 同仇恨/无法排序时的先后规则
-3. [qq_canonical|n/a] 长时间部署仇恨相同判定与创建顺序规则
-4. [qq_window|conflict] 索敌仇恨距离精度为0.1格与同仇恨优先判定
-5. [vod_atom|vod_only] 同仇恨时仍然打先创建
+3. [vod_entry|vod_only] # 索敌流程与攻击目标决定机制
+4. [qq_canonical|n/a] 长时间部署仇恨相同判定与创建顺序规则
+5. [qq_window|conflict] 索敌仇恨距离精度为0.1格与同仇恨优先判定
 判定: HIT; top5 轨道: Counter({'vod_official': 3, 'qq': 2})
 
 ## 夜半眠兽撤退后睡眠什么时候解除
@@ -108,10 +108,10 @@
 (qq window w000136; 期望: 阻挡)
 1. [qq_window|also_in_vod] 祥子攻击方式机制判定与攻击间隔帧数争议
 2. [qq_atom|group_only] 祥子的攻击类型机制上应按阻挡/非阻挡进行区分而非套用地面/飞行分类
-3. [qq_window|group_only] 酒神牢笼阻挡类型与围栏阻挡禁令交互
-4. [qq_window|unknown] 干员阻挡半径由阻挡类型决定，YJ用平方数判定
+3. [vod_entry|vod_only] # 攻击间隔与换阻挡抬手影响机制
+4. [qq_window|group_only] 酒神牢笼阻挡类型与围栏阻挡禁令交互
 5. [vod_entry|vod_only] # 飞行单位与坑杀判定
-判定: HIT; top5 轨道: Counter({'qq': 4, 'vod_official': 1})
+判定: HIT; top5 轨道: Counter({'qq': 3, 'vod_official': 2})
 
 ## 传送带的位移本质是修改速度还是传送
 (qq window w001356; 期望: 传送带)
@@ -126,8 +126,8 @@
 (qq window w000141; 期望: 前摇)
 1. [qq_window|conflict] 空A前摇差异导致视觉连A与Boss战帧率时间流速机制
 2. [qq_atom|group_only] 视觉上的连A两下并非索敌重置普攻或模式切换
-3. [vod_entry|vod_only] # 无目标时整间隔前摇加一帧保底后摇
-4. [vod_entry|vod_only] # 塞雷娅出奶后索敌时序与攻速加帧机制
+3. [vod_entry|vod_only] # 塞雷娅出奶后索敌时序与攻速加帧机制
+4. [vod_entry|vod_only] # 无目标时整间隔前摇加一帧保底后摇
 5. [vod_atom|vod_only] 离开不可通行地块之前走不可通行地块那一套逻辑，离开之后走之外那一套，看起来连贯只是因为数值没什么区别
 判定: HIT; top5 轨道: Counter({'vod_official': 3, 'qq': 2})
 
@@ -196,8 +196,8 @@
 
 ## 冷却在部署前就开始转吗
 (conflict vod_wins w001186; 期望: 冷却)
-1. [vod_entry|vod_only] # 费用条异常与费用冷却计时问题
-2. [qq_window|also_in_vod] 攻击冷却计时起点与索敌间隔关系
+1. [qq_window|also_in_vod] 攻击冷却计时起点与索敌间隔关系
+2. [vod_entry|vod_only] # 费用条异常(Fee Bar Anomaly)出现的时间条件
 3. [vod_atom|vod_only] 前十秒和后面不一样，前十秒指的不只是局内的前十秒，而是费用从清空开始转、费用冷却从清空开始转的前十秒
 4. [qq_atom|group_only] 祥子索敌后开始转攻击冷却。
 5. [qq_window|group_only] 多堆叠单位的再部署冷却排队与UI显示机制

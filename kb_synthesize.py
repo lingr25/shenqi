@@ -10,11 +10,38 @@
 import json
 import os
 import glob
+import re
 import sys
 import threading
 from concurrent.futures import ThreadPoolExecutor
 
 import grok_client
+
+_CN_DIGIT = {"零": "0", "一": "1", "二": "2", "三": "3", "四": "4",
+             "五": "5", "六": "6", "七": "7", "八": "8", "九": "9"}
+_CN_NUM = {"零": 0, "一": 1, "二": 2, "三": 3, "四": 4, "五": 5, "六": 6,
+           "七": 7, "八": 8, "九": 9, "十": 10, "十一": 11, "十二": 12,
+           "十三": 13, "十四": 14, "十五": 15, "十六": 16, "十七": 17,
+           "十八": 18, "十九": 19, "二十": 20, "二十一": 21, "二十二": 22,
+           "二十三": 23, "二十四": 24, "二十五": 25, "二十六": 26,
+           "二十七": 27, "二十八": 28, "二十九": 29, "三十": 30,
+           "四十": 40, "五十": 50, "六十": 60, "七十": 70, "八十": 80,
+           "九十": 90, "一百": 100}
+
+
+def norm_cn_numbers(text):
+    """无歧义中文数字→阿拉伯; 无小数点的长数字串(列表歧义)不动。"""
+    def repl(m):
+        s = m.group(0)
+        if "点" in s:
+            pre, _, post = s.partition("点")
+            pre_n = str(_CN_NUM.get(pre, _CN_DIGIT.get(pre, pre)))
+            post_n = "".join(_CN_DIGIT.get(c, c) for c in post)
+            return f"{pre_n}.{post_n}"
+        if s in _CN_NUM and len(s) <= 2:
+            return str(_CN_NUM[s])
+        return s  # 三字以上串(如"二十三二十四")歧义, 保留
+    return re.sub(r"[零一二三四五六七八九]{1,2}(?:点[零一二三四五六七八九]+)?", repl, text)
 
 
 def load_source_atoms():
@@ -48,7 +75,9 @@ PROMPT = """你是明日方舟机制百科的撰写员。下面是同一个机�
 
 铁律：
 - 只许使用输入材料中的事实，严禁补充你自己的游戏知识
-- 数值/帧数必须原样保留（如 2.75帧、0.05格）
+- 数值/帧数必须**逐字符从原文复制**，禁止改写、拼接或翻译数字（如 2.75帧、0.05格 原样保留）
+- 若材料中出现无法解析的中文数字串（如"零二十四十四"），**禁止放入 rules**，写入 open_questions 并注明"数值待听原音"
+- applies_to 为"通用"仅当规则确实跨对象适用；主语不可考的命题整体写入 open_questions，不进 rules
 - 材料标注为 hypothesis/question 的内容只能进 open_questions
 - 材料间矛盾时在 rules 里并列双方并注明"(存争议)"
 - 材料不足成词条时 rules 可以为空，confidence 给 low
@@ -66,17 +95,17 @@ PROMPT = """你是明日方舟机制百科的撰写员。下面是同一个机�
 def fmt_atoms(members):
     lines = []
     for m in members[:12]:
-        head = f"- [{m.get('claim_type','?')}] {m['proposition']}"
+        head = f"- [{m.get('claim_type','?')}] {norm_cn_numbers(m['proposition'])}"
         if m.get("applies_to") and m["applies_to"] != "general":
             head += f" (对象:{m['applies_to']})"
         if m.get("conditions"):
-            head += " (条件:" + ";".join(str(c) if not isinstance(c, dict) else f"{c.get('name','')}={c.get('value','')}" for c in m["conditions"]) + ")"
+            head += " (条件:" + ";".join(norm_cn_numbers(str(c) if not isinstance(c, dict) else f"{c.get('name','')}={c.get('value','')}") for c in m["conditions"]) + ")"
         if m.get("parameters"):
-            head += " (参数:" + ";".join(f"{p.get('name','')}={p.get('value_norm') or p.get('value_raw','')}{p.get('unit','')}" for p in m["parameters"] if isinstance(p, dict)) + ")"
+            head += " (参数:" + ";".join(f"{p.get('name','')}={norm_cn_numbers(str(p.get('value_norm') or p.get('value_raw','')))}{p.get('unit','')}" for p in m["parameters"] if isinstance(p, dict)) + ")"
         lines.append(head)
         for ev in (m.get("evidence") or [])[:1]:
             if ev.get("quote"):
-                lines.append(f"  原话[{ev.get('start','?')}s]: {ev['quote'][:100]}")
+                lines.append(f"  原话[{ev.get('start','?')}s]: {norm_cn_numbers(ev['quote'][:100])}")
     return "\n".join(lines)
 
 
