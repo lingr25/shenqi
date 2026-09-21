@@ -28,7 +28,19 @@ shenqi/
 ├── transcripts_txt/        # [权威层] 带 [时:分:秒] 时间戳、自然断句合并的逐字稿纯文本（严禁混入本地ASR草稿）
 ├── qq_info/                # [补充语料/本地私有] 桃大将军粉丝群(1097395794)全量聊天记录(22.7万条)，用于机制考据与黑话挖掘
 ├── qq_cards/               # [补充语料/公开层] LLM 提炼的机制知识卡片，draft 状态，冲突以录播为准
-├── kb/                     # [统一层/draft] 直播轨+QQ轨横向合并的统一知识库: docs.jsonl(统一文档层,gitignore)、entity_index.json(统一实体索引)、cross_links/cross_conflicts(跨轨对齐)、检索评测报告；冲突一律 vod_wins；可直接作 RAG 语料
+├── kb/                     # [统一层/draft] 直播轨+QQ轨横向合并的统一知识库: docs.jsonl(统一文档层,gitignore)、entity_index.json(统一实体索引)、cross_links/cross_conflicts(跨轨对齐)、检索评测报告；历史层冲突策略为 vod_wins，仅供参考，甄选子层已改为不做自动裁决；可直接作 RAG 语料
+├── kb_trial/               # [本地试验/draft] 当前唯一试验入口产物，docs/archive/evidence/overlay/manifest；总览 OVERVIEW.md，历史 kb_pilot_synth/ 保留作只读来源，禁止当权威或直接发布
+├── kb_build_trial.py       # [本地试验] 幂等构建，不调用 API、不覆盖 kb/；按精确来源应用用户审核，保留原始引文
+├── kb_trial_search.py      # [本地试验] 稳定 CLI，默认 mechanism；experiment/pending/all/archive 须显式选择，--self-test 验证
+├── kb_trial_verify.py      # [本地试验] 本地重建、引用/边界与新旧检索对照；结果 kb_trial/validation.json
+├── kb_trial/curated_high_quality.json # [甄选子层/draft] 单个 JSON 对象的甄选高质量规则层(schema curated-1.0)，当前1520条(官方字幕608/云ASR30/混合17/QQ865=既有QQ8+阶段二试批30+阶段三b3批319+阶段四b4批508；b3批含材料修复后重审追加的2条，另有4条已发布条目的引文占位经父裁定批准按源复原、见 curation/qq_expansion/audit_decisions_b3.json 的 quote_fidelity_repair，已发布层占位残留0)，可直接作RAG语料；非权威、未部署未发布；审核状态 user_verified/agent_verified(本版无 auto_screened，未过审者隔离不入集)；仅用户明确"优秀"的整卡可继承 user_verified，"修改后可用"须降为 agent_verified；证据形态含 VOD原子/VOD内联/QQ span 三轨
+├── kb_trial/curation/      # [甄选子层/draft] 甄选过程证据: candidates/decisions/agent_verifications/qq_worklist/evidence_verdicts(620)/curated_staging(隔离5条)/qq_claim_overlay/curated_validation/qq_expansion(阶段二试批: approved_manifest 30条已并入 + audit_decisions 147条裁定 + trial_candidate + REVIEW_REPORT_80/user_sample_round2；阶段三b3批: approved_manifest_b3 319条已并入 + audit_decisions_b3 386条裁定 + review_impact_manifest_b3 + README_B3/user_sample_round3；阶段四b4批: approved_manifest_b4 508条已并入 + audit_decisions_b4 572条裁定 + README_B4/user_sample_round4)，全程本地 0 外部 API
+├── kb_curation_qq_expansion*.py # [甄选子层] QQ 精选扩展专用: 候选生成/loader 增量并入(支持 --batch phase2|b3|b4)/逐条裁定生成/b3 读源影响清单，仅经 kb_curation_build.py 追加进 curated_high_quality.json
+├── kb_curation_qq_expansion_loader.py # [甄选子层] 唯一可把 approved_manifest(_b3/_b4).json 变成 curated 条目的加载器；BATCHES 登记批次的工单/回执/裁定/清单路径，只追加绝不改写既有条目，逐条复验 source_sha256/裁定 verdict=keep/引文逐字
+├── kb_curation_qq_expansion_diff_b3.py # [甄选子层] b3 批(260窗)读源影响清单: 工单消息层修复对 b3 工单的影响，并逐 seq 复核交付文本 == 重算文本
+├── kb_trial/CURATED_OVERVIEW.md # [甄选子层/draft] 交付说明: 实测数量与来源分布、证据形态、审核上限(text-source-supported，非核听非实测)、已隔离条目、使用方法与已知局限
+├── kb_curation_*.py        # [甄选子层] 预筛/证据查证/闸门判定/代理逐条读源/构建/校验，只写 kb_trial/curation 与 curated_high_quality.json，不改 kb_trial 四件套与 kb/
+├── kb_curated_search.py    # [甄选子层] 仅检索 curated_high_quality.json 的独立 CLI，不回退到更宽层；--self-test 验证
 ├── kb_build_docs.py        # [统一层] 阶段A: 两轨 pack 成统一 schema 文档 (纯本地)
 ├── kb_build_entities.py    # [统一层] 阶段B: PRTS+QQ别名统一实体索引与回填 (纯本地)
 ├── kb_link_tracks.py       # [统一层] 阶段C: 跨轨确定性弱对齐 (纯本地)
@@ -92,13 +104,34 @@ shenqi/
 
 1. **定位与佐证价值**：
    - 作为录播视频的背景与衍生材料，用于印证视频推导、解释模糊专有名词、补充实机测试数据与拆包细节。
-   - 权威真值判定：当群聊交流与主播录播视频推导结论不一致时，以主播录播讲解与推导为最高优先级（权威真值），群聊作为讨论线索。
+   - **冲突不做自动裁决**：群聊交流与主播录播推导不一致时，两方并列保留、呈现分歧，由人工判断。历史统一层（`kb/`）曾采用 vod_wins，那只是旧层策略，不是本仓库通则；甄选层明确 *no automatic precedence*。
 2. **消歧与黑话词库建设**：
    - 充分挖掘群聊中的高频同音错字与底层机制黑话（如帧数判定、索敌分支、力道位移结算等），持续沉淀并扩充 `entity_corrector.py` 的消歧规则。
 3. **隐私脱敏与安全纪律**：
    - **严防隐私入库**：`qq_info/` 含有群友真实 QQ 号与交流记录，体积大且涉及隐私，已被 `.gitignore` 严格忽略，**严禁提交至公开 Git 远端仓库**。
    - **对外引用强制脱敏**：Agent 在基于群聊语料提炼公开机制笔记、知识库词条或答疑报告时，必须隐去非主播本人的 QQ 号与敏感个人信息，杜绝隐私泄漏。
    - **降噪过滤**：检索与引用时严格过滤纯表情刷屏、日常闲聊与无关打闹，聚焦机制逻辑、参数计算与实测验证。
+
+---
+
+## 6.1 甄选层（`kb_trial/curated_high_quality.json`）使用纪律
+
+甄选层是当前可直接接 RAG 的规则层，使用时必须遵守以下口径，**不得复述为权威或已验证**：
+
+1. **置信上限是 `text-source-supported`**：全部判定基于**转写文本**（官方 AI 字幕或云端 ASR）与 QQ 窗口片段逐条比对，**未核听原片音画、未做游戏内实测**。
+2. **官方字幕出现某字，不等于主播确实这么说**：字幕本身有 ASR 讹写（例：「寻路」→「驯鹿」、「伤判」→「商判」）。引文一律保留原始逐字文本不动；只在同源上下文可自证时订正派生 `claim`/`subject`/`condition`，并记录于 `derived_text_repairs`。
+3. **审核状态如实区分**：`user_verified` 仅限用户明确说「优秀」的整卡；「修改后可用」须降为 `agent_verified`。本版 `auto_screened` 为 0，未过审条目**隔离**在 `curation/curated_staging.json`，不静默丢弃也不入库。
+4. **`inherited_verified` 不等于核听**：它表示本条本轮未被重读，判定继承自上一轮的用户反馈与代理文本审核。
+5. **`--layer qq` 等过滤是硬过滤**，不回退到更宽的 `kb_trial` 层；QQ 引文已脱敏，不含群号、QQ 号与昵称。
+6. **数字与 sha256 以实测为准**：改动甄选链路后必须重跑 `kb_curation_evidence_close.py` → `kb_curation_build.py` → `kb_curation_validate.py` → `kb_curated_search.py --self-test`，并同步更新 `CURATED_OVERVIEW.md` 与本节条数。**禁止**用旧版数字或旧层回归成绩背书本层。
+
+**已知短板**：QQ 轨目前 865 条入选（既有 8 条 + 阶段二试批 30 条 + 阶段三 b3 批 319 条 + 阶段四 b4 批 508 条，三批均已 `approved_merged` 并入；b3 的 319 含材料修复后重审追加的 2 条），仍有大量候选待逐条读源，本层不代表完整知识库。
+b3 批实测产出率约 1.23 条/窗（260 窗 → keep 319，含材料修复后重审追加的 2 条），被裁定为非 keep 的 67 条（reject 59 + pending 8）全部留在
+`curation/qq_expansion/audit_decisions_b3.json` 的 `decisions` 里，连同理由码可逐条复核，不删除。
+b4 批实测产出率约 1.15 条/窗（441 窗 → keep 508，父裁决后再降 5 条），非 keep 的 64 条（reject 34 + pending 30）同样留在
+`curation/qq_expansion/audit_decisions_b4.json` 的 `decisions` 里，逐条带理由码与父裁决记录（`parent_ruling`），不删除。
+隐私闸门（`kb_curation_validate.py` 的 6–12 位数字检查）对「同一串数字在条目自身引文内逐字存在」的条目按来源数值豁免，
+只在报告 `qq_number_quote_sourced` 里记 entry id、不回显数字；无引文支撑的数字串仍判失败。
 
 ---
 
