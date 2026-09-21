@@ -10,24 +10,18 @@ cluster_atoms.py 按 50 张/批送 LLM, 同一议题被切到不同批次会裂�
 """
 import json
 import os
-import re
 import sys
-import time
-import urllib.request
-import urllib.error
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
+from grok_client import LLM_KEY, call_llm
+
 ROOT = Path(__file__).parent
 OUT_DIR = ROOT / "knowledge_pilot"
 
-LLM_BASE = os.environ.get("GROK_BASE", "https://aitreez.com/v1")
-LLM_KEY = os.environ.get("GROK_API_KEY", "").strip()
-MODEL = os.environ.get("GROK_MODEL", "grok-4.6")
 BATCH_SIZE = 60
-WORKERS = 4
-HTTP_TIMEOUT = 600
+WORKERS = int(os.environ.get("CLUSTER_WORKERS", os.environ.get("MERGE_WORKERS", "16")))
 CACHE_PATH = OUT_DIR / ".merge_cache.json"
 
 PROMPT = """你是《明日方舟》机制知识库的议题归并器。之前一批"原子论断卡"被分成了若干"议题簇", 但分桶时是分批处理的, 同一个议题可能被重复聚成两簇。
@@ -47,39 +41,6 @@ PROMPT = """你是《明日方舟》机制知识库的议题归并器。之前�
 
 输入议题簇:
 """
-
-
-def call_llm(prompt: str, retries=4):
-    if not LLM_KEY:
-        raise SystemExit("请设置环境变量 GROK_API_KEY")
-    body = json.dumps({
-        "model": MODEL,
-        "messages": [{"role": "user", "content": prompt}],
-        "temperature": 0.1,
-    }).encode()
-    for attempt in range(retries):
-        try:
-            req = urllib.request.Request(
-                LLM_BASE + "/chat/completions", data=body,
-                headers={"Authorization": f"Bearer {LLM_KEY}",
-                         "Content-Type": "application/json"})
-            r = json.load(urllib.request.urlopen(req, timeout=HTTP_TIMEOUT))
-            content = r["choices"][0]["message"].get("content") or ""
-            m = re.search(r"\{.*\}", content, re.S)
-            if not m:
-                raise json.JSONDecodeError("no json object", content[:200], 0)
-            return json.loads(m.group(0)), r.get("usage", {})
-        except urllib.error.HTTPError as e:
-            detail = e.read().decode(errors="replace")[:300]
-            if e.code in (429, 500, 502, 503, 504) and attempt < retries - 1:
-                time.sleep(min(2 ** attempt * 2, 30))
-                continue
-            raise RuntimeError(f"HTTP {e.code}: {detail}")
-        except Exception as e:
-            if attempt < retries - 1:
-                time.sleep(min(2 ** attempt * 2, 30))
-                continue
-            raise RuntimeError(str(e)[:300])
 
 
 def main():
@@ -179,7 +140,8 @@ def main():
         # 重跑 canonical 门槛
         canon = next((c["proposed_canonical"] for c in cs if c.get("proposed_canonical")), "")
         applies = {m.get("applies_to") for m in members}
-        conds = {tuple(sorted(m.get("conditions") or [])) for m in members}
+        conds = {json.dumps(m.get("conditions") or [], ensure_ascii=False, sort_keys=True)
+                 for m in members}
         windows = {(m["source_id"], m.get("window", {}).get("start")) for m in members}
         has_open_type = any(m["claim_type"] in ("hypothesis", "question") for m in members)
         if canon and (status != "agreed" or len(applies) > 1 or len(conds) > 1

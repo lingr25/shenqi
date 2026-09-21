@@ -23,20 +23,13 @@ import json
 import os
 import re
 import sys
-import time
-import urllib.error
-import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
+from grok_client import LLM_BASE, LLM_KEY, MODEL, call_llm
+
 ROOT = Path(__file__).parent
 OUT_DIR = ROOT / "knowledge_pilot"
-
-# 抽取走 aitreez grok-4.6, 不走百炼 qwen3.8-max
-# 密钥仅在实际调用 LLM 时检查, 方便离线重算 quote_check
-LLM_BASE = os.environ.get("GROK_BASE", "https://aitreez.com/v1")
-LLM_KEY = os.environ.get("GROK_API_KEY", "").strip()
-MODEL = os.environ.get("GROK_MODEL", "grok-4.6")
 WINDOW_SEC = 240
 WORKERS = 4
 
@@ -101,45 +94,6 @@ def make_windows(items):
             windows.append({"start": w_start, "end": w_end, "text": text})
         w_start = w_end
     return windows
-
-
-def call_llm(prompt: str, retries=4):
-    if not LLM_KEY:
-        raise SystemExit("请设置环境变量 GROK_API_KEY")
-    body = json.dumps({
-        "model": MODEL,
-        "messages": [{"role": "user", "content": prompt}],
-        "temperature": 0.1,
-    }).encode()
-    for attempt in range(retries):
-        try:
-            req = urllib.request.Request(
-                LLM_BASE + "/chat/completions", data=body,
-                headers={"Authorization": f"Bearer {LLM_KEY}",
-                         "Content-Type": "application/json"})
-            r = json.load(urllib.request.urlopen(req, timeout=300))
-            msg = r["choices"][0]["message"]
-            content = msg.get("content") or ""
-            m = re.search(r"\{.*\}", content, re.S)
-            if not m:
-                raise json.JSONDecodeError("no json object", content[:200], 0)
-            return json.loads(m.group(0)), r.get("usage", {})
-        except urllib.error.HTTPError as e:
-            detail = e.read().decode(errors="replace")[:200]
-            if e.code in (429, 500, 502, 503, 504) and attempt < retries - 1:
-                time.sleep(min(2 ** attempt * 2, 30))
-                continue
-            raise RuntimeError(f"HTTP {e.code}: {detail}")
-        except (json.JSONDecodeError, KeyError) as e:
-            if attempt < retries - 1:
-                time.sleep(min(2 ** attempt * 2, 30))
-                continue
-            raise RuntimeError(str(e)[:200])
-        except Exception as e:
-            if attempt < retries - 1:
-                time.sleep(min(2 ** attempt * 2, 30))
-                continue
-            raise RuntimeError(str(e)[:200])
 
 
 def _norm(s: str) -> str:

@@ -17,6 +17,11 @@ def main():
         if not cl:
             continue
         boost = BOOST.get(s["issue_status"], 1.0) * CONF_W.get(s.get("confidence"), 0.8)
+        scope = s.get("scope") or "universal"
+        if scope == "instance":
+            boost *= 0.6
+        elif scope == "example":
+            boost *= 0.7
         docs.append({
             "id": f"vod_entry:{s['cluster_id']}",
             "doc_type": "vod_entry",
@@ -29,7 +34,7 @@ def main():
             "category": cl.get("category"),
             "applies_to": s.get("applies_to"),
             "conditions": [],
-            "scope": "instance" if s.get("applies_to") not in (None, "", "通用", "general") else "general",
+            "scope": scope,
             "claim_type": None,
             "audit_kind": s.get("audit_kind"),
             "confidence": s.get("confidence"),

@@ -88,7 +88,11 @@ def main():
 
     docs = []
     for a in atoms:
-        text = a["proposition"] + " " + " ".join(a.get("conditions") or []) + " " + \
+        conds = a.get("conditions") or []
+        cond_txt = " ".join(
+            c if isinstance(c, str) else json.dumps(c, ensure_ascii=False) for c in conds
+        )
+        text = (a.get("proposition") or "") + " " + cond_txt + " " + \
                " ".join(l["mention"] for l in a.get("entity_links", []))
         docs.append(bigrams(text))
     bm25 = BM25(docs)

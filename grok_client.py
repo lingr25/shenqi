@@ -91,7 +91,7 @@ def call_llm(prompt: str, retries=6):
             return json.loads(m.group(0)), usage
         except urllib.error.HTTPError as e:
             detail = e.read().decode(errors="replace")[:300]
-            if e.code in (400, 429, 500, 502, 503, 504) and attempt < retries - 1:
+            if e.code in (429, 500, 502, 503, 504) and attempt < retries - 1:
                 time.sleep(min(5 * (2 ** attempt), 60))
                 continue
             raise RuntimeError(f"HTTP {e.code}: {detail}")

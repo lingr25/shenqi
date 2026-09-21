@@ -14,7 +14,7 @@
 | `conflict_resolution` | `vod_wins` / `open` / `n/a`；**冲突一律以录播为准** |
 | `text` | 检索主文本 |
 | `category` | 直播自由类名或 8 桶 / QQ 10 类 |
-| `applies_to` / `conditions` / `scope` | 适用对象 / 前提条件 / general 或 instance |
+| `applies_to` / `conditions` / `scope` | 适用对象 / 前提条件 / `universal` \| `instance` \| `example`（example=带数值的演算例题；pack 不得把 example 默认成 universal，检索加权低于 universal） |
 | `claim_type` | 直播原子六值（conclusion/correction/derivation/observation/hypothesis/question），QQ 侧为 null |
 | `entities` | `[{mention, canonical, type}]`，阶段B 统一索引回填 |
 | `evidence` | `{kind: video_quote, clips:[{t_start,t_end,quote}]}` 或 `{kind: qq_span, window_id, ...}` |

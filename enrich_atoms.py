@@ -64,7 +64,11 @@ TERMS = sorted(INDEX, key=len, reverse=True)
 
 def link_entities(atom):
     haystacks = set(atom.get("entities") or [])
-    text = atom.get("proposition", "") + " " + " ".join(atom.get("conditions") or [])
+    conds = atom.get("conditions") or []
+    cond_txt = " ".join(
+        c if isinstance(c, str) else json.dumps(c, ensure_ascii=False) for c in conds
+    )
+    text = (atom.get("proposition") or "") + " " + cond_txt
     found = {}
     for t in TERMS:
         if t in text or t in haystacks:
