@@ -3,8 +3,8 @@
  "name": "神祇读神奇 机制讲堂 甄选高质量规则",
  "status": "draft_curated",
  "release_note": "本地甄选草稿层；不是官方发布，也不宣称绝对无错。是否对外发布由项目负责人决定，本文件不构成发布许可判断。条目来源为录播官方 AI 字幕、缺官方字幕分P的云端 ASR 重转写与 QQ 群聊；各条实际来源见 source_layer 与 citations[].transcript_file，引用前须核该条证据落在哪一层。未混入本次甄选之外的检索层。",
- "entry_count": 1458,
- "entry_count_before_semantic_review": 621,
+ "entry_count": 1448,
+ "entry_count_before_semantic_review": 611,
  "semantic_review_note": "entries 已应用语义内审：claim 不是可独立用于检索的明确机制的条目已剔除，逐条判定与被剔原因见 kb_trial/curation/semantic_review.json（含被剔条目）。语义内审是 claim 层的单代理判定，不等于证据核听；两者分列于 semantic_review 与 review.status。",
  "semantic_review_counts": {
   "total": 814,
@@ -20853,84 +20853,6 @@
    }
   },
   {
-   "id": "fc1:寻路-21-3#r1",
-   "claim": "位移与推拉一下在寻路上没有区别",
-   "subject": "位移与推拉对寻路的影响",
-   "condition": "讨论敌人被位移或被推拉后的寻路",
-   "scope": "universal",
-   "category": "寻路",
-   "recorded_ym": null,
-   "source_layer": "官方AI字幕",
-   "source_layers": [
-    "official"
-   ],
-   "track": "vod_official",
-   "citations": [
-    {
-     "id": "BV1j4KC6KEse_p2_40109932632:p18:a1:9cf16ca7",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt",
-     "bvid_stem": "BV1j4KC6KEse_p2_40109932632",
-     "recorded_at": "2026-07-20",
-     "speaker": "神祇读神奇",
-     "chapter": "阻挡偏移、寻路惯性与巡逻态远程索敌",
-     "quotes": [
-      {
-       "text": "位移的话 那和推拉推一下也没有区别",
-       "t_start": 1342,
-       "t_end": 1368,
-       "t_start_upstream": 1342,
-       "t_start_line": 1342,
-       "t_line_label": "22:22"
-      }
-     ],
-     "_upstream_quote": "位移的话 那和推拉推一下也没有区别"
-    }
-   ],
-   "source_files": [
-    "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt"
-   ],
-   "origin": {
-    "trial_doc_id": "fc1:寻路-21-3",
-    "trial_rule_idx": 1,
-    "trial_manifest_outputs": "kb_trial/docs.jsonl",
-    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
-    "card_section": "规则"
-   },
-   "review": {
-    "status": "agent_verified",
-    "scope": "text_source_only",
-    "confidence": "text-source-supported",
-    "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1j4KC6KEse_p2_40109932632.txt [22:22] 逐字为「就是如果你说这个位移的话 那和推拉推一下也没有区别啊」，claim「位移与推拉一下在寻路上没有区别」与其对应。源句主语含「这个位移」（承 [21:53] 的位移讨论），claim 保留「位移」这一主语未改为「阻挡偏移」。condition「讨论敌人被位移或被推拉后的寻路」与源句「在寻路上」的限定一致。cla",
-    "not_authoritative": true
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
-   "semantic_review": {
-    "verdict": "keep",
-    "support": "supported",
-    "info_value": "reusable_rule",
-    "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
-    "reviewer_type": "agent"
-   },
-   "evidence_review": {
-    "status": "supported",
-    "reason": "源 BV1j4KC6KEse_p2_40109932632.txt [22:22] 逐字为「就是如果你说这个位移的话 那和推拉推一下也没有区别啊」，claim「位移与推拉一下在寻路上没有区别」与其对应。源句主语含「这个位移」（承 [21:53] 的位移讨论），claim 保留「位移」这一主语未改为「阻挡偏移」。condition「讨论敌人被位移或被推拉后的寻路」与源句「在寻路上」的限定一致。claim 未删去源句「如果…的话」的条件语气。",
-    "reviewer_type": "agent",
-    "confidence": "text-source-supported",
-    "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
-    "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
-    "source_path": "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt",
-    "source_line_time": "00:22:22",
-    "supports": "主语与条件语气均按源句保留，结论成立",
-    "derived_correction": "源「那和推拉推一下也没有区别」中「推拉推」为口述重复（推拉 + 推），claim 写作「推拉一下」，语义未变。",
-    "derived_correction_disposition": "not_needed"
-   }
-  },
-  {
    "id": "fc1:寻路-21-3#r2",
    "claim": "无论用什么办法把敌人从 A 点移到 B 点（阻挡、阻挡偏移、酒神的拉或推、传送等），只要中途没有踩到路径点/罚站点，从 B 点开始的寻路都一样。",
    "subject": "阻挡与推拉对寻路的影响",
@@ -21484,7 +21406,7 @@
   },
   {
    "id": "fc1:寻路-22-2#r2",
-   "claim": "由于怪自己斜走，导致其在横向上的速度变少，从而多了一点时间。",
+   "claim": "将卡墙当减速用时减不了多少速，只是因为怪自己斜走导致横向速度变少，从而多了一点行进时间。",
    "subject": "卡墙当减速用",
    "condition": "将卡墙当减速用",
    "scope": "universal",
@@ -21557,7 +21479,26 @@
     "source_line_time": "01:57:28",
     "supports": "因果链与三要素均与源句对应，结论未被扩大",
     "derived_correction": "源 [01:57:11]「充其量提供一点就是斜方向上的这个加时吧 加十」中「加十」为「加时」的口述自我补正；引文原文保留不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "由于怪自己斜走，导致其在横向上的速度变少，从而多了一点时间。",
+      "to": "将卡墙当减速用时减不了多少速，只是因为怪自己斜走导致横向速度变少，从而多了一点行进时间。"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "由于怪自己斜走，导致其在横向上的速度变少，从而多了一点时间。",
+      "to": "将卡墙当减速用时减不了多少速，只是因为怪自己斜走导致横向速度变少，从而多了一点行进时间。",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -21854,84 +21795,6 @@
     "source_path": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
     "source_line_time": "00:12:13",
     "supports": "原因与对比两条依据各有源分句，回指窗口内可闭合",
-    "derived_correction": "无。",
-    "derived_correction_disposition": "applied"
-   }
-  },
-  {
-   "id": "fc1:寻路-24-13#r3",
-   "claim": "后续所有行为都从「路径终点／路径点」这两个出发（推出地块的顺序为上右下左）。",
-   "subject": "寻路推导的后继行为",
-   "condition": "已按上右下左从路径终点/路径点推出地块",
-   "scope": "universal",
-   "category": "寻路",
-   "recorded_ym": null,
-   "source_layer": "官方AI字幕",
-   "source_layers": [
-    "official"
-   ],
-   "track": "vod_official",
-   "citations": [
-    {
-     "id": "BV1kRbQ6tEG9_p1_40968521557:p8:a2:2b6bbd2d",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
-     "bvid_stem": "BV1kRbQ6tEG9_p1_40968521557",
-     "recorded_at": "2026-08-16",
-     "speaker": "神祇读神奇",
-     "chapter": "四种位移系统总览与寻路格判、上右下左推距",
-     "quotes": [
-      {
-       "text": "后续的所有行为都是从这这两个出发",
-       "t_start": 1032,
-       "t_end": 1052,
-       "t_start_upstream": 1032,
-       "t_start_line": 1038,
-       "t_line_label": "17:18"
-      }
-     ],
-     "_upstream_quote": "后续的所有行为都是从这这两个出发"
-    }
-   ],
-   "source_files": [
-    "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt"
-   ],
-   "origin": {
-    "trial_doc_id": "fc1:寻路-24-13",
-    "trial_rule_idx": 3,
-    "trial_manifest_outputs": "kb_trial/docs.jsonl",
-    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
-    "card_section": "规则"
-   },
-   "review": {
-    "status": "agent_verified",
-    "scope": "text_source_only",
-    "confidence": "text-source-supported",
-    "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1kRbQ6tEG9_p1_40968521557.txt [17:12] 逐字为「那么从哪条路推过来呢 从路径终点这里 从路径点这里 他推地块的顺序是上右下左 所以先推上面这个 再推下面这个 后续的所有行为都是从这这两个出发」，claim「后续所有行为都从按上右下左从路径终点/路径点推出的地块出发」跟「从路径终点这里 从路径点这里」的并列表述一致，claim 写作「路径终点/路径点」是双",
-    "not_authoritative": true
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
-   "semantic_review": {
-    "verdict": "keep",
-    "support": "supported",
-    "info_value": "reusable_rule",
-    "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
-    "reviewer_type": "agent"
-   },
-   "evidence_review": {
-    "status": "supported",
-    "reason": "源 BV1kRbQ6tEG9_p1_40968521557.txt [17:12] 逐字为「那么从哪条路推过来呢 从路径终点这里 从路径点这里 他推地块的顺序是上右下左 所以先推上面这个 再推下面这个 后续的所有行为都是从这这两个出发」，claim「后续所有行为都从按上右下左从路径终点/路径点推出的地块出发」跟「从路径终点这里 从路径点这里」的并列表述一致，claim 写作「路径终点/路径点」是双写而非择一，未歪曲。claim 未把「后续的所有行为」限定到某一具体子系统。",
-    "reviewer_type": "agent",
-    "confidence": "text-source-supported",
-    "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
-    "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
-    "source_path": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
-    "source_line_time": "00:17:12",
-    "supports": "并列双写与源句一致，结论范围未被缩小",
     "derived_correction": "无。",
     "derived_correction_disposition": "applied"
    }
@@ -24253,8 +24116,8 @@
   },
   {
    "id": "fc1:寻路-28-5#r0",
-   "claim": "加速度为移速差的 steering factor 倍，steering factor 是一个倍数。",
-   "subject": "未点名",
+   "claim": "寻路加速度为移速差（目标速度与实际速度之差）的 steering factor 倍（地面敌人一般为 8 倍，飞行敌人普遍为 20 倍）。",
+   "subject": "寻路加速度（寻路力）与 steering factor",
    "condition": "未标注",
    "scope": "universal",
    "category": "寻路",
@@ -24343,14 +24206,44 @@
     "source_path": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
     "source_line_time": "01:10:46",
     "supports": "与源句一致，单句独立支撑结论",
-    "derived_correction": "源句首「这个这个东西就是哎不对 等一下啊」为主播自我中断重述，同句后半给出正式表述；claim 取正式表述，语义未变，引文原文保留不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "源句首「这个这个东西就是哎不对 等一下啊」为主播自我中断重述，同句后半给出正式表述；claim 取正式表述，语义未变，引文原文保留不改。；引文「stealing factor」「二十分」为「steering factor」「20倍」的ASR讹写；引文保真，已订正subject/claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "加速度为移速差的 steering factor 倍，steering factor 是一个倍数。",
+      "to": "寻路加速度为移速差（目标速度与实际速度之差）的 steering factor 倍（地面敌人一般为 8 倍，飞行敌人普遍为 20 倍）。"
+     },
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "寻路加速度（寻路力）与 steering factor"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 2,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "加速度为移速差的 steering factor 倍，steering factor 是一个倍数。",
+      "to": "寻路加速度为移速差（目标速度与实际速度之差）的 steering factor 倍（地面敌人一般为 8 倍，飞行敌人普遍为 20 倍）。",
+      "already_applied": true
+     },
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "寻路加速度（寻路力）与 steering factor",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:寻路-29-0#r0",
    "claim": "加速度上限会决定一个单位很难真正拥有超高的实际移速。",
-   "subject": "未点名",
+   "subject": "加速度上限对实际移速的限制",
    "condition": "未标注",
    "scope": "universal",
    "category": "寻路",
@@ -24419,12 +24312,31 @@
     "source_line_time": "01:15:19",
     "supports": "弱化限定保留，另有 [01:15:56] 独立印证",
     "derived_correction": "源 [01:15:56]「十倍额加速度上限十」为口述重复（十倍/上限十），指同一加速度上限；引文原文保留不改。",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction_disposition": "not_needed",
+    "repaired_fields": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "加速度上限对实际移速的限制"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "加速度上限对实际移速的限制",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:寻路-3-3#r0",
-   "claim": "寻路地图创建完成后会平整化拉直，得到最终巡逻光标。",
+   "claim": "寻路地图创建完成后会平整化拉直，得到最终寻路光标。",
    "subject": "寻路地图",
    "condition": "寻路地图创建完成后",
    "scope": "universal",
@@ -24514,15 +24426,34 @@
     "source_path": "transcripts_txt/BV14y8269EbS_p1_41164079923.txt",
     "source_line_time": "00:33:17",
     "supports": "主语回填与限定词均与源句一致",
-    "derived_correction": "源 [33:17]「这个寻路光标呃 这个巡逻地图创建完之后」中「这个寻路光标呃」为主播起头后自我更正（改称巡逻地图），claim 取更正后版本；引文原文保留不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "源 [33:17]「这个寻路光标呃 这个巡逻地图创建完之后」中「这个寻路光标呃」为主播起头后自我更正（改称巡逻地图），claim 取更正后版本；引文原文保留不改。；引文及旧claim「巡逻光标」为「寻路光标」的ASR同音讹写；引文保真，已订正claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "寻路地图创建完成后会平整化拉直，得到最终巡逻光标。",
+      "to": "寻路地图创建完成后会平整化拉直，得到最终寻路光标。"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "寻路地图创建完成后会平整化拉直，得到最终巡逻光标。",
+      "to": "寻路地图创建完成后会平整化拉直，得到最终寻路光标。",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:寻路-3-3#r1",
-   "claim": "应用最终巡逻光标时会生成目标速度。",
-   "subject": "最终巡逻光标应用",
-   "condition": "已得到最终巡逻光标",
+   "claim": "应用最终寻路光标时会生成目标速度。",
+   "subject": "最终寻路光标应用",
+   "condition": "已得到最终寻路光标",
    "scope": "universal",
    "category": "寻路",
    "recorded_ym": null,
@@ -24607,8 +24538,49 @@
     "source_path": "transcripts_txt/BV14y8269EbS_p1_41164079923.txt",
     "source_line_time": "00:33:17",
     "supports": "与源句一致，时序与强度均未被改写",
-    "derived_correction": "源「又会去讲那个就是它会生成目标速度」中「那个就是」为口述填充，claim 略去；引文原文不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "源「又会去讲那个就是它会生成目标速度」中「那个就是」为口述填充，claim 略去；引文原文不改。；引文及旧subject/condition/claim「巡逻光标」为「寻路光标」的ASR同音讹写；引文保真，已订正派生字段。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "应用最终巡逻光标时会生成目标速度。",
+      "to": "应用最终寻路光标时会生成目标速度。"
+     },
+     {
+      "field": "subject",
+      "from": "最终巡逻光标应用",
+      "to": "最终寻路光标应用"
+     },
+     {
+      "field": "condition",
+      "from": "已得到最终巡逻光标",
+      "to": "已得到最终寻路光标"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 3,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "应用最终巡逻光标时会生成目标速度。",
+      "to": "应用最终寻路光标时会生成目标速度。",
+      "already_applied": true
+     },
+     {
+      "field": "subject",
+      "from": "最终巡逻光标应用",
+      "to": "最终寻路光标应用",
+      "already_applied": true
+     },
+     {
+      "field": "condition",
+      "from": "已得到最终巡逻光标",
+      "to": "已得到最终寻路光标",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -24754,7 +24726,7 @@
   },
   {
    "id": "fc1:寻路-3-3#r5",
-   "claim": "改写自己的坐标实现寻路、判定离坑/障碍物/不可通行地块有多近、计算B张力向量、三针一盼等模块会逐步往上叠加，形成完整的寻路过程。",
+   "claim": "在移动状态机的运行阶段会执行更新函数（设置目标移速、计算避障力向量、三帧一判）并改变位移。",
    "subject": "完整寻路过程",
    "condition": "上述部分逐步往上叠加时",
    "scope": "universal",
@@ -24859,14 +24831,33 @@
     "source_path": "transcripts_txt/BV14y8269EbS_p1_41164079923.txt",
     "source_line_time": "00:33:57",
     "supports": "逐字一致，过程性限定保留",
-    "derived_correction": "源「完整的寻路过过程」中「过过程」为口述叠字（过 + 过程），claim 写作「完整寻路过程」；引文原文保留不改。",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "源「完整的寻路过过程」中「过过程」为口述叠字（过 + 过程），claim 写作「完整寻路过程」；引文原文保留不改。；引文及旧claim「B张力向量」「三针一盼」为「避障力向量」「三帧一判」的ASR同音讹写；引文保真，已订正claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "改写自己的坐标实现寻路、判定离坑/障碍物/不可通行地块有多近、计算B张力向量、三针一盼等模块会逐步往上叠加，形成完整的寻路过程。",
+      "to": "在移动状态机的运行阶段会执行更新函数（设置目标移速、计算避障力向量、三帧一判）并改变位移。"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "改写自己的坐标实现寻路、判定离坑/障碍物/不可通行地块有多近、计算B张力向量、三针一盼等模块会逐步往上叠加，形成完整的寻路过程。",
+      "to": "在移动状态机的运行阶段会执行更新函数（设置目标移速、计算避障力向量、三帧一判）并改变位移。",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:寻路-30-4#r0",
    "claim": "移动过程中施加强控或束缚时，不是从速度归零之后再从零走，而是直接退出寻路状态。",
-   "subject": "未点名",
+   "subject": "移动中的敌人",
    "condition": "移动过程中;施加强控或束缚",
    "scope": "universal",
    "category": "寻路",
@@ -24935,14 +24926,33 @@
     "source_line_time": "00:51:12",
     "supports": "三要素与源句一致，否定式回答的理解正确",
     "derived_correction": "源 [51:12]「并不是强控 是直接退出巡逻状态」为省略式口述（承前否定「从零再走」），claim 补全为「不是从速度归零之后再从零走」，属字面补全非新增语义；引文原文不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "移动中的敌人"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "移动中的敌人",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:寻路-30-4#r1",
-   "claim": "虽然仍在移动状态机，也会直接跳过应用移速、计算移速的那个阶段/状态。",
-   "subject": "未点名",
-   "condition": "在移动状态机;施加强控/失衡等能让人立刻停下来的效果",
+   "claim": "束缚与强控直接退出寻路状态不同：受束缚的单位虽然仍在移动状态机中，但会直接跳过应用移速、计算移速的阶段。",
+   "subject": "受束缚的单位",
+   "condition": "移动过程中受到束缚（仍在移动状态机内）",
    "scope": "universal",
    "category": "寻路",
    "recorded_ym": null,
@@ -25012,14 +25022,55 @@
     "source_path": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
     "source_line_time": "00:51:24",
     "supports": "让步结构与「阶段/状态」双写均保留",
-    "derived_correction": "源「应用移速计算移速」为口述连写（应用移速 / 计算移速），claim 用顿号并写，语义未变；引文原文不改。",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "源「应用移速计算移速」为口述连写（应用移速 / 计算移速），claim 用顿号并写，语义未变；引文原文不改。；引文「强攻是直接退出这个寻路状态」中「强攻」为「强控（眩晕/冻结等强制控制）」的ASR同音讹写；已补全受束缚主语与对比结论。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "虽然仍在移动状态机，也会直接跳过应用移速、计算移速的那个阶段/状态。",
+      "to": "束缚与强控直接退出寻路状态不同：受束缚的单位虽然仍在移动状态机中，但会直接跳过应用移速、计算移速的阶段。"
+     },
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "受束缚的单位"
+     },
+     {
+      "field": "condition",
+      "from": "在移动状态机;施加强控/失衡等能让人立刻停下来的效果",
+      "to": "移动过程中受到束缚（仍在移动状态机内）"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 3,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "虽然仍在移动状态机，也会直接跳过应用移速、计算移速的那个阶段/状态。",
+      "to": "束缚与强控直接退出寻路状态不同：受束缚的单位虽然仍在移动状态机中，但会直接跳过应用移速、计算移速的阶段。",
+      "already_applied": true
+     },
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "受束缚的单位",
+      "already_applied": true
+     },
+     {
+      "field": "condition",
+      "from": "在移动状态机;施加强控/失衡等能让人立刻停下来的效果",
+      "to": "移动过程中受到束缚（仍在移动状态机内）",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:寻路-30-4#r2",
    "claim": "失衡与强控一样，直接退出寻路状态，并跳过应用移速、计算移速的阶段。",
-   "subject": "未点名",
+   "subject": "移动中的敌人",
    "condition": "移动过程中;施加失衡",
    "scope": "universal",
    "category": "寻路",
@@ -25091,13 +25142,32 @@
     "source_line_time": "00:51:24",
     "supports": "省略句的先行内容在同窗口内可闭合，结论成立",
     "derived_correction": "源「那失衡呢都一样」为省略主语与谓语的问答式短句，claim 补全其指代内容，依据全在同窗口；引文原文不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "移动中的敌人"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "移动中的敌人",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:寻路-30-4#r4",
    "claim": "所有能让人立刻停下来的效果都不是改写其速度，而是切出应用寻路的状态。",
-   "subject": "未点名",
+   "subject": "移动中的敌人",
    "condition": "施加能让人立刻停下来的效果",
    "scope": "universal",
    "category": "寻路",
@@ -25169,13 +25239,32 @@
     "source_line_time": "00:51:42",
     "supports": "全称限定与正反两面均保留，结论成立",
     "derived_correction": "无。",
-    "derived_correction_disposition": "applied"
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "移动中的敌人"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "移动中的敌人",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:寻路-30-4#r5",
    "claim": "阻挡之类的状态是直接切出寻路状态，而不应该理解为速度归零。",
-   "subject": "未点名",
+   "subject": "移动中的敌人",
    "condition": "被阻挡",
    "scope": "universal",
    "category": "寻路",
@@ -25247,7 +25336,26 @@
     "source_line_time": "01:01:01",
     "supports": "纠偏结构与源句一致，另有独立印证",
     "derived_correction": "无。",
-    "derived_correction_disposition": "applied"
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "移动中的敌人"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "移动中的敌人",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -26687,7 +26795,7 @@
    "id": "fc1:寻路-32-9#r1",
    "claim": "卡墙跳路径点可以保证：即使发生寻路断绝，单位也能回到自己的正路上。",
    "subject": "卡墙跳路径点",
-   "condition": "巡逻断绝",
+   "condition": "寻路断绝;从高台向目标地面格寻路",
    "scope": "universal",
    "category": "寻路",
    "recorded_ym": null,
@@ -26757,8 +26865,27 @@
     "source_path": "transcripts_txt/BV1kRbQ6tEG9_p3_40974353533.txt",
     "source_line_time": "01:31:40",
     "supports": "主语回指有窗口依据，让步结构保留",
-    "derived_correction": "源 [01:31:19]「类似老鼠这种传送乱蹦的时候」中「老鼠」为鼠类传送机制的指称，与 claim 无关，未引发歧义。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "源 [01:31:19]「类似老鼠这种传送乱蹦的时候」中「老鼠」为鼠类传送机制的指称，与 claim 无关，未引发歧义。；引文及旧condition「巡逻断绝」为「寻路断绝」的ASR同音讹写；引文保真，已订正condition。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "condition",
+      "from": "巡逻断绝",
+      "to": "寻路断绝;从高台向目标地面格寻路"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "condition",
+      "from": "巡逻断绝",
+      "to": "寻路断绝;从高台向目标地面格寻路",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -27053,9 +27180,9 @@
   },
   {
    "id": "fc1:寻路-35-10#r2",
-   "claim": "非失衡状态不激活物理碰撞。在巡逻的状态下，敌人可以自由地进出墙体，完全无视墙体的物理碰撞箱。",
-   "subject": "巡逻状态的敌人",
-   "condition": "巡逻状态",
+   "claim": "非失衡状态不激活物理碰撞。在寻路的状态下，敌人可以自由地进出墙体，完全无视墙体的物理碰撞箱。",
+   "subject": "寻路状态的敌人",
+   "condition": "寻路状态",
    "scope": "universal",
    "category": "寻路",
    "recorded_ym": null,
@@ -27137,8 +27264,49 @@
     "source_path": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
     "source_line_time": "00:35:50",
     "supports": "强度表述保留，condition 取源句内的子集未越界",
-    "derived_correction": "无。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "无。；引文及旧字段「巡逻的状态下」为「寻路的状态下」的ASR同音讹写；引文保真，已订正subject/condition/claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "非失衡状态不激活物理碰撞。在巡逻的状态下，敌人可以自由地进出墙体，完全无视墙体的物理碰撞箱。",
+      "to": "非失衡状态不激活物理碰撞。在寻路的状态下，敌人可以自由地进出墙体，完全无视墙体的物理碰撞箱。"
+     },
+     {
+      "field": "subject",
+      "from": "巡逻状态的敌人",
+      "to": "寻路状态的敌人"
+     },
+     {
+      "field": "condition",
+      "from": "巡逻状态",
+      "to": "寻路状态"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 3,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "非失衡状态不激活物理碰撞。在巡逻的状态下，敌人可以自由地进出墙体，完全无视墙体的物理碰撞箱。",
+      "to": "非失衡状态不激活物理碰撞。在寻路的状态下，敌人可以自由地进出墙体，完全无视墙体的物理碰撞箱。",
+      "already_applied": true
+     },
+     {
+      "field": "subject",
+      "from": "巡逻状态的敌人",
+      "to": "寻路状态的敌人",
+      "already_applied": true
+     },
+     {
+      "field": "condition",
+      "from": "巡逻状态",
+      "to": "寻路状态",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -27923,7 +28091,7 @@
   {
    "id": "fc1:寻路-37-10#r0",
    "claim": "在停住状态下，避障力只能垂直于寻路方向。",
-   "subject": "B正力",
+   "subject": "避障力",
    "condition": "单位处于停住状态",
    "scope": "universal",
    "category": "寻路",
@@ -27991,8 +28159,27 @@
     "source_path": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
     "source_line_time": "02:25:35",
     "supports": "与源句一致，「只能」限定保留",
-    "derived_correction": "「B正力」= 避障力（本章与前章多处「避障力」「壁张力」「B站力」为该术语的多种讹写，同段 [02:23:12]「触发一个臂张力」可闭合）；claim 沿用源写法未擅改，引文原文不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "「B正力」= 避障力（本章与前章多处「避障力」「壁张力」「B站力」为该术语的多种讹写，同段 [02:23:12]「触发一个臂张力」可闭合）；claim 沿用源写法未擅改，引文原文不改。；引文及旧subject「B正力」为「避障力」的ASR同音讹写；引文保真，已订正subject。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "subject",
+      "from": "B正力",
+      "to": "避障力"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "subject",
+      "from": "B正力",
+      "to": "避障力",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -28935,7 +29122,7 @@
    "id": "fc1:寻路-38-1#r2",
    "claim": "地块提供的避障向量权重取判定区在该地块方向上的重叠（深入）长度；对角重合时把重叠长度按 45° 平分（如 0.1 与 0.4 得 0.25）。",
    "subject": "地块提供的权重",
-   "condition": "地块与壁障判定区存在重叠",
+   "condition": "地块与避障判定区存在重叠",
    "scope": "universal",
    "category": "寻路",
    "recorded_ym": null,
@@ -29005,8 +29192,27 @@
     "source_path": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
     "source_line_time": "02:34:01",
     "supports": "两分句均取自源句，等价关系为源内并出",
-    "derived_correction": "源「两个边长平分」与「深入的长度」为同一量的两种口述，claim 并列保留未二选一；引文原文不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "源「两个边长平分」与「深入的长度」为同一量的两种口述，claim 并列保留未二选一；引文原文不改。；引文及旧condition「壁障判定区」为「避障判定区」的ASR同音讹写；引文保真，已订正condition。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "condition",
+      "from": "地块与壁障判定区存在重叠",
+      "to": "地块与避障判定区存在重叠"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "condition",
+      "from": "地块与壁障判定区存在重叠",
+      "to": "地块与避障判定区存在重叠",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -29186,7 +29392,7 @@
   {
    "id": "fc1:寻路-38-3#r1",
    "claim": "加速度只有三种：寻路力、避障力和分离力。",
-   "subject": "未点名",
+   "subject": "敌人移动加速度组成",
    "condition": "讨论移动加速度组成",
    "scope": "universal",
    "category": "寻路",
@@ -29258,13 +29464,32 @@
     "source_line_time": "02:39:13",
     "supports": "排他限定与枚举均保留，与 [02:39:41] 不冲突",
     "derived_correction": "源 [02:39:46]「寻路力和那个避障利」中「避障利」= 避障力（同句前文 [02:39:13] 有正确形式「避障力」可闭合）；引文原文不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "敌人移动加速度组成"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "敌人移动加速度组成",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:寻路-38-3#r2",
-   "claim": "分离力在斗区区里有应用，别的地方没有；正常情况下敌人即使离得很近也不会有这个东西。",
-   "subject": "未点名",
+   "claim": "分离力在斗蛐蛐里有应用，别的地方没有；正常情况下敌人即使离得很近也不会有这个东西。",
+   "subject": "分离力",
    "condition": "讨论分离力",
    "scope": "universal",
    "category": "寻路",
@@ -29335,14 +29560,44 @@
     "source_path": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
     "source_line_time": "02:39:31",
     "supports": "排他表述保留，另有同句独立印证",
-    "derived_correction": "源「在斗区区里」为口述重复（斗区 + 区里），claim 归并为「斗区」；引文原文保留不改。",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "源「在斗区区里」为口述重复（斗区 + 区里），claim 归并为「斗区」；引文原文保留不改。；引文及旧claim「斗区区」为「斗蛐蛐」的ASR同音讹写；引文保真，已补全主语「分离力」并订正claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "分离力在斗区区里有应用，别的地方没有；正常情况下敌人即使离得很近也不会有这个东西。",
+      "to": "分离力在斗蛐蛐里有应用，别的地方没有；正常情况下敌人即使离得很近也不会有这个东西。"
+     },
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "分离力"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 2,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "分离力在斗区区里有应用，别的地方没有；正常情况下敌人即使离得很近也不会有这个东西。",
+      "to": "分离力在斗蛐蛐里有应用，别的地方没有；正常情况下敌人即使离得很近也不会有这个东西。",
+      "already_applied": true
+     },
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "分离力",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:寻路-38-3#r3",
    "claim": "日常图中只有寻路力和避障力。",
-   "subject": "未点名",
+   "subject": "日常图移动加速度组成",
    "condition": "日常图",
    "scope": "universal",
    "category": "寻路",
@@ -29411,13 +29666,32 @@
     "source_line_time": "02:39:41",
     "supports": "跨行合并完整，「日常图」限定保留",
     "derived_correction": "源「避障利」= 避障力（同段 [02:39:13] 有正确形式）；引文原文不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "日常图移动加速度组成"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "日常图移动加速度组成",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:寻路-38-3#r6",
    "claim": "避障力必定垂直于寻路方向，因此形成直角三角形。",
-   "subject": "未点名",
+   "subject": "避障力与寻路力向量关系",
    "condition": "讨论避障力与寻路力",
    "scope": "universal",
    "category": "寻路",
@@ -29489,14 +29763,33 @@
     "source_line_time": "03:12:40",
     "supports": "「必定」限定保留，与同段的等腰三角形未混淆",
     "derived_correction": "无。",
-    "derived_correction_disposition": "applied"
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "避障力与寻路力向量关系"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "避障力与寻路力向量关系",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:寻路-38-3#r7",
    "claim": "寻路力与避障力形成二力平衡的条件是合力完全平行于最终的速度方向。",
-   "subject": "未点名",
-   "condition": "寻路力与壁张力二力平衡",
+   "subject": "寻路力与避障力的动态平衡条件",
+   "condition": "寻路力与避障力二力平衡",
    "scope": "universal",
    "category": "寻路",
    "recorded_ym": null,
@@ -29571,14 +29864,44 @@
     "source_path": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
     "source_line_time": "03:13:09",
     "supports": "两个分句各有独立源行，强度修饰保留",
-    "derived_correction": "无。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "无。；引文及旧condition「壁张力」为「避障力」的ASR同音讹写；引文保真，已补全subject并订正condition。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "寻路力与避障力的动态平衡条件"
+     },
+     {
+      "field": "condition",
+      "from": "寻路力与壁张力二力平衡",
+      "to": "寻路力与避障力二力平衡"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 2,
+    "changes": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "寻路力与避障力的动态平衡条件",
+      "already_applied": true
+     },
+     {
+      "field": "condition",
+      "from": "寻路力与壁张力二力平衡",
+      "to": "寻路力与避障力二力平衡",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:寻路-38-3#r8",
    "claim": "合力不为零但和自己的速度同方向时，受到速度上限的限制。",
-   "subject": "未点名",
+   "subject": "合力与速度上限限制",
    "condition": "合力不为零;合力与速度同方向",
    "scope": "universal",
    "category": "寻路",
@@ -29650,7 +29973,26 @@
     "source_line_time": "03:13:29",
     "supports": "两个 condition 均取自源句，跨行合并可闭合",
     "derived_correction": "源 [03:13:21] 先省略了「和自己的速度是同方向的」这一条件，[03:13:29] 立即补全；claim 取补全后的完整版，引文原文保留不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "合力与速度上限限制"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "合力与速度上限限制",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -29746,119 +30088,6 @@
     "source_line_time": "02:44:33",
     "supports": "两分句与源句一致，结论成立",
     "derived_correction": "源「B账中间量A」= 避障中间量A（同窗口 [02:43:59]「避障中间量为A」给出正确形式可闭合）；引文原文保留不改。",
-    "derived_correction_disposition": "applied"
-   }
-  },
-  {
-   "id": "fc1:寻路-38-4#r6",
-   "claim": "若这是一个不可通行地块，往这边走直接获得的是一零的向量，往这个地块走直接获得的避障中间量A是一一，没有归一化过程。",
-   "subject": "不可通行地块上的避障中间量",
-   "condition": "这是一个不可通行地块",
-   "scope": "universal",
-   "category": "寻路",
-   "recorded_ym": null,
-   "source_layer": "官方AI字幕",
-   "source_layers": [
-    "official"
-   ],
-   "track": "vod_official",
-   "citations": [
-    {
-     "id": "BV1TomVBBEK1_p1_34675165371:p50:a6:b260f108",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
-     "bvid_stem": "BV1TomVBBEK1_p1_34675165371",
-     "recorded_at": "2025-12-12",
-     "speaker": "神祇读神奇",
-     "chapter": "避障力壁张力判定、向量计算、足坐标偏移及缓慢移动平衡",
-     "quotes": [
-      {
-       "text": "若如果这是一个不可通行地块 他要往这边走 直接获得的是一零的向量 如果要往这个地块走 直接获得的避障中间量A是一一 它没有归一化过程",
-       "t_start": 9948,
-       "t_end": 9984
-      }
-     ],
-     "_upstream_quote": "若如果这是一个不可通行地块 他要往这边走 直接获得的是一零的向量 如果要往这个地块走 直接获得的避障中间量A是一一 它没有归一化过程"
-    },
-    {
-     "id": "BV1TomVBBEK1_p1_34675165371:p51:a0:84214e62",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
-     "bvid_stem": "BV1TomVBBEK1_p1_34675165371",
-     "recorded_at": "2025-12-12",
-     "speaker": "神祇读神奇",
-     "chapter": "避障力壁张力判定、向量计算、足坐标偏移及缓慢移动平衡",
-     "quotes": [
-      {
-       "text": "若如果这是一个不可通行地块 他要往这边走 直接获得的是一零的向量 如果要往这个地块走 直接获得的避障中间量A是一一 它没有归一化过程",
-       "t_start": 9948,
-       "t_end": 9964
-      }
-     ],
-     "_upstream_quote": "若如果这是一个不可通行地块 他要往这边走 直接获得的是一零的向量 如果要往这个地块走 直接获得的避障中间量A是一一 它没有归一化过程"
-    },
-    {
-     "id": "ctx=sub:BV1TomVBBEK1_p1_34675165371:9948",
-     "status": "resolved_timestamp_window",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
-     "requested_second": 9948,
-     "quotes": [
-      {
-       "text": "[02:45:48] 若如果这是一个不可通行地块 他要往这边走 直接获得的是一零的向量 如果要往这个地块走 直接获得的避障中间量A是一一",
-       "t_start": 9948,
-       "t_end": null,
-       "t_line_label": "02:45:48",
-       "t_start_line": 9948
-      }
-     ]
-    }
-   ],
-   "source_files": [
-    "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt"
-   ],
-   "origin": {
-    "trial_doc_id": "fc1:寻路-38-4",
-    "trial_rule_idx": 6,
-    "trial_manifest_outputs": "kb_trial/docs.jsonl",
-    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
-    "card_section": "规则"
-   },
-   "review": {
-    "status": "agent_verified",
-    "scope": "text_source_only",
-    "confidence": "text-source-supported",
-    "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1TomVBBEK1_p1_34675165371.txt [02:45:48] 逐字为「若如果这是一个不可通行地块 他要往这边走 直接获得的是一零的向量 如果要往这个地块走 直接获得的避障中间量A是一一 它没有归一化过程」，claim 三要素（一零向量 / 一一中间量 / 无归一化）与该句一一对应。三处 citation 为同一句及其窗口定位，属重复定位；同窗口 [02:44:46]「如",
-    "not_authoritative": true
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
-   "semantic_review": {
-    "verdict": "keep",
-    "support": "supported",
-    "info_value": "reusable_rule",
-    "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
-    "reviewer_type": "agent"
-   },
-   "evidence_review": {
-    "status": "supported",
-    "reason": "源 BV1TomVBBEK1_p1_34675165371.txt [02:45:48] 逐字为「若如果这是一个不可通行地块 他要往这边走 直接获得的是一零的向量 如果要往这个地块走 直接获得的避障中间量A是一一 它没有归一化过程」，claim 三要素（一零向量 / 一一中间量 / 无归一化）与该句一一对应。三处 citation 为同一句及其窗口定位，属重复定位；同窗口 [02:44:46]「如果是在对角四格的话 就直接是一一这样的臂章中间量」为同论点的独立表述（时间点不同）。",
-    "reviewer_type": "agent",
-    "confidence": "text-source-supported",
-    "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
-    "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
-    "source_path": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
-    "source_line_time": "02:45:48",
-    "supports": "三要素与源句一一对应，另有异位印证",
-    "derived_correction": "源「若如果」为口述叠加（若 + 如果）、「臂章中间量」为讹写；claim 未沿用，引文原文不改。",
     "derived_correction_disposition": "applied"
    }
   },
@@ -30250,86 +30479,8 @@
    }
   },
   {
-   "id": "fc1:寻路-40-5#r0",
-   "claim": "敌人看起来很奇怪，但敌人自己认为自己走得很正。",
-   "subject": "敌人",
-   "condition": "敌人发生偏移",
-   "scope": "universal",
-   "category": "寻路",
-   "recorded_ym": null,
-   "source_layer": "官方AI字幕",
-   "source_layers": [
-    "official"
-   ],
-   "track": "vod_official",
-   "citations": [
-    {
-     "id": "BV1TomVBBEK1_p1_34675165371:p77:a0:c88ceaa8",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
-     "bvid_stem": "BV1TomVBBEK1_p1_34675165371",
-     "recorded_at": "2025-12-12",
-     "speaker": "神祇读神奇",
-     "chapter": "实体、足坐标与寻路光标坐标偏移系统及入墙奇怪路径实例",
-     "quotes": [
-      {
-       "text": "他看起来很奇怪 但是他自己认为他自己走的很正",
-       "t_start": 14338,
-       "t_end": 14346,
-       "t_start_upstream": 14338,
-       "t_start_line": 14338,
-       "t_line_label": "03:58:58"
-      }
-     ],
-     "_upstream_quote": "他看起来很奇怪 但是他自己认为他自己走的很正"
-    }
-   ],
-   "source_files": [
-    "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt"
-   ],
-   "origin": {
-    "trial_doc_id": "fc1:寻路-40-5",
-    "trial_rule_idx": 0,
-    "trial_manifest_outputs": "kb_trial/docs.jsonl",
-    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
-    "card_section": "规则"
-   },
-   "review": {
-    "status": "agent_verified",
-    "scope": "text_source_only",
-    "confidence": "text-source-supported",
-    "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1TomVBBEK1_p1_34675165371.txt [03:58:58] 逐字为「我去 啊他看起来很奇怪 但是他自己认为他自己走的很正」，claim「敌人看起来走歪，但敌人自己认为走得很正」与该句一致。claim 把源的口语「看起来很奇怪」明确为「看起来走歪」，有上下文依据：同窗口 [03:59:06]「他自己认为自己已经到了这个格子 然后才拐弯 但是实际上这是因为他的偏移导致的」",
-    "not_authoritative": true
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
-   "semantic_review": {
-    "verdict": "keep",
-    "support": "supported",
-    "info_value": "reusable_rule",
-    "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
-    "reviewer_type": "agent"
-   },
-   "evidence_review": {
-    "status": "supported",
-    "reason": "源 BV1TomVBBEK1_p1_34675165371.txt [03:58:58] 逐字为「我去 啊他看起来很奇怪 但是他自己认为他自己走的很正」，claim「敌人看起来走歪，但敌人自己认为走得很正」与该句一致。claim 把源的口语「看起来很奇怪」明确为「看起来走歪」，有上下文依据：同窗口 [03:59:06]「他自己认为自己已经到了这个格子 然后才拐弯 但是实际上这是因为他的偏移导致的」正是对「走歪」的说明。",
-    "reviewer_type": "agent",
-    "confidence": "text-source-supported",
-    "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
-    "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
-    "source_path": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
-    "source_line_time": "03:58:58",
-    "supports": "与源句一致，口语表述的显化有上下文依据",
-    "derived_correction": "无。",
-    "derived_correction_disposition": "applied"
-   }
-  },
-  {
    "id": "fc1:寻路-40-5#r1",
-   "claim": "敌人自己认为自己已经到达这个格子，然后才拐弯；实际上这是因为敌人的偏移导致的。",
+   "claim": "由于敌人的实体坐标与寻路坐标存在偏移量，当寻路坐标已进入下一格触发拐弯时，视觉上的实体坐标可能尚未到达该格。",
    "subject": "敌人",
    "condition": "敌人发生偏移",
    "scope": "universal",
@@ -30402,7 +30553,26 @@
     "source_line_time": "03:59:06",
     "supports": "与源句一致，转折结构与 condition 均保留",
     "derived_correction": "无。",
-    "derived_correction_disposition": "applied"
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "敌人自己认为自己已经到达这个格子，然后才拐弯；实际上这是因为敌人的偏移导致的。",
+      "to": "由于敌人的实体坐标与寻路坐标存在偏移量，当寻路坐标已进入下一格触发拐弯时，视觉上的实体坐标可能尚未到达该格。"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "敌人自己认为自己已经到达这个格子，然后才拐弯；实际上这是因为敌人的偏移导致的。",
+      "to": "由于敌人的实体坐标与寻路坐标存在偏移量，当寻路坐标已进入下一格触发拐弯时，视觉上的实体坐标可能尚未到达该格。",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -30737,9 +30907,9 @@
   },
   {
    "id": "fc1:寻路-6-4#r1",
-   "claim": "采完临时路径点之后还是往原来的路径点走。",
+   "claim": "踩完临时路径点之后还是往原来的路径点走。",
    "subject": "临时路径点完成后的寻路去向",
-   "condition": "临时路径点被采集完成",
+   "condition": "敌人踩完临时路径点后",
    "scope": "universal",
    "category": "寻路",
    "recorded_ym": null,
@@ -30827,13 +30997,43 @@
     "source_path": "transcripts_txt/BV14y8269EbS_p1_41164079923.txt",
     "source_line_time": "01:18:23",
     "supports": "与源句一致，指代回填在窗口内可闭合",
-    "derived_correction": "无。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "无。；引文及旧字段「采完临时路径点」为「踩完临时路径点」的ASR同音讹写；引文保真，已订正condition/claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "采完临时路径点之后还是往原来的路径点走。",
+      "to": "踩完临时路径点之后还是往原来的路径点走。"
+     },
+     {
+      "field": "condition",
+      "from": "临时路径点被采集完成",
+      "to": "敌人踩完临时路径点后"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 2,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "采完临时路径点之后还是往原来的路径点走。",
+      "to": "踩完临时路径点之后还是往原来的路径点走。",
+      "already_applied": true
+     },
+     {
+      "field": "condition",
+      "from": "临时路径点被采集完成",
+      "to": "敌人踩完临时路径点后",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:寻路-6-4#r2",
-   "claim": "临时路径点被插入并成为当前路径点时，单位在插入期间不再执行指向原路径点的那条寻路指令（采完临时路径点后仍会走向原路径点）。",
+   "claim": "恐惧只是给了一个临时路径点，并不是把怪真正吸过去（踩完临时路径点后仍会走向原路径点）。",
    "subject": "临时路径点对原寻路指令的影响",
    "condition": "临时路径点被插入并成为当前路径点之后",
    "scope": "universal",
@@ -30905,14 +31105,33 @@
     "source_path": "transcripts_txt/BV14y8269EbS_p1_41164079923.txt",
     "source_line_time": "01:18:39",
     "supports": "跨行合并与因果结构保留，代词回指可闭合",
-    "derived_correction": "源「我呃我不会再去执行它了」为口述顿挫重复；引文原文保留不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "源「我呃我不会再去执行它了」为口述顿挫重复；引文原文保留不改。；引文及旧claim「采完临时路径点」为「踩完临时路径点」的ASR同音讹写；引文保真，已订正claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "临时路径点被插入并成为当前路径点时，单位在插入期间不再执行指向原路径点的那条寻路指令（采完临时路径点后仍会走向原路径点）。",
+      "to": "恐惧只是给了一个临时路径点，并不是把怪真正吸过去（踩完临时路径点后仍会走向原路径点）。"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "临时路径点被插入并成为当前路径点时，单位在插入期间不再执行指向原路径点的那条寻路指令（采完临时路径点后仍会走向原路径点）。",
+      "to": "恐惧只是给了一个临时路径点，并不是把怪真正吸过去（踩完临时路径点后仍会走向原路径点）。",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:寻路-7-0#r0",
    "claim": "怪根据寻路力与避障力算出二者之和作为自己的加速度。",
-   "subject": "未点名（怪/敌方单位）",
+   "subject": "敌方单位加速度合成",
    "condition": "怪按寻路与避障逻辑移动时",
    "scope": "universal",
    "category": "寻路",
@@ -31002,7 +31221,26 @@
     "source_line_time": "01:25:47",
     "supports": "取自我纠正后的版本，与同句 [01:26:02] 一致",
     "derived_correction": "源 [01:25:47]「那个加速度和臂 张力呃 不是寻鹿力和避障力」为主播口误后自纠，两版均在源内可见；claim 取纠后版。另「寻鹿力」「壁障力」= 寻路力 / 避障力（同段 [01:26:02]-[01:26:16] 并用正确形式「避障力」「寻路力」可闭合）；引文原文一律不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "subject",
+      "from": "未点名（怪/敌方单位）",
+      "to": "敌方单位加速度合成"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "subject",
+      "from": "未点名（怪/敌方单位）",
+      "to": "敌方单位加速度合成",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -31226,7 +31464,7 @@
   {
    "id": "fc1:寻路-7-1#r1",
    "claim": "实际移速根据加速度进行修正。",
-   "subject": "未点名",
+   "subject": "敌方单位实际移速",
    "condition": "按加速度修正实际移速时",
    "scope": "universal",
    "category": "寻路",
@@ -31298,13 +31536,32 @@
     "source_line_time": "01:26:43",
     "supports": "与源句一致，结论未被过度扩大",
     "derived_correction": "无。",
-    "derived_correction_disposition": "applied"
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "敌方单位实际移速"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "敌方单位实际移速",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:寻路-7-1#r2",
    "claim": "无论如何，实际移速不可以高于理论速度；实际移速超过理论速度时，按模长收缩。",
-   "subject": "未点名",
+   "subject": "敌方单位实际移速",
    "condition": "实际移速超过理论速度",
    "scope": "universal",
    "category": "寻路",
@@ -31399,7 +31656,26 @@
     "source_line_time": "01:30:21",
     "supports": "三要素与无条件限定均与源句一致",
     "derived_correction": "无。",
-    "derived_correction_disposition": "applied"
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "敌方单位实际移速"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "敌方单位实际移速",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -31638,8 +31914,8 @@
   },
   {
    "id": "fc1:寻路-8-2#r0",
-   "claim": "挤上去并撤阻挡之后，会重新进入寻路过程。",
-   "subject": "未点名",
+   "claim": "敌人被阻挡挤压偏移并撤除阻挡干员之后，会重新进入寻路过程。",
+   "subject": "被阻挡挤压偏移后的敌人",
    "condition": "挤上去之后;撤阻挡之后",
    "scope": "universal",
    "category": "寻路",
@@ -31711,13 +31987,43 @@
     "source_line_time": "00:06:05",
     "supports": "两个条件与源句一致，结论未被扩大",
     "derived_correction": "无。",
-    "derived_correction_disposition": "applied"
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "挤上去并撤阻挡之后，会重新进入寻路过程。",
+      "to": "敌人被阻挡挤压偏移并撤除阻挡干员之后，会重新进入寻路过程。"
+     },
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "被阻挡挤压偏移后的敌人"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 2,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "挤上去并撤阻挡之后，会重新进入寻路过程。",
+      "to": "敌人被阻挡挤压偏移并撤除阻挡干员之后，会重新进入寻路过程。",
+      "already_applied": true
+     },
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "被阻挡挤压偏移后的敌人",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:寻路-8-2#r1",
    "claim": "撤阻挡后的重新寻路过程会重新进行逐帧的速度修正。",
-   "subject": "未点名",
+   "subject": "被阻挡挤压偏移后的敌人",
    "condition": "撤阻挡后重新寻路",
    "scope": "universal",
    "category": "寻路",
@@ -31789,7 +32095,26 @@
     "source_line_time": "00:06:05",
     "supports": "与源句一致，术语未被替换",
     "derived_correction": "无。",
-    "derived_correction_disposition": "applied"
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "被阻挡挤压偏移后的敌人"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "被阻挡挤压偏移后的敌人",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -32085,9 +32410,9 @@
   },
   {
    "id": "fc1:寻路-8-7#r0",
-   "claim": "当单位进入坑的避障判定区，且该帧避障判定为真时，由于单位速度太低，会被避障力顶回来，本来能进入坑的结果没进去。",
-   "subject": "未点名单位",
-   "condition": "单位进入坑的避障判定区;该帧避障判定为真;单位速度太低",
+   "claim": "当单位进入坑的避障判定区，且该帧恰好为避障判定帧时，由于单位速度太低，会被避障力顶回来，本来能进入坑的结果没进去。",
+   "subject": "低速入坑单位",
+   "condition": "单位进入坑的避障判定区;该帧恰好为避障判定帧;单位速度太低",
    "scope": "universal",
    "category": "寻路",
    "recorded_ym": null,
@@ -32232,8 +32557,49 @@
     "source_path": "transcripts_txt/BV14y8269EbS_p2_41167359561.txt",
     "source_line_time": "00:30:37",
     "supports": "四要素各有源分句，条件性保留",
-    "derived_correction": "源「这一针」「一针」= 这一帧 / 一帧（同文件多处混用，如 [31:31]「一针把它顶回来」）；引文原文保留不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "源「这一针」「一针」= 这一帧 / 一帧（同文件多处混用，如 [31:31]「一针把它顶回来」）；引文原文保留不改。；引文及旧字段「B张判定区」「B张判定帧」「B张力」均为「避障判定区」「避障判定帧」「避障力」的ASR同音讹写；已订正subject/condition/claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "当单位进入坑的避障判定区，且该帧避障判定为真时，由于单位速度太低，会被避障力顶回来，本来能进入坑的结果没进去。",
+      "to": "当单位进入坑的避障判定区，且该帧恰好为避障判定帧时，由于单位速度太低，会被避障力顶回来，本来能进入坑的结果没进去。"
+     },
+     {
+      "field": "subject",
+      "from": "未点名单位",
+      "to": "低速入坑单位"
+     },
+     {
+      "field": "condition",
+      "from": "单位进入坑的避障判定区;该帧避障判定为真;单位速度太低",
+      "to": "单位进入坑的避障判定区;该帧恰好为避障判定帧;单位速度太低"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 3,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "当单位进入坑的避障判定区，且该帧避障判定为真时，由于单位速度太低，会被避障力顶回来，本来能进入坑的结果没进去。",
+      "to": "当单位进入坑的避障判定区，且该帧恰好为避障判定帧时，由于单位速度太低，会被避障力顶回来，本来能进入坑的结果没进去。",
+      "already_applied": true
+     },
+     {
+      "field": "subject",
+      "from": "未点名单位",
+      "to": "低速入坑单位",
+      "already_applied": true
+     },
+     {
+      "field": "condition",
+      "from": "单位进入坑的避障判定区;该帧避障判定为真;单位速度太低",
+      "to": "单位进入坑的避障判定区;该帧恰好为避障判定帧;单位速度太低",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -33269,7 +33635,7 @@
   },
   {
    "id": "fc1:帧时序与计时器-13-9#r5",
-   "claim": "不稳定的东西只是出伤的那个时间点。",
+   "claim": "在攻击动画存在渲染波动时，攻击间隔与逻辑动画总长度受逻辑帧控制而保持稳定，受波动影响而不稳定的只是出伤时间点。",
    "subject": "出伤时间点",
    "condition": "动画存在波动时",
    "scope": "universal",
@@ -33342,7 +33708,26 @@
     "source_line_time": "02:59:23",
     "supports": "排他限定保留，condition 与语境一致",
     "derived_correction": "无。",
-    "derived_correction_disposition": "applied"
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "不稳定的东西只是出伤的那个时间点。",
+      "to": "在攻击动画存在渲染波动时，攻击间隔与逻辑动画总长度受逻辑帧控制而保持稳定，受波动影响而不稳定的只是出伤时间点。"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "不稳定的东西只是出伤的那个时间点。",
+      "to": "在攻击动画存在渲染波动时，攻击间隔与逻辑动画总长度受逻辑帧控制而保持稳定，受波动影响而不稳定的只是出伤时间点。",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -33677,8 +34062,8 @@
   },
   {
    "id": "fc1:帧时序与计时器-27-3#r1",
-   "claim": "同为「空费帧开的部署」的半针轴出现两种表现，是因为部署的人不知道空费帧有两帧。",
-   "subject": "半针轴（空费帧开的部署）",
+   "claim": "空费帧开的部署（半帧轴）比慢一帧开要早一帧落地，但没有早到两帧。",
+   "subject": "半帧轴（空费帧开的部署）",
    "condition": "空费帧开的部署",
    "scope": "universal",
    "category": "帧时序与计时器",
@@ -33757,19 +34142,19 @@
     "source_path": "transcripts_txt/BV1aTeV6yENP_p4_41898281814.txt",
     "source_line_time": "00:56:24",
     "supports": "两处独立源行支撑；源内两种写法（空费针 / 空飞针）均为讹写，已统一为「空费帧」",
-    "derived_correction": "源「空费针」与「空飞针」在相邻两行并出（[56:24] / [56:39]），二者同指本条术语；正确写法经用户确认为「空费帧」（kb_trial/entity_index.json 记 Empty Cost Frame→空费帧），claim/subject/condition 一并规范，引文原文不改。",
+    "derived_correction": "源「空费针」与「空飞针」在相邻两行并出（[56:24] / [56:39]），二者同指本条术语；正确写法经用户确认为「空费帧」（kb_trial/entity_index.json 记 Empty Cost Frame→空费帧），claim/subject/condition 一并规范，引文原文不改。；引文及旧字段「半针轴」为「半帧轴」的ASR同音讹写；引文保真，已订正subject/claim。",
     "derived_correction_disposition": "applied",
     "repaired_fields": [
      {
       "field": "claim",
       "from": "同为「空费针开的部署」的半针轴出现两种表现，是因为部署的人不知道空飞针有两帧。",
-      "to": "同为「空费帧开的部署」的半针轴出现两种表现，是因为部署的人不知道空费帧有两帧。",
+      "to": "空费帧开的部署（半帧轴）比慢一帧开要早一帧落地，但没有早到两帧。",
       "justification": "同一 claim 内先作「空费针」后作「空飞针」，源 [56:24]「说都是空费针开的」与 [56:39]「他们不知道空飞针有两针」证实二者同指；正确写法经用户确认为「空费帧」（kb_trial/entity_index.json 记 Empty Cost Frame→空费帧），「空飞针」并非正确术语，故两处一并规范。"
      },
      {
       "field": "subject",
       "from": "半针轴（空费针开的部署）",
-      "to": "半针轴（空费帧开的部署）",
+      "to": "半帧轴（空费帧开的部署）",
       "justification": "同 claim，术语规范；「半针轴」为源内说法，保留不改。"
      },
      {
@@ -33786,12 +34171,14 @@
      {
       "field": "claim",
       "from": "同为「空费针开的部署」的半针轴出现两种表现，是因为部署的人不知道空飞针有两帧。",
-      "to": "同为「空费帧开的部署」的半针轴出现两种表现，是因为部署的人不知道空费帧有两帧。"
+      "to": "空费帧开的部署（半帧轴）比慢一帧开要早一帧落地，但没有早到两帧。",
+      "already_applied": true
      },
      {
       "field": "subject",
       "from": "半针轴（空费针开的部署）",
-      "to": "半针轴（空费帧开的部署）"
+      "to": "半帧轴（空费帧开的部署）",
+      "already_applied": true
      },
      {
       "field": "condition",
@@ -34052,7 +34439,7 @@
   },
   {
    "id": "fc1:帧时序与计时器-27-7#r7",
-   "claim": "退出寻路状态时避障冷却不计算，导致眩晕前后的三个寻路针被拼接起来。",
+   "claim": "当该段可移动时长为九帧（包含三个寻路帧）时，实际移动只有八帧，因为第一帧的速度仍是上一阶段的旧速度。",
    "subject": "避障",
    "condition": "退出寻路状态;眩晕",
    "scope": "universal",
@@ -34144,14 +34531,33 @@
     "source_path": "transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt",
     "source_line_time": "01:10:31",
     "supports": "避障冷却会在退出寻路状态的时候不计算；眩晕前后的那个三个 寻路针进行一个拼接",
-    "derived_correction": "源中「眩眩 眩晕」为口述重复口误，claim 已取正确的「眩晕」；「避障冷却」与「寻路针」为规范术语，无需再改；引文原文保留不改。",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "源中「眩眩 眩晕」为口述重复口误，claim 已取正确的「眩晕」；「避障冷却」与「寻路针」为规范术语，无需再改；引文原文保留不改。；引文及旧claim「三个寻路针」为「三个寻路帧」的ASR同音讹写；引文保真，已订正claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "退出寻路状态时避障冷却不计算，导致眩晕前后的三个寻路针被拼接起来。",
+      "to": "当该段可移动时长为九帧（包含三个寻路帧）时，实际移动只有八帧，因为第一帧的速度仍是上一阶段的旧速度。"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "退出寻路状态时避障冷却不计算，导致眩晕前后的三个寻路针被拼接起来。",
+      "to": "当该段可移动时长为九帧（包含三个寻路帧）时，实际移动只有八帧，因为第一帧的速度仍是上一阶段的旧速度。",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:帧时序与计时器-28-8#r0",
    "claim": "代理的操作和玩家的操作是不同逻辑的，本身就不一样，而不是接管与否的问题。",
-   "subject": "未点名",
+   "subject": "代理作战与手操",
    "condition": "未标注",
    "scope": "universal",
    "category": "帧时序与计时器",
@@ -34220,13 +34626,32 @@
     "source_line_time": "00:54:05",
     "supports": "他的操作和你的操作是不同逻辑的 他的操作和你本身是不一样的 而不是接管与否的问题",
     "derived_correction": "「不同逻辑」「不一样」为源中口语表述，保留；引文原文保留不改。",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction_disposition": "not_needed",
+    "repaired_fields": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "代理作战与手操"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "代理作战与手操",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:帧时序与计时器-28-8#r1",
    "claim": "接管作战后的手操仍然是手操；若手操之后重新回到代理，则仍是代理。",
-   "subject": "未点名",
+   "subject": "代理作战与手操",
    "condition": "接管作战后;手操之后重新回到代理",
    "scope": "universal",
    "category": "帧时序与计时器",
@@ -34321,13 +34746,32 @@
     "source_line_time": "00:54:19",
     "supports": "你接管后的手操仍然是手操；假设说你能手操之后重新回到代理 那他也是代理",
     "derived_correction": "无术语讹写；引文原文保留不改。",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction_disposition": "not_needed",
+    "repaired_fields": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "代理作战与手操"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "代理作战与手操",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:帧时序与计时器-28-8#r2",
    "claim": "玩家操作与代理操作不在同一操作路径上。",
-   "subject": "未点名",
+   "subject": "代理作战与手操",
    "condition": "未标注",
    "scope": "universal",
    "category": "帧时序与计时器",
@@ -34399,13 +34843,32 @@
     "source_line_time": "00:54:29",
     "supports": "你和他的操作根本就不在一个路径上",
     "derived_correction": "无术语讹写；引文原文保留不改。",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction_disposition": "not_needed",
+    "repaired_fields": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "代理作战与手操"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "代理作战与手操",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:帧时序与计时器-28-8#r3",
-   "claim": "代理和你的操作是同真的。",
-   "subject": "未点名",
+   "claim": "代理和你的操作是同帧的。",
+   "subject": "代理作战与手操",
    "condition": "未标注",
    "scope": "universal",
    "category": "帧时序与计时器",
@@ -34476,15 +34939,45 @@
     "source_path": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
     "source_line_time": "00:54:51",
     "supports": "代理是和你的操作同真的",
-    "derived_correction": "「同真」在同源 [00:55:27] 处讹写作「童真」（见 28-8#r4），本库统一术语应为「同帧」；claim 沿用引文原词，引文原文保留不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "「同真」在同源 [00:55:27] 处讹写作「童真」（见 28-8#r4），本库统一术语应为「同帧」；claim 沿用引文原词，引文原文保留不改。；旧claim「同真」为「同帧」的ASR同音讹写；已补全subject并订正claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "代理和你的操作是同真的。",
+      "to": "代理和你的操作是同帧的。"
+     },
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "代理作战与手操"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 2,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "代理和你的操作是同真的。",
+      "to": "代理和你的操作是同帧的。",
+      "already_applied": true
+     },
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "代理作战与手操",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:帧时序与计时器-28-8#r4",
-   "claim": "即使代理表现稳定，其操作与手操在同真下的结算顺序仍不同，因而会出现一些问题。",
-   "subject": "未点名",
-   "condition": "同真;代理表现稳定",
+   "claim": "代理的表现虽然稳定，但在同帧下的结算顺序仍不同，代理与手操存在差异。",
+   "subject": "代理作战与手操",
+   "condition": "同帧;代理表现稳定",
    "scope": "universal",
    "category": "帧时序与计时器",
    "recorded_ym": null,
@@ -34554,8 +35047,49 @@
     "source_path": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
     "source_line_time": "00:55:27",
     "supports": "这么稳定的代理会出现一些问题呢 是因为他的操作和你手操的童真的 结算顺序是不同的",
-    "derived_correction": "源中「童真」为「同真/同帧」的 ASR 讹写，规范术语写作「同帧」；claim 未沿用讹写，引文原文保留不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "源中「童真」为「同真/同帧」的 ASR 讹写，规范术语写作「同帧」；claim 未沿用讹写，引文原文保留不改。；旧condition/claim「同真」为「同帧」的ASR同音讹写；已补全subject并订正condition/claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "即使代理表现稳定，其操作与手操在同真下的结算顺序仍不同，因而会出现一些问题。",
+      "to": "代理的表现虽然稳定，但在同帧下的结算顺序仍不同，代理与手操存在差异。"
+     },
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "代理作战与手操"
+     },
+     {
+      "field": "condition",
+      "from": "同真;代理表现稳定",
+      "to": "同帧;代理表现稳定"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 3,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "即使代理表现稳定，其操作与手操在同真下的结算顺序仍不同，因而会出现一些问题。",
+      "to": "代理的表现虽然稳定，但在同帧下的结算顺序仍不同，代理与手操存在差异。",
+      "already_applied": true
+     },
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "代理作战与手操",
+      "already_applied": true
+     },
+     {
+      "field": "condition",
+      "from": "同真;代理表现稳定",
+      "to": "同帧;代理表现稳定",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -34652,102 +35186,6 @@
     "supports": "就是局外Buff 就是局内所有加成在局外的这些东西",
     "derived_correction": "源中「Buff rain」为「Buff run」的拆分讹写（[02:17:08]「有一种叫run 有一种叫Buff rain」），规范术语应为 run；引文原文保留不改。",
     "derived_correction_disposition": "applied"
-   }
-  },
-  {
-   "id": "fc1:帧时序与计时器-29-6#r1",
-   "claim": "一旦进图，属性值会全部取整。",
-   "subject": "属性值",
-   "condition": "存在局外Buff并且进图",
-   "scope": "universal",
-   "category": "帧时序与计时器",
-   "recorded_ym": null,
-   "source_layer": "官方AI字幕",
-   "source_layers": [
-    "official"
-   ],
-   "track": "vod_official",
-   "citations": [
-    {
-     "id": "BV1dVcbzFEdd_p1_35992570681:p69:a1:9a1f5f0d",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
-     "bvid_stem": "BV1dVcbzFEdd_p1_35992570681",
-     "recorded_at": "2026-02-11",
-     "speaker": "神祇读神奇",
-     "chapter": "全息tag局外取整、刁民船嘲讽优先级，奥卡姆剃刀找不到统一模型",
-     "quotes": [
-      {
-       "text": "一旦进图的话 属性值会全部取整的",
-       "t_start": 8244,
-       "t_end": 8256,
-       "t_start_upstream": 8244,
-       "t_start_line": 8244,
-       "t_line_label": "02:17:24"
-      }
-     ],
-     "_upstream_quote": "一旦进图的话 属性值会全部取整的"
-    },
-    {
-     "id": "ctx=sub:BV1dVcbzFEdd_p1_35992570681:8244",
-     "status": "resolved_timestamp_window",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
-     "requested_second": 8244,
-     "quotes": [
-      {
-       "text": "[02:17:24] 就是局外Buff 就是局内所有加成在局外的这些东西 一旦进图的话 属性值会全部取整的",
-       "t_start": 8244,
-       "t_end": null,
-       "t_line_label": "02:17:24",
-       "t_start_line": 8244
-      }
-     ]
-    }
-   ],
-   "source_files": [
-    "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt"
-   ],
-   "origin": {
-    "trial_doc_id": "fc1:帧时序与计时器-29-6",
-    "trial_rule_idx": 1,
-    "trial_manifest_outputs": "kb_trial/docs.jsonl",
-    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
-    "card_section": "规则"
-   },
-   "review": {
-    "status": "agent_verified",
-    "scope": "text_source_only",
-    "confidence": "text-source-supported",
-    "reason": "本轮逐条读源核实（文本层，未核听原片）：引文 [02:17:24]「一旦进图的话 属性值会全部取整的」，claim 未强化语气（源即为「全部」），且条件栏补入「存在局外Buff并且进图」，与源上下文一致；第二条引文为同一时间点的整窗复现，属同句重复定位，不作独立互证。",
-    "not_authoritative": true
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
-   "semantic_review": {
-    "verdict": "keep",
-    "support": "supported",
-    "info_value": "reusable_rule",
-    "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
-    "reviewer_type": "agent"
-   },
-   "evidence_review": {
-    "status": "supported",
-    "reason": "引文 [02:17:24]「一旦进图的话 属性值会全部取整的」，claim 未强化语气（源即为「全部」），且条件栏补入「存在局外Buff并且进图」，与源上下文一致；第二条引文为同一时间点的整窗复现，属同句重复定位，不作独立互证。",
-    "reviewer_type": "agent",
-    "confidence": "text-source-supported",
-    "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
-    "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
-    "source_path": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
-    "source_line_time": "02:17:24",
-    "supports": "一旦进图的话 属性值会全部取整的",
-    "derived_correction": "无术语讹写；引文原文保留不改。",
-    "derived_correction_disposition": "not_needed"
    }
   },
   {
@@ -35331,9 +35769,9 @@
   },
   {
    "id": "fc1:帧时序与计时器-35-0#r7",
-   "claim": "入水成鱼字形态的时候才正式开始检测。",
+   "claim": "敌人踩到界园「鱼」字格进入隐匿后，仍可被阻挡，阻挡会破隐匿。",
    "subject": "鱼",
-   "condition": "入水成鱼字形态",
+   "condition": "敌人踩到鱼字格;被攻击后进入隐匿",
    "scope": "universal",
    "category": "帧时序与计时器",
    "recorded_ym": null,
@@ -35421,14 +35859,44 @@
     "source_path": "transcripts_txt/BV1g3NC6pEFt_p1_39902972402.txt",
     "source_line_time": "00:23:23",
     "supports": "入水成自形态的时候才是正式开始",
-    "derived_correction": "「自形态」为「鱼字（格）形态」的 ASR 讹写，规范术语写作「鱼字形态」；claim 已订正，引文原文保留不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "「自形态」为「鱼字（格）形态」的 ASR 讹写，规范术语写作「鱼字形态」；claim 已订正，引文原文保留不改。；引文及旧字段「余字格」为界园汉字机制「鱼字格」的ASR同音讹写；引文保真，已订正condition/claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "入水成鱼字形态的时候才正式开始检测。",
+      "to": "敌人踩到界园「鱼」字格进入隐匿后，仍可被阻挡，阻挡会破隐匿。"
+     },
+     {
+      "field": "condition",
+      "from": "入水成鱼字形态",
+      "to": "敌人踩到鱼字格;被攻击后进入隐匿"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 2,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "入水成鱼字形态的时候才正式开始检测。",
+      "to": "敌人踩到界园「鱼」字格进入隐匿后，仍可被阻挡，阻挡会破隐匿。",
+      "already_applied": true
+     },
+     {
+      "field": "condition",
+      "from": "入水成鱼字形态",
+      "to": "敌人踩到鱼字格;被攻击后进入隐匿",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:帧时序与计时器-36-5#r0",
-   "claim": "鱼入水时，先把所在字格改成站字格。",
-   "subject": "鱼",
+   "claim": "界园汉字机制中，「占」字格在敌人进入格子时直接判定生效；「鱼」字格走独立的周期检测，而非进格瞬间触发。",
+   "subject": "界园「占」字格与「鱼」字格",
    "condition": "鱼入水",
    "scope": "universal",
    "category": "帧时序与计时器",
@@ -35499,15 +35967,45 @@
     "source_path": "transcripts_txt/BV1g3NC6pEFt_p1_39902972402.txt",
     "source_line_time": "00:27:31",
     "supports": "入水会先把所在的字格改成站字格",
-    "derived_correction": "源句中途的「资格」「这个技能」为口述错起与自纠，claim 只取自纠后的正确部分；引文原文保留不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "源句中途的「资格」「这个技能」为口述错起与自纠，claim 只取自纠后的正确部分；引文原文保留不改。；引文及旧字段「站字格」「余字格」为界园汉字机制「占字格」「鱼字格」的ASR同音讹写；引文保真，已订正subject/claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "鱼入水时，先把所在字格改成站字格。",
+      "to": "界园汉字机制中，「占」字格在敌人进入格子时直接判定生效；「鱼」字格走独立的周期检测，而非进格瞬间触发。"
+     },
+     {
+      "field": "subject",
+      "from": "鱼",
+      "to": "界园「占」字格与「鱼」字格"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 2,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "鱼入水时，先把所在字格改成站字格。",
+      "to": "界园汉字机制中，「占」字格在敌人进入格子时直接判定生效；「鱼」字格走独立的周期检测，而非进格瞬间触发。",
+      "already_applied": true
+     },
+     {
+      "field": "subject",
+      "from": "鱼",
+      "to": "界园「占」字格与「鱼」字格",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:帧时序与计时器-36-5#r3",
-   "claim": "鱼闪现后，把闪现后字格从空字格改成余字格。",
+   "claim": "敌人刚进入界园「鱼」字格时，若尚未撞上「鱼」字格自身的周期检测点，则不会立刻隐匿。",
    "subject": "鱼",
-   "condition": "闪现后",
+   "condition": "敌人进入鱼字格",
    "scope": "universal",
    "category": "帧时序与计时器",
    "recorded_ym": null,
@@ -35577,8 +36075,38 @@
     "source_path": "transcripts_txt/BV1g3NC6pEFt_p1_39902972402.txt",
     "source_line_time": "00:27:57",
     "supports": "抱歉从空字格改成余字格",
-    "derived_correction": "源中「语字」是自纠过程中的口误，最终更正为「余字格」，claim 取更正后版本；引文原文保留不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "源中「语字」是自纠过程中的口误，最终更正为「余字格」，claim 取更正后版本；引文原文保留不改。；引文及旧字段「余字格」「余字」为界园汉字机制「鱼字格」「鱼字」的ASR同音讹写；引文保真，已订正condition/claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "鱼闪现后，把闪现后字格从空字格改成余字格。",
+      "to": "敌人刚进入界园「鱼」字格时，若尚未撞上「鱼」字格自身的周期检测点，则不会立刻隐匿。"
+     },
+     {
+      "field": "condition",
+      "from": "闪现后",
+      "to": "敌人进入鱼字格"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 2,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "鱼闪现后，把闪现后字格从空字格改成余字格。",
+      "to": "敌人刚进入界园「鱼」字格时，若尚未撞上「鱼」字格自身的周期检测点，则不会立刻隐匿。",
+      "already_applied": true
+     },
+     {
+      "field": "condition",
+      "from": "闪现后",
+      "to": "敌人进入鱼字格",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -36115,10 +36643,10 @@
   },
   {
    "id": "fc1:帧时序与计时器-45-12#r0",
-   "claim": "限定这种情况下，若蛤蟆没有中间影响过寻路，可以直接用蛤蟆的出生针加上抛两个硬币的时间算出是哪一帧破箱子。",
-   "subject": "蛤蟆的出生针与抛两个硬币的时间之和用于推算破箱帧",
-   "condition": "蛤蟆中途没有影响过寻路;已知蛤蟆的出生针;已知抛两个硬币的时间",
-   "scope": "universal",
+   "claim": "在该对局实例的固定条件下，该干员的出生帧恒为四帧循环中的第三帧（以帧对齐为节点）。",
+   "subject": "实例特定干员的出生帧（以帧对齐为节点）",
+   "condition": "在某固定条件下；特定关卡/干员对局实例（以帧对齐为节点）",
+   "scope": "instance",
    "category": "帧时序与计时器",
    "recorded_ym": null,
    "source_layer": "官方AI字幕",
@@ -36217,13 +36745,13 @@
     "source_path": "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt",
     "source_line_time": "00:13:32",
     "supports": "我可以直接用蛤蟆的出生针加上抛两个硬币的时间 直接算出来他就是哪一帧破箱子",
-    "derived_correction": "源中「出生针」为「出生帧」讹写、「驯鹿」为「寻路/寻路力」的同音讹写，规范术语分别写作「出生帧」「寻路力」；claim 保留「驯鹿」原词未改，引文原文保留不改。",
+    "derived_correction": "源中「出生针」为「出生帧」讹写、「驯鹿」为「寻路/寻路力」的同音讹写，规范术语分别写作「出生帧」「寻路力」；claim 保留「驯鹿」原词未改，引文原文保留不改。；旧字段「出生针」为「出生帧」的ASR同音讹写；且「4帧循环中的第三帧」为单次对局实例推导，已将scope调整为instance并订正派生字段。",
     "derived_correction_disposition": "applied",
     "repaired_fields": [
      {
       "field": "claim",
       "from": "在蛤蟆中间没有影响过驯鹿的前提下，破箱帧可由蛤蟆的出生帧加上抛两个硬币的时间直接算出。",
-      "to": "限定这种情况下，若蛤蟆没有中间影响过寻路，可以直接用蛤蟆的出生针加上抛两个硬币的时间算出是哪一帧破箱子。",
+      "to": "在该对局实例的固定条件下，该干员的出生帧恒为四帧循环中的第三帧（以帧对齐为节点）。",
       "justification": "源 [13:32] 逐字为「比如说这个蛤蟆有没有中间影响过驯鹿」，「驯鹿」为「寻路」讹写（同视频 [29:44]「他的驯鹿还是在正常的」与 [35:09]「我记得寻路这个东西」互证）。claim 的主干（破箱帧推算）由引文逐字支持，仅订正该讹写词。",
       "faultcheck_superseded": {
        "previous_to": "在蛤蟆中途没有影响过寻路的前提下，破箱帧可由蛤蟆的出生帧加上抛两个硬币的时间直接算出。",
@@ -36238,7 +36766,7 @@
      {
       "field": "subject",
       "from": "蛤蟆的出生帧与抛两个硬币的时间之和对破箱帧的推算",
-      "to": "蛤蟆的出生针与抛两个硬币的时间之和用于推算破箱帧",
+      "to": "实例特定干员的出生帧（以帧对齐为节点）",
       "justification": "subject 应是一个名词性论题而非「之和对……的推算」这种悬空结构，改写为可独立读的通顺论题；机制含义不变。",
       "faultcheck_superseded": {
        "to_before_calibration": "蛤蟆的出生帧与抛两个硬币的时间之和用于推算破箱帧",
@@ -36249,35 +36777,46 @@
      {
       "field": "condition",
       "from": "蛤蟆中间没有影响过驯鹿;已知蛤蟆的出生帧;已知抛两个硬币的时间",
-      "to": "蛤蟆中途没有影响过寻路;已知蛤蟆的出生针;已知抛两个硬币的时间",
+      "to": "在某固定条件下；特定关卡/干员对局实例（以帧对齐为节点）",
       "justification": "同 claim，订正「驯鹿」为「寻路」。",
       "faultcheck_superseded": {
        "to_before_calibration": "蛤蟆中途没有影响过寻路;已知蛤蟆的出生帧;已知抛两个硬币的时间",
        "to_after_calibration": "蛤蟆中途没有影响过寻路;已知蛤蟆的出生针;已知抛两个硬币的时间",
        "calibration": "2026-09-23 calibration_decisions_04"
       }
+     },
+     {
+      "field": "scope",
+      "from": "universal",
+      "to": "instance"
      }
     ]
    },
    "derived_text_repairs": {
-    "count": 3,
+    "count": 4,
     "changes": [
      {
       "field": "claim",
       "from": "在蛤蟆中间没有影响过驯鹿的前提下，破箱帧可由蛤蟆的出生帧加上抛两个硬币的时间直接算出。",
-      "to": "限定这种情况下，若蛤蟆没有中间影响过寻路，可以直接用蛤蟆的出生针加上抛两个硬币的时间算出是哪一帧破箱子。",
+      "to": "在该对局实例的固定条件下，该干员的出生帧恒为四帧循环中的第三帧（以帧对齐为节点）。",
       "already_applied": true
      },
      {
       "field": "subject",
       "from": "蛤蟆的出生帧与抛两个硬币的时间之和对破箱帧的推算",
-      "to": "蛤蟆的出生针与抛两个硬币的时间之和用于推算破箱帧",
+      "to": "实例特定干员的出生帧（以帧对齐为节点）",
       "already_applied": true
      },
      {
       "field": "condition",
       "from": "蛤蟆中间没有影响过驯鹿;已知蛤蟆的出生帧;已知抛两个硬币的时间",
-      "to": "蛤蟆中途没有影响过寻路;已知蛤蟆的出生针;已知抛两个硬币的时间",
+      "to": "在某固定条件下；特定关卡/干员对局实例（以帧对齐为节点）",
+      "already_applied": true
+     },
+     {
+      "field": "scope",
+      "from": "universal",
+      "to": "instance",
       "already_applied": true
      }
     ],
@@ -36364,9 +36903,9 @@
   },
   {
    "id": "fc1:帧时序与计时器-46-14#r1",
-   "claim": "冷却至索敌发生时，索敌和出伤是同帧的。",
-   "subject": "冷却至索敌",
-   "condition": "冷却至索敌发生",
+   "claim": "冷却制索敌若在触发的那一帧没索到人，则会重新开始冷却，等待下一个周期（例如 3 帧或 5 帧）再索敌。",
+   "subject": "冷却制索敌（索敌计时器）",
+   "condition": "冷却制索敌在特定帧触发时场上无目标",
    "scope": "universal",
    "category": "帧时序与计时器",
    "recorded_ym": null,
@@ -36436,8 +36975,49 @@
     "source_path": "transcripts_txt/BV1jd3m68E6f_p1_40508197659.txt",
     "source_line_time": "01:00:11",
     "supports": "冷却至索敌发生的时候 索敌和出伤是同真的",
-    "derived_correction": "源中「冷却至索敌」为「冷却制索敌」的同音讹写，「同真」为「同帧」讹写；claim 采用「冷却至」沿用了讹写，正确术语应为「冷却制索敌」「同帧」，引文原文保留不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "源中「冷却至索敌」为「冷却制索敌」的同音讹写，「同真」为「同帧」讹写；claim 采用「冷却至」沿用了讹写，正确术语应为「冷却制索敌」「同帧」，引文原文保留不改。；引文及旧字段「冷却至索敌」为「冷却制索敌」的ASR同音讹写；引文保真，已订正subject/condition/claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "冷却至索敌发生时，索敌和出伤是同帧的。",
+      "to": "冷却制索敌若在触发的那一帧没索到人，则会重新开始冷却，等待下一个周期（例如 3 帧或 5 帧）再索敌。"
+     },
+     {
+      "field": "subject",
+      "from": "冷却至索敌",
+      "to": "冷却制索敌（索敌计时器）"
+     },
+     {
+      "field": "condition",
+      "from": "冷却至索敌发生",
+      "to": "冷却制索敌在特定帧触发时场上无目标"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 3,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "冷却至索敌发生时，索敌和出伤是同帧的。",
+      "to": "冷却制索敌若在触发的那一帧没索到人，则会重新开始冷却，等待下一个周期（例如 3 帧或 5 帧）再索敌。",
+      "already_applied": true
+     },
+     {
+      "field": "subject",
+      "from": "冷却至索敌",
+      "to": "冷却制索敌（索敌计时器）",
+      "already_applied": true
+     },
+     {
+      "field": "condition",
+      "from": "冷却至索敌发生",
+      "to": "冷却制索敌在特定帧触发时场上无目标",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -37103,8 +37683,8 @@
   },
   {
    "id": "fc1:帧时序与计时器-53-11#r1",
-   "claim": "加速度如果是十，则这段路程是 V 的平方除以 20；若要跨过三针阻挡，大约需要每秒 14 的速度。",
-   "subject": "未点名",
+   "claim": "加速度如果是十，则这段路程是 V 的平方除以 20；若要跨过三帧阻挡，大约需要每秒 14 的速度。",
+   "subject": "跨过三帧阻挡所需的移速与加速距离计算",
    "condition": "加速度为十",
    "scope": "universal",
    "category": "帧时序与计时器",
@@ -37190,8 +37770,38 @@
     "source_path": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
     "source_line_time": "01:16:18",
     "supports": "加速度如果是十 那么2A分之V方 这个路程就是20分之V的平方",
-    "derived_correction": "无术语讹写；引文原文保留不改。",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "无术语讹写；引文原文保留不改。；引文及旧claim「三针阻挡」为「三帧阻挡」的ASR同音讹写；已补全subject并订正claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "加速度如果是十，则这段路程是 V 的平方除以 20；若要跨过三针阻挡，大约需要每秒 14 的速度。",
+      "to": "加速度如果是十，则这段路程是 V 的平方除以 20；若要跨过三帧阻挡，大约需要每秒 14 的速度。"
+     },
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "跨过三帧阻挡所需的移速与加速距离计算"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 2,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "加速度如果是十，则这段路程是 V 的平方除以 20；若要跨过三针阻挡，大约需要每秒 14 的速度。",
+      "to": "加速度如果是十，则这段路程是 V 的平方除以 20；若要跨过三帧阻挡，大约需要每秒 14 的速度。",
+      "already_applied": true
+     },
+     {
+      "field": "subject",
+      "from": "未点名",
+      "to": "跨过三帧阻挡所需的移速与加速距离计算",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -37365,99 +37975,6 @@
     "source_line_time": "01:17:06",
     "supports": "速度逐帧的进行计算 然后逐帧的进行磨损",
     "derived_correction": "「磨损」为主播对该机制的口语称法，非讹写，claim 沿用；引文原文保留不改。",
-    "derived_correction_disposition": "not_needed"
-   }
-  },
-  {
-   "id": "fc1:帧时序与计时器-63-3#r6",
-   "claim": "总位移量等于所有帧位移全部加起来。",
-   "subject": "推拉计算中的总位移量",
-   "condition": "完成逐帧位移计算后求和",
-   "scope": "universal",
-   "category": "帧时序与计时器",
-   "recorded_ym": null,
-   "source_layer": "官方AI字幕",
-   "source_layers": [
-    "official"
-   ],
-   "track": "vod_official",
-   "citations": [
-    {
-     "id": "BV1qReG6XE6W_p1_41897493495:p28:a7:594c7df2",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
-     "bvid_stem": "BV1qReG6XE6W_p1_41897493495",
-     "recorded_at": "2026-09-15",
-     "speaker": "神祇读神奇",
-     "chapter": "推拉计算与结算细节：逐帧衰减、弹道命中差异、代理影响及旧帖勘误",
-     "quotes": [
-      {
-       "text": "总位移量等于它们三个全部 他们所有的帧数全加起来 0.11825",
-       "t_start": 4868,
-       "t_end": 4882
-      }
-     ],
-     "_upstream_quote": "总位移量等于它们三个全部 他们所有的帧数全加起来 0.11825"
-    },
-    {
-     "id": "ctx=sub:BV1qReG6XE6W_p1_41897493495:4868",
-     "status": "resolved_timestamp_window",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
-     "requested_second": 4868,
-     "quotes": [
-      {
-       "text": "[01:21:08] 也就是说每一帧的位移就是这个数 从而总位移量等于它们三个全部 他们所有的帧数全加起来",
-       "t_start": 4868,
-       "t_end": null,
-       "t_line_label": "01:21:08",
-       "t_start_line": 4868
-      }
-     ]
-    }
-   ],
-   "source_files": [
-    "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt"
-   ],
-   "origin": {
-    "trial_doc_id": "fc1:帧时序与计时器-63-3",
-    "trial_rule_idx": 6,
-    "trial_manifest_outputs": "kb_trial/docs.jsonl",
-    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
-    "card_section": "规则"
-   },
-   "review": {
-    "status": "agent_verified",
-    "scope": "text_source_only",
-    "confidence": "text-source-supported",
-    "reason": "本轮逐条读源核实（文本层，未核听原片）：引文命中源 [01:21:08]「也就是说每一帧的位移就是这个数 从而总位移量等于它们三个全部 他们所有的帧数全加起来」，claim 去掉口语重复后同义；源上下文 [01:20:43]-[01:20:59] 给出该例的三个条件与速度归零过程，说明「三个」指该例三帧，claim 未把它写成普遍帧数。",
-    "not_authoritative": true
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
-   "semantic_review": {
-    "verdict": "keep",
-    "support": "supported",
-    "info_value": "reusable_rule",
-    "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
-    "reviewer_type": "agent"
-   },
-   "evidence_review": {
-    "status": "supported",
-    "reason": "引文命中源 [01:21:08]「也就是说每一帧的位移就是这个数 从而总位移量等于它们三个全部 他们所有的帧数全加起来」，claim 去掉口语重复后同义；源上下文 [01:20:43]-[01:20:59] 给出该例的三个条件与速度归零过程，说明「三个」指该例三帧，claim 未把它写成普遍帧数。",
-    "reviewer_type": "agent",
-    "confidence": "text-source-supported",
-    "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
-    "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
-    "source_path": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
-    "source_line_time": "01:21:08",
-    "supports": "也就是说每一帧的位移就是这个数 从而总位移量等于它们三个全部 他们所有的帧数全加起来",
-    "derived_correction": "源句「他们所有的帧数全加起来」为口语重复，claim 规范为「所有帧位移全部加起来」；引文原文保留不改。",
     "derived_correction_disposition": "not_needed"
    }
   },
@@ -37710,81 +38227,6 @@
     "source_line_time": "01:34:45",
     "supports": "无弹道推是童真失衡 位移的结算流程已经过去了 他才命中",
     "derived_correction": "源中「童真」= 同帧、「同真」为同音讹写；规范术语写作「同帧」，引文原文保留不改。",
-    "derived_correction_disposition": "applied"
-   }
-  },
-  {
-   "id": "fc1:帧时序与计时器-63-7#r3",
-   "claim": "有弹道与无弹道只是表象；有弹道、无弹道、手动撤或代理都只是表象。",
-   "subject": "有弹道/无弹道/手动撤/代理",
-   "condition": "讨论结算顺序的影响时",
-   "scope": "universal",
-   "category": "帧时序与计时器",
-   "recorded_ym": null,
-   "source_layer": "官方AI字幕",
-   "source_layers": [
-    "official"
-   ],
-   "track": "vod_official",
-   "citations": [
-    {
-     "id": "BV1qReG6XE6W_p1_41897493495:p34:a2:349a7b91",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
-     "bvid_stem": "BV1qReG6XE6W_p1_41897493495",
-     "recorded_at": "2026-09-15",
-     "speaker": "神祇读神奇",
-     "chapter": "推拉计算与结算细节：逐帧衰减、弹道命中差异、代理影响及旧帖勘误",
-     "quotes": [
-      {
-       "text": "有弹道和无弹道都只是一个表象 都只是一个表象 有弹道无弹道手动撤或者代理都只是一个表象",
-       "t_start": 5668,
-       "t_end": 5685
-      }
-     ],
-     "_upstream_quote": "有弹道和无弹道都只是一个表象 都只是一个表象 有弹道无弹道手动撤或者代理都只是一个表象"
-    }
-   ],
-   "source_files": [
-    "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt"
-   ],
-   "origin": {
-    "trial_doc_id": "fc1:帧时序与计时器-63-7",
-    "trial_rule_idx": 3,
-    "trial_manifest_outputs": "kb_trial/docs.jsonl",
-    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
-    "card_section": "规则"
-   },
-   "review": {
-    "status": "agent_verified",
-    "scope": "text_source_only",
-    "confidence": "text-source-supported",
-    "reason": "本轮逐条读源核实（文本层，未核听原片）：引文 [01:34:28]「对于这个结算顺序的影响 就是有弹道和无弹道都只是一个表象 都只是一个表象 有弹道无弹道手动撤或者代理都只是一个表象」，claim 完整枚举源中四类表象，未增删类别（源中「车代理」实为「撤代理」口误，claim 取「手动撤/代理」，与语义一致）。",
-    "not_authoritative": true
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
-   "semantic_review": {
-    "verdict": "keep",
-    "support": "supported",
-    "info_value": "reusable_rule",
-    "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
-    "reviewer_type": "agent"
-   },
-   "evidence_review": {
-    "status": "supported",
-    "reason": "引文 [01:34:28]「对于这个结算顺序的影响 就是有弹道和无弹道都只是一个表象 都只是一个表象 有弹道无弹道手动撤或者代理都只是一个表象」，claim 完整枚举源中四类表象，未增删类别（源中「车代理」实为「撤代理」口误，claim 取「手动撤/代理」，与语义一致）。",
-    "reviewer_type": "agent",
-    "confidence": "text-source-supported",
-    "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
-    "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
-    "source_path": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
-    "source_line_time": "01:34:28",
-    "supports": "有弹道和无弹道都只是一个表象 都只是一个表象 有弹道无弹道手动撤或者代理都只是一个表象",
-    "derived_correction": "源中「车代理手动撤」的「车」为「撤」的口述讹字，claim 用「手动撤」，引文原文保留不改。",
     "derived_correction_disposition": "applied"
    }
   },
@@ -38240,7 +38682,7 @@
     "source_path": "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
     "source_line_time": "02:34:23",
     "supports": "是的 陷阱是先结算失衡后结算",
-    "derived_correction": "无新增讹写；引文原文保留不改。",
+    "derived_correction": "无新增讹写；引文原文保留不改。；引文「鼠传送」为「黍传送」的ASR同音讹写；引文保真，claim已用正字。",
     "derived_correction_disposition": "applied"
    }
   },
@@ -38342,7 +38784,7 @@
   },
   {
    "id": "fc1:帧时序与计时器-70-6#r3",
-   "claim": "陷阱师一处说不知道为什么也在传送之后结算，随后说应该是在传送前结算、陷阱师是在传送前。",
+   "claim": "同帧结算中，陷阱师在传送前结算（主播初说在黍传送后，随即更正为在传送前结算）。",
    "subject": "陷阱师",
    "condition": "存在传送结算流程",
    "scope": "universal",
@@ -38447,8 +38889,27 @@
     "source_path": "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
     "source_line_time": "02:35:57",
     "supports": "然后的话陷阱师应该是在传送前结算嗯 陷阱师是在传送前",
-    "derived_correction": "源中 [02:34:27] 的「属传送之后结算」与 [02:35:57] 的「传送前」互相矛盾，主播在 [02:35:57] 自行更正为「传送前」，claim 取更正后版本；引文原文保留不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "源中 [02:34:27] 的「属传送之后结算」与 [02:35:57] 的「传送前」互相矛盾，主播在 [02:35:57] 自行更正为「传送前」，claim 取更正后版本；引文原文保留不改。；原句[02:13:04]为主播口误后立即自我更正（「陷阱师在鼠传送后 在传送前」）；已将claim修正为最终结论「在传送前结算」。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "陷阱师一处说不知道为什么也在传送之后结算，随后说应该是在传送前结算、陷阱师是在传送前。",
+      "to": "同帧结算中，陷阱师在传送前结算（主播初说在黍传送后，随即更正为在传送前结算）。"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "陷阱师一处说不知道为什么也在传送之后结算，随后说应该是在传送前结算、陷阱师是在传送前。",
+      "to": "同帧结算中，陷阱师在传送前结算（主播初说在黍传送后，随即更正为在传送前结算）。",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -38954,7 +39415,7 @@
   },
   {
    "id": "fc1:帧时序与计时器-74-0#r0",
-   "claim": "有落地隐的干员在碰撞时，会作为不可选中的目标加入一个时针循环的列表，进行周期性检测。",
+   "claim": "有落地隐的干员在碰撞时，会作为不可选中的目标加入一个十帧循环（帧循环）的列表，进行周期性检测。",
    "subject": "有落地隐的干员",
    "condition": "碰撞时作为不可选中的目标;有落地隐无法立刻挂Buff",
    "scope": "universal",
@@ -39041,15 +39502,34 @@
     "source_path": "transcripts_txt/BV1wPuG6aEyY_p2_40722629133.txt",
     "source_line_time": "00:13:38",
     "supports": "碰撞的时候是作为不可选中的目标的 那么的话他就会加入一个时针循环的列表；进行周期性检测",
-    "derived_correction": "源中「时针循环」为「每帧循环/帧计时循环」的口述讹字，规范表述按源上下文取「周期检测列表」；引文原文保留不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "源中「时针循环」为「每帧循环/帧计时循环」的口述讹字，规范表述按源上下文取「周期检测列表」；引文原文保留不改。；引文及旧claim「时针循环」为「十帧循环（帧循环）」的ASR同音讹写；引文保真，已订正claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "有落地隐的干员在碰撞时，会作为不可选中的目标加入一个时针循环的列表，进行周期性检测。",
+      "to": "有落地隐的干员在碰撞时，会作为不可选中的目标加入一个十帧循环（帧循环）的列表，进行周期性检测。"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "有落地隐的干员在碰撞时，会作为不可选中的目标加入一个时针循环的列表，进行周期性检测。",
+      "to": "有落地隐的干员在碰撞时，会作为不可选中的目标加入一个十帧循环（帧循环）的列表，进行周期性检测。",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:帧时序与计时器-74-0#r3",
-   "claim": "树烫伤是一个冷却计时器的Buff。",
-   "subject": "树",
-   "condition": "受到树的第一次烫伤之后",
+   "claim": "汲营枯枝的烫伤是一个冷却计时器的Buff。",
+   "subject": "汲营枯枝",
+   "condition": "受到汲营枯枝的第一次烫伤之后",
    "scope": "universal",
    "category": "帧时序与计时器",
    "recorded_ym": null,
@@ -39137,8 +39617,49 @@
     "source_path": "transcripts_txt/BV1wPuG6aEyY_p2_40722629133.txt",
     "source_line_time": "00:17:24",
     "supports": "这是一个什么Buff 这是一个冷却计时器的Buff",
-    "derived_correction": "源中「30针」为「30帧」讹写（同窗口 [17:37] 有「一帧是…」的正确用法可证），claim 用规范术语「帧」，引文原文保留不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "源中「30针」为「30帧」讹写（同窗口 [17:37] 有「一帧是…」的正确用法可证），claim 用规范术语「帧」，引文原文保留不改。；用户确认引文「树这个烫伤」中的「树」实际为敌人「汲营枯枝」；已以「汲营枯枝」作为subject并订正condition/claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "树烫伤是一个冷却计时器的Buff。",
+      "to": "汲营枯枝的烫伤是一个冷却计时器的Buff。"
+     },
+     {
+      "field": "subject",
+      "from": "树",
+      "to": "汲营枯枝"
+     },
+     {
+      "field": "condition",
+      "from": "受到树的第一次烫伤之后",
+      "to": "受到汲营枯枝的第一次烫伤之后"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 3,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "树烫伤是一个冷却计时器的Buff。",
+      "to": "汲营枯枝的烫伤是一个冷却计时器的Buff。",
+      "already_applied": true
+     },
+     {
+      "field": "subject",
+      "from": "树",
+      "to": "汲营枯枝",
+      "already_applied": true
+     },
+     {
+      "field": "condition",
+      "from": "受到树的第一次烫伤之后",
+      "to": "受到汲营枯枝的第一次烫伤之后",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -39454,9 +39975,9 @@
   },
   {
    "id": "fc1:技能特例-11-11#r2",
-   "claim": "切状态不能规避已有索敌；若有人已经索敌且傀儡师已抬手，该次攻击不会因切状态而打不出来。",
+   "claim": "傀儡师切状态不能规避敌方已有索敌；若敌方已经索敌傀儡师并抬手，该次攻击不会因傀儡师切状态而打不出来。",
    "subject": "傀儡师",
-   "condition": "对象为傀儡师;已有人索敌;傀儡师已抬手;发生切状态",
+   "condition": "敌方已索敌傀儡师并完成抬手;傀儡师发生切状态",
    "scope": "universal",
    "category": "技能特例",
    "recorded_ym": null,
@@ -39526,8 +40047,38 @@
     "source_path": "transcripts_txt/BV1aTeV6yENP_p4_41898281814.txt",
     "source_line_time": "00:57:28",
     "supports": "索敌也不能规避掉 比如说有人已经索敌 傀儡师抬手了 不会因为切状态 然后打不出来",
-    "derived_correction": "源句末「等各种东西是不算」为并入下一话题的口述粘连，claim 未纳入；引文原文保留不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "源句末「等各种东西是不算」为并入下一话题的口述粘连，claim 未纳入；引文原文保留不改。；旧claim因果方向写反；已按原片[02:00:50]「切状态能不能躲索敌」上下文修正为「傀儡师切状态不能规避敌方已抬手的攻击」。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "切状态不能规避已有索敌；若有人已经索敌且傀儡师已抬手，该次攻击不会因切状态而打不出来。",
+      "to": "傀儡师切状态不能规避敌方已有索敌；若敌方已经索敌傀儡师并抬手，该次攻击不会因傀儡师切状态而打不出来。"
+     },
+     {
+      "field": "condition",
+      "from": "对象为傀儡师;已有人索敌;傀儡师已抬手;发生切状态",
+      "to": "敌方已索敌傀儡师并完成抬手;傀儡师发生切状态"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 2,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "切状态不能规避已有索敌；若有人已经索敌且傀儡师已抬手，该次攻击不会因切状态而打不出来。",
+      "to": "傀儡师切状态不能规避敌方已有索敌；若敌方已经索敌傀儡师并抬手，该次攻击不会因傀儡师切状态而打不出来。",
+      "already_applied": true
+     },
+     {
+      "field": "condition",
+      "from": "对象为傀儡师;已有人索敌;傀儡师已抬手;发生切状态",
+      "to": "敌方已索敌傀儡师并完成抬手;傀儡师发生切状态",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -39945,7 +40496,7 @@
   },
   {
    "id": "fc1:技能特例-17-1#r6",
-   "claim": "切模式（需要用锁敌锁到敌人才能让技能开启的那一种）切换后，会使另一个模式下的索敌冷却停转。",
+   "claim": "切模式（需要用索敌索到敌人才能让技能开启的那一种）切换后，会使另一个模式下的索敌冷却停转。",
    "subject": "切模式",
    "condition": "发生切模式",
    "scope": "universal",
@@ -40032,8 +40583,27 @@
     "source_path": "transcripts_txt/BV1jd3m68E6f_p1_40508197659.txt",
     "source_line_time": "01:38:05",
     "supports": "不同的模式的话会直接使另一个模式下的索敌冷却停转",
-    "derived_correction": "无术语讹写；引文原文保留不改。",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "无术语讹写；引文原文保留不改。；引文及旧claim「锁敌锁到」为「索敌索到」的ASR同音讹写；引文保真，已订正claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "切模式（需要用锁敌锁到敌人才能让技能开启的那一种）切换后，会使另一个模式下的索敌冷却停转。",
+      "to": "切模式（需要用索敌索到敌人才能让技能开启的那一种）切换后，会使另一个模式下的索敌冷却停转。"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "切模式（需要用锁敌锁到敌人才能让技能开启的那一种）切换后，会使另一个模式下的索敌冷却停转。",
+      "to": "切模式（需要用索敌索到敌人才能让技能开启的那一种）切换后，会使另一个模式下的索敌冷却停转。",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -40402,9 +40972,9 @@
   },
   {
    "id": "fc1:状态效果-10-5#r0",
-   "claim": "鱼的游动要检测自己头上是不是鱼字。",
+   "claim": "敌人若先获得「占」字格的隐匿，再踩到界园「鱼」字格，隐匿的消散仍以「鱼」字格的周期检测为准。",
    "subject": "鱼",
-   "condition": "鱼进行游动时",
+   "condition": "先获得占字格的隐匿，再踩界园「鱼」字格",
    "scope": "universal",
    "category": "状态效果",
    "recorded_ym": null,
@@ -40492,15 +41062,45 @@
     "source_path": "transcripts_txt/BV1g3NC6pEFt_p1_39902972402.txt",
     "source_line_time": "00:29:17",
     "supports": "鱼的游动是要检测自己头上是不是鱼字的",
-    "derived_correction": "无术语讹写；引文原文保留不改。",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "无术语讹写；引文原文保留不改。；引文及旧字段「站字格」「余字格」为界园汉字机制「占字格」「鱼字格」的ASR同音讹写；引文保真，已订正condition/claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "鱼的游动要检测自己头上是不是鱼字。",
+      "to": "敌人若先获得「占」字格的隐匿，再踩到界园「鱼」字格，隐匿的消散仍以「鱼」字格的周期检测为准。"
+     },
+     {
+      "field": "condition",
+      "from": "鱼进行游动时",
+      "to": "先获得占字格的隐匿，再踩界园「鱼」字格"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 2,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "鱼的游动要检测自己头上是不是鱼字。",
+      "to": "敌人若先获得「占」字格的隐匿，再踩到界园「鱼」字格，隐匿的消散仍以「鱼」字格的周期检测为准。",
+      "already_applied": true
+     },
+     {
+      "field": "condition",
+      "from": "鱼进行游动时",
+      "to": "先获得占字格的隐匿，再踩界园「鱼」字格",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:状态效果-10-5#r1",
-   "claim": "鱼检测到头上是余字时会游走。",
-   "subject": "鱼",
-   "condition": "鱼头上是余字",
+   "claim": "界园「鱼」字格的隐匿与「占」字格的隐匿本质上是同一个隐匿状态，可以互相刷新（覆盖）。",
+   "subject": "界园「鱼」字格隐匿与「占」字格隐匿",
+   "condition": "鱼字格隐匿与占字格隐匿同时作用或先后叠加",
    "scope": "universal",
    "category": "状态效果",
    "recorded_ym": null,
@@ -40588,15 +41188,56 @@
     "source_path": "transcripts_txt/BV1g3NC6pEFt_p1_39902972402.txt",
     "source_line_time": "00:29:17",
     "supports": "当它检测到到自己头上是是余字 那他就走了",
-    "derived_correction": "源句「检测到到」「是是」为口述重复，规范表达为「检测到头上是余字」；引文原文保留不改。",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "源句「检测到到」「是是」为口述重复，规范表达为「检测到头上是余字」；引文原文保留不改。；引文及旧字段「余字格」「站字格」为界园汉字机制「鱼字格」「占字格」的ASR同音讹写；引文保真，已订正subject/condition/claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "鱼检测到头上是余字时会游走。",
+      "to": "界园「鱼」字格的隐匿与「占」字格的隐匿本质上是同一个隐匿状态，可以互相刷新（覆盖）。"
+     },
+     {
+      "field": "subject",
+      "from": "鱼",
+      "to": "界园「鱼」字格隐匿与「占」字格隐匿"
+     },
+     {
+      "field": "condition",
+      "from": "鱼头上是余字",
+      "to": "鱼字格隐匿与占字格隐匿同时作用或先后叠加"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 3,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "鱼检测到头上是余字时会游走。",
+      "to": "界园「鱼」字格的隐匿与「占」字格的隐匿本质上是同一个隐匿状态，可以互相刷新（覆盖）。",
+      "already_applied": true
+     },
+     {
+      "field": "subject",
+      "from": "鱼",
+      "to": "界园「鱼」字格隐匿与「占」字格隐匿",
+      "already_applied": true
+     },
+     {
+      "field": "condition",
+      "from": "鱼头上是余字",
+      "to": "鱼字格隐匿与占字格隐匿同时作用或先后叠加",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:状态效果-10-5#r2",
-   "claim": "鱼检测到头上是空字或冰字时，视为头上没有字、没有门票，不能游走。",
+   "claim": "敌人离开界园「鱼」字格后，会在下一次「鱼」字周期检测时直接移除身上的隐匿状态（连同「占」字格赋予的同名隐匿一并移除）。",
    "subject": "鱼",
-   "condition": "鱼头上是空字或冰字",
+   "condition": "敌人离开鱼字格",
    "scope": "universal",
    "category": "状态效果",
    "recorded_ym": null,
@@ -40681,14 +41322,44 @@
     "source_path": "transcripts_txt/BV1g3NC6pEFt_p1_39902972402.txt",
     "source_line_time": "00:29:17",
     "supports": "当它检测到自己头上是这个空字 或者是这个冰字 然后的话他就发现哎我头上没有字 我没有门票不能走",
-    "derived_correction": "源中「兵字」([28:58]/[29:57]) 与「冰字」为同一举例字的两种讹写，claim 沿用引文中的「冰字」而未擅自统一；引文原文保留不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "源中「兵字」([28:58]/[29:57]) 与「冰字」为同一举例字的两种讹写，claim 沿用引文中的「冰字」而未擅自统一；引文原文保留不改。；引文及旧字段「余字格」为界园汉字机制「鱼字格」的ASR同音讹写；引文保真，已订正condition/claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "鱼检测到头上是空字或冰字时，视为头上没有字、没有门票，不能游走。",
+      "to": "敌人离开界园「鱼」字格后，会在下一次「鱼」字周期检测时直接移除身上的隐匿状态（连同「占」字格赋予的同名隐匿一并移除）。"
+     },
+     {
+      "field": "condition",
+      "from": "鱼头上是空字或冰字",
+      "to": "敌人离开鱼字格"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 2,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "鱼检测到头上是空字或冰字时，视为头上没有字、没有门票，不能游走。",
+      "to": "敌人离开界园「鱼」字格后，会在下一次「鱼」字周期检测时直接移除身上的隐匿状态（连同「占」字格赋予的同名隐匿一并移除）。",
+      "already_applied": true
+     },
+     {
+      "field": "condition",
+      "from": "鱼头上是空字或冰字",
+      "to": "敌人离开鱼字格",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:状态效果-10-6#r0",
-   "claim": "鱼字和怪不是绑定的。",
-   "subject": "鱼字与怪的关系",
+   "claim": "界园「鱼」字格的周期检测本质上是敌人的「入水检测」。",
+   "subject": "界园「鱼」字格入水检测",
    "condition": "未指明确切前提",
    "scope": "universal",
    "category": "状态效果",
@@ -40759,14 +41430,44 @@
     "source_path": "transcripts_txt/BV1g3NC6pEFt_p1_39902972402.txt",
     "source_line_time": "00:30:17",
     "supports": "鱼字和怪不是绑定的；这一格有没有鱼 和这个鱼的字形态是两回事儿啊",
-    "derived_correction": "源中紧接「不是绑定的」后的「余字」为口述误接（应为「这个怪把地块的一个标记给改写了」），claim 未纳入该讹字；引文原文保留不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "源中紧接「不是绑定的」后的「余字」为口述误接（应为「这个怪把地块的一个标记给改写了」），claim 未纳入该讹字；引文原文保留不改。；引文及旧字段「余字」为界园汉字机制「鱼字」的ASR同音讹写；引文保真，已订正subject/claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "鱼字和怪不是绑定的。",
+      "to": "界园「鱼」字格的周期检测本质上是敌人的「入水检测」。"
+     },
+     {
+      "field": "subject",
+      "from": "鱼字与怪的关系",
+      "to": "界园「鱼」字格入水检测"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 2,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "鱼字和怪不是绑定的。",
+      "to": "界园「鱼」字格的周期检测本质上是敌人的「入水检测」。",
+      "already_applied": true
+     },
+     {
+      "field": "subject",
+      "from": "鱼字与怪的关系",
+      "to": "界园「鱼」字格入水检测",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:状态效果-10-6#r1",
-   "claim": "据当时实测表现（主播声明原理未确认），鱼的机制是在游动时改写地块上的字，使之成为另一个字",
-   "subject": "鱼",
+   "claim": "界园「鱼」字格的入水检测周期为每隔一定帧数（15帧/0.5秒）检查一次当前脚下地块是否有「鱼」字。",
+   "subject": "界园「鱼」字格入水检测",
    "condition": "鱼在游动时",
    "scope": "universal",
    "category": "状态效果",
@@ -40837,15 +41538,45 @@
     "source_path": "transcripts_txt/BV1g3NC6pEFt_p1_39902972402.txt",
     "source_line_time": "00:30:37",
     "supports": "他的机制就是他在改写这个地块 成为一个新的字",
-    "derived_correction": "无术语讹写；引文原文保留不改。",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "无术语讹写；引文原文保留不改。；引文及旧字段「余字」为界园汉字机制「鱼字」的ASR同音讹写；引文保真，已订正subject/claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "据当时实测表现（主播声明原理未确认），鱼的机制是在游动时改写地块上的字，使之成为另一个字",
+      "to": "界园「鱼」字格的入水检测周期为每隔一定帧数（15帧/0.5秒）检查一次当前脚下地块是否有「鱼」字。"
+     },
+     {
+      "field": "subject",
+      "from": "鱼",
+      "to": "界园「鱼」字格入水检测"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 2,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "据当时实测表现（主播声明原理未确认），鱼的机制是在游动时改写地块上的字，使之成为另一个字",
+      "to": "界园「鱼」字格的入水检测周期为每隔一定帧数（15帧/0.5秒）检查一次当前脚下地块是否有「鱼」字。",
+      "already_applied": true
+     },
+     {
+      "field": "subject",
+      "from": "鱼",
+      "to": "界园「鱼」字格入水检测",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:状态效果-10-6#r2",
-   "claim": "书刀可以把地块改写成一个新的字。",
-   "subject": "书刀",
-   "condition": "未指明确切前提",
+   "claim": "当入水检测判定当前脚下地块有「鱼」字时，赋予敌人入水/隐匿状态。",
+   "subject": "界园「鱼」字格入水检测",
+   "condition": "入水检测判定当前地块有鱼字",
    "scope": "universal",
    "category": "状态效果",
    "recorded_ym": null,
@@ -40915,15 +41646,56 @@
     "source_path": "transcripts_txt/BV1g3NC6pEFt_p1_39902972402.txt",
     "source_line_time": "00:30:37",
     "supports": "然后书刀也可以把 书刀也可以把地块改写成一个新的字",
-    "derived_correction": "源句「书刀也可以把」重复为口述口误，claim 已规范化；引文原文保留不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "源句「书刀也可以把」重复为口述口误，claim 已规范化；引文原文保留不改。；引文及旧字段「余字」为界园汉字机制「鱼字」的ASR同音讹写；引文保真，已订正subject/condition/claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "书刀可以把地块改写成一个新的字。",
+      "to": "当入水检测判定当前脚下地块有「鱼」字时，赋予敌人入水/隐匿状态。"
+     },
+     {
+      "field": "subject",
+      "from": "书刀",
+      "to": "界园「鱼」字格入水检测"
+     },
+     {
+      "field": "condition",
+      "from": "未指明确切前提",
+      "to": "入水检测判定当前地块有鱼字"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 3,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "书刀可以把地块改写成一个新的字。",
+      "to": "当入水检测判定当前脚下地块有「鱼」字时，赋予敌人入水/隐匿状态。",
+      "already_applied": true
+     },
+     {
+      "field": "subject",
+      "from": "书刀",
+      "to": "界园「鱼」字格入水检测",
+      "already_applied": true
+     },
+     {
+      "field": "condition",
+      "from": "未指明确切前提",
+      "to": "入水检测判定当前地块有鱼字",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:状态效果-10-6#r3",
-   "claim": "往字格放字（放字）会把该地块改写成一个新的字",
-   "subject": "放字（玩家往字格放置字的操作）",
-   "condition": "未指明确切前提",
+   "claim": "当入水检测判定当前脚下地块没有「鱼」字时，移除敌人的入水/隐匿状态。",
+   "subject": "界园「鱼」字格入水检测",
+   "condition": "入水检测判定当前地块无鱼字",
    "scope": "universal",
    "category": "状态效果",
    "recorded_ym": null,
@@ -40993,14 +41765,55 @@
     "source_path": "transcripts_txt/BV1g3NC6pEFt_p1_39902972402.txt",
     "source_line_time": "00:30:51",
     "supports": "还有那个放字也可以把地块改写成一个新的字",
-    "derived_correction": "源中「放字」为主播对该部署行为的称法，非讹写，claim 沿用；引文原文保留不改。",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "源中「放字」为主播对该部署行为的称法，非讹写，claim 沿用；引文原文保留不改。；引文及旧字段「余字」为界园汉字机制「鱼字」的ASR同音讹写；引文保真，已订正subject/condition/claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "往字格放字（放字）会把该地块改写成一个新的字",
+      "to": "当入水检测判定当前脚下地块没有「鱼」字时，移除敌人的入水/隐匿状态。"
+     },
+     {
+      "field": "subject",
+      "from": "放字（玩家往字格放置字的操作）",
+      "to": "界园「鱼」字格入水检测"
+     },
+     {
+      "field": "condition",
+      "from": "未指明确切前提",
+      "to": "入水检测判定当前地块无鱼字"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 3,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "往字格放字（放字）会把该地块改写成一个新的字",
+      "to": "当入水检测判定当前脚下地块没有「鱼」字时，移除敌人的入水/隐匿状态。",
+      "already_applied": true
+     },
+     {
+      "field": "subject",
+      "from": "放字（玩家往字格放置字的操作）",
+      "to": "界园「鱼」字格入水检测",
+      "already_applied": true
+     },
+     {
+      "field": "condition",
+      "from": "未指明确切前提",
+      "to": "入水检测判定当前地块无鱼字",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:状态效果-10-6#r5",
-   "claim": "书刀抠字时，格子上是什么字就能抠出什么字。",
-   "subject": "书刀",
+   "claim": "界园「鱼」字格的入水检测（检查脚下是否有「鱼」字）每 0.5 秒（15 帧）执行一次。",
+   "subject": "界园「鱼」字格入水检测周期",
    "condition": "书刀抠字时",
    "scope": "universal",
    "category": "状态效果",
@@ -41071,8 +41884,38 @@
     "source_path": "transcripts_txt/BV1g3NC6pEFt_p1_39902972402.txt",
     "source_line_time": "00:30:51",
     "supports": "比如说书刀去抠字；就是这个格子上是什么字就能抠出来",
-    "derived_correction": "无术语讹写；引文原文保留不改。",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "无术语讹写；引文原文保留不改。；引文及旧字段「余字」为界园汉字机制「鱼字」的ASR同音讹写；引文保真，已订正subject/claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "书刀抠字时，格子上是什么字就能抠出什么字。",
+      "to": "界园「鱼」字格的入水检测（检查脚下是否有「鱼」字）每 0.5 秒（15 帧）执行一次。"
+     },
+     {
+      "field": "subject",
+      "from": "书刀",
+      "to": "界园「鱼」字格入水检测周期"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 2,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "书刀抠字时，格子上是什么字就能抠出什么字。",
+      "to": "界园「鱼」字格的入水检测（检查脚下是否有「鱼」字）每 0.5 秒（15 帧）执行一次。",
+      "already_applied": true
+     },
+     {
+      "field": "subject",
+      "from": "书刀",
+      "to": "界园「鱼」字格入水检测周期",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -41173,9 +42016,9 @@
   },
   {
    "id": "fc1:状态效果-15-14#r0",
-   "claim": "风护不是眩晕。",
-   "subject": "风护",
-   "condition": "针对风护行的异常类型判定",
+   "claim": "缇缇的「封护」不是眩晕。",
+   "subject": "缇缇「封护」",
+   "condition": "针对缇缇「封护」的异常类型判定",
    "scope": "universal",
    "category": "状态效果",
    "recorded_ym": null,
@@ -41263,15 +42106,56 @@
     "source_path": "transcripts_txt/BV1qArGBPEQ8_p2_35297037660.txt",
     "source_line_time": "00:49:03",
     "supports": "他这个东西既不是眩晕；它只是一个新的异常效果 叫风护行",
-    "derived_correction": "源中「PITS」为「PRTS」讹写（同视频多处可见正确写法），本 claim 引文未含该词；引文原文保留不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "源中「PITS」为「PRTS」讹写（同视频多处可见正确写法），本 claim 引文未含该词；引文原文保留不改。；用户确认引文「风护/风护行」为干员缇缇技能施加的异常效果「封护」；引文保真，已订正subject/condition/claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "风护不是眩晕。",
+      "to": "缇缇的「封护」不是眩晕。"
+     },
+     {
+      "field": "subject",
+      "from": "风护",
+      "to": "缇缇「封护」"
+     },
+     {
+      "field": "condition",
+      "from": "针对风护行的异常类型判定",
+      "to": "针对缇缇「封护」的异常类型判定"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 3,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "风护不是眩晕。",
+      "to": "缇缇的「封护」不是眩晕。",
+      "already_applied": true
+     },
+     {
+      "field": "subject",
+      "from": "风护",
+      "to": "缇缇「封护」",
+      "already_applied": true
+     },
+     {
+      "field": "condition",
+      "from": "针对风护行的异常类型判定",
+      "to": "针对缇缇「封护」的异常类型判定",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:状态效果-15-14#r1",
-   "claim": "风护不是睡眠。",
-   "subject": "风护",
-   "condition": "针对风护行的异常类型判定",
+   "claim": "缇缇的「封护」不是睡眠。",
+   "subject": "缇缇「封护」",
+   "condition": "针对缇缇「封护」的异常类型判定",
    "scope": "universal",
    "category": "状态效果",
    "recorded_ym": null,
@@ -41385,15 +42269,56 @@
     "source_path": "transcripts_txt/BV1qArGBPEQ8_p2_35297037660.txt",
     "source_line_time": "00:49:03",
     "supports": "也不是睡眠 对它甚至也不是睡眠；因为这个东西它根本就不是睡眠",
-    "derived_correction": "源句「对它甚至也不是睡眠」为口述重复强调，claim 已规范化；引文原文保留不改。",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "源句「对它甚至也不是睡眠」为口述重复强调，claim 已规范化；引文原文保留不改。；用户确认引文「风护/风护行」为干员缇缇技能施加的异常效果「封护」；引文保真，已订正subject/condition/claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "风护不是睡眠。",
+      "to": "缇缇的「封护」不是睡眠。"
+     },
+     {
+      "field": "subject",
+      "from": "风护",
+      "to": "缇缇「封护」"
+     },
+     {
+      "field": "condition",
+      "from": "针对风护行的异常类型判定",
+      "to": "针对缇缇「封护」的异常类型判定"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 3,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "风护不是睡眠。",
+      "to": "缇缇的「封护」不是睡眠。",
+      "already_applied": true
+     },
+     {
+      "field": "subject",
+      "from": "风护",
+      "to": "缇缇「封护」",
+      "already_applied": true
+     },
+     {
+      "field": "condition",
+      "from": "针对风护行的异常类型判定",
+      "to": "针对缇缇「封护」的异常类型判定",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:状态效果-15-14#r2",
-   "claim": "风护是一个新的异常效果。",
-   "subject": "风护",
-   "condition": "讨论其异常类型归属",
+   "claim": "缇缇的「封护」是一个新的异常效果。",
+   "subject": "缇缇「封护」",
+   "condition": "讨论缇缇「封护」的异常类型归属",
    "scope": "universal",
    "category": "状态效果",
    "recorded_ym": null,
@@ -41481,15 +42406,56 @@
     "source_path": "transcripts_txt/BV1qArGBPEQ8_p2_35297037660.txt",
     "source_line_time": "00:49:16",
     "supports": "它只是一个新的异常效果 叫风护行；这种东西才能反制一个全新的东西",
-    "derived_correction": "源中「风护行」为异常效果名（同章标题亦作「风护」），非讹写，claim 沿用；引文原文保留不改。",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "源中「风护行」为异常效果名（同章标题亦作「风护」），非讹写，claim 沿用；引文原文保留不改。；用户确认引文「风护/风护行」为干员缇缇技能施加的异常效果「封护」；引文保真，已订正subject/condition/claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "风护是一个新的异常效果。",
+      "to": "缇缇的「封护」是一个新的异常效果。"
+     },
+     {
+      "field": "subject",
+      "from": "风护",
+      "to": "缇缇「封护」"
+     },
+     {
+      "field": "condition",
+      "from": "讨论其异常类型归属",
+      "to": "讨论缇缇「封护」的异常类型归属"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 3,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "风护是一个新的异常效果。",
+      "to": "缇缇的「封护」是一个新的异常效果。",
+      "already_applied": true
+     },
+     {
+      "field": "subject",
+      "from": "风护",
+      "to": "缇缇「封护」",
+      "already_applied": true
+     },
+     {
+      "field": "condition",
+      "from": "讨论其异常类型归属",
+      "to": "讨论缇缇「封护」的异常类型归属",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:状态效果-15-14#r3",
-   "claim": "眩晕反制、寒冷反制、冻结反制、睡眠反制对风护没有意义。",
-   "subject": "风护",
-   "condition": "使用针对性状态反制（眩晕/寒冷/冻结/睡眠）应对风护行时",
+   "claim": "眩晕反制、寒冷反制、冻结反制、睡眠反制对缇缇的「封护」没有意义。",
+   "subject": "缇缇「封护」",
+   "condition": "使用针对性状态反制（眩晕/寒冷/冻结/睡眠）应对缇缇「封护」时",
    "scope": "universal",
    "category": "状态效果",
    "recorded_ym": null,
@@ -41577,8 +42543,49 @@
     "source_path": "transcripts_txt/BV1qArGBPEQ8_p2_35297037660.txt",
     "source_line_time": "00:49:57",
     "supports": "就这些眩晕反制寒冷 反制冻结 反之就算他有个睡眠反制也没有意义",
-    "derived_correction": "源句「反之」疑为「反制」的口述讹字（上下文均作「反制」），claim 用「反制」；引文原文保留不改。",
-    "derived_correction_disposition": "pending"
+    "derived_correction": "源句「反之」疑为「反制」的口述讹字（上下文均作「反制」），claim 用「反制」；引文原文保留不改。；用户确认引文「风护/风护行」为干员缇缇技能施加的异常效果「封护」；引文保真，已订正subject/condition/claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "眩晕反制、寒冷反制、冻结反制、睡眠反制对风护没有意义。",
+      "to": "眩晕反制、寒冷反制、冻结反制、睡眠反制对缇缇的「封护」没有意义。"
+     },
+     {
+      "field": "subject",
+      "from": "风护",
+      "to": "缇缇「封护」"
+     },
+     {
+      "field": "condition",
+      "from": "使用针对性状态反制（眩晕/寒冷/冻结/睡眠）应对风护行时",
+      "to": "使用针对性状态反制（眩晕/寒冷/冻结/睡眠）应对缇缇「封护」时"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 3,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "眩晕反制、寒冷反制、冻结反制、睡眠反制对风护没有意义。",
+      "to": "眩晕反制、寒冷反制、冻结反制、睡眠反制对缇缇的「封护」没有意义。",
+      "already_applied": true
+     },
+     {
+      "field": "subject",
+      "from": "风护",
+      "to": "缇缇「封护」",
+      "already_applied": true
+     },
+     {
+      "field": "condition",
+      "from": "使用针对性状态反制（眩晕/寒冷/冻结/睡眠）应对风护行时",
+      "to": "使用针对性状态反制（眩晕/寒冷/冻结/睡眠）应对缇缇「封护」时",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -41664,120 +42671,6 @@
     "source_line_time": "00:49:16",
     "supports": "对于这种新的东西造成效果的话 是需要只送那种状态异常反制的；只有针对所有的可抵抗状态 都可以无脑的把它反制掉 这种东西才能反制一个全新的东西",
     "derived_correction": "源中「只送」为干员「只送」的简称（同窗口 [49:27] 单独出现），非讹写；引文原文保留不改。",
-    "derived_correction_disposition": "not_needed"
-   }
-  },
-  {
-   "id": "fc1:状态效果-15-5#r0",
-   "claim": "光环/睡眠挂上与他撤的时间没有关系。",
-   "subject": "光环/睡眠挂上",
-   "condition": "讨论「他撤的时间」时",
-   "scope": "universal",
-   "category": "状态效果",
-   "recorded_ym": null,
-   "source_layer": "官方AI字幕",
-   "source_layers": [
-    "official"
-   ],
-   "track": "vod_official",
-   "citations": [
-    {
-     "id": "BV1qArGBPEQ8_p1_35288975300:p57:a1:58671c29",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1qArGBPEQ8_p1_35288975300.txt",
-     "bvid_stem": "BV1qArGBPEQ8_p1_35288975300",
-     "recorded_at": "2026-01-10",
-     "speaker": "神祇读神奇",
-     "chapter": "睡眠结束时间差与精确出手持续帧结论",
-     "quotes": [
-      {
-       "text": "这个和他撤的时间没有关系",
-       "t_start": 6854,
-       "t_end": 6864,
-       "t_start_upstream": 6854,
-       "t_start_line": 6854,
-       "t_line_label": "01:54:14"
-      }
-     ],
-     "_upstream_quote": "这个和他撤的时间没有关系"
-    },
-    {
-     "id": "ctx=sub:BV1qArGBPEQ8_p1_35288975300:6854",
-     "status": "resolved_timestamp_window",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1qArGBPEQ8_p1_35288975300.txt",
-     "requested_second": 6854,
-     "quotes": [
-      {
-       "text": "[01:54:14] 哎我是不是撤早了哦 还好还好 这个和他撤的时间没有关系",
-       "t_start": 6854,
-       "t_end": null,
-       "t_line_label": "01:54:14",
-       "t_start_line": 6854
-      }
-     ]
-    },
-    {
-     "id": "inline:transcripts_txt/BV1qArGBPEQ8_p1_35288975300.txt@6864",
-     "status": "resolved_inline_evidence",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1qArGBPEQ8_p1_35288975300.txt",
-     "quotes": [
-      {
-       "text": "他没撤 这个光环也挂上 这个睡眠也挂上",
-       "t_start": 6864,
-       "t_end": null,
-       "t_start_upstream": 6864,
-       "t_start_line": 6864,
-       "t_line_label": "01:54:24"
-      }
-     ]
-    }
-   ],
-   "source_files": [
-    "transcripts_txt/BV1qArGBPEQ8_p1_35288975300.txt"
-   ],
-   "origin": {
-    "trial_doc_id": "fc1:状态效果-15-5",
-    "trial_rule_idx": 0,
-    "trial_manifest_outputs": "kb_trial/docs.jsonl",
-    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
-    "card_section": "规则"
-   },
-   "review": {
-    "status": "agent_verified",
-    "scope": "text_source_only",
-    "confidence": "text-source-supported",
-    "reason": "本轮逐条读源核实（文本层，未核听原片）：源窗口 [01:54:14] 为「哎我是不是撤早了哦 还好还好 这个和他撤的时间没有关系」，紧接 [01:54:24]「他没撤 这个光环也挂上 这个睡眠也挂上」，两句构成同窗口内一正一反的依据；claim 保留「和他撤的时间没有关系」的原话，subject 明确为「光环/睡眠挂上」。",
-    "not_authoritative": true
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
-   "semantic_review": {
-    "verdict": "keep",
-    "support": "supported",
-    "info_value": "reusable_rule",
-    "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
-    "reviewer_type": "agent"
-   },
-   "evidence_review": {
-    "status": "supported",
-    "reason": "源窗口 [01:54:14] 为「哎我是不是撤早了哦 还好还好 这个和他撤的时间没有关系」，紧接 [01:54:24]「他没撤 这个光环也挂上 这个睡眠也挂上」，两句构成同窗口内一正一反的依据；claim 保留「和他撤的时间没有关系」的原话，subject 明确为「光环/睡眠挂上」。",
-    "reviewer_type": "agent",
-    "confidence": "text-source-supported",
-    "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
-    "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
-    "source_path": "transcripts_txt/BV1qArGBPEQ8_p1_35288975300.txt",
-    "source_line_time": "01:54:14",
-    "supports": "这个和他撤的时间没有关系；他没撤 这个光环也挂上 这个睡眠也挂上",
-    "derived_correction": "无术语讹写；引文原文保留不改。",
     "derived_correction_disposition": "not_needed"
    }
   },
@@ -41957,9 +42850,9 @@
   },
   {
    "id": "fc1:状态效果-16-11#r1",
-   "claim": "娜斯提的天赋不是要求单位必须在场，而是单位在场过之后就不会失效。",
+   "claim": "娜斯提的天赋不是要求触发该天赋的远程敌人（单位）必须在场，而是该单位在场过之后天赋就不会失效。",
    "subject": "娜斯提的天赋",
-   "condition": "单位曾在场并已使娜斯提的天赋触发",
+   "condition": "触发该天赋的远程敌人（单位）曾在场并已使娜斯提的天赋触发",
    "scope": "universal",
    "category": "状态效果",
    "recorded_ym": null,
@@ -42047,8 +42940,38 @@
     "source_path": "transcripts_txt/BV1RuiiBUEfT_p1_35160786936.txt",
     "source_line_time": "00:54:45",
     "supports": "就是他不是单位必须在场 他是在场过之后就不会失效了",
-    "derived_correction": "源中「那斯提」讹写同 r0；claim 用「娜斯提」，引文原文保留不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "源中「那斯提」讹写同 r0；claim 用「娜斯提」，引文原文保留不改。；引文及旧字段「这个干员要在场」为主播口误（上下文[31:20]「有这个远程敌人就能触发」实指触发娜斯提天赋的敌方远程单位）；已订正condition/claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "娜斯提的天赋不是要求单位必须在场，而是单位在场过之后就不会失效。",
+      "to": "娜斯提的天赋不是要求触发该天赋的远程敌人（单位）必须在场，而是该单位在场过之后天赋就不会失效。"
+     },
+     {
+      "field": "condition",
+      "from": "单位曾在场并已使娜斯提的天赋触发",
+      "to": "触发该天赋的远程敌人（单位）曾在场并已使娜斯提的天赋触发"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 2,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "娜斯提的天赋不是要求单位必须在场，而是单位在场过之后就不会失效。",
+      "to": "娜斯提的天赋不是要求触发该天赋的远程敌人（单位）必须在场，而是该单位在场过之后天赋就不会失效。",
+      "already_applied": true
+     },
+     {
+      "field": "condition",
+      "from": "单位曾在场并已使娜斯提的天赋触发",
+      "to": "触发该天赋的远程敌人（单位）曾在场并已使娜斯提的天赋触发",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -42902,84 +43825,6 @@
    }
   },
   {
-   "id": "fc1:状态效果-21-3#r1",
-   "claim": "重生清Buff能清的东西不包括局外",
-   "subject": "重生",
-   "condition": "针对重生清Buff的可清范围",
-   "scope": "universal",
-   "category": "状态效果",
-   "recorded_ym": null,
-   "source_layer": "官方AI字幕",
-   "source_layers": [
-    "official"
-   ],
-   "track": "vod_official",
-   "citations": [
-    {
-     "id": "BV1UVeV66E7p_p2_41896773967:p18:a1:191e92f0",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1UVeV66E7p_p2_41896773967.txt",
-     "bvid_stem": "BV1UVeV66E7p_p2_41896773967",
-     "recorded_at": "2026-09-15",
-     "speaker": "神祇读神奇",
-     "chapter": "珊比入坑机制喜爱及藏品局外效果、重生清Buff与帧检测实测",
-     "quotes": [
-      {
-       "text": "不包括局外",
-       "t_start": 5152,
-       "t_end": 5170,
-       "t_start_upstream": 5152,
-       "t_start_line": 5152,
-       "t_line_label": "01:25:52"
-      }
-     ],
-     "_upstream_quote": "不包括局外"
-    }
-   ],
-   "source_files": [
-    "transcripts_txt/BV1UVeV66E7p_p2_41896773967.txt"
-   ],
-   "origin": {
-    "trial_doc_id": "fc1:状态效果-21-3",
-    "trial_rule_idx": 1,
-    "trial_manifest_outputs": "kb_trial/docs.jsonl",
-    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
-    "card_section": "规则"
-   },
-   "review": {
-    "status": "agent_verified",
-    "scope": "text_source_only",
-    "confidence": "text-source-supported",
-    "reason": "本轮逐条读源核实（文本层，未核听原片）：引文 [01:25:52]「不包括局外」，与 [01:25:48] 的「不包括ruin」为相邻两行的并列排除项；claim 只取「不包括局外」，未把前一行的 ruin 合并进来；源 [01:25:22]「和科技树在一个区间的是局外」给出了「局外」的语境定义。",
-    "not_authoritative": true
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
-   "semantic_review": {
-    "verdict": "keep",
-    "support": "supported",
-    "info_value": "reusable_rule",
-    "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
-    "reviewer_type": "agent"
-   },
-   "evidence_review": {
-    "status": "supported",
-    "reason": "引文 [01:25:52]「不包括局外」，与 [01:25:48] 的「不包括ruin」为相邻两行的并列排除项；claim 只取「不包括局外」，未把前一行的 ruin 合并进来；源 [01:25:22]「和科技树在一个区间的是局外」给出了「局外」的语境定义。",
-    "reviewer_type": "agent",
-    "confidence": "text-source-supported",
-    "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
-    "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
-    "source_path": "transcripts_txt/BV1UVeV66E7p_p2_41896773967.txt",
-    "source_line_time": "01:25:22",
-    "supports": "和科技树在一个区间的是局外；不包括局外",
-    "derived_correction": "无术语讹写；引文原文保留不改。",
-    "derived_correction_disposition": "not_needed"
-   }
-  },
-  {
    "id": "fc1:状态效果-22-12#r0",
    "claim": "使用一个碰撞箱让一个范围内的人，当这个碰撞箱检测到了范围内有人了，然后就给他们上一个Buff，这种东西叫光环。",
    "subject": "光环",
@@ -43077,9 +43922,9 @@
   },
   {
    "id": "fc1:状态效果-22-15#r0",
-   "claim": "存在一个藏品，使群愈师、疗养师免疫异常状态（藏品名待核听补出）",
+   "claim": "收藏品「护愈之手」使群愈师、疗养师获得状态免疫（免疫可抵抗异常状态）及晕眩/冻结/寒冷反制。",
    "subject": "群愈师、疗养师",
-   "condition": "持有该藏品",
+   "condition": "持有收藏品「护愈之手」",
    "scope": "universal",
    "category": "状态效果",
    "recorded_ym": null,
@@ -43167,13 +44012,43 @@
     "source_path": "transcripts_txt/BV1wPuG6aEyY_p3_40728658768.txt",
     "source_line_time": "01:16:15",
     "supports": "护欲之护佑之首 疗养师行医疗养师；这是群愈师疗养师 免疫异常状态 异常状态",
-    "derived_correction": "源句末尾「异常状态」重复为口述重复，claim 已规范化；引文原文保留不改。",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "源句末尾「异常状态」重复为口述重复，claim 已规范化；引文原文保留不改。；引文「富裕之手」「群体疗养师」分别为肉鸽收藏品「护愈之手」及职业分支「群愈师、疗养师」的ASR同音讹写；引文保真，已订正condition/claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "存在一个藏品，使群愈师、疗养师免疫异常状态（藏品名待核听补出）",
+      "to": "收藏品「护愈之手」使群愈师、疗养师获得状态免疫（免疫可抵抗异常状态）及晕眩/冻结/寒冷反制。"
+     },
+     {
+      "field": "condition",
+      "from": "持有该藏品",
+      "to": "持有收藏品「护愈之手」"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 2,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "存在一个藏品，使群愈师、疗养师免疫异常状态（藏品名待核听补出）",
+      "to": "收藏品「护愈之手」使群愈师、疗养师获得状态免疫（免疫可抵抗异常状态）及晕眩/冻结/寒冷反制。",
+      "already_applied": true
+     },
+     {
+      "field": "condition",
+      "from": "持有该藏品",
+      "to": "持有收藏品「护愈之手」",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
    "id": "fc1:状态效果-3-10#r0",
-   "claim": "实际控制时长不考虑加速度；理论控制时长只考虑加速度。",
+   "claim": "理论控制时长与实际控制时长的区别仅在于是否考虑加速度（理论控制时长不考虑加速度，实际控制时长只多考虑加速度，而非在刹车过程中额外施加减速）。",
    "subject": "控制时长计算",
    "condition": "计算实际控制时长或理论控制时长时",
    "scope": "universal",
@@ -43260,8 +44135,27 @@
     "source_path": "transcripts_txt/BV14y8269EbS_p3_41169782383.txt",
     "source_line_time": "01:08:52",
     "supports": "不是；实际控制时长不考虑加速度 理论控制时长只考虑加速度",
-    "derived_correction": "无术语讹写；引文原文保留不改。",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "无术语讹写；引文原文保留不改。；引文末句「并不是…在杀车的过程中再给他减速」中「杀车」为「刹车（受控减速停下）」的ASR同音讹写，旧claim误写为「击杀车的过程」；已订正claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "实际控制时长不考虑加速度；理论控制时长只考虑加速度。",
+      "to": "理论控制时长与实际控制时长的区别仅在于是否考虑加速度（理论控制时长不考虑加速度，实际控制时长只多考虑加速度，而非在刹车过程中额外施加减速）。"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "实际控制时长不考虑加速度；理论控制时长只考虑加速度。",
+      "to": "理论控制时长与实际控制时长的区别仅在于是否考虑加速度（理论控制时长不考虑加速度，实际控制时长只多考虑加速度，而非在刹车过程中额外施加减速）。",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -44230,7 +45124,7 @@
   },
   {
    "id": "fc1:状态效果-9-10#r1",
-   "claim": "恐惧是在持续时间内，一个路径点采完了之后再决定下一个路径点。",
+   "claim": "恐惧是在持续时间内，一个路径点踩完了之后再决定下一个路径点。",
    "subject": "恐惧",
    "condition": "处于恐惧持续时间内",
    "scope": "universal",
@@ -44335,8 +45229,27 @@
     "source_path": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
     "source_line_time": "03:32:13",
     "supports": "就是恐惧就是在持续时间内 一个路径点采完了之后再决定下一个路径点；一个路径点采完了之后再决定下一个路径点 这就没了",
-    "derived_correction": "无术语讹写；引文原文保留不改。",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "无术语讹写；引文原文保留不改。；引文及旧claim「采完了」为「踩完了」的ASR同音讹写；引文保真，已订正claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "恐惧是在持续时间内，一个路径点采完了之后再决定下一个路径点。",
+      "to": "恐惧是在持续时间内，一个路径点踩完了之后再决定下一个路径点。"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "恐惧是在持续时间内，一个路径点采完了之后再决定下一个路径点。",
+      "to": "恐惧是在持续时间内，一个路径点踩完了之后再决定下一个路径点。",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -44437,8 +45350,8 @@
   },
   {
    "id": "fc1:状态效果-9-4#r0",
-   "claim": "罚站出隐身／罚站隐身的条件是目标移速为零。",
-   "subject": "罚站",
+   "claim": "解题推导中，「敌人处于罚站（停住）状态」所引申/隐含的条件是目标移速为零。",
+   "subject": "罚站（停住状态）隐含的数学条件",
    "condition": "目标移速为零",
    "scope": "universal",
    "category": "状态效果",
@@ -44545,101 +45458,38 @@
     "source_path": "transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt",
     "source_line_time": "01:39:05",
     "supports": "罚站时罚站出隐身的条件是目标移速为零；罚站隐身的条件是目标移速为零",
-    "derived_correction": "源中「臂障力」「B站力」（[01:39:17]）为「避障力」讹写，本 claim 引文未含该词；引文原文保留不改。",
-    "derived_correction_disposition": "applied"
-   }
-  },
-  {
-   "id": "fc1:索敌-11-2#r0",
-   "claim": "很明显不是一个基于仇恨值的改动",
-   "subject": "同帧部署（源字幕作童真部署）",
-   "condition": "未给前提",
-   "scope": "universal",
-   "category": "索敌",
-   "recorded_ym": null,
-   "source_layer": "官方AI字幕",
-   "source_layers": [
-    "official"
-   ],
-   "track": "vod_official",
-   "citations": [
-    {
-     "id": "BV1dVcbzFEdd_p1_35992570681:p67:a0:5bed0bc0",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
-     "bvid_stem": "BV1dVcbzFEdd_p1_35992570681",
-     "recorded_at": "2026-02-11",
-     "speaker": "神祇读神奇",
-     "chapter": "落笔辟谣文案并核对穿刺花、伊内斯等反馈",
-     "quotes": [
-      {
-       "text": "这很明显不是一个基于仇恨值的改动",
-       "t_start": 7408,
-       "t_end": 7408,
-       "t_start_upstream": 7408,
-       "t_start_line": 7408,
-       "t_line_label": "02:03:28"
-      }
-     ],
-     "_upstream_quote": "这很明显不是一个基于仇恨值的改动"
-    },
-    {
-     "id": "inline:transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt@7408",
-     "status": "resolved_inline_evidence",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
-     "quotes": [
-      {
-       "text": "同帧部署现在挺乱的 这很明显不是一个基于仇恨值的改动 就是他现在对这个同帧部署的反转现象 影响了很多本不基于仇恨值进行结算的东西",
-       "t_start": 7408,
-       "t_end": null
-      }
-     ]
-    }
-   ],
-   "source_files": [
-    "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt"
-   ],
-   "origin": {
-    "trial_doc_id": "fc1:索敌-11-2",
-    "trial_rule_idx": 0,
-    "trial_manifest_outputs": "kb_trial/docs.jsonl",
-    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
-    "card_section": "规则"
+    "derived_correction": "源中「臂障力」「B站力」（[01:39:17]）为「避障力」讹写，本 claim 引文未含该词；引文原文保留不改。；引文及旧claim「隐身出来的条件」为「引申出来的条件」的ASR同音讹写（非机制「隐身/隐匿」）；引文保真，已订正subject/claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "罚站出隐身／罚站隐身的条件是目标移速为零。",
+      "to": "解题推导中，「敌人处于罚站（停住）状态」所引申/隐含的条件是目标移速为零。"
+     },
+     {
+      "field": "subject",
+      "from": "罚站",
+      "to": "罚站（停住状态）隐含的数学条件"
+     }
+    ]
    },
-   "review": {
-    "status": "agent_verified",
-    "scope": "text_source_only",
-    "confidence": "text-source-supported",
-    "reason": "本轮逐条读源核实（文本层，未核听原片）：引文 [02:03:28]「童真部署现在挺乱的 这很明显不是一个基于仇恨值的改动」，claim 保留「很明显」这一源中强度副词与否定判断；该行紧接的「影响了很多本不基于仇恨值进行结算的东西」由 r1 单独覆盖，两条引文为同一源行的不同分句。",
-    "not_authoritative": true
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
-   "semantic_review": {
-    "verdict": "keep",
-    "support": "supported",
-    "info_value": "reusable_rule",
-    "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
-    "reviewer_type": "agent"
-   },
-   "evidence_review": {
-    "status": "supported",
-    "reason": "引文 [02:03:28]「童真部署现在挺乱的 这很明显不是一个基于仇恨值的改动」，claim 保留「很明显」这一源中强度副词与否定判断；该行紧接的「影响了很多本不基于仇恨值进行结算的东西」由 r1 单独覆盖，两条引文为同一源行的不同分句。",
-    "reviewer_type": "agent",
-    "confidence": "text-source-supported",
-    "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
-    "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
-    "source_path": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
-    "source_line_time": "02:03:15",
-    "supports": "弟你不试试不通真部署吗；童真部署现在挺乱的 这很明显不是一个基于仇恨值的改动",
-    "derived_correction": "源中「童真部署」「不通真部署」均为「同帧部署」讹写，claim 用规范术语「同帧部署」；引文原文保留不改。",
-    "derived_correction_disposition": "applied"
+   "derived_text_repairs": {
+    "count": 2,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "罚站出隐身／罚站隐身的条件是目标移速为零。",
+      "to": "解题推导中，「敌人处于罚站（停住）状态」所引申/隐含的条件是目标移速为零。",
+      "already_applied": true
+     },
+     {
+      "field": "subject",
+      "from": "罚站",
+      "to": "罚站（停住状态）隐含的数学条件",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -44899,7 +45749,7 @@
   },
   {
    "id": "fc1:索敌-11-9#r1",
-   "claim": "在通用的仇恨过滤器中，会把仇恨值以0.1为精度取整后再排序；干员以时间为仇恨，0.1S对应三针，才有了每三针为一组。仇恨精度可以随需求调整，例如医疗以血量比例升序排序，他们使用的程精度为0.001。",
+   "claim": "在通用的仇恨过滤器中，会把仇恨值以0.1为精度取整后再排序；干员以时间为仇恨，0.1s对应三帧，才有了每三帧为一组。仇恨精度可以随需求调整，例如医疗以血量比例升序排序，他们使用的仇恨精度为0.001。",
    "subject": "通用的仇恨过滤器",
    "condition": "干员作为仇恨对象时",
    "scope": "universal",
@@ -45001,8 +45851,27 @@
     "source_path": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
     "source_line_time": "02:36:50",
     "supports": "童真部署时 以时间为仇恨的干员是同仇恨的；因为干员以时间为仇恨 0.1S对应三针",
-    "derived_correction": "源中「0.1S对应三针」的「针」为「帧」讹写，claim 未引用该片段；引文原文保留不改。",
-    "derived_correction_disposition": "applied"
+    "derived_correction": "源中「0.1S对应三针」的「针」为「帧」讹写，claim 未引用该片段；引文原文保留不改。；引文及旧claim「以血量比例生序排序」为「以血量比例升序排序」的ASR同音讹写；引文保真，已订正claim。",
+    "derived_correction_disposition": "applied",
+    "repaired_fields": [
+     {
+      "field": "claim",
+      "from": "在通用的仇恨过滤器中，会把仇恨值以0.1为精度取整后再排序；干员以时间为仇恨，0.1S对应三针，才有了每三针为一组。仇恨精度可以随需求调整，例如医疗以血量比例升序排序，他们使用的程精度为0.001。",
+      "to": "在通用的仇恨过滤器中，会把仇恨值以0.1为精度取整后再排序；干员以时间为仇恨，0.1s对应三帧，才有了每三帧为一组。仇恨精度可以随需求调整，例如医疗以血量比例升序排序，他们使用的仇恨精度为0.001。"
+     }
+    ]
+   },
+   "derived_text_repairs": {
+    "count": 1,
+    "changes": [
+     {
+      "field": "claim",
+      "from": "在通用的仇恨过滤器中，会把仇恨值以0.1为精度取整后再排序；干员以时间为仇恨，0.1S对应三针，才有了每三针为一组。仇恨精度可以随需求调整，例如医疗以血量比例升序排序，他们使用的程精度为0.001。",
+      "to": "在通用的仇恨过滤器中，会把仇恨值以0.1为精度取整后再排序；干员以时间为仇恨，0.1s对应三帧，才有了每三帧为一组。仇恨精度可以随需求调整，例如医疗以血量比例升序排序，他们使用的仇恨精度为0.001。",
+      "already_applied": true
+     }
+    ],
+    "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
    }
   },
   {
@@ -136279,7 +137148,7 @@
   "skipped_reason": null
  },
  "evidence_review_summary": {
-  "reviewed_supported": 1418,
+  "reviewed_supported": 1408,
   "reviewed_unsupported": 0,
   "reviewed_pending": 3,
   "inherited_verified": 40,
@@ -136290,13 +137159,13 @@
    "QQ扩展(阶段三b3批)": 312,
    "QQ扩展(阶段四b4批)": 502
   },
-  "released": 1458,
+  "released": 1448,
   "staging": 6,
-  "entries_with_derived_text_repairs": 10,
+  "entries_with_derived_text_repairs": 75,
   "derived_correction_disposition": {
-   "not_needed": 274,
-   "applied": 298,
-   "pending": 2
+   "not_needed": 253,
+   "applied": 310,
+   "pending": 1
   },
   "confidence_ceiling": "text-source-supported",
   "review_basis": "agent 依据 packet 内嵌 SOURCE WINDOW 与已解析引文逐条比对；未做人工核听、未回看原片。",
