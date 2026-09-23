@@ -3,8 +3,8 @@
  "name": "神祇读神奇 机制讲堂 甄选高质量规则",
  "status": "draft_curated",
  "release_note": "本地甄选草稿层；不是官方发布，也不宣称绝对无错。是否对外发布由项目负责人决定，本文件不构成发布许可判断。条目来源为录播官方 AI 字幕、缺官方字幕分P的云端 ASR 重转写与 QQ 群聊；各条实际来源见 source_layer 与 citations[].transcript_file，引用前须核该条证据落在哪一层。未混入本次甄选之外的检索层。",
- "entry_count": 1473,
- "entry_count_before_semantic_review": 636,
+ "entry_count": 1458,
+ "entry_count_before_semantic_review": 621,
  "semantic_review_note": "entries 已应用语义内审：claim 不是可独立用于检索的明确机制的条目已剔除，逐条判定与被剔原因见 kb_trial/curation/semantic_review.json（含被剔条目）。语义内审是 claim 层的单代理判定，不等于证据核听；两者分列于 semantic_review 与 review.status。",
  "semantic_review_counts": {
   "total": 814,
@@ -81,9 +81,9 @@
   {
    "id": "B010-event-order-exceptions#r0",
    "claim": "实体按创建顺序决定对应事件的更新；失衡事件单独拎出处理；与连续攻击中抬手有关的部分事件也单独拎出。不能简单说成只按实体创建。",
-   "subject": "未标注",
-   "condition": "未标注",
-   "scope": "未标注",
+   "subject": "实体事件更新顺序与失衡、连续攻击抬手特殊事件",
+   "condition": "同一帧内存在多个实体事件更新时",
+   "scope": "universal",
    "category": "帧时序与计时器",
    "recorded_ym": null,
    "source_layer": "官方AI字幕",
@@ -154,9 +154,9 @@
   {
    "id": "B020-endpoints-not-gates#r0",
    "claim": "寻路的起点和终点是寻路参数，与红蓝门没有真正意义上的关系；寻路上只看终点。红门只具有标识效果。",
-   "subject": "未标注",
-   "condition": "未标注",
-   "scope": "未标注",
+   "subject": "寻路起点、终点参数与红蓝门的关系",
+   "condition": "进行敌方寻路计算与红蓝门判定时",
+   "scope": "universal",
    "category": "寻路",
    "recorded_ym": null,
    "source_layer": "官方AI字幕",
@@ -244,9 +244,9 @@
   {
    "id": "B022-target-speed-in-path#r0",
    "claim": "寻路状态机里的目标速度：从自身寻路坐标指向拐角格中心，模长为理论移速。怪倾向于按该速度走，但不会直接变成该速度。停住、寻路断绝也在寻路状态机中，不走是因为目标速度为零。速度由目标速度、实际速度、加速度逐帧生成。",
-   "subject": "未标注",
-   "condition": "未标注",
-   "scope": "未标注",
+   "subject": "寻路状态机中的目标速度与速度生成",
+   "condition": "敌人处于寻路状态机（含正常行进、停住、寻路断绝）时",
+   "scope": "universal",
    "category": "寻路",
    "recorded_ym": null,
    "source_layer": "官方AI字幕",
@@ -328,9 +328,9 @@
   {
    "id": "B028-tile-bfs-order#r0",
    "claim": "寻路地图按上右下左顺序推地块；每格记录来源方向；排完可通行地块后形成寻路地图。",
-   "subject": "未标注",
-   "condition": "未标注",
-   "scope": "未标注",
+   "subject": "寻路地图的地块遍历顺序与来源方向记录",
+   "condition": "生成寻路地图并遍历可通行地块时",
+   "scope": "universal",
    "category": "寻路",
    "recorded_ym": null,
    "source_layer": "官方AI字幕",
@@ -418,9 +418,9 @@
   {
    "id": "B036-path-not-wallhack#r0",
    "claim": "卡墙只决定何时不发生传送；敌人怎么走由寻路机制决定，任何点位都按寻路规则向自己的路径点走；传送本质是单纯的改写坐标。",
-   "subject": "未标注",
-   "condition": "未标注",
-   "scope": "未标注",
+   "subject": "卡墙、敌人寻路规则与传送改写坐标机制",
+   "condition": "发生卡墙、寻路移动或传送机制时",
+   "scope": "universal",
    "category": "寻路",
    "recorded_ym": null,
    "source_layer": "官方AI字幕",
@@ -522,10 +522,10 @@
   },
   {
    "id": "B069-dir-to-radial#r0",
-   "claim": "方向力在过近或角度过大时转换成径向力，力度减二。践行者二技能和出血不会因距离过近或角度过大做该转换。径向力沿连线；方向力由干员朝向决定。",
-   "subject": "未标注",
-   "condition": "未标注",
-   "scope": "未标注",
+   "claim": "方向力在过近或角度过大时转换成径向力，力度减二。践行者二技能和初雪（源字幕作「出血」）不会因距离过近或角度过大做该转换。径向力沿连线；方向力由干员朝向决定。",
+   "subject": "方向力转径向力的条件、力度衰减与技能豁免（践行者二技能、初雪）",
+   "condition": "施加方向力且距离过近或角度过大时",
+   "scope": "universal",
    "category": "技能特例",
    "recorded_ym": null,
    "source_layer": "官方AI字幕",
@@ -611,9 +611,9 @@
   {
    "id": "B074-imbalance-speed-separate#r0",
    "claim": "失衡状态下的速度与寻路状态下的速度从根本上不是一个东西。失衡时不计算寻路速度；推拉修正失衡速度。退出失衡后把该速度清零，再按寻路状态计算。",
-   "subject": "未标注",
-   "condition": "未标注",
-   "scope": "未标注",
+   "subject": "失衡状态速度与寻路状态速度的独立结算与切换",
+   "condition": "单位处于失衡状态或退出失衡切换回寻路状态时",
+   "scope": "universal",
    "category": "位移",
    "recorded_ym": null,
    "source_layer": "官方AI字幕",
@@ -698,9 +698,9 @@
   {
    "id": "B085-same-frame-unblock#r0",
    "claim": "阻挡同帧撤退时，敌人不会抬手，不会进入 combat/attack 状态机；仍按寻路状态机，但无法按寻路状态机产生位移。",
-   "subject": "未标注",
-   "condition": "未标注",
-   "scope": "未标注",
+   "subject": "阻挡同帧撤退时的敌方状态机与位移表现",
+   "condition": "干员阻挡敌人的同一帧撤退时",
+   "scope": "universal",
    "category": "位移",
    "recorded_ym": null,
    "source_layer": "官方AI字幕",
@@ -767,9 +767,9 @@
   {
    "id": "B093-halo-needs-collider#r0",
    "claim": "光环：用碰撞箱检测范围内单位并上 buff。全图光环没有碰撞箱，直接索敌到敌人。",
-   "subject": "未标注",
-   "condition": "未标注",
-   "scope": "未标注",
+   "subject": "光环与全图光环的碰撞箱及索敌判定区别",
+   "condition": "通过普通光环或全图光环对单位施加 Buff 时",
+   "scope": "universal",
    "category": "状态效果",
    "recorded_ym": null,
    "source_layer": "官方AI字幕",
@@ -856,7 +856,7 @@
   },
   {
    "id": "fc1:伤害结算-0-4#r0",
-   "claim": "在肉鸽中，侵蚀损伤在肉鸽加成前结算，削弱的是肉鸽加成所加的数值",
+   "claim": "在肉鸽中，侵蚀损伤在肉鸽最终乘算加成前结算，削弱的是肉鸽加成前的防御数值。",
    "subject": "侵蚀损伤",
    "condition": "在肉鸽中",
    "scope": "universal",
@@ -1569,7 +1569,8 @@
     "source_path": "transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt",
     "source_line_time": "00:38:58",
     "supports": "死亡状态机内加攻减工均不生效，逐字支持（保留源「减工」口误未擅改）",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "引文「减工」为「减攻」的ASR同音讹写；引文保真，claim已用「减攻」。",
+    "derived_correction_disposition": "applied"
    }
   },
   {
@@ -3535,7 +3536,8 @@
     "source_path": "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt",
     "source_line_time": "00:34:23",
     "supports": "受击半径相切/重叠/小距离相离均可命中，逐字支持",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "引文「隔畔」「收集半径」分别为「格判」「受击半径」的ASR同音讹写；引文保真，claim/condition已用正字。",
+    "derived_correction_disposition": "applied"
    }
   },
   {
@@ -3694,8 +3696,8 @@
   },
   {
    "id": "fc1:伤害结算-16-15#r0",
-   "claim": "每两帧判断一次伤害并不错误；但该机制调用的是敌人身上记录自身坐标的参数，该坐标记录每五帧记录一次。",
-   "subject": "该机制（DOT伤害判断）",
+   "claim": "夜魔二技能（按移动距离结算的伤害）每两帧判断一次伤害并不错误；但该机制调用的是敌人身上记录自身坐标的参数，该坐标记录每五帧记录一次。",
+   "subject": "位移距离类法术伤害（夜魔二技能「梦魇」）",
    "condition": "伤害判断间隔为每两帧;调用敌人自身坐标记录参数",
    "scope": "universal",
    "category": "伤害结算",
@@ -3784,8 +3786,8 @@
   },
   {
    "id": "fc1:伤害结算-16-15#r1",
-   "claim": "移动距离五帧更新一次，因此实际伤害间隔为4~6帧上下横跳，平均五帧一次；即使每四帧或每六帧跳一次伤害，其对应的仍是间隔五帧的位移能力。",
-   "subject": "该机制（DOT伤害与位移结算）",
+   "claim": "夜魔二技能调用的移动距离每五帧更新一次，因此实际伤害间隔为4~6帧上下横跳，平均五帧一次；即使每四帧或每六帧跳一次伤害，其对应的仍是间隔五帧的位移能力。",
+   "subject": "位移距离类法术伤害（夜魔二技能「梦魇」）",
    "condition": "移动距离五帧更新一次;伤害判断按两帧检测",
    "scope": "universal",
    "category": "伤害结算",
@@ -3885,8 +3887,8 @@
   },
   {
    "id": "fc1:伤害结算-16-15#r2",
-   "claim": "DOT 的距离每五帧更新一次；无论两帧还是三帧检测，每次检测到的都是五帧更新的距离，而不会是四或六的距离。",
-   "subject": "该DOT",
+   "claim": "夜魔二技能判定的移动距离每五帧更新一次；无论两帧还是三帧检测，每次检测到的都是五帧更新的距离，而不会是四或六的距离。",
+   "subject": "位移距离类法术伤害（夜魔二技能「梦魇」）",
    "condition": "DOT伤害距离结算;检测间隔为两帧或三帧",
    "scope": "universal",
    "category": "伤害结算",
@@ -3983,7 +3985,7 @@
      {
       "field": "claim",
       "from": "DOT 的距离每五帧更新一次；无论两针还是三针检测，每次检测到的都是五帧更新的距离，而不会是四或六的距离。",
-      "to": "DOT 的距离每五帧更新一次；无论两帧还是三帧检测，每次检测到的都是五帧更新的距离，而不会是四或六的距离。"
+      "to": "夜魔二技能判定的移动距离每五帧更新一次；无论两帧还是三帧检测，每次检测到的都是五帧更新的距离，而不会是四或六的距离。"
      }
     ]
    },
@@ -3993,398 +3995,11 @@
      {
       "field": "claim",
       "from": "DOT 的距离每五帧更新一次；无论两针还是三针检测，每次检测到的都是五帧更新的距离，而不会是四或六的距离。",
-      "to": "DOT 的距离每五帧更新一次；无论两帧还是三帧检测，每次检测到的都是五帧更新的距离，而不会是四或六的距离。",
+      "to": "夜魔二技能判定的移动距离每五帧更新一次；无论两帧还是三帧检测，每次检测到的都是五帧更新的距离，而不会是四或六的距离。",
       "already_applied": true
      }
     ],
     "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
-   }
-  },
-  {
-   "id": "fc1:伤害结算-18-15#r0",
-   "claim": "未点名技能的文案被主播说「这话说的很不好」，并改口到格子中心横射（「这个是格子中心啊」「面对无无法推格子中心横射」）。",
-   "subject": "未点名",
-   "condition": "目标为无法推动的正常敌人;进行横射",
-   "scope": "universal",
-   "category": "伤害结算",
-   "recorded_ym": null,
-   "source_layer": "官方AI字幕",
-   "source_layers": [
-    "official"
-   ],
-   "track": "vod_official",
-   "citations": [
-    {
-     "id": "BV1uLE86JEi1_p1_38942018351:p43:a0:865c6888",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
-     "bvid_stem": "BV1uLE86JEi1_p1_38942018351",
-     "recorded_at": "2026-06-08",
-     "speaker": "神祇读神奇",
-     "chapter": "巨型Boss判定次数详解：4.95缝隙与紫兰弹道过整导致横少一判",
-     "quotes": [
-      {
-       "text": "面对无法推动的正常敌人横射 每个敌人三次判定",
-       "t_start": 10769,
-       "t_end": 10784,
-       "t_start_upstream": 10769,
-       "t_start_line": 10769,
-       "t_line_label": "02:59:29"
-      }
-     ],
-     "_upstream_quote": "面对无法推动的正常敌人横射 每个敌人三次判定"
-    },
-    {
-     "id": "inline:transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt@10769",
-     "status": "resolved_inline_evidence",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
-     "quotes": [
-      {
-       "text": "施加较大力的推击 推动效果美哒 该技能面对无法推动的正常敌人横射 每个敌人三次判定竖射 这话说的很不好 这个是格子中心啊 面对无无法推格子中心横射",
-       "t_start": 10769,
-       "t_end": null
-      }
-     ]
-    }
-   ],
-   "source_files": [
-    "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt"
-   ],
-   "origin": {
-    "trial_doc_id": "fc1:伤害结算-18-15",
-    "trial_rule_idx": 0,
-    "trial_manifest_outputs": "kb_trial/docs.jsonl",
-    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
-    "card_section": "规则"
-   },
-   "review": {
-    "status": "agent_verified",
-    "reason": "official 引文 p43:a0 逐字一致「面对无法推动的正常敌人横射 每个敌人三次判定」",
-    "not_authoritative": true,
-    "verification": "official 引文 p43:a0 逐字一致「面对无法推动的正常敌人横射 每个敌人三次判定」"
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
-   "semantic_review": {
-    "verdict": "keep",
-    "support": "supported",
-    "info_value": "reusable_rule",
-    "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
-    "reviewer_type": "agent"
-   },
-   "evidence_review": {
-    "status": "inherited_verified",
-    "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
-    "reviewer_type": "agent",
-    "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
-   }
-  },
-  {
-   "id": "fc1:伤害结算-18-15#r1",
-   "claim": "源句作「每个敌人三次判定竖射 每个敌人四次判定」，后文只说「每个敌人四次判定是一个横纵的问题」。",
-   "subject": "未点名",
-   "condition": "目标为无法推动的正常敌人;进行竖射",
-   "scope": "universal",
-   "category": "伤害结算",
-   "recorded_ym": null,
-   "source_layer": "官方AI字幕",
-   "source_layers": [
-    "official"
-   ],
-   "track": "vod_official",
-   "citations": [
-    {
-     "id": "BV1uLE86JEi1_p1_38942018351:p43:a1:789925b9",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
-     "bvid_stem": "BV1uLE86JEi1_p1_38942018351",
-     "recorded_at": "2026-06-08",
-     "speaker": "神祇读神奇",
-     "chapter": "巨型Boss判定次数详解：4.95缝隙与紫兰弹道过整导致横少一判",
-     "quotes": [
-      {
-       "text": "竖射 每个敌人四次判定",
-       "t_start": 10784,
-       "t_end": 10805,
-       "t_start_upstream": 10784,
-       "t_start_line": 10781,
-       "t_line_label": "02:59:41"
-      }
-     ],
-     "_upstream_quote": "竖射 每个敌人四次判定"
-    },
-    {
-     "id": "inline:transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt@10784",
-     "status": "resolved_inline_evidence",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
-     "quotes": [
-      {
-       "text": "每个敌人三次判定竖射 每个敌人四次判定 面对巨型boss时 这个哎感觉还是得提一嘴",
-       "t_start": 10784,
-       "t_end": null,
-       "t_start_upstream": 10784,
-       "t_start_line": 10781,
-       "t_line_label": "02:59:41"
-      }
-     ]
-    },
-    {
-     "id": "inline:transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt@10805",
-     "status": "resolved_inline_evidence",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
-     "quotes": [
-      {
-       "text": "我想一下啊 时间为30秒 期间被箭矢小比例的把施加较大力的推无限推走 一个宿舍 每个敌人四次判定是一个横纵的问题",
-       "t_start": 10805,
-       "t_end": null,
-       "t_start_upstream": 10805,
-       "t_start_line": 10805,
-       "t_line_label": "03:00:05"
-      }
-     ]
-    }
-   ],
-   "source_files": [
-    "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt"
-   ],
-   "origin": {
-    "trial_doc_id": "fc1:伤害结算-18-15",
-    "trial_rule_idx": 1,
-    "trial_manifest_outputs": "kb_trial/docs.jsonl",
-    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
-    "card_section": "规则"
-   },
-   "review": {
-    "status": "agent_verified",
-    "reason": "official 引文 p43:a1「竖射 每个敌人四次判定」；与 idx0 同段，主语正确",
-    "not_authoritative": true,
-    "verification": "official 引文 p43:a1「竖射 每个敌人四次判定」；与 idx0 同段，主语正确"
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
-   "semantic_review": {
-    "verdict": "keep",
-    "support": "supported",
-    "info_value": "reusable_rule",
-    "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
-    "reviewer_type": "agent"
-   },
-   "evidence_review": {
-    "status": "inherited_verified",
-    "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
-    "reviewer_type": "agent",
-    "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
-   }
-  },
-  {
-   "id": "fc1:伤害结算-18-16#r0",
-   "claim": "纵打因为不整，所以打满了",
-   "subject": "未点名",
-   "condition": "纵打;条件：不整",
-   "scope": "universal",
-   "category": "伤害结算",
-   "recorded_ym": null,
-   "source_layer": "官方AI字幕",
-   "source_layers": [
-    "official"
-   ],
-   "track": "vod_official",
-   "citations": [
-    {
-     "id": "BV1uLE86JEi1_p1_38942018351:p48:a0:9fbbabe1",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
-     "bvid_stem": "BV1uLE86JEi1_p1_38942018351",
-     "recorded_at": "2026-06-08",
-     "speaker": "神祇读神奇",
-     "chapter": "偏移精确为0.232而非0.233及横纵判定过整对称性讨论",
-     "quotes": [
-      {
-       "text": "纵打因为不整 所以就打满了",
-       "t_start": 11800,
-       "t_end": 11806,
-       "t_start_upstream": 11800,
-       "t_start_line": 11800,
-       "t_line_label": "03:16:40"
-      }
-     ],
-     "_upstream_quote": "纵打因为不整 所以就打满了"
-    },
-    {
-     "id": "ctx=sub:BV1uLE86JEi1_p1_38942018351:11800",
-     "status": "resolved_timestamp_window",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
-     "requested_second": 11800,
-     "quotes": [
-      {
-       "text": "[03:16:40] 纵打对啊 纵打不整 纵打因为不整 所以就打满了 因为横着打的话他太正了",
-       "t_start": 11800,
-       "t_end": null,
-       "t_line_label": "03:16:40",
-       "t_start_line": 11800
-      }
-     ]
-    }
-   ],
-   "source_files": [
-    "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt"
-   ],
-   "origin": {
-    "trial_doc_id": "fc1:伤害结算-18-16",
-    "trial_rule_idx": 0,
-    "trial_manifest_outputs": "kb_trial/docs.jsonl",
-    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
-    "card_section": "规则"
-   },
-   "review": {
-    "status": "agent_verified",
-    "scope": "text_source_only",
-    "confidence": "text-source-supported",
-    "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1uLE86JEi1_p1_38942018351.txt [03:16:40] 逐字为「纵打对啊 纵打不整 纵打因为不整 所以就打满了」。claim 已收窄为「纵打因为不整，所以打满了」，与源句一致，不再写入横打、1/3/5 判或落点/格子对齐，condition「纵打;条件：不整」也精确取自源句。citation 1 与 citation 2 的时间点均为 03:16:40（t_sta",
-    "not_authoritative": true
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
-   "semantic_review": {
-    "verdict": "keep",
-    "support": "supported",
-    "info_value": "reusable_rule",
-    "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
-    "reviewer_type": "agent"
-   },
-   "evidence_review": {
-    "status": "supported",
-    "reason": "源 BV1uLE86JEi1_p1_38942018351.txt [03:16:40] 逐字为「纵打对啊 纵打不整 纵打因为不整 所以就打满了」。claim 已收窄为「纵打因为不整，所以打满了」，与源句一致，不再写入横打、1/3/5 判或落点/格子对齐，condition「纵打;条件：不整」也精确取自源句。citation 1 与 citation 2 的时间点均为 03:16:40（t_start=11800），citation 2 是 ctx=sub 的窗口定位，属同一句的重复定位，非两处独立证据；结论仍由该单句单独支撑。",
-    "reviewer_type": "agent",
-    "confidence": "text-source-supported",
-    "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
-    "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
-    "source_path": "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
-    "source_line_time": "03:16:40",
-    "supports": "claim 与源句逐字一致，单句独立支撑",
-    "derived_correction": "校准 revert_to_source_text：claim 收窄为当前引文可直接支持的「纵打因为不整，所以打满了」。横打、1/3/5 判、落点/格子对齐来自本条未引用的后续内容，已从 claim 删除。引文原文不改。",
-    "derived_correction_disposition": "applied"
-   }
-  },
-  {
-   "id": "fc1:伤害结算-18-17#r0",
-   "claim": "概率性效果（如贝洛内）的总伤算法至少有三种口径：主播自己折中算，也可能有人按期望算或按最高算（口径不唯一）。",
-   "subject": "概率性效果的计算口径",
-   "condition": "涉及类似贝洛内那样概率性的东西",
-   "scope": "universal",
-   "category": "伤害结算",
-   "recorded_ym": null,
-   "source_layer": "官方AI字幕",
-   "source_layers": [
-    "official"
-   ],
-   "track": "vod_official",
-   "citations": [
-    {
-     "id": "BV1uLE86JEi1_p1_38942018351:p50:a0:7db0c02f",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
-     "bvid_stem": "BV1uLE86JEi1_p1_38942018351",
-     "recorded_at": "2026-06-08",
-     "speaker": "神祇读神奇",
-     "chapter": "为何不同人紫兰总伤计算不同及解包0.25数据误用讨论",
-     "quotes": [
-      {
-       "text": "涉及到类似贝洛内那样概率性的东西 我会折中算",
-       "t_start": 13890,
-       "t_end": 13913,
-       "t_start_upstream": 13890,
-       "t_start_line": 13894,
-       "t_line_label": "03:51:34"
-      }
-     ],
-     "_upstream_quote": "涉及到类似贝洛内那样概率性的东西 我会折中算"
-    },
-    {
-     "id": "BV1uLE86JEi1_p1_38942018351:p50:a1:0fa9398a",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
-     "bvid_stem": "BV1uLE86JEi1_p1_38942018351",
-     "recorded_at": "2026-06-08",
-     "speaker": "神祇读神奇",
-     "chapter": "为何不同人紫兰总伤计算不同及解包0.25数据误用讨论",
-     "quotes": [
-      {
-       "text": "有的人可能会按照期望算 也有可能有人会按最高算",
-       "t_start": 13890,
-       "t_end": 13913,
-       "t_start_upstream": 13890,
-       "t_start_line": 13900,
-       "t_line_label": "03:51:40"
-      }
-     ],
-     "_upstream_quote": "有的人可能会按照期望算 也有可能有人会按最高算"
-    }
-   ],
-   "source_files": [
-    "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt"
-   ],
-   "origin": {
-    "trial_doc_id": "fc1:伤害结算-18-17",
-    "trial_rule_idx": 0,
-    "trial_manifest_outputs": "kb_trial/docs.jsonl",
-    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
-    "card_section": "规则"
-   },
-   "review": {
-    "status": "agent_verified",
-    "scope": "text_source_only",
-    "confidence": "text-source-supported",
-    "reason": "本轮逐条读源核实（文本层，未核听原片）：源[03:51:34]「涉及到类似贝洛内那样概率性的东西 我会折中算」+[03:51:40]「我会折中算 有的人可能会按照期望算 也有可能有人会按最高算」逐字支持 claim 所述三种口径（折中/期望/最高）及其触发条件。三段口径在同一源行相邻两句内，主体为「我会折中算 / 有的人…也有人…」，claim 转述为「圈内存在三种口径」与源一致。",
-    "not_authoritative": true
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
-   "semantic_review": {
-    "verdict": "keep",
-    "support": "supported",
-    "info_value": "reusable_rule",
-    "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
-    "reviewer_type": "agent"
-   },
-   "evidence_review": {
-    "status": "supported",
-    "reason": "源[03:51:34]「涉及到类似贝洛内那样概率性的东西 我会折中算」+[03:51:40]「我会折中算 有的人可能会按照期望算 也有可能有人会按最高算」逐字支持 claim 所述三种口径（折中/期望/最高）及其触发条件。三段口径在同一源行相邻两句内，主体为「我会折中算 / 有的人…也有人…」，claim 转述为「圈内存在三种口径」与源一致。",
-    "reviewer_type": "agent",
-    "confidence": "text-source-supported",
-    "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
-    "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
-    "source_path": "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
-    "source_line_time": "03:51:34",
-    "supports": "概率性效果存在折中/期望/最高三种算口径，逐字支持",
-    "derived_correction_disposition": "not_needed"
    }
   },
   {
@@ -4463,9 +4078,9 @@
   },
   {
    "id": "fc1:伤害结算-2-0#r1",
-   "claim": "当弹道在敌人死亡状态机彻底结束之后才命中时，弹道打出的伤害按出膛瞬间缓存的带Buff攻击力结算，从而可打出极高伤害。",
-   "subject": "弹道",
-   "condition": "存在裸减速;弹道在敌人死亡状态机彻底结束后才命中",
+   "claim": "当敌方弹道因逻各斯（小逻）技能减速而在敌人死亡状态机彻底结束之后才命中时，弹道会回退使用出膛瞬间缓存的带Buff攻击力结算，从而可打出极高伤害（即「小逻给对面加攻」现象）。",
+   "subject": "逻各斯（小逻）弹道减速下的敌方残余弹道伤害结算",
+   "condition": "存在逻各斯（小逻）弹道减速；敌方弹道在发射者死亡状态机彻底结束后才命中",
    "scope": "universal",
    "category": "伤害结算",
    "recorded_ym": null,
@@ -4532,84 +4147,8 @@
     "source_path": "transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt",
     "source_line_time": "00:39:33",
     "supports": "裸减速下弹道延迟命中仍按出膛缓存 Buff 值结算并打出高伤，逐字支持",
-    "derived_correction_disposition": "not_needed"
-   }
-  },
-  {
-   "id": "fc1:伤害结算-3-11#r1",
-   "claim": "前期费用无论如何没有办法模拟，只能计算。",
-   "subject": "前期费用",
-   "condition": "前期",
-   "scope": "universal",
-   "category": "伤害结算",
-   "recorded_ym": null,
-   "source_layer": "官方AI字幕",
-   "source_layers": [
-    "official"
-   ],
-   "track": "vod_official",
-   "citations": [
-    {
-     "id": "BV14VZCB1EJR_p1_36119907781:p84:a1:77a13061",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt",
-     "bvid_stem": "BV14VZCB1EJR_p1_36119907781",
-     "recorded_at": "2026-02-17",
-     "speaker": "神祇读神奇",
-     "chapter": "答疑、模拟限制、打轴工具与出怪帧",
-     "quotes": [
-      {
-       "text": "费用是我们无论如何在前期没有办法模拟的 这个只能计算",
-       "t_start": 7185,
-       "t_end": 7211,
-       "t_start_upstream": 7185,
-       "t_start_line": 7185,
-       "t_line_label": "01:59:45"
-      }
-     ],
-     "_upstream_quote": "费用是我们无论如何在前期没有办法模拟的 这个只能计算"
-    }
-   ],
-   "source_files": [
-    "transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt"
-   ],
-   "origin": {
-    "trial_doc_id": "fc1:伤害结算-3-11",
-    "trial_rule_idx": 1,
-    "trial_manifest_outputs": "kb_trial/docs.jsonl",
-    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
-    "card_section": "规则"
-   },
-   "review": {
-    "status": "agent_verified",
-    "scope": "text_source_only",
-    "confidence": "text-source-supported",
-    "reason": "本轮逐条读源核实（文本层，未核听原片）：源[01:59:45]「费用是我们无论如何在前期没有办法模拟的 这个只能计算」逐字等于 claim。需注意：同句前半「对费用是一个最大的问题」曾被判 opinion 并在语义审中移除（对应已删的 3-11#r0），本条 claim 只取了后半句的可复用陈述，属正确切分而非同一内容重复入库；claim 自身可独立复用（约束模拟能力边界），不依赖被删条目。",
-    "not_authoritative": true
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
-   "semantic_review": {
-    "verdict": "keep",
-    "support": "supported",
-    "info_value": "reusable_rule",
-    "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
-    "reviewer_type": "agent"
-   },
-   "evidence_review": {
-    "status": "supported",
-    "reason": "源[01:59:45]「费用是我们无论如何在前期没有办法模拟的 这个只能计算」逐字等于 claim。需注意：同句前半「对费用是一个最大的问题」曾被判 opinion 并在语义审中移除（对应已删的 3-11#r0），本条 claim 只取了后半句的可复用陈述，属正确切分而非同一内容重复入库；claim 自身可独立复用（约束模拟能力边界），不依赖被删条目。",
-    "reviewer_type": "agent",
-    "confidence": "text-source-supported",
-    "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
-    "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
-    "source_path": "transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt",
-    "source_line_time": "01:59:45",
-    "supports": "前期费用无法模拟只能计算，逐字支持；与被删的 3-11#r0（费用是最大问题，opinion）非同一内容",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "源字幕及旧condition中的「裸减速/罗减速/螺」为干员「逻各斯（小逻）」技能弹道减速的ASR同音讹写；已订正subject/condition/claim。",
+    "derived_correction_disposition": "applied"
    }
   },
   {
@@ -4845,7 +4384,7 @@
   },
   {
    "id": "fc1:伤害结算-4-4#r3",
-   "claim": "敌人身上附带的指示特效（如敌求白身上的指示特效、夜刀扔出的指示弹道）只是特效，不属于干员动画。",
+   "claim": "敌人身上附带的指示特效（如仇白在敌人身上的指示特效、夜刀扔出的指示弹道）只是特效，不属于干员动画。",
    "subject": "指示特效",
    "condition": "未标注",
    "scope": "universal",
@@ -4950,7 +4489,8 @@
     "source_path": "transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt",
     "source_line_time": "02:55:49",
     "supports": "敌人身上那些东西只是特效，逐字支持",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "旧claim中「敌求白」为「仇白」的ASR同音讹写；已订正claim。",
+    "derived_correction_disposition": "applied"
    }
   },
   {
@@ -5900,8 +5440,8 @@
   },
   {
    "id": "fc1:位移-10-1#r10",
-   "claim": "可把该位移等效成一帧一帧拼出来的有弹道的推力。",
-   "subject": "位移",
+   "claim": "可把失衡状态下的逐帧位移（如持续拉力位移）等效成一帧一帧拼出来的有弹道的推力。",
+   "subject": "失衡状态下的逐帧位移（如持续拉力位移）",
    "condition": "未标注",
    "scope": "universal",
    "category": "位移",
@@ -5966,80 +5506,6 @@
     "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
     "reviewer_type": "agent",
     "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
-   }
-  },
-  {
-   "id": "fc1:位移-10-1#r11",
-   "claim": "磕墙之后的表现实际上全都在这些计算系统之中，不必另算一套。",
-   "subject": "磕墙表现",
-   "condition": "把它等效成一帧一帧拼出来的有弹道的推力",
-   "scope": "universal",
-   "category": "位移",
-   "recorded_ym": null,
-   "source_layer": "官方AI字幕",
-   "source_layers": [
-    "official"
-   ],
-   "track": "vod_official",
-   "citations": [
-    {
-     "id": "BV1aTeV6yENP_p3_41898217443:p40:a2:c23291e7",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1aTeV6yENP_p3_41898217443.txt",
-     "bvid_stem": "BV1aTeV6yENP_p3_41898217443",
-     "recorded_at": "2026-09-15",
-     "speaker": "神祇读神奇",
-     "chapter": "一级拉力逐帧表算：力度速度摩擦拆分与向量合力",
-     "quotes": [
-      {
-       "text": "磕墙之后会产生一个什么样的表现 实际上也都全在这些计算系统之中",
-       "t_start": 3672,
-       "t_end": 3685
-      }
-     ],
-     "_upstream_quote": "磕墙之后会产生一个什么样的表现 实际上也都全在这些计算系统之中"
-    }
-   ],
-   "source_files": [
-    "transcripts_txt/BV1aTeV6yENP_p3_41898217443.txt"
-   ],
-   "origin": {
-    "trial_doc_id": "fc1:位移-10-1",
-    "trial_rule_idx": 11,
-    "trial_manifest_outputs": "kb_trial/docs.jsonl",
-    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
-    "card_section": "规则"
-   },
-   "review": {
-    "status": "agent_verified",
-    "scope": "text_source_only",
-    "confidence": "text-source-supported",
-    "reason": "本轮逐条读源核实（文本层，未核听原片）：源[01:01:12]「磕墙之后会产生一个什么样的表现」+[01:01:25]「实际上也都全在这些计算系统之中」两句合起来逐字支持 claim 的结论句；claim 的 condition「把它等效成一帧一帧拼出来的有弹道的推力」取自同段[01:01:12]「就是你把它等效成有弹道的推理 那么的话就是等效成一帧一帧的拼出来的 有弹道的推力」，属源内设定的前提而非推测。claim 未把「也都在这些计",
-    "not_authoritative": true
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
-   "semantic_review": {
-    "verdict": "keep",
-    "support": "supported",
-    "info_value": "reusable_rule",
-    "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
-    "reviewer_type": "agent"
-   },
-   "evidence_review": {
-    "status": "supported",
-    "reason": "源[01:01:12]「磕墙之后会产生一个什么样的表现」+[01:01:25]「实际上也都全在这些计算系统之中」两句合起来逐字支持 claim 的结论句；claim 的 condition「把它等效成一帧一帧拼出来的有弹道的推力」取自同段[01:01:12]「就是你把它等效成有弹道的推理 那么的话就是等效成一帧一帧的拼出来的 有弹道的推力」，属源内设定的前提而非推测。claim 未把「也都在这些计算系统之中」扩大成「无需额外建模」的强断言——措辞「不必另算一套」与源「全在这些计算系统之中」同义。",
-    "reviewer_type": "agent",
-    "confidence": "text-source-supported",
-    "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
-    "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
-    "source_path": "transcripts_txt/BV1aTeV6yENP_p3_41898217443.txt",
-    "source_line_time": "01:01:12",
-    "supports": "磕墙表现全在既有计算系统内，结论句与前提条件均逐字有源",
-    "derived_correction_disposition": "not_needed"
    }
   },
   {
@@ -6187,83 +5653,6 @@
     "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
     "reviewer_type": "agent",
     "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
-   }
-  },
-  {
-   "id": "fc1:位移-10-1#r16",
-   "claim": "直接按照把速度合并进同一max的公式计算会出现很大的问题。",
-   "subject": "速度合并公式",
-   "condition": "直接按照这种公式计算",
-   "scope": "universal",
-   "category": "位移",
-   "recorded_ym": null,
-   "source_layer": "官方AI字幕",
-   "source_layers": [
-    "official"
-   ],
-   "track": "vod_official",
-   "citations": [
-    {
-     "id": "BV1aTeV6yENP_p3_41898217443:p37:a0:0025c35a",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1aTeV6yENP_p3_41898217443.txt",
-     "bvid_stem": "BV1aTeV6yENP_p3_41898217443",
-     "recorded_at": "2026-09-15",
-     "speaker": "神祇读神奇",
-     "chapter": "一级拉力逐帧表算：力度速度摩擦拆分与向量合力",
-     "quotes": [
-      {
-       "text": "如果直接按照这种公式计算的话 就会出现一个很大的问题",
-       "t_start": 3489,
-       "t_end": 3522,
-       "t_start_upstream": 3489,
-       "t_start_line": 3489,
-       "t_line_label": "58:09"
-      }
-     ],
-     "_upstream_quote": "如果直接按照这种公式计算的话 就会出现一个很大的问题"
-    }
-   ],
-   "source_files": [
-    "transcripts_txt/BV1aTeV6yENP_p3_41898217443.txt"
-   ],
-   "origin": {
-    "trial_doc_id": "fc1:位移-10-1",
-    "trial_rule_idx": 16,
-    "trial_manifest_outputs": "kb_trial/docs.jsonl",
-    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
-    "card_section": "规则"
-   },
-   "review": {
-    "status": "agent_verified",
-    "scope": "text_source_only",
-    "confidence": "text-source-supported",
-    "reason": "本轮逐条读源核实（文本层，未核听原片）：源[58:09]「如果直接按照这种公式计算的话 就会出现一个很大的问题」逐字等于 claim 全文。claim 的 subject「速度合并公式」与窗口内[57:57]「假设你直接按照这个max」及[57:39]「先减去摩擦力 然后的话再取零取零下限 然后的话再去加这个速度 否则的话如果你按照这个方式计算」一致——源明示出问题的是「按 max 直接合并速度」这一步，claim 用「把速度合并进同一",
-    "not_authoritative": true
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
-   "semantic_review": {
-    "verdict": "keep",
-    "support": "supported",
-    "info_value": "reusable_rule",
-    "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
-    "reviewer_type": "agent"
-   },
-   "evidence_review": {
-    "status": "supported",
-    "reason": "源[58:09]「如果直接按照这种公式计算的话 就会出现一个很大的问题」逐字等于 claim 全文。claim 的 subject「速度合并公式」与窗口内[57:57]「假设你直接按照这个max」及[57:39]「先减去摩擦力 然后的话再取零取零下限 然后的话再去加这个速度 否则的话如果你按照这个方式计算」一致——源明示出问题的是「按 max 直接合并速度」这一步，claim 用「把速度合并进同一 max 的公式」表述与源所指同一步骤。",
-    "reviewer_type": "agent",
-    "confidence": "text-source-supported",
-    "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
-    "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
-    "source_path": "transcripts_txt/BV1aTeV6yENP_p3_41898217443.txt",
-    "source_line_time": "00:58:09",
-    "supports": "直接按该 max 公式合并速度会出大问题，逐字支持且 subject 与源[57:39][57:57]所指同一步骤",
-    "derived_correction_disposition": "not_needed"
    }
   },
   {
@@ -6679,7 +6068,7 @@
     "source_path": "transcripts_txt/BV1aTeV6yENP_p3_41898217443.txt",
     "source_line_time": "00:31:43",
     "supports": "失衡状态不会改写巡逻速度，逐字支持（取主播自纠后的版本）",
-    "derived_correction": "源[31:43]先口误「改写推拉的速」紧接改口「呃改写巡逻的速度」；claim 取改口后版本，两版本同为 ASR 转写形式，未改写引文",
+    "derived_correction": "源[31:43]先口误「改写推拉的速」紧接改口「呃改写巡逻的速度」；claim 取改口后版本，两版本同为 ASR 转写形式，未改写引文；引文「改写巡逻的速度」中「巡逻」为「寻路」的ASR同音讹写；引文保真，claim已用「寻路」。",
     "derived_correction_disposition": "applied"
    }
   },
@@ -6855,9 +6244,9 @@
   },
   {
    "id": "fc1:位移-10-1#r9",
-   "claim": "要把速度改成一个向量，重新计算速度的模长和方向。",
-   "subject": "速度",
-   "condition": "未标注",
+   "claim": "在失衡状态下合成速度与摩擦力时，要把速度改成一个向量，重新计算速度的模长和方向。",
+   "subject": "失衡状态下的速度合成",
+   "condition": "在失衡状态下合成推拉速度与摩擦力时",
    "scope": "universal",
    "category": "位移",
    "recorded_ym": null,
@@ -7564,9 +6953,9 @@
   },
   {
    "id": "fc1:位移-10-2#r9",
-   "claim": "走同样的线距离时，力度衰减更少，从而实际施力更大、实际提供的速度更大",
+   "claim": "同样的力度下初始距离越远时，走同样的线距离力度衰减更少，从而实际施力更大、实际提供的速度更大。",
    "subject": "拉特种的拉动效果",
-   "condition": "走同样的线距离",
+   "condition": "同样的力度下，初始距离越远且走同样的线距离时",
    "scope": "universal",
    "category": "位移",
    "recorded_ym": null,
@@ -7644,7 +7033,8 @@
     "source_path": "transcripts_txt/BV1aTeV6yENP_p3_41898217443.txt",
     "source_line_time": "00:33:10",
     "supports": "走同样线距离时衰减更少、实际失力与速度更大，结论逐字支持且 condition 取自源[32:55]原因状语",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "引文「实际失力更大」中「失力」为「施力」的ASR同音讹写；引文保真，claim已用「施力」。",
+    "derived_correction_disposition": "applied"
    }
   },
   {
@@ -7804,7 +7194,7 @@
   {
    "id": "fc1:位移-12-0#r0",
    "claim": "有效力量等级会计算各种各样的加成，例如踩地板的力度加一，或神力的加二。",
-   "subject": "未点名",
+   "subject": "拉特种的有效力量等级",
    "condition": "在计算有效力量等级时",
    "scope": "universal",
    "category": "位移",
@@ -7914,7 +7304,7 @@
   {
    "id": "fc1:位移-12-0#r1",
    "claim": "拉力时间计算不包含力度、地板的加成和神力（指肉鸽藏品神力，不是模组）。",
-   "subject": "未点名",
+   "subject": "拉特种的拉力持续时间",
    "condition": "在计算拉力时间时",
    "scope": "universal",
    "category": "位移",
@@ -8009,7 +7399,7 @@
   {
    "id": "fc1:位移-12-0#r3",
    "claim": "单纯增减力度，哪怕拉再轻的单位，也不会拉过头。",
-   "subject": "未点名",
+   "subject": "拉特种（如歌蒂）的拉人落点与力度增减",
    "condition": "未加神力，仅改变力度",
    "scope": "universal",
    "category": "位移",
@@ -8098,13 +7488,14 @@
     "source_path": "transcripts_txt/BV1aTeV6yENP_p4_41898281814.txt",
     "source_line_time": "00:07:01",
     "supports": "单纯增减力度（未加神力）不会拉过头，逐字支持且保留与神力情形的对比",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "引文「割地拉再轻的单位」中「割地」为干员「歌蒂」的ASR同音讹写；已补全subject并注明。",
+    "derived_correction_disposition": "applied"
    }
   },
   {
    "id": "fc1:位移-12-0#r4",
    "claim": "拉过头是因为加了神力后又拉自己刚刚好拉得动的单位。",
-   "subject": "未点名",
+   "subject": "拉特种（如歌蒂）附加「神力」藏品时的拉过头现象",
    "condition": "加了神力且拉的是自己刚刚好拉得动的单位",
    "scope": "universal",
    "category": "位移",
@@ -8903,137 +8294,6 @@
    }
   },
   {
-   "id": "fc1:位移-18-7#r1",
-   "claim": "可以直接算，因为总有一个在先、总有一个在后。",
-   "subject": "推力位移",
-   "condition": "计算推力位移时",
-   "scope": "universal",
-   "category": "位移",
-   "recorded_ym": null,
-   "source_layer": "官方AI字幕",
-   "source_layers": [
-    "official"
-   ],
-   "track": "vod_official",
-   "citations": [
-    {
-     "id": "BV1gsmYBwEyZ_p1_34727594644:p13:a2:74d766c9",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1gsmYBwEyZ_p1_34727594644.txt",
-     "bvid_stem": "BV1gsmYBwEyZ_p1_34727594644",
-     "recorded_at": "2025-12-14",
-     "speaker": "神祇读神奇",
-     "chapter": "核对观众拉力表，确立失衡同帧先摩擦后推拉再位移",
-     "quotes": [
-      {
-       "text": "归你可以直接算 因为他总有一个在先 总有一个在后",
-       "t_start": 1675,
-       "t_end": 1683,
-       "t_start_upstream": 1675,
-       "t_start_line": 1675,
-       "t_line_label": "27:55"
-      }
-     ],
-     "_upstream_quote": "归你可以直接算 因为他总有一个在先 总有一个在后"
-    },
-    {
-     "id": "ctx=sub:BV1gsmYBwEyZ_p1_34727594644:1675",
-     "status": "resolved_timestamp_window",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1gsmYBwEyZ_p1_34727594644.txt",
-     "requested_second": 1675,
-     "quotes": [
-      {
-       "text": "[27:55] 归你可以直接算 因为他总有一个在先 总有一个在后 对啊推是因为推比较简单 推不会用位移反过来影响力度 对对",
-       "t_start": 1675,
-       "t_end": null,
-       "t_line_label": "27:55",
-       "t_start_line": 1675
-      }
-     ]
-    },
-    {
-     "id": "inline:transcripts_txt/BV1gsmYBwEyZ_p1_34727594644.txt@1642",
-     "status": "resolved_inline_evidence",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1gsmYBwEyZ_p1_34727594644.txt",
-     "quotes": [
-      {
-       "text": "力度就是力度 一力度乘一帧的时间是他提供的速度 速度乘一帧的时间是他提供的位移",
-       "t_start": 1642,
-       "t_end": null,
-       "t_start_upstream": 1642,
-       "t_start_line": 1642,
-       "t_line_label": "27:22"
-      }
-     ]
-    },
-    {
-     "id": "inline:transcripts_txt/BV1gsmYBwEyZ_p1_34727594644.txt@1657",
-     "status": "resolved_inline_evidence",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1gsmYBwEyZ_p1_34727594644.txt",
-     "quotes": [
-      {
-       "text": "对吧哦对对对对 别删掉啊 那我我前面都没管这个我要推的话 分推是直接算的 我看下我看下 我看下推这边",
-       "t_start": 1657,
-       "t_end": null,
-       "t_start_upstream": 1657,
-       "t_start_line": 1657,
-       "t_line_label": "27:37"
-      }
-     ]
-    }
-   ],
-   "source_files": [
-    "transcripts_txt/BV1gsmYBwEyZ_p1_34727594644.txt"
-   ],
-   "origin": {
-    "trial_doc_id": "fc1:位移-18-7",
-    "trial_rule_idx": 1,
-    "trial_manifest_outputs": "kb_trial/docs.jsonl",
-    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
-    "card_section": "规则"
-   },
-   "review": {
-    "status": "agent_verified",
-    "scope": "text_source_only",
-    "confidence": "text-source-supported",
-    "reason": "本轮逐条读源核实（文本层，未核听原片）：源[27:55]「归你可以直接算 因为他总有一个在先 总有一个在后」逐字支持 claim 的结论与理由（可以直接算 / 因总有一个在先有一个在后）。claim 的 condition「计算推力位移时」取自同窗口[27:22]「力度就是力度 一力度乘一帧的时间是他提供的速度 速度乘一帧的时间是他提供的位移」的推式计算语境；本条与 #r0 的理由不同（此条为结算次序理由，r0 为不反馈力度理由），源中",
-    "not_authoritative": true
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
-   "semantic_review": {
-    "verdict": "keep",
-    "support": "supported",
-    "info_value": "reusable_rule",
-    "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
-    "reviewer_type": "agent"
-   },
-   "evidence_review": {
-    "status": "supported",
-    "reason": "源[27:55]「归你可以直接算 因为他总有一个在先 总有一个在后」逐字支持 claim 的结论与理由（可以直接算 / 因总有一个在先有一个在后）。claim 的 condition「计算推力位移时」取自同窗口[27:22]「力度就是力度 一力度乘一帧的时间是他提供的速度 速度乘一帧的时间是他提供的位移」的推式计算语境；本条与 #r0 的理由不同（此条为结算次序理由，r0 为不反馈力度理由），源中确为两句独立表述，非同一理由拆条。",
-    "reviewer_type": "agent",
-    "confidence": "text-source-supported",
-    "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
-    "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
-    "source_path": "transcripts_txt/BV1gsmYBwEyZ_p1_34727594644.txt",
-    "source_line_time": "00:27:55",
-    "supports": "推力位移可直接算，因结算总有一个在先一个在后，逐字支持（理由与#r0不同，源中为两句）",
-    "derived_correction_disposition": "not_needed"
-   }
-  },
-  {
    "id": "fc1:位移-2-4#r0",
    "claim": "路径点刹车时是逐帧减速的。",
    "subject": "路径点刹车",
@@ -9754,7 +9014,8 @@
     "source_path": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
     "source_line_time": "00:07:37",
     "supports": "传送=直接改写敌人坐标到某点，逐字支持",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "引文「驯鹿阻挡偏移」中「驯鹿」为「寻路」的ASR同音讹写；引文保真。",
+    "derived_correction_disposition": "applied"
    }
   },
   {
@@ -11035,7 +10296,8 @@
     "source_path": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
     "source_line_time": "00:46:23",
     "supports": "不同方向推拉位移差异源于物理碰撞箱形状，结论逐字支持，condition 取自同窗口演示语境",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "引文「登临翼」为活动「登临意」的ASR同音讹写；引文保真。",
+    "derived_correction_disposition": "applied"
    }
   },
   {
@@ -11974,8 +11236,8 @@
   {
    "id": "fc1:位移-30-5#r2",
    "claim": "避障力方向基准不是地块与怪的连线，而是地块的连接方向（反向于地块与地块中心的连线）",
-   "subject": "壁障力方向基准",
-   "condition": "判断壁障力方向时",
+   "subject": "避障力方向基准",
+   "condition": "判断避障力方向时",
    "scope": "universal",
    "category": "位移",
    "recorded_ym": null,
@@ -12063,7 +11325,8 @@
     "source_path": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
     "source_line_time": "02:23:31",
     "supports": "壁障力方向基准是地块方向而非地块与怪连线，逐字支持且保留先否后立结构",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "旧subject/condition中「壁障力」为「避障力」的ASR同音讹写；已订正为「避障力」。",
+    "derived_correction_disposition": "applied"
    }
   },
   {
@@ -12158,7 +11421,8 @@
     "source_path": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
     "source_line_time": "02:24:04",
     "supports": "分离力使敌人间倾向相互远离，逐字支持（略去比喻「斗蛐蛐」）",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "引文「壁障力」为「避障力」的ASR同音讹写；引文保真。",
+    "derived_correction_disposition": "applied"
    }
   },
   {
@@ -12834,7 +12098,8 @@
     "source_path": "transcripts_txt/BV14y8269EbS_p2_41167359561.txt",
     "source_line_time": "01:21:51",
     "supports": "射线检测命中则磕墙转折、未命中则落点再判定，两分支逐字支持",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "引文「哪一帧科强」中「科强」为「磕墙」的ASR同音讹写；引文保真，claim已用「磕墙」。",
+    "derived_correction_disposition": "applied"
    }
   },
   {
@@ -12926,14 +12191,15 @@
     "source_path": "transcripts_txt/BV14y8269EbS_p2_41167359561.txt",
     "source_line_time": "00:16:11",
     "supports": "移速越高刹车距离越长，逐字支持；condition 如实记录源所述减速停顿前提",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "引文「维恩斯推海默」为「维云斯推海沫」的ASR同音讹写；引文保真。",
+    "derived_correction_disposition": "applied"
    }
   },
   {
    "id": "fc1:位移-4-5#r0",
-   "claim": "在维云斯推海默中，向上刹车实际上是一个容错很多的过程。",
-   "subject": "维云斯推海默中的向上刹车过程",
-   "condition": "处于维云斯推海默中",
+   "claim": "在维云斯推海沫中，向上刹车实际上是一个容错很多的过程。",
+   "subject": "维云斯推海沫中的向上刹车过程",
+   "condition": "处于维云斯推海沫流程中",
    "scope": "universal",
    "category": "位移",
    "recorded_ym": null,
@@ -13091,7 +12357,8 @@
     "source_path": "transcripts_txt/BV14y8269EbS_p2_41167359561.txt",
     "source_line_time": "01:53:24",
     "supports": "所属格是需要更新的东西，逐字支持；[01:54:18]陷阱师记录切换为独立佐证",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "引文「山笔」「所属格式系」分别为「珊比」「所属格是」的ASR同音讹写；引文保真，claim已用正字。",
+    "derived_correction_disposition": "applied"
    }
   },
   {
@@ -13440,83 +12707,6 @@
     "source_path": "transcripts_txt/BV14y8269EbS_p1_41164079923.txt",
     "source_line_time": "00:23:06",
     "supports": "四部分中第一部分是寻路，逐字支持且限定在「影响敌人坐标的四部分」范围内",
-    "derived_correction_disposition": "not_needed"
-   }
-  },
-  {
-   "id": "fc1:其他-10-8#r3",
-   "claim": "解包是有局限的，所以需要测试，需要解包和测试的相互印证。",
-   "subject": "解包与测试",
-   "condition": "需要判断解包数据是否可用",
-   "scope": "universal",
-   "category": "其他",
-   "recorded_ym": null,
-   "source_layer": "官方AI字幕",
-   "source_layers": [
-    "official"
-   ],
-   "track": "vod_official",
-   "citations": [
-    {
-     "id": "BV1qReG6XE6W_p3_41897689954:p24:a9:b9d6204d",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1qReG6XE6W_p3_41897689954.txt",
-     "bvid_stem": "BV1qReG6XE6W_p3_41897689954",
-     "recorded_at": "2026-09-15",
-     "speaker": "神祇读神奇",
-     "chapter": "波普异常总结及其他机制异常：控制效果额外帧、解包局限与实测印证",
-     "quotes": [
-      {
-       "text": "解包是有局限的 所以的话我们才需要测试 需要解包和测试的相互印证",
-       "t_start": 3582,
-       "t_end": 3605,
-       "t_start_upstream": 3582,
-       "t_start_line": 3600,
-       "t_line_label": "01:00:00"
-      }
-     ],
-     "_upstream_quote": "解包是有局限的 所以的话我们才需要测试 需要解包和测试的相互印证"
-    }
-   ],
-   "source_files": [
-    "transcripts_txt/BV1qReG6XE6W_p3_41897689954.txt"
-   ],
-   "origin": {
-    "trial_doc_id": "fc1:其他-10-8",
-    "trial_rule_idx": 3,
-    "trial_manifest_outputs": "kb_trial/docs.jsonl",
-    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
-    "card_section": "规则"
-   },
-   "review": {
-    "status": "agent_verified",
-    "scope": "text_source_only",
-    "confidence": "text-source-supported",
-    "reason": "本轮逐条读源核实（文本层，未核听原片）：源[00:59:53]「解包是有局限的 所以的话我们才需要测试」+[01:00:05]「需要解包和测试的相互印证」逐字支持 claim 的两个分句。claim 的 condition「需要判断解包数据是否可用」取自同窗口[59:18]「解包有着非常全面的东西 但是它并不一定都是你需要的东西…他可能有漏 可能有错」与[59:42]「你像调零去解珊比的时候…我说这里可能有一个类似half body地位",
-    "not_authoritative": true
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
-   "semantic_review": {
-    "verdict": "keep",
-    "support": "supported",
-    "info_value": "reusable_rule",
-    "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
-    "reviewer_type": "agent"
-   },
-   "evidence_review": {
-    "status": "supported",
-    "reason": "源[00:59:53]「解包是有局限的 所以的话我们才需要测试」+[01:00:05]「需要解包和测试的相互印证」逐字支持 claim 的两个分句。claim 的 condition「需要判断解包数据是否可用」取自同窗口[59:18]「解包有着非常全面的东西 但是它并不一定都是你需要的东西…他可能有漏 可能有错」与[59:42]「你像调零去解珊比的时候…我说这里可能有一个类似half body地位的东西 调零一看 我靠真的有」——源以「解包漏了 half body、靠实测发现」这一具体案例支撑「需相互印证」，claim 的抽象表述未超出该案例。",
-    "reviewer_type": "agent",
-    "confidence": "text-source-supported",
-    "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
-    "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
-    "source_path": "transcripts_txt/BV1qReG6XE6W_p3_41897689954.txt",
-    "source_line_time": "00:59:53",
-    "supports": "解包有局限故需测试、需解包与测试相互印证，逐字支持且有 half body 案例",
     "derived_correction_disposition": "not_needed"
    }
   },
@@ -13993,8 +13183,8 @@
   },
   {
    "id": "fc1:其他-14-7#r4",
-   "claim": "大部分人调用的是主轴，然后一小部分人调用的是弹道轴。",
-   "subject": "未点名",
+   "claim": "大部分单位/技能随机判定调用的是地图主轴，然后一小部分调用的是弹道轴。",
+   "subject": "干员与敌人的随机判定轴调用",
    "condition": "在地图随机数轴的调用语境下",
    "scope": "universal",
    "category": "其他",
@@ -14648,84 +13838,8 @@
     "source_path": "transcripts_txt/BV1wPuG6aEyY_p3_40728658768.txt",
     "source_line_time": "01:06:37",
     "supports": "敌方属性随源石锭数量提升，逐字支持（源为朗读藏品词条）",
-    "derived_correction_disposition": "not_needed"
-   }
-  },
-  {
-   "id": "fc1:其他-19-21#r1",
-   "claim": "一整个外援换算为十希望",
-   "subject": "外援",
-   "condition": "进行外援希望换算时",
-   "scope": "universal",
-   "category": "其他",
-   "recorded_ym": null,
-   "source_layer": "官方AI字幕",
-   "source_layers": [
-    "official"
-   ],
-   "track": "vod_official",
-   "citations": [
-    {
-     "id": "BV1wPuG6aEyY_p4_40731150754:p50:a2:0896f0bd",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1wPuG6aEyY_p4_40731150754.txt",
-     "bvid_stem": "BV1wPuG6aEyY_p4_40731150754",
-     "recorded_at": "2026-08-08",
-     "speaker": "神祇读神奇",
-     "chapter": "干员缺口希望精细计算、浮空失重与商店采购",
-     "quotes": [
-      {
-       "text": "一整个外援是十 希望",
-       "t_start": 11012,
-       "t_end": 11023,
-       "t_start_upstream": 11012,
-       "t_start_line": 11012,
-       "t_line_label": "03:03:32"
-      }
-     ],
-     "_upstream_quote": "一整个外援是十 希望"
-    }
-   ],
-   "source_files": [
-    "transcripts_txt/BV1wPuG6aEyY_p4_40731150754.txt"
-   ],
-   "origin": {
-    "trial_doc_id": "fc1:其他-19-21",
-    "trial_rule_idx": 1,
-    "trial_manifest_outputs": "kb_trial/docs.jsonl",
-    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
-    "card_section": "规则"
-   },
-   "review": {
-    "status": "agent_verified",
-    "scope": "text_source_only",
-    "confidence": "text-source-supported",
-    "reason": "本轮逐条读源核实（文本层，未核听原片）：源[03:03:32]「一整个外援 两个辅助 一整个外援是十 希望两个辅助是20」逐字支持 claim 的「一整个外援是十希望」。claim 只取外援那一项而未把同句的「两个辅助是20」混入，切分正确；源[03:03:14]「一整个外援两呃 一整个外援 两整座辅助 还有半个」为同一结算的铺垫，可见「一整个外援」是当时正在核对的项。",
-    "not_authoritative": true
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
-   "semantic_review": {
-    "verdict": "keep",
-    "support": "supported",
-    "info_value": "reusable_rule",
-    "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
-    "reviewer_type": "agent"
-   },
-   "evidence_review": {
-    "status": "supported",
-    "reason": "源[03:03:32]「一整个外援 两个辅助 一整个外援是十 希望两个辅助是20」逐字支持 claim 的「一整个外援是十希望」。claim 只取外援那一项而未把同句的「两个辅助是20」混入，切分正确；源[03:03:14]「一整个外援两呃 一整个外援 两整座辅助 还有半个」为同一结算的铺垫，可见「一整个外援」是当时正在核对的项。",
-    "reviewer_type": "agent",
-    "confidence": "text-source-supported",
-    "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
-    "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
-    "source_path": "transcripts_txt/BV1wPuG6aEyY_p4_40731150754.txt",
-    "source_line_time": "03:03:32",
-    "supports": "一整个外援＝十希望，逐字支持且未混入同句的辅助项",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "引文「种植园精魂」为关卡「种植园惊魂」的ASR同音讹写；引文保真，claim已用正字。",
+    "derived_correction_disposition": "applied"
    }
   },
   {
@@ -14999,84 +14113,6 @@
     "source_line_time": "00:44:55",
     "supports": "怪物有唯一坐标即实体坐标，逐字支持",
     "derived_correction_disposition": "not_needed"
-   }
-  },
-  {
-   "id": "fc1:其他-9-1#r10",
-   "claim": "（讲者）更习惯采用「坐标判定」这种说法，而不使用「终点判定」这种说法",
-   "subject": "术语选择",
-   "condition": "在坐标判定与终点判定之间择一称呼时",
-   "scope": "universal",
-   "category": "其他",
-   "recorded_ym": null,
-   "source_layer": "官方AI字幕",
-   "source_layers": [
-    "official"
-   ],
-   "track": "vod_official",
-   "citations": [
-    {
-     "id": "BV1qReG6XE6W_p1_41897493495:p15:a12:2783d620",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
-     "bvid_stem": "BV1qReG6XE6W_p1_41897493495",
-     "recorded_at": "2026-09-15",
-     "speaker": "神祇读神奇",
-     "chapter": "推拉物理机制入门：胶囊碰撞箱实测、失衡规则、力度方向与45度归属",
-     "quotes": [
-      {
-       "text": "我会采用坐标判定这种说法 不会用终点判定这种说法",
-       "t_start": 2929,
-       "t_end": 2981,
-       "t_start_upstream": 2929,
-       "t_start_line": 2976,
-       "t_line_label": "49:36"
-      }
-     ],
-     "_upstream_quote": "我会采用坐标判定这种说法 不会用终点判定这种说法"
-    }
-   ],
-   "source_files": [
-    "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt"
-   ],
-   "origin": {
-    "trial_doc_id": "fc1:其他-9-1",
-    "trial_rule_idx": 10,
-    "trial_manifest_outputs": "kb_trial/docs.jsonl",
-    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
-    "card_section": "规则"
-   },
-   "review": {
-    "status": "agent_verified",
-    "scope": "text_source_only",
-    "confidence": "text-source-supported",
-    "reason": "本轮逐条读源核实（文本层，未核听原片）：源[01:49:41]（0-based 显示为[49:41]）「我会采用格判哦 我会采用坐标判定这种说法 不会用终点判定这种说法 Ok」逐字支持 claim。claim 未把源中主播先口误「我会采用格判哦」随即改口「我会采用坐标判定」的更正过程抹掉——claim 的 subject 正是「在坐标判定与终点判定之间择一称呼时」，与源所讨论的两个候选项一致（格判是第三个被否的概念，见 #r9）。",
-    "not_authoritative": true
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
-   "semantic_review": {
-    "verdict": "keep",
-    "support": "supported",
-    "info_value": "reusable_rule",
-    "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
-    "reviewer_type": "agent"
-   },
-   "evidence_review": {
-    "status": "supported",
-    "reason": "源[01:49:41]（0-based 显示为[49:41]）「我会采用格判哦 我会采用坐标判定这种说法 不会用终点判定这种说法 Ok」逐字支持 claim。claim 未把源中主播先口误「我会采用格判哦」随即改口「我会采用坐标判定」的更正过程抹掉——claim 的 subject 正是「在坐标判定与终点判定之间择一称呼时」，与源所讨论的两个候选项一致（格判是第三个被否的概念，见 #r9）。",
-    "reviewer_type": "agent",
-    "confidence": "text-source-supported",
-    "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
-    "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
-    "source_path": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
-    "source_line_time": "00:49:41",
-    "supports": "应采用「坐标判定」而非「终点判定」，逐字支持（源中先误称格判随即自纠）",
-    "derived_correction": "源[49:41]「我会采用格判哦 我会采用坐标判定这种说法 不会用终点判定这种说法」为主播口误后即刻自纠；claim 取自纠后的「坐标判定」，引文原文两版均保留在源中未改写",
-    "derived_correction_disposition": "applied"
    }
   },
   {
@@ -15388,83 +14424,6 @@
    }
   },
   {
-   "id": "fc1:其他-9-1#r9",
-   "claim": "（讲者认为）不能把坐标判定说成是格判",
-   "subject": "坐标判定与格判",
-   "condition": "对两者命名或归类时",
-   "scope": "universal",
-   "category": "其他",
-   "recorded_ym": null,
-   "source_layer": "官方AI字幕",
-   "source_layers": [
-    "official"
-   ],
-   "track": "vod_official",
-   "citations": [
-    {
-     "id": "BV1qReG6XE6W_p1_41897493495:p15:a11:628f5689",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
-     "bvid_stem": "BV1qReG6XE6W_p1_41897493495",
-     "recorded_at": "2026-09-15",
-     "speaker": "神祇读神奇",
-     "chapter": "推拉物理机制入门：胶囊碰撞箱实测、失衡规则、力度方向与45度归属",
-     "quotes": [
-      {
-       "text": "不能把坐标判定说成是格判",
-       "t_start": 2929,
-       "t_end": 2981,
-       "t_start_upstream": 2929,
-       "t_start_line": 2976,
-       "t_line_label": "49:36"
-      }
-     ],
-     "_upstream_quote": "不能把坐标判定说成是格判"
-    }
-   ],
-   "source_files": [
-    "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt"
-   ],
-   "origin": {
-    "trial_doc_id": "fc1:其他-9-1",
-    "trial_rule_idx": 9,
-    "trial_manifest_outputs": "kb_trial/docs.jsonl",
-    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
-    "card_section": "规则"
-   },
-   "review": {
-    "status": "agent_verified",
-    "scope": "text_source_only",
-    "confidence": "text-source-supported",
-    "reason": "本轮逐条读源核实（文本层，未核听原片）：源[49:24]「我认为还是不能把坐标判定说成是格判」逐字等于 claim 全文。claim 保留源中「我认为还是不能」这一带个人判断色彩的措辞所表达的实质区分（两类判定不可混同），未升级为源中未出现的规范断言。",
-    "not_authoritative": true
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
-   "semantic_review": {
-    "verdict": "keep",
-    "support": "supported",
-    "info_value": "reusable_rule",
-    "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
-    "reviewer_type": "agent"
-   },
-   "evidence_review": {
-    "status": "supported",
-    "reason": "源[49:24]「我认为还是不能把坐标判定说成是格判」逐字等于 claim 全文。claim 保留源中「我认为还是不能」这一带个人判断色彩的措辞所表达的实质区分（两类判定不可混同），未升级为源中未出现的规范断言。",
-    "reviewer_type": "agent",
-    "confidence": "text-source-supported",
-    "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
-    "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
-    "source_path": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
-    "source_line_time": "00:49:24",
-    "supports": "不能把坐标判定说成是格判，逐字支持",
-    "derived_correction_disposition": "not_needed"
-   }
-  },
-  {
    "id": "fc1:其他-9-10#r0",
    "claim": "径向力会产生斜推。",
    "subject": "径向力",
@@ -15556,7 +14515,8 @@
     "source_path": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
     "source_line_time": "00:58:57",
     "supports": "径向力会产生斜推，逐字支持（源中「镜像力」与「径向力」同指，claims 用[58:25]的正式命名）",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "引文「镜像力」为「径向力」的ASR同音讹写；引文保真，claim/subject已用「径向力」。",
+    "derived_correction_disposition": "applied"
    }
   },
   {
@@ -16460,104 +15420,9 @@
    }
   },
   {
-   "id": "fc1:寻路-13-8#r1",
-   "claim": "永控还需要算出时间，包括寻路时间。",
-   "subject": "未点名",
-   "condition": "永控",
-   "scope": "universal",
-   "category": "寻路",
-   "recorded_ym": null,
-   "source_layer": "官方AI字幕",
-   "source_layers": [
-    "official"
-   ],
-   "track": "vod_official",
-   "citations": [
-    {
-     "id": "BV1aTeV6yENP_p4_41898281814:p34:a1:edb5e601",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1aTeV6yENP_p4_41898281814.txt",
-     "bvid_stem": "BV1aTeV6yENP_p4_41898281814",
-     "recorded_at": "2026-09-15",
-     "speaker": "神祇读神奇",
-     "chapter": "合力不是速度相加：温蒂永控与避障力",
-     "quotes": [
-      {
-       "text": "他的时间是多少 包括寻路的时间",
-       "t_start": 3163,
-       "t_end": 3188,
-       "t_start_upstream": 3163,
-       "t_start_line": 3172,
-       "t_line_label": "52:52"
-      }
-     ],
-     "_upstream_quote": "他的时间是多少 包括寻路的时间"
-    },
-    {
-     "id": "ctx=sub:BV1aTeV6yENP_p4_41898281814:3172",
-     "status": "resolved_timestamp_window",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1aTeV6yENP_p4_41898281814.txt",
-     "requested_second": 3172,
-     "quotes": [
-      {
-       "text": "[52:52] 那个也需要算出来那个他的时间是多少 包括寻路的时间 对被避障抬上去了 寻路的时间 寻路的效果 寻路可以怎么走 各种效果对吧",
-       "t_start": 3172,
-       "t_end": null,
-       "t_line_label": "52:52",
-       "t_start_line": 3172
-      }
-     ]
-    }
-   ],
-   "source_files": [
-    "transcripts_txt/BV1aTeV6yENP_p4_41898281814.txt"
-   ],
-   "origin": {
-    "trial_doc_id": "fc1:寻路-13-8",
-    "trial_rule_idx": 1,
-    "trial_manifest_outputs": "kb_trial/docs.jsonl",
-    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
-    "card_section": "规则"
-   },
-   "review": {
-    "status": "agent_verified",
-    "scope": "text_source_only",
-    "confidence": "text-source-supported",
-    "reason": "本轮逐条读源核实（文本层，未核听原片）：源[52:52]「那个也需要算出来那个他的时间是多少 包括寻路的时间」逐字支持 claim。claim 的 condition「永控」取自同窗口[52:43]「对啊推很多地方就是永控」与[51:52]「如果你要算这种问题的永控的话」，属源内给定语境；claim 的 subject「未点名」与源一致（源以「他」指代被永控的单位，未点名具体敌人）。",
-    "not_authoritative": true
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
-   "semantic_review": {
-    "verdict": "keep",
-    "support": "supported",
-    "info_value": "reusable_rule",
-    "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
-    "reviewer_type": "agent"
-   },
-   "evidence_review": {
-    "status": "supported",
-    "reason": "源[52:52]「那个也需要算出来那个他的时间是多少 包括寻路的时间」逐字支持 claim。claim 的 condition「永控」取自同窗口[52:43]「对啊推很多地方就是永控」与[51:52]「如果你要算这种问题的永控的话」，属源内给定语境；claim 的 subject「未点名」与源一致（源以「他」指代被永控的单位，未点名具体敌人）。",
-    "reviewer_type": "agent",
-    "confidence": "text-source-supported",
-    "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
-    "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
-    "source_path": "transcripts_txt/BV1aTeV6yENP_p4_41898281814.txt",
-    "source_line_time": "00:52:52",
-    "supports": "永控还要算时间（含寻路时间），逐字支持",
-    "derived_correction_disposition": "not_needed"
-   }
-  },
-  {
    "id": "fc1:寻路-13-8#r2",
    "claim": "被避障抬上去会影响寻路时间、寻路效果以及寻路可以怎么走。",
-   "subject": "未点名",
+   "subject": "受避障力偏移的敌人寻路",
    "condition": "永控;被避障抬上去",
    "scope": "universal",
    "category": "寻路",
@@ -16646,83 +15511,6 @@
     "source_path": "transcripts_txt/BV1aTeV6yENP_p4_41898281814.txt",
     "source_line_time": "00:52:52",
     "supports": "被避障抬上去会影响寻路时间/效果/走法，三项逐字支持",
-    "derived_correction_disposition": "not_needed"
-   }
-  },
-  {
-   "id": "fc1:寻路-14-0#r2",
-   "claim": "他向左上的时候也要更偏上一些，因为避障力会推着他向上；他这里全程都在触发避障。",
-   "subject": "未点名",
-   "condition": "触发避障;向左上移动",
-   "scope": "universal",
-   "category": "寻路",
-   "recorded_ym": null,
-   "source_layer": "官方AI字幕",
-   "source_layers": [
-    "official"
-   ],
-   "track": "vod_official",
-   "citations": [
-    {
-     "id": "BV1aTeV6yENP_p4_41898281814:p34:a10:80ceb13f",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1aTeV6yENP_p4_41898281814.txt",
-     "bvid_stem": "BV1aTeV6yENP_p4_41898281814",
-     "recorded_at": "2026-09-15",
-     "speaker": "神祇读神奇",
-     "chapter": "合力不是速度相加：温蒂永控与避障力",
-     "quotes": [
-      {
-       "text": "向左上的时候也要更偏上一些 因为避障力会推着他向上",
-       "t_start": 3228,
-       "t_end": 3277,
-       "t_start_upstream": 3228,
-       "t_start_line": 3228,
-       "t_line_label": "53:48"
-      }
-     ],
-     "_upstream_quote": "向左上的时候也要更偏上一些 因为避障力会推着他向上"
-    }
-   ],
-   "source_files": [
-    "transcripts_txt/BV1aTeV6yENP_p4_41898281814.txt"
-   ],
-   "origin": {
-    "trial_doc_id": "fc1:寻路-14-0",
-    "trial_rule_idx": 2,
-    "trial_manifest_outputs": "kb_trial/docs.jsonl",
-    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
-    "card_section": "规则"
-   },
-   "review": {
-    "status": "agent_verified",
-    "scope": "text_source_only",
-    "confidence": "text-source-supported",
-    "reason": "本轮逐条读源核实（文本层，未核听原片）：源[53:48]「他确实触发避障 他这里全程都在触发避障 包括这里他向左上的时候也要更偏上一些 因为避障力会推着他向上」逐字支持 claim 的三个分句：向左上时更偏上 / 因避障力推着向上 / 处于触发避障状态。claim 的 condition 两项（触发避障、向左上移动）分别逐字取自源同句的「他确实触发避障」与「他向左上的时候」。同窗口[53:42]「只是有避障 它向右上的角度更右一些」为对",
-    "not_authoritative": true
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
-   "semantic_review": {
-    "verdict": "keep",
-    "support": "supported",
-    "info_value": "reusable_rule",
-    "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
-    "reviewer_type": "agent"
-   },
-   "evidence_review": {
-    "status": "supported",
-    "reason": "源[53:48]「他确实触发避障 他这里全程都在触发避障 包括这里他向左上的时候也要更偏上一些 因为避障力会推着他向上」逐字支持 claim 的三个分句：向左上时更偏上 / 因避障力推着向上 / 处于触发避障状态。claim 的 condition 两项（触发避障、向左上移动）分别逐字取自源同句的「他确实触发避障」与「他向左上的时候」。同窗口[53:42]「只是有避障 它向右上的角度更右一些」为对照组，claim 未混入。",
-    "reviewer_type": "agent",
-    "confidence": "text-source-supported",
-    "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
-    "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
-    "source_path": "transcripts_txt/BV1aTeV6yENP_p4_41898281814.txt",
-    "source_line_time": "00:53:48",
-    "supports": "向左上时更偏上、因避障力推向上、处于触发避障，三句逐字支持",
     "derived_correction_disposition": "not_needed"
    }
   },
@@ -16962,7 +15750,8 @@
     "source_path": "transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt",
     "source_line_time": "00:37:01",
     "supports": "本帧实际速度决定本帧位移（本帧坐标移动），两句逐字支持",
-    "derived_correction_disposition": "not_needed"
+    "derived_correction": "引文「本真的实际速度」中「本真」为「本帧」的ASR同音讹写；引文保真，claim已用「本帧」。",
+    "derived_correction_disposition": "applied"
    }
   },
   {
@@ -17834,85 +16623,8 @@
    }
   },
   {
-   "id": "fc1:寻路-15-2#r0",
-   "claim": "一旦走出不可通行地块，不是重新获得行动指令的权限。",
-   "subject": "走出不可通行地块的单位",
-   "condition": "走出不可通行地块",
-   "scope": "universal",
-   "category": "寻路",
-   "recorded_ym": null,
-   "source_layer": "官方AI字幕",
-   "source_layers": [
-    "official"
-   ],
-   "track": "vod_official",
-   "citations": [
-    {
-     "id": "BV1CZ8t6wEyr_p1_41192326752:p11:a0:c38741af",
-     "status": "resolved_atom",
-     "source_layers": [
-      "official"
-     ],
-     "transcript_file": "transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt",
-     "bvid_stem": "BV1CZ8t6wEyr_p1_41192326752",
-     "recorded_at": "2026-08-23",
-     "speaker": "神祇读神奇",
-     "chapter": "寻路循环总览与避障力勘误：足坐标、骨架偏移与没有旧论",
-     "quotes": [
-      {
-       "text": "一旦走出不可通行地块 不是重新获得行动指令的权限",
-       "t_start": 2773,
-       "t_end": 2789,
-       "t_start_upstream": 2773,
-       "t_start_line": 2773,
-       "t_line_label": "46:13"
-      }
-     ],
-     "_upstream_quote": "一旦走出不可通行地块 不是重新获得行动指令的权限"
-    }
-   ],
-   "source_files": [
-    "transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt"
-   ],
-   "origin": {
-    "trial_doc_id": "fc1:寻路-15-2",
-    "trial_rule_idx": 0,
-    "trial_manifest_outputs": "kb_trial/docs.jsonl",
-    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
-    "card_section": "规则"
-   },
-   "review": {
-    "status": "agent_verified",
-    "scope": "text_source_only",
-    "confidence": "text-source-supported",
-    "reason": "本轮逐条读源核实（文本层，未核听原片）：源[46:13]「一旦走出不可通行地块 不是重新获得行动指令的权限」逐字等于 claim 全文。该句在源中以否定式与下句「而是在可通行地块 他改写了当前的寻路光标」构成对照，claim 只取否定支（肯定支由 #r1 承载），与源的对照结构一致。",
-    "not_authoritative": true
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
-   "semantic_review": {
-    "verdict": "keep",
-    "support": "supported",
-    "info_value": "reusable_rule",
-    "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
-    "reviewer_type": "agent"
-   },
-   "evidence_review": {
-    "status": "supported",
-    "reason": "源[46:13]「一旦走出不可通行地块 不是重新获得行动指令的权限」逐字等于 claim 全文。该句在源中以否定式与下句「而是在可通行地块 他改写了当前的寻路光标」构成对照，claim 只取否定支（肯定支由 #r1 承载），与源的对照结构一致。",
-    "reviewer_type": "agent",
-    "confidence": "text-source-supported",
-    "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
-    "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
-    "source_path": "transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt",
-    "source_line_time": "00:46:13",
-    "supports": "走出不可通行地块不是重新获得行动指令权限，逐字支持",
-    "derived_correction_disposition": "not_needed"
-   }
-  },
-  {
    "id": "fc1:寻路-15-2#r1",
-   "claim": "走出不可通行地块后，在可通行地块上会改写当前的寻路光标，即拥有目标速度。",
+   "claim": "一旦走出不可通行地块，单位并非重新获得行动指令的权限，而是在可通行地块上改写了当前的寻路光标，即拥有目标速度。",
    "subject": "走出不可通行地块并处于可通行地块的单位",
    "condition": "走出不可通行地块;处于可通行地块",
    "scope": "universal",
@@ -18677,7 +17389,7 @@
     "source_path": "transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt",
     "source_line_time": "01:01:23",
     "supports": "避障判定区与不可通行地块重叠则进入避障相关判定，逐字支持",
-    "derived_correction": "源中多处把「避障判定区」转写为「B站判定区」（[01:01:23]、[01:01:36]），同一窗口[01:01:16]有正确形式「避障判定区」；上下文闭合可派生纠正，原引文未改写",
+    "derived_correction": "源中多处把「避障判定区」转写为「B站判定区」（[01:01:23]、[01:01:36]），同一窗口[01:01:16]有正确形式「避障判定区」；上下文闭合可派生纠正，原引文未改写；引文「B站判定区」为「避障判定区」的ASR同音讹写；引文保真，claim/subject已用正字。",
     "derived_correction_disposition": "applied"
    }
   },
@@ -19433,7 +18145,7 @@
     "source_path": "transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt",
     "source_line_time": "01:04:54",
     "supports": "避障向量在零向量上投影时方舟取零，逐字支持且保留「算法就是零」的限定",
-    "derived_correction": "源「B站立向量」为「避障向量」的 ASR 讹写，同段[01:05:11]「所有地块的壁障向量要求和求和之后再归一化」给出正确形式；上下文闭合可派生纠正，原引文未改写",
+    "derived_correction": "源「B站立向量」为「避障向量」的 ASR 讹写，同段[01:05:11]「所有地块的壁障向量要求和求和之后再归一化」给出正确形式；上下文闭合可派生纠正，原引文未改写；引文「B站立向量」为「避障力向量」的ASR同音讹写；引文保真，claim已用正字。",
     "derived_correction_disposition": "applied"
    }
   },
@@ -19511,7 +18223,7 @@
     "source_path": "transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt",
     "source_line_time": "01:05:11",
     "supports": "源链条（八格→向量→求和→归一化）与 claim 的零目标方向分支对应，结论成立",
-    "derived_correction": "源同一段 [01:01:16] 有正确形式「避障判定区」、[01:05:11] 有「壁障向量」，可确证本讲中「壁障/B张力」= 避障；引文原文一律保留不改。",
+    "derived_correction": "源同一段 [01:01:16] 有正确形式「避障判定区」、[01:05:11] 有「壁障向量」，可确证本讲中「壁障/B张力」= 避障；引文原文一律保留不改。；引文「避障利益」为「避障力」的ASR同音讹写；引文保真，claim已用正字。",
     "derived_correction_disposition": "applied"
    }
   },
@@ -19586,7 +18298,7 @@
     "source_path": "transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt",
     "source_line_time": "01:05:11",
     "supports": "与 #r6 互补分支，限定语完整，结论成立",
-    "derived_correction": "源 quote 中「B站立」为「避障力」的 ASR 讹写（同段 [01:05:11] 有正确形式「壁障向量」），claim 未沿用讹字，属正确纠正；引文原文保留不改。",
+    "derived_correction": "源 quote 中「B站立」为「避障力」的 ASR 讹写（同段 [01:05:11] 有正确形式「壁障向量」），claim 未沿用讹字，属正确纠正；引文原文保留不改。；引文「B站立」为「避障力」的ASR同音讹写；引文保真，claim已用正字。",
     "derived_correction_disposition": "applied"
    }
   },
@@ -19742,7 +18454,7 @@
     "source_path": "transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt",
     "source_line_time": "01:04:54",
     "supports": "否定式限定与横向修正定位在源窗口内可验证，结论成立",
-    "derived_correction": "「B张力」为「避障力」的 ASR 讹写，同段有正确形式可闭合；引文原文不改。",
+    "derived_correction": "「B张力」为「避障力」的 ASR 讹写，同段有正确形式可闭合；引文原文不改。；引文「B张力」为「避障力」的ASR同音讹写；引文保真，claim已用正字。",
     "derived_correction_disposition": "applied"
    }
   },
@@ -19904,8 +18616,8 @@
   },
   {
    "id": "fc1:寻路-2-1#r0",
-   "claim": "地图文件里的这两个偏移量决定出生偏移。",
-   "subject": "地图文件里的这两个偏移量",
+   "claim": "地图文件里的红门/路径点出生偏移量参数决定出生偏移。",
+   "subject": "地图文件中的红门/路径点出生偏移量参数（positionOffset）",
    "condition": "审查地图文件中这两个偏移量时",
    "scope": "universal",
    "category": "寻路",
@@ -19982,8 +18694,8 @@
   },
   {
    "id": "fc1:寻路-2-1#r1",
-   "claim": "这两个偏移量会决定实体坐标和光标坐标的偏移。",
-   "subject": "这两个偏移量",
+   "claim": "地图文件里的出生点偏移量参数会决定实体坐标和光标坐标的偏移。",
+   "subject": "地图文件中的红门/路径点出生偏移量参数（positionOffset）",
    "condition": "审查地图文件中这两个偏移量时",
    "scope": "universal",
    "category": "寻路",
@@ -20216,8 +18928,8 @@
   },
   {
    "id": "fc1:寻路-2-3#r6",
-   "claim": "appear at pose 表示闪现并出现在某个坐标。",
-   "subject": "appear at pose",
+   "claim": "路径点指令 appear_at_pos（源字幕作 appear at pose）表示闪现并出现在某个坐标。",
+   "subject": "appear_at_pos（源字幕作 appear at pose）",
    "condition": "未标注",
    "scope": "universal",
    "category": "寻路",
@@ -21358,9 +20070,9 @@
   },
   {
    "id": "fc1:寻路-20-5#r1",
-   "claim": "有鱼字之后，鱼永远按自己规定的周期检测，其检测时间由自己的入水检测决定。",
-   "subject": "未点名",
-   "condition": "有余字之后",
+   "claim": "地块上有「鱼」字之后，鱼敌人永远按自己规定的周期检测，其检测时间由自己的入水检测决定。",
+   "subject": "界园汉字机制中的「鱼」敌人与「鱼」字地块",
+   "condition": "地块上有「鱼」字之后",
    "scope": "universal",
    "category": "寻路",
    "recorded_ym": null,
@@ -21430,15 +20142,15 @@
     "source_path": "transcripts_txt/BV1g3NC6pEFt_p1_39902972402.txt",
     "source_line_time": "00:34:23",
     "supports": "三句要点与源句对应，subject 未越出源范围",
-    "derived_correction": "源「鱼的检测时间永远由入自己的入水检测」中「由入自己的」为口述顿挫叠加（由 / 入 / 自己的），claim 未沿用该断字，引文原文不改。",
+    "derived_correction": "源「鱼的检测时间永远由入自己的入水检测」中「由入自己的」为口述顿挫叠加（由 / 入 / 自己的），claim 未沿用该断字，引文原文不改。；引文及旧condition中「有余字之后」为界园汉字机制「有鱼字之后」的ASR同音讹写；已订正subject/condition/claim。",
     "derived_correction_disposition": "applied"
    }
   },
   {
    "id": "fc1:寻路-20-5#r2",
-   "claim": "有鱼字之后，检测时只检查有没有鱼字。",
-   "subject": "未点名",
-   "condition": "有余字之后",
+   "claim": "地块上有「鱼」字之后，鱼敌人在检测时只检查格子上有没有「鱼」字。",
+   "subject": "界园汉字机制中的「鱼」敌人与「鱼」字地块",
+   "condition": "地块上有「鱼」字之后",
    "scope": "universal",
    "category": "寻路",
    "recorded_ym": null,
@@ -21508,7 +20220,7 @@
     "source_path": "transcripts_txt/BV1g3NC6pEFt_p1_39902972402.txt",
     "source_line_time": "00:34:23",
     "supports": "与源句一致，与 #r1 为同句不同分句的拆分",
-    "derived_correction": "源中「鱼字」「余字」在同一段内混用（[34:23] 与 [34:59]），claim 未强作统一；引文原文不改。",
+    "derived_correction": "源中「鱼字」「余字」在同一段内混用（[34:23] 与 [34:59]），claim 未强作统一；引文原文不改。；引文及旧condition中「有余字之后」为界园汉字机制「有鱼字之后」的ASR同音讹写；已订正subject/condition/claim。",
     "derived_correction_disposition": "applied"
    }
   },
@@ -137567,10 +136279,10 @@
   "skipped_reason": null
  },
  "evidence_review_summary": {
-  "reviewed_supported": 1431,
+  "reviewed_supported": 1418,
   "reviewed_unsupported": 0,
   "reviewed_pending": 3,
-  "inherited_verified": 42,
+  "inherited_verified": 40,
   "held_out_qq_overlay_pending": 3,
   "qq_expansion_reverified": 844,
   "qq_expansion_reverified_by_batch": {
@@ -137578,12 +136290,12 @@
    "QQ扩展(阶段三b3批)": 312,
    "QQ扩展(阶段四b4批)": 502
   },
-  "released": 1473,
+  "released": 1458,
   "staging": 6,
   "entries_with_derived_text_repairs": 10,
   "derived_correction_disposition": {
-   "not_needed": 301,
-   "applied": 284,
+   "not_needed": 274,
+   "applied": 298,
    "pending": 2
   },
   "confidence_ceiling": "text-source-supported",
