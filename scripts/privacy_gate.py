@@ -43,7 +43,7 @@ SECRET_PATTERNS = [
     ('bearer', re.compile(r'Bearer\s+[A-Za-z0-9._\-]{20,}')),
 ]
 PHONE_RE = re.compile(r'(?<![0-9A-Za-z])1[3-9]\d{9}(?![0-9A-Za-z])')
-# "QQ 123456" style leaks; bare lowercase `qq` is excluded because the corpus uses
+# "QQ <digits>" style leaks; bare lowercase `qq` is excluded because the corpus uses
 # `qq/untyped`, `qq_cards` etc. as source-layer labels, which are not identity context.
 QQ_CONTEXT_RE = re.compile(
     r'(?:QQ|群号|加群|qq群)[^\n]{0,15}?[1-9]\d{4,10}|'
@@ -155,6 +155,10 @@ def main():
     for path in tracked_files():
         if path.suffix.lower() in SKIP_EXT or not path.is_file():
             continue
+        rel = path.relative_to(ROOT).as_posix()
+        # the allowlist's own lines ARE the vetted token list -- never scan it
+        if rel == 'scripts/privacy_allowlist.txt':
+            continue
         if path.stat().st_size > MAX_BYTES:
             continue
         try:
@@ -162,7 +166,6 @@ def main():
         except (UnicodeDecodeError, OSError):
             continue
         files += 1
-        rel = path.relative_to(ROOT).as_posix()
 
         for kind, pat in SECRET_PATTERNS:
             for m in pat.finditer(text):
