@@ -7,6 +7,8 @@ import re
 from collections import Counter, defaultdict
 from pathlib import Path
 
+from entity_corrector import correct_text
+
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / 'kb_trial'
 SEM = 'kb_pilot_synth/semantic_repair_round1/'
@@ -32,6 +34,16 @@ def dump(path, value):
 
 def write_rows(path, rows):
     path.write_text(''.join(json.dumps(d, ensure_ascii=False, sort_keys=True) + '\n' for d in sorted(rows, key=lambda x: x['id'])), encoding='utf-8')
+
+
+def sync_clip_quotes(atom_ev, stem):
+    """atom clips 存的是抽取当时的逐字稿文本；纠错规则更新后逐字稿会变，
+    用同一套 correct_text 把存量引文同步到当前逐字稿口径，保持逐字可追溯。
+    审计源文件（docs.jsonl）不改，归一只在构建期做；校验器复用本函数对齐期望。"""
+    for clip in (atom_ev or {}).get('clips', []):
+        if clip.get('quote'):
+            clip['quote'] = correct_text(clip['quote'], stem)
+    return atom_ev
 
 
 def clusters(d):
@@ -149,8 +161,9 @@ def build():
                 if path:
                     evidence_files.add(path)
                 layer = 'official' if path and path.startswith('transcripts') else 'asr' if path else 'unknown'
+                atom_ev = sync_clip_quotes(copy.deepcopy(atom.get('evidence')), stem)
                 value = {'id': ref, 'status': 'resolved_atom', 'source_doc_id': atom['id'],
-                         'source': atom.get('source'), 'evidence': atom.get('evidence'),
+                         'source': atom.get('source'), 'evidence': atom_ev,
                          'transcript_file': path, 'source_layers': [layer]}
             else:
                 value = {'id': ref, 'status': 'unresolved', 'source_layers': ['unknown']}

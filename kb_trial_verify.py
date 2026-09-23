@@ -1,5 +1,6 @@
 """Local reproducibility, boundary, provenance and retrieval checks; no API."""
 import contextlib
+import copy
 import io
 import json
 import re
@@ -39,7 +40,10 @@ def verify():
     evidence = load_rows(TRIAL / 'evidence.jsonl')
     for e in evidence:
         if e['status'] == 'resolved_atom':
-            assert e['evidence'] == original[e['source_doc_id']].get('evidence')
+            atom = original[e['source_doc_id']]
+            stem = (atom.get('source') or {}).get('bvid_stem') or e['id'].split(':')[0]
+            expected = B.sync_clip_quotes(copy.deepcopy(atom.get('evidence')), stem)
+            assert e['evidence'] == expected
         if e['status'] == 'resolved_timestamp_window':
             assert e['quote_line'] in (B.ROOT / e['file']).read_text(encoding='utf-8').splitlines()
     for d in idx.docs:

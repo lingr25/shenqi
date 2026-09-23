@@ -19,6 +19,7 @@ from pathlib import Path
 
 import kb_curation_rules as R
 import kb_curation_qq_expansion_loader as EXPANSION_LOADER
+from entity_corrector import correct_text
 
 ROOT = Path(__file__).resolve().parent
 TRIAL = ROOT / 'kb_trial'
@@ -94,11 +95,14 @@ def citation_objects(row, evidence):
     for ev in (row.get('inline_evidence') or []):
         if not (ev.get('file') and ev.get('text')):
             continue
+        # inline_evidence 存的是抽取当时的逐字稿文本；纠错规则更新后逐字稿会变，
+        # 此处用同一套 correct_text 把存量引文同步到当前逐字稿口径，保持逐字可追溯
+        stem = Path(ev['file']).stem
         out.append({
             'id': f"inline:{ev['file']}@{ev['t_start']}", 'status': 'resolved_inline_evidence',
             'source_layers': ['official'] if ev.get('layer') == 'official_txt' else ['asr'],
             'transcript_file': ev['file'],
-            'quotes': [{'text': ev['text'], 't_start': ev['t_start'], 't_end': None}],
+            'quotes': [{'text': correct_text(ev['text'], stem), 't_start': ev['t_start'], 't_end': None}],
         })
     qq = row.get('qq_evidence')
     if qq and qq.get('spans'):
