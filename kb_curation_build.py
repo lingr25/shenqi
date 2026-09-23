@@ -46,6 +46,13 @@ def evidence_index():
     return {e['id']: e for e in load_jsonl(TRIAL / 'evidence.jsonl')}
 
 
+# LLM 章节标题（knowledge_pilot/*.chapters.json，经 atoms → evidence → citations 一路带入）
+# 是派生元数据而非逐字引文，可安全订正；ASR 讹写归一在此登记。
+CHAPTER_REPAIRS = {
+    '四种移动逻辑与鼠传送的事件结算顺序': '四种移动逻辑与黍传送的事件结算顺序',
+}
+
+
 def citation_objects(row, evidence):
     """Resolve each citation to a locatable object with file, timestamp and quote.
 
@@ -69,7 +76,7 @@ def citation_objects(row, evidence):
                 'bvid_stem': source.get('bvid_stem'),
                 'recorded_at': source.get('recorded_at'),
                 'speaker': source.get('speaker'),
-                'chapter': source.get('chapter'),
+                'chapter': CHAPTER_REPAIRS.get(source.get('chapter'), source.get('chapter')),
                 'quotes': [{'text': c.get('quote'), 't_start': c.get('t_start'), 't_end': c.get('t_end')}
                            for c in clips],
                 # the upstream atom quote is itself a normalised derivative; expose it so
