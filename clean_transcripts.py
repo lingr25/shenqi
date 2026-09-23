@@ -58,7 +58,7 @@ def clean_file(raw_json_path):
     raw_body = data.get("body", [])
     
     # 1. 实体纠错与清洗
-    cleaned_body = clean_subtitle_items(raw_body)
+    cleaned_body = clean_subtitle_items(raw_body, base_id)
     
     # 2. 保存清洗后的结构化 JSON
     cleaned_data = {
@@ -73,7 +73,7 @@ def clean_file(raw_json_path):
         json.dump(cleaned_data, f, ensure_ascii=False, indent=2)
         
     # 3. 生成自然断句逐字稿
-    transcript_lines = build_natural_transcript(cleaned_body)
+    transcript_lines = build_natural_transcript(cleaned_body, file_tag=base_id)
     
     # 检查是否有章节标记注入
     final_lines = []

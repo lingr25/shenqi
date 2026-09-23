@@ -71,7 +71,7 @@ CORRECTION_RULES = [
     (r"灵杖", "灵知"),
     (r"爆周器", "打轴器"),
     (r"(?<![一-鿿])集体(?![一-鿿])", "缇缇"),
-    (r"免疫鼠传", "免疫传送"),
+    (r"免疫鼠传", "免疫黍传"),  # 只对黍的传送生效的抗性类型(原文:对鼠有效、不对其他传送有效)
     (r"号十字路", "十字路口"),
     (r"字形态(?=的)", "鱼形态"),
     (r"醒来针", "醒来帧"),
@@ -158,12 +158,25 @@ CORRECTION_RULES = [
     # Mon3tr / 重构体
     (r"(?i)\bm3\b", "M3"),
 
-    # 黍 (针对容易识别成 鼠/属/数/署 的情况)
+    # 黍 (针对容易识别成 鼠/属/数/暑/署/蜀 的情况)
     (r"(播种|种子|地块|天赋|三技能)(属|鼠|数|暑|署)", r"\1黍"),
     (r"(属|鼠|数|暑|署)(?=的种子|的地块|播种|天赋|三技能|开大)", "黍"),
     (r"(黍|提丰|维什戴尔)(属|鼠|数)", r"\1黍"),
     (r"我们这个时间是绝对没有(数|属)", "我们这个时间是绝对没有黍"),
     (r"我们(数|属)(?=不可能开三套|开大|播种)", "我们黍"),
+    # 黍传送专题语境(BV14gby6LEni_p3 等): 负向断言豁免真鼠——
+    # 敌人"老鼠/鼠鼠/属鼠/怪鼠鼠"(聆风猎手昵称)与 鼠标/鼠群/鼠王 一律不动
+    (r"(?<![老鼠属蜀鼹松豚大怪])鼠传送", "黍传送"),
+    (r"(?<![老鼠属蜀鼹松豚大怪])鼠的传送", "黍的传送"),
+    (r"蜀船", "黍传"),
+    (r"蜀(?=传送|是在)", "黍"),
+    (r"蜀冈时装", "黍刚实装"),
+    (r"怀蜀黎", "怀黍离"),  # 怀黍离(活动名)
+    (r"(?<=来个)蜀", "黍"),
+    (r"免疫[鼠属]船", "免疫黍传"),
+    (r"鼠鼠(?=加攻速)", "黍"),  # BV14VZCB1EJR 内"鼠鼠加攻速"实为黍的攻速拐(非敌方鼠鼠)
+    # 兜底: 本语料中独立成词的"鼠"逐枚枚举后确认几乎全是黍的ASR讹写
+    (r"(?<![老鼠属蜀鼹松豚大怪])鼠(?![标群王鼠])", "黍"),
 
     # 娜斯提 (Nasty)
     (r"纳斯提", "娜斯提"),
@@ -185,14 +198,35 @@ CORRECTION_RULES = [
     (r"天4", "第二天赋"),
 ]
 
-def correct_text(text: str) -> str:
+# ================= 5. 文件级定向消歧 =================
+# 某期录播整段处于特定干员语境时，全局规则无法安全区分的高危字按文件定向修正。
+# 键为分P文件名前缀(bvid_stem)，值与 CORRECTION_RULES 同构，在全局规则之后应用。
+FILE_CONTEXT_RULES = {
+    # BV14VZCB1EJR 全期为黍(奶盾)治疗量/攻速/攻击间隔帧级计算语境，
+    # ASR 把"黍"大量写成 数/属(独立的鼠已由全局兜底规则覆盖)
+    "BV14VZCB1EJR": [
+        (r"数(?=是604|三秒钟|开技能|四诶|一下子|是提前|36帧|M三|甚至)", "黍"),
+        (r"数早也有属早", "黍早也有黍早"),
+        (r"属(?=只奶|拐之下)", "黍"),
+        (r"(?<=光剑打)属", "黍"),
+        (r"黍指能奶", "黍只能奶"),
+    ],
+}
+
+def correct_text(text: str, file_tag: str = "") -> str:
     """对单段文本应用机制与干员专有名词纠错"""
     res = text
     for pattern, repl in CORRECTION_RULES:
         res = re.sub(pattern, repl, res)
+    if file_tag:
+        for key, rules in FILE_CONTEXT_RULES.items():
+            if file_tag.startswith(key):
+                for pattern, repl in rules:
+                    res = re.sub(pattern, repl, res)
+                break
     return res
 
-def clean_subtitle_items(items):
+def clean_subtitle_items(items, file_tag: str = ""):
     """
     清洗字幕条目列表：
     - 应用专有名词纠错规则
@@ -203,7 +237,7 @@ def clean_subtitle_items(items):
         raw_c = it.get('content', '').strip()
         if not raw_c:
             continue
-        norm_c = correct_text(raw_c)
+        norm_c = correct_text(raw_c, file_tag)
         cleaned.append({
             "from": it.get('from'),
             "to": it.get('to'),
@@ -223,7 +257,7 @@ def format_timestamp(seconds: float) -> str:
     else:
         return f"[{minutes:02d}:{secs:02d}]"
 
-def build_natural_transcript(cleaned_items, max_pause=1.2, max_len=60):
+def build_natural_transcript(cleaned_items, max_pause=1.2, max_len=60, file_tag: str = ""):
     """
     将碎句字幕进行自然断句与时间符合并：
     - 停顿小于 max_pause 秒且总字数不超过 max_len 时平滑合并
@@ -251,14 +285,14 @@ def build_natural_transcript(cleaned_items, max_pause=1.2, max_len=60):
             current_tokens.append(text)
             current_end = t_to
         else:
-            merged_text = correct_text(" ".join(current_tokens))
+            merged_text = correct_text(" ".join(current_tokens), file_tag)
             lines.append(f"{format_timestamp(current_start)} {merged_text}")
             current_start = t_from
             current_end = t_to
             current_tokens = [text]
 
     if current_tokens:
-        merged_text = correct_text(" ".join(current_tokens))
+        merged_text = correct_text(" ".join(current_tokens), file_tag)
         lines.append(f"{format_timestamp(current_start)} {merged_text}")
 
     return lines
