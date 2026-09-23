@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""从已产物中剔除小晓 bot（QQ 3904429615）消息，不重切簇。"""
+"""从已产物中剔除小晓 bot 消息，不重切簇。
+
+bot 的 QQ 号不入库，由 qq_info/identities.json 的 xiaoxiao_qq 注入。"""
 
 from __future__ import annotations
 
@@ -15,7 +17,7 @@ if hasattr(sys.stdout, "reconfigure"):
         pass
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-QQ = "3904429615"
+from local_ids import XIAOXIAO_QQ as QQ
 SID = "e3d07517"
 INFO = os.path.join(ROOT, "qq_info")
 CARDS = os.path.join(ROOT, "qq_cards", "cards.jsonl")

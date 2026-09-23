@@ -47,8 +47,8 @@ REPORT_PATH = os.path.join(ROOT_DIR, "qq_cards", "rag_ready_report.md")
 WINDOWS_PATH = os.path.join(ROOT_DIR, "qq_info", "windows.jsonl")
 MESSAGES_PATH = os.path.join(ROOT_DIR, "qq_info", "messages_clean.jsonl")
 TRANSCRIPTS_DIR = os.path.join(ROOT_DIR, "transcripts_txt")
-HOST_QQ = "2580863623"
-EXPERT_QQ = "724873295"
+# 真实 QQ 号不入库，由 qq_info/identities.json（本地，已 gitignore）注入
+from local_ids import HOST_QQ, EXPERT_QQ
 
 GLOSSARY_TERMS = [
     "力道",

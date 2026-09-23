@@ -35,8 +35,8 @@ DEFAULT_QQ_CARDS = os.path.join(ROOT_DIR, "qq_cards", "cards.jsonl")
 NOVELTY_ENUM = {"group_only", "also_in_vod", "conflict", "unknown"}
 CONF_ENUM = {"high", "medium", "low"}
 
-HOST_QQ = "2580863623"
-EXPERT_QQ = "724873295"
+# 真实 QQ 号不入库，由 qq_info/identities.json（本地，已 gitignore）注入
+from local_ids import HOST_QQ, EXPERT_QQ
 
 CATEGORIES = {"索敌", "帧时序", "位移", "寻路", "伤害结算", "拆包数据", "其他"}
 SPEAKERS = {"主播", "专家", "群友"}

@@ -119,6 +119,31 @@ def _sha256_text(s):
     return hashlib.sha256(s.encode('utf-8')).hexdigest()
 
 
+# 发布期身份词脱敏表（有序，先长后短）。工单/窗口的 raw_messages 是本地私有产物
+# （gitignore），其中残留少量"正文直呼群友"的名字——窗口匿名化只处理 @ 与号码，
+# 看不见这些。manifest/curated 一侧的引文已按本表脱敏；复验时必须先对工单原文
+# 施加同一张表再做逐字比对，否则两侧必然失配。
+PUBLISH_REDACTIONS = (
+    ('凌弥lemmi', '某人'),
+    ('@调零@提丰单推人', '@某人@某人'),
+    ('@调零@空弦单推人', '@某人'),
+    ('调零@祖玛玛单推人', '某人'),
+    ('β@忍冬妈妈单推人', '某人'),
+    ('小兔●ω●', '某人'),
+    ('芝士若亭', '某人'),
+    ('得过且过', '某人'),
+    ('fc88599d「大地赦罪师」提问', 'fc88599d「某群友」提问'),
+    ('凌弥', '某人'),
+)
+
+
+def publish_redact(text):
+    for old, new in PUBLISH_REDACTIONS:
+        if old in text:
+            text = text.replace(old, new)
+    return text
+
+
 def entry_id(window_id, local_id):
     return '%s:%s:%s' % (ID_PREFIX, window_id, local_id)
 
@@ -175,10 +200,10 @@ def verify_entry(item, workorders=WORKORDERS, reviews=REVIEWS, audit=None):
         m = msgs.get(ev.get('seq'))
         if m is None:
             errs.append('%s/%s: evidence seq %s not in raw_messages' % (wid, lid, ev.get('seq')))
-        elif m['text'] != ev.get('text'):
+        elif publish_redact(m['text']) != ev.get('text'):
             errs.append('%s/%s: evidence seq %s is not verbatim' % (wid, lid, ev.get('seq')))
         else:
-            quotes.append({'text': m['text'], 'seq': m['seq'], 'time': m.get('time')})
+            quotes.append({'text': publish_redact(m['text']), 'seq': m['seq'], 'time': m.get('time')})
             seen_seq.append(m['seq'])
     if not quotes:
         errs.append('%s/%s: no verbatim evidence survived' % (wid, lid))

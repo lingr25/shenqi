@@ -24,7 +24,7 @@
   {
     "id": "qq_expansion:w000666:c02",
     "decision": "needs_human_confirmation",
-    "reason": "逐字复核工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_325.json（window=w000666，28 条消息）：本案 3 条引文 seq 15「@某人@某人 你说的那个叫什么 对群 然后能天使偷攻速没影响」、seq 24「平A吃能天使」、seq 26「第一下不吃 原是多少还是多少」在 raw_messages 内 3/3 逐字命中，发言人均为 6617f148（小兔●ω●），「平A／第一下」的正反两面可由 seq 24＋26 自证，claim 未改数字、未补结论。问题有两类：①与同窗 c01 同一缺陷——claim 的「变形斩」与 subject 的「「聚合斩」…」并存，而本窗只出现「聚合斩」（seq 28）、entity_index 把两词各自登记为独立 canonical、entity_corrector.py 无「聚合斩→变形斩」规则，等价关系无登记支撑，属实体/术语问题。②「能天使偷攻速」是源句 seq 15「对群 然后能天使偷攻速没影响」的节略说法，claim 写作「平A吃能天使偷攻速」，方向由 seq 24/26 支撑，但「偷攻速」这一组合词在本窗未展开（review_limitations 亦自陈「原文只写『能天使偷攻速』」）。请裁定：术语等价与主张写法是否统一，以及是否需要把 seq 15 的「没影响」与 seq 24/26 的「吃／不吃」关系在 claim 中讲清。",
+    "reason": "逐字复核工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_325.json（window=w000666，28 条消息）：本案 3 条引文 seq 15「@某人@某人 你说的那个叫什么 对群 然后能天使偷攻速没影响」、seq 24「平A吃能天使」、seq 26「第一下不吃 原是多少还是多少」在 raw_messages 内 3/3 逐字命中，发言人均为 6617f148（某人），「平A／第一下」的正反两面可由 seq 24＋26 自证，claim 未改数字、未补结论。问题有两类：①与同窗 c01 同一缺陷——claim 的「变形斩」与 subject 的「「聚合斩」…」并存，而本窗只出现「聚合斩」（seq 28）、entity_index 把两词各自登记为独立 canonical、entity_corrector.py 无「聚合斩→变形斩」规则，等价关系无登记支撑，属实体/术语问题。②「能天使偷攻速」是源句 seq 15「对群 然后能天使偷攻速没影响」的节略说法，claim 写作「平A吃能天使偷攻速」，方向由 seq 24/26 支撑，但「偷攻速」这一组合词在本窗未展开（review_limitations 亦自陈「原文只写『能天使偷攻速』」）。请裁定：术语等价与主张写法是否统一，以及是否需要把 seq 15 的「没影响」与 seq 24/26 的「吃／不吃」关系在 claim 中讲清。",
     "evidence_paths": [
       "kb_trial/curation/faultcheck/review_batch_09.json",
       "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_325.json",
@@ -87,7 +87,7 @@
   {
     "id": "qq_expansion:w000712:c01",
     "decision": "needs_human_confirmation",
-    "reason": "逐字复核工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_071.json（window=w000712，10 条消息；authorities 仅 host 589e9b6d）：本案 3 条引文 seq 1（fc88599d「大地赦罪师」提问）/4、5（host）在 raw_messages 内 3/3 逐字命中，seq 8「这样啊，感谢」表示接受，机制句「因为上下寻路过程中面相由摄像头位置决定」「你的所有选中干员，子弹时间的画面切换都是在动摄像头」可自证，fix 的 asr_error 方向（面相＝面向的讹写）本身合理。未确认的原因在术语登记与落地记录：claim 与 subject 把源文用字「面相」改为「面向」（面向在 entity_index 记 qq/untyped；「面相」0 命中），但 entity_corrector.py 并没有「面相→面向」规则（该文件仅有 落地引→落地隐、紫兰→梓兰 等规则），且 faultcheck 的 suggestion 明写「并在 derived_text_repairs 记录『面相→面向』」——curated_high_quality.json 该条没有 derived_text_repairs 字段（该字段在本层 1462 条中只出现在 9 条 fc1 轨条目上，QQ 轨条目无一例），即该纠错既无规则支撑也未留记录。另 claim 把源句「你的所有选中干员」缩为「选中干员」并加入源外措辞「本质」。请裁定：是否接受「面向」的改写并补 derived_text_repairs/entity_corrector 登记，或恢复源文「面相」（并在 claim 留注）。",
+    "reason": "逐字复核工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_071.json（window=w000712，10 条消息；authorities 仅 host 589e9b6d）：本案 3 条引文 seq 1（fc88599d「某群友」提问）/4、5（host）在 raw_messages 内 3/3 逐字命中，seq 8「这样啊，感谢」表示接受，机制句「因为上下寻路过程中面相由摄像头位置决定」「你的所有选中干员，子弹时间的画面切换都是在动摄像头」可自证，fix 的 asr_error 方向（面相＝面向的讹写）本身合理。未确认的原因在术语登记与落地记录：claim 与 subject 把源文用字「面相」改为「面向」（面向在 entity_index 记 qq/untyped；「面相」0 命中），但 entity_corrector.py 并没有「面相→面向」规则（该文件仅有 落地引→落地隐、紫兰→梓兰 等规则），且 faultcheck 的 suggestion 明写「并在 derived_text_repairs 记录『面相→面向』」——curated_high_quality.json 该条没有 derived_text_repairs 字段（该字段在本层 1462 条中只出现在 9 条 fc1 轨条目上，QQ 轨条目无一例），即该纠错既无规则支撑也未留记录。另 claim 把源句「你的所有选中干员」缩为「选中干员」并加入源外措辞「本质」。请裁定：是否接受「面向」的改写并补 derived_text_repairs/entity_corrector 登记，或恢复源文「面相」（并在 claim 留注）。",
     "evidence_paths": [
       "kb_trial/curation/faultcheck/review_batch_09.json",
       "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_071.json",

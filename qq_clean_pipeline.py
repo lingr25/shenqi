@@ -49,14 +49,8 @@ DEFAULT_CSV = os.path.join(
 DEFAULT_OUTDIR = os.path.join(ROOT_DIR, "qq_info")
 DEFAULT_ENTITIES = os.path.join(ROOT_DIR, "prts_entities.json")
 
-HOST_QQ = "2580863623"
-EXPERT_QQ = "724873295"
-DEFAULT_BOT_QQS = (
-    "3369126805",  # 可露希尔 LLM bot（含每日群聊分析报告）
-    "798522056",  # 小凌弥
-    "2846210149",
-    "3904429615",  # 小晓 LLM bot
-)
+# 真实 QQ 号不入库，由 qq_info/identities.json（本地，已 gitignore）注入
+from local_ids import HOST_QQ, EXPERT_QQ, BOT_QQS as DEFAULT_BOT_QQS
 
 TIME_FMT = "%Y-%m-%d %H:%M:%S"
 

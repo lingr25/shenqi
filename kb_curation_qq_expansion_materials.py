@@ -309,7 +309,7 @@ AT_MENTION = re.compile(r'@([^\s@]{1,32})')
 #
 # Redacting every 6-12 digit run was wrong for this corpus, because Arknights writes aggro and
 # UI values as exactly such runs -- `1级嘲讽提供300000000基础仇恨`, `现在是10000000*嘲讽`,
-# `7*24*3600*1000=604800000`, and the in-game constant `365489981` (242 occurrences). All of
+# `7*24*3600*1000=604800000`, and other large in-game constants. All of
 # those are mechanics, and the earlier shape-based rule shipped them as `[账号已隐去]`.
 #
 # The precise rule: redact the values that actually identify someone -- every sender QQ, every
@@ -323,7 +323,7 @@ AT_MENTION = re.compile(r'@([^\s@]{1,32})')
 NUMERIC_ID_MIN = 6
 NUMERIC_ID_MAX = 12
 BARE_ACCOUNT_NUMBER = re.compile(r'(?<![\d.])\d{%d,%d}(?!\d)' % (NUMERIC_ID_MIN, NUMERIC_ID_MAX))
-# ... but a number the chat already wrapped in brackets (`[3461316146]`) is replaced wholesale,
+# ... but a number the chat already wrapped in brackets (`[<号码>]`) is replaced wholesale,
 # otherwise the marker lands inside them and ships as `[[账号已隐去]]`.
 BRACKETED_ACCOUNT_NUMBER = re.compile(r'\[\s*\d{6,12}\s*\]')
 # `@name 123456789` / `@name:123456789` — a mention token glued to an account number.
@@ -470,7 +470,7 @@ def redact_text(text, nick_to_speaker, speaker, account_numbers, nick_redactor=N
     value in `identity_numbers` (the export's real sender QQs / UIDs plus the group id).
 
     Kept: mechanism numbers, including long ones — `300000000` aggro, `10000000` multiplier,
-    `365489981` in-game constant, `604800000` seed arithmetic. Those are only preserved when
+    `604800000` seed arithmetic and other large constants. Those are only preserved when
     they are NOT in `identity_numbers`; when `identity_numbers` is None (e.g. a caller that only
     knows `account_numbers`) the shape-based `BARE_ACCOUNT_NUMBER` fallback still applies, which
     is what stage 2/3 predate.
@@ -526,7 +526,7 @@ def _redact_known_numbers(text, identity_numbers, repl):
     """Replace each known identity value with the standalone occurrence sets, longest first.
 
     Values are matched as whole standalone runs (not as substrings of a longer digit run), so
-    redacting QQ `123456` never damages an unrelated `912345678` -- and never touches a window
+    redacting a short QQ never damages an unrelated longer run (`912345678`) -- and never touches a window
     id or a timestamp, which have the same digit shape but are not identity.
     """
     for value in sorted(identity_numbers, key=len, reverse=True):
@@ -863,6 +863,11 @@ def build_inventory():
     _, nick_redactor = build_nick_redactor(set(nick_to_speaker), nick_unique)
     # The values that genuinely identify someone, for the value-based number redaction.
     identity_numbers = identity_numbers | {v for v in account_numbers if v}
+    # Digit runs carried INSIDE nicknames (e.g. a member who put their QQ in their nick):
+    # the nickname itself is struck by nick_redactor, but the bare number would otherwise
+    # leak into the published text.
+    for nick in nick_to_speaker:
+        identity_numbers.update(re.findall(r'\d{6,12}', nick))
 
     id_order = IdOrder()
     msg_index = {}
