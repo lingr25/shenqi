@@ -1,0 +1,295 @@
+[
+  {
+    "id": "fc1:寻路-38-3#r2",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "claim 收窄为「分离力在斗区区里有应用，别的地方没有；正常情况下敌人即使离得很近也不会有这个东西。」condition 从「敌人之间发生推挤时」改回「讨论分离力」。不要写「互相推挤」，也不要把「斗区区」改成「斗蛐蛐」。引文保持「斗区区」原字。",
+    "citation_additions": [],
+    "reason": "当前引文第806行 [02:39:31] 只支持「斗区区里有应用、别的地方没有、离得很近也不会有」。本文件没有「推挤」（该词在另一文件 transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt 第331行，不得跨文件补进本条）。「相互远离／斗蛐蛐」在同文件第725行 [02:24:04]「分离力是斗蛐蛐 那种让敌人和敌人之间倾向于相互远离的力」，复核写的「第774行」不准确；该行与本条相距约15分钟，不是相邻行，不挂到本条。",
+    "evidence_paths": [
+      "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
+      "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+      "kb_trial/curated_high_quality.json"
+    ]
+  },
+  {
+    "id": "fc1:寻路-38-6#r1",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "claim 收窄为「避障力有一个垂直于自己的寻路方向的投影机制，因此实际上倾向于让敌人斜走。」不要写入「中间量减去投影」或「所得向量必定垂直于寻路方向」。该步骤若要保留，另立条目并引同文件第763行，不要挂到本条。",
+    "citation_additions": [],
+    "reason": "本条引文第950行 [03:03:41] 只有「垂直于寻路方向的投影机制」和「倾向让敌人斜走」。第763行 [02:32:01] 虽有「减去给定方向上的投影……必定垂直于寻路方向」，但早约31分钟，不是相邻行，且原文是未登记的「B站中间量／B站里向量」，不能清洗成「中间量」后塞进本条。相邻的第948–952行也没有这套减法步骤。",
+    "evidence_paths": [
+      "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
+      "kb_trial/curated_high_quality.json"
+    ]
+  },
+  {
+    "id": "fc1:寻路-8-7#r0",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "claim 改回「当单位进入坑的避障判定区，且该帧避障判定为真时，由于单位速度太低，会被避障力顶回来，本来能进入坑的结果没进去。」删去「避障判定帧」和括注「（避障力每三帧结算一次）」。condition 已是「该帧避障判定为真」，保持不动，与收窄后的 claim 一致。",
+    "citation_additions": [],
+    "reason": "引文第172行是「这一针直接就是避障判定真」，不是「避障判定帧」。entity_corrector.py 只有「避障针→避障帧」，没有「判定真→判定帧」。同文件第190行 [34:04] 是「避障针卡三针避障」，不是「每三帧结算一次」，且晚于本条跨度约3分钟，不能当成该括注的逐字出处。另一文件里的「每三帧被计算一次」不是本路径。",
+    "evidence_paths": [
+      "transcripts_txt/BV14y8269EbS_p2_41167359561.txt",
+      "entity_corrector.py",
+      "kb_trial/curated_high_quality.json"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-27-3#r0",
+    "calibrated_decision": "support_current",
+    "recommended_action": "保持现文「空费帧有两帧。」不要加回「（费用条为零的那一帧）」或「属费用条显示精度问题」，也不要改回「空飞针／空费针」。引文保持「空飞针有两针」。",
+    "citation_additions": [],
+    "reason": "当前发布 claim 已是短句「空费帧有两帧。」，对应引文第270行「空飞针有两针」。空费帧是用户确认术语，entity_index 记 Empty Cost Frame→空费帧。复核所斥的定义括注和「显示精度」不在现文里：第269行只说「都是空费针开的」，「电影调精度问题」也没有逐字的「显示精度」可替换。这两处无据内容不得再写回。",
+    "evidence_paths": [
+      "transcripts_txt/BV1aTeV6yENP_p4_41898281814.txt",
+      "kb_trial/entity_index.json",
+      "kb_trial/curated_high_quality.json"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-27-7#r7",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "claim 改为「退出寻路状态时避障冷却不计算，导致眩晕前后的三个寻路针被拼接起来。」只把「寻路帧」改回「寻路针」。不要恢复括注「（即避障按三寻路针间隔拼接）」。引文保持「寻路针」。",
+    "citation_additions": [],
+    "reason": "第265–266行逐字是「寻路针进行一个拼接」。entity_index 里的「寻路帧」是独立规范名，不是「寻路针→寻路帧」的别名；entity_corrector 也没有这条规则。跨库 QQ 的「寻路帧」不是本路径相邻行，不能补作本条引文。被删括注的最近句子是第263行「每三个寻路针一应用……三针冷却也不会转」，与该括注不是逐字同一句，且在跨度起点之前，删除可以保留。",
+    "evidence_paths": [
+      "transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt",
+      "entity_corrector.py",
+      "kb_trial/entity_index.json",
+      "kb_trial/curated_high_quality.json"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-28-8#r3",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "claim 改为「代理和你的操作是同真的。」不要写「同帧」，也不要把「你的操作」写成「玩家手操」。引文保持「同真／通真」。",
+    "citation_additions": [],
+    "reason": "引文第177行是「代理是和你的操作同真的」，同段还有「通真操作」「完全同真」，第180行作「童真的」。entity_index 没有「同真／通真→同帧」别名；entity_corrector 的童真规则 lookahead 不含「同真」「通真」「童真的」。同文件后文的「同帧」在 [02:03:12]，不是本条相邻行。未登记前不得把该字写入本条 claim。",
+    "evidence_paths": [
+      "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+      "entity_corrector.py",
+      "kb_trial/entity_index.json",
+      "kb_trial/curated_high_quality.json"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-28-8#r4",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "claim 改回「即使代理表现稳定，其操作与手操在同真下的结算顺序仍不同，因而会出现一些问题。」只撤销「同帧」，保留「手操」（源句有「你手操」）。condition 已是「同真;代理表现稳定」，不要改成同帧。",
+    "citation_additions": [],
+    "reason": "第180行原文是「你手操的童真的 结算顺序是不同的」。同段第177行写作「同真」。把「童真／同真」写成「同帧」未在 entity_index 或 entity_corrector 的适用上下文中登记，与 #r3 同一限制。condition 里的「同真」与收窄后的 claim 一致。",
+    "evidence_paths": [
+      "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+      "entity_corrector.py",
+      "kb_trial/entity_index.json",
+      "kb_trial/curated_high_quality.json"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-45-12#r0",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "删掉「单关卡排轴案例」「该关特定敌人」「非通用规则」。claim 改为「限定这种情况下，若蛤蟆没有中间影响过寻路，可以直接用蛤蟆的出生针加上抛两个硬币的时间算出是哪一帧破箱子。」subject/condition 里的「出生帧」改为「出生针」。寻路订正可留（引文仍写驯鹿）。不要改 scope 字段。",
+    "citation_additions": [
+      {
+        "transcript_file": "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt",
+        "locator": "line 71 [13:32]",
+        "quote": "那就会轮到计算组这种情况下 限定这种情况下会使计算更快 然后计算的话就会需要他们提供所有的这个信息条件 比如说这个蛤蟆有没有中间影响过驯鹿"
+      }
+    ],
+    "reason": "「单关卡／该关特定敌人／非通用规则」不是第71–72行的逐字说法；scope 仍是 universal，claim 再自称非通用会自相矛盾。第71行相邻，只支持「限定这种情况下」和「有没有中间影响过驯鹿」，须补引后才能留这个前提。「出生针→出生帧」不是 entity_index 别名，也没有 entity_corrector 规则，claim 应写回出生针；「哪一帧破箱子」里的「帧」是源句原字，可留。驯鹿→寻路已记在本条 repaired_fields，同视频第149行与第178行可对照，引文不改。",
+    "evidence_paths": [
+      "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt",
+      "entity_corrector.py",
+      "kb_trial/entity_index.json",
+      "kb_trial/curated_high_quality.json"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-46-6#r3",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引第176行和第180行后保留现 claim。塞雷娅保持（entity_corrector 已有［赛塞］雷亚→塞雷娅）。不要改引文 chapter 里的「塞雷亚」。引文原文不动。",
+    "citation_additions": [
+      {
+        "transcript_file": "transcripts_txt/BV1jd3m68E6f_p1_40508197659.txt",
+        "locator": "line 176 [44:53]",
+        "quote": "赛雷亚三技能我们之前是呃学习过赛雷亚三技能的机制 它是无动画机制 或者说循环动画机制 他的攻击动画和自己的出伤事件是不绑定的啊"
+      },
+      {
+        "transcript_file": "transcripts_txt/BV1jd3m68E6f_p1_40508197659.txt",
+        "locator": "line 180 [45:33]",
+        "quote": "塞雷亚是一个无动化机制 无动化机制会以整个攻击间隔为前摇 加上一针保底后摇哦 当然前提是如果没有东西通知他 应该出出事件 出奶出伤出弹道的话"
+      }
+    ],
+    "reason": "「无出伤／出奶／出弹道等事件通知它时」是第180行的前提，紧挨在现引文第181行之前；「三技能」在同一例题的第176行。两行都是逐字出处，缺的是引用而不是内容。干员名订正已在 entity_corrector.py 登记。",
+    "evidence_paths": [
+      "transcripts_txt/BV1jd3m68E6f_p1_40508197659.txt",
+      "entity_corrector.py",
+      "kb_trial/curated_high_quality.json"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-53-11#r1",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "claim 改为「加速度如果是十，则这段路程是 V 的平方除以 20；若要跨过三针阻挡，大约需要每秒 14 的速度。」不要写成「自然寻路中加速度上限为十」。不要把「三针阻挡」改成「三帧阻挡」。subject 保持「未点名」。补引第345行以覆盖每秒 14。",
+    "citation_additions": [
+      {
+        "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+        "locator": "line 345 [01:16:38]",
+        "quote": "也就是每三至少要每三帧1.4 也就是一秒钟要14的速度 一秒钟要14的速度的话 就需要14的平方 也就是两百两百比上20"
+      }
+    ],
+    "reason": "现引文第344行是假设句「加速度如果是十」，并写「跨过三针阻挡」。每秒 14 在紧邻的第345行，可以补引。第339行说上限是「八或者100」，第342行又说「加速度上限十」，同段数字冲突，本条不把「上限为十」或「自然寻路」写成定论。entity_corrector 的「三针」规则不覆盖「三针阻挡」。",
+    "evidence_paths": [
+      "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+      "entity_corrector.py",
+      "kb_trial/curated_high_quality.json"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-55-2#r3",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "claim 改回「踩完路径点后，目标速度已改成零。」删去「（敌人）」和「寻路」。subject 保持「未点名」，condition 保持「已踩路径点」。",
+    "citation_additions": [],
+    "reason": "第148行只说「他都已经踩了路径点了 目标速度都已经改成零了」。第140–148行没有「敌人」，也没有「寻路」。同文件最近的「寻路」在第173行 [32:34]，讲的是另一件事，且不在相邻行。",
+    "evidence_paths": [
+      "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+      "kb_trial/curated_high_quality.json"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-70-6#r3",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引第343行。claim 保留两处原话，但删掉「两说并列待定」这类编辑注记，改成「陷阱师一处说不知道为什么也在传送之后结算，随后说应该是在传送前结算、陷阱师是在传送前。」引文原文不动。",
+    "citation_additions": [
+      {
+        "transcript_file": "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
+        "locator": "line 343 [02:34:27]",
+        "quote": "失衡的话非常特殊 他在就是所有的干员tick弹道tick他们之后结算 然后的话那个陷阱师不知道为什么也在那个就是属传送之后结算"
+      }
+    ],
+    "reason": "「传送之后结算」就在同一答疑段第343行，距现引文第350行约90秒，是相邻出处，不是缺证据。现引文已有「应该是在传送前」。缺的是第343行的引用；「两说并列待定」不是源句，不要留在正文里。",
+    "evidence_paths": [
+      "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
+      "kb_trial/curated_high_quality.json"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-74-0#r0",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "claim 改为「有落地隐的干员在碰撞时，会作为不可选中的目标加入一个时针循环的列表，进行周期性检测。」删「与敌人」，把「落地隐匿」改回「落地隐」，把「时针循环的列表」放回命题正文，删掉「词形待核听，不作术语」括注。subject 已是「有落地隐的干员」，保持。引文不改。",
+    "citation_additions": [],
+    "reason": "第84–86行已在现有拼接引文里：「碰撞的时候是作为不可选中的目标」「时针循环的列表」「进行周期性检测」。同段第79–83行写的是树的光环碰撞箱给周围干员挂 Buff，没有「与敌人碰撞」。entity_corrector 只登记「落地引→落地隐」；「落地隐匿」是 entity_index 里另一条独立规范名，不是本条别名。不得把「时针循环」改成别的术语。",
+    "evidence_paths": [
+      "transcripts_txt/BV1wPuG6aEyY_p2_40722629133.txt",
+      "entity_corrector.py",
+      "kb_trial/entity_index.json",
+      "kb_trial/curated_high_quality.json"
+    ]
+  },
+  {
+    "id": "fc1:技能特例-17-1#r6",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引第423行。claim 改为「切模式（需要用锁敌锁到敌人才能让技能开启的那一种）切换后，会使另一个模式下的索敌冷却停转。」删去「如伦蒂尼姆城防炮」。不要改选「伦蒂尼姆城防自行炮」。锁敌→索敌可沿用 entity_corrector 已有规则。引文不动。",
+    "citation_additions": [
+      {
+        "transcript_file": "transcripts_txt/BV1jd3m68E6f_p1_40508197659.txt",
+        "locator": "line 423 [01:37:48]",
+        "quote": "这种是属于什么 是他需要让用锁敌锁到敌 才能让自己的技能开启这两种完全不同的模式 对于后面这种模式的了 后面这种来讲的话 我们叫它切模式"
+      }
+    ],
+    "reason": "切模式的定义和现场命名在紧邻第423行，现引文第424行只覆盖「另一个模式下的索敌冷却停转」。单位名在同文件先被撤回（第413–415行改口「伦蒂尼姆城防自行炮」），第422行又用回短名；entity_index 没有这个全名。本条不选定该单位名。",
+    "evidence_paths": [
+      "transcripts_txt/BV1jd3m68E6f_p1_40508197659.txt",
+      "entity_corrector.py",
+      "kb_trial/entity_index.json",
+      "kb_trial/curated_high_quality.json"
+    ]
+  },
+  {
+    "id": "fc1:状态效果-7-2#r0",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "claim 改为「睡眠这个控制不是群体AOE」。删去「（就当期讨论的睡眠系干员技能而言）」。不要用第56行「九神」给干员补名。",
+    "citation_additions": [],
+    "reason": "现引文第55行已逐字支持这句。第53–54行只说「这干员」和「讨论了很多的睡眠抗性」，没有「睡眠系干员技能」，也没有干员名。该限定不是相邻行的逐字说法，不能靠补引成立。",
+    "evidence_paths": [
+      "transcripts_txt/BV17WquBEEdX_p2_35235760100.txt",
+      "kb_trial/curated_high_quality.json"
+    ]
+  },
+  {
+    "id": "fc1:状态效果-9-4#r0",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "claim 改回「罚站出隐身／罚站隐身的条件是目标移速为零。」删去「受避障力推动后进入匀速移动」，也删去「源句出隐身为讹写」这一结论。引文保留「出隐身／隐身」原文。",
+    "citation_additions": [],
+    "reason": "现引文第380–381行把「目标移速为零」定义为罚站出隐身／罚站隐身的条件。改写换成了另一个机制。相邻第382行只说「目标移速为零 将臂障力推动就是B站力是0.5大小」，并不是「进入匀速移动的条件」。更早的匀速移动句子不是这一句的逐字替换，且「出隐身」「臂障力」都没有登记成可改写的术语。",
+    "evidence_paths": [
+      "transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt",
+      "entity_corrector.py",
+      "kb_trial/curated_high_quality.json"
+    ]
+  },
+  {
+    "id": "fc1:索敌-11-2#r1",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "claim 改为「同帧部署现在挺乱；这很明显不是一个基于仇恨值的改动；同帧部署的反转现象影响了很多本不基于仇恨值进行结算的东西。」删「2026-02 版本」和「索敌改动导致」。同帧部署可保留。补上第476行前半，使这三句都在引文内。",
+    "citation_additions": [
+      {
+        "transcript_file": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+        "locator": "line 476 [02:03:28]",
+        "quote": "童真部署现在挺乱的 这很明显不是一个基于仇恨值的改动 就是他现在对这个童真部署的反转现象 影响了很多本不基于仇恨值进行结算的东西"
+      }
+    ],
+    "reason": "现引文只截了第476行后半。前半的「不是一个基于仇恨值的改动」在同一行，可以补上；源句没有「索敌改动导致」。「2026-02」来自 recorded_at，同视频第555行另有「2026年10月」，本条不写日期。「童真部署→同帧部署」由 entity_corrector 的「童真(?=部)」覆盖，不是未登记猜测。",
+    "evidence_paths": [
+      "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+      "entity_corrector.py",
+      "kb_trial/curated_high_quality.json"
+    ]
+  },
+  {
+    "id": "fc1:索敌-11-9#r1",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引第537行整行和第538行。claim 改为「在通用的仇恨过滤器中，会把仇恨值以0.1为精度取整后再排序；干员以时间为仇恨，0.1S对应三针，才有了每三针为一组。仇恨精度可以随需求调整，例如医疗以血量比例升序排序，他们使用的程精度为0.001。」不要写「部署时间」「三帧」「治疗目标选择」「部分干员」。subject 改为「通用的仇恨过滤器」。",
+    "citation_additions": [
+      {
+        "transcript_file": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+        "locator": "line 537 [02:37:21]",
+        "quote": "都是打先部署 这是因为在通用的仇恨过滤器中 会把仇恨值以0.1为精度 取整后再排序 因为干员以时间为仇恨 0.1S对应三针 才有了每三针为一组"
+      },
+      {
+        "transcript_file": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+        "locator": "line 538 [02:37:36]",
+        "quote": "均为头筹 同仇恨的问题 仇恨精度可以随需求调整 例如医疗以血量比例升序一排序 他们使用的程精度为0.001 理解了这些 我们才能理解以下两种现象"
+      }
+    ],
+    "reason": "0.1 精度和「0.1S对应三针」在第537行后半，现引文只截了「干员以时间为仇恨」；0.001 在紧邻第538行。数字有逐字出处，但「三针→三帧」不在 entity_corrector 的三针规则里（lookahead 不含本组上下文），「程精度」也没有登记订正，这两处保持源字。",
+    "evidence_paths": [
+      "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+      "entity_corrector.py",
+      "kb_trial/curated_high_quality.json"
+    ]
+  },
+  {
+    "id": "fc1:索敌-13-8#r0",
+    "calibrated_decision": "needs_human_confirmation",
+    "recommended_action": "先从 claim 删掉「2026-02 版本实测观察」（这句源文没有该日期）。血屋先保持原字，不要改名，也不要现在撤条。等用户核听后再决定保留或 remove_entry。",
+    "citation_additions": [],
+    "reason": "需要用户核听 transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt [03:03:57]「血屋」：它是敌方单位、召唤物，还是转写讹字？全库逐字稿仅此 1 处，entity_index 无该词条，模型不能猜名。该句又在「精简文案」列举里，不是展开的机制讲解。主体在源句内，所以不能直接按源外实体删除；去留是价值取舍。",
+    "evidence_paths": [
+      "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+      "kb_trial/entity_index.json",
+      "kb_trial/curated_high_quality.json"
+    ]
+  },
+  {
+    "id": "fc1:索敌-15-6#r1",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "claim 改为「攻击间隔小于索敌间隔的唯一案例是杰西卡」。删「（截至 2026-02 版本）」和「已知」。杰西卡保持源句原名。引文不动。",
+    "citation_additions": [],
+    "reason": "第44行已逐字写出「攻击间隔小于索敌间隔的唯一案例是杰西卡」。版本限定来自 recorded_at，不是这句源文，不能写入 claim。源句自己断言「唯一」，本条不另加游戏版本判断。",
+    "evidence_paths": [
+      "transcripts_txt/BV1dVcbzFEdd_p3_35992830013.txt",
+      "kb_trial/curated_high_quality.json"
+    ]
+  }
+]

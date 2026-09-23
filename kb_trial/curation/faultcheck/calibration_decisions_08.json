@@ -1,0 +1,474 @@
+[
+  {
+    "id": "qq_expansion:w001179:c02",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq1，并把 subject 从「该干员模组3级对3技能的等效攻击力」改为「谬因」（与 claim 一致）。不要把「谬因」写成「缪尔赛思」：entity_index 里二者是各自 canonical 的干员，没有互为别名。claim 可保留「用 3 技能时，模组开 3 级相当于 10% 攻击力；2 技能的情况答者不清楚」，但应加半句说明：seq9「3的话就相当于10%攻击力」紧接 seq6「用2和3技能」，与 seq1「模组开1还是3级」不是同一句；10% 是同窗衔接，不是单句等式。seq3「用1技能的话开3级蛮必要的」说的是 1 技能，不要引来支撑 3 技能这句。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_347.json",
+        "locator": "seq1",
+        "quote": "谬因模组开1还是3级比较好啊"
+      }
+    ],
+    "reason": "「谬因」和「模组开1还是3级」的逐字出处就在同窗 seq1，当前引文只有 seq6/9/10。补引后主体名落地；不需要用游戏知识把谬因还原成缪尔赛思，索引也没有这条映射。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_347.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001194:c03",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq43、seq49、seq52，用来锚定主体和条件，不改 seq59 的机制方向。同时做三处收窄：①「能否普攻」退回源字「能不能a」（entity_index 的「普攻」是独立词条，不是「a」的别名；entity_corrector.py 也没有这条替换）；②删掉「「找人」疑为输入讹写」——「找人」在 entity_index 与 entity_corrector.py 都没有规则，引文原字保留，不要下讹写判断；③subject 可保留「银灰」，但必须注明 seq59 本身没有「银灰」二字，名字来自同线程 seq49。seq49/seq52 的发言者是 7bf55033，seq59 是 host 589e9b6d，不是同一人的自我修正；seq49/seq52 写的是「中点判定」，只作先行词，不能当成「格判」的依据。condition 改为 seq43 的原场景「范围里有敌人但敌人不在范围的地块里」，并注明那是另一发言者的描述、带「大概这样」。技能名继续写「原文未点名」。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_124.json",
+        "locator": "seq43",
+        "quote": "[表情]@某人@某人 范围里有敌人但敌人不在范围的地块里，大概这样？"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_124.json",
+        "locator": "seq49",
+        "quote": "[表情]@某人@某人 银灰的这个技能是中点判定来着"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_124.json",
+        "locator": "seq52",
+        "quote": "能不能a是碰撞判定，但是弹道是中点判定，凌弥记得是这么回事（？"
+      }
+    ],
+    "reason": "银灰、范围地块场景、「能不能a／弹道是中点判定」都有同窗逐字句。缺的是引用，不是外部实体。术语上不能把「a」改成「普攻」，也不能把「找人」判成讹写。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_124.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "entity_corrector.py"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001206:c01",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "claim、subject、condition 收窄为已引原句能直接支持的内容：提问「小力的推能不能打断三重的？」，主播（589e9b6d）答「0-3=-3不行」。可写成「小力的推对三重，主播以『0-3=-3不行』作答（不能打断）」。删掉「力度等级 0」「作用于重量 3 的敌人」「力度差为负」「无法用失衡打断其动作」。窗内没有任何一句把 0 和 3 定义成力度等级和重量；后面的「较大力／中等力度」说的是阿消技能，不是这道算式。seq7「能进入失衡状态机就能打断」是群友 7bf55033 的一般条件，不是主播这句答复的组成部分；若要另记，必须单独成句并补引 seq7，且不得写成对「0-3=-3」的释义。",
+    "citation_additions": [],
+    "reason": "「不行」已经在主播引文里。把它解释成力度等级、重量和「无法用失衡打断」超出了原句；失衡那句虽然同窗存在，但接不上这道算式，补引也不能让当前这句成立。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_098.json",
+      "kb_trial/curated_high_quality.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001210:c02",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "subject、claim、condition 里的「阻挡半径」全部退回 seq2 的「基础数值」。claim 保留已有引文：基础数值为 0.8944；0.8944*1.23=1.100112；0.894 正好吃不到隔壁一格正中间过路的敌人；0.9 就有可能能吃到了。在 claim 正文补一句「1.23 的倍率来源原文未说明」（目前只写在证据说明里）。不要用 seq13/32/34/36 把 0.8944 定性成阻挡半径：那些行只有「阻挡没0.1半径」「你怎么也把阻挡+受击半径」「不吃受击半径的」「如果要阻挡一个正中的只能1.0」，没有「0.8944 是阻挡半径」这句。",
+    "citation_additions": [],
+    "reason": "六个数字都在现有引文里。多出来的是「阻挡半径」这个定性，同窗相邻行讨论了阻挡和受击半径，但没有把 0.8944 叫成阻挡半径，补引也不能补上这个等号。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_099.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001236:c01",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "claim 与两条引文保持不动（「群体建设」按原文用字保留，并维持「疑为输入讹字，含义未定」）。只改 subject：删掉「范围伤害」，改成「酒神开技能时已爆条单位的『群体建设』（原文用字，含义未定）」，与 claim 对齐。不要把「群体建设」写成「群体伤害」或「范围伤害」。",
+    "citation_additions": [],
+    "reason": "claim 已经回到源字并声明含义未定，这条本身成立。subject 仍把该词定性成范围伤害，窗内没有「范围伤害」或「群体伤害」，和 claim 自相矛盾，又没有句子可补。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_208.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001273:c02",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq20，以及 seq6、seq9、seq10。claim 收窄为：承「浮空不是会直接取消阻挡吗」，发言者记得「安洁莉娜这样肯定会筛不能阻挡的单位」，否则会一直「鬼畜的」跑来跑去；另有技能描述「可以阻挡的单位」。同窗没有说死这是 2 技能还是 3 技能（有人问是不是 3 技能，有人反问怎么不是 2 技能，并说 3 技能没有缚地），正文要带上这句限定，但不要写内部 seq 号。不要写成「安洁莉娜的技能」或 subject 的「安洁莉娜类技能」。seq26 的「明晦之印」是后文的实现疑问，不要写进本条。措辞上「筛掉」「鬼畜地」可退回源字「筛」「鬼畜的」，这不是机制改动。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_351.json",
+        "locator": "seq6",
+        "quote": "[表情]不是说的是3技能吗"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_351.json",
+        "locator": "seq9",
+        "quote": "怎么不是2技能"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_351.json",
+        "locator": "seq10",
+        "quote": "3技能没有缚地"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_351.json",
+        "locator": "seq20",
+        "quote": "浮空不是会直接取消阻挡吗"
+      }
+    ],
+    "reason": "「这样」的先行句和 2/3 技能之争都在同窗。本地文本足以把条目收窄到「安洁莉娜这样」，不需要用户用游戏知识去选技能序号。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_351.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001301:c01",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "删掉 claim 括注「本窗证据为贝洛内空中形态回位、安洁莉娜 3 技能落地两例」和「（如退行）」。subject 去掉贝洛内、安洁莉娜 3 技能、退行，改回引文能支撑的范围：初动类藏品按「部署时+sp」结算；位移/回位落地吃得到部署藏、吃不到撤退藏。claim 只留这一机制句。引文里的称呼是「贝贝」，entity_index 没有贝贝→贝洛内；seq23 只写「贝洛内空中ver」，不能改成「空中形态」，也不能当成贝贝的已登记别名。seq15 写「异格安姐三技能」，seq17–18 改口为「安洁」，seq29 才出现「安洁3技能」，这些都未进入本条引文，本条不收。seq44「比如退行」同样不收。",
+    "citation_additions": [],
+    "reason": "机制句已由现有八条引文支持。括注里的实体名是在引文之外另起的例子，而且「贝贝」没有索引别名可换成「贝洛内」，「空中形态」「退行」也不是源字。收窄后条目仍成立，不必整条删除，也不必请用户做角色认定。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_262.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001319:c03",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq26、seq27，从而保留「长边」。claim 与 condition 的「换行」统一退回 seq11 已引原字「变行」，不要用「换行」，也不要采用 seq43 里的「形变」。subject 不要写裸词「Bresenham」：host 原字是「b算法」；entity_index 把「b算法」的 canonical 记为「Bresenham算法」，把裸词「Bresenham」的 canonical 记为「平整化」，两条不是同一个表面形式。若写规范名，只可写「b算法（索引 canonical：Bresenham算法）」，不要写成「平整化」，也不要靠 seq42 的提问或 seq43 的无 speaker 排版长文当证据。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_109.json",
+        "locator": "seq26",
+        "quote": "[表情]@8627ff81 原版b算法是只判长边"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_109.json",
+        "locator": "seq27",
+        "quote": "判定方法是长边每走一格取个整"
+      }
+    ],
+    "reason": "「长边」是 host 在 seq26/27 的原字，补引即可。「换行」没有出处。「Bresenham」与「平整化」的冲突用索引里已有的两条 canonical 就能处理，不必再请用户定算法中文名。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_109.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001319:c04",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq50（host「关卡rune」）和 seq47（提问「藏rune？」）。保留「关卡 rune」这一称呼，用字跟源文「关卡rune」。公式继续并列源片段「就会是+200)*2」；「结算为（原防御+200）×2」里的「原」不是源字，应改成紧贴 seq44 的读法（全体敌人+200防御，然后敌人a防御*200%，源片段作 )*2），或明确标注这是编辑读法而不是原句。condition 不要升成「同一关卡同时存在全体加算与单体乘算的 rune」这条一般规则，收窄为「以突袭为例」的这一则口述示例。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_109.json",
+        "locator": "seq47",
+        "quote": "藏rune？"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_109.json",
+        "locator": "seq50",
+        "quote": "关卡rune"
+      }
+    ],
+    "reason": "「关卡rune」是 host 在 seq50 的原词，seq47 是对照提问。算式数字已在引文中。夹注里的「原防御」和 condition 的一般化是编辑添加，收窄即可，不需要用户判断 rune 的游戏含义。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_109.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001356:c01",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq39。claim 里的「演示中的新位移表现」改为 seq39 的「演示效果」／「他的表现」；本窗没有「位移」或「新位移表现」这几个字。删掉括注「未实装验证」，或若保留必须单独写明它来自非主播 seq52「等实装了只能，现在也猜不出啥」（0065bdfd），不能挂在「主播的判断」上。seq15「传送终点若为不可通行地块则不传送」仍是主播原句，保持为判断正文。「当前版本」可以用 seq39 的「当前版本」。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_016.json",
+        "locator": "seq39",
+        "quote": "[表情]从演示效果上，当前版本只有传送可以做到他的表现"
+      }
+    ],
+    "reason": "「演示效果」和「当前版本」是主播 seq39 的原字，补引后前半限定有着落。「未实装」不是主播的话，「新位移表现」在本窗没有逐字出处，这两处收窄，不需要用户确认是不是新机制。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_016.json",
+      "kb_trial/curated_high_quality.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001360:c02",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq6、seq7、seq9。这三句与 seq12/13 都是 host 589e9b6d，用来把「他们／哪个」落成「免疫黍传」和「免疫余传」。claim 可保留「珊比必须自己去检测目标带的是黍传还是余传免疫」。condition「需要被某类传送影响时」改成源内已点名的「检测免疫黍传还是免疫余传时」，不要再造「某类传送」这个上位词。不并入 c01。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_112.json",
+        "locator": "seq6",
+        "quote": "现在的传送免疫"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_112.json",
+        "locator": "seq7",
+        "quote": "只是免疫黍传和免疫余传"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_112.json",
+        "locator": "seq9",
+        "quote": "并且余会判定免疫黍传"
+      }
+    ],
+    "reason": "黍传、余传免疫是同一主播在紧邻前几句里的原词，不是外部实体。补引后指代自足。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_112.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001364:c03",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq2、seq3（墙体）、seq35 与 seq38（敌人）、seq47（unity物理引擎）。补引后可以保留「墙体」「敌人」和「unity 物理引擎」，但「unity」保持 seq47 的小写原词，不要另起引擎行为解释。claim 已有的「理所当然/当然应该，属预期而非实测」维持不变。seq47 是同一 host 对「往哪边弹出」的回答，不是另一次讨论。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_219.json",
+        "locator": "seq2",
+        "quote": "是因为加了点墙体"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_219.json",
+        "locator": "seq3",
+        "quote": "0.2宽度的墙体"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_219.json",
+        "locator": "seq35",
+        "quote": "把敌人的实体坐标挤在绿色点"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_219.json",
+        "locator": "seq38",
+        "quote": "而敌人物理碰撞箱下侧0.3宽度，上侧0.1距离"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_219.json",
+        "locator": "seq47",
+        "quote": "[表情]@879b5159 unity物理引擎啊"
+      }
+    ],
+    "reason": "条件里的墙体、主语「敌人」和 unity 都有同窗 host 原句，只是没进当前五条引文。没有需要用户确认的引擎知识。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_219.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001384:c02",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq7、seq13、seq16、seq17、seq18。补引后保留现 claim：M3、「下重构体」「开技能」「撤重构体」、同帧、以及「好像」「有可能我搞错了，我再试一下」。不要把 M3 改名为 Mon3tr：entity_index 对「M3」同时有 Mon3tr（prts_alias）和 M3（qq_alias）两条 canonical，本条保持源字。注明 seq21 是 0065bdfd、seq27 是 6617f148，不是同一个人；本窗没有 host。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_218.json",
+        "locator": "seq7",
+        "quote": "还有M3好像不能同帧下重构体开技能再撤重构体"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_218.json",
+        "locator": "seq13",
+        "quote": "有可能我搞错了，我再试一下"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_218.json",
+        "locator": "seq16",
+        "quote": "你同帧下重构体"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_218.json",
+        "locator": "seq17",
+        "quote": "同帧撤重构体"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_218.json",
+        "locator": "seq18",
+        "quote": "然后同帧开技能"
+      }
+    ],
+    "reason": "四个操作名和两处不确定用语都在同窗原句里。当前引文只有「这仨」「下和开」「开和撤」。补引即可，不必请用户解释 M3 是谁。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_218.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001466:c03",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq18、seq47、seq48、seq49、seq58、seq59、seq60。保留「见行者只在能触发＜0.005 这一档时判定为撞高台；0.005到0.01 是相离碰撞且不生效」。condition 不要写「最终落点为0.005位置（即直接顶住）」这种合称：＜0.005 时源句是 seq59–60「这帧会直接顶在0.005位置」；「直接顶在碰撞箱上」是 seq58 对 0.005到0.01 这一档的说法，而且 seq18 说相离碰撞不生效。两档的「直接顶」必须分开。seq27「见行者1技能是不判定的」在数字分档之前，不要单独理解成 1 技能从不判定；最终口径以 seq62–63 配 seq59–60 为准。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_005.json",
+        "locator": "seq18",
+        "quote": "这个在相离碰撞不生效的"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_005.json",
+        "locator": "seq47",
+        "quote": "但是如果距离＜0.005，会把敌人推到这个0.005的位置"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_005.json",
+        "locator": "seq48",
+        "quote": "0.005到0.01之间"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_005.json",
+        "locator": "seq49",
+        "quote": "就是一个相离碰撞"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_005.json",
+        "locator": "seq58",
+        "quote": "如果某帧在0.005到0.01之间，那么这帧可以到达这个位置，下帧移动前会直接顶在碰撞箱上停止失衡"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_005.json",
+        "locator": "seq59",
+        "quote": "但是如果某帧会＜0.005"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_005.json",
+        "locator": "seq60",
+        "quote": "那么这帧会直接顶在0.005位置"
+      }
+    ],
+    "reason": "0.005、0.01、相离碰撞和「直接顶在0.005位置」都是 host 同段原句。先前把建议里的补引 seq18 删掉了，数字才变成无引文。补回并拆开两档即可，不需要用户重判阈值。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_005.json",
+      "kb_trial/curated_high_quality.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001481:c02",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq1，用来锚定「妮芙2也这样」前面的「次数怪」。同时把「元素损伤」从 claim 和 subject 里删掉：七条现引文和 seq1 都没有这个词，反例原字是 seq10「凋亡损伤」；结论用已引的 seq28「妮芙不看伤害」。entity_index 里「元素损伤」和「凋亡损伤」是两条不同 canonical，不能互相替换。seq16「Logos我记得打次数，元素部分没问题」说的是 Logos、而且是「元素部分」，不要写成妮芙的「元素损伤结果不对」。烛煌保持 seq7 原句。subject 改为「妮芙2与烛煌：不按实际伤害／不看伤害（反例为凋亡损伤）」。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_267.json",
+        "locator": "seq1",
+        "quote": "咒愈按伤害算，所以次数怪一样能出治疗"
+      }
+    ],
+    "reason": "「次数怪」有同窗先行句。「元素损伤」没有逐字出处，索引也不把它当成「凋亡损伤」的别名，所以这个词要删，不是交给用户用游戏知识改名。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_267.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001553:c01",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "删掉 claim 括注「（不重置冷却）」。condition 里的「（继续冷却）」同样删除。只保留源字「灵知不清冷却」，以及已引的「随机有0-1点技力」和「会留绿条的」。不清冷却→不清楚的 ASR 回改不要动，引文不要动。不要把「不清冷却」写成「不重置冷却」或「冷却重置」。",
+    "citation_additions": [],
+    "reason": "本窗 16 条消息里没有「重置」或「继续冷却」。entity_index 没有把「不清冷却」登记为「重置冷却／冷却重置」的别名。这是无出处的术语等同，收窄回源字即可，不必请用户裁定两个黑话是否同义。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_134.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001586:c01",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq21 和 seq23。归属句改成提问者原句「因为一直要攻击，无法移动」，不要写成引号里的「攻击/技能会阻止移动」（源文没有「技能」）。主播否认保持 seq23「不对呀」，并注明发言者是 589e9b6d。condition 删除「（seq20 原文…）」这种内部序号，也删除「攻击冷却极短、几乎每帧都在攻击」；改成 seq20 已引原意「攻速高会原地罚站、一帧不动」，不要再暴露 seq 编号。前半「同帧先移动后索敌则不可能一帧不动」维持现引文。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_071.json",
+        "locator": "seq21",
+        "quote": "[表情]因为一直要攻击，无法移动"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_071.json",
+        "locator": "seq23",
+        "quote": "[表情]@6617f148 不对呀"
+      }
+    ],
+    "reason": "提问者说法和主播「不对呀」都在紧邻未引的两行里，补引后归属成立。当前引号句多了「技能」，condition 还把内部 seq 号写进了发布字段，这两处要改掉。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_071.json",
+      "kb_trial/curated_high_quality.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001616:c02",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq4（下限 0.001）、seq11 与 seq13（16.666 秒两侧实际生效时间不同）、seq1 与 seq2（提问原文「时间倍率-」「100％」，注意是全角百分号）。补引后删掉「数字待核」：这三个数都有原句。改成「原文没有把 0.001、500 倍和 16.666 秒写成同一条算式」。condition 不要写「被拉满」；窗内没有这个词。-100% 只作为 seq1–2 的提问话题，不要写成已经证实的触发条件。seq16「抵抗本质是加速时间流逝」是提问者 e73229d4 的复述，不要写成 seq4 发言者的结论。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_382.json",
+        "locator": "seq1",
+        "quote": "[表情]时间倍率-"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_382.json",
+        "locator": "seq2",
+        "quote": "100％"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_382.json",
+        "locator": "seq4",
+        "quote": "可抵抗状态生效时间倍率计算下限就是0.001"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_382.json",
+        "locator": "seq11",
+        "quote": "也就是说大于16.666秒的buff和小于16.666秒的buff"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_382.json",
+        "locator": "seq13",
+        "quote": "在这种情况下实际生效时间是不一样的"
+      }
+    ],
+    "reason": "0.001、16.666 和 -100% 的原句都在同窗，只是没进引文。缺的是引用和「被拉满」这个无出处的词，不是需要用户核验的游戏数值。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_382.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001617:c04",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq34，保留括注原句「假设敌人不是卡德霍这种超级抗性怪」。删掉「普通抗性」这个概括，也删掉「同窗后段亦指出该套对卡德霍不成立」。seq48「对，卡德霍那套不成立。」和 seq50 那段「只对普通抗性的boss有效」的 speaker 为空，行文是排版/生成段，不能当机制证据。不要把 seq44「卡德霍不能／因为免疫」接进这条 60 迟缓算例（中间隔着另一话题）。「卡德霍」保持源字，不要补成索引里的全名「卡德霍，黑流之源」。60、13.3333、1 帧维持现有引文。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_383.json",
+        "locator": "seq34",
+        "quote": "[表情]假设敌人不是卡德霍这种超级抗性怪，拐出来后，理论上灵知就能断boss技能了"
+      }
+    ],
+    "reason": "适用范围的原句在同一发言者的 seq34，补引即可。「普通抗性」和「该套不成立」落在无 speaker 的排版段上，不能用来收束本条。这是证据取舍，不需要用户判断卡德霍的抗性。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_383.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001655:c01",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq11 和 seq12。把「讨论中主播怀疑其坐标算错」改成「该发言者怀疑坐标算错了」。seq12 原文是「我怀疑坐标算错了」，发言者是 0f17ac97；本窗 has_host_authority 为 false，authorities 里没有 host。不要写成主播。主命题「聆风猎手用的和诱导是同款的判定」和「理论上就是个超大号猫」维持现有三条引文。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_385.json",
+        "locator": "seq11",
+        "quote": "诱导你觉得能把敌人诱导穿墙吗"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_385.json",
+        "locator": "seq12",
+        "quote": "我怀疑坐标算错了"
+      }
+    ],
+    "reason": "怀疑坐标算错有同窗原句，错在把 expert 发言标成主播。身份以工单 speaker 与 has_host_authority 为准，不需要用户确认是谁。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_385.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json"
+    ]
+  }
+]

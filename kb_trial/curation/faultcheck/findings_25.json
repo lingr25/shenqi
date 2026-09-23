@@ -1,0 +1,381 @@
+{
+  "chunk": "25",
+  "reviewed": 50,
+  "faulty": [
+    {
+      "id": "qq_expansion:w001998:c01",
+      "faults": [
+        {
+          "type": "not_self_contained",
+          "detail": "claim 通篇只有「喷胶」「正主」「该特殊逻辑」等无锚定说法，未点名干员/技能；条目自己的 evidence_review 已承认「『珊比』为群内称呼，窗内未给出正式全称」「『正主所在格』中『正主』的所指窗内未定义」。单独读这条无法知道是哪个干员、哪个技能、『正主』是施放者还是敌人。",
+          "fix": "在 subject/claim 里补上可定位主体（如「珊比2技能（工单原文用名）」）并把「正主」改成可理解表述（施放者本体所在格）；做不到就标注为不可定位并 demote"
+        },
+        {
+          "type": "evidence_mismatch",
+          "detail": "claim 把 seq 7「挤压起步那个左右方向反转是个bug」与 seq 12「往前喷这步，珊比配置的是向前1格」并列为同一技能的两条证据，但工单 qq_wo_b4_179.json 从未把「挤压起步」与「珊比2技能」等同（条目 evidence_review 也自承「未明示为同一技能」）；同一窗的上游窗卡把该主体写作「山2技能」（old_decisions 的 claim_as_decided），说明主体在链路上已被写成两个不同实体。",
+          "fix": "删去 seq 7 这条线，或明确标注两条线索的主体等价关系未确证；不要把「是个bug」的判断与配置描述混成同一条机制"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w001480:c01",
+      "faults": [
+        {
+          "type": "overclaim",
+          "detail": "末句「其机制与隐匿同类」把 seq 56 一句口语背书（「说他和隐匿一个模子刻出来的没毛病」）落成机制同类判定；窗内没有展开二者差异，而 seq 55 明确把该效果限定为「行动方式为地面的*敌方*单位」，隐匿则是不分阵营的无法选中，二者作用范围不同。",
+          "fix": "改为「群友认为与隐匿同源／同类（口语类比，差异未展开）」，或删去该分句"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000136:c01",
+      "faults": [
+        {
+          "type": "evidence_mismatch",
+          "detail": "末分句「地面单位同样会阻挡近战」是对 seq 36 残句「哦地面单位阻挡近战」的补全式改写，原句主宾关系不明（是「地面单位去阻挡近战」还是「地面单位会被近战阻挡」无从判定），claim 却用确定句式写死；该分句与前半「近战/远程按阻挡/非阻挡区分」之间在引文里也没有论证链（seq 50/51 只否定套用地面/飞行）。",
+          "fix": "只保留可自证的前半（祥子始终远程 + 别套地面/飞行），或改用 seq 28「阻挡和非阻挡吧」并把末句降为存疑"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000225:c04",
+      "faults": [
+        {
+          "type": "evidence_mismatch",
+          "detail": "claim 自行加了「群攻/群卫类机制」这一限定，引文（seq 65「这是鹰角语」、seq 66「意思就是攻击目标数等同于阻挡数（最低打1）」）只说「有个谁写的打3」，没有任何职业或分支限定；同窗 seq 68/69「不是」「他写的就是攻击数3」是对该口径的明确反驳，条目只把它塞进 evidence_review.limitations，claim 仍以定论写出。",
+          "fix": "删去「群攻/群卫」这一自行添加的限定，并在 claim 里并列分歧（如「有群友主张文本写的就是攻击数3」）"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000573:c03",
+      "faults": [
+        {
+          "type": "overclaim",
+          "detail": "唯一依据 seq 42 是假设式推演（「假设紫兰随机某一帧部署下去，如果敌人比紫兰后出就更有可能索到紫兰」），窗内无第二人确认、无任何实测；claim 把具体干员抽掉后直接写成通则「部署干员的索敌与生成顺序相关」。",
+          "fix": "降为「有群友提出（未验证）」并保留具体干员，或 demote"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000573:c04",
+      "faults": [
+        {
+          "type": "trivial",
+          "detail": "结论只有否定式加要素罗列（「不是写个时间表」「有波次和阻挡波次之类的要素的」「还有检查点」），没有给出任何一个要素的判定方式、参数或实例，回答不了任何具体问题（波次如何触发、阻挡波次是什么、检查点判什么），作 RAG 语料只能命中原话、不能提供知识。",
+          "fix": "补上原文可支撑的细节后再收；补不出来就删除"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000873:c02",
+      "faults": [
+        {
+          "type": "overclaim",
+          "detail": "claim 把「27 费小猫仍吃到技力」写成「银灰天赋有前置条件」的规则性表述，但窗内多名参与者把该现象视为异常：seq 37「我感觉更像bug」、seq 45「确实好奇怪哦」、seq 51/52「我记得不行」「这个好像只加一次」。条目只留复现者单方给出的条件链，未并列这些相反观察。",
+          "fix": "拆分：单纯的「费用低于风雪之眼」属可自证的设计条件可保留；「必须再次部署银灰才吃得到」应标注为群内未定性的异常，并并列 seq 37/45/51/52"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w001557:c01",
+      "faults": [
+        {
+          "type": "not_self_contained",
+          "detail": "主体「鼠鼠」是群内代称，条目未给敌人正式名或所在关卡；工单上下文显示该现象发生在特定地图（seq 10「未来见闻」、seq 55「同域共存地图文件里的这几块tile_hole和tile_road」），claim 却写成该敌人的自身传送机制，读者既不知道「鼠鼠」是哪个敌人，也无法判断现象是否与地图布置绑定。",
+          "fix": "补敌人/关卡锚定（含地图条件），或标注为不可定位并 demote"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w001557:c02",
+      "faults": [
+        {
+          "type": "not_self_contained",
+          "detail": "同样以「鼠鼠」为唯一主体且未锚定；此外 claim 的「其 tag 不代表实际实现」中「tag」未指明是哪一项，条目 evidence_review 自承「原文未指明是哪一项 tag」，单独读这条无法判断说的是哪个字段。",
+          "fix": "补敌人锚定与 tag 具体项；做不到就 demote"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000980:c01",
+      "faults": [
+        {
+          "type": "number_suspect",
+          "detail": "claim 把公式写成「1级属性+(满级属性-1级属性)*当前等级/(满级-1)」。按字面代入当前等级=满级，得 1级属性+(满级属性-1级属性)*满级/(满级-1)，不等于满级属性；代入当前等级=1，得 1级属性+(满级属性-1级属性)/(满级-1)，也不等于 1 级属性。分子应为「当前等级-1」（分母「满级-1」是级数差），条目照抄了原文的简写，却把它当成可直接套用的公式并作为「满级与 1 级相同者任何等级都相同」的推导依据。引文（qq_wo_b4_189.json seq 7/13）确为逐字，问题在数字本身无法自洽。",
+          "fix": "在 claim 里补注准确形式 1级属性+(满级属性-1级属性)*(当前等级-1)/(满级-1)，或明确标注为原文疑似漏写 -1 的简写"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000980:c02",
+      "faults": [
+        {
+          "type": "not_self_contained",
+          "detail": "主体只有群内代称「死芒」，未给干员名、职业、星级或技能等可定位信息；该名称在整个 qq_expansion 工单集里只出现在本窗（qq_wo_b4_189.json），claim 与 subject 都建立在一个无法解析的主体上。",
+          "fix": "补可识别主体（或标注「群内代称，未能定位」）后 demote"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w001410:c01",
+      "faults": [
+        {
+          "type": "evidence_mismatch",
+          "detail": "claim 写成无条件的「对敌人是无视碰撞体的传送」，但同窗 seq 19/22/23「所以拉不过墙不是碰撞箱的原因」「而是判定了高台？」「或者不可通行」、seq 24「传送带没法穿墙放置」、seq 60「拉是拉不过去，但是传送带本身可以过高台」说明该位移仍受地形/不可通行判定限制；条目只取 seq 9 一句「珊比3无视碰撞体」，把限制条件全丢掉了。",
+          "fix": "claim 补上限制（不能拉过墙／不可通行格，同窗 seq 19/22/23/60），或把「无视碰撞体」限定为「不按碰撞箱判定」"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w001875:c01",
+      "faults": [
+        {
+          "type": "evidence_mismatch",
+          "detail": "claim 的「判定与其他来源类效果同样走 dynamic」在引文里没有出处：seq 50「也是看dynamic的」只说本条（屏障）看 dynamic；seq 52「干员这边用dynamic这个词的非屏障目前还没看到」恰好说明干员侧没见过其他效果走 dynamic，与该比较分句的断言方向相反。",
+          "fix": "删去该比较分句，或改写为「本条按 dynamic 判定（窗内未见干员侧其他效果走 dynamic）」"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w001902:c02",
+      "faults": [
+        {
+          "type": "evidence_mismatch",
+          "detail": "claim 以通则形式写「熊的『不寻仇』并非寻仇真的结束，而是去蓝门的寻路逻辑占据了上风」，但同窗同批的 c01（本 chunk 第 25 条，同为窗 w001902）给的是方向相反的机制链「趴下→删除寻仇逻辑→取消强行去蓝门→走所有路径点」。两条互斥表述被分别立项、互不引用，违反条目自带的 conflict_policy（where sources disagree, all sides must be shown and the disagreement left standing）；条目自己的 limitations 也承认 seq 21「寻仇本身是1帧1刷」与「有检测周期」的关系原文未澄清。",
+          "fix": "把 [25] 与 [26] 合并为一条并列呈现（伏下链 vs 蓝门逻辑占上风），或在 claim 里明写两条解释并存且未澄清"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000137:c01",
+      "faults": [
+        {
+          "type": "overclaim",
+          "detail": "claim 以分类学定论写「技能按前摇方式可分为三类」，但引文只是某位群友自列的清单：条目自承「该分类为个人整理口径（原作者自陈 prts 尚未收录），非官方术语表」，seq 13「那是因为我还没写」也印证 prts 无此分类；且「按前摇方式」这一分类维度是条目自行添加，原文只说「不同类型的技能需要用不同的方式表示数据」。",
+          "fix": "写明为群内个人口径（非官方/未收录），并去掉自行添加的分类维度"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000162:c01",
+      "faults": [
+        {
+          "type": "overclaim",
+          "detail": "claim 写成「当前正前方的索敌优先级为…」的确定规则，但同窗 seq 13「还没人真的试出来过」、seq 14「理论上是这样的」已明确把它降为未经实测的理论口径，条目未做任何标注；condition 也直接写「未标注」。",
+          "fix": "claim 加注「窗内标注为理论口径、无人实测出来过」，condition 补「新版/当前版本（原文未给版本号）」"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000162:c02",
+      "faults": [
+        {
+          "type": "not_self_contained",
+          "detail": "claim 只有「以前正前方 1 级嘲讽等于 1 距离」，时间参照「以前」没有任何版本或时间锚点（条目自承「无法定位该规则的有效区间」），单独读既不知道是哪个版本，也不知道与 c01 的「当前」规则如何分界；本 chunk 第 44 条又给出同一「以前」时期的另一套折算（1 嘲讽=0.1 重量），两条互不对齐。",
+          "fix": "补版本锚点；补不出来就与第 44 条合并为一条「旧版嘲讽折算」，并标注版本不可定位"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000382:c01",
+      "faults": [
+        {
+          "type": "evidence_mismatch",
+          "detail": "claim 与 subject 写「罗小黑」，但本条自己的引文与工单原文（qq_wo_b4_204.json seq 21）是「那要是妮符出伤同帧怪回血了会怎么样」；在 qq_wo_b4_204.json 内 grep「罗小黑」为 0 次。条目 evidence_review 还自称「『妮符』按工单原文保留」，即 claim 的主体与自己的证据和复核说明互相矛盾，把主体换成了另一个干员。",
+          "fix": "把 claim/subject 改回「妮符（原文用名）」；同一错误已随 approved_manifest_b4.json 落地（该文件 entries[219] 与 reviews_b4/qq_wo_b4_204.json 同错），需一并回改"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000408:c01",
+      "faults": [
+        {
+          "type": "evidence_mismatch",
+          "detail": "evidence_review.reason 声称「群友 seq 11『我怎么记得晕眩不脱离阻挡，是我记错了吗』作为独立回忆与之同向」，但 w000408（qq_wo_b4_205.json）的 seq 11 是「依旧紫曰」；该句实际位于同批次另一工单 qq_wo_b4_206.json（窗 w000410）。即引用了本窗并不存在的旁证，且这条跨窗证据没有进入 citations，本条的独立旁证实际为零，只剩一句两字回应「被晕不解阻挡啊」。",
+          "fix": "删去该旁证，或改为显式跨窗引用（citations 里补 w000410）并说明是另一窗的回忆式表述"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000430:c01",
+      "faults": [
+        {
+          "type": "number_suspect",
+          "detail": "「1w 秒」这个量级不可核（约 2.8 小时，远超任何关卡时长），原文仅以「1w秒后」提出、无人解释该时长从何而来，条目自承「本窗未说明『1w 秒』是否为触发该规则的阈值，也未给出更短的等效时间」；claim 仍把「长时间后（如 1w 秒）」当作通则前提写出，检索命中后会把该数字当机制参数引用。",
+          "fix": "改为定性表述（在仇恨值被视为已衰减/归一的条件下），或保留数字但明确标注来源与不可核"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000430:c02",
+      "faults": [
+        {
+          "type": "duplicate",
+          "detail": "本条是同一窗 c01 规则套到「开局 0 帧玛恩纳」的实例（同窗 seq 3-6 与 c01 的 seq 1-2 是同一条问答链），除把主语换成玛恩纳外没有新增任何机制信息，且同样依赖那个未核实的「1w 秒」前提，属于 c01 的举例而非独立条目。",
+          "fix": "并入 c01 作为例证，或删除本条"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000455:c01",
+      "faults": [
+        {
+          "type": "evidence_mismatch",
+          "detail": "claim 加了「（集成战略）」这一模式归属，但工单 qq_wo_b4_208.json（窗 w000455）全窗 grep「集成战略」为 0 次，原文只说「法与律等符文」；条目自己的 limitations 也写「『法与律』为符文名，本窗未说明符文范围」——模式归属属条目自行添加。",
+          "fix": "删去「（集成战略）」，或明确标注该归属未经原文支持"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000500:c01",
+      "faults": [
+        {
+          "type": "not_self_contained",
+          "detail": "claim 以「这些召唤物（花）」开头，「这些」在本条内没有先行词，「花」也未锚定到干员/技能（条目自承「本窗未给出『花』对应的干员或技能名」）；工单里唯一相关线索是 seq 9 的一句玩笑「？！铁花飞！？」，无法定位主体。",
+          "fix": "补主体锚定；补不出来就标注不可定位并 demote"
+        },
+        {
+          "type": "overclaim",
+          "detail": "条目 evidence_review 自承「该陈述在同窗内被质疑（见 excluded），本窗未给出其验证」，claim 却仍以「必须…否则其他的所有花会一起失效」的确定句写出，把一条被质疑的单方陈述当结论。",
+          "fix": "claim 标注为未验证的群内说法，并列出同窗的质疑"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000500:c02",
+      "faults": [
+        {
+          "type": "not_self_contained",
+          "detail": "同 c01：「这些召唤物（花）」的「这些」无先行词、「花」未锚定，单独读不知道说的是谁的召唤物。",
+          "fix": "补主体锚定，或与 c01 合并为一条并统一补锚"
+        },
+        {
+          "type": "evidence_mismatch",
+          "detail": "原文 seq 12「可惜二天赋加攻只能吃一次」并未指明这个「二天赋」是召唤物的还是其干员的（天赋栏位在干员侧），claim 直接写成「召唤物（花）的二天赋加攻」，把归属固定到一个原文未确认的主体。",
+          "fix": "改为「该召唤物所属干员的二天赋加攻（原文未指明归属）」或按原文写「二天赋加攻只能吃一次」不加主体"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000748:c01",
+      "faults": [
+        {
+          "type": "evidence_mismatch",
+          "detail": "claim 只写「会挂上禁止手动部署」，但同一发言人（speaker 0f17ac97）在 seq 12 又说「他是挂了个禁止再部署，直至下次部署」；两说（禁止手动部署 / 禁止再部署直至下次部署）在同一窗并存，条目把两条都列进了 quotes，却只在 claim 里取一版、未并列另一版。",
+          "fix": "claim 写明两种原文措辞并存，或统一为更保守的「挂上禁止（手动）部署的标志，直至下次部署」"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000761:c02",
+      "faults": [
+        {
+          "type": "not_self_contained",
+          "detail": "同第 31 条：「以前」无版本/时间锚点，claim 单列一条历史折算，单独读既不知道属于哪个版本，也不知道与 c01（辞岁行至今）如何衔接；它与第 31 条「以前 1级嘲讽=1距离」是同一「以前」时期的另一套折算，两条从未对齐，读者无法判断是否同一套旧机制。",
+          "fix": "补版本锚点，或与第 31 条合并成一条「旧版嘲讽折算」并标注版本不可定位"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000761:c03",
+      "faults": [
+        {
+          "type": "evidence_mismatch",
+          "detail": "引文（seq 8「刺0重啊」、seq 25「她不锁刺真的只是因为刺0重」）里出现的是「她」，claim 直接落成「早露」；把「她」绑定为早露要靠未引用的 seq 6「枣子姐不锁刺的哦」与 seq 29「早露很强的说」两条旁证，本条 citations 里没有，claim 却已给出确定主语。",
+          "fix": "把 seq 6/29 补进 citations（写明昵称「枣子姐」与实际干员的对应），或把 claim 的主语按原文写成「她」并标注指代不明"
+        },
+        {
+          "type": "not_self_contained",
+          "detail": "「刺」是单字无锚定简称（同窗唯一线索是 seq 6），读者无法判断「刺」是哪个敌人/单位，也就无法判断「刺 0 重」这一条该怎么用。",
+          "fix": "补「刺」的正式名称或出处（关卡/模式），或标注为不可定位"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000761:c05",
+      "faults": [
+        {
+          "type": "evidence_mismatch",
+          "detail": "claim 断言「敌对目标被索敌时的顺序是按 5、4、3、2、1 排列」，但引文只有「她也是12345变41235吗」「不是」「变54321」三句纯数字串，1-5 指代什么窗内从未说明（条目自承「本窗未说明 1-5 编号对应的是什么（目标、位次还是朝向）」）；claim 的「敌对目标被索敌时的顺序」是自行补出的指代物，属结论超出引文。",
+          "fix": "改为按原文记述（「有群友称顺序为 54321，而非 41235；编号含义窗内未说明」），或把该条降级为 pending 直到编号含义可确证"
+        },
+        {
+          "type": "not_self_contained",
+          "detail": "因上述指代缺失，条目单独不可读：不知道 54321 说的是目标、位次还是朝向，也不知道适用场景，更看不出它与 c01「重量优先、再仇恨」如何共存（条目 limitations 已承认后两点）。",
+          "fix": "补上编号含义与适用场景后再收，否则 demote"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w001151:c01",
+      "faults": [
+        {
+          "type": "overclaim",
+          "detail": "claim 以「藏品犬植浆使所有干员获得光环能力：光环范围读取自…」的确定句呈现机制事实，唯一依据是某群友在 seq 2 直接粘贴的一段长文本，窗内无任何人复述、验证或反驳；条目自承「本窗未说明该说明底稿的出处（拆包、实测还是官方文案）」，category 却标为「拆包数据」。",
+          "fix": "标注为「群内流传的藏品说明底稿（出处未明）」，或先降级到待证；同源拆出的 c02/c03 也只有这一条消息支撑，需同口径处理"
+        }
+      ]
+    }
+  ],
+  "verbatim_spotcheck": [
+    {
+      "id": "qq_expansion:w001118:c01",
+      "quote_fragment": "用攻防算伤害，增减伤害叫伤判",
+      "result": "found",
+      "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_175.json（raw_messages seq 2，逐字命中；同文件「庇护是伤害变低，不是攻击力变低」亦逐字命中）"
+    },
+    {
+      "id": "qq_expansion:w000761:c05",
+      "quote_fragment": "变54321",
+      "result": "found",
+      "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_212.json（raw_messages seq 15；「她也是12345变41235吗」命中 seq 10）"
+    },
+    {
+      "id": "qq_expansion:w001151:c02",
+      "quote_fragment": "若受影响时未被阻挡，获得本藏品的迷彩（意思是0帧迷彩，但因为光环部署碰撞，需要延后1帧）",
+      "result": "found",
+      "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_214.json（raw_messages seq 2 整段逐字命中）"
+    },
+    {
+      "id": "qq_expansion:w000980:c01",
+      "quote_fragment": "1级属性+(满级属性-1级属性)*当前等级/(满级-1)",
+      "result": "found",
+      "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_189.json（raw_messages seq 13 逐字命中，另有 seq 7 的近似写法；引文真实，问题在公式本身缺 -1）"
+    },
+    {
+      "id": "qq_expansion:w000382:c01",
+      "quote_fragment": "那要是妮符出伤同帧怪回血了会怎么样",
+      "result": "found",
+      "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_204.json（raw_messages seq 21 逐字命中）；同一文件内 grep「罗小黑」= 0 次，故引文真实而 claim 主体「罗小黑」在原文中不存在"
+    },
+    {
+      "id": "qq_expansion:w000408:c01",
+      "quote_fragment": "我怎么记得晕眩不脱离阻挡，是我记错了吗（evidence_review.reason 标为「群友 seq 11」的旁证）",
+      "result": "not_found",
+      "where": "qq_wo_b4_205.json（窗 w000408）内 0 次命中；该句实际逐字位于 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_206.json（窗 w000410，seq 11），属跨窗旁证被写成同窗 seq 11"
+    },
+    {
+      "id": "qq_expansion:w001998:c01",
+      "quote_fragment": "往前喷这步，珊比配置的是向前1格",
+      "result": "found",
+      "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_179.json（raw_messages seq 12 逐字命中）；同文件 seq 7「挤压起步那个左右方向反转是个bug」亦逐字存在，但原文未把它与「珊比2技能」建立同一关系"
+    },
+    {
+      "id": "qq_expansion:w000455:c01",
+      "quote_fragment": "四舍六入五成双",
+      "result": "found",
+      "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_208.json（raw_messages seq 14 逐字命中）；同文件 grep「集成战略」= 0 次，claim 添加的模式归属无出处"
+    }
+  ],
+  "stats": {
+    "trivial": 1,
+    "not_self_contained": 10,
+    "overclaim": 7,
+    "evidence_mismatch": 13,
+    "asr_error": 0,
+    "number_suspect": 2,
+    "duplicate": 1,
+    "privacy": 0
+  }
+}

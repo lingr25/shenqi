@@ -1,0 +1,459 @@
+[
+  {
+    "id": "qq_expansion:w000666:c01",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "删除「变形斩」以及「原文一度写作「聚合斩」」的等同。claim 收窄为：「被追问的这一攻击行为：开技能之后的第一次攻击是对群，之后的平A都是对单。」subject 不要把「聚合斩」写成已确认正式名；若保留该词，只能注「同窗有人追问什么东西叫聚合斩，名称没有被回答确认」。不要从其他窗口补「变形斩」。review.reason 里的「主播」与本窗不符（authorities 仅 0f17ac97=expert），claim 不要加主播口径。",
+    "citation_additions": [],
+    "reason": "对群/对单已由 seq21、seq22 逐字支持。本窗「变形斩」0 命中；「聚合斩」只出现在 seq28「我说什么东西叫聚合斩」，是追问不是定名。entity_index 里两词各自为 canonical（qq/untyped），互不为别名，entity_corrector.py 无对应规则。没有可补的同窗等同句，不需要用户再裁定二者是不是同一次攻击。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_325.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "entity_corrector.py",
+      "qq_info/windows.jsonl"
+    ]
+  },
+  {
+    "id": "qq_expansion:w000666:c02",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "同样删除「变形斩」等同。机制句保留已引内容，收成：「被追问的这一攻击行为：平A吃能天使（原文作「能天使偷攻速」），开技能的第一下不吃，原是多少还是多少。」不要把 seq15 的「没影响」再展开成未解矛盾：它是提问方的概括，seq24/seq26 已经把平A与第一下分开。subject 与 c01 一样，不要写成未确认的「聚合斩」或源外的「变形斩」。「偷攻速」保持源组合词，不要补技能名。",
+    "citation_additions": [],
+    "reason": "「平A吃能天使」「第一下不吃 原是多少还是多少」「能天使偷攻速」分别在已引 seq24、seq26、seq15。超证部分只有「变形斩」这个本窗和实体登记都不支持的等同，应收窄而不是补引。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_325.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "entity_corrector.py",
+      "qq_info/windows.jsonl"
+    ]
+  },
+  {
+    "id": "qq_expansion:w000677:c02",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "删掉「≈27.78 帧」。算式改回已引原文：30/1.08=27.77777778，下一条写作 27.77 帧；动画长度 28 帧、＜0.5、立刻抬手、按帧四舍五入保持不变。condition 删掉「动画长度取得到」，改回已引 seq50 的「干员身上，动画匹配的比较常见」。不要把 seq42「动画可以取不到28」倒写成「取得到」。同步改 review_limitations：去掉仍写「claim 的 30/1.08=27.77 照录原文」又与 27.78 互相打架的句子，改为照录 27.77777778 与 27.77，不另造近似值。",
+    "citation_additions": [],
+    "reason": "27.78 在本窗不存在，已引 seq33/seq34 已覆盖源内两个写法，没有新的逐字句可补。condition 的「取得到」也不是源字。这是超证改写，不是需要用户取舍的公式争议。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_054.json",
+      "kb_trial/curated_high_quality.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w000679:c01",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "删除括注「所指单位与技能语境原文未展开」。回合制主干维持已引 seq26–32，不要改「接触落地隐」。若要让讨论对象自足，应改写括注为同窗已写明的 ew 落地隐匿／魂灵之影／迷彩，并另补 seq15、seq16、seq19、seq23、seq24、seq25；在补上之前不要保留「未展开」。",
+    "citation_additions": [],
+    "reason": "「未展开」与同窗相反：seq15 起已经写明 ew、魂灵之影、落地隐匿，seq23–25 写到 31 帧接触落地隐并获得迷彩。那些句子不能用来支撑当前这句假括注，所以本次先删括注，不把它们追加进现措辞。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders/qq_wo_010.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ]
+  },
+  {
+    "id": "qq_expansion:w000712:c01",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "claim 改回：「上下寻路过程中，面相由摄像头位置决定；你的所有选中干员，子弹时间的画面切换都是在动摄像头。」subject 改回「面相」，删除「本质」和「面向」。不要补 derived_text_repairs，也不要新增 entity_corrector 规则。若要消歧，同窗能支持的词是 seq6「朝向」加 seq7「会」，届时再补这两句，并且写成「朝向」而不是「面向」。",
+    "citation_additions": [],
+    "reason": "seq4 原文是「面相」，seq5 是「你的所有选中干员……都是在动摄像头」。entity_index 无「面相」，「面向」与「朝向」各自独立，entity_corrector.py 无「面相→面向」。当前「面向」「本质」和丢掉「所有」都没有逐字出处。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_071.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "entity_corrector.py",
+      "qq_info/windows.jsonl"
+    ]
+  },
+  {
+    "id": "qq_expansion:w000759:c01",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq1 与 seq7 后保留「伤害部分」这半句。括注改成「答句只写『那是伤害部分』，未逐字写『不是推力』」，不要再说原文未展开。condition 删掉窗内没有的「打箱/推球类玩法」，改为「踢球产生推力时」。0.25、45°、力度-2 仍以已引 seq5 为准，「这些参数」可继续作为「那些东西」的转写。不要把梓兰、温蒂、龙之箭写进 claim。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_073.json",
+        "locator": "seq1",
+        "quote": "为什么踢球撤梓兰龙之箭的推力没了"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_073.json",
+        "locator": "seq7",
+        "quote": "[表情]@b4dcc920 那是伤害部分"
+      }
+    ],
+    "reason": "「踢球」在 seq1，「那是伤害部分」在 seq7，都是同窗逐字句，只是没进当前 citations。seq6 仍是提问，不能单独支撑伤害部分。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_073.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ]
+  },
+  {
+    "id": "qq_expansion:w000780:c02",
+    "calibrated_decision": "support_current",
+    "recommended_action": "维持现 claim 和 seq9–13 引文，不要补关卡名或活动名。可选、非必须：在 condition 追加「原文未给活动或关卡名」。不要改数字，也不要把已经写明的「30 帧/秒属本条推算」改成源文。",
+    "citation_additions": [],
+    "reason": "2 帧超过 2.5、一帧 1.25 格、37.5、9 个金币、36 都在已引句内。全窗没有「30」、活动名或关卡名。缺的是源文本来就没有的关卡名，不是能补的引文，也不需要用户提供游戏知识。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_075.json",
+      "kb_trial/curated_high_quality.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w000861:c01",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq11 支撑「14费的时候部署15费干员，变为-1费，不额外吃你费用」，补引 seq13 支撑「配置」。不要用已引 seq12 的反向算例（15 费部署 14 费）充当这一支。-10/-5 与「如果没错的话」保持已引 seq7/seq18。「未实测」不是原句，留在审核注即可，不要写成原文已声明未实测。负号与引文一致，用源文的「-」。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_434.json",
+        "locator": "seq11",
+        "quote": "[表情]@b4dcc920 就，你14费的时候部署15费干员，变为-1费，不额外吃你费用"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_434.json",
+        "locator": "seq13",
+        "quote": "他有个配置"
+      }
+    ],
+    "reason": "14 费部署 15 费变为 -1 且不额外吃费用的原句是 seq11；「他有个配置」是 seq13。「代码」已在 seq15。这是漏引，不是算式无出处。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_434.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ]
+  },
+  {
+    "id": "qq_expansion:w000863:c01",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq1、seq2、seq6、seq7、seq9、seq13、seq17、seq19 后，保留 PRTS 转述、山堵蓝门左下、鱼钻入中间字格、右上角挖掉后的反例，以及「右上角又没有连片的格子」。review.reason 删掉「窗内无人反驳」：seq13 已提出反例问题，seq19 写明挖掉后往右走。seq17 的发言人是 host 589e9b6d，称「主播」可以保留；寻路三句仍用已引 seq10–12。不要补关卡名或敌人正式名。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_080.json",
+        "locator": "seq1",
+        "quote": "我山堵蓝门左下，按理来说鱼走完检查点后就向上跑了"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_080.json",
+        "locator": "seq2",
+        "quote": "结果他直接钻到中间字格里了"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_080.json",
+        "locator": "seq6",
+        "quote": "[表情][图片] 这个地方的字被挖掉后就不会这样了"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_080.json",
+        "locator": "seq7",
+        "quote": "鱼会直接往上走"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_080.json",
+        "locator": "seq9",
+        "quote": "[表情]@eb1917ed prts写的很清楚了"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_080.json",
+        "locator": "seq13",
+        "quote": "那为什么右上角挖掉后又不会这样了"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_080.json",
+        "locator": "seq17",
+        "quote": "[表情]@eb1917ed 右上角又没有连片的格子"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_080.json",
+        "locator": "seq19",
+        "quote": "右上角挖掉后就往右走了"
+      }
+    ],
+    "reason": "claim 后加的观察、PRTS 字样、反例和连片格子都在同窗有逐字句，只是 citations 仍停在 seq10–12。补引即可，不必退回只剩寻路三句。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_080.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ]
+  },
+  {
+    "id": "qq_expansion:w000873:c02",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq27、seq37、seq52、seq55 后保留「银灰—小猫」交替、复现者称「更像bug」、以及「天赋效果是一次性给的／只加一次」，成因未定也保留。费用门槛仍以已引 seq29「本身费用要比风雪眼底」为准，不要改数字 27。「风雪之眼」是同窗 seq23/seq33/seq57 的全称，entity_index canonical 也是风雪之眼；「低于」只作为「眼底」的读法，不要再改门槛。「小猫」在 entity_index 无映射，继续用原文昵称，不要补干员或召唤物正式名。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_185.json",
+        "locator": "seq27",
+        "quote": "银灰小猫银灰小猫"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_185.json",
+        "locator": "seq37",
+        "quote": "我感觉更像bug"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_185.json",
+        "locator": "seq52",
+        "quote": "这个好像只加一次"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_185.json",
+        "locator": "seq55",
+        "quote": "因为银灰的天赋效果是一次性给的"
+      }
+    ],
+    "reason": "三处新增限定都有同窗原句。小猫没有登记映射，沿用昵称就能落地，不需要用户起正式名。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_185.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ]
+  },
+  {
+    "id": "qq_expansion:w000901:c01",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq11、seq12。保留「酒神天赋的 1.3」和紧接着的「2技能的 1.5 溅射」。seq12 没有重复主语，但与 seq11 同为 589e9b6d 的连续两句，可以并列，不要另补技能全名或单位。格判、陷阱师、黍、阻挡仍用已引 seq13–17。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_113.json",
+        "locator": "seq11",
+        "quote": "[表情]@6167879d 中点判定比如酒神天赋的1.3"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_113.json",
+        "locator": "seq12",
+        "quote": "2技能的1.5溅射"
+      }
+    ],
+    "reason": "1.3、1.5 和「酒神」的逐字句就在同窗 seq11/seq12，entity_index 已有酒神（prts/operator 等）。缺的是引文，不是实体归属。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_113.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "entity_corrector.py"
+    ]
+  },
+  {
+    "id": "qq_expansion:w000949:c04",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq25 后保留「目前有个例外是断罪者，未展开」。不要补断罪者的技能名或成因。打断部署动画导致没有部署「完成」时、回费丢失，仍以已引 seq20/22/23/24 为准；「时点」是对源文「时」的转写，可改回「时」，不构成否决。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_196.json",
+        "locator": "seq25",
+        "quote": "[表情]目前有个例外是断罪者"
+      }
+    ],
+    "reason": "例外句是同窗 seq25 的原文，断罪者在 entity_index 为 prts/operator。当前只是没把这句收进 citations。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_196.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ]
+  },
+  {
+    "id": "qq_expansion:w000957:c03",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq11、seq19、seq20，使「弑君者」和「被动抵了」有同窗出处；「锁地板」已在 seq31。补引后两说都可以保留为未排除。按 entity_index 的 user 映射，把「未指认具体单位」改为「原文昵称大盘鸡，登记名帝国炮火先兆者」；引文原文不要改，也不要补窗内没有的武器或技能细节。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_013.json",
+        "locator": "seq11",
+        "quote": "[表情]@某人 凌弥觉得是不是这样，弑君者三技能隐匿buff要落地一帧生效，这个技能携带的时候没有落地隐匿"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_013.json",
+        "locator": "seq19",
+        "quote": "[表情]飞机比弑君者创建靠前，正好索敌帧对应上了"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_013.json",
+        "locator": "seq20",
+        "quote": "不吃伤害是因为弑君者被动抵了（）"
+      }
+    ],
+    "reason": "弑君者不吃伤害的「被动抵了」在 seq20，名字的先行讨论在 seq11/seq19。大盘鸡到帝国炮火先兆者已是 entity_index 的 user 映射，不是凭旧知识新起的名，不必再请用户确认。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_013.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ]
+  },
+  {
+    "id": "qq_expansion:w000980:c01",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "公式改回 seq13 原式：「1级属性+(满级属性-1级属性)*当前等级/(满级-1)」。删除「(当前等级-1)」和「属漏写 -1 的简写」。seq7 的「相当于(满级属性-1级属性)*当前等级/(满级-1)」可并列保留为近似说法。删掉源文没有的「插值」，用「相当于」或直接照录等式。末句「不管多少级都是20抗」维持已引 seq14，不要写成具体的法抗或其他属性名。",
+    "citation_additions": [],
+    "reason": "两条已引公式都是「*当前等级/(满级-1)」，本窗没有「(当前等级-1)」。这是审查方自己的代数补项，没有同窗逐字句可补，本层不改数，也不把该不该补 -1 交给用户。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_189.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001023:c01",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "删除「酒神技能生成的」。claim 改为：「牢笼（所属干员原文未点名）：第二个爆条刷新第一个牢笼的阻挡，刷新阻挡是 0 帧刷；如果是生成牢笼，则 0 帧出生、1 帧阻挡；因此一个牢笼 0 帧撤不会阻挡，两个牢笼 0 帧撤阻会阻挡。」爆条来源也不要补名。帧序继续用已引 seq9–13，「0 帧生效」若保留，注明对应源文「0帧刷」。",
+    "citation_additions": [],
+    "reason": "本窗 31 条消息没有「酒神」。牢笼、爆条在 entity_index 的 canonical 就是这两个词，没有指向酒神的别名。跨窗锚点不能当作本条引文。帧序本身可以收窄后保留，不必整条删除。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_115.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001029:c01",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq9、seq10、seq21、seq24、seq28。claim 不要再写成无条件的「不会产生多帧少帧」，收成：「检查点停驻可以写 0.1，按 time 不是 frame；对『是否一定整秒、会不会多帧少帧』的回答是不会。」同窗「多罚站一帧」是因为一帧＜1/30、属于冷却制，交叉指向已有条目 qq_expansion:w001029:c02，不要把两句收成互相否定。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_087.json",
+        "locator": "seq9",
+        "quote": "话说检查点的停驻帧数一定是整秒的吗"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_087.json",
+        "locator": "seq10",
+        "quote": "会不会有多帧少帧"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_087.json",
+        "locator": "seq21",
+        "quote": "[表情]不是说会多罚站一帧("
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_087.json",
+        "locator": "seq24",
+        "quote": "[表情]@2aaa8356 那是因为一帧＜1/30"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_087.json",
+        "locator": "seq28",
+        "quote": "冷却制"
+      }
+    ],
+    "reason": "「整秒」「多帧少帧」在 seq9/seq10，「不会」已引 seq16。多罚站一帧、一帧＜1/30、冷却制在 seq21/seq24/seq28，且 c02 已经用这些句子作了另一条。本条缺的是引文和适用范围，不是缺游戏知识。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_087.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001039:c02",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq4、seq5、seq6 后保留「15 秒」和「每秒 600、上限 600，所以是 9000」。10 轮、3 帧、9000 仍用已引 seq9/seq11/seq12。「10 轮/秒」注明是对「第一秒内……10轮（不是次）」的转写，不要写成原文有「/秒」这个单位。不要补损伤机制名或干员名。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_117.json",
+        "locator": "seq4",
+        "quote": "X上限600"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_117.json",
+        "locator": "seq5",
+        "quote": "15秒每秒600"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_117.json",
+        "locator": "seq6",
+        "quote": "那不就是9000"
+      }
+    ],
+    "reason": "15 秒和 600 的逐字句在同窗 seq4–seq6，用来纠正「第一秒内打满 9000」是对的，只是这三句还没进 citations。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_117.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001046:c01",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq2、seq5、seq8。保留「寒霜」和原文用名「伊神2」，不要改成伊内丝或其他干员。优先把「一帧帧穷举」改回已引 seq4 的「一帧帧试」；若保留「穷举」，只能作为 seq8 提问方用语（seq10「嗯」），并与 host 的「试」并列。seq6「可以」继续作为 seq5 的应答。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_119.json",
+        "locator": "seq2",
+        "quote": "伊神2怎么躲寒霜来着"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_119.json",
+        "locator": "seq5",
+        "quote": "从生成开始数过去可行么"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_119.json",
+        "locator": "seq8",
+        "quote": "因为穷举已经很快了是吧"
+      }
+    ],
+    "reason": "寒霜、伊神2 在 seq2，「从生成开始数过去」在 seq5，都是同窗原句。「伊神」在 entity_index 无条目，沿用原文，不另起名。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_119.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001052:c02",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq35、seq36、seq38。claim 收成：「算上狂躁+50攻速后，发言人当场否定了 0.1，改为数据值 0.2727...，8.18 帧。」删除「约」「秒」和自行补上的「攻击间隔」；这三个词都不是 seq38 的原字。同步改 review.reason，删掉「窗内无人提出不同阈值、未作换算或补齐单位」。0.1 与 9000 仍用已引 seq34，狂躁用 seq36 和已引 seq40。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_248.json",
+        "locator": "seq35",
+        "quote": "不对啊"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_248.json",
+        "locator": "seq36",
+        "quote": "你要算狂躁+50攻速"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_248.json",
+        "locator": "seq38",
+        "quote": "数据值0.2727...，8.18帧"
+      }
+    ],
+    "reason": "更正关系、+50 攻速、0.2727 和 8.18 帧都在同窗连续句里。超证的只是把「数据值」写成「秒的攻击间隔」，收窄用词即可，不必退回只留已被否定的 0.1。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_248.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001168:c01",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "补引 seq7 与 seq22 后保留可露希尔、迟钝、酒神3牢笼，以及「敌人30s本来就打不爆笼子」和「窗内未闭合」。-60% 与「不是延长控制时间」仍用已引 seq12–seq16。review.reason 改为与 claim 一致，不要再写「反问式确认，整段闭合」。本窗 authorities 只有 expert 0f17ac97，seq22 发言人是 9a9003c1，claim 不要加主播口径。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_344.json",
+        "locator": "seq7",
+        "quote": "说正经的，问一下，酒神3牢笼控敌人以后，可露希尔挂迟钝是不是可以延缓牢笼被击破"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_344.json",
+        "locator": "seq22",
+        "quote": "其实发现敌人30s本来就打不爆笼子"
+      }
+    ],
+    "reason": "主体和 30s 反向说法都在同窗：seq7 点名可露希尔、迟钝、酒神3牢笼，seq22 写出 30s 打不爆笼子。当前引文只有攻速讨论，所以要补引而不是删主体。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_344.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ]
+  }
+]

@@ -1,0 +1,322 @@
+{
+ "chunk": "12",
+ "reviewed": 48,
+ "verdicts": [
+  {
+   "id": "qq_expansion:w000533:c01",
+   "verdict": "fix",
+   "fault_type_kept": "evidence_mismatch",
+   "suggestion": "condition 改为「从上往下射箭（引文 seq 1 给出的观察前提）时」，删去「；更一般地，弹道按帧移动的情形」；claim 可加限定「（一次自上而下射箭观测，主播口径）」。",
+   "reason": "claim 主命题由逐字引文支持，但 condition 里的「更一般地，弹道按帧移动的情形」是条目在单次「从上往下射箭」观测之外自行添加的推广，超出引文范围。"
+  },
+  {
+   "id": "qq_expansion:w000533:c02",
+   "verdict": "minor",
+   "fault_type_kept": "number_suspect",
+   "reason": "数值「0 0.23232」在 seq 10 逐字存在、claim 也未超出原文表述（原文只说「正常弹道出生坐标」），属照录而非编造；缺坐标系与单位是来源本身的局限，可容忍。"
+  },
+  {
+   "id": "qq_expansion:w000549:c02",
+   "verdict": "remove",
+   "fault_type_kept": "not_self_contained,duplicate",
+   "reason": "「上述加速过程」与「其」在本条内均无先行词（先行词在同窗 c01），单独成条不可读；且内容与 c01（一方向向 0 减速、另一方向向目标加速）实质重复、未新增条件或数值。保留同窗 qq_expansion:w000549:c01。"
+  },
+  {
+   "id": "qq_expansion:w000553:c02",
+   "verdict": "minor",
+   "fault_type_kept": "evidence_mismatch",
+   "reason": "claim 由 seq 17/19/21 三句逐字支持，成立；缺陷是引文表把 seq 18 的「[多媒体消息或表情]」占位符（speaker 为 null、无正文）也列为证据，属引文卫生问题，不影响命题。全库同类占位符引文共 5 条（w000509:c04、w000509:c07、w000553:c02、w000719:c02、w001071:c01），可一并清理。"
+  },
+  {
+   "id": "qq_expansion:w000559:c01",
+   "verdict": "fix",
+   "fault_type_kept": "overclaim",
+   "suggestion": "claim 改为「（群友经验，未经主播/专家当场确认）前十费的费用条有两个空费帧，29 帧与 30 帧被揉在一起并被揉到下一费，只有一点差别，因此不适合用来测帧」；并把 review 理由中「seq 1/4 是主播方对该测法的否定」订正为「seq 1/4/11（ae4d9f3e）、seq 23（2aaa8356）为群友结论，窗内无主播/专家确认，seq 47 仅为群友转述主播曾否定该测法」。",
+   "reason": "上游窗卡明确标注本条为「群友 lead」「窗内未获主播/专家当场确认」，而条目 review 理由写成「seq 1/4 是主播方对该测法的否定」；seq 1/4/11 实为 ae4d9f3e、seq 23 为 2aaa8356，本条引文无一条来自主播或专家，等于把未确认的群友经验升格为 agent_verified 机制结论并附上不存在的背书。"
+  },
+  {
+   "id": "qq_expansion:w000582:c01",
+   "verdict": "fix",
+   "fault_type_kept": "overclaim",
+   "suggestion": "仅改 review/evidence 描述：把「由主播方先纠正对象」改为「由专家（0f17ac97）纠正对象（上游窗卡标 expert）；主播本窗仅回『这样吗』『那确实不懂了』，未参与该议题」；claim 与引文不动。",
+   "reason": "claim 与引文均无误，但 review 理由写「由主播方先纠正对象」，而上游窗卡把 seq 1/2/9（0f17ac97）明确标为「专家 expert」，同窗主播（589e9b6d）只回「这样吗」「那确实不懂了」：属把专家解读写为主播背书。"
+  },
+  {
+   "id": "qq_expansion:w000582:c02",
+   "verdict": "fix",
+   "fault_type_kept": "overclaim",
+   "suggestion": "仅改 review/evidence 描述：改为「专家（0f17ac97，上游窗卡标 expert）给出的直接断言，并由其本人补充后果（seq 15）；主播本窗未参与」；claim 与引文不动。",
+   "reason": "seq 11/15 均出自 0f17ac97（上游窗卡标「专家 expert」），review 理由却写成「主播方给出的直接断言」「是对它的确认」，而同窗主播对 uid 话题自陈「那确实不懂了」。"
+  },
+  {
+   "id": "qq_expansion:w000582:c03",
+   "verdict": "fix",
+   "fault_type_kept": "overclaim",
+   "suggestion": "仅改 review/evidence 描述：改为「提问方 b4dcc920 提问、专家（0f17ac97，上游窗卡标 expert）答『不同的』；本窗无主播参与」；claim 与引文不动。",
+   "reason": "seq 22「不同的」出自 0f17ac97（上游窗卡标「专家 expert」），review 理由写成「主播方的直接回答」，本条实为提问方 b4dcc920 + 专家一句作答，本窗无主播参与。"
+  },
+  {
+   "id": "qq_expansion:w000584:c02",
+   "verdict": "fix",
+   "fault_type_kept": "evidence_mismatch",
+   "suggestion": "claim 改为「（该活动机制的）等比保留只保存技力冷却（回复进度），不能存技力本身；常规情况下技力只有整数、没有小数」；condition 改为「该活动移动机制等比保留 SP 比例时」；删去「撤退等操作」这一引文未覆盖的主语。",
+   "reason": "claim 主语「撤退等操作」在全部引文中不出现：本窗讨论的是该活动移动机制的「等比保留 sp 比例」（seq 4/5），引文只有「只能存回复进度」「不能存sp」「是这样的」；把结论扩到「撤退」属自行外推（括号里的「故常规下不会有小数技力」倒是同窗 seq 28-30 的主播口径，但同样未被引）。"
+  },
+  {
+   "id": "qq_expansion:w000607:c01",
+   "verdict": "minor",
+   "fault_type_kept": "evidence_mismatch",
+   "reason": "「光环类」这一归类在同窗引文内确有依据（seq 26/27「也是光环」「这种反隐基本都是光环」），但原文带「基本」、且「无视不可选中」的实例只有该干员一个；属可容忍的类化，claim 宜保留「基本」这一限定。"
+  },
+  {
+   "id": "qq_expansion:w000607:c03",
+   "verdict": "fix",
+   "fault_type_kept": "overclaim",
+   "suggestion": "claim 改为「（专家推测，未核实）『无视特定异常效果/异常效果组合』的判定逻辑：在假定目标没有该异常效果的情况下判断能否选中（类似给对方套了一个隐匿免疫）；若沉睡带来的无敌随之消失且无其他阻挡即可选中，若无敌仍在则选不到」（保留「可能」的语义）。",
+   "reason": "引文 seq 59 原文句末带问号且写「有点类似」，seq 61 写无敌「可能」会消失，均为专家的类比推测；claim 去掉了问号与 hedge，把推测写成确定的判定逻辑与两分支条件。"
+  },
+  {
+   "id": "qq_expansion:w000641:c01",
+   "verdict": "withdraw",
+   "fault_type_kept": "overclaim(撤回)",
+   "reason": "condition 已写明「动画帧率高于逻辑帧率时」，正是原文 seq 2 的方向限定；claim 主命题由 seq 1/2/3 三句逐字引文（同一主播）支持，丢掉的只是口吻词「一般而言」，不构成实质夸大。"
+  },
+  {
+   "id": "qq_expansion:w000641:c02",
+   "verdict": "fix",
+   "fault_type_kept": "overclaim",
+   "suggestion": "claim 改为「（主播预判，本窗未实测）动画帧率 30、逻辑帧率 60（即 2 倍速）时，卡前摇这个行为会异常明显」。",
+   "reason": "seq 9「你觉得会咋样」是设问、seq 11 是主播对该假设的预判，窗内无实测也无参数；条目以「会异常明显」的定论形式收录，未标推测属性。"
+  },
+  {
+   "id": "qq_expansion:w000641:c03",
+   "verdict": "fix",
+   "fault_type_kept": "not_self_contained,overclaim",
+   "suggestion": "claim 改为「（群内答复，未给依据）动画帧率与逻辑帧率不一致不会影响已有和未来的代理作战」；删去「上述差异」这一指代，并把 seq 11「卡前摇这个行为会异常明显」从本条支撑中剔除（它属 c02）。",
+   "reason": "claim 的「上述差异」在本条内无先行词（指同窗 c01/c02 的帧率差）；唯一证据 0f17ac97（上游窗卡标专家）一句「不会影响已有的和未来的代理作战」无理由无依据，被列为引文的 seq 11 属另一条表现描述、并不支撑本命题，条目却以机制事实收录。"
+  },
+  {
+   "id": "qq_expansion:w000654:c01",
+   "verdict": "fix",
+   "fault_type_kept": "evidence_mismatch,number_suspect",
+   "suggestion": "在 citations 中补引 seq 17 原文「[表情]@e83ac58d 柱子嘲讽值-1」（@ 为合规匿名槽位，既有引文与引文文本一律不动），claim「破碎支柱（柱子）的嘲讽值为-1」不变；并注明该值由群友给出、主播 seq 18/19 当场认可。",
+   "reason": "claim 的核心数值 -1 在条目引文里不存在：唯一出处 seq 17「柱子嘲讽值-1」被排除在外（review 自认因含 @ 提及），引文只剩提问与「我搞错了」；按本项目 number_rule，claim 中的数字必须有同文引文。"
+  },
+  {
+   "id": "qq_expansion:w000668:c01",
+   "verdict": "fix",
+   "fault_type_kept": "evidence_mismatch",
+   "suggestion": "在 citations 中补引 seq 9 原文「[表情]@0065bdfd 属性进图取整」（@ 为合规匿名槽位），claim 不变；并据实修正 review 理由中关于 @ 提及的表述。",
+   "reason": "claim 前半「属性进图时取整」的唯一出处 seq 9（主播，「[表情]@0065bdfd 属性进图取整」）被排除在引文之外，引文只有后半；review 理由中「本条以 seq 10 的原句为证」「本窗对该问题的两处回答均含 @ 提及」与原文不符（seq 10 不含 @）。"
+  },
+  {
+   "id": "qq_expansion:w000668:c02",
+   "verdict": "withdraw",
+   "fault_type_kept": "evidence_mismatch(撤回)",
+   "reason": "引文已含问句「还有攻速会四舍五入吗」与答句「不会」，claim 即答句内容；问句是在「攻速」这一主题上的一般性追问（「还有…吗」），「沼泽」只是同窗邻题的语境，不构成本条缺主体或结论外推。"
+  },
+  {
+   "id": "qq_expansion:w000668:c03",
+   "verdict": "minor",
+   "fault_type_kept": "not_self_contained",
+   "reason": "主体「沼泽」在 22.7 万条语料中仅此一处、entity_index 无对应条目，确属弱锚定；但引文与原问句同窗、condition 已交代与「+N 类攻速修正」的比较对象，claim 未超出原文（原文只说「至少比常见的+N晚」），可容忍，宜在来源补全后回填主体。"
+  },
+  {
+   "id": "qq_expansion:w000712:c01",
+   "verdict": "fix",
+   "fault_type_kept": "asr_error",
+   "suggestion": "claim 改为「上下寻路过程中，单位面向由摄像头位置决定；选中干员以及子弹时间的画面切换本质都是在动摄像头」；subject 改为「上下寻路时的单位面向」；引文保留原文「面相」不动，并在 derived_text_repairs 记录「面相→面向」。",
+   "reason": "「面相」在语境中指朝向（同窗追问用「朝向」，主播答「会」），是「面向」的误写，且被写进 claim/subject。"
+  },
+  {
+   "id": "qq_expansion:w000712:c02",
+   "verdict": "fix",
+   "fault_type_kept": "not_self_contained,overclaim",
+   "suggestion": "claim 改为「在关卡中往下走的那条直线段上，单位也会随摄像头位置改变朝向，只要能把摄像头转过去（原问句对象为『大特』，未做多单位验证）」，condition 补「（该直线段指原问句所述路线）」。",
+   "reason": "claim 以「在往下走的那条直线上」开头，「那条直线」「往下走」在本条内无先行词（原问句 seq 6 指某关的直线、对象为「大特」）；证据只是对该单一单位的「会」字应答，条目却写成所有单位的通则。"
+  },
+  {
+   "id": "qq_expansion:w000719:c01",
+   "verdict": "minor",
+   "fault_type_kept": "trivial,not_self_contained",
+   "reason": "本条是主播关于「文案 flavor≠实现依据」的口径式结论（seq 1/2/3 逐字支持），对解读技能文案有跨条复用价值，不宜按纯吐槽删除；缺点是同窗未出现具体技能名，无法回查「有个生命单元升空所以能起飞」出自哪个技能。"
+  },
+  {
+   "id": "qq_expansion:w000719:c02",
+   "verdict": "minor",
+   "fault_type_kept": "evidence_mismatch",
+   "reason": "claim「大幅度＞极大幅度」有 seq 21 逐字支撑（同窗专家口径），同窗自陈未定的只是「略微／小幅度」一组，不构成本条夸大；缺陷是三条引文里的「[图片]」（seq 16）与「又要拿出那张图了」（seq 25）不含信息、属引文卫生问题（同类占位符引文全库共 5 条）。"
+  },
+  {
+   "id": "qq_expansion:w000759:c01",
+   "verdict": "fix",
+   "fault_type_kept": "evidence_mismatch",
+   "suggestion": "在 citations 中补引 seq 7 原文「[表情]@b4dcc920 那是伤害部分」（@ 为合规匿名槽位），claim 后半即可落地；若不加引文，则把该半句收窄为「球按干员与球相对位置决定的是伤害部分（原文未展开『不是推力』）」。",
+   "reason": "claim 后半「球按干员与球相对位置决定的是伤害部分，不是推力」只能由被排除在引文之外的 seq 7「[表情]@b4dcc920 那是伤害部分」得出，引文中只剩提问句 seq 6，否定层由条目自行补出。"
+  },
+  {
+   "id": "qq_expansion:w000759:c02",
+   "verdict": "fix",
+   "fault_type_kept": "evidence_mismatch,not_self_contained",
+   "suggestion": "claim 改为「温蒂的弹道是先命中的（原文语境：提问方以『撤温蒂踢飞』提出反例，主播仅答此句，提问方回『啊？』，原现象未被解释）」；删去「（因此与撤下后的表现无关）」。",
+   "reason": "括号里的「（因此与撤下后的表现无关）」是条目自造推论：原文中提问方以 seq 9「（虽然这无法解释撤温蒂踢飞的现象）」提出反例，主播回「？」「你在说什么」后才答 seq 12，提问方末条 seq 13「啊？」表明并未闭合；且「撤下后的表现」在本条内无先行词。"
+  },
+  {
+   "id": "qq_expansion:w000768:c01",
+   "verdict": "fix",
+   "fault_type_kept": "evidence_mismatch",
+   "suggestion": "在 citations 中补引 seq 3 原文「[表情]@e5b616d7 就是地图有没有“水地形”这个tag」（@ 为合规匿名槽位），claim 不变。",
+   "reason": "claim 的核心「看地图有没有『水地形』这个 tag」出自被排除在引文之外的 seq 3，引文只剩 seq 5「有就有没有就没有」——脱离上下文这句话不构成对 claim 的支撑。"
+  },
+  {
+   "id": "qq_expansion:w000768:c02",
+   "verdict": "remove",
+   "fault_type_kept": "evidence_mismatch,trivial",
+   "reason": "唯一引文 seq 7「好像有的关会莫名其妙存在水地形」是对 claim 的反例式回忆而非支撑，真正的否定句 seq 6 未引；且「含水方块」在同窗已被点明是 Minecraft 的说法（seq 8/9），本条无方舟机制内容。水地形判定的有效内容已在同窗 qq_expansion:w000768:c01。"
+  },
+  {
+   "id": "qq_expansion:w000780:c02",
+   "verdict": "fix",
+   "fault_type_kept": "not_self_contained,number_suspect",
+   "suggestion": "claim 改为「从传送点进坑需要 2 帧位移超过 2.5 格（原文并列给出：下坑需要一帧 1.25 格、对应 37.5 的速度）；9 个金币理论打满速度只有 36，因此理论上做不到（『37.5=1.25 格/帧×30 帧/秒』与速度单位属本条推算，原文未给）」，condition 补「该活动/合约的传送进坑玩法（原文未给关卡名）」。",
+   "reason": "全部数字均有逐字引文（seq 9-13），但「即单帧1.25格、速度37.5」这一步等价换算是条目自行做的（37.5=1.25格/帧×30帧/秒、速度单位与「需要/超过」的措辞都源自改写），且「9个金币／传送点／坑」未标关卡或玩法，读者无法复现。"
+  },
+  {
+   "id": "qq_expansion:w000807:c01",
+   "verdict": "withdraw",
+   "fault_type_kept": "trivial(撤回)",
+   "reason": "本条是「哪些行为跟随攻速」的基线规则（普通攻击跟随攻速），由主播原句逐字支持，属可跨关复用的机制信息，不构成 trivial；引文里「跟了吗如跟」虽为玩梗但不影响主命题已被支持。"
+  },
+  {
+   "id": "qq_expansion:w000807:c02",
+   "verdict": "minor",
+   "fault_type_kept": "not_self_contained",
+   "reason": "「动画能力」非游戏内术语、三种时间基准也无任何实例，确有含糊；但 claim 逐字对应同窗专家原句（带「一般来说」），属口径枚举而非外推，可保留待后续补实例。"
+  },
+  {
+   "id": "qq_expansion:w000863:c01",
+   "verdict": "fix",
+   "fault_type_kept": "evidence_mismatch,not_self_contained",
+   "suggestion": "claim 改为「（据 PRTS）敌人向寻路路径更低的格子走，而带字的地块不可通行，因此在字格拦路处只能来回跑（单关卡观察：山堵蓝门左下、鱼钻入中间字格；反例『右上角挖掉后不再如此』经主播解释为该处没有连片格子）」；condition 补「路线上存在带字地块时」；并把 review 理由的「窗内无人反驳」改为据实表述。",
+   "reason": "前半「向着寻路路径更低的格子走」是 PRTS 明文规则（seq 9-12 逐字），但「所以只能来回跑」是单关卡观察；且 review 理由写「窗内无人反驳」与原文不符——同窗 seq 13/19 连提反例，主播以 seq 17「右上角又没有连片的格子」作答。「字格」也未交代是什么地块。"
+  },
+  {
+   "id": "qq_expansion:w000874:c02",
+   "verdict": "fix",
+   "fault_type_kept": "overclaim",
+   "suggestion": "claim 改为「（群内口径，未给依据）泄压不会扣到负数」；condition 补出扣减对象（原文未标注，需来源补全后再回填）。",
+   "reason": "证据是 0f17ac97 对「那边在吵会不会扣到负的」的收口式表态（seq 1「直接说…就行了」），窗内无依据、无实测、无争论双方，条目把一句口径写成机制事实，且「泄压」扣的对象未交代。"
+  },
+  {
+   "id": "qq_expansion:w000919:c01",
+   "verdict": "minor",
+   "fault_type_kept": "trivial,not_self_contained",
+   "reason": "条目已自我限定为 entity_mechanism、condition 注明「讨论语境为登顶合约」，并未冒充通则，故 trivial 指控不成立；可容忍的缺陷是「拔山」「飞贼」未说明是合约 tag 还是敌人、「拔山和飞贼不能」是省略句，「（被永睡）」为条目推断。"
+  },
+  {
+   "id": "qq_expansion:w000921:c01",
+   "verdict": "minor",
+   "fault_type_kept": "number_suspect,evidence_mismatch",
+   "reason": "分歧实为收口而非未闭合：seq 13/15 之后主播以「1000 又不是 7 的整倍数」反驳，专家 seq 23「倒也是」接受，claim 两句均有逐字引文；可容忍的缺陷是「.99」沿用原文残缺写法（未给足精度），且未把同窗的 69.999% 一并呈现。"
+  },
+  {
+   "id": "qq_expansion:w001024:c01",
+   "verdict": "fix",
+   "fault_type_kept": "privacy,overclaim",
+   "suggestion": "claim 改为「（转引自群友研究，本窗未复核）随机数种子由开机时间决定；由于开机时间可调，无论危机合约何时开放，任何种子都可用于玩家进图」；并按 AGENTS.md 隐私纪律把引文中该昵称替换为匿名槽位（同 b3 批 privacy_fix 做法，其余文本逐字不动）。",
+   "reason": "内容系转引他人研究（seq 3-4）且本窗无复核，claim 却把推论写成定论（后半在原文是假设推演）；更严重的是引文把群友昵称「苏兰卡kkdy1-12」原样写入公开层，违反 AGENTS.md 的对外脱敏纪律（工单内 @ 昵称均已匿名化，此处为正文残留）。"
+  },
+  {
+   "id": "qq_expansion:w001029:c01",
+   "verdict": "fix",
+   "fault_type_kept": "evidence_mismatch",
+   "suggestion": "claim 改为「检查点的停驻时长按 time 而非 frame 配置（可以写 0.1），不会因整秒对齐而产生多帧少帧」；并在条内交叉引用 w001029:c02（『多罚站一帧』的原因是 1 帧＜1/30、属冷却制计时）。",
+   "reason": "「不会多帧少帧」只是主播对配置问句（seq 10）的应答，同窗 seq 21 有人提「会多罚站一帧」、主播以 seq 24「一帧＜1/30」、seq 28「冷却制」承认该现象（即同 chunk 的 w001029:c02）；本条的无条件否定与同库另一条口径相左且互不引用。"
+  },
+  {
+   "id": "qq_expansion:w001132:c01",
+   "verdict": "withdraw",
+   "fault_type_kept": "evidence_mismatch(撤回)",
+   "reason": "问句 seq 8「攻回sp会有冷却的说法吗」与答句 seq 11「没有」、seq 13「哪有这种事」均在引文中，claim「攻回SP没有冷却」即该答句内容，主播是在就同一命题作答；剑豪连击的现象未被解释属另一层问题，不构成本条夸大。"
+  },
+  {
+   "id": "qq_expansion:w001157:c01",
+   "verdict": "minor",
+   "fault_type_kept": "not_self_contained",
+   "reason": "「财生鱼」在 22.7 万条语料中仅此一处、无定义无追问，锚定确实薄弱；但名称为原文逐字（主播口径），作为以「合约的财生鱼」为主题的知识卡仍可按名称检索到，属可容忍，宜在能确认所属合约/召唤物身份后回填。"
+  },
+  {
+   "id": "qq_expansion:w001157:c02",
+   "verdict": "fix",
+   "fault_type_kept": "overclaim",
+   "suggestion": "claim 改为「（群友答复，未给依据）目前没有我方躁狂损伤」；condition 的「目前」落到具体版本或日期（引文 as_of 时点）。",
+   "reason": "回答者是普通群友（seq 20「目前没有」四个字），本窗主播未参与、无依据也无版本号，条目却以 general_mechanism 收录为机制事实；claim 用「（目前）」把时效限定内化，易被读成恒真。"
+  },
+  {
+   "id": "qq_expansion:w001193:c01",
+   "verdict": "minor",
+   "fault_type_kept": "not_self_contained",
+   "reason": "「龙能过就不是高台」里的「龙」在本条与语料中均无锚定（该窗仅 3 条消息、无提问上下文），确属弱主体；但「影响寻路就是障碍物」是一条可跨关复用的判定判据、由主播原句逐字支持，不足以整条删除。"
+  },
+  {
+   "id": "qq_expansion:w001206:c01",
+   "verdict": "fix",
+   "fault_type_kept": "not_self_contained",
+   "suggestion": "claim 改为「力度等级 0 的推动（『小力推』）作用于重量 3 的敌人（『三重』）时按 0-3=-3 计算，力度差为负、无法用失衡打断其动作」；condition 改为「力度等级 0 的推动作用于重量 3 的敌人时」。",
+   "reason": "「三重」（重量 3）、「小力推」（力度等级 0 的推动）均为群内简称，条目未还原，读者无法把 0-3=-3 对应到「力度−重量」的失衡判定，「打断」的对象也未说明。"
+  },
+  {
+   "id": "qq_expansion:w001210:c01",
+   "verdict": "minor",
+   "fault_type_kept": "evidence_mismatch",
+   "reason": "主命题「不吃受击半径的」有 seq 34 逐字支撑，成立；缺点是引文里混入被截断的半句 seq 32（窗口内无后续）与零信息句 seq 33「哦我看过」，且未写明主体是阻挡判定还是阻挡半径，属引文卫生与表述精度问题。"
+  },
+  {
+   "id": "qq_expansion:w001210:c02",
+   "verdict": "fix",
+   "fault_type_kept": "asr_error,evidence_mismatch",
+   "suggestion": "claim 改为「阻挡半径的基础数值为 0.8944（0.8944×1.23=1.100112）；0.894 正好吃不到隔壁一格正中间过路的敌人，0.9 就有可能吃到了」；并在描述中补出 1.23 的倍率来源或注明原文未说明。",
+   "reason": "claim 正文出现文本损坏「阻_挡」（多余下划线），且「基础数值」的所属对象（阻挡半径）只在 subject 里；另「0.894 正好／0.9 有可能」虽有 seq 1/5/7 逐字支撑，但同窗对「正好」有追问（seq 4/6）与 1.0（seq 9/36）的说法，1.23 这一倍率的来源条目亦未交代。"
+  },
+  {
+   "id": "qq_expansion:w001315:c01",
+   "verdict": "minor",
+   "fault_type_kept": "overclaim",
+   "reason": "source 句本身带自我修正（seq 7「或者说，停驻不是很纠结什么状态机」），条目已用括号原样保留该 hedge，结论句 seq 10 也是主播原话；claim 的因果链比原文整齐，但未到需要改写的程度，可在描述中标注「主播口径、未给依据」。"
+  },
+  {
+   "id": "qq_expansion:w001319:c02",
+   "verdict": "fix",
+   "fault_type_kept": "not_self_contained",
+   "suggestion": "claim 改为「原版 b（Bresenham）判格算法沿长边每走一格，对与直线的交点坐标取整，取整后落入哪个格子就判定哪个格子，因此能判定的地块数量等于长边地块数（原文另称其『只判定灰色地块』，该说法依赖当窗示意图，未随条目收录）」；删去无图无法解读的自指。",
+   "reason": "claim 首句「只判定灰色地块」的「灰色地块」只靠当窗截图定义（seq 5/7/24/29/30 均为图片），条目内无图无解释，且与后半「取整后落入哪个格子就判定哪个格子」自相循环。"
+  },
+  {
+   "id": "qq_expansion:w001319:c03",
+   "verdict": "fix",
+   "fault_type_kept": "not_self_contained",
+   "suggestion": "claim 改为「鹰角在原版 b 算法上小修过：灰格沿长边推进发生换行时，把对应的两个对角格也加入判定（原话以当窗示意图中『蓝色那几个』指代，条目内无图），目的是扩大墙的判定范围、避免敌人净贴着墙走」；并统一「变行／形变」用词。",
+   "reason": "claim 直接写「即图中标蓝的那两个」，引用一张条目内不存在的图（标蓝对角只见于当窗图片材料）；「变行／形变」这一关键术语（seq 11 与 seq 43 两种写法）条内也无定义。"
+  },
+  {
+   "id": "qq_expansion:w001319:c04",
+   "verdict": "fix",
+   "fault_type_kept": "evidence_mismatch",
+   "suggestion": "claim 改为「关卡 rune 的加算与乘算叠加：以突袭为例，先『全体敌人 +200 防御』再『敌人 a 防御 *200%』，结算为（原防御+200）×2（主播口述示例；原话片段作『就会是+200)*2』）」；不要用「（+200）*2」呈现公式。",
+   "reason": "seq 45 逐字为「就会是+200)*2」，是主播分两条消息口述时的截断片段（被乘项从未出现在文本里）；claim 写成「（+200）*2」字面可读成 200×2=400，与原意「（基础防御+200）×2」不符，也未标出这是主播口述示例。"
+  },
+  {
+   "id": "qq_expansion:w001360:c02",
+   "verdict": "fix",
+   "fault_type_kept": "not_self_contained",
+   "suggestion": "claim 改为「在传送免疫的交互里，珊比必须自己去检测目标带的是黍传还是余传免疫，才能被对应的那一种影响」；或把本条并入 qq_expansion:w001360:c01。",
+   "reason": "引文 seq 12/13 中的「他们」在本条内无先行词，其指代对象（黍传/余传）只出现在同窗 c01 的引文里，单独读本条无法知道珊比要检测什么。"
+  },
+  {
+   "id": "qq_expansion:w001363:c01",
+   "verdict": "minor",
+   "fault_type_kept": "trivial",
+   "reason": "条目已限定为关卡级（subject「登临意关卡的地形设置」、scope entity_mechanism），未冒充机制通则，故 trivial 指控不成立；可容忍的缺陷是「低地设置=可阻挡」这一可复用信息未另抽为通用条目，「只是可部署高台而已」易被读成该格可放高台单位。"
+  }
+ ]
+}

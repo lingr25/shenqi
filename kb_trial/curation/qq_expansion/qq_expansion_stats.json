@@ -1,0 +1,1096 @@
+{
+  "category_schema": {
+    "drives_what": "分组决定审核方对「不可枚举数值」与「不可闭合片段」的处理口径：只有 A 组的工单允许直接认可枚举数字；B 组必须逐字给出数字出处；C 组与 D 组一律不得写入片段里没有的数字与范围。",
+    "note": "工单口径里的「四类」与窗口天然分类是两回事，必须分清：(a) 上游窗卡的 category（帧时序/索敌/伤害结算/位移/寻路/干员机制/技能特例/数值与读图/关卡与出怪/其他）是**机制主题**；(b) 本阶段 A/B/C/D 四组是**审核难度分桶**——看的是这段片段能不能自足地定一条机制，不是它讲什么机制。同一个 category 会同时出现在四个组里。",
+    "why_not_topic_based": "用户要求的四类（完整机制 / 数值公式代码 / 混合机制猜测或整窗拒绝 / 其余随机）描述的是「读源时要做多少判断」，不是主题；按主题分组无法覆盖「整窗拒绝」这一类。"
+  },
+  "classification": {
+    "pool_by_group": {
+      "A_complete_mechanism": 35,
+      "B_number_formula_code": 381,
+      "C_mixed_or_guess": 169,
+      "D_other_random": 196
+    },
+    "rule": "A 完整机制 = kind=window 且无疑问/无 hedge 且同时出现定义词与时序词且总长≥24；B 数值/公式/代码 = 命中数值单位或算式或代码标识符；C 混合/猜测 = 命中疑问标记或 hedge 词；D = 其余。窗口粒度互斥。",
+    "shortfall_note": "某组不足 20 时如实留空并在 workorders/index.json 的 shortfalls 记明，不跨组借窗口凑数。",
+    "shortfalls": {},
+    "trial_selected_by_group": {
+      "A_complete_mechanism": 20,
+      "B_number_formula_code": 20,
+      "C_mixed_or_guess": 20,
+      "D_other_random": 20
+    }
+  },
+  "existing_qq_review_history": {
+    "correction_log": "本文件的上一版曾断言「QQ 轨的 evidence_verdicts / evidence_review_worklist / agent_verifications 条目数为 0/0/0、QQ 从未经过证据审核」。该断言错误：上述文件按 entry_id 索引，确实存在 8 条 QQ 窗口证据判定与 11 条 QQ 语义内审记录。错误原因是按不存在的 track 字段过滤，已在 build_inventory 的 existing_review_detail 中修正，并保留此条记录供核对。",
+    "evidence_verdicts_qq_entry_ids": [
+      "window:w000006#r0",
+      "window:w000012#r0",
+      "window:w000027#r0",
+      "window:w000033#r0",
+      "window:w000037#r0",
+      "window:w000040#r0",
+      "window:w000042#r0",
+      "window:w000044#r0"
+    ],
+    "evidence_verdicts_qq_status": {
+      "supported": 8
+    },
+    "evidence_verdicts_qq_supports": {
+      "qq_window_span": 8
+    },
+    "evidence_verdicts_rows_for_qq_windows": 8,
+    "evidence_verdicts_rows_total": 620,
+    "evidence_worklist_rows_for_qq_windows": 11,
+    "evidence_worklist_rows_total": 668,
+    "how_qq_rows_were_identified": "按 entry_id 前缀 window: 与 索引字段统计；这些文件没有 track 字段，不能按 track 过滤。",
+    "semantic_review_counts": {
+      "drop": 144,
+      "keep": 670,
+      "total": 814
+    },
+    "semantic_review_qq_rows": 11,
+    "semantic_review_qq_verdicts": {
+      "keep": 11
+    }
+  },
+  "note": "本文件由 kb_curation_qq_expansion_materials.py 实测生成；数字只描述 2026-09-21 磁盘上的状态，不代表审核结论。本阶段未做任何判定。",
+  "privacy": {
+    "confidence_limit": "text-source-supported：未核听原片、未做游戏内实测，不得复述为「已彻底脱敏」。",
+    "contains_group_id_or_qq_number": false,
+    "nickname_redaction_rule": "raw_messages[].text 里的 `@昵称` 一律去掉昵称：能唯一解析到某个发言者的写成 `@<speaker_id>`，解析不到的写成 `@某人`，并置 mentions_nick_unresolved=true。日报 `参与者:` 名单行整行匿名。6–12 位连续数字抹为 `[账号已隐去]`（含被 `[]` 包住的情形）。",
+    "nicknames_redacted_from_text": true,
+    "source_msg_ids_kept_for": "内部定位原消息，不得转发或写入公开层",
+    "spans_are_sanitized": true,
+    "verified_by": "kb_curation_qq_expansion_privacy_scan.py → kb_trial/curation/qq_expansion/privacy_scan.json",
+    "verified_result": "真实 QQ 号 0 命中、群号 0 命中；残留 6–12 位数字逐条核过，无一是真实发送者 QQ；昵称命中均为同形误报。上一版「扫 417 个 QQ 号命中 0」的判据过窄、不成立，已更正。"
+  },
+  "reconciliation": {
+    "accepted_docs": 11,
+    "accepted_docs_held_out": 3,
+    "accepted_docs_nowhere": 0,
+    "accepted_docs_shipped": 8,
+    "accepted_rows": 11,
+    "atom_rows": 145,
+    "atom_rows_on_window_with_a_card_row": 139,
+    "duplicate_note": "窗口级重复已按窗口聚合；本次 80 份工单窗窗互斥，同窗的窗卡行与全部原子行都收进同一份工单，不再重复出现。",
+    "duplicate_windows_inside_curated_layer": 0,
+    "duplicate_windows_inside_curated_layer_note": "甄选层同窗条目由 kb_curation_build.py 的 dedupe_claims 合并，同一窗口的两条不同 claim 会并存，这不是缺陷但读源时要一并判读。",
+    "extra_rows_beyond_one_per_window": 138,
+    "headline": "851 是「上游 D+ 原子化阶段产出的 QQ 预筛候选行」，不是待核队列，也从未被当作待核队列处理过：其中 145 行是 qq_atom、706 行是窗卡行，同一窗口同时有窗卡行与原子行，按窗口去重后是 713 个窗口（多出 138 行）。「未被逐条读源」是以窗口为单位说的：这 713 个窗口里有 702 个没有逐条读源记录，已逐条读源的是 11 个窗口（8 条入库 + 3 条隔离）。",
+    "is_it_a_deduplicated_queue": false,
+    "question_the_user_asked": "851 待核是否真实、有无重复与遗漏？",
+    "queue_status_note": "上游 kb_curation_prescreen.py 只做确定性预筛并同时输出 docs.jsonl 的窗卡行与其 qq_atom 行，没有做「一窗一行」去重；kb_curation_decide.py 又把 1012 行全部判为 reject/accept，因此这 851 行本身不是独立的可审单元；就窗口而言，713 个窗口里已逐条读源的是 11 个，其余 702 个窗口本阶段按待评估处理。",
+    "raw_rows": 851,
+    "row_counts_are_not_comparable_to_window_counts": "本文件里出现的任何「行数」与「窗口数」量纲不同，不得相互比较大小或做减法推断覆盖率；覆盖率一律以窗口为单位计算。",
+    "rows_outside_worklist": 161,
+    "rows_outside_worklist_by_doc_type": {
+      "glossary": 50,
+      "qq_atom": 20,
+      "qq_canonical": 51,
+      "qq_window": 40
+    },
+    "rows_outside_worklist_with_qq_evidence": 60,
+    "unique_windows": 713,
+    "window_card_rows": 706,
+    "windows_in_existing_hold_out": 3,
+    "windows_in_existing_overlay": 8,
+    "windows_in_overlay_or_hold_out": 11,
+    "windows_missing_from_worklist": 76,
+    "windows_missing_from_worklist_with_source_spans": 76,
+    "windows_missing_from_worklist_with_source_spans_note": "这些窗口有原文片段、却因为没有任何候选行而未进 worklist，属于**覆盖缺口**，不是「已判定为无价值」，本阶段如实计入待评估范围，未纳入 80 试批。",
+    "windows_never_read_source_by_source": 702,
+    "windows_outside_worklist_dropped_reasons": {
+      "asr_suspect_term": 1,
+      "audit_kind_not_mechanism": 20,
+      "chit_chat": 2,
+      "fragment_tail": 2,
+      "no_atom_citation": 50,
+      "no_condition_stated": 1,
+      "too_short": 85
+    },
+    "windows_outside_worklist_note": "这些行（含 60 个有原文片段、却因「文本太短 / 无来源行 / 非机制」等确定性理由被预筛挡掉、因而未进 worklist 的窗口 53 个）只呈现判定分布，不做「应当补回」的结论。"
+  },
+  "review_state_legend": {
+    "caution": "「被重写过」不等于「被审过」；「被隔离」才是被审过且判为不可闭合。本字段只陈述历史动作，不构成本次审核结论。",
+    "evidence_reviewed": "该窗口在 curation/evidence_verdicts.jsonl 里有按 entry_id 索引的条目（形如 window:w000044#r0），即证据查证阶段确实审过它的原文 span。",
+    "how_to_read_qq_review_history": "QQ 轨确实经过证据查证与语义内审，但必须按 entry_id 读取：evidence_verdicts.jsonl 的条目里没有 track 字段，用 d.get(\"track\") == \"qq\" 过滤会把已有的 QQ 条目漏掉、从而误报成「从未审核」。本文件的 existing_review_detail 已按 entry_id 逐条汇总，请以它为准。",
+    "not_reviewed": "没有任何逐条读源的记录，也没有被重写或隔离过。",
+    "overlay_rewritten_not_a_verdict": "上一轮只重写了标题、并没有做证据判定：kb_curation_evidence_close.py 的 QQ_REPAIRS 表把这些窗口的原始标题改写成按 span 重写的机制句，kb_curation_build.py 随之把它置为 auto_screened。「重写过」不等于「审过」，本次审核必须重新读源。",
+    "reviewed_source_by_source": "该窗口出现在 qq_claim_overlay 或 qq_claim_held_out 中，即上一轮确实依据 span 逐条读过（合计 11 个窗口）。",
+    "shipped": "该窗口的条目已进入 kb_trial/curated_high_quality.json，不得计为新增。本试批已把这类窗口整体排除。",
+    "staged": "该窗口的条目被上一轮隔离在 curation/curated_staging.json（判定为 source_cannot_settle_claim）。本试批保留 3 个作为救援样本，不计入新增覆盖。"
+  },
+  "seed": 20260921,
+  "sources": {
+    "curated_qq_entries": 8,
+    "curated_total_entries": 663,
+    "decision_docs_qq_accept_unique": 11,
+    "decision_rows_qq": 1012,
+    "decision_rows_qq_accept": 11,
+    "decision_rows_qq_reject": 1001,
+    "decision_rows_qq_with_qq_evidence": 911,
+    "max_rows_per_window": 9,
+    "qq_cards_duplicate_status": 16,
+    "qq_cards_reachable_after_duplicate_removal": 773,
+    "qq_cards_total": 789,
+    "qq_cards_windows_without_worklist_row": 76,
+    "qq_cards_with_canonical_window_id": 16,
+    "qq_worklist_extra_rows_beyond_one_per_window": 138,
+    "qq_worklist_rows": 851,
+    "qq_worklist_unique_windows": 713,
+    "rows_by_doc_type": {
+      "qq_atom": 145,
+      "qq_window": 706
+    },
+    "staging_qq_entries": 3,
+    "trial_docs_qq_rows": 6274,
+    "windows_with_multiple_rows": 83
+  },
+  "worked_examples": {
+    "A_group_example_mechanical_pass_but_reviewer_must_still_judge": {
+      "category": "索敌",
+      "classification_reason": "定义/时序谓词齐备且无未闭合疑问、无 hedge：定义词=就是；时序词=先；kind=window（有同窗汇总），最长 span 15 字",
+      "existing_review": "not_reviewed",
+      "group": "A_complete_mechanism",
+      "old_decisions": [
+        {
+          "decision": "reject",
+          "doc_id": "qq_atom:w000013:qa0",
+          "reject_reason": "asr_only_needs_agent"
+        },
+        {
+          "decision": "reject",
+          "doc_id": "qq_atom:w000013:qa3",
+          "reject_reason": "asr_only_needs_agent"
+        },
+        {
+          "decision": "reject",
+          "doc_id": "qq_atom:w000013:qa5",
+          "reject_reason": "asr_only_needs_agent"
+        },
+        {
+          "decision": "reject",
+          "doc_id": "window:w000013",
+          "reject_reason": "rejected_by_agent_evidence"
+        }
+      ],
+      "raw_messages": {
+        "cited_count": 12,
+        "cited_missing_from_raw": [],
+        "declared_range": {
+          "end_time": "2026-05-07 23:45:22",
+          "end_ts": 1778172322,
+          "note": "windows.jsonl 声明的 start_ts/end_ts 与本窗实际消息相差 +3600 秒（时区/夏令时偏移），因此仅作参考，**不是**本工单取数依据；取数依据是本窗自己的 source_msg_ids（窗口成员表，为窗卡引用集的超集）。",
+          "start_time": "2026-05-07 23:38:18",
+          "start_ts": 1778171898
+        },
+        "mapping_note": "本列表是本窗 source_msg_ids（窗口成员表，为窗卡引用集的超集）覆盖的**完整消息块**（取首条到末条引用之间的连续消息），按导出顺序、时间升序排列，正文全文载入、**未截断**。注意：成员表未覆盖的邻近对答不在其中，故它是本窗的完整消息块、不等于整个群聊线程。speaker_id 为源数据中已有的匿名标识；@昵称、6–12 位账号数字与日报参与者名单已去除，机制数值原样保留。is_cited_by_card 标出该消息是否被上游窗卡引用。上游 source_spans 常是截断后的片段（例如原文「@群友 我记得有些…」被截成「我记得有些…」），因此本列表才是判断提问/假设/结论的依据。",
+        "mapping_status": "ok",
+        "message_count": 71,
+        "messages": [
+          {
+            "is_cited_by_card": false,
+            "seq": 1,
+            "speaker_id": "0d9cadda",
+            "text": "我今天不是萝莉控",
+            "time": "2026-05-07 23:38:18",
+            "ts": 1778168298
+          },
+          {
+            "is_cited_by_card": false,
+            "mentions_speaker_id": [
+              "589e9b6d"
+            ],
+            "seq": 2,
+            "speaker_id": "a0a75ea7",
+            "text": "[表情]@589e9b6d 那能不能稳定浮现啊",
+            "time": "2026-05-07 23:38:24",
+            "ts": 1778168304
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 3,
+            "speaker_id": "09921076",
+            "text": "带三",
+            "time": "2026-05-07 23:38:24",
+            "ts": 1778168304
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 4,
+            "speaker_id": null,
+            "text": "[图片]",
+            "time": "2026-05-07 23:38:33",
+            "ts": 1778168313
+          },
+          {
+            "is_cited_by_card": true,
+            "mentions_speaker_id": [
+              "a0a75ea7"
+            ],
+            "seq": 5,
+            "speaker_id": "589e9b6d",
+            "text": "[表情]@a0a75ea7 看怪",
+            "time": "2026-05-07 23:38:35",
+            "ts": 1778168315
+          },
+          {
+            "is_cited_by_card": true,
+            "seq": 6,
+            "speaker_id": "589e9b6d",
+            "text": "能的就是能",
+            "time": "2026-05-07 23:38:38",
+            "ts": 1778168318
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 7,
+            "speaker_id": "2aaa8356",
+            "text": "[表情]有没有其他例子",
+            "time": "2026-05-07 23:38:46",
+            "ts": 1778168326
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 8,
+            "speaker_id": "393f5856",
+            "text": "我记得还有那种起身随便找个人打的",
+            "time": "2026-05-07 23:38:57",
+            "ts": 1778168337
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 9,
+            "speaker_id": "393f5856",
+            "text": "小曼吧",
+            "time": "2026-05-07 23:39:02",
+            "ts": 1778168342
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 10,
+            "speaker_id": "fadcf284",
+            "text": "先决定打数，发现是单，然后判定了阻挡导致M3部署保护失效，再然后就索到了M3吗",
+            "time": "2026-05-07 23:39:07",
+            "ts": 1778168347
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 11,
+            "speaker_id": "a0a75ea7",
+            "text": "感觉这会是个非常使用的技巧啊",
+            "time": "2026-05-07 23:39:08",
+            "ts": 1778168348
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 12,
+            "speaker_id": "0a986c9f",
+            "text": "respect🫡",
+            "time": "2026-05-07 23:39:09",
+            "ts": 1778168349
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 13,
+            "speaker_id": "2aaa8356",
+            "text": "小曼是纯随机来着？",
+            "time": "2026-05-07 23:39:21",
+            "ts": 1778168361
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 14,
+            "speaker_id": "a0a75ea7",
+            "text": "现在高伤秒人技能越来越多了",
+            "time": "2026-05-07 23:39:23",
+            "ts": 1778168363
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 15,
+            "speaker_id": "2aaa8356",
+            "text": "这个函数我好像见过",
+            "time": "2026-05-07 23:39:33",
+            "ts": 1778168373
+          },
+          {
+            "is_cited_by_card": false,
+            "mentions_speaker_id": [
+              "393f5856"
+            ],
+            "seq": 16,
+            "speaker_id": "4224f97d",
+            "text": "[表情]@393f5856 他确实",
+            "time": "2026-05-07 23:39:38",
+            "ts": 1778168378
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 17,
+            "speaker_id": "4224f97d",
+            "text": "是随机（",
+            "time": "2026-05-07 23:39:41",
+            "ts": 1778168381
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 18,
+            "speaker_id": null,
+            "text": "[图片]",
+            "time": "2026-05-07 23:39:43",
+            "ts": 1778168383
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 19,
+            "speaker_id": null,
+            "text": "[图片]",
+            "time": "2026-05-07 23:39:48",
+            "ts": 1778168388
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 20,
+            "speaker_id": "2aaa8356",
+            "text": "是不是血狼的推王测评里面的那个(",
+            "time": "2026-05-07 23:39:53",
+            "ts": 1778168393
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 21,
+            "speaker_id": null,
+            "text": "[图片]",
+            "time": "2026-05-07 23:40:21",
+            "ts": 1778168421
+          },
+          {
+            "is_cited_by_card": false,
+            "mentions_nick_unresolved": true,
+            "seq": 22,
+            "speaker_id": "589e9b6d",
+            "text": "[表情]@某人 海沫",
+            "time": "2026-05-07 23:40:36",
+            "ts": 1778168436
+          },
+          {
+            "is_cited_by_card": true,
+            "seq": 23,
+            "speaker_id": "589e9b6d",
+            "text": "海沫做到过",
+            "time": "2026-05-07 23:40:41",
+            "ts": 1778168441
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 24,
+            "speaker_id": null,
+            "text": "[图片]",
+            "time": "2026-05-07 23:40:48",
+            "ts": 1778168448
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 25,
+            "speaker_id": "589e9b6d",
+            "text": "5连发打一个人",
+            "time": "2026-05-07 23:40:49",
+            "ts": 1778168449
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 26,
+            "speaker_id": null,
+            "text": "[图片]",
+            "time": "2026-05-07 23:40:49",
+            "ts": 1778168449
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 27,
+            "speaker_id": null,
+            "text": "[图片]",
+            "time": "2026-05-07 23:40:50",
+            "ts": 1778168450
+          },
+          {
+            "is_cited_by_card": true,
+            "seq": 28,
+            "speaker_id": "2aaa8356",
+            "text": "这个是不是同理(",
+            "time": "2026-05-07 23:41:00",
+            "ts": 1778168460
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 29,
+            "speaker_id": "393f5856",
+            "text": "原来海沫五连发打一个人不正常吗",
+            "time": "2026-05-07 23:41:03",
+            "ts": 1778168463
+          },
+          {
+            "is_cited_by_card": true,
+            "seq": 30,
+            "speaker_id": "589e9b6d",
+            "text": "这一看就是花解的",
+            "time": "2026-05-07 23:41:04",
+            "ts": 1778168464
+          },
+          {
+            "is_cited_by_card": false,
+            "mentions_speaker_id": [
+              "393f5856"
+            ],
+            "seq": 31,
+            "speaker_id": "589e9b6d",
+            "text": "[表情]@393f5856 是场上早就有个",
+            "time": "2026-05-07 23:41:15",
+            "ts": 1778168475
+          },
+          {
+            "is_cited_by_card": true,
+            "seq": 32,
+            "speaker_id": "589e9b6d",
+            "text": "然后阻挡一个",
+            "time": "2026-05-07 23:41:18",
+            "ts": 1778168478
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 33,
+            "speaker_id": "589e9b6d",
+            "text": "5连击打阻挡",
+            "time": "2026-05-07 23:41:22",
+            "ts": 1778168482
+          },
+          {
+            "is_cited_by_card": true,
+            "seq": 34,
+            "speaker_id": "589e9b6d",
+            "text": "不正常",
+            "time": "2026-05-07 23:41:25",
+            "ts": 1778168485
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 35,
+            "speaker_id": "18ec3140",
+            "text": "原来这不正常",
+            "time": "2026-05-07 23:41:33",
+            "ts": 1778168493
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 36,
+            "speaker_id": "4224f97d",
+            "text": "现在感觉调不会这么说",
+            "time": "2026-05-07 23:41:34",
+            "ts": 1778168494
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 37,
+            "speaker_id": "589e9b6d",
+            "text": "和你视频一样的情况",
+            "time": "2026-05-07 23:41:34",
+            "ts": 1778168494
+          },
+          {
+            "is_cited_by_card": false,
+            "mentions_nick_unresolved": true,
+            "seq": 38,
+            "speaker_id": "589e9b6d",
+            "text": "[表情]@某人 他会说正常？",
+            "time": "2026-05-07 23:41:42",
+            "ts": 1778168502
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 39,
+            "speaker_id": "4224f97d",
+            "text": "会直接把原理甩过来",
+            "time": "2026-05-07 23:41:44",
+            "ts": 1778168504
+          },
+          {
+            "is_cited_by_card": true,
+            "seq": 40,
+            "speaker_id": "2aaa8356",
+            "text": "原来不是优先打阻挡吗(",
+            "time": "2026-05-07 23:41:45",
+            "ts": 1778168505
+          },
+          {
+            "is_cited_by_card": true,
+            "mentions_nick_unresolved": true,
+            "seq": 41,
+            "speaker_id": "589e9b6d",
+            "text": "[表情]@某人 那肯定啊",
+            "time": "2026-05-07 23:41:50",
+            "ts": 1778168510
+          },
+          {
+            "is_cited_by_card": false,
+            "mentions_nick_unresolved": true,
+            "seq": 42,
+            "speaker_id": "589e9b6d",
+            "text": "[表情]@某人 但是海沫优先分配打数啊",
+            "time": "2026-05-07 23:42:00",
+            "ts": 1778168520
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 43,
+            "speaker_id": "589e9b6d",
+            "text": "如果正常的阻挡和别的地方也有人",
+            "time": "2026-05-07 23:42:10",
+            "ts": 1778168530
+          },
+          {
+            "is_cited_by_card": true,
+            "seq": 44,
+            "speaker_id": "589e9b6d",
+            "text": "是3 2分的",
+            "time": "2026-05-07 23:42:12",
+            "ts": 1778168532
+          },
+          {
+            "is_cited_by_card": true,
+            "seq": 45,
+            "speaker_id": "2aaa8356",
+            "text": "哦，好像也是",
+            "time": "2026-05-07 23:42:14",
+            "ts": 1778168534
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 46,
+            "speaker_id": "2aaa8356",
+            "text": "忘记了",
+            "time": "2026-05-07 23:42:16",
+            "ts": 1778168536
+          },
+          {
+            "is_cited_by_card": true,
+            "seq": 47,
+            "speaker_id": "9e5d2738",
+            "text": "之前用赫德雷打的时候转阶段马上阻挡的情况不是很多吗？怎么没发现？",
+            "time": "2026-05-07 23:42:17",
+            "ts": 1778168537
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 48,
+            "speaker_id": null,
+            "text": "[图片]",
+            "time": "2026-05-07 23:42:43",
+            "ts": 1778168563
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 49,
+            "speaker_id": "2aaa8356",
+            "text": "所以是不是和维娜一样(",
+            "time": "2026-05-07 23:42:49",
+            "ts": 1778168569
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 50,
+            "speaker_id": "a0a75ea7",
+            "text": "这个技巧要是当年萨卡兹还活的时候，基本能降低好多生存需求啊",
+            "time": "2026-05-07 23:42:53",
+            "ts": 1778168573
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 51,
+            "speaker_id": "393f5856",
+            "text": "好像玩赫德雷直接带一技能自己慢慢打就行了",
+            "time": "2026-05-07 23:43:20",
+            "ts": 1778168600
+          },
+          {
+            "is_cited_by_card": false,
+            "mentions_speaker_id": [
+              "9e5d2738"
+            ],
+            "seq": 52,
+            "speaker_id": "589e9b6d",
+            "text": "[表情]@9e5d2738 因为不是所有能力都会这样",
+            "time": "2026-05-07 23:43:23",
+            "ts": 1778168603
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 53,
+            "speaker_id": "589e9b6d",
+            "text": "一个是必须能力特殊",
+            "time": "2026-05-07 23:43:31",
+            "ts": 1778168611
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 54,
+            "speaker_id": null,
+            "text": "[多媒体消息或表情]",
+            "time": "2026-05-07 23:43:38",
+            "ts": 1778168618
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 55,
+            "speaker_id": "589e9b6d",
+            "text": "第二个三帧阻挡1/3概率",
+            "time": "2026-05-07 23:43:49",
+            "ts": 1778168629
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 56,
+            "speaker_id": "2aaa8356",
+            "text": "所以要卡帧鲨魔王兔吗(",
+            "time": "2026-05-07 23:43:59",
+            "ts": 1778168639
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 57,
+            "speaker_id": "a0a75ea7",
+            "text": "啊，那完蛋了",
+            "time": "2026-05-07 23:43:59",
+            "ts": 1778168639
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 58,
+            "speaker_id": "393f5856",
+            "text": "要把阻挡帧和复活结束对齐吗",
+            "time": "2026-05-07 23:44:09",
+            "ts": 1778168649
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 59,
+            "speaker_id": "56bd7746",
+            "text": "看起来是异步检测导致插入了啊",
+            "time": "2026-05-07 23:44:17",
+            "ts": 1778168657
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 60,
+            "speaker_id": "a0a75ea7",
+            "text": "卡帧杀魔王兔也太变态了",
+            "time": "2026-05-07 23:44:17",
+            "ts": 1778168657
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 61,
+            "speaker_id": "9e5d2738",
+            "text": "所以不能稳定复现😭",
+            "time": "2026-05-07 23:44:31",
+            "ts": 1778168671
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 62,
+            "speaker_id": "393f5856",
+            "text": "理论可以",
+            "time": "2026-05-07 23:44:38",
+            "ts": 1778168678
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 63,
+            "speaker_id": "a0a75ea7",
+            "text": "你总不能从A面一直到C面一直不满费吧",
+            "time": "2026-05-07 23:44:43",
+            "ts": 1778168683
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 64,
+            "speaker_id": "a0a75ea7",
+            "text": "太麻烦了",
+            "time": "2026-05-07 23:44:47",
+            "ts": 1778168687
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 65,
+            "speaker_id": null,
+            "text": "[图片]",
+            "time": "2026-05-07 23:44:52",
+            "ts": 1778168692
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 66,
+            "speaker_id": "2598c9fb",
+            "text": "但是要记帧…",
+            "time": "2026-05-07 23:44:52",
+            "ts": 1778168692
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 67,
+            "speaker_id": "4224f97d",
+            "text": "或者用技术手段数帧",
+            "time": "2026-05-07 23:45:05",
+            "ts": 1778168705
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 68,
+            "speaker_id": "4224f97d",
+            "text": "但是那根本不可能",
+            "time": "2026-05-07 23:45:10",
+            "ts": 1778168710
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 69,
+            "speaker_id": null,
+            "text": "[图片]",
+            "time": "2026-05-07 23:45:12",
+            "ts": 1778168712
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 70,
+            "speaker_id": "a0a75ea7",
+            "text": "也不对啊，有个东西叫小鬼，能不能和无藏不容拒绝一样算出来",
+            "time": "2026-05-07 23:45:17",
+            "ts": 1778168717
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 71,
+            "speaker_id": "9848b0d8",
+            "text": "狙医还抓迷迭香吗（",
+            "time": "2026-05-07 23:45:22",
+            "ts": 1778168722
+          }
+        ]
+      },
+      "source_spans_excerpts": [
+        "看怪",
+        "能的就是能",
+        "海沫做到过",
+        "5连发打一个人",
+        "5连击打阻挡",
+        "不正常",
+        "但是海沫优先分配打数啊",
+        "如果正常的阻挡和别的地方也有人",
+        "是3 2分的",
+        "因为不是所有能力都会这样",
+        "一个是必须能力特殊",
+        "第二个三帧阻挡1/3概率"
+      ],
+      "window_id": "w000013",
+      "workorder_id": "qq_wo_001"
+    },
+    "C_group_example_question_but_may_still_carry_a_rule": {
+      "category": "伤害结算",
+      "classification_reason": "hedge=不确定/可能/应该",
+      "existing_review": "not_reviewed",
+      "group": "C_mixed_or_guess",
+      "old_decisions": [
+        {
+          "decision": "reject",
+          "doc_id": "window:w000077",
+          "reject_reason": "asr_only_needs_agent"
+        }
+      ],
+      "raw_messages": {
+        "cited_count": 5,
+        "cited_missing_from_raw": [],
+        "declared_range": {
+          "end_time": "2026-05-11 00:24:53",
+          "end_ts": 1778433893,
+          "note": "windows.jsonl 声明的 start_ts/end_ts 与本窗实际消息相差 +3600 秒（时区/夏令时偏移），因此仅作参考，**不是**本工单取数依据；取数依据是本窗自己的 source_msg_ids（窗口成员表，为窗卡引用集的超集）。",
+          "start_time": "2026-05-11 00:19:17",
+          "start_ts": 1778433557
+        },
+        "mapping_note": "本列表是本窗 source_msg_ids（窗口成员表，为窗卡引用集的超集）覆盖的**完整消息块**（取首条到末条引用之间的连续消息），按导出顺序、时间升序排列，正文全文载入、**未截断**。注意：成员表未覆盖的邻近对答不在其中，故它是本窗的完整消息块、不等于整个群聊线程。speaker_id 为源数据中已有的匿名标识；@昵称、6–12 位账号数字与日报参与者名单已去除，机制数值原样保留。is_cited_by_card 标出该消息是否被上游窗卡引用。上游 source_spans 常是截断后的片段（例如原文「@群友 我记得有些…」被截成「我记得有些…」），因此本列表才是判断提问/假设/结论的依据。",
+        "mapping_status": "ok",
+        "message_count": 27,
+        "messages": [
+          {
+            "is_cited_by_card": false,
+            "seq": 1,
+            "speaker_id": "589e9b6d",
+            "text": "是因为matlab的图比较方便同时看图和坐标",
+            "time": "2026-05-11 00:19:17",
+            "ts": 1778429957
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 2,
+            "speaker_id": "7bf55033",
+            "text": "话说为什么这个地块会有一个非满血流失一点生命值的设计[图片]",
+            "time": "2026-05-11 00:19:45",
+            "ts": 1778429985
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 3,
+            "speaker_id": "589e9b6d",
+            "text": "在调数据这个层面比较简便",
+            "time": "2026-05-11 00:19:45",
+            "ts": 1778429985
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 4,
+            "speaker_id": "854e86f2",
+            "text": "哦哦那确实",
+            "time": "2026-05-11 00:19:56",
+            "ts": 1778429996
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 5,
+            "speaker_id": "fadcf284",
+            "text": "[表情]显示血量条（？）",
+            "time": "2026-05-11 00:20:46",
+            "ts": 1778430046
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 6,
+            "speaker_id": "589e9b6d",
+            "text": "有可能？",
+            "time": "2026-05-11 00:20:59",
+            "ts": 1778430059
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 7,
+            "speaker_id": "589e9b6d",
+            "text": "敌人如果不扣血好像不显示血条",
+            "time": "2026-05-11 00:21:12",
+            "ts": 1778430072
+          },
+          {
+            "is_cited_by_card": false,
+            "mentions_speaker_id": [
+              "854e86f2"
+            ],
+            "seq": 8,
+            "speaker_id": "589e9b6d",
+            "text": "[表情]@854e86f2 有不少人都有自己的习惯",
+            "time": "2026-05-11 00:21:44",
+            "ts": 1778430104
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 9,
+            "speaker_id": "8bba1810",
+            "text": "判定？",
+            "time": "2026-05-11 00:21:46",
+            "ts": 1778430106
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 10,
+            "speaker_id": "589e9b6d",
+            "text": "微风是不是也用个什么绘图软件来着",
+            "time": "2026-05-11 00:22:02",
+            "ts": 1778430122
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 11,
+            "speaker_id": "2aaa8356",
+            "text": "[表情]起源红刀",
+            "time": "2026-05-11 00:22:43",
+            "ts": 1778430163
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 12,
+            "speaker_id": "393f5856",
+            "text": "可能是告诉你这个东西可以打吧",
+            "time": "2026-05-11 00:22:47",
+            "ts": 1778430167
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 13,
+            "speaker_id": "2aaa8356",
+            "text": "那个不知道",
+            "time": "2026-05-11 00:22:48",
+            "ts": 1778430168
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 14,
+            "speaker_id": null,
+            "text": "[图片]",
+            "time": "2026-05-11 00:22:50",
+            "ts": 1778430170
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 15,
+            "speaker_id": "393f5856",
+            "text": "直接晕可能有的人想不到去打",
+            "time": "2026-05-11 00:23:01",
+            "ts": 1778430181
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 16,
+            "speaker_id": "393f5856",
+            "text": "提示机制的作用",
+            "time": "2026-05-11 00:23:09",
+            "ts": 1778430189
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 17,
+            "speaker_id": null,
+            "text": "[图片]",
+            "time": "2026-05-11 00:23:13",
+            "ts": 1778430193
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 18,
+            "speaker_id": "2aaa8356",
+            "text": "话说火陈技能平A和龙同帧命中，结算顺序是什么(",
+            "time": "2026-05-11 00:23:24",
+            "ts": 1778430204
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 19,
+            "speaker_id": null,
+            "text": "[图片]",
+            "time": "2026-05-11 00:23:33",
+            "ts": 1778430213
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 20,
+            "speaker_id": "26444ba0",
+            "text": "诶这个软件好眼熟",
+            "time": "2026-05-11 00:24:03",
+            "ts": 1778430243
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 21,
+            "speaker_id": "26444ba0",
+            "text": "geogebra吗",
+            "time": "2026-05-11 00:24:14",
+            "ts": 1778430254
+          },
+          {
+            "is_cited_by_card": true,
+            "mentions_nick_unresolved": true,
+            "seq": 22,
+            "speaker_id": "589e9b6d",
+            "text": "[表情]@某人 连续攻击的结算和首次攻击的结算还不一样的",
+            "time": "2026-05-11 00:24:14",
+            "ts": 1778430254
+          },
+          {
+            "is_cited_by_card": false,
+            "seq": 23,
+            "speaker_id": "fadcf284",
+            "text": "[表情]像是",
+            "time": "2026-05-11 00:24:25",
+            "ts": 1778430265
+          },
+          {
+            "is_cited_by_card": true,
+            "seq": 24,
+            "speaker_id": "589e9b6d",
+            "text": "首次攻击应该是陈先",
+            "time": "2026-05-11 00:24:29",
+            "ts": 1778430269
+          },
+          {
+            "is_cited_by_card": true,
+            "seq": 25,
+            "speaker_id": "589e9b6d",
+            "text": "陈的创建比弹道早",
+            "time": "2026-05-11 00:24:43",
+            "ts": 1778430283
+          },
+          {
+            "is_cited_by_card": true,
+            "seq": 26,
+            "speaker_id": "589e9b6d",
+            "text": "连续攻击我不确定",
+            "time": "2026-05-11 00:24:48",
+            "ts": 1778430288
+          },
+          {
+            "is_cited_by_card": true,
+            "seq": 27,
+            "speaker_id": "589e9b6d",
+            "text": "可能是弹道先把",
+            "time": "2026-05-11 00:24:53",
+            "ts": 1778430293
+          }
+        ]
+      },
+      "source_spans_excerpts": [
+        "话说火陈技能平A和龙同帧命中，结算顺序是什么(",
+        "连续攻击的结算和首次攻击的结算还不一样的",
+        "首次攻击应该是陈先",
+        "陈的创建比弹道早",
+        "连续攻击我不确定",
+        "可能是弹道先把"
+      ],
+      "window_id": "w000077",
+      "workorder_id": "qq_wo_043"
+    },
+    "note": "机械分组的实测校验。下面两条来自真实工单，用来证明分组只是「分桶」而非判定：A 组允许按谓词入选，但入选的片段仍可能整段不可判读；C 组则证明「有疑问词」并不等于「整窗无价值」。两条例子都按 window_id 选取，不受工单编号重排影响。"
+  },
+  "workorders": {
+    "already_shipped_entries_must_not_count_as_new": 0,
+    "already_staged_windows_rescue_sample": 3,
+    "count": 80,
+    "encoded_source_spans_excerpts": 570,
+    "group_overlap_windows": 0,
+    "groups": {
+      "A_complete_mechanism": 20,
+      "B_number_formula_code": 20,
+      "C_mixed_or_guess": 20,
+      "D_other_random": 20
+    },
+    "median_raw_messages": 37.0,
+    "raw_messages_by_mapping_status": {
+      "ok": 80
+    },
+    "raw_messages_note": "raw_messages 是本窗 source_msg_ids（窗口成员表）覆盖的连续消息块，按导出顺序、时间升序、正文全文未截断、speaker 匿名，不是 source_spans 的转写。它把「提问 / 假设 / 结论」区分开，但仍不等于完整群聊线程：窗口成员表之外的对答不在此列。",
+    "rescue_sample_note": "这 3 个窗口上一轮被判为 source_cannot_settle_claim 并隔离在 curation/curated_staging.json。它们不是新增候选，保留在试批里是为了检验「补上完整原始对话后，原来的不可闭合判断是否仍然成立」——属于救援样本，统计新增覆盖时不得计入。",
+    "rescue_sample_window_ids": [
+      "w000031",
+      "w000036",
+      "w000041"
+    ],
+    "selection_excludes_shipped_windows": true,
+    "title_rewritten_but_never_evidence_judged": 0,
+    "total_raw_messages": 3206,
+    "unique_windows": 80,
+    "untouched_windows": 77,
+    "windows_actually_evidence_reviewed_in_past": [],
+    "windows_needing_a_fresh_read": 80,
+    "windows_with_prior_action": [
+      "qq_wo_022:w000036",
+      "qq_wo_024:w000041",
+      "qq_wo_041:w000031"
+    ],
+    "with_raw_messages": 80
+  }
+}

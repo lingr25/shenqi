@@ -1,0 +1,583 @@
+{
+ "entry_count": 6,
+ "entries": [
+  {
+   "id": "fc1:寻路-39-7#r8",
+   "claim": "在寻路坐标看起来是要往格子中线的路径点走的情况下，实体坐标就会走出这么一个情况。",
+   "subject": "实体坐标与寻路坐标的路径观测",
+   "condition": "寻路坐标看起来是要往格子中线的路径点走时",
+   "scope": "universal",
+   "category": "寻路",
+   "recorded_ym": null,
+   "source_layer": "官方AI字幕",
+   "source_layers": [
+    "official"
+   ],
+   "track": "vod_official",
+   "citations": [
+    {
+     "id": "BV1TomVBBEK1_p1_34675165371:p73:a10:f77f17a3",
+     "status": "resolved_atom",
+     "source_layers": [
+      "official"
+     ],
+     "transcript_file": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
+     "bvid_stem": "BV1TomVBBEK1_p1_34675165371",
+     "recorded_at": "2025-12-12",
+     "speaker": "神祇读神奇",
+     "chapter": "实体、足坐标与寻路光标坐标偏移系统及入墙奇怪路径实例",
+     "quotes": [
+      {
+       "text": "在寻路坐标 看起来是要往格子中线的路径点走的情况下 实体坐标就会走出这么一个情况",
+       "t_start": 13800,
+       "t_end": 13855
+      }
+     ],
+     "_upstream_quote": "在寻路坐标 看起来是要往格子中线的路径点走的情况下 实体坐标就会走出这么一个情况"
+    }
+   ],
+   "source_files": [
+    "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt"
+   ],
+   "origin": {
+    "trial_doc_id": "fc1:寻路-39-7",
+    "trial_rule_idx": 8,
+    "trial_manifest_outputs": "kb_trial/docs.jsonl",
+    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+    "card_section": "规则"
+   },
+   "review": {
+    "status": "auto_screened",
+    "reason": "本轮读源后判定源无法确定该 claim：源文本在此处自相矛盾，无法确定 claim 主张的到底是哪种几何：(1) claim 与引文都写「往格子中线的路径点走」，「中线」是一条线、不是中心点；(2) 但同一章紧邻的两行明确说的是「中心」——源 BV1TomVBBEK1_p1_34675165371.txt [03:50:00]「寻路坐标一定出生在一个格子的中"
+   },
+   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+   "semantic_review": {
+    "verdict": "keep",
+    "support": "supported",
+    "info_value": "reusable_rule",
+    "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+    "reviewer_type": "agent"
+   },
+   "evidence_review": {
+    "status": "pending",
+    "reason": "源文本在此处自相矛盾，无法确定 claim 主张的到底是哪种几何：(1) claim 与引文都写「往格子中线的路径点走」，「中线」是一条线、不是中心点；(2) 但同一章紧邻的两行明确说的是「中心」——源 BV1TomVBBEK1_p1_34675165371.txt [03:50:00]「寻路坐标一定出生在一个格子的中心」、[03:50:17]「寻路坐标也会认为每个格子的路径点都在中心 也会认为终点在中心」；(3) 本条引文所在的 [03:50:40] 是同一段里的第三次表述，却是唯一出现「中线」的一次。「格子中线」与「格子中心」在机制上不是措辞差异而是几何差异（线 vs 点）：若路径点真在中线，实体坐标的偏移参照就不是中心点，结论会不同。本轮无法从文本判定主播当时口误还是另有含义，也不替来源在两者间取舍，故按「来源不确定 → pending」隔离，不再声称 supported。",
+    "reviewer_type": "agent",
+    "confidence": "text-source-inconclusive",
+    "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+    "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+    "source_path": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
+    "source_line_time": "03:50:40",
+    "supports": "与源句一致，指代与口述差异均按源保留",
+    "derived_correction": "源「格子中线」疑为「格子中心」的口误（同章 [03:50:17]「都在中心」、[03:50:00]「格子的中心」可对照）；claim 沿用源写法未擅改，引文原文保留不改。",
+    "derived_correction_disposition": "pending",
+    "pending_code": "source_cannot_settle_claim"
+   }
+  },
+  {
+   "id": "fc1:帧时序与计时器-35-0#r16",
+   "claim": "池塘里每条鱼都有各自的游动帧（针），每条鱼各自的入水帧不同，因此各自可以出去的时间不同。",
+   "subject": "池塘鱼",
+   "condition": "未标注",
+   "scope": "universal",
+   "category": "帧时序与计时器",
+   "recorded_ym": null,
+   "source_layer": "官方AI字幕",
+   "source_layers": [
+    "official"
+   ],
+   "track": "vod_official",
+   "citations": [
+    {
+     "id": "BV1g3NC6pEFt_p1_39902972402:p16:a1:8aa29be6",
+     "status": "resolved_atom",
+     "source_layers": [
+      "official"
+     ],
+     "transcript_file": "transcripts_txt/BV1g3NC6pEFt_p1_39902972402.txt",
+     "bvid_stem": "BV1g3NC6pEFt_p1_39902972402",
+     "recorded_at": "2026-07-13",
+     "speaker": "神祇读神奇",
+     "chapter": "把+1帧套回鱼检测，并解释印出生前摇带来的运气",
+     "quotes": [
+      {
+       "text": "池塘里有一堆的鱼 他们每条都有自己的游动的针",
+       "t_start": 1286,
+       "t_end": 1328
+      }
+     ],
+     "_upstream_quote": "池塘里有一堆的鱼 他们每条都有自己的游动的针"
+    },
+    {
+     "id": "BV1g3NC6pEFt_p1_39902972402:p19:a5:82c85007",
+     "status": "resolved_atom",
+     "source_layers": [
+      "official"
+     ],
+     "transcript_file": "transcripts_txt/BV1g3NC6pEFt_p1_39902972402.txt",
+     "bvid_stem": "BV1g3NC6pEFt_p1_39902972402",
+     "recorded_at": "2026-07-13",
+     "speaker": "神祇读神奇",
+     "chapter": "自写捕鱼模拟器与多鱼世界线的计算复杂度",
+     "quotes": [
+      {
+       "text": "每条鱼各自的入水针不同 所以的话它们各自可以出去的时间不同",
+       "t_start": 1428,
+       "t_end": 1444
+      }
+     ],
+     "_upstream_quote": "每条鱼各自的入水针不同 所以的话它们各自可以出去的时间不同"
+    },
+    {
+     "id": "ctx=sub:BV1g3NC6pEFt_p1_39902972402:1286",
+     "status": "resolved_timestamp_window",
+     "source_layers": [
+      "official"
+     ],
+     "transcript_file": "transcripts_txt/BV1g3NC6pEFt_p1_39902972402.txt",
+     "requested_second": 1286,
+     "quotes": [
+      {
+       "text": "[21:26] 也就是说我们第一天的时候 产生了一个非常运气好的这样一个情况 就是虽然那个运气好带给了我们一个误解 但是至少带给了我们信心 让我们能打下去",
+       "t_start": 1286,
+       "t_end": null
+      }
+     ]
+    },
+    {
+     "id": "ctx=sub:BV1g3NC6pEFt_p1_39902972402:1428",
+     "status": "resolved_timestamp_window",
+     "source_layers": [
+      "official"
+     ],
+     "transcript_file": "transcripts_txt/BV1g3NC6pEFt_p1_39902972402.txt",
+     "requested_second": 1428,
+     "quotes": [
+      {
+       "text": "[23:48] 这样一个情况也就是先加八再加120 每120检测一次 然后第三次检测变成121 再然后每120一次 因为每条鱼各自的入水针不同 所以的话它们各自可以出去的时间不同",
+       "t_start": 1428,
+       "t_end": null
+      }
+     ]
+    }
+   ],
+   "source_files": [
+    "transcripts_txt/BV1g3NC6pEFt_p1_39902972402.txt"
+   ],
+   "origin": {
+    "trial_doc_id": "fc1:帧时序与计时器-35-0",
+    "trial_rule_idx": 16,
+    "trial_manifest_outputs": "kb_trial/docs.jsonl",
+    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+    "card_section": "规则"
+   },
+   "review": {
+    "status": "auto_screened",
+    "reason": "本轮读源后判定源无法确定该 claim：本条不是自包含的机制规则，且来源无法独立确定其含义：(1) 引文中的「池塘/鱼/鱼字」出自主播当时在打的某一具体关卡与解谜过程，源中反复出现「运气问题」「第一天那种现象」「前两条鱼必须都得是零猜鱼」等仅在该局语境成立的表述，条目未记录关卡与模式；(2) 同文件后半段明确是主播自建模拟程序的调试（[50:48]「反正就是"
+   },
+   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+   "semantic_review": {
+    "verdict": "keep",
+    "support": "supported",
+    "info_value": "reusable_rule",
+    "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+    "reviewer_type": "agent"
+   },
+   "evidence_review": {
+    "status": "pending",
+    "reason": "本条不是自包含的机制规则，且来源无法独立确定其含义：(1) 引文中的「池塘/鱼/鱼字」出自主播当时在打的某一具体关卡与解谜过程，源中反复出现「运气问题」「第一天那种现象」「前两条鱼必须都得是零猜鱼」等仅在该局语境成立的表述，条目未记录关卡与模式；(2) 同文件后半段明确是主播自建模拟程序的调试（[50:48]「反正就是AI写的这个程序有很多的bug」、[01:37:07]「注意啊 我最开始的代码中 这里做了一个简化」），本条引文所指的「入水帧/检测周期」与程序实现纠缠，无法区分是游戏行为还是模拟器行为；(3) 「每条鱼各自的入水帧不同，因此各自可以出去的时间不同」这一句在源中是对该局观察的解释，而非对全体单位的普适陈述。按「来源不确定 → pending」处理，不再声称 supported。",
+    "reviewer_type": "agent",
+    "confidence": "text-source-inconclusive",
+    "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+    "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+    "source_path": "transcripts_txt/BV1g3NC6pEFt_p1_39902972402.txt",
+    "source_line_time": "00:21:45",
+    "supports": "池塘里有一堆的鱼 他们每条都有自己的游动的针；因为每条鱼各自的入水针不同 所以的话它们各自可以出去的时间不同",
+    "derived_correction": "源文「针」与「帧」混用（如「8针」「120帧」并存），本文档统一为「帧」；claim 的「游动帧（针）」即此订正；引文原文保留不改。",
+    "derived_correction_disposition": "applied",
+    "pending_code": "source_cannot_settle_claim"
+   }
+  },
+  {
+   "id": "fc1:索敌-22-14#r1",
+   "claim": "条件二技能同样需要攻击冷却清零。",
+   "subject": "条件二技能",
+   "condition": "该技能被判定为条件二技能;讨论其释放条件",
+   "scope": "universal",
+   "category": "索敌",
+   "recorded_ym": null,
+   "source_layer": "官方AI字幕",
+   "source_layers": [
+    "official"
+   ],
+   "track": "vod_official",
+   "citations": [
+    {
+     "id": "BV1jd3m68E6f_p1_40508197659:p21:a5:7d4317bf",
+     "status": "resolved_atom",
+     "source_layers": [
+      "official"
+     ],
+     "transcript_file": "transcripts_txt/BV1jd3m68E6f_p1_40508197659.txt",
+     "bvid_stem": "BV1jd3m68E6f_p1_40508197659",
+     "recorded_at": "2026-08-01",
+     "speaker": "神祇读神奇",
+     "chapter": "普攻/技能双索敌冷却与切模式继承",
+     "quotes": [
+      {
+       "text": "这就是很多那种所谓的占用攻击间隔的技能 为什么会发生这种奇怪的现象 就是因为他要等攻击冷却归零",
+       "t_start": 2406,
+       "t_end": 2441
+      }
+     ],
+     "_upstream_quote": "这就是很多那种所谓的占用攻击间隔的技能 为什么会发生这种奇怪的现象 就是因为他要等攻击冷却归零"
+    },
+    {
+     "id": "ctx=sub:BV1jd3m68E6f_p1_40508197659:2406",
+     "status": "resolved_timestamp_window",
+     "source_layers": [
+      "official"
+     ],
+     "transcript_file": "transcripts_txt/BV1jd3m68E6f_p1_40508197659.txt",
+     "requested_second": 2406,
+     "quotes": [
+      {
+       "text": "[40:06] 释放技能需要攻击和技能冷却都清零 对的是 除了上面这三个 还需要技能冷却清零 这里需要注意一下条件二技能同样也需要攻击冷却清零 这就是很多那种所谓的占用攻击间隔的技能",
+       "t_start": 2406,
+       "t_end": null
+      }
+     ]
+    }
+   ],
+   "source_files": [
+    "transcripts_txt/BV1jd3m68E6f_p1_40508197659.txt"
+   ],
+   "origin": {
+    "trial_doc_id": "fc1:索敌-22-14",
+    "trial_rule_idx": 1,
+    "trial_manifest_outputs": "kb_trial/docs.jsonl",
+    "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+    "card_section": "规则"
+   },
+   "review": {
+    "status": "auto_screened",
+    "reason": "通过全部确定性闸门；未经逐条人工或代理核听",
+    "not_authoritative": true
+   },
+   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+   "semantic_review": {
+    "verdict": "keep",
+    "support": "supported",
+    "info_value": "reusable_rule",
+    "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+    "reviewer_type": "agent"
+   },
+   "evidence_review": {
+    "status": "pending",
+    "reason": "本轮证据审读尚未覆盖到本条。",
+    "reviewer_type": "agent"
+   }
+  },
+  {
+   "id": "window:w000031#r0",
+   "claim": "浮空状态与飞行判定及死亡时点机制",
+   "subject": "未标注",
+   "condition": "未标注",
+   "scope": "未标注",
+   "category": "索敌",
+   "recorded_ym": null,
+   "source_layer": "QQ群聊",
+   "source_layers": [
+    "qq"
+   ],
+   "track": "qq",
+   "citations": [
+    {
+     "id": "qq:w000031",
+     "status": "resolved_qq_span",
+     "source_layers": [
+      "qq"
+     ],
+     "track": "qq_chat",
+     "window_id": "w000031",
+     "as_of": "2026-05-09 15:07:20",
+     "n_source_msgs": 7,
+     "quotes": [
+      {
+       "text": "根本原因是因为浮空敌人为飞行单位，而起飞只防地面单位的索敌",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "的同时，起飞单位还是地面单位，不对空不要紧",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "死亡不会清除buff，退出浮空状态机吗",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "浮空的飞行又不是buff带来的",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "buff和状态机都没了",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "changableMotionMode在定义飞行",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "能炸到就是上面这个原理，不能炸到就说明死亡的时候已经解除飞行了",
+       "t_start": null,
+       "t_end": null
+      }
+     ],
+     "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称"
+    }
+   ],
+   "source_files": [],
+   "origin": {
+    "trial_doc_id": "window:w000031",
+    "trial_rule_idx": 0,
+    "trial_manifest_outputs": "kb_trial/docs.jsonl",
+    "upstream_record": "kb_pilot_synth/semantic_repair_round1/gated_old_kept_v2.jsonl",
+    "card_section": "规则"
+   },
+   "review": {
+    "status": "auto_screened",
+    "reason": "该条窗口 span 无法确定机制主张，已隔离待人工判读；其 claim/subject/condition 保留为待判读文本，不再标注为已核实。隔离理由见 evidence_review.reason。"
+   },
+   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。 QQ 轨条目的唯一来源是群聊片段（已脱敏，不含群号与个人标识）；本层不对来源分层设自动优先级，与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。",
+   "semantic_review": {
+    "verdict": "keep",
+    "support": "supported",
+    "info_value": "reusable_rule",
+    "reason": "窗口内 span「changableMotionMode在定义飞行」「起飞只防地面单位索敌」「buff和状态机都没了」构成可复用结论；但该条 claim 文本是窗口标题而非机制句，使用时须以窗口内 span 为准，这一措辞缺口如实记录。",
+    "reviewer_type": "agent"
+   },
+   "evidence_review": {
+    "status": "pending",
+    "pending_code": "source_cannot_settle_claim",
+    "reason": "窗口 span 含未闭合疑问与相互冲突的表述，无法从 span 直接确定机制主张，故不给 claim 定稿：(1) 疑问句「死亡不会清除buff，退出浮空状态机吗」是提问，答案并未在 span 内以完整句给出，紧接的「浮空的飞行又不是buff带来的」「buff和状态机都没了」两句与提问是否同指、谁接谁的发言，在脱敏后的片段里无从区分；(2)「起飞单位还是地面单位，不对空不要紧」与首句「浮空敌人为飞行单位，而起飞只防地面单位的索敌」是两条并列且需要上下文才能调和的说法；(3)「能炸到就是上面这个原理，不能炸到就说明死亡的时候已经解除飞行了」是对现象的二分解释，本身不构成一个机制陈述。把这些拼接成「死亡时点是否已解除飞行决定能否被炸到」属于替来源补结论，按「来源不确定 → pending」处理，不猜补。",
+    "reviewer_type": "agent",
+    "confidence": "text-source-inconclusive",
+    "review_basis": "agent 依据 qq_worklist.json 的窗口 span 逐条比对；未做人工核听、未回看原片。",
+    "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏且丢失发言者与上下文顺序，无法区分提问、假设与结论。「all reviewed」不代表「all correct」。",
+    "retained_claim": "浮空状态与飞行判定及死亡时点机制",
+    "retained_subject": "未标注",
+    "upstream_title": "浮空状态与飞行判定及死亡时点机制"
+   }
+  },
+  {
+   "id": "window:w000036#r0",
+   "claim": "群攻伤害结算顺序与仇恨同帧/同仇恨判定逻辑",
+   "subject": "未标注",
+   "condition": "未标注",
+   "scope": "未标注",
+   "category": "伤害结算",
+   "recorded_ym": null,
+   "source_layer": "QQ群聊",
+   "source_layers": [
+    "qq"
+   ],
+   "track": "qq",
+   "citations": [
+    {
+     "id": "qq:w000036",
+     "status": "resolved_qq_span",
+     "source_layers": [
+      "qq"
+     ],
+     "track": "qq_chat",
+     "window_id": "w000036",
+     "as_of": "2026-05-09 17:53:36",
+     "n_source_msgs": 10,
+     "quotes": [
+      {
+       "text": "除了ew电狗等干员的余震之外",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "你猜猜群攻干员的伤害顺序是什么？",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "诶，对，从先到后",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "现在就是每次部署给全局仇恨计数硬性+1来规避同仇恨值",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "但是理论上你还是可以靠部署100个干员来出现同仇恨",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "或者直接和凯尔希3这样",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "不看仇恨值",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "——那同帧依旧是先部署",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "4号：仇恨降序",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "越晚的仇恨应该越高",
+       "t_start": null,
+       "t_end": null
+      }
+     ],
+     "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称"
+    }
+   ],
+   "source_files": [],
+   "origin": {
+    "trial_doc_id": "window:w000036",
+    "trial_rule_idx": 0,
+    "trial_manifest_outputs": "kb_trial/docs.jsonl",
+    "upstream_record": "kb_pilot_synth/semantic_repair_round1/gated_old_kept_v2.jsonl",
+    "card_section": "规则"
+   },
+   "review": {
+    "status": "auto_screened",
+    "reason": "该条窗口 span 无法确定机制主张，已隔离待人工判读；其 claim/subject/condition 保留为待判读文本，不再标注为已核实。隔离理由见 evidence_review.reason。"
+   },
+   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。 QQ 轨条目的唯一来源是群聊片段（已脱敏，不含群号与个人标识）；本层不对来源分层设自动优先级，与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。",
+   "semantic_review": {
+    "verdict": "keep",
+    "support": "supported",
+    "info_value": "reusable_rule",
+    "reason": "窗口内 span「群攻干员的伤害顺序…从先到后」「每次部署给全局仇恨计数硬性+1来规避同仇恨值」「不看仇恨值…同帧依旧是先部署」构成可复用结论；但「4号：仇恨降序 越晚的仇恨应该越高」一句属未确认推测，不应引用；该条 claim 文本是窗口标题而非机制句，措辞缺口如实记录。",
+    "reviewer_type": "agent"
+   },
+   "evidence_review": {
+    "status": "pending",
+    "pending_code": "source_cannot_settle_claim",
+    "reason": "窗口 span 的假设句与实测句混在一起，无法据此定稿机制主张：(1)「现在就是每次部署给全局仇恨计数硬性+1来规避同仇恨值」是实测陈述，但同一窗口的「但是理论上你还是可以靠部署100个干员来出现同仇恨」是假设，二者并存说明「同仇恨不可达」不成立；(2)「越晚的仇恨应该越高」含「应该」，是推测而非断言；「4号：仇恨降序」「——那同帧依旧是先部署」是被截断的讨论片段，缺少主语与参照对象；(3) 群攻伤害顺序仅由「你猜猜群攻干员的伤害顺序是什么？」「诶，对，从先到后」一问一答承载，「从先到后」的具体含义（按部署顺序还是按仇恨顺序）未在 span 内说清。以上任一条都不足以单独支撑机制句，且互相约束，按「来源不确定 → pending」处理。",
+    "reviewer_type": "agent",
+    "confidence": "text-source-inconclusive",
+    "review_basis": "agent 依据 qq_worklist.json 的窗口 span 逐条比对；未做人工核听、未回看原片。",
+    "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏且丢失发言者与上下文顺序，无法区分提问、假设与结论。「all reviewed」不代表「all correct」。",
+    "retained_claim": "群攻伤害结算顺序与仇恨同帧/同仇恨判定逻辑",
+    "retained_subject": "未标注",
+    "upstream_title": "群攻伤害结算顺序与仇恨同帧/同仇恨判定逻辑"
+   }
+  },
+  {
+   "id": "window:w000041#r0",
+   "claim": "附加攻击力乘区与钩爪位移伤害判定机制",
+   "subject": "未标注",
+   "condition": "未标注",
+   "scope": "未标注",
+   "category": "伤害结算",
+   "recorded_ym": null,
+   "source_layer": "QQ群聊",
+   "source_layers": [
+    "qq"
+   ],
+   "track": "qq",
+   "citations": [
+    {
+     "id": "qq:w000041",
+     "status": "resolved_qq_span",
+     "source_layers": [
+      "qq"
+     ],
+     "track": "qq_chat",
+     "window_id": "w000041",
+     "as_of": "2026-05-09 20:13:03",
+     "n_source_msgs": 5,
+     "quotes": [
+      {
+       "text": "比如钩锁师x模的位移伤害，每2帧判定一次，距离5帧更新一次，所以实际上是每4/6帧一次伤害，但挂上罗哥buff后就是每2帧一次伤害了",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "能对0伤害+x的吗我靠",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "天赋并不增伤，其实是个“隐藏乘区”",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "明日方舟所有伤害都是 攻击力 * 攻击力倍率 + 附加攻击力",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "只是在逻之前没有任何人用过这个附加攻击力区",
+       "t_start": null,
+       "t_end": null
+      }
+     ],
+     "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称"
+    }
+   ],
+   "source_files": [],
+   "origin": {
+    "trial_doc_id": "window:w000041",
+    "trial_rule_idx": 0,
+    "trial_manifest_outputs": "kb_trial/docs.jsonl",
+    "upstream_record": "kb_pilot_synth/semantic_repair_round1/gated_old_kept_v2.jsonl",
+    "card_section": "规则"
+   },
+   "review": {
+    "status": "auto_screened",
+    "reason": "该条窗口 span 无法确定机制主张，已隔离待人工判读；其 claim/subject/condition 保留为待判读文本，不再标注为已核实。隔离理由见 evidence_review.reason。"
+   },
+   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。 QQ 轨条目的唯一来源是群聊片段（已脱敏，不含群号与个人标识）；本层不对来源分层设自动优先级，与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。",
+   "semantic_review": {
+    "verdict": "keep",
+    "support": "supported",
+    "info_value": "reusable_rule",
+    "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+    "reviewer_type": "agent"
+   },
+   "evidence_review": {
+    "status": "pending",
+    "pending_code": "source_cannot_settle_claim",
+    "reason": "窗口把一条可复用的伤害通式与一个未闭合的实测记录混在一起，故只保留前者时仍不足以给本条定稿：(1) 可用的部分仅「明日方舟所有伤害都是 攻击力 * 攻击力倍率 + 附加攻击力」这一句通式（同窗口「只是在逻之前没有任何人用过这个附加攻击力区」为其注解）；(2) 本条 claim 的另一半是钩爪位移伤害的帧数记录「每2帧判定一次，距离5帧更新一次，所以实际上是每4/6帧一次伤害，但挂上罗哥buff后就是每2帧一次伤害了」，该数值属单次实测，且同窗口紧邻的「能对0伤害+x的吗我靠」表明讨论仍在进行中，数值是否已被讨论者与提问者确认在 span 内看不出；(3)「天赋并不增伤，其实是个\"隐藏乘区\"」是对乘区归属的解释性表述，未给出可核对的判定条件。把通式与实测数值合成一条 claim 会同时抬高两者的确定性，按「来源不确定 → pending」处理，不拆分、不选取其一。",
+    "reviewer_type": "agent",
+    "confidence": "text-source-inconclusive",
+    "review_basis": "agent 依据 qq_worklist.json 的窗口 span 逐条比对；未做人工核听、未回看原片。",
+    "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏且丢失发言者与上下文顺序，无法区分提问、假设与结论。「all reviewed」不代表「all correct」。",
+    "retained_claim": "附加攻击力乘区与钩爪位移伤害判定机制",
+    "retained_subject": "未标注",
+    "upstream_title": "附加攻击力乘区与钩爪位移伤害判定机制"
+   }
+  }
+ ]
+}

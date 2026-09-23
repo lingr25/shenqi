@@ -1,0 +1,4663 @@
+[
+ {
+  "id": "qq_expansion:w000521:c02",
+  "claim": "不处于 move 状态机下不会进行避障力结算，避障冷却也不会更新。",
+  "subject": "避障结算与冷却的触发前提",
+  "condition": "非 move 状态机时",
+  "scope": "general_mechanism",
+  "category": "寻路/状态机",
+  "recorded_ym": "202606",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000521",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000521",
+    "as_of": "2026-06-03 01:04:48",
+    "n_source_msgs": 3,
+    "quotes": [
+     {
+      "text": "不处于move状态机下不会进行避障力的结算叭",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "对",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "避障冷却也不会更新",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000521",
+   "trial_rule_idx": "c02",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_003.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_003",
+   "local_id": "c02",
+   "message_seqs": [
+    8,
+    9,
+    10
+   ],
+   "message_count": 3
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "不处于 move 状态机下不会进行避障力结算，避障冷却也不会更新。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 8 为群友的确认式提问，seq 9「对」与 seq 10 的补充由主播给出，闭合。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "seq 8 为群友的确认式提问，seq 9「对」与 seq 10 的补充由主播给出，闭合。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_003.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000521:c03",
+  "claim": "阻挡影响路线的关键不在于改变敌人位置，而在于改变避障结算判定点的位置：早一帧阻挡就少一帧阻挡前的避障冷却，从而把结算点整体前移一帧；阻挡之后位置大致固定，故阻挡后走过的避障帧是固定的。",
+  "subject": "阻挡改变避障路径的作用机理",
+  "condition": "通过调整阻挡时机改变阻挡前的避障冷却帧数",
+  "scope": "general_mechanism",
+  "category": "寻路/避障力",
+  "recorded_ym": "202606",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000521",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000521",
+    "as_of": "2026-06-03 01:04:48",
+    "n_source_msgs": 4,
+    "quotes": [
+     {
+      "text": "阻挡真正重要的只是控制避障帧的发生点",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "阻挡之后的位置是大致固定的，那么阻挡之后走过的避障帧是固定的",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "少一帧阻挡前的避障冷却",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "从而调1帧的避障冷却",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000521",
+   "trial_rule_idx": "c03",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_003.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_003",
+   "local_id": "c03",
+   "message_seqs": [
+    24,
+    25,
+    27,
+    29
+   ],
+   "message_count": 4
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "阻挡影响路线的关键不在于改变敌人位置，而在于改变避障结算判定点的位置：早一帧阻挡就少一帧阻挡前的避障冷却，从而把结算点整体前移一帧；阻挡之后位置大致固定，故阻挡后走过的避障帧是固定的。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：提问者先以「假设不改变避障力的判定帧，只是改变位置」（seq 13）与「阻挡偏移改变初始位置对避障力改变路径有用么」（seq 11）发问，主播 seq 14「改变路径的逻辑就是我说的啊」后以 seq 24/25/27/29 逐条闭合。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "提问者先以「假设不改变避障力的判定帧，只是改变位置」（seq 13）与「阻挡偏移改变初始位置对避障力改变路径有用么」（seq 11）发问，主播 seq 14「改变路径的逻辑就是我说的啊」后以 seq 24/25/27/29 逐条闭合。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_003.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w001466:c01",
+  "claim": "碰撞箱尚有0.01间距时也可以判定碰撞；间距处于0.005到0.01之间属于相离碰撞；若某帧距离会小于0.005，则敌人被直接顶在0.005的位置。",
+  "subject": "相离碰撞的间距区间与判定阈值",
+  "condition": "见行者推敌人撞墙/撞高台的位移结算场景",
+  "scope": "entity_mechanism",
+  "category": "位移/碰撞",
+  "recorded_ym": "202608",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w001466",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w001466",
+    "as_of": "2026-08-03 17:48:05",
+    "n_source_msgs": 4,
+    "quotes": [
+     {
+      "text": "[表情]@62786ad1 碰撞箱尚有0.01间距也可以碰撞",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "但是如果距离＜0.005，会把敌人推到这个0.005的位置",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "0.005到0.01之间",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "就是一个相离碰撞",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w001466",
+   "trial_rule_idx": "c01",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_005.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_005",
+   "local_id": "c01",
+   "message_seqs": [
+    45,
+    47,
+    48,
+    49
+   ],
+   "message_count": 4
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "碰撞箱尚有0.01间距时也可以判定碰撞；间距处于0.005到0.01之间属于相离碰撞；若某帧距离会小于0.005，则敌人被直接顶在0.005的位置。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：群友 seq 39 问「相离碰撞是什么」，主播 seq 45/47/48/49 一次性给出全部数值与区间，数值严格照抄原文（0.01、0.005），未作换算。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "群友 seq 39 问「相离碰撞是什么」，主播 seq 45/47/48/49 一次性给出全部数值与区间，数值严格照抄原文（0.01、0.005），未作换算。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_005.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w001466:c02",
+  "claim": "某帧的间距若落在0.005到0.01之间，这帧可以到达该位置，下帧移动前会直接顶在碰撞箱上停止失衡；若某帧会小于0.005，则这帧直接顶在0.005位置。",
+  "subject": "相离碰撞与直接顶住两种情况的位移落点",
+  "condition": "按某帧结算出的间距所处的区间分两种情形",
+  "scope": "general_mechanism",
+  "category": "位移/碰撞",
+  "recorded_ym": "202608",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w001466",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w001466",
+    "as_of": "2026-08-03 17:48:05",
+    "n_source_msgs": 3,
+    "quotes": [
+     {
+      "text": "如果某帧在0.005到0.01之间，那么这帧可以到达这个位置，下帧移动前会直接顶在碰撞箱上停止失衡",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "但是如果某帧会＜0.005",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "那么这帧会直接顶在0.005位置",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w001466",
+   "trial_rule_idx": "c02",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_005.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_005",
+   "local_id": "c02",
+   "message_seqs": [
+    58,
+    59,
+    60
+   ],
+   "message_count": 3
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "某帧的间距若落在0.005到0.01之间，这帧可以到达该位置，下帧移动前会直接顶在碰撞箱上停止失衡；若某帧会小于0.005，则这帧直接顶在0.005位置。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：主播在 seq 45~49 给出阈值后，seq 58/59/60 逐情形给出位移后果，是同一机制的闭合展开。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "主播在 seq 45~49 给出阈值后，seq 58/59/60 逐情形给出位移后果，是同一机制的闭合展开。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_005.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w001466:c03",
+  "claim": "见行者1技能只在能触发「某帧距离小于0.005」这种情况时才判定为「撞高台」；落在相离碰撞区间时不判定。",
+  "subject": "见行者1技能撞高台判定的触发条件",
+  "condition": "位移结算时最终落点为0.005位置（即直接顶住）时",
+  "scope": "entity_mechanism",
+  "category": "位移/技能判定",
+  "recorded_ym": "202608",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w001466",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w001466",
+    "as_of": "2026-08-03 17:48:05",
+    "n_source_msgs": 4,
+    "quotes": [
+     {
+      "text": "[表情]见行者只在能触发这个情况的时候",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "判定为\"撞高台\"",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "见行者1技能是不判定的",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "[表情]@879b5159 因为推到墙上没晕",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w001466",
+   "trial_rule_idx": "c03",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_005.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_005",
+   "local_id": "c03",
+   "message_seqs": [
+    62,
+    63,
+    27,
+    35
+   ],
+   "message_count": 4
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "见行者1技能只在能触发「某帧距离小于0.005」这种情况时才判定为「撞高台」；落在相离碰撞区间时不判定。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：群友 seq 32 追问「不是？」，主播 seq 35 先给现象（推到墙上没晕），seq 62/63 给出判定条件，seq 26/27 在举图时已先行给出「这种情况见行者1技能是不判定的」。现象与条件两段互证，属闭合。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "群友 seq 32 追问「不是？」，主播 seq 35 先给现象（推到墙上没晕），seq 62/63 给出判定条件，seq 26/27 在举图时已先行给出「这种情况见行者1技能是不判定的」。现象与条件两段互证，属闭合。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_005.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000387:c01",
+  "claim": "阻挡反隐没有延迟。",
+  "subject": "阻挡破隐是否存在延迟",
+  "condition": "—",
+  "scope": "general_mechanism",
+  "category": "索敌/隐匿",
+  "recorded_ym": "202605",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000387",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000387",
+    "as_of": "2026-05-28 22:11:00",
+    "n_source_msgs": 2,
+    "quotes": [
+     {
+      "text": "阻挡反隐有延迟吗？",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "[表情]@2aaa8356 没有",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000387",
+   "trial_rule_idx": "c01",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_006.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_006",
+   "local_id": "c01",
+   "message_seqs": [
+    1,
+    2
+   ],
+   "message_count": 2
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "阻挡反隐没有延迟。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：一问一答，直接闭合。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "一问一答，直接闭合。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_006.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000387:c02",
+  "claim": "隐匿在底层是一个 buff，索敌的时候会检测它。",
+  "subject": "隐匿的底层载体",
+  "condition": "—",
+  "scope": "general_mechanism",
+  "category": "隐匿",
+  "recorded_ym": "202605",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000387",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000387",
+    "as_of": "2026-05-28 22:11:00",
+    "n_source_msgs": 2,
+    "quotes": [
+     {
+      "text": "[表情]@7bf55033 一个buff，索敌的时候会检测他",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "[表情]@7bf55033 隐匿buff提供隐匿异常效果",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000387",
+   "trial_rule_idx": "c02",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_006.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_006",
+   "local_id": "c02",
+   "message_seqs": [
+    32,
+    47
+   ],
+   "message_count": 2
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "隐匿在底层是一个 buff，索敌的时候会检测它。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：群友 seq 15/16 以 PRTS 描述质疑「不属于状态机，而是有独立的控制开关的」「事实上敌方隐匿是个buff么」，seq 17 另一位群友先答「是buff来着」，主播 seq 32 给出「一个buff，索敌的时候会检测他」，seq 47 进一步区分 buff 与异常效果。注意 slot seq 22/29 的两大段长文是机器人回复，已排除，不作证据。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "群友 seq 15/16 以 PRTS 描述质疑「不属于状态机，而是有独立的控制开关的」「事实上敌方隐匿是个buff么」，seq 17 另一位群友先答「是buff来着」，主播 seq 32 给出「一个buff，索敌的时候会检测他」，seq 47 进一步区分 buff 与异常效果。注意 slot seq 22/29 的两大段长文是机器人回复，已排除，不作证据。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_006.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000387:c04",
+  "claim": "隐匿 buff 内部还包含「阻挡解隐匿」这类额外特性（该特性不是隐匿异常效果本身所具备的），且该特性可以不被写入。",
+  "subject": "隐匿 buff 内部除异常效果外的附加特性",
+  "condition": "配置了阻挡解隐匿的敌人",
+  "scope": "general_mechanism",
+  "category": "隐匿/阻挡",
+  "recorded_ym": "202605",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000387",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000387",
+    "as_of": "2026-05-28 22:11:00",
+    "n_source_msgs": 7,
+    "quotes": [
+     {
+      "text": "[表情]@7bf55033 但是隐匿buff里还包含着别的效果",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "比如阻挡解隐匿",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "这是隐匿异常效果没有的特性",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "[表情]当然他可以不写阻挡解隐",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "[表情]@589e9b6d 我记得有个怪就是阻挡不解除隐匿来着",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "嗯",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "警察",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000387",
+   "trial_rule_idx": "c04",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_006.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_006",
+   "local_id": "c04",
+   "message_seqs": [
+    54,
+    55,
+    56,
+    57,
+    59,
+    60,
+    61
+   ],
+   "message_count": 7
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "隐匿 buff 内部还包含「阻挡解隐匿」这类额外特性（该特性不是隐匿异常效果本身所具备的），且该特性可以不被写入。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：主播 seq 54~57 给出机制，群友 seq 59/62/63 举出「一定时间内阻挡不解除」的实例（交通亭炸出来的那个），主播 seq 60/61 以「嗯」「警察」确认，属闭合。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "主播 seq 54~57 给出机制，群友 seq 59/62/63 举出「一定时间内阻挡不解除」的实例（交通亭炸出来的那个），主播 seq 60/61 以「嗯」「警察」确认，属闭合。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_006.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000432:c01",
+  "claim": "敌人的三帧索敌只在 move 状态机（移动状态机）下进行。",
+  "subject": "三帧索敌的生效前提",
+  "condition": "敌人处于 move 状态机时",
+  "scope": "general_mechanism",
+  "category": "索敌/状态机",
+  "recorded_ym": "202605",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000432",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000432",
+    "as_of": "2026-05-31 00:33:14",
+    "n_source_msgs": 2,
+    "quotes": [
+     {
+      "text": "三帧索敌只在移动状态机下进行",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "move状态机",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000432",
+   "trial_rule_idx": "c01",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_007.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_007",
+   "local_id": "c01",
+   "message_seqs": [
+    26,
+    27
+   ],
+   "message_count": 2
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "敌人的三帧索敌只在 move 状态机（移动状态机）下进行。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：群友 seq 16 问「想知道三帧索敌机制的起点在哪一帧」，seq 19 群友答「出生帧吧」并举第4章束缚术士「出生就技能抬手」，主播 seq 24 以「移动帧」作否定性回答，seq 26/27 给出正式口径。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "群友 seq 16 问「想知道三帧索敌机制的起点在哪一帧」，seq 19 群友答「出生帧吧」并举第4章束缚术士「出生就技能抬手」，主播 seq 24 以「移动帧」作否定性回答，seq 26/27 给出正式口径。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_007.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000432:c02",
+  "claim": "敌人出场的帧时序为：0帧影子，1帧黑影贴图，2帧移动，2帧索敌；0到1帧没有寻路。",
+  "subject": "敌人出场帧时序与索敌起始帧",
+  "condition": "敌人的出场（出生）过程",
+  "scope": "general_mechanism",
+  "category": "帧时序/索敌",
+  "recorded_ym": "202605",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000432",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000432",
+    "as_of": "2026-05-31 00:33:14",
+    "n_source_msgs": 5,
+    "quotes": [
+     {
+      "text": "0帧影子",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "1帧黑影贴图",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "2帧移动",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "[表情]2帧索敌",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "0到1没寻路",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000432",
+   "trial_rule_idx": "c02",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_007.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_007",
+   "local_id": "c02",
+   "message_seqs": [
+    28,
+    29,
+    30,
+    31,
+    45
+   ],
+   "message_count": 5
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "敌人出场的帧时序为：0帧影子，1帧黑影贴图，2帧移动，2帧索敌；0到1帧没有寻路。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：主播 seq 28~31 连续给出完整时序，seq 45 补上「0到1没寻路」；群友 seq 25 追问「移动帧是什么喵」后由主播解释，属闭合。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "主播 seq 28~31 连续给出完整时序，seq 45 补上「0到1没寻路」；群友 seq 25 追问「移动帧是什么喵」后由主播解释，属闭合。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_007.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000432:c03",
+  "claim": "一次索敌行为会判定范围内的所有敌人，判定到有人就抬手。",
+  "subject": "索敌行为的判定范围与触发",
+  "condition": "一次索敌行为",
+  "scope": "general_mechanism",
+  "category": "索敌",
+  "recorded_ym": "202605",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000432",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000432",
+    "as_of": "2026-05-31 00:33:14",
+    "n_source_msgs": 2,
+    "quotes": [
+     {
+      "text": "[表情]@某人 一次索敌行为判定范围内所有敌人",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "[表情]如果有人就抬手",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000432",
+   "trial_rule_idx": "c03",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_007.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_007",
+   "local_id": "c03",
+   "message_seqs": [
+    68,
+    71
+   ],
+   "message_count": 2
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "一次索敌行为会判定范围内的所有敌人，判定到有人就抬手。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：群友 seq 56/58 问「范围里有其他敌人怎么办」，主播 seq 68/71 直接给出规则；「有人就抬手」是对「抬手触发条件」的问句收口。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "群友 seq 56/58 问「范围里有其他敌人怎么办」，主播 seq 68/71 直接给出规则；「有人就抬手」是对「抬手触发条件」的问句收口。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_007.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000433:c01",
+  "claim": "主动开启技能与普攻的三帧索敌无关：点下技能就会判定范围内的敌人，大部分技能都带着自己的索敌，并不是都有三帧索敌机制。",
+  "subject": "主动技能的索敌判定",
+  "condition": "干员主动开启技能时",
+  "scope": "general_mechanism",
+  "category": "索敌",
+  "recorded_ym": "202605",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000433",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000433",
+    "as_of": "2026-05-31 00:58:38",
+    "n_source_msgs": 5,
+    "quotes": [
+     {
+      "text": "[表情]@56bd7746 自己开技能又不关3帧索敌的事",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "你点下去就会判定范围内的敌人",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "但是他不是三帧索敌",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "大部分技能都带着自己的索敌",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "并不都有三帧索敌机制",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000433",
+   "trial_rule_idx": "c01",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_008.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_008",
+   "local_id": "c01",
+   "message_seqs": [
+    37,
+    38,
+    43,
+    45,
+    49
+   ],
+   "message_count": 5
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "主动开启技能与普攻的三帧索敌无关：点下技能就会判定范围内的敌人，大部分技能都带着自己的索敌，并不是都有三帧索敌机制。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：主播先以 seq 37/38 给出结论，群友 seq 40/41 复述「技能开启帧就是一个索敌帧 / 索敌了就抬手」获主播 seq 42「可以这样解释」，seq 46/50 追问「进行一次独立判定？」获「可以」；属闭合。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "主播先以 seq 37/38 给出结论，群友 seq 40/41 复述「技能开启帧就是一个索敌帧 / 索敌了就抬手」获主播 seq 42「可以这样解释」，seq 46/50 追问「进行一次独立判定？」获「可以」；属闭合。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_008.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000433:c02",
+  "claim": "阻挡攻击没有索敌帧的概念，是阻挡触发的。",
+  "subject": "阻挡攻击的触发方式",
+  "condition": "攻击由阻挡触发时",
+  "scope": "general_mechanism",
+  "category": "索敌/阻挡",
+  "recorded_ym": "202605",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000433",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000433",
+    "as_of": "2026-05-31 00:58:38",
+    "n_source_msgs": 2,
+    "quotes": [
+     {
+      "text": "[表情]这类阻挡攻击也没有索敌帧概念",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "是阻挡触发的",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000433",
+   "trial_rule_idx": "c02",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_008.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_008",
+   "local_id": "c02",
+   "message_seqs": [
+    62,
+    63
+   ],
+   "message_count": 2
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "阻挡攻击没有索敌帧的概念，是阻挡触发的。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：主播主动给出，无争议，属闭合结论。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "主播主动给出，无争议，属闭合结论。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_008.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000433:c03",
+  "claim": "灵知攻击间隔为48帧，其2技能吃攻击间隔，因此在开技能后48帧索敌。",
+  "subject": "灵知2技能的索敌时点",
+  "condition": "灵知开启2技能（该技能受攻击间隔影响）",
+  "scope": "entity_mechanism",
+  "category": "索敌/攻击间隔",
+  "recorded_ym": "202605",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000433",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000433",
+    "as_of": "2026-05-31 00:58:38",
+    "n_source_msgs": 3,
+    "quotes": [
+     {
+      "text": "灵知攻击间隔48",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "在开技能后48帧",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "因为他2技能吃攻击间隔",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000433",
+   "trial_rule_idx": "c03",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_008.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_008",
+   "local_id": "c03",
+   "message_seqs": [
+    56,
+    57,
+    59
+   ],
+   "message_count": 3
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "灵知攻击间隔为48帧，其2技能吃攻击间隔，因此在开技能后48帧索敌。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：群友 seq 55 问「那灵芝下一次索敌是在技能结束后一帧吗」，主播 seq 56/57 给出数字并以 seq 58「为什么？」自问、seq 59 自答，属闭合。数字 48 逐字取自原文。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "群友 seq 55 问「那灵芝下一次索敌是在技能结束后一帧吗」，主播 seq 56/57 给出数字并以 seq 58「为什么？」自问、seq 59 自答，属闭合。数字 48 逐字取自原文。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_008.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000445:c01",
+  "claim": "阻挡是干员（己方）的能力，敌方没有阻挡相关的东西，是干员阻挡了敌人；干员部署的时间决定了阻挡扫描的时间。",
+  "subject": "阻挡的归属方与扫描时点来源",
+  "condition": "—",
+  "scope": "general_mechanism",
+  "category": "阻挡",
+  "recorded_ym": "202605",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000445",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000445",
+    "as_of": "2026-05-31 12:35:41",
+    "n_source_msgs": 7,
+    "quotes": [
+     {
+      "text": "干员部署的时间决定了阻挡扫描时间啊",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "阻挡是干员能力",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "敌方没有阻挡相关的东西",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "是干员阻挡了敌人",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "[表情]@0065bdfd 阻挡是三帧一扫",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "阻挡帧和部署帧有关系吗竟然",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "当然",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000445",
+   "trial_rule_idx": "c01",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_009.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_009",
+   "local_id": "c01",
+   "message_seqs": [
+    48,
+    50,
+    51,
+    52,
+    34,
+    44,
+    46
+   ],
+   "message_count": 7
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "阻挡是干员（己方）的能力，敌方没有阻挡相关的东西，是干员阻挡了敌人；干员部署的时间决定了阻挡扫描的时间。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：群友 seq 44/45 追问「阻挡帧和部署帧有关系吗竟然」，主播 seq 46「当然」+ seq 48 给出因果；seq 43 群友已给出「早一帧或者晚一帧」的操作建议，主播 seq 50/51/52 补上归属方。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "群友 seq 44/45 追问「阻挡帧和部署帧有关系吗竟然」，主播 seq 46「当然」+ seq 48 给出因果；seq 43 群友已给出「早一帧或者晚一帧」的操作建议，主播 seq 50/51/52 补上归属方。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_009.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000445:c02",
+  "claim": "免疫是让 buff 持有时不生效；反制是在获得 buff 时直接把它移除（「扔进回收站」）。",
+  "subject": "免疫与反制的区别",
+  "condition": "对比免疫与反制两种响应",
+  "scope": "general_mechanism",
+  "category": "异常效果/buff",
+  "recorded_ym": "202605",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000445",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000445",
+    "as_of": "2026-05-31 12:35:41",
+    "n_source_msgs": 4,
+    "quotes": [
+     {
+      "text": "[表情]@eb1917ed 让持有时buff不生效",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "和获得时直接把buff扔进回收站",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "1秒钟反制直接醒了",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "1秒钟免疫眩晕结束接着晕",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000445",
+   "trial_rule_idx": "c02",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_009.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_009",
+   "local_id": "c02",
+   "message_seqs": [
+    32,
+    33,
+    39,
+    36
+   ],
+   "message_count": 4
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "免疫是让 buff 持有时不生效；反制是在获得 buff 时直接把它移除（「扔进回收站」）。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：群友 seq 28 直接提问，主播 seq 32/33 作答并以 seq 35~39 的「1秒眩晕」对照例子闭合（免疫→结束接着晕；反制→直接醒）。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "群友 seq 28 直接提问，主播 seq 32/33 作答并以 seq 35~39 的「1秒眩晕」对照例子闭合（免疫→结束接着晕；反制→直接醒）。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_009.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000547:c01",
+  "claim": "看敌人出生、移速、路径设置即可直接计算进门帧；反过来，指定帧数能简算坐标，指定坐标能简算抵达帧数。",
+  "subject": "敌人抵达帧数与坐标的手算路径",
+  "condition": "未触发避障或加速度上限时",
+  "scope": "general_mechanism",
+  "category": "寻路/计算",
+  "recorded_ym": "202606",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000547",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000547",
+    "as_of": "2026-06-03 19:10:08",
+    "n_source_msgs": 4,
+    "quotes": [
+     {
+      "text": "[表情]看敌人出生，移速，路径设置，直接计算进门帧",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "更进一步，指定帧数能简算坐标",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "指定坐标能简算抵达帧数",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "[表情]对的@bb42f5fd",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000547",
+   "trial_rule_idx": "c01",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_010.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_010",
+   "local_id": "c01",
+   "message_seqs": [
+    4,
+    6,
+    9,
+    20
+   ],
+   "message_count": 4
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "看敌人出生、移速、路径设置即可直接计算进门帧；反过来，指定帧数能简算坐标，指定坐标能简算抵达帧数。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：主播 seq 4/6/9 连续给出换算方向，群友 seq 16 补上前提「没触发避障或者加速度上限就好算」，主播 seq 20 明确认可（「对的」）。前提有明确出处。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "主播 seq 4/6/9 连续给出换算方向，群友 seq 16 补上前提「没触发避障或者加速度上限就好算」，主播 seq 20 明确认可（「对的」）。前提有明确出处。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_010.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000563:c01",
+  "claim": "发射的弹道数量与金币数没有直接关系；有关系的是关技能时有多少金币，后面扣金币和弹道不一定同步。",
+  "subject": "弹道数量与金币数的关系",
+  "condition": "诗怀雅2技能关技能时",
+  "scope": "entity_mechanism",
+  "category": "弹道/伤害结算",
+  "recorded_ym": "202606",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000563",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000563",
+    "as_of": "2026-06-03 23:42:17",
+    "n_source_msgs": 2,
+    "quotes": [
+     {
+      "text": "金币确实和弹道没关系，有关系的是关技能时有多少金币",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "后面扣金币和弹道不一定同步",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000563",
+   "trial_rule_idx": "c01",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_011.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_011",
+   "local_id": "c01",
+   "message_seqs": [
+    35,
+    38
+   ],
+   "message_count": 2
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "发射的弹道数量与金币数没有直接关系；有关系的是关技能时有多少金币，后面扣金币和弹道不一定同步。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：群友 seq 15 先提出「我怎么感觉金币和发射弹道数没有实际关系」，主播 seq 35/38 以更精确的表述闭合（把「没有关系」限定为「关技能时的金币数才有关系」），seq 39 归纳问题为「只有9个弹道怎么碰撞出10次」。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "群友 seq 15 先提出「我怎么感觉金币和发射弹道数没有实际关系」，主播 seq 35/38 以更精确的表述闭合（把「没有关系」限定为「关技能时的金币数才有关系」），seq 39 归纳问题为「只有9个弹道怎么碰撞出10次」。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_011.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000563:c02",
+  "claim": "实测盯帧结果是发射了9个弹道但产生了两次碰撞叠加，天上还剩一个在飞；第一个弹道是「碰撞而未消耗」，从而多出一次命中。",
+  "subject": "9 发弹道产生 10 次命中的归因",
+  "condition": "诗怀雅2技能的实测盯帧场景",
+  "scope": "entity_mechanism",
+  "category": "弹道/碰撞判定",
+  "recorded_ym": "202606",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000563",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000563",
+    "as_of": "2026-06-03 23:42:17",
+    "n_source_msgs": 5,
+    "quotes": [
+     {
+      "text": "从结果上来讲就是发射了9个",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "但是有的弹道碰撞了两次",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "还剩了一个在天上飞",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "第一个弹道就多双击了",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "[表情]碰撞而未消耗",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000563",
+   "trial_rule_idx": "c02",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_011.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_011",
+   "local_id": "c02",
+   "message_seqs": [
+    18,
+    19,
+    40,
+    69,
+    71
+   ],
+   "message_count": 5
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "实测盯帧结果是发射了9个弹道但产生了两次碰撞叠加，天上还剩一个在飞；第一个弹道是「碰撞而未消耗」，从而多出一次命中。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：群友 seq 39 把问题收敛为「9个弹道怎么碰撞出10次」，主播 seq 40/41/42/43 与 seq 69/71 以「还剩一个」和「碰撞而未消耗」收口；群友 seq 44 给出的另一种解释（「-1被重新生成了一个，或者，8个碰了10下」）被主播 seq 45「嗯」一带而过而未采纳，本审同样不采该替代解释。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "群友 seq 39 把问题收敛为「9个弹道怎么碰撞出10次」，主播 seq 40/41/42/43 与 seq 69/71 以「还剩一个」和「碰撞而未消耗」收口；群友 seq 44 给出的另一种解释（「-1被重新生成了一个，或者，8个碰了10下」）被主播 seq 45「嗯」一带而过而未采纳，本审同样不采该替代解释。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_011.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000929:c01",
+  "claim": "抬手时就已经确定了攻击持续的长度；攻击持续大部分时候与动画长度绑定，但更确切地说是逻辑帧规定值。",
+  "subject": "攻击持续长度的确定时点与来源",
+  "condition": "干员抬手时",
+  "scope": "general_mechanism",
+  "category": "帧时序/攻击",
+  "recorded_ym": "202607",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000929",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000929",
+    "as_of": "2026-07-04 00:03:46",
+    "n_source_msgs": 4,
+    "quotes": [
+     {
+      "text": "[表情]@d2e266b3 抬手已经确定了攻击持续的长度",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "攻击持续就是动画的长度",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "但是又不严格能理解为动画",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "更确切的说是大部分时候和动画长度绑定的逻辑帧规定值",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000929",
+   "trial_rule_idx": "c01",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_012.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_012",
+   "local_id": "c01",
+   "message_seqs": [
+    4,
+    10,
+    11,
+    13
+   ],
+   "message_count": 4
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "抬手时就已经确定了攻击持续的长度；攻击持续大部分时候与动画长度绑定，但更确切地说是逻辑帧规定值。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：主播主动开场给出（seq 4/5），群友 seq 9「原来有保底」后主播以 seq 10/11/13 自我修正到精确表述，属闭合。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "主播主动开场给出（seq 4/5），群友 seq 9「原来有保底」后主播以 seq 10/11/13 自我修正到精确表述，属闭合。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_012.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000929:c02",
+  "claim": "抬手到事件帧的长度定义为前摇；事件帧是一个通知，其触发可以由播放决定，也可以由逻辑保底。",
+  "subject": "前摇的定义与事件帧的触发方式",
+  "condition": "攻击动作播放时",
+  "scope": "general_mechanism",
+  "category": "帧时序/攻击",
+  "recorded_ym": "202607",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000929",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000929",
+    "as_of": "2026-07-04 00:03:46",
+    "n_source_msgs": 5,
+    "quotes": [
+     {
+      "text": "[表情]这个通知叫事件帧",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "抬手到事件帧的长度定义为前摇",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "可以由播放决定",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "也可以逻辑保底",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "[表情]逻辑保底的话就不需要管动画",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000929",
+   "trial_rule_idx": "c02",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_012.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_012",
+   "local_id": "c02",
+   "message_seqs": [
+    18,
+    19,
+    20,
+    22,
+    29
+   ],
+   "message_count": 5
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "抬手到事件帧的长度定义为前摇；事件帧是一个通知，其触发可以由播放决定，也可以由逻辑保底。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：群友 seq 17 追问「前摇保底是何物」，主播 seq 18~22 连续给出定义与两种触发方式，seq 29 补上逻辑保底的意义（不需要管动画）。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "群友 seq 17 追问「前摇保底是何物」，主播 seq 18~22 连续给出定义与两种触发方式，seq 29 补上逻辑保底的意义（不需要管动画）。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_012.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000957:c01",
+  "claim": "攻击来源（干员/敌方）只控制弹道发射，不控制出伤；出伤由弹道命中时再判定。",
+  "subject": "弹道出伤的判定归属",
+  "condition": "弹道类攻击命中时",
+  "scope": "general_mechanism",
+  "category": "弹道/伤害结算",
+  "recorded_ym": "202607",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000957",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000957",
+    "as_of": "2026-07-05 18:54:06",
+    "n_source_msgs": 5,
+    "quotes": [
+     {
+      "text": "干员只影响发射",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "不影响出伤",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "[表情]来源",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "来源只控制发射",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "出伤由弹道命中再判定",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000957",
+   "trial_rule_idx": "c01",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_013.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_013",
+   "local_id": "c01",
+   "message_seqs": [
+    62,
+    63,
+    67,
+    68,
+    70
+   ],
+   "message_count": 5
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "攻击来源（干员/敌方）只控制弹道发射，不控制出伤；出伤由弹道命中时再判定。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：群友 seq 56 的追问「关键是隐匿不是只有不可选中效果嘛，为什么会影响命中判定呢」把问题逼到判定归属，主播 seq 62/63/67/68/70 分「发射」与「出伤」两端作答，属闭合。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "群友 seq 56 的追问「关键是隐匿不是只有不可选中效果嘛，为什么会影响命中判定呢」把问题逼到判定归属，主播 seq 62/63/67/68/70 分「发射」与「出伤」两端作答，属闭合。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_013.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000957:c03",
+  "claim": "弑君者不吃大盘鸡伤害的原因是：大盘鸡的弹道落下时会进行判定，而判定时它身上有隐匿。",
+  "subject": "特定现象的解释路径",
+  "condition": "大盘鸡弹道落下的判定帧与隐匿状态重合时",
+  "scope": "entity_mechanism",
+  "category": "弹道/隐匿",
+  "recorded_ym": "202607",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000957",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000957",
+    "as_of": "2026-07-05 18:54:06",
+    "n_source_msgs": 4,
+    "quotes": [
+     {
+      "text": "不吃伤害是因为大盘鸡的弹道落下时会进行判定",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "那时候有隐匿",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "因为大盘鸡锁的是地板，所以隐匿躲了（？）",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "[表情]意思是“是否判定可选”是弹道的一个单独属性么",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000957",
+   "trial_rule_idx": "c03",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_013.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_013",
+   "local_id": "c03",
+   "message_seqs": [
+    22,
+    23,
+    31,
+    74
+   ],
+   "message_count": 4
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "弑君者不吃大盘鸡伤害的原因是：大盘鸡的弹道落下时会进行判定，而判定时它身上有隐匿。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：群友 seq 20/31 先给出「被动抵了」「锁地板」两种替代解释，主播 seq 22/23 给出自己的归因，seq 25/27 以问答确认「隐匿可以影响弹道效果的结算」→「看情况」；本条作为现象归因为闭合，但仅限文本层。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "群友 seq 20/31 先给出「被动抵了」「锁地板」两种替代解释，主播 seq 22/23 给出自己的归因，seq 25/27 以问答确认「隐匿可以影响弹道效果的结算」→「看情况」；本条作为现象归因为闭合，但仅限文本层。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_013.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w001313:c01",
+  "claim": "停驻在配置里是一个 checkpoint 指令，但它不需要移动到某点、不需要移动类路径点指令；只有移动相关的才是那条路径点。",
+  "subject": "停驻指令的归类",
+  "condition": "敌人行动指令的配置层面",
+  "scope": "general_mechanism",
+  "category": "寻路/行动指令",
+  "recorded_ym": "202607",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w001313",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w001313",
+    "as_of": "2026-07-28 20:58:04",
+    "n_source_msgs": 3,
+    "quotes": [
+     {
+      "text": "但是他是一个checkpoint指令",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "[表情]停驻不需要移动类路径点指令",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "[表情]@7bf55033 只有移动相关的是那个路径点",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w001313",
+   "trial_rule_idx": "c01",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_014.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_014",
+   "local_id": "c01",
+   "message_seqs": [
+    5,
+    7,
+    8
+   ],
+   "message_count": 3
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "停驻在配置里是一个 checkpoint 指令，但它不需要移动到某点、不需要移动类路径点指令；只有移动相关的才是那条路径点。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：群友 seq 1 先举出主播此前「停驻不需要checkpoint」的口径并反问，主播 seq 4/5/7/8 作出修正并说明差异（seq 9「毕竟是口语」、seq 15「毕竟是当时的语境」），属闭合的自我更正。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "群友 seq 1 先举出主播此前「停驻不需要checkpoint」的口径并反问，主播 seq 4/5/7/8 作出修正并说明差异（seq 9「毕竟是口语」、seq 15「毕竟是当时的语境」），属闭合的自我更正。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_014.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w001313:c02",
+  "claim": "停驻与路径或者坐标判定完全没有关系：停驻是一个单纯的计时器指令，它不是「去哪里停驻」的指令，而是「停驻多久」的指令。",
+  "subject": "停驻指令的取值含义",
+  "condition": "停驻指令的配置语义",
+  "scope": "general_mechanism",
+  "category": "寻路/行动指令",
+  "recorded_ym": "202607",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w001313",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w001313",
+    "as_of": "2026-07-28 20:58:04",
+    "n_source_msgs": 2,
+    "quotes": [
+     {
+      "text": "停驻不是去哪里停驻的指令",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "停驻是停驻多久的指令",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w001313",
+   "trial_rule_idx": "c02",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_014.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_014",
+   "local_id": "c02",
+   "message_seqs": [
+    47,
+    48
+   ],
+   "message_count": 2
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "停驻与路径或者坐标判定完全没有关系：停驻是一个单纯的计时器指令，它不是「去哪里停驻」的指令，而是「停驻多久」的指令。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：提问者连追两轮（seq 10「停驻指令的坐标配置是不是无意义的」、seq 23「虽然停驻确实只有一个time变量，但是其实在json里是有一个checkpoint用来做停驻的么」、seq 36「那至少停驻的checkpoint就和路径或者坐标判定完全没有关系了对吧」），主播 seq 40「没有」+ seq 47/48 给出定义式收口；三段追问与答复方向一致，属闭合。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "提问者连追两轮（seq 10「停驻指令的坐标配置是不是无意义的」、seq 23「虽然停驻确实只有一个time变量，但是其实在json里是有一个checkpoint用来做停驻的么」、seq 36「那至少停驻的checkpoint就和路径或者坐标判定完全没有关系了对吧」），主播 seq 40「没有」+ seq 47/48 给出定义式收口；三段追问与答复方向一致，属闭合。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_014.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w001313:c03",
+  "claim": "周围8格都是墙时就不会被避障力推出来；自身处于可通行地块时也可以发生寻路断绝。",
+  "subject": "寻路断绝与被避障力推出",
+  "condition": "周围8格均为墙 / 自身处于可通行地块",
+  "scope": "general_mechanism",
+  "category": "寻路/避障力",
+  "recorded_ym": "202607",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w001313",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w001313",
+    "as_of": "2026-07-28 20:58:04",
+    "n_source_msgs": 2,
+    "quotes": [
+     {
+      "text": "[表情]@某人@某人 周围8格都是墙就不会了",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "[表情]自己在可通行地块也可以寻路断绝",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w001313",
+   "trial_rule_idx": "c03",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_014.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_014",
+   "local_id": "c03",
+   "message_seqs": [
+    37,
+    39
+   ],
+   "message_count": 2
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "周围8格都是墙时就不会被避障力推出来；自身处于可通行地块时也可以发生寻路断绝。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：群友 seq 32/33 问「寻路断绝是什么情况」「不会被避障力推出来然后继续寻路吗」，主播 seq 37/39 分别从「被推出」与「寻路断绝本身」两端作答；数字 8 照抄原文。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "群友 seq 32/33 问「寻路断绝是什么情况」「不会被避障力推出来然后继续寻路吗」，主播 seq 37/39 分别从「被推出」与「寻路断绝本身」两端作答；数字 8 照抄原文。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_014.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w001356:c01",
+  "claim": "传送终点若为不可通行地块则不传送。",
+  "subject": "传送的落点约束",
+  "condition": "传送的终点格不可通行时",
+  "scope": "general_mechanism",
+  "category": "位移/传送",
+  "recorded_ym": "202607",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w001356",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w001356",
+    "as_of": "2026-07-29 22:55:08",
+    "n_source_msgs": 1,
+    "quotes": [
+     {
+      "text": "传送终点若为不可通行地块则不传送",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w001356",
+   "trial_rule_idx": "c01",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_016.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_016",
+   "local_id": "c01",
+   "message_seqs": [
+    15
+   ],
+   "message_count": 1
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "传送终点若为不可通行地块则不传送。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：群友 seq 2/5/8/13 围绕「能不能过墙」的连续追问（「要是能跨墙的话那又会不知道贴墙的时候会怎么排斥」「感觉能过墙还是太超模了」「穿墙不就是无条件控了」），主播 seq 15 直接给出落点约束作为回答，seq 18「完毕」收束，属闭合。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "群友 seq 2/5/8/13 围绕「能不能过墙」的连续追问（「要是能跨墙的话那又会不知道贴墙的时候会怎么排斥」「感觉能过墙还是太超模了」「穿墙不就是无条件控了」），主播 seq 15 直接给出落点约束作为回答，seq 18「完毕」收束，属闭合。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_016.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w001356:c02",
+  "claim": "避障正常算寻路，传送是单纯传送，两者分开互不干涉。",
+  "subject": "避障与传送的关系",
+  "condition": "同一场景中既有避障力又有传送时",
+  "scope": "general_mechanism",
+  "category": "位移/传送/寻路",
+  "recorded_ym": "202607",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w001356",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w001356",
+    "as_of": "2026-07-29 22:55:08",
+    "n_source_msgs": 2,
+    "quotes": [
+     {
+      "text": "[表情]@某人@某人 避障正常算寻路，传送是单纯传送",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "分开互不干涉",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w001356",
+   "trial_rule_idx": "c02",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_016.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_016",
+   "local_id": "c02",
+   "message_seqs": [
+    20,
+    21
+   ],
+   "message_count": 2
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "避障正常算寻路，传送是单纯传送，两者分开互不干涉。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：群友 seq 10 直接提问「那避障力和传送带怎么计算」，主播 seq 20/21 两句闭合。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "群友 seq 10 直接提问「那避障力和传送带怎么计算」，主播 seq 20/21 两句闭合。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_016.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w001356:c03",
+  "claim": "失衡速度与寻路速度都不容许敌人抬手攻击；敌人抬手时不移动是因为它不在寻路状态，而不是速度为 0。",
+  "subject": "抬手期间的移动能力",
+  "condition": "敌人处于抬手（不在寻路状态）时",
+  "scope": "general_mechanism",
+  "category": "状态机/位移",
+  "recorded_ym": "202607",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w001356",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w001356",
+    "as_of": "2026-07-29 22:55:08",
+    "n_source_msgs": 4,
+    "quotes": [
+     {
+      "text": "[表情]@fadcf284 失衡速度和寻路速度都不容许敌人抬手攻击",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "抬手不在寻路状态所以不移动",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "不是速度为0不移动",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "这个区别很重要",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w001356",
+   "trial_rule_idx": "c03",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_016.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_016",
+   "local_id": "c03",
+   "message_seqs": [
+    33,
+    53,
+    57,
+    59
+   ],
+   "message_count": 4
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "失衡速度与寻路速度都不容许敌人抬手攻击；敌人抬手时不移动是因为它不在寻路状态，而不是速度为 0。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：主播 seq 33 给出速度类型的前提，群友 seq 41/48 提出「万一是修改敌人速度呢」「我直接往敌人速度上加一个向量」的反例，主播 seq 51/53/57/59 逐条驳回并强调区别，属闭合。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "主播 seq 33 给出速度类型的前提，群友 seq 41/48 提出「万一是修改敌人速度呢」「我直接往敌人速度上加一个向量」的反例，主播 seq 51/53/57/59 逐条驳回并强调区别，属闭合。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_016.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w001356:c04",
+  "claim": "单纯给敌人加速度无法让它在抬手的时候移动（例如抬手下坑），因此该表现只能由传送解释；从演示效果上，当前版本只有传送可以做到。",
+  "subject": "抬手期间位移的实现方式归属",
+  "condition": "需要在敌人抬手期间发生位移时",
+  "scope": "general_mechanism",
+  "category": "位移/传送",
+  "recorded_ym": "202607",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w001356",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w001356",
+    "as_of": "2026-07-29 22:55:08",
+    "n_source_msgs": 4,
+    "quotes": [
+     {
+      "text": "[表情]只有传送可以",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "[表情]从演示效果上，当前版本只有传送可以做到他的表现",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "[表情]@某人@某人 那做不到抬手的时候还能动",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "加速度无法让敌人抬手的时候能下坑",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w001356",
+   "trial_rule_idx": "c04",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_016.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_016",
+   "local_id": "c04",
+   "message_seqs": [
+    38,
+    39,
+    51,
+    64
+   ],
+   "message_count": 4
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "单纯给敌人加速度无法让它在抬手的时候移动（例如抬手下坑），因此该表现只能由传送解释；从演示效果上，当前版本只有传送可以做到。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：主播 seq 25「目前的机制，只有传送能解释通」起头，群友 seq 22/24/41/46/48 先后提出「啊传送带真是传送吗」「原来不是给个什么速度吗」「万一是修改敌人速度呢」「修改吗」四次质疑，主播 seq 33/38/39/51/64 逐一闭合。原文措辞为「当前版本」，已如实保留该时效限定。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "主播 seq 25「目前的机制，只有传送能解释通」起头，群友 seq 22/24/41/46/48 先后提出「啊传送带真是传送吗」「原来不是给个什么速度吗」「万一是修改敌人速度呢」「修改吗」四次质疑，主播 seq 33/38/39/51/64 逐一闭合。原文措辞为「当前版本」，已如实保留该时效限定。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_016.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w001563:c01",
+  "claim": "附加伤害（攻击类型）现在不触发烟花之手，且烟花之手本人的伤害类型被改成了附加伤害。",
+  "subject": "烟花之手的伤害类型改动",
+  "condition": "改动后的版本",
+  "scope": "general_mechanism",
+  "category": "伤害类型/肉鸽藏品",
+  "recorded_ym": "202608",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w001563",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w001563",
+    "as_of": "2026-08-08 16:40:24",
+    "n_source_msgs": 2,
+    "quotes": [
+     {
+      "text": "[表情]@ea58eaf5 附加伤害（攻击类型）现在不触发烟花之手，烟花之手本身伤害改为附加伤害",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "本来烟花就不触发烟花",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w001563",
+   "trial_rule_idx": "c01",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_017.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_017",
+   "local_id": "c01",
+   "message_seqs": [
+    55,
+    57
+   ],
+   "message_count": 2
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "附加伤害（攻击类型）现在不触发烟花之手，且烟花之手本人的伤害类型被改成了附加伤害。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：群友 seq 49 提问「烟花手具体是什么改动啊？」后由群友 seq 55 作答，seq 57 补充「本来烟花就不触发烟花」（自触发规避）；本条在窗内无争议、无反驳，属闭合的事实性改动陈述。注意：发布者不是主播（见 review_note），但按判据 5 有明确陈述且未被推翻，予以收录，并在 review_note 中标注其身份。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "群友 seq 49 提问「烟花手具体是什么改动啊？」后由群友 seq 55 作答，seq 57 补充「本来烟花就不触发烟花」（自触发规避）；本条在窗内无争议、无反驳，属闭合的事实性改动陈述。注意：发布者不是主播（见 review_note），但按判据 5 有明确陈述且未被推翻，予以收录，并在 review_note 中标注其身份。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_017.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w001580:c01",
+  "claim": "阻挡偏移过程中如果没有阻挡抬手（如一帧撤），敌人还在移动状态机、还有速度、甚至会移动，只是每帧都被拉到阻挡偏移指定的落点。",
+  "subject": "阻挡偏移期间的敌人状态",
+  "condition": "阻挡偏移过程中未发生阻挡抬手（例如一帧撤）时",
+  "scope": "general_mechanism",
+  "category": "位移/状态机",
+  "recorded_ym": "202608",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w001580",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w001580",
+    "as_of": "2026-08-09 17:08:37",
+    "n_source_msgs": 6,
+    "quotes": [
+     {
+      "text": "阻挡偏移过程中，如果没有阻挡抬手",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "就是一帧撤",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "还在移动状态机",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "还有速度",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "甚至会移动",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "只是每帧都在被拉到阻挡偏移指定落点",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w001580",
+   "trial_rule_idx": "c01",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_018.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_018",
+   "local_id": "c01",
+   "message_seqs": [
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+   ],
+   "message_count": 6
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "阻挡偏移过程中如果没有阻挡抬手（如一帧撤），敌人还在移动状态机、还有速度、甚至会移动，只是每帧都被拉到阻挡偏移指定的落点。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：主播主动开讲（seq 14「对了」、seq 15「最近发现点东西」），群友 seq 16「怎么了」后连续六条给出完整状态描述，属闭合。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "主播主动开讲（seq 14「对了」、seq 15「最近发现点东西」），群友 seq 16「怎么了」后连续六条给出完整状态描述，属闭合。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_018.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w001580:c02",
+  "claim": "每一帧的结算顺序是：寻路移动 → 更新格判 → 阻挡偏移。",
+  "subject": "同帧事件结算顺序",
+  "condition": "阻挡偏移发生的每一帧",
+  "scope": "general_mechanism",
+  "category": "帧时序/位移",
+  "recorded_ym": "202608",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w001580",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w001580",
+    "as_of": "2026-08-09 17:08:37",
+    "n_source_msgs": 2,
+    "quotes": [
+     {
+      "text": "每帧是，寻路移动→更新格判→阻挡偏移",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "这样的顺序",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w001580",
+   "trial_rule_idx": "c02",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_018.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_018",
+   "local_id": "c02",
+   "message_seqs": [
+    26,
+    27
+   ],
+   "message_count": 2
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "每一帧的结算顺序是：寻路移动 → 更新格判 → 阻挡偏移。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：主播在 c01 铺垫后直接给出顺序，seq 36「顺序在这里」再次确认，属闭合。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "主播在 c01 铺垫后直接给出顺序，seq 36「顺序在这里」再次确认，属闭合。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_018.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w001580:c03",
+  "claim": "更新格判这一步会决定敌人是否入坑、陷阱师能否放置等。",
+  "subject": "格判在帧内的作用",
+  "condition": "每帧更新格判时",
+  "scope": "general_mechanism",
+  "category": "帧时序/地形判定",
+  "recorded_ym": "202608",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w001580",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w001580",
+    "as_of": "2026-08-09 17:08:37",
+    "n_source_msgs": 1,
+    "quotes": [
+     {
+      "text": "[表情]更新格判这一步，会决定入坑与否，陷阱师能不能放，等",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w001580",
+   "trial_rule_idx": "c03",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_018.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_018",
+   "local_id": "c03",
+   "message_seqs": [
+    28
+   ],
+   "message_count": 1
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "更新格判这一步会决定敌人是否入坑、陷阱师能否放置等。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：主播紧接 c02 给出，属闭合结论。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "主播紧接 c02 给出，属闭合结论。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_018.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w001580:c05",
+  "claim": "格判通过坐标 round 取整判定属于哪个格子；实体和光标各自都可以判定自己的所属格——实体的格判用于下坑，光标的格判用于寻路，陷阱师能看到的只有实体的格判。",
+  "subject": "格判的判定方式与实体/光标的分工",
+  "condition": "—",
+  "scope": "general_mechanism",
+  "category": "地形判定/寻路",
+  "recorded_ym": "202608",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w001580",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w001580",
+    "as_of": "2026-08-09 17:08:37",
+    "n_source_msgs": 5,
+    "quotes": [
+     {
+      "text": "[表情]@f5aa2007 坐标round取整",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "实体和光标都可以判定自己的所属格",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "实体的所属可以用来下坑",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "光标的所属可以用来寻路",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "陷阱师能看到的只有实体的格判",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w001580",
+   "trial_rule_idx": "c05",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_018.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_018",
+   "local_id": "c05",
+   "message_seqs": [
+    47,
+    54,
+    55,
+    56,
+    57
+   ],
+   "message_count": 5
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "格判通过坐标 round 取整判定属于哪个格子；实体和光标各自都可以判定自己的所属格——实体的格判用于下坑，光标的格判用于寻路，陷阱师能看到的只有实体的格判。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：群友 seq 45 直接提问「可以请教下神奇格判是怎么判定的吗」，主播 seq 47 给出取整方式，群友 seq 49 追问「光标坐标？」，主播 seq 54/55/56/57 逐条区分实体与光标并给出用途，属闭合。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "群友 seq 45 直接提问「可以请教下神奇格判是怎么判定的吗」，主播 seq 47 给出取整方式，群友 seq 49 追问「光标坐标？」，主播 seq 54/55/56/57 逐条区分实体与光标并给出用途，属闭合。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_018.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w001779:c02",
+  "claim": "阻挡偏移的剩余距离与剩余时间的平方成正比；所以总距离/总时间²*剩余时间的²，即若一次阻挡偏移的位移是 x，移动 2 帧（剩余 4 帧）后的位移是 x − x/36*16 = 5x/9。",
+  "subject": "阻挡偏移的位移随时间的关系式",
+  "condition": "一次阻挡偏移的位移为 x 时",
+  "scope": "general_mechanism",
+  "category": "位移/阻挡偏移",
+  "recorded_ym": "202608",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w001779",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w001779",
+    "as_of": "2026-08-25 17:36:50",
+    "n_source_msgs": 7,
+    "quotes": [
+     {
+      "text": "那么2帧的阻挡偏移的位移是x-x/36*16=5x/9",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "那么移动2帧",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "剩余4帧",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "[表情]²",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "剩余距离与剩余时间的²正比",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "所以总距离/总时间²*剩余时间的²",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "所以是x/36*16",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w001779",
+   "trial_rule_idx": "c02",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_019.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_019",
+   "local_id": "c02",
+   "message_seqs": [
+    27,
+    40,
+    41,
+    43,
+    46,
+    47,
+    48
+   ],
+   "message_count": 7
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "阻挡偏移的剩余距离与剩余时间的平方成正比；所以总距离/总时间²*剩余时间的²，即若一次阻挡偏移的位移是 x，移动 2 帧（剩余 4 帧）后的位移是 x − x/36*16 = 5x/9。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：主播 seq 24 先说「剩余距离正比于剩余时间」，群友 seq 35「16/36是啥」的追问迫使主播在 seq 38/43/46 把关系式订正为「与剩余时间的平方成正比」，随后 seq 47/48 给出通式。同一窗内先错后改、以改后表述为准，且改后表述被重复两次（seq 46、seq 47），属闭合。注意：本 claim 保留原文中先出现后被推翻的那句作为上下文顺序，但结论只取平方关系。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "主播 seq 24 先说「剩余距离正比于剩余时间」，群友 seq 35「16/36是啥」的追问迫使主播在 seq 38/43/46 把关系式订正为「与剩余时间的平方成正比」，随后 seq 47/48 给出通式。同一窗内先错后改、以改后表述为准，且改后表述被重复两次（seq 46、seq 47），属闭合。注意：本 claim 保留原文中先出现后被推翻的那句作为上下文顺序，但结论只取平方关系。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_019.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w001779:c03",
+  "claim": "闪现是沿直线往路径点或拐角格中心移动（例如直线往传送门 1.5 格）。",
+  "subject": "闪现的移动朝向",
+  "condition": "敌方闪现时",
+  "scope": "general_mechanism",
+  "category": "位移/闪现",
+  "recorded_ym": "202608",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w001779",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w001779",
+    "as_of": "2026-08-25 17:36:50",
+    "n_source_msgs": 3,
+    "quotes": [
+     {
+      "text": "闪现是往路径点闪现",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "也就是直线往传送门1.5格",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "[表情]@8627ff81 往路径点或者拐角格中心",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w001779",
+   "trial_rule_idx": "c03",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_019.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_019",
+   "local_id": "c03",
+   "message_seqs": [
+    28,
+    29,
+    57
+   ],
+   "message_count": 3
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "闪现是沿直线往路径点或拐角格中心移动（例如直线往传送门 1.5 格）。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：群友 seq 22「闪现是怎么算的」提问，主播 seq 28/29 给出朝向与距离示例，群友 seq 56 追问「这里的移动方向说的是什么」后主播 seq 57 给出完整口径（路径点或拐角格中心），属闭合。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "群友 seq 22「闪现是怎么算的」提问，主播 seq 28/29 给出朝向与距离示例，群友 seq 56 追问「这里的移动方向说的是什么」后主播 seq 57 给出完整口径（路径点或拐角格中心），属闭合。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_019.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w001779:c04",
+  "claim": "闪现过程中如果完成了路径点，剩下的距离会折向下一个目标。",
+  "subject": "闪现中途完成路径点后的处理",
+  "condition": "闪现过程中抵达/完成路径点时",
+  "scope": "general_mechanism",
+  "category": "位移/闪现",
+  "recorded_ym": "202608",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w001779",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w001779",
+    "as_of": "2026-08-25 17:36:50",
+    "n_source_msgs": 2,
+    "quotes": [
+     {
+      "text": "剩下的距离怎么算",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "[表情]@879b5159 折向下一个目标",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w001779",
+   "trial_rule_idx": "c04",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_019.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_019",
+   "local_id": "c04",
+   "message_seqs": [
+    60,
+    64
+   ],
+   "message_count": 2
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "闪现过程中如果完成了路径点，剩下的距离会折向下一个目标。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：群友 seq 60 直接提问「剩下的距离怎么算」，主播 seq 64 答「折向下一个目标」。虽然 window 在 seq 64 后即结束，但属直接的一问一答闭合。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "群友 seq 60 直接提问「剩下的距离怎么算」，主播 seq 64 答「折向下一个目标」。虽然 window 在 seq 64 后即结束，但属直接的一问一答闭合。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_019.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w001938:c01",
+  "claim": "干员在索敌时判定是否半血；实际执行治疗动作时不再校验目标是否仍是半血。",
+  "subject": "半血类技能的血量判定时点",
+  "condition": "索敌阶段与治疗动作结算阶段",
+  "scope": "general_mechanism",
+  "category": "索敌/治疗",
+  "recorded_ym": "202609",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w001938",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w001938",
+    "as_of": "2026-09-04 21:29:19",
+    "n_source_msgs": 2,
+    "quotes": [
+     {
+      "text": "他只在索敌管半血",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "他不管奶的时候还是不是半血",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w001938",
+   "trial_rule_idx": "c01",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_020.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_020",
+   "local_id": "c01",
+   "message_seqs": [
+    36,
+    37
+   ],
+   "message_count": 2
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "干员在索敌时判定是否半血；实际执行治疗动作时不再校验目标是否仍是半血。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：主播以「说起来还有一个问题」（seq 32）「半血卡平a」（seq 33）引入后自行给出结论，seq 35 称「这个结果很简单」；窗内无相反主张，属闭合。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "主播以「说起来还有一个问题」（seq 32）「半血卡平a」（seq 33）引入后自行给出结论，seq 35 称「这个结果很简单」；窗内无相反主张，属闭合。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_020.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000075:c01",
+  "claim": "牢笼不对0.2半径以内的阻挡产生偏移，0.2以外的单位会被拉到0.2以内；因此看准时机撤退不会产生阻挡偏移。",
+  "subject": "牢笼（装置）对阻挡偏移的作用半径",
+  "condition": "单位位于牢笼0.2半径以内或以外时发生阻挡变化",
+  "scope": "general_mechanism",
+  "category": "位移",
+  "recorded_ym": "202605",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000075",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000075",
+    "as_of": "2026-05-10 23:32:18",
+    "n_source_msgs": 3,
+    "quotes": [
+     {
+      "text": "牢笼不对0.2半径内的阻挡偏移",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "0.2以外的会拉到0.2内",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "所以看准撤不会有偏移",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000075",
+   "trial_rule_idx": "c01",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_021.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_021",
+   "local_id": "c01",
+   "message_seqs": [
+    26,
+    27,
+    28
+   ],
+   "message_count": 3
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "牢笼不对0.2半径以内的阻挡产生偏移，0.2以外的单位会被拉到0.2以内；因此看准时机撤退不会产生阻挡偏移。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 26/27/28 把「0.2半径以内不偏移、0.2以外拉到0.2内、看准撤不会有偏移」讲成一条因果，数值 0.2 逐字出自原文，主体「牢笼」在 seq 13 已点名（「牢笼就这点不好，阻挡发生变化瞬间就爆了」），窗内无争议。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "seq 26/27/28 把「0.2半径以内不偏移、0.2以外拉到0.2内、看准撤不会有偏移」讲成一条因果，数值 0.2 逐字出自原文，主体「牢笼」在 seq 13 已点名（「牢笼就这点不好，阻挡发生变化瞬间就爆了」），窗内无争议。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_021.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash",
+   "review_limitations": [
+    "牢笼的 0.2 在原文只以「0.2半径」表述，未说明该值单位是格还是判定位移量",
+    "「看准撤不会有偏移」是操作结论，原文未给出撤退帧的判定口径"
+   ]
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000213:c01",
+  "claim": "莫斯提马部署时全场 -18% 移速生效；部署后 1 帧范围内 -33% 移速生效。",
+  "subject": "莫斯提马减速效果的生效范围与时点",
+  "condition": "莫斯提马被部署的当时与部署后 1 帧",
+  "scope": "entity_mechanism",
+  "category": "帧时序",
+  "recorded_ym": "202605",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000213",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000213",
+    "as_of": "2026-05-19 22:06:40",
+    "n_source_msgs": 2,
+    "quotes": [
+     {
+      "text": "部署时全场-18%速生效",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "部署后1帧范围内-33%速生效",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000213",
+   "trial_rule_idx": "c01",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_022.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_022",
+   "local_id": "c01",
+   "message_seqs": [
+    36,
+    37
+   ],
+   "message_count": 2
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "莫斯提马部署时全场 -18% 移速生效；部署后 1 帧范围内 -33% 移速生效。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 36/37 是主播自述算错原因时给出的两条并列数值，「-18%」「-33%」逐字出自原文，下一句 seq 40「我直接按部署就-33%速」印证他此前把两者混为一谈，属闭合结论。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "seq 36/37 是主播自述算错原因时给出的两条并列数值，「-18%」「-33%」逐字出自原文，下一句 seq 40「我直接按部署就-33%速」印证他此前把两者混为一谈，属闭合结论。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_022.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash",
+   "review_limitations": [
+    "「1帧范围内」在原文中是并列短语，未说明是时间上第 1 帧还是空间上的范围",
+    "原文未给出这两个数值的原始来源（天赋/技能/模组）与是否受潜能有影响"
+   ]
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000236:c01",
+  "claim": "海沫不是晕醒立刻索敌，她是被眩晕打断了。",
+  "subject": "海沫的索敌时点与眩晕的关系",
+  "condition": "海沫被眩晕后醒来时",
+  "scope": "entity_mechanism",
+  "category": "索敌",
+  "recorded_ym": "202605",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000236",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000236",
+    "as_of": "2026-05-21 18:39:48",
+    "n_source_msgs": 3,
+    "quotes": [
+     {
+      "text": "好像有不对的地方",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "海沫不是晕醒立刻索敌",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "她是被眩晕打断了",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000236",
+   "trial_rule_idx": "c01",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_023.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_023",
+   "local_id": "c01",
+   "message_seqs": [
+    49,
+    50,
+    51
+   ],
+   "message_count": 3
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "海沫不是晕醒立刻索敌，她是被眩晕打断了。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 49「好像有不对的地方」紧接 seq 50/51 由同一人给出订正（「海沫不是晕醒立刻索敌 / 她是被眩晕打断了」），是对先前说法的当场修正，措辞为直陈，后文 seq 62 与之一致。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "seq 49「好像有不对的地方」紧接 seq 50/51 由同一人给出订正（「海沫不是晕醒立刻索敌 / 她是被眩晕打断了」），是对先前说法的当场修正，措辞为直陈，后文 seq 62 与之一致。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_023.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash",
+   "review_limitations": [
+    "「被眩晕打断」在原文只到这五个字，未写打断的是索敌动作本身还是索敌帧计时",
+    "窗内没有给出海沫索敌帧的具体位置或帧号"
+   ]
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000270:c01",
+  "claim": "攻击动画的长度由攻速影响：抬手时动画按 间隔/攻速*100*30 计算理论长度，按帧四舍五入，且动画另有长度上下限，超出时以上下限为长度。",
+  "subject": "攻速对攻击动画长度的计算方式",
+  "condition": "干员抬手进入攻击动画时",
+  "scope": "general_mechanism",
+  "category": "帧时序",
+  "recorded_ym": "202605",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000270",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000270",
+    "as_of": "2026-05-23 02:23:30",
+    "n_source_msgs": 6,
+    "quotes": [
+     {
+      "text": "第一a是1.05/280*100*30=11.25=11帧",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "按帧四舍五入",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "是动画的理论长度",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "攻速对动画的影响是",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "抬手时，动画按照该公式确定长度",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "但是动画有长度上下限，超过上下限就以上下限为长度了",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000270",
+   "trial_rule_idx": "c01",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_024.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_024",
+   "local_id": "c01",
+   "message_seqs": [
+    31,
+    34,
+    36,
+    37,
+    38,
+    39
+   ],
+   "message_count": 6
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "攻击动画的长度由攻速影响：抬手时动画按 间隔/攻速*100*30 计算理论长度，按帧四舍五入，且动画另有长度上下限，超出时以上下限为长度。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 31 给出算式与代入值（1.05/280*100*30=11.25=11帧），seq 34「按帧四舍五入」、seq 36「是动画的理论长度」、seq 38/39 补充上下限，全部由同一人连续给出，数值与算式逐字保留。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "seq 31 给出算式与代入值（1.05/280*100*30=11.25=11帧），seq 34「按帧四舍五入」、seq 36「是动画的理论长度」、seq 38/39 补充上下限，全部由同一人连续给出，数值与算式逐字保留。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_024.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash",
+   "review_limitations": [
+    "原文未给出上下限的具体数值",
+    "原文算式里的 100 是什么量，提问者 seq 70 问了但窗内没有回答"
+   ]
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000270:c03",
+  "claim": "出伤由动画绑定的特定姿势触发，该帧命名为事件帧；从抬手到事件帧叫前摇，从事件帧到结束叫后摇。",
+  "subject": "出伤帧（事件帧）与前摇后摇的定义",
+  "condition": "讨论攻击动画的分段与出伤位置时",
+  "scope": "general_mechanism",
+  "category": "帧时序",
+  "recorded_ym": "202605",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000270",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000270",
+    "as_of": "2026-05-23 02:23:30",
+    "n_source_msgs": 5,
+    "quotes": [
+     {
+      "text": "[表情]@1e95af8e 一般而言是动画通知",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "动画绑定特定姿势出伤",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "命名为事件帧",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "从抬手到事件帧叫前摇",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "从事件帧到结束叫后摇",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000270",
+   "trial_rule_idx": "c03",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_024.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_024",
+   "local_id": "c03",
+   "message_seqs": [
+    53,
+    55,
+    57,
+    58,
+    59
+   ],
+   "message_count": 5
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "出伤由动画绑定的特定姿势触发，该帧命名为事件帧；从抬手到事件帧叫前摇，从事件帧到结束叫后摇。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 53/55/57/58/59 是同一人连续给出的定义句，主语均为动画本身，术语与原文逐字一致；seq 63/64 又明确「动画是被攻速影响的 / 不是攻速按动画来算」，与定义自洽。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "seq 53/55/57/58/59 是同一人连续给出的定义句，主语均为动画本身，术语与原文逐字一致；seq 63/64 又明确「动画是被攻速影响的 / 不是攻速按动画来算」，与定义自洽。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_024.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash",
+   "review_limitations": [
+    "原文只说「动画绑定特定姿势出伤」，未给出事件帧在动画内的位置判定方法",
+    "seq 44 明确否定了「出伤是第 11 帧」，但出伤帧究竟在第几帧窗内没有给出"
+   ]
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000318:c01",
+  "claim": "测定干员在哪一帧索敌的方法：把白铁炮台撤掉，还能抬手说明已经索敌，没反应说明还没索敌，约束到两帧结果不同即可确定索敌帧。",
+  "subject": "索敌帧的测定方法（白铁炮台撤除法）",
+  "condition": "需要确定某干员的索敌发生在哪一帧时",
+  "scope": "general_mechanism",
+  "category": "索敌",
+  "recorded_ym": "202605",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000318",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000318",
+    "as_of": "2026-05-25 23:04:34",
+    "n_source_msgs": 5,
+    "quotes": [
+     {
+      "text": "怎么看干员是在哪一帧索敌的",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "把白铁炮台撤了",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "还能抬手就是索敌了",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "没反应就是还没索敌",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "约束到2帧不同就是索敌帧",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000318",
+   "trial_rule_idx": "c01",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_025.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_025",
+   "local_id": "c01",
+   "message_seqs": [
+    20,
+    21,
+    22,
+    23,
+    25
+   ],
+   "message_count": 5
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "测定干员在哪一帧索敌的方法：把白铁炮台撤掉，还能抬手说明已经索敌，没反应说明还没索敌，约束到两帧结果不同即可确定索敌帧。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 20 是提问，seq 21/22/23/25 是同一人在同一分钟内给出的完整操作口径，主语与方法齐备，无障碍词，提问者 seq 24 即表示理解。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "seq 20 是提问，seq 21/22/23/25 是同一人在同一分钟内给出的完整操作口径，主语与方法齐备，无障碍词，提问者 seq 24 即表示理解。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_025.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash",
+   "review_limitations": [
+    "原文用「抬手」作为判据，未说明如何读帧（工具/录屏口径）",
+    "seq 21 的「白铁炮台」只给出装置名，未说明为何它能充当判据"
+   ]
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000480:c01",
+  "claim": "五成双向偶数取整：2.5取2、3.5取4。",
+  "subject": "五成双（向偶数取整）的取值规则",
+  "condition": "数值恰为 .5 时",
+  "scope": "general_mechanism",
+  "category": "数值与读图",
+  "recorded_ym": "202606",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000480",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000480",
+    "as_of": "2026-06-01 07:19:52",
+    "n_source_msgs": 3,
+    "quotes": [
+     {
+      "text": "[表情]@0065bdfd 2.5取2",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "3.5取4",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "向偶数取整",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000480",
+   "trial_rule_idx": "c01",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_026.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_026",
+   "local_id": "c01",
+   "message_seqs": [
+    10,
+    12,
+    14
+   ],
+   "message_count": 3
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "五成双向偶数取整：2.5取2、3.5取4。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 9 是提问，seq 10/12/14 由主播连续给出「2.5取2 / 3.5取4 / 向偶数取整」，两名群友在 seq 11/13/16/17/18/19/21/22 各自复述同一规则，窗内无异议。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "seq 9 是提问，seq 10/12/14 由主播连续给出「2.5取2 / 3.5取4 / 向偶数取整」，两名群友在 seq 11/13/16/17/18/19/21/22 各自复述同一规则，窗内无异议。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_026.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash",
+   "review_limitations": [
+    "原文只给 2.5/3.5 两个例子与「整0.5」的说法，未写成通式",
+    "「整0.5哦，0.51都不行」（seq 23）出自另一名群友，原文未说明其依据"
+   ]
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000480:c02",
+  "claim": "陷阱师地雷的放置判定按判定格，且地雷爆炸也是按判定格（艾拉那种奇怪的设置除外）。",
+  "subject": "陷阱师地雷的放置与爆炸判定格",
+  "condition": "判断地雷可放置位置与其爆炸作用范围时",
+  "scope": "entity_mechanism",
+  "category": "数值与读图",
+  "recorded_ym": "202606",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000480",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000480",
+    "as_of": "2026-06-01 07:19:52",
+    "n_source_msgs": 6,
+    "quotes": [
+     {
+      "text": "[表情]@6617f148 判定格啊",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "[表情]雷爆炸也是的@ae4d9f3e",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "判定格",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "不止是放置",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "不谈艾拉那种奇怪的设置",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "[表情]@ae4d9f3e 她就不是正经陷阱师啊",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000480",
+   "trial_rule_idx": "c02",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_026.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_026",
+   "local_id": "c02",
+   "message_seqs": [
+    33,
+    38,
+    39,
+    40,
+    42,
+    47
+   ],
+   "message_count": 6
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "陷阱师地雷的放置判定按判定格，且地雷爆炸也是按判定格（艾拉那种奇怪的设置除外）。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 33「判定格啊」是对「地雷碰撞0.5么」的直接回答，seq 38/39/40 主播进一步明确爆炸也按判定格、不止放置，seq 42/47 显式把「艾拉那种奇怪的设置」排除在外，同一人连续给出、无反驳。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "seq 33「判定格啊」是对「地雷碰撞0.5么」的直接回答，seq 38/39/40 主播进一步明确爆炸也按判定格、不止放置，seq 42/47 显式把「艾拉那种奇怪的设置」排除在外，同一人连续给出、无反驳。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_026.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash",
+   "review_limitations": [
+    "「判定格」在窗内未定义其与格子中心/格边界的关系",
+    "艾拉除外只说「奇怪的设置」，未说明例外内容"
+   ]
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000551:c01",
+  "claim": "方舟的敌人无法旋转。",
+  "subject": "敌人的旋转自由度",
+  "condition": "涉及转动惯量/朝向旋转的计算时",
+  "scope": "general_mechanism",
+  "category": "位移",
+  "recorded_ym": "202606",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000551",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000551",
+    "as_of": "2026-06-03 20:04:00",
+    "n_source_msgs": 2,
+    "quotes": [
+     {
+      "text": "有没有要算转动惯量的地方让我刚好复习一下物理（）",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "[表情]@0065bdfd 额，方舟的敌人无法旋转",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000551",
+   "trial_rule_idx": "c01",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_027.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_027",
+   "local_id": "c01",
+   "message_seqs": [
+    16,
+    17
+   ],
+   "message_count": 2
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "方舟的敌人无法旋转。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 16 提问「有没有要算转动惯量的地方让我刚好复习一下物理」，seq 17 主播直接回答「额，方舟的敌人无法旋转」，是对该提问的正面闭合回答，前后无异议。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "seq 16 提问「有没有要算转动惯量的地方让我刚好复习一下物理」，seq 17 主播直接回答「额，方舟的敌人无法旋转」，是对该提问的正面闭合回答，前后无异议。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_027.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash",
+   "review_limitations": [
+    "原文只否定旋转，未说明朝向改变（转身/反向）是否属于同一范畴"
+   ]
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000551:c02",
+  "claim": "墙体的摩擦系数为 0.4、弹性 0。",
+  "subject": "墙体物理参数（摩擦系数、弹性）",
+  "condition": "计算推拉撞墙后的滑动/反弹时",
+  "scope": "general_mechanism",
+  "category": "位移",
+  "recorded_ym": "202606",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000551",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000551",
+    "as_of": "2026-06-03 20:04:00",
+    "n_source_msgs": 2,
+    "quotes": [
+     {
+      "text": "prts有推力机制",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "加上，墙体的摩擦系数为0.4，弹性0",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000551",
+   "trial_rule_idx": "c02",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_027.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_027",
+   "local_id": "c02",
+   "message_seqs": [
+    20,
+    21
+   ],
+   "message_count": 2
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "墙体的摩擦系数为 0.4、弹性 0。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 20 先给出出处「prts有推力机制」，seq 21 紧接「加上，墙体的摩擦系数为0.4，弹性0」，是对着 PRTS 参数给出的数值，数值逐字保留、无人质疑。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "seq 20 先给出出处「prts有推力机制」，seq 21 紧接「加上，墙体的摩擦系数为0.4，弹性0」，是对着 PRTS 参数给出的数值，数值逐字保留、无人质疑。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_027.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash",
+   "review_limitations": [
+    "原文未说明摩擦系数 0.4 与哪个系数（地面摩擦）并列使用",
+    "原文未说明「弹性0」对应的具体行为（是否完全无反弹）"
+   ]
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ },
+ {
+  "id": "qq_expansion:w000551:c03",
+  "claim": "寻路不属于物理系统，推拉属于物理系统；寻路相关的坐标、速度、加速度都是浮点数，且是单精度。",
+  "subject": "寻路与推拉是否属于物理系统、寻路数值精度",
+  "condition": "讨论推拉与寻路的实现分层与计算精度时",
+  "scope": "general_mechanism",
+  "category": "位移",
+  "recorded_ym": "202606",
+  "source_layer": "QQ群聊",
+  "source_layers": [
+   "qq"
+  ],
+  "track": "qq_chat",
+  "citations": [
+   {
+    "id": "qq:w000551",
+    "status": "resolved_qq_span",
+    "source_layers": [
+     "qq"
+    ],
+    "track": "qq_chat",
+    "window_id": "w000551",
+    "as_of": "2026-06-03 20:04:00",
+    "n_source_msgs": 5,
+    "quotes": [
+     {
+      "text": "寻路不属于物理系统",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "但是推拉是物理系统",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "[表情]@9cbbc8c8 寻路相关，坐标，速度，加速度，都是浮点数",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "单精度",
+      "t_start": null,
+      "t_end": null
+     },
+     {
+      "text": "浮点数",
+      "t_start": null,
+      "t_end": null
+     }
+    ],
+    "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+   }
+  ],
+  "source_files": [],
+  "origin": {
+   "trial_doc_id": "w000551",
+   "trial_rule_idx": "c03",
+   "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_027.json",
+   "card_section": "QQ扩展(阶段三b3批)",
+   "workorder_id": "qq_wo_b3_027",
+   "local_id": "c03",
+   "message_seqs": [
+    46,
+    47,
+    49,
+    50,
+    51
+   ],
+   "message_count": 5
+  },
+  "claim_derivation": {
+   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
+   "rule_idx": 0,
+   "from": null,
+   "to": "寻路不属于物理系统，推拉属于物理系统；寻路相关的坐标、速度、加速度都是浮点数，且是单精度。",
+   "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 48 提问「所以精度是多少」，seq 49/50/51 主播回答「寻路相关，坐标，速度，加速度，都是浮点数 / 单精度 / 浮点数」；前面 seq 46/47 同人先给出「寻路不属于物理系统 / 但是推拉是物理系统」的分层，均为直陈且无反驳。",
+   "not_authoritative": true
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "seq 48 提问「所以精度是多少」，seq 49/50/51 主播回答「寻路相关，坐标，速度，加速度，都是浮点数 / 单精度 / 浮点数」；前面 seq 46/47 同人先给出「寻路不属于物理系统 / 但是推拉是物理系统」的分层，均为直陈且无反驳。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
+   "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
+   "supports": "qq_raw_messages_verbatim",
+   "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_027.json",
+   "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
+   "reviewer_model": "ds/deepseek-v4.1-flash",
+   "review_limitations": [
+    "原文把「坐标、速度、加速度」并列，未分别说明每一项的存储形式",
+    "「单精度」只说一次，未给出位宽或误差量级"
+   ]
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
+ }
+]

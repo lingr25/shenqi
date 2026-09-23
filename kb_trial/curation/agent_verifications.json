@@ -1,0 +1,349 @@
+{
+ "counts": {
+  "reject": 9,
+  "verify": 40
+ },
+ "method": "逐条读取 kb_trial/evidence.jsonl 的原始引文与字幕/ASR 邻窗，以及 qq_cards/cards.jsonl 的 source_spans，比对派生规则句；拒绝记为 reject 而非删除，未列出的条目保持 pending 且不入库。只有 verdict=verify 才可入甄选层；reject 与其它取值均不得入库。",
+ "reviewer": "agent (Kimi Code subagent, deepseek)",
+ "source_files": [
+  "kb_trial/evidence.jsonl",
+  "transcripts_txt/",
+  "asr_drafts/"
+ ],
+ "verifications": [
+  {
+   "doc_id": "fc1:伤害结算-0-4",
+   "reason": "ASR 引文逐字支持：p8:a0「但在肉鸽中侵蚀损伤削弱的是肉鸽加成前的基础防御」；邻窗确认语境为侵蚀损伤与肉鸽加成的结算层次",
+   "rule_idx": 0,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:伤害结算-0-9",
+   "reason": "ASR 引文逐字支持 p40:a1；邻窗 p40:a4 给出\"这是抗性结算环节\"",
+   "rule_idx": 0,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:伤害结算-0-9",
+   "reason": "ASR 引文逐字支持 p40:a5「伤判环节，然后去改写这个伤害」",
+   "rule_idx": 1,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:伤害结算-0-9",
+   "reason": "ASR 引文逐字支持 p40:a2「伤判是用来计算增伤和减伤的」",
+   "rule_idx": 2,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:伤害结算-0-9",
+   "reason": "ASR 引文逐字支持 p40:a0；p42:a1 复述同一区分",
+   "rule_idx": 4,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:伤害结算-0-9",
+   "reason": "ASR 引文逐字支持 p40:a3「是面板加成，通过四则运算确定属性」",
+   "rule_idx": 5,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:伤害结算-0-9",
+   "reason": "ASR 引文逐字支持 p42:a1",
+   "rule_idx": 6,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:伤害结算-12-17",
+   "reason": "ASR 原文为「公回」(0 次正确写法「攻回」，6 次误写)，属 ASR 术语错写；且引文 p75:a1 只支持\"不管命不命中\"，不支持\"从事件帧加技力\"这一断言",
+   "rule_idx": 0,
+   "verdict": "reject"
+  },
+  {
+   "doc_id": "fc1:伤害结算-12-17",
+   "reason": "ASR 原文为「公会不管命不命中」，「公会」是「攻回」的 ASR 误写；按原字入库会把术语写错，且该条为对话确认句而非独立机制陈述",
+   "rule_idx": 1,
+   "verdict": "reject"
+  },
+  {
+   "doc_id": "fc1:伤害结算-12-18",
+   "reason": "ASR 原文为「弓回是不需要命中的」(「弓回」是「攻回」的误写)；同一课 p75:a2 已有正确写法「攻回」，本条为重复且带错字",
+   "rule_idx": 1,
+   "verdict": "reject"
+  },
+  {
+   "doc_id": "fc1:伤害结算-12-20",
+   "reason": "ASR 引文逐字支持 p76:a0；邻窗确认\"和命中率定义的不命中是区分开的\"",
+   "rule_idx": 0,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:伤害结算-12-20",
+   "reason": "ASR 引文逐字支持 p76:a1",
+   "rule_idx": 1,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:伤害结算-12-20",
+   "reason": "ASR 引文 p76:a2 + p76:a4 两句合证；邻窗给出爱国者四连击实例",
+   "rule_idx": 2,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:伤害结算-12-20",
+   "reason": "ASR 引文 p76:a6；邻窗确认比较对象为四连击闪避",
+   "rule_idx": 4,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:伤害结算-12-20",
+   "reason": "ASR 引文逐字支持 p76:a7",
+   "rule_idx": 5,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:伤害结算-13-2",
+   "reason": "ASR 引文逐字支持 p78:a0（商判为伤判的 ASR 误写，语义为伤判）",
+   "rule_idx": 0,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:伤害结算-13-2",
+   "reason": "ASR 引文逐字支持 p78:a3；邻窗给出罗比拉塔护盾非零优先级的反例",
+   "rule_idx": 1,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:伤害结算-13-2",
+   "reason": "ASR 引文逐字支持 p78:a4",
+   "rule_idx": 2,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:伤害结算-15-9",
+   "reason": "引文 p84:a0 只有「这19A是19次 1.3对吧 我们是这么算的」，不支持\"有五次吃不到1.3倍率\"这一具体数值断言（该数值来自别处，引文未闭合）",
+   "rule_idx": 0,
+   "verdict": "reject"
+  },
+  {
+   "doc_id": "fc1:伤害结算-16-15",
+   "reason": "official 引文 p38:a0 + p38:a1 两句逐字支持",
+   "rule_idx": 0,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:伤害结算-16-15",
+   "reason": "official 引文 p38:a2 + p38:a3 两句支持；引文自带\"上下横跳\"的波动限定",
+   "rule_idx": 1,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:伤害结算-16-15",
+   "reason": "official 引文 p39:a0 + p39:a1 两句逐字支持",
+   "rule_idx": 2,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:伤害结算-18-13",
+   "reason": "引文 p42:a0 是\"横射\"句，却用来支持\"竖射每个敌人四次判定\"，属于引文与断言不匹配；正确引文 p43:a1 已被 伤害结算-18-15 idx1 使用，本条为误引",
+   "rule_idx": 1,
+   "verdict": "reject"
+  },
+  {
+   "doc_id": "fc1:伤害结算-18-15",
+   "reason": "official 引文 p43:a0 逐字一致「面对无法推动的正常敌人横射 每个敌人三次判定」",
+   "rule_idx": 0,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:伤害结算-18-15",
+   "reason": "official 引文 p43:a1「竖射 每个敌人四次判定」；与 idx0 同段，主语正确",
+   "rule_idx": 1,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:伤害结算-18-16",
+   "reason": "引文只有「因为横着打的话他太正了」，不支持\"判定数要么是1、要么是3、要么是5\"的枚举；数值部分无引文支持，属未闭合推导",
+   "rule_idx": 1,
+   "verdict": "reject"
+  },
+  {
+   "doc_id": "fc1:位移-10-1",
+   "reason": "official 引文 p34:a0 逐字一致「每一帧有0.1635的摩擦力」",
+   "rule_idx": 7,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:位移-10-1",
+   "reason": "official 引文 p40:a1 支持该等效说法",
+   "rule_idx": 10,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:位移-10-1",
+   "reason": "official 引文 p26:a1 逐字支持；「无弹倒推」为\"无弹道推\"的 ASR 近似，语义未变",
+   "rule_idx": 13,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "window:w000006",
+   "evidence_kind": "qq_span",
+   "reason": "该窗口问题是「夜半眠兽撤退和再部署后几帧会取消睡眠」，回答逐字给出「撤退直接没，重生也是立刻，开技能后16帧出睡」，即撤退/重建立即解除睡眠、开技能后 16 帧施加睡眠。主张与 span 一致，属可复用帧时序规则。",
+   "reviewer": "agent (Kimi Code subagent, deepseek) — 逐条读取 qq_cards source_spans 后确认",
+   "rule_idx": 0,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "window:w000012",
+   "evidence_kind": "qq_span",
+   "reason": "逐条 span 由「部分群攻能力会被插结算」+「会先决定锁人 / 再决定锁谁 / 中间能插入进去」组成，直接支持“阻挡与索敌同帧时部分群攻被插入结算”这一主张。",
+   "reviewer": "agent (Kimi Code subagent, deepseek) — 逐条读取 qq_cards source_spans 后确认",
+   "rule_idx": 0,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "window:w000027",
+   "evidence_kind": "qq_span",
+   "reason": "span 明确列出弹道三部分 Projectile/Movement/HitBehavior 及职责，并给出 prefab 路径。属拆包结构说明，主张与 span 一致。",
+   "reviewer": "agent (Kimi Code subagent, deepseek) — 逐条读取 qq_cards source_spans 后确认",
+   "rule_idx": 0,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "window:w000031",
+   "evidence_kind": "qq_span",
+   "reason": "span 说明浮空敌人为飞行单位、起飞只防地面索敌、飞行由 changableMotionMode 定义而非 buff，支持“死亡时点是否已解除飞行决定能否被炸到”的机制主张。",
+   "reviewer": "agent (Kimi Code subagent, deepseek) — 逐条读取 qq_cards source_spans 后确认",
+   "rule_idx": 0,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "window:w000033",
+   "evidence_kind": "qq_span",
+   "reason": "span「凯尔希抓人是创建时间最久」+「同帧部署先打先部署的」+「创建时间相同默认顺序」逐字支持“同帧/同创建时间优先级”主张。",
+   "reviewer": "agent (Kimi Code subagent, deepseek) — 逐条读取 qq_cards source_spans 后确认",
+   "rule_idx": 0,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "window:w000036",
+   "evidence_kind": "qq_span",
+   "reason": "span 明确「每次部署给全局仇恨计数硬性+1来规避同仇恨值」及群攻顺序「从先到后」，与主张一致；末句“越晚仇恨越高”为讨论中的不确定表述，但主体机制陈述有 span 支持。",
+   "reviewer": "agent (Kimi Code subagent, deepseek) — 逐条读取 qq_cards source_spans 后确认",
+   "rule_idx": 0,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "window:w000037",
+   "evidence_kind": "qq_span",
+   "reason": "span 逐字给出 0.1 精度比较做法「双方临时*10，转为整数，然后再比较」，以及医疗索敌「生命比例最低 / 排除满生命值单位」。数值属实现细节说明，非推导值。",
+   "reviewer": "agent (Kimi Code subagent, deepseek) — 逐条读取 qq_cards source_spans 后确认",
+   "rule_idx": 0,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "window:w000040",
+   "evidence_kind": "qq_span",
+   "reason": "span 说明配置项 _isUnset 的布尔语义被写反（true 表示“没有这么个东西”），支持“麻痹免疫判定布尔写反”主张，属拆包观察。",
+   "reviewer": "agent (Kimi Code subagent, deepseek) — 逐条读取 qq_cards source_spans 后确认",
+   "rule_idx": 0,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "window:w000041",
+   "evidence_kind": "qq_span",
+   "reason": "span 给出伤害通式「攻击力 * 攻击力倍率 + 附加攻击力」与钩爪位移伤害判定帧数（位移每2帧判定、距离5帧更新，实测每4/6帧一次）。主张与 span 一致。",
+   "reviewer": "agent (Kimi Code subagent, deepseek) — 逐条读取 qq_cards source_spans 后确认",
+   "rule_idx": 0,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "window:w000042",
+   "evidence_kind": "qq_span",
+   "reason": "span 说明恐惧地块取自绑定干员视野范围、恐惧源为自己时回落自身地块；末段明确区分生息羊“随机选地块”并非恐惧机制，支持该主张。",
+   "reviewer": "agent (Kimi Code subagent, deepseek) — 逐条读取 qq_cards source_spans 后确认",
+   "rule_idx": 0,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "window:w000044",
+   "evidence_kind": "qq_span",
+   "reason": "span 明确「嘲讽就是+1000仇恨」「被干员超过了那是干员的事」，支持嘲讽为固定仇恨加值的机制陈述。",
+   "reviewer": "agent (Kimi Code subagent, deepseek) — 逐条读取 qq_cards source_spans 后确认",
+   "rule_idx": 0,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "window:w000013",
+   "evidence_kind": "qq_span",
+   "reason": "该“主张”是窗口标题“特殊索敌与阻挡判定时序导致的打数分配异常”，非独立规则句；span 内部自陈“无法轻易稳定复现”“三帧阻挡1/3概率”，属未闭合观测，不作为可复用规则。",
+   "reviewer": "agent (Kimi Code subagent, deepseek) — 逐条读取 qq_cards source_spans 后确认",
+   "rule_idx": 0,
+   "verdict": "reject"
+  },
+  {
+   "doc_id": "window:w000032",
+   "evidence_kind": "qq_span",
+   "reason": "span 以“他妈的，伤害来源不是归鲨的话”这类追问与联机限制穿插，DoT 伤害层次并未在 span 内闭合，claim 超出 span 支持范围。",
+   "reviewer": "agent (Kimi Code subagent, deepseek) — 逐条读取 qq_cards source_spans 后确认",
+   "rule_idx": 0,
+   "verdict": "reject"
+  },
+  {
+   "doc_id": "window:w000038",
+   "evidence_kind": "qq_span",
+   "reason": "span 为测试方法讨论且自陈“我到现在也分不清哪些是3帧冷却”，claim“索敌冷却判定”未在 span 内形成确定结论。",
+   "reviewer": "agent (Kimi Code subagent, deepseek) — 逐条读取 qq_cards source_spans 后确认",
+   "rule_idx": 0,
+   "verdict": "reject"
+  },
+  {
+   "doc_id": "fc1:伤害结算-13-0",
+   "evidence_kind": "vod_atom_with_user_correction",
+   "reason": "用户 #7 要求删改后可用，非\"优秀\"，故按代理核实收录。回读原 ASR [02:42:14] 得「闪避分类为商判，商判是什么呢？在伤害结算环节对伤害进行更改」（\"商判\"为\"伤判\"的 ASR 误写），规则句与源文一致；上游原子引用的 9725s 时间戳与实际 9762s 有偏差，以源文件行 [02:42:14] 为准。",
+   "reviewer": "agent (Kimi Code subagent, deepseek) — 回读原始 ASR/字幕行后确认",
+   "rule_idx": 0,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:伤害结算-13-0",
+   "evidence_kind": "vod_atom_with_user_correction",
+   "reason": "同一段 [02:42:14] 逐字给出「在伤害结算环节对伤害进行更改」，支持\"伤判是在伤害结算环节对伤害进行更改\"。",
+   "reviewer": "agent (Kimi Code subagent, deepseek) — 回读原始 ASR/字幕行后确认",
+   "rule_idx": 1,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:伤害结算-13-0",
+   "evidence_kind": "vod_atom_with_user_correction",
+   "reason": "[02:42:14]「减商属于减免」即\"减伤属于减免\"，术语层一致；\"减商\"为 ASR 误写，已按标准术语收录。",
+   "reviewer": "agent (Kimi Code subagent, deepseek) — 回读原始 ASR/字幕行后确认",
+   "rule_idx": 2,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:伤害结算-13-0",
+   "evidence_kind": "vod_atom_with_user_correction",
+   "reason": "[02:42:14]「增商属于增加」即\"增伤属于增加\"，术语层一致；\"增商\"为 ASR 误写。",
+   "reviewer": "agent (Kimi Code subagent, deepseek) — 回读原始 ASR/字幕行后确认",
+   "rule_idx": 3,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:伤害结算-13-0",
+   "evidence_kind": "vod_atom_with_user_correction",
+   "reason": "[02:42:42]「然后的话格挡什么的也是也是归零」，支持\"格挡也是归零\"。注意同句原文含\"吴敌不是上判\"（即\"无敌不是伤判\"），该句已被用户 #7 明确判为无意义，未进入本规则句。",
+   "reviewer": "agent (Kimi Code subagent, deepseek) — 回读原始 ASR/字幕行后确认",
+   "rule_idx": 4,
+   "verdict": "verify"
+  },
+  {
+   "doc_id": "fc1:位移-4-5",
+   "evidence_kind": "vod_atom_with_user_correction",
+   "reason": "用户 #12 要求修改后可用（维尼斯→维云斯），非\"优秀\"，故按代理核实收录。回读官方字幕 [00:17:20] 逐字：「在维尼斯推海默中那个过程的话 他向上刹车 实际上是一个很有很多容错的这样一个过程」。主播原话说的是\"维尼斯\"，用户更正为\"维云斯\"（知名主播，非干员），收录句采用用户更正后的写法。",
+   "reviewer": "agent (Kimi Code subagent, deepseek) — 回读原始 ASR/字幕行后确认",
+   "rule_idx": 0,
+   "verdict": "verify"
+  }
+ ]
+}

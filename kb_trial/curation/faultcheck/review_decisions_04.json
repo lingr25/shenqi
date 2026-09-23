@@ -1,0 +1,367 @@
+[
+  {
+    "id": "fc1:伤害结算-16-15#r2",
+    "decision": "needs_human_confirmation",
+    "reason": "本条 fix 把 claim 改为「DOT（持续伤害）的距离每五帧更新一次；无论两帧还是三帧检测，每次检测到的都是五帧更新的距离」。逐字复核源 transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt 第 479 行 [01:45:56]「他这个dot的话就是五帧更新一次距离 所以即无论是两针检测还是三针检测 他每次检测到的都是那个五帧更新的距离 它不会说是四或六的距离」：核心事实逐字成立（本条两条引文即该行内的两个片段，均已核为逐字命中）。但本次改动同时做了一加一减，本地都无法判对错：(a) 新增「（持续伤害）」这个中文展开——全量 transcripts_txt 中「持续伤害」实测 0 命中，源只写「dot」，该展开为本次改动自补，无源依据；(b) 删去了源句末「它不会说是四或六的距离」——原 claim 曾以「而非四或六帧的距离」承载该上界，改写后源给出的排除信息消失（前后对照见 kb_trial/curation/faultcheck/_review04_before_after.txt）。另核：claim 的「两帧/三帧」与仍在的引文「两针检测/三针检测」不同字，proposal 明确要求登记 derived_text_repairs「两针/三针→两帧/三帧」，实测 kb_trial/curation/decisions.jsonl 只有 faultcheck 记录（derived_text_repairs_faultcheck，note 为空），curated 条目该条 derived_text_repairs 仍为 null——全层 1462 条只有 9 条有该字段，本条不在其中。三处（术语展开、删去上界、登记缺失）都要人判，故不判 confirmed_fix。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_04.json",
+      "kb_trial/curation/faultcheck/triage_01.json",
+      "kb_trial/curation/faultcheck/chunk_01.json",
+      "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/decisions.jsonl",
+      "kb_trial/curation/faultcheck/_faultcheck_apply.py",
+      "kb_trial/curation/faultcheck/_review04_before_after.txt",
+      "kb_trial/curation/faultcheck/_review04_brief.txt"
+    ],
+    "term_flags": [
+      "「DOT」被展开为「持续伤害」：源全篇作「dot」，「持续伤害」在 transcripts_txt 全量 0 命中，该展开无源依据，是否可入 claim 须人工裁定",
+      "proposal 要求的 derived_text_repairs「两针/三针→两帧/三帧」未随构建落入 curated 条目（该条 derived_text_repairs=null）；同源邻近条目 fc1:伤害结算-16-15#r1 亦在同一跳过清单（kb_trial/curation/faultcheck/_faultcheck_apply.py 第 166 行：claim 已用「帧」，建议只作 derived_text_repairs 登记）",
+      "改写删去了源句末「它不会说是四或六的距离」，claim 层的排除上界丢失"
+    ]
+  },
+  {
+    "id": "fc1:伤害结算-18-15#r0",
+    "decision": "needs_human_confirmation",
+    "reason": "claim 现为「（未点名主体的技能）面对无法推动的敌人横射，每个敌人三次判定；该技能文案措辞被主播当场指为不妥（应为『格子中心横射』），横/竖与 3/4 判的对应待回原片核对。」源 transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt 第 432 行 [02:59:29]「施加较大力的推击 推动效果美哒 该技能面对无法推动的正常敌人横射 每个敌人三次判定竖射 这话说的很不好 这个是格子中心啊 面对无无法推格子中心横射」逐字支持「这话说的很不好」与「这个是格子中心啊」（即 claim 所述措辞被指为不妥、应为格子中心横射；本条引文即「面对无法推动的正常敌人横射 每个敌人三次判定」，已核逐字命中）。三处待人工：(a) 主体技能源中未点名（主播读的是技能文案引文），claim 只能写「（未点名主体的技能）」，subject 仍为「未点名」；(b) 本次改动把审核注记写进了 claim 正文（「该技能文案措辞被主播当场指为不妥…待回原片核对」），claim 是否该承载编辑过程信息须人判；(c) 横射/竖射与 3 判/4 判的对应受同处 ASR 断句错位影响——第 432 行末作「每个敌人三次判定竖射」，第 433 行 [02:59:44] 又作「每个敌人三次判定竖射 每个敌人四次判定」，第 434 行 [03:00:05] 再作「每个敌人四次判定是一个横纵的问题」，本地无法确定 3 判属横射还是竖射。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_04.json",
+      "kb_trial/curation/faultcheck/triage_01.json",
+      "kb_trial/curation/faultcheck/chunk_01.json",
+      "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/_review04_brief.txt"
+    ],
+    "term_flags": [
+      "横射/竖射 与 3 判/4 判 的对应在源 [02:59:29]-[03:00:05] 因 ASR 断句错位不可判定，须回原片核对",
+      "claim 正文含审核注记（「待回原片核对」）与「（未点名主体的技能）」括注，subject 仍为「未点名」；此类元信息是否入 claim 须人工裁定"
+    ]
+  },
+  {
+    "id": "fc1:伤害结算-18-15#r1",
+    "decision": "needs_human_confirmation",
+    "reason": "claim 现为「（未点名主体的技能）面对无法推动的敌人竖射，每个敌人四次判定；数值归属受同处 ASR 断句影响，待与原片技能文案核对。」源 transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt 第 433 行 [02:59:44]「每个敌人三次判定竖射 每个敌人四次判定」，本条引文「竖射 每个敌人四次判定」即该行后半（已核逐字命中）。但同一行前半同样含「每个敌人三次判定」，proposal 因此判 number_suspect；「四次判定归竖射」在本行内并不能自证（第 434 行 [03:00:05] 只补「每个敌人四次判定是一个横纵的问题」）。本次改动把「数值归属受同处 ASR 断句影响」等核对提示写入 claim 正文，主体技能仍未点名、subject 仍为「未点名」。断句归属与注记入正文两事本地均无法定，判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_04.json",
+      "kb_trial/curation/faultcheck/triage_01.json",
+      "kb_trial/curation/faultcheck/chunk_01.json",
+      "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/_review04_brief.txt"
+    ],
+    "term_flags": [
+      "「四次判定归竖射」在同一行内不可自证（同行前半亦作「每个敌人三次判定」），数值归属须回原片核对",
+      "claim 正文含审核注记，与 #r0 同类；subject 仍「未点名」"
+    ]
+  },
+  {
+    "id": "fc1:伤害结算-18-16#r0",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把源文逐字的「纵打因为不整，所以打满了。」（transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt 第 508 行 [03:16:40]「纵打对啊 纵打不整 纵打因为不整 所以就打满了」，本条引文即该行后半，已核逐字）扩写为「该技能判定数取决于落点与格子的对齐：纵打因落点不对齐会打满，横打因太对称只出奇数判（1/3/5 判）（主体未点名）。」问题有三：(a) 新增的「横打因太对称只出奇数判（1/3/5 判）」取自第 509-513 行 [03:16:46]-[03:17:26]「因为横着打的话他太正了」「因为太对称了 要么打一判 要么打三判 要么打五盘」「就是太整了」，而本条 citations 只挂 1 条引文 p48:a0（[03:16:40]）与同一时间点的 ctx=sub 窗口——扩出来的「横打」一半在已发布引文集内没有任何引文支撑；(b)「不整/太正/太整」被改写成「落点不对齐/太对称」，属派生措辞（源无「落点」「对齐」）；(c) claim 主体技能仍未点名，condition 仍作「纵打;条件：不整」（含冗余前缀「条件：」）。「五盘」为「五判」讹写，claim 已写「1/3/5 判」而引文层仍是「五盘」，字面不一致。故判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_04.json",
+      "kb_trial/curation/faultcheck/triage_01.json",
+      "kb_trial/curation/faultcheck/chunk_01.json",
+      "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/_review04_state.txt"
+    ],
+    "term_flags": [
+      "「五盘」为「五判」的 ASR 讹写（源 [03:17:06]），claim 已写「1/3/5 判」、引文保持「五盘」，字面不一致",
+      "claim 新增的「横打因太对称只出奇数判」不在本条 citations 范围（本条只挂 [03:16:40] 一句）；是否补引 [03:16:46]-[03:17:26] 须父裁定",
+      "condition 字段含冗余前缀「条件：」，且主体技能未点名（subject「未点名」）"
+    ]
+  },
+  {
+    "id": "fc1:伤害结算-4-4#r3",
+    "decision": "needs_human_confirmation",
+    "reason": "claim 现为「敌人身上附带的指示特效（如敌求白身上的指示特效、夜刀扔出的指示弹道）只是特效，不属于干员动画。」源 transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt 第 907-909 行 [02:55:49]-[02:56:14]：「敌人身上那些东西只是特效」「就像敌求白那个敌人身上的指示特效 就是还有那个什么夜刀 夜刀扔出去的指示弹道 不要看他长得一个干员样 就说他是干员啊 他和干员没关系的」「那不是干员的动画」（本条引文即「敌人身上那些东西只是特效」，已核逐字）。改动的方向成立：新增的举例与「不属于干员动画」都能在这三行逐字找到来源，把笼统的「那些东西」写实为「指示特效」也取自同句。但改动把两个实体名写进了 claim 正文，而这两名在本层不可核：「敌求白」在 transcripts_txt 全量仅 1 命中（即该行），「夜刀」15 命中，且源句本身强调「不要看他长得一个干员样 就说他是干员」——源对所指是否为干员是存疑的。按本项目「干员/敌人名不得据模型旧知识改名、不确定即交人工」的口径，本条不判 confirmed_fix，把「是否保留这两个实体的举例」交人工裁定。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_04.json",
+      "kb_trial/curation/faultcheck/triage_01.json",
+      "kb_trial/curation/faultcheck/chunk_02.json",
+      "transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt",
+      "kb_trial/curated_high_quality.json"
+    ],
+    "term_flags": [
+      "「敌求白」在 transcripts_txt 全量仅 1 命中（本条源行）；「夜刀」源句自述「他和干员没关系」，两实体名是否正确须人工裁定，不得据模型旧知识改名",
+      "claim 新增「不属于干员动画」与源 [02:56:14]「那不是干员的动画」对应，措辞可核"
+    ]
+  },
+  {
+    "id": "fc1:位移-1-0#r2",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把 claim/subject 中的「鼠传送」改为「黍的传送（黍传）」（plan 前值「阻挡偏移期间，鼠传送被无效化。」→ 现值「阻挡偏移期间，黍的传送（黍传）被无效化」，见 kb_trial/curation/faultcheck/_review04_before_after.txt）。本地实测的字面事实：transcripts_txt 全量「黍」0 命中、「黍传」0 命中、「鼠」112 命中、「鼠传」5 命中；本条源 transcripts_txt/BV14gby6LEni_p3_40944668620.txt 第 40 行 [06:08] 逐字作「其实不只是鼠传送被无效化」（引文层保持原字未动，已核逐字命中）。支持「鼠→黍」的本地证据：entity_corrector.py 第 161-166 行确有鼠/属/数/暑/署→黍 的规则，但全部限定在 播种/种子/地块/天赋/三技能/开大/提丰/维什戴尔 语境，不含「传送」；kb_trial/entity_index.json 记 黍 为 prts/operator。反证：entity_corrector.py 第 74 行反有一条冲突规则 (r\"免疫鼠传\", \"免疫传送\")——本项目既有词表把「免疫鼠传」的「鼠传」解为「传送」而非「黍的传送」。QQ 轨另有实写证据：kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_112.json 内「黍传」16 处；curated 条目 qq_expansion:w001360:c01 作「现行的传送免疫只免疫黍传和免疫余传」；qq_info/subagent_novelty/novelty_w000144.md 第 149-150 行「免疫鼠传…是对鼠有效」与「免疫属船」并见（同源讹写证据）。两类证据方向相反，本地不能定夺，按「不得据模型旧知识改名」判 needs_human_confirmation。附带发现：subject 被改成与 claim 完全相同的整句「阻挡偏移期间，黍的传送（黍传）被无效化」（见 kb_trial/curation/faultcheck/_review04_state.txt，原 subject 为「鼠传送」），subject 字段语义退化；本条 review.reason 至今仍写「subject=鼠传送」「claim 把源中『不只是…』的比较句还原」，与改写后的 claim 不同步；proposal 要求的 derived_text_repairs「鼠→黍」未落入 curated（该条为 null）。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_04.json",
+      "kb_trial/curation/faultcheck/triage_01.json",
+      "kb_trial/curation/faultcheck/chunk_02.json",
+      "transcripts_txt/BV14gby6LEni_p3_40944668620.txt",
+      "kb_trial/curated_high_quality.json",
+      "entity_corrector.py",
+      "kb_trial/entity_index.json",
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_112.json",
+      "qq_info/subagent_novelty/novelty_w000144.md",
+      "kb_trial/curation/decisions.jsonl",
+      "kb_trial/curation/faultcheck/_review04_before_after.txt",
+      "kb_trial/curation/faultcheck/_review04_state.txt"
+    ],
+    "term_flags": [
+      "鼠→黍 的改法在本层证据两向：字幕层「黍」0 命中、「鼠」112 命中，entity_corrector.py 的黍规则不含「传送」语境，且第 74 行 (r\"免疫鼠传\", \"免疫传送\") 与本次改法直接冲突；支持方仅 QQ 轨实写（kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_112.json 黍传 16 处、qq_expansion:w001360:c01、novelty_w000144.md:149-150 的同源讹写）",
+      "「黍传」在字幕轨 0 命中，应采「黍的传送/黍传」还是维持「鼠传送」须人工裁定",
+      "subject 被改写为与 claim 相同的整句，字段语义退化；review.reason 仍按改写前措辞描述 subject（鼠传送），claim 与自述证据不同步",
+      "proposal 要求的 derived_text_repairs「鼠→黍」未落 curated（该条为 null）"
+    ]
+  },
+  {
+    "id": "fc1:位移-15-6#r4",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把 claim 从源文逐字的「记载的速度V不是纯量而是向量。」改写为「单位记录的上一帧速度 V（惯性向量）是向量而非标量，用于计算移速因子（|V| ÷ 理论移速 与 0.5 取大）。」源 transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt：第 273 行 [01:12:19]「V这个V是纯量呃 不是这个V是向量」（本条唯一引文，已核逐字）、第 272 行 [01:12:08]「这个记载的速度V和自己的这个理论速度」、第 269 行 [01:11:24]「这个东西我们姑且叫它那个移速因子…就是惯性向量的大小除以理论移速呃 和0.5之间取谁大」（另核第 274 行 [01:12:26]「它和它 然后的话要和0.5去比一个大小」）。三处待人工：(a) 本次把源中「纯量」换成「标量」——全量 transcripts_txt「标量」0 命中、「纯量」仅 1 命中（即该行），属无源的术语替换；(b) claim 后半的「（惯性向量）」与移速因子公式实际出自第 269 行，而本条 citations 只挂第 273 行，公式部分在已发布引文集内无对应引文；(c) proposal 的 fault_type 是 not_self_contained，本次却以总结性括注替代源句，「用于计算移速因子」属于修者归纳的目的表述。另核：本条 review.reason 仍引改写前的 claim 文本「记载的速度V不是纯量而是向量」，claim 与自述证据不同步（见 kb_trial/curation/faultcheck/_review04_state.txt）。判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_04.json",
+      "kb_trial/curation/faultcheck/triage_01.json",
+      "kb_trial/curation/faultcheck/chunk_03.json",
+      "transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/_review04_state.txt",
+      "kb_trial/curation/faultcheck/_review04_before_after.txt"
+    ],
+    "term_flags": [
+      "「标量」替换源的「纯量」：标量在 transcripts_txt 全量 0 命中、纯量 1 命中（本条源行）；术语替换无源，须人工裁定后写法",
+      "claim 后半的移速因子公式出自同文件第 269 行 [01:11:24]，不在本条引文范围内"
+    ]
+  },
+  {
+    "id": "fc1:位移-18-4#r0",
+    "decision": "confirmed_fix",
+    "reason": "本次改动把 claim 从源文拼接式的「速度是累加的速度变化量，不是这一瞬间的值。」改写为「（推拉位移计算中）速度变化量是逐帧累加的，不能取某一瞬间的单值。」核心两句逐字可自源 transcripts_txt/BV1gsmYBwEyZ_p1_34727594644.txt：第 130 行 [22:29]「不是你速度是累加的 你速度是累加的 它是速度变化量」、第 133 行 [22:46]「就是速度变化量是累加的 他不是这一瞬间是这个值」——本条两条引文正是此二句，均已核为逐字命中（第 130 行、第 133 行）。改写只是把源中重复的口语整理为命题，命题范围未变。括注的「推拉位移」「逐帧」取自同段语境而非新事实：该分P标题即「【神奇】今天讲推拉│20251212直播」，同段第 109-115 行 [19:39]-[20:34] 正在算「十力度增加了多少速度」「一帧增加0.0333的速度」，第 132 行 [22:39]「你为什么第一针是0.0111 下一针是0.0109」也按帧推进。无实体名/技能名改动，未引入源外事实。判 confirmed_fix。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_04.json",
+      "kb_trial/curation/faultcheck/triage_01.json",
+      "kb_trial/curation/faultcheck/chunk_03.json",
+      "transcripts_txt/BV1gsmYBwEyZ_p1_34727594644.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/_review04_ctx4.txt",
+      "kb_trial/curation/faultcheck/_review04_before_after.txt"
+    ],
+    "term_flags": [
+      "「逐帧」「推拉位移」为上下文派生（分P标题、同段 [19:39]-[22:46] 的力度/拉力逐帧计算），非源句逐字；若父层要求 claim 只写源字，可退为原句"
+    ]
+  },
+  {
+    "id": "fc1:位移-2-4#r5",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把「因为属性速度没有变化，所以不会取上限。」改写为「停住时属性速度没有变化，因此该帧移速不会取上限（移速上限＝自身理论移速）。」先说字面：本条唯一引文的 text「因为他的属性速度没有变化 所以的话他不会取上限」不是源中的单行逐字，而是跨行拼合——上半句出自 transcripts_txt/BV14y8269EbS_p1_41164079923.txt 第 474 行 [01:37:14] 行尾「…因为他的属性速度没有变化」，下半句是第 475 行 [01:37:29] 整行「所以的话他不会取上限」（batch 内该引文 t_line_label 为 null；已实测全库不存在该完整单行）。语义上「不会取上限」的主语在源内不明：第 474-475 行讲的是目标速度为零/逐帧刹车/属性速度没有变化，第 476 行 [01:37:38] 才转到「减速…真正改的东西是理论速度」；claim 用括注把上限明确为「移速上限＝自身理论移速」，并加上「该帧移速」作主语，都是修者补入的解释而非源字。另核：claim 的「停住时」与 subject「停住」、condition「停住时属性速度没有变化」高度重复。两处（跨行拼合引文、解释性补入的上限对象）本地不能定，判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_04.json",
+      "kb_trial/curation/faultcheck/triage_01.json",
+      "kb_trial/curation/faultcheck/chunk_03.json",
+      "transcripts_txt/BV14y8269EbS_p1_41164079923.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/_review04_verify.txt",
+      "kb_trial/curation/faultcheck/_review04_ctx.txt"
+    ],
+    "term_flags": [
+      "引文为跨行拼合：上半句在 transcripts_txt/BV14y8269EbS_p1_41164079923.txt 第 474 行行尾，下半句为第 475 行整行；发布层不存在该完整单行",
+      "「（移速上限＝自身理论移速）」与主语「该帧移速」为 claim 补入的解释，源第 474-476 行未点名上限对象，须人工裁定是否可写"
+    ]
+  },
+  {
+    "id": "fc1:位移-29-6#r3",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把「速度变化是一个等比数列递减式的过程。」改写为「敌人刹车时（理论移速−实际移速，乘八倍加速度、除以30），这一帧的速度变化量是一个等比数列递减式的过程」。源 transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt 第 43 行 [11:06]「就是这一帧的速度变化量 它是一个等比数列递减式的过程」逐字支持主句（本条引文即该行后半，已核逐字）；第 42 行 [10:49]「就是理论移速减去实际移速的差乘以八倍 然后的话就等于这一帧的加速度 加速度除以30」给出括注来源。三处待人工：(a) 括注把源的两步运算（×8 得该帧加速度，再 ÷30）压成「乘八倍加速度、除以30」一句，措辞归属可疑；(b) 更要紧的是源第 41 行 [10:29]「敌人用理论的移速减去自己的实际的移速 都是向量啊 然后乘以速度的乘以八倍 这个是地面敌人是八飞呃 飞行敌人是20」、第 42 行复述「地面敌人是八 飞行敌人是20」——改写后的 claim 只写「乘八倍」并冠以「敌人刹车时」，把源对飞行敌人 20 倍的限定丢了；(c) proposal 要求把 subject 由「未点名或general」改为「敌人（刹车过程）」，实测 subject 未动，仍为「未点名或general」，与 claim 里的「敌人刹车时」不同步（见 kb_trial/curation/faultcheck/_review04_state.txt）。判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_04.json",
+      "kb_trial/curation/faultcheck/triage_02.json",
+      "kb_trial/curation/faultcheck/chunk_03.json",
+      "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/_review04_ctx2.txt",
+      "kb_trial/curation/faultcheck/_review04_state.txt"
+    ],
+    "term_flags": [
+      "飞行敌人倍率 20 被改写后的 claim 丢失（源第 41-42 行 [10:29]/[10:49]「地面敌人是八 飞行敌人是20」），须人工裁定是否补回",
+      "subject 仍为占位值「未点名或general」，与 claim 的「敌人刹车时」不同步",
+      "括注把源的两步运算压缩为「乘八倍加速度、除以30」，措辞归属须人工裁定"
+    ]
+  },
+  {
+    "id": "fc1:位移-6-2#r1",
+    "decision": "confirmed_fix",
+    "reason": "本次改动把源文逐字的「所属格是一个需要更新的东西。」改写为「在一帧之中多次改写坐标时，所属格只在某一次改写坐标之后更新（不会随每次改写而更新）」。后者不是新事实，而是同一行后半的逐字内容：transcripts_txt/BV14y8269EbS_p2_41167359561.txt 第 618 行 [01:53:24]「珊比是根据所属格进行传送的 所属格式系一个需要更新的东西 而在一帧之中多次改写坐标 所属格也只在 只能在他们某一次改写坐标之后进行改写」（本条引文含「所属格式系一个需要更新的东西」与其 ctx=sub 整行窗口，均已核为逐字命中）。改动把 source-verbatim 但无检索信息量的原句换成同行内可核的机制陈述，未改实体名、未引入源外内容、未删除源中的限定。判 confirmed_fix。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_04.json",
+      "kb_trial/curation/faultcheck/triage_02.json",
+      "kb_trial/curation/faultcheck/chunk_04.json",
+      "transcripts_txt/BV14y8269EbS_p2_41167359561.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/_review04_verify.txt",
+      "kb_trial/curation/faultcheck/_review04_state.txt"
+    ],
+    "term_flags": [
+      "condition 仍作「讨论所属格判定」，是元描述而非条件；属字段风格问题，不影响本条 fix 成立",
+      "同句内「珊比」（传送类单位名，transcripts_txt 全量 90 命中，本分P 16 处）未进入 claim，本次未据模型旧知识改写"
+    ]
+  },
+  {
+    "id": "fc1:其他-14-7#r4",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把源文逐字的「大部分人调用的是主轴，然后一小部分人调用的是弹道轴。」改写为「多数（技能/效果）调用主轴，少数调用弹道轴（源中作「大部分人/一小部分人」）」。源 transcripts_txt/BV1TomVBBEK1_p2_34675362379.txt 第 415 行 [01:11:57]「总之大部分人调用的是主轴 然后一小部分人调用的是弹道轴 这两个用同一个种子 是进图的时间戳而决定的哦」（本条两条引文即该句，已核逐字）；同段第 409 行 [01:10:39]「那个也是地图主轴 地图有三条随机数轴哦 三条随机数轴 一条是主轴 用来各种闪避啊 随机啊 概率啊 各种判定 第二条是那个特效或者说弹道随机轴」给出轴的语境。问题在：改动把源中的泛称「人」改释为「（技能/效果）」——把主播口语的主语换成机制主体，源句本身没有这么说（该语境下「人」指用到随机数轴的技能/效果是我的推断，源未明说）；claim 括号里又保留了「（源中作「大部分人/一小部分人」）」这类引文注记，属编辑过程信息。两处均须人工裁定，判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_04.json",
+      "kb_trial/curation/faultcheck/triage_02.json",
+      "kb_trial/curation/faultcheck/chunk_04.json",
+      "transcripts_txt/BV1TomVBBEK1_p2_34675362379.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/_review04_ctx2.txt"
+    ],
+    "term_flags": [
+      "claim 把源的「人」改释为「（技能/效果）」：源句未这么说，属对口语主语的重新解释，须人工裁定",
+      "claim 内含「（源中作「大部分人/一小部分人」）」的引文注记；是否算入机制命题正文须人工裁定"
+    ]
+  },
+  {
+    "id": "fc1:其他-16-1#r1",
+    "decision": "confirmed_fix",
+    "reason": "本次改动把「Z轴即使存在，也不会影响该碰撞判定。」补足为「干员使用 2D 碰撞箱（非 3D）：Z轴即使存在，也不会影响其碰撞判定」。源 transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt 第 363 行 [02:39:07]「那个干员不是这个物理碰撞 不是这个攻受机碰撞箱啊 它是一个2D碰撞箱 Z轴即使存在 但是它不会影响判定 他不是一个3D碰撞箱 不是说就是这个东西和敌人的一个三维距离」（本条引文即「Z轴即使存在 但是它不会影响判定」，已核逐字）。新增的「干员使用 2D 碰撞箱（非 3D）」正是同句前半的逐字内容——该句主语即「那个干员」，同句并明说「他不是一个3D碰撞箱」；claim 因此把原来无所指的「该碰撞判定」还原为可检索的主语，且保留了源中「即使存在」的让步限定，未扩大为「Z 不存在」。无实体名/技能名改动。判 confirmed_fix。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_04.json",
+      "kb_trial/curation/faultcheck/triage_02.json",
+      "kb_trial/curation/faultcheck/chunk_04.json",
+      "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/_review04_ctx2.txt"
+    ],
+    "term_flags": []
+  },
+  {
+    "id": "fc1:其他-16-4#r0",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把「直指弹道目标点在XY方向上没有偏移。」改写为「直射（直指）类弹道目标点在 XY 方向上没有偏移（主播随后自我保留：该设置与动画特效有关、研究尚浅，不排除错漏）」。后半的保留语逐字可核：transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt 第 407-409 行 [02:48:49]-[02:49:07]「细想的话感觉又不太对 本身它这是一个动画特效相关的设置」「我这里的研究还是有点浅」「有些地方可能有错落」；主句亦逐字（第 405 行 [02:48:29]「XY方向上确实没有偏移 这个可以确定」、第 406 行 [02:48:46]「XY方向上真没有偏移」）。但本次改动新造了类别名「直射」：全量 transcripts_txt「直射」0 命中、「直指」仅 4 命中；而源的「直指指向」是弹幕提问用词——第 391-392 行 [02:46:21]-[02:46:33]「目标点Z轴偏移是零吗 对于直指指向的那种 没懂你意思 什么叫直指指向」「什么叫直指指向」，主播随后换用「直着飞过去」（第 397 行 [02:47:19]）并举「安吉丽娜蓝毒这种」（第 396 行 [02:47:12]）。即「直射类」是修者造的名义，源中不存在（proposal 自己也说源作「直指指向」）。另核 subject 仍为「直指弹道目标点」，与 claim 的「直射（直指）类弹道目标点」不同步（见 kb_trial/curation/faultcheck/_review04_state.txt）。按「不得据模型旧知识造/改术语」的口径，判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_04.json",
+      "kb_trial/curation/faultcheck/triage_02.json",
+      "kb_trial/curation/faultcheck/chunk_04.json",
+      "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/_review04_ctx2.txt",
+      "kb_trial/curation/faultcheck/_review04_state.txt"
+    ],
+    "term_flags": [
+      "「直射」在 transcripts_txt 全量 0 命中、「直指」4 命中；源的「直指指向」是弹幕用词且主播当场表示没听懂，claim 新造的「直射类」无源，须人工裁定",
+      "subject 仍为「直指弹道目标点」，与 claim 的「直射（直指）类弹道目标点」不同步"
+    ]
+  },
+  {
+    "id": "fc1:其他-16-4#r1",
+    "decision": "needs_human_confirmation",
+    "reason": "claim 现为「直射（直指）类弹道目标点的 Z 轴偏移不是零（主播称可确定，但同时说不同敌人是否不同尚不确定、研究尚浅）」，condition「讨论直指弹道目标点的Z轴偏移时」。三段内容都能逐字对源 transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt：第 403 行 [02:48:20]「哦嗯首先我可以确定不是零」（本条两条引文均为此句，已核逐字）、第 404 行 [02:48:24]「但是不同敌人是不是有不同 我不知道」、第 407-408 行 [02:48:49]/[02:48:58]「本身它这是一个动画特效相关的设置」「我这里的研究还是有点浅」；将「不是零」还原到 Z 上也有先行语境（第 400 行 [02:47:56]「你问的是他是不是飞向敌人的Z也是坐标零」）。问题与 #r0 同源：本次改动写入的「直射」为无源名义（全量 0 命中），subject 仍为「直指弹道目标点」未同步；且主播的回答同时含「不同敌人是不是有不同 我不知道」，claim 把「不是零」写成确定结论、把不确定降为括注，这种确定度归属须人工裁定。判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_04.json",
+      "kb_trial/curation/faultcheck/triage_02.json",
+      "kb_trial/curation/faultcheck/chunk_04.json",
+      "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/_review04_ctx2.txt",
+      "kb_trial/curation/faultcheck/_review04_state.txt"
+    ],
+    "term_flags": [
+      "「直射」无源（同 #r0）；subject 未同步；「不是零」的确定度与「不同敌人是否不同尚不确定」的层次划分须人工裁定"
+    ]
+  },
+  {
+    "id": "fc1:寻路-0-11#r0",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把 claim 的「鼠的传送」改为「黍的传送」、subject 由「阻挡偏移与鼠的传送」改为「阻挡偏移与黍的传送」，引文保留原字。源 transcripts_txt/BV14gby6LEni_p3_40944668620.txt 第 119 行 [20:38]「所以他会比鼠的优先级更高 鼠的传送触发了 但是被阻挡偏移拉回来了 阻挡偏移规定了落点 所以鼠就无法把他传送走」（本条两条引文即该行两个片段，已核逐字），claim「阻挡偏移的优先级高于黍的传送」的机制结论本身与源一致，改动只换了实体名。但「鼠→黍」的改法本地无法定夺，理由同 fc1:位移-1-0#r2：字幕层「黍」0 命中、「黍传」0 命中、「鼠」112 命中；entity_corrector.py 的黍规则（第 161-166 行）全部限定在 播种/种子/地块/天赋/三技能/开大/提丰/维什戴尔 语境，不含「传送」，同文件第 74 行反有冲突规则 (r\"免疫鼠传\", \"免疫传送\")；支持方只有 QQ 轨实写（kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_112.json 黍传 16 处、qq_expansion:w001360:c01）与 qq_info/subagent_novelty/novelty_w000144.md 第 149-150 行的同源讹写。另核：本次只改了 subject，同一条的 condition 仍写「阻挡偏移与鼠的传送同时涉及同一单位/同一过程」，一份条目内「鼠」「黍」并存（见 kb_trial/curation/faultcheck/_review04_state.txt），且 proposal 要求的 derived_text_repairs「鼠→黍」未落入 curated。判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_04.json",
+      "kb_trial/curation/faultcheck/triage_02.json",
+      "kb_trial/curation/faultcheck/chunk_04.json",
+      "transcripts_txt/BV14gby6LEni_p3_40944668620.txt",
+      "kb_trial/curated_high_quality.json",
+      "entity_corrector.py",
+      "kb_trial/entity_index.json",
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_112.json",
+      "qq_info/subagent_novelty/novelty_w000144.md",
+      "kb_trial/curation/faultcheck/_review04_state.txt"
+    ],
+    "term_flags": [
+      "鼠→黍 同 fc1:位移-1-0#r2：字幕层黍/黍传 0 命中、entity_corrector.py 第 74 行 (r\"免疫鼠传\", \"免疫传送\") 与本次改法直接冲突，支持方仅 QQ 轨实写",
+      "同一条目内鼠/黍并存：condition 仍作「阻挡偏移与鼠的传送同时涉及同一单位/同一过程」，未随 subject 同步",
+      "proposal 要求的 derived_text_repairs「鼠→黍」未落 curated"
+    ]
+  },
+  {
+    "id": "fc1:寻路-0-11#r1",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把 claim 中三处「鼠」改为「黍」、subject 由「鼠的传送」改为「黍的传送」。源 transcripts_txt/BV14gby6LEni_p3_40944668620.txt 第 119 行 [20:38]「鼠的传送触发了 但是被阻挡偏移拉回来了 阻挡偏移规定了落点 所以鼠就无法把他传送走」（本条引文即该句，已核逐字），claim 的三个环节（已触发 / 被阻挡偏移拉回 / 因规定落点无法传送走）与源一一对应，改动只换实体名；第 120 行 [20:54]「…他明明已经移动出去了…但是他被阻挡偏移拉回来了」为同结论的另一例证。「鼠→黍」本地仍不能定夺（理由同 #r0：字幕层「黍」0 命中，entity_corrector.py 的黍规则不含「传送」语境、第 74 行 (r\"免疫鼠传\", \"免疫传送\") 与之冲突，支持方仅 QQ 轨实写）。另核：condition 仍写「鼠的传送已触发;阻挡偏移对同一目标规定了落点」——同一 condition 内「鼠」与 claim 的「黍」并存，未同步（见 kb_trial/curation/faultcheck/_review04_state.txt）；derived_text_repairs「鼠→黍」未落 curated。判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_04.json",
+      "kb_trial/curation/faultcheck/triage_02.json",
+      "kb_trial/curation/faultcheck/chunk_04.json",
+      "transcripts_txt/BV14gby6LEni_p3_40944668620.txt",
+      "kb_trial/curated_high_quality.json",
+      "entity_corrector.py",
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_112.json",
+      "kb_trial/curation/faultcheck/_review04_state.txt"
+    ],
+    "term_flags": [
+      "鼠→黍 同 #r0 与 fc1:位移-1-0#r2，须人工裁定",
+      "condition 仍含「鼠的传送已触发」，与 claim 的「黍」并存，未同步"
+    ]
+  },
+  {
+    "id": "fc1:寻路-14-0#r2",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把「向左上移动时角度更偏上，因为避障力会推着向上；该情形处于触发避障状态。」改写为「（被推入下方格子的敌人）触发避障时，向左上移动的角度比不触发避障时更偏上，因为避障力推着它向上」，并把 subject 由「未点名」改为「被推入下方格子的敌人」。源 transcripts_txt/BV1aTeV6yENP_p4_41898281814.txt 第 258 行 [53:48]「他确实触发避障 他这里全程都在触发避障 包括这里他向左上的时候也要更偏上一些 因为避障力会推着他向上」（本条唯一引文，已核逐字命中），claim 的「触发避障」「向左上」「更偏上」「避障力推着向上」四要素逐字可取。两处为修者推断：(a)「比不触发避障时更偏上」的对照基线——同段第 256-257 行 [53:27]-[53:42] 的对照讲的是向右上（「无论有没有避障 他都会向右上 只是有避障 它向右上的角度更右一些」），源没有对向左上给出同式的有无避障对照；(b) subject「被推入下方格子的敌人」取自第 256 行 [53:27]「向右上是因为那个推到了下面的格子」——该句属向右上场景，把它绑定为左上场景的主体是场景指代的推断。两处本地不能定，判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_04.json",
+      "kb_trial/curation/faultcheck/triage_02.json",
+      "kb_trial/curation/faultcheck/chunk_04.json",
+      "transcripts_txt/BV1aTeV6yENP_p4_41898281814.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/_review04_ctx.txt"
+    ],
+    "term_flags": [
+      "claim 的对照基线「比不触发避障时」与 subject「被推入下方格子的敌人」为跨场景推断（源 [53:27]「推到了下面的格子」属向右上语境），须人工裁定",
+      "「空费帧」术语禁令：本批 20 条无「空费针/空飞针」字样（batch_04.json 与 20 条 curated 条目均 0 命中，已实测），故本批未触发该禁令；但同分P源文 transcripts_txt/BV1aTeV6yENP_p4_41898281814.txt 第 269-270 行 [56:24]/[56:39] 仍含「空费针」「空飞针」，禁令不得用于回改引文字面"
+    ]
+  },
+  {
+    "id": "fc1:寻路-14-16#r4",
+    "decision": "false_positive",
+    "reason": "triage_02 判 overclaim，要求 condition 加「（不可通行地块／缓慢移动场景）」、claim 后补限定「（该力提供的是加速度；目标方向非零时其移动方向上的投影会被减去，仅剩横向分量，见同段避障力投影规则）」。本地复核三点：(a) 原 claim「避障力只是给敌人提供一个加速度；当敌人行动起来时，也受到该加速度。」与源逐字相同——transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt 第 142 行 [45:12]「他没有所谓低于行动而高于停住 他只是给敌人提供一个加速度 当敌人行动起来的话 也受到这个加速度」，原文没有超出源的断言，且已保留「只是」的限定，「overclaim」的定性不成立；(b) 追加进去的「投影会被减去」不在本条证据范围内：本条 4 条引文（p8:a5:58a92632、p9:a1:86ba5522、p9:a2:2f02a689 与 ctx=sub 窗口）在 kb_trial/evidence.jsonl 中全部落在 t=2712-2731（[45:12]），clips.quote 只含「他只是给敌人提供一个加速度」「当敌人行动起来的话 也受到这个加速度」（见 kb_trial/curation/faultcheck/_review04_atom3.txt）；该投影规则实际在同文件第 257-258 行 [01:08:35]-[01:08:52]「嗯总之的话就是这个臂张力 他要在那个就是移动方向上做投影呃 减去移动方向上的投影 得到一个绝对垂直于移动方向上的一个力」「…而只是给敌人提供一个远离 …横向远离障碍物的力」，属另一段、另一原子；(c) 追加句自带的自指「见同段避障力投影规则」在发布层不可解析——本条所谓「同段」是 [45:12]，其中并无该规则，读者无法据此定位到 [01:08:35]。因此本条按 false_positive 判：挑刺所指的 overclaim 不成立，追加内容也不应挂在本条。若父层认为「投影」规则值得入库，应另立条目并挂 [01:08:35]-[01:08:52] 的引文，而不是追加进本条。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_04.json",
+      "kb_trial/curation/faultcheck/triage_02.json",
+      "kb_trial/curation/faultcheck/chunk_05.json",
+      "transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt",
+      "kb_trial/evidence.jsonl",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/_review04_ctx.txt",
+      "kb_trial/curation/faultcheck/_review04_atom3.txt",
+      "kb_trial/curation/faultcheck/_review04_before_after.txt"
+    ],
+    "term_flags": [
+      "追加句的自指「见同段避障力投影规则」在发布层不可解析：本条引文全在 [45:12]，投影规则在同文件第 257-258 行 [01:08:35]-[01:08:52]，需另立条目并另挂引文",
+      "同文件第 257-262 行并见「臂张力/臂章力/避障针」等讹写（对应正确术语应为避障力/避障帧）；若另立条目须先定术语"
+    ]
+  },
+  {
+    "id": "fc1:寻路-16-0#r0",
+    "decision": "confirmed_fix",
+    "reason": "本次改动把「若避障判定区与某一个不可通行地块发生重叠，则进入避障相关判定。」改为「避障判定区与某一个不可通行地块发生重叠时，进入避障判定区的重叠检测（敌人在可通行地块时才检测周围八格）。」逐句对源 transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt：第 218 行 [01:01:16]「如果避障判定区和某一个地块发生的额发生」、第 219 行 [01:01:23]「重叠 如果B站判定区和某一个地块 某一个不可通行地块发生重叠」、第 220 行 [01:01:36]「如果B站判定区和某一个不可通行地块 发生重叠」（本条引文即此句，已核逐字）、第 222 行 [01:02:11]「如果敌人在可通行地块的话 才会检测自己周围八格 如果检测周围八格的时候 判定和周围八格 然后发生了相切或者重叠 然后的话就会进行如下的算法」。改动后 claim 的三段（条件重叠、进入重叠检测、可通行地块才检测周围八格）都能在同一段落找到来源，且把原来含混的「避障相关判定」改成源中可核的说法；「B站判定区」这一 ASR 讹写由同文件第 218 行的「避障判定区」自证（该文件「避障判定区」9 命中 vs「B站判定区」3 命中），claim 已用正确写法而引文保持原字。无实体名改写，未引入源外事实。判 confirmed_fix。附注（不影响结论）：claim 括注所本的第 222 行不在本条 citations 内（本条只挂第 220 行 p21:a0），建议父层补引。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_04.json",
+      "kb_trial/curation/faultcheck/triage_03.json",
+      "kb_trial/curation/faultcheck/chunk_05.json",
+      "transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/_review04_ctx.txt"
+    ],
+    "term_flags": [
+      "「B站判定区」为「避障判定区」的 ASR 讹写，由同文件第 218 行自证（避障判定区 9 命中 / B站判定区 3 命中）；claim 已用正确写法，引文保持原字",
+      "claim 括注所本的源第 222 行 [01:02:11] 不在本条 citations 内，建议补引（引文集变更须父裁定）"
+    ]
+  }
+]

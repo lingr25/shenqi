@@ -1,0 +1,289 @@
+[
+  {
+    "id": "fc1:位移-18-7#r1",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "不要按与 #r0 重复而维持撤下：第158行是「总有一个在先/在后」，第159行才是「推不会用位移反过来影响力度，所以算等差数列」，两句理由不同。恢复时把 claim 收窄为「可以直接算，因为总有一个在先、总有一个在后。」禁止写成「推总有一个在先」，也不要订正句首「归」。subject/condition 里的「推力位移」只有在补上下面两条之后才能留下；不补则 subject 改为「未点名（源句为归你/他）」。",
+    "citation_additions": [
+      {
+        "transcript_file": "transcripts_txt/BV1gsmYBwEyZ_p1_34727594644.txt",
+        "locator": "line 156 [27:22]",
+        "quote": "力度就是力度 一力度乘一帧的时间是他提供的速度 速度乘一帧的时间是他提供的位移"
+      },
+      {
+        "transcript_file": "transcripts_txt/BV1gsmYBwEyZ_p1_34727594644.txt",
+        "locator": "line 157 [27:37]",
+        "quote": "对吧哦对对对对 别删掉啊 那我我前面都没管这个我要推的话 分推是直接算的 我看下我看下 我看下推这边"
+      }
+    ],
+    "reason": "现引文只支持「可以直接算，因为他总有一个在先、总有一个在后」。把「他」改成「推」、把句首「归你」改成「推力位移」都超出这句；「归」在同文件没有第二处可自证，不能订正。「在先/在后」的对象相邻行也没有点名。话题是推，可由第156–157行补上，但不能用来给「在先/在后」指定对象。",
+    "evidence_paths": [
+      "transcripts_txt/BV1gsmYBwEyZ_p1_34727594644.txt",
+      "kb_trial/curation/faultcheck/chunk_03.json"
+    ]
+  },
+  {
+    "id": "fc1:其他-19-21#r0",
+    "calibrated_decision": "needs_human_confirmation",
+    "recommended_action": "先不要恢复，也不要把「冥界」改成任何词。请用户在三选一里裁定：照录源词并恢复本条、给出已核对的订正词后再恢复、或因无法自证而维持撤下。",
+    "citation_additions": [],
+    "reason": "需要用户裁定源词，不是文本改写问题。claim「医疗和狙击的冥界希望容量加四」与第1000行 [03:02:16] 逐字一致。同窗是在核算希望（第1010行「一整个外援是十希望」），但「冥界」在转写里只有这一处；kb_trial/entity_index.json 与 entity_corrector.py 都没有该词。kb/.quality_cache.json 与 kb/.quality_cache_v2.json 的 vod_cluster:其他-19-21 只把「冥界」标为 asr_suspect，并写「疑为命结」或「疑似识别错词」，这不是已登记映射，不能据此改名。请确认：保持「冥界」入库，还是你有核对过的订正；若两者都不是，是否维持撤下。",
+    "evidence_paths": [
+      "transcripts_txt/BV1wPuG6aEyY_p4_40731150754.txt",
+      "kb_trial/entity_index.json",
+      "entity_corrector.py",
+      "kb/.quality_cache.json",
+      "kb/.quality_cache_v2.json"
+    ]
+  },
+  {
+    "id": "fc1:寻路-40-5#r0",
+    "calibrated_decision": "revert_to_source_text",
+    "recommended_action": "恢复本条，但把 claim 改回「敌人看起来很奇怪，但敌人自己认为自己走得很正。」删掉「走歪」。不要用相邻的「进墙/偏差过大/入了墙」去保留这个源中没有的词。偏移导致「到了格子才拐弯」仍由 #r1 承载，本条只留这一对照。",
+    "citation_additions": [],
+    "reason": "第1266行 [03:58:58] 是「他看起来很奇怪 但是他自己认为他自己走的很正」。全文件「走歪」0 次，没有可补的逐字出处。相邻行写的是「很奇怪」「实体已经进墙了」「偏差过大」「极大幅度入了墙」，都不能当成「走歪」二字的出处。本条与 #r1（第1267行）不是同一句。",
+    "evidence_paths": [
+      "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
+      "kb_trial/curation/faultcheck/chunk_08.json"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-10-1#r1",
+    "calibrated_decision": "remove_entry",
+    "recommended_action": "维持撤下。不要改写「入空」「中路」或「他」，也不要把本条收成脱离该关的打断规则。",
+    "citation_additions": [],
+    "reason": "第471行逐字支持现 claim，问题不是改写越界。文件第1行标题是「看弧光7人」，第466–474行全是这一关的排轴口播。「入空」「中路」「他」在这几行里没有可复用定义，拿掉它们之后句子就不成立，无法收窄。",
+    "evidence_paths": [
+      "transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt",
+      "kb_trial/curation/faultcheck/chunk_09.json"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-10-1#r8",
+    "calibrated_decision": "remove_entry",
+    "recommended_action": "维持撤下。不要把「惊蛰采」改成「惊蛰踩」，也不要给「这两个」补干员名或关卡角色名。",
+    "citation_additions": [],
+    "reason": "第476–477行逐字拼出现 claim，「这两个」指同段「中路」里必须打断的对象，仍是关卡内指代。惊蛰在 entity_index 里是干员，但本句的约束（中路这两个、他的前摇、选择采的时间）离开弧光7人排轴就不成立，无法收窄。同文件「惊蛰采」与「惊蛰踩」并存，entity_corrector.py 未登记，本次不选字。",
+    "evidence_paths": [
+      "transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt",
+      "kb_trial/entity_index.json",
+      "entity_corrector.py",
+      "kb_trial/curation/faultcheck/chunk_09.json"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-31-8#r0",
+    "calibrated_decision": "remove_entry",
+    "recommended_action": "维持撤下，不要恢复。不要再改「求白/仇白」。「正常」留在仍在库的 #r2 里，不要另释。",
+    "citation_additions": [],
+    "reason": "不是未登记术语问题：entity_index 的「求白」canonical 为仇白（source:user），entity_corrector.py 已有求白→仇白。第875行是「像正常求白那种是依赖攻速 但是他依赖攻速卡到了动画的时长上限」。本条只取前半，还多写了该行没有的「攻击动画」。仍在库的 #r2「正常仇白依赖攻速时会卡到动画时长上限」已覆盖这句，恢复本条不增加独立命题。",
+    "evidence_paths": [
+      "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+      "kb_trial/entity_index.json",
+      "entity_corrector.py",
+      "kb_trial/curation/faultcheck/chunk_09.json"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-31-8#r1",
+    "calibrated_decision": "remove_entry",
+    "recommended_action": "维持撤下，不要恢复成一条少了「正常」的重复句。",
+    "citation_additions": [],
+    "reason": "第875行后半「但是他依赖攻速卡到了动画的时长上限」逐字支持本条，求白→仇白已登记。本条只是少了源句里的「正常」。同一句的完整说法已在仍在库的 #r2，撤下不丢信息。",
+    "evidence_paths": [
+      "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+      "kb_trial/entity_index.json",
+      "entity_corrector.py",
+      "kb_trial/curation/faultcheck/chunk_09.json"
+    ]
+  },
+  {
+    "id": "fc1:状态效果-15-12#r0",
+    "calibrated_decision": "needs_human_confirmation",
+    "recommended_action": "维持撤下，直到用户裁定「科技COMBUFF」是照录还是整条放弃。不要改写这个词，也不要补机制解释。",
+    "citation_additions": [],
+    "reason": "需要用户判断这行界面串读算不算可入库的机制句。第33行 [07:58]「状态免疫无法被添加科技COMBUFF」与 claim 逐字一致；前后第32/34/35行是「异常状态反制」「异常反制」等界面残行，出自「看看缇缇」开场。该词在 entity_index 中无条目，本地没有第二处可用来订正或收窄。请确认：照源词恢复，还是视为无法核验的串读残句、维持撤下。",
+    "evidence_paths": [
+      "transcripts_txt/BV1qArGBPEQ8_p2_35297037660.txt",
+      "kb_trial/entity_index.json",
+      "kb_trial/curation/faultcheck/chunk_11.json"
+    ]
+  },
+  {
+    "id": "fc1:状态效果-15-5#r0",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "恢复本条并补引第512行，使「光环也挂上 / 睡眠也挂上」进入引文。claim 可保持「光环/睡眠挂上与他撤的时间没有关系」。不要给「他」补任何干员名，也不要把这次实测概括成普遍规则。",
+    "citation_additions": [
+      {
+        "transcript_file": "transcripts_txt/BV1qArGBPEQ8_p1_35288975300.txt",
+        "locator": "line 512 [01:54:24]",
+        "quote": "他没撤 这个光环也挂上 这个睡眠也挂上"
+      }
+    ],
+    "reason": "现引文只有第511行「这个和他撤的时间没有关系」。claim 里的光环/睡眠来自紧邻的下一行，是逐字出处，不是旧知识。第501行的「霞光」不能确定就是这个「他」，所以主体停在引文里的「光环/睡眠挂上」。",
+    "evidence_paths": [
+      "transcripts_txt/BV1qArGBPEQ8_p1_35288975300.txt",
+      "kb_trial/curation/faultcheck/chunk_11.json"
+    ]
+  },
+  {
+    "id": "fc1:索敌-11-2#r0",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "恢复本条，补引第476行整句。subject 从「该改动」改为「同帧部署（源字幕作童真部署）」，只用 entity_corrector 已登记的童真→同帧。claim 保持「很明显不是一个基于仇恨值的改动」，不要加上「版本级改动」之类源中没有的定性。不要因为 #r1 覆盖了同句后半就删除本条。",
+    "citation_additions": [
+      {
+        "transcript_file": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+        "locator": "line 476 [02:03:28]",
+        "quote": "童真部署现在挺乱的 这很明显不是一个基于仇恨值的改动 就是他现在对这个童真部署的反转现象 影响了很多本不基于仇恨值进行结算的东西"
+      }
+    ],
+    "reason": "「该改动」的先行词就在同一行开头「童真部署现在挺乱的」，不是窗内无锚定。童真→同帧已在 entity_corrector.py 登记。#r1 只承接后半句「反转现象影响了很多本不基于仇恨值进行结算的东西」，本条的「不是基于仇恨值的改动」是另一分句。",
+    "evidence_paths": [
+      "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+      "entity_corrector.py",
+      "kb_trial/curation/faultcheck/chunk_12.json"
+    ]
+  },
+  {
+    "id": "fc1:索敌-11-8#r1",
+    "calibrated_decision": "support_current",
+    "recommended_action": "恢复本条，不改 claim、不改引文。不要把「同质项」改成「同指向」或「同值项」。不要因仍在库的 fc1:索敌-12-5#r0 使用另一种写法就维持删除。",
+    "citation_additions": [],
+    "reason": "claim「排序算法不会交换同质项」是第535行的逐字片段，当前引文已支持。同文件另有第279行「同值项」、第567行「同指向」、第658行「同值项」，entity_corrector.py 与 entity_index 都没有这组映射。在未登记前不能宣告它们是同一个词，也就不能把本条当成 12-5#r0 的重复删掉。",
+    "evidence_paths": [
+      "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+      "entity_corrector.py",
+      "kb_trial/entity_index.json",
+      "kb_trial/curation/faultcheck/chunk_12.json"
+    ]
+  },
+  {
+    "id": "fc1:索敌-11-8#r4",
+    "calibrated_decision": "remove_entry",
+    "recommended_action": "维持撤下。不要恢复带「打后」或「解决(打先/打后)部署的问题」的 claim，也不要新登记「大仙→打先」。",
+    "citation_additions": [],
+    "reason": "第536行只有「所以才有童真部署解大仙部署的情况」，没有「打后」，也没有「可以用同帧部署解决某问题」这种操作句。同文件第568行是「所以才有同帧部署 打先部署的情况」，仍是打先、不是打后；第651行「打后创建」是另一句，不能补进本条。「大仙」未在 entity_corrector 登记。可保留的部分已由仍在库的 fc1:索敌-12-5#r1（无法排序则打先创建）和 #r2（同帧部署时打先部署）承载，收窄后没有独立命题。",
+    "evidence_paths": [
+      "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+      "entity_corrector.py",
+      "kb_trial/curation/faultcheck/chunk_12.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w000374:c01",
+    "calibrated_decision": "remove_entry",
+    "recommended_action": "维持撤下。不要把「重力面相」改成「重力面向」，也不要补地图名。",
+    "citation_additions": [],
+    "reason": "seq10「那个图重力面相3帧一判定吃加速」在窗内 19 条里没有地图或关卡名，seq11「需要做局内测试修寻路程序」与这条数值命题不是同一句。主体「该图」无法收窄。entity_index 有「重力面向」词条，但没有面相→面向的映射，不能用来改这条。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_094.json",
+      "kb_trial/entity_index.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001040:c01",
+    "calibrated_decision": "needs_human_confirmation",
+    "recommended_action": "文本不要改。请用户裁定：这种为出怪顺序服务的计算机术语定义是否收入机制层。收入则按现 claim 与 seq38/seq39 恢复；不收入则维持撤下。",
+    "citation_additions": [],
+    "reason": "这是收录口径，不是证据缺口。qq_wo_b3_118.json 的 seq38「这里的稳定指的是相同值的元素在排序前后的顺序的稳定性，不是指多次排序的结果稳定不变」和 seq39「所以不稳定排序并不是说对同序列两次排序结果可能会不一样哦」逐字支持现 claim。同窗 seq1–44 在讨论出怪顺序，本条是其中的术语说明。请决定通用排序定义算不算这一层要收的机制内容。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_118.json",
+      "kb_trial/entity_index.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w000396:c02",
+    "calibrated_decision": "remove_entry",
+    "recommended_action": "维持撤下。不要猜测「那个盾」属于哪位干员，也不要把视错觉写进仍保留的 c01。",
+    "citation_additions": [],
+    "reason": "seq12–13 逐字就是现 claim，不是改写错误。但「那个盾」在全窗没有所属：seq2–6 只出现梓兰、灰烬等名字，不能当成这个盾的主人。拿掉盾之后，剩下的是一次「刚推动时觉得位移大」的观感，没有可收窄的机制句。同窗 c01 已保留「不是磕墙，而是 -2 级推力位移太少」。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_035.json",
+      "kb_trial/curation/faultcheck/chunk_22.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w000549:c02",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "恢复本条，补引 seq5–seq8。把 claim 里的「上述加速过程」改成这些行已经写明的过程：「船拐弯时不是一个方向直接归零，而是一个方向向0减速、另一个方向向目标加速」。保留「其逻辑内核是一样的，从向量v1逐帧加速到向量v2」。不要并入 seq19 的 2.75 帧或 seq21 的算式。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_055.json",
+        "locator": "seq5",
+        "quote": "船拐弯的时候竟然是一个方向直接归零另一个方向重新加速吗"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_055.json",
+        "locator": "seq6",
+        "quote": "[表情]@0065bdfd 不是归零啊"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_055.json",
+        "locator": "seq7",
+        "quote": "一个方向向0减速"
+      },
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_055.json",
+        "locator": "seq8",
+        "quote": "另一个方向向目标加速"
+      }
+    ],
+    "reason": "seq10 已支持「从向量v1逐帧加速到向量v2」，但「上述/其」的先行内容在同窗 seq5–seq8，现引文没有。c01 只写了一向减速、一向加速，没有这条 v1→v2 的等价说法，删掉会丢独立命题。补引后即可自足，不必请用户解释船或关卡。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_055.json",
+      "kb_trial/curation/faultcheck/chunk_22.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001933:c02",
+    "calibrated_decision": "support_current",
+    "recommended_action": "恢复本条，不改 claim、不改引文。不要把 seq12「本质上是程序员偷懒」写进 claim，也不要把它并进 c01。",
+    "citation_additions": [],
+    "reason": "seq14 与 seq15 已在引文里，claim 是这两句的转写，包括源句自带的「yj的大部分机制」。仍在库的 c01 有「上火车」和「套一个发光buff」，没有本条第二层「存在有这个Buff的干员」。这是同源机制陈述，不是缺证据，也没有源外主体。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_156.json",
+      "kb_trial/curation/faultcheck/chunk_24.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w000430:c02",
+    "calibrated_decision": "add_citation",
+    "recommended_action": "恢复本条并补引 seq3。claim 中的时间前提改依 seq3 原文「开局0帧下个玛恩纳，1w秒后」，不要把「下个」写成源句没有的部署细节。玛恩纳保留（源文点名，且 entity_index 有该干员）。「嘲讽值」沿用本窗用词，不另定义。不要并进 c01 的一般规则而删掉这个实例。",
+    "citation_additions": [
+      {
+        "transcript_file": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_207.json",
+        "locator": "seq3",
+        "quote": "以及，开局0帧下个玛恩纳，1w秒后"
+      }
+    ],
+    "reason": "seq4 的提问、seq5「因为玛恩纳先创建所以打老玛」和 seq6「是」已在引文中。claim 的「开局 0 帧」「1w 秒后」来自未被引用的 seq3，有同窗逐字出处。玛恩纳不是源外主体。c01 只有「打先创建」的一般句，没有「与玛恩纳同嘲讽值」。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_207.json",
+      "kb_trial/entity_index.json",
+      "kb_trial/curation/faultcheck/chunk_25.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001328:c01",
+    "calibrated_decision": "support_current",
+    "recommended_action": "恢复本条，不改 claim。不要以「这是常识」维持撤下，也不要把雪崩/迪斯科链条并进本条（那是 c02）。",
+    "citation_additions": [],
+    "reason": "seq5「主要是“撤退”这个事情本身就会导致技能结束」逐字支持 claim。判断它「对任何干员都成立所以太常识」要用游戏知识，本次不能用来删条。本条主体是撤退与技能结束，不是雪崩；雪崩在 entity_index 里只有「雪崩触发装置」，没有裸词「雪崩」，但本条 claim 并未使用它。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_215.json",
+      "kb_trial/entity_index.json",
+      "kb_trial/curation/faultcheck/chunk_26.json"
+    ]
+  },
+  {
+    "id": "qq_expansion:w000222:c02",
+    "calibrated_decision": "remove_entry",
+    "recommended_action": "维持撤下。不要猜测「小德宝宝」是哪位干员，也不要把这个昵称补进 c01。",
+    "citation_additions": [],
+    "reason": "seq18 逐字就是现 claim，seq17 只是在问「为什么小德宝宝会从born切到born」。该昵称在 entity_index 中 0 命中，窗内没有指向登记干员的句子（同窗「归鲨」已登记为归溟幽灵鲨，但不是本条主体）。整句只有「莫名其妙」的现象，没有成因；去掉昵称后无可保留的命题。部署状态机的可复用说法已在 c01。",
+    "evidence_paths": [
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_311.json",
+      "kb_trial/entity_index.json",
+      "kb_trial/curation/faultcheck/chunk_28.json"
+    ]
+  }
+]

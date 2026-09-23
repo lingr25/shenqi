@@ -1,0 +1,4361 @@
+[
+ {
+  "id": "fc1:寻路-27-8#r4",
+  "claim": "若敌人脚下格子直接指向路径点没有障碍、可以直接指，则直接指向路径点坐标，而不是路径点的格心。",
+  "subject": "寻路",
+  "condition": "敌人脚下格子直接指向路径点没有障碍;可以直接指",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p1_40968521557:p35:a4:ba60a2c5",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p1_40968521557",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "路线平整化拉直、拐角格与目标速度指向",
+    "quotes": [
+     {
+      "text": "如果敌人脚下的格子直接指向路径点 是没有障碍的话 直接指向路径点所在的格子是没有障碍的话",
+      "t_start": 3571,
+      "t_end": 3603,
+      "t_start_upstream": 3571,
+      "t_start_line": 3588,
+      "t_line_label": "59:48"
+     },
+     {
+      "text": "可以直接指的话 那么他就会直接指向这个路径点 直接指向路径点坐标 而不是路径点的革新",
+      "t_start": 3603,
+      "t_end": 3625,
+      "t_start_upstream": 3603,
+      "t_start_line": 3603,
+      "t_line_label": "01:00:03"
+     }
+    ],
+    "_upstream_quote": "如果敌人脚下的格子直接指向路径点 是没有障碍的话 直接指向路径点所在的格子是没有障碍的话"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-27-8",
+   "trial_rule_idx": 4,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：claim 的两个条件分句分别对应源 BV1kRbQ6tEG9_p1_40968521557.txt [59:48]「如果敌人脚下的格子直接指向路径点 是没有障碍的话 直接指向路径点所在的格子是没有障碍的话」与 [01:00:03]「可以直接指的话 那么他就会直接指向这个路径点 直接指向路径点坐标 而不是路径点的革新」，两处 citation 时间点不同（00:59:31-01:00:03 / 0",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "claim 的两个条件分句分别对应源 BV1kRbQ6tEG9_p1_40968521557.txt [59:48]「如果敌人脚下的格子直接指向路径点 是没有障碍的话 直接指向路径点所在的格子是没有障碍的话」与 [01:00:03]「可以直接指的话 那么他就会直接指向这个路径点 直接指向路径点坐标 而不是路径点的革新」，两处 citation 时间点不同（00:59:31-01:00:03 / 01:00:03-01:00:25），属两处独立证据。claim 保留「没有障碍」与「可以直接指」两个并列条件，未只留其一。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+   "source_line_time": "01:00:03",
+   "supports": "两个条件与结论分句各有源行，两处引文独立",
+   "derived_correction": "源 [59:48]「直接指向路径点所在的格子是没有障碍的话」为口述重复叠加（同一条件说两遍）；引文原文保留不改。",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "fc1:寻路-28-0#r0",
+  "claim": "寻路是一个始终走向格子中心的过程。",
+  "subject": "寻路",
+  "condition": "在寻路过程中",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p1_40968521557:p35:a6:b24b5b0c",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p1_40968521557",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "路线平整化拉直、拐角格与目标速度指向",
+    "quotes": [
+     {
+      "text": "所以的话寻路是一个 始终走向格子中心的过程",
+      "t_start": 3625,
+      "t_end": 3658,
+      "t_start_upstream": 3625,
+      "t_start_line": 3625,
+      "t_line_label": "01:00:25"
+     }
+    ],
+    "_upstream_quote": "所以的话寻路是一个 始终走向格子中心的过程"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-28-0",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1kRbQ6tEG9_p1_40968521557.txt [01:00:25] 逐字为「嗯所以的话寻路是一个 始终走向格子中心的过程」，claim 与该句一致，「始终」这一全称副词保留。同窗口 [01:00:42]「虽然走不到中心 但是并不影响他之前是冲着中心去的」给出了「走不到中心」的例外说明，claim 的「始终走向」指的是趋向而非到达，与源句一致，未与例外冲突。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1kRbQ6tEG9_p1_40968521557.txt [01:00:25] 逐字为「嗯所以的话寻路是一个 始终走向格子中心的过程」，claim 与该句一致，「始终」这一全称副词保留。同窗口 [01:00:42]「虽然走不到中心 但是并不影响他之前是冲着中心去的」给出了「走不到中心」的例外说明，claim 的「始终走向」指的是趋向而非到达，与源句一致，未与例外冲突。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+   "source_line_time": "01:00:25",
+   "supports": "与源句一致，「始终」保留且不与例外冲突",
+   "derived_correction": "无。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-28-4#r0",
+  "claim": "寻路算法的一切目的都是给敌人规定一个目标方向，使其向格子中心走。",
+  "subject": "寻路算法",
+  "condition": "敌人处于寻路状态机中",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p1_40968521557:p38:a0:d9b49bc8",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p1_40968521557",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "加速度模型、2.75等效帧与steering factor",
+    "quotes": [
+     {
+      "text": "这一套寻路算法的一切目的 都是为了给敌人规定一个目标的方向 给敌人规定一个目标的方向 他要向这个格子中心走",
+      "t_start": 3921,
+      "t_end": 3937,
+      "t_start_upstream": 3921,
+      "t_start_line": 3921,
+      "t_line_label": "01:05:21"
+     }
+    ],
+    "_upstream_quote": "这一套寻路算法的一切目的 都是为了给敌人规定一个目标的方向 给敌人规定一个目标的方向 他要向这个格子中心走"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-28-4",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1kRbQ6tEG9_p1_40968521557.txt [01:05:21] 逐字为「这一套寻路算法的一切目的 都是为了给敌人规定一个目标的方向 给敌人规定一个目标的方向 他要向这个格子中心走」，claim 三要素（一切目的、规定目标方向、向格子中心走）与该句一致。「一切目的」这一全称限定保留；主播重复「给敌人规定一个目标的方向」属强调，归并后语义未变。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1kRbQ6tEG9_p1_40968521557.txt [01:05:21] 逐字为「这一套寻路算法的一切目的 都是为了给敌人规定一个目标的方向 给敌人规定一个目标的方向 他要向这个格子中心走」，claim 三要素（一切目的、规定目标方向、向格子中心走）与该句一致。「一切目的」这一全称限定保留；主播重复「给敌人规定一个目标的方向」属强调，归并后语义未变。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+   "source_line_time": "01:05:21",
+   "supports": "全称限定保留，三要素与源句一致",
+   "derived_correction": "无。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-28-4#r2",
+  "claim": "目标速度只提供倾向性，怪倾向于按该速度行进，并非直接按该速度走。",
+  "subject": "目标速度",
+  "condition": "敌人处于寻路状态机中",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p1_40968521557:p38:a2:7221e5bb",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p1_40968521557",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "加速度模型、2.75等效帧与steering factor",
+    "quotes": [
+     {
+      "text": "这个目标速度会提供给呃怪一个倾向性 倾向于按照这个速度进行行进",
+      "t_start": 3937,
+      "t_end": 3979,
+      "t_start_upstream": 3937,
+      "t_start_line": 3957,
+      "t_line_label": "01:05:57"
+     },
+     {
+      "text": "目标速度只是怪倾向于走的那个速度 但是呢并不是说怪直接就会按照 这个速度进行走",
+      "t_start": 4016,
+      "t_end": 4048,
+      "t_start_upstream": 4016,
+      "t_start_line": 4016,
+      "t_line_label": "01:06:56"
+     }
+    ],
+    "_upstream_quote": "这个目标速度会提供给呃怪一个倾向性 倾向于按照这个速度进行行进"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-28-4",
+   "trial_rule_idx": 2,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：claim 两处引文各有源行且时间点不同：BV1kRbQ6tEG9_p1_40968521557.txt [01:05:57]「这个目标速度会提供给呃怪一个倾向性 倾向于按照这个速度进行行进」与 [01:06:56]「目标速度只是怪倾向于走的那个速度 但是呢并不是说怪直接就会按照 这个速度进行走」，后者为否定式限定，正反两面互证，属两处独立证据。claim 同时保留「倾向性」与「并非直接按该速度走",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "claim 两处引文各有源行且时间点不同：BV1kRbQ6tEG9_p1_40968521557.txt [01:05:57]「这个目标速度会提供给呃怪一个倾向性 倾向于按照这个速度进行行进」与 [01:06:56]「目标速度只是怪倾向于走的那个速度 但是呢并不是说怪直接就会按照 这个速度进行走」，后者为否定式限定，正反两面互证，属两处独立证据。claim 同时保留「倾向性」与「并非直接按该速度走」两面，未只取一半。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+   "source_line_time": "01:06:56",
+   "supports": "正反两面各有独立源行，claim 两面均保留",
+   "derived_correction": "无。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-28-4#r3",
+  "claim": "停住、寻路断绝之类的状态也在寻路状态机之中。",
+  "subject": "寻路状态机",
+  "condition": "敌人处于停住或寻路断绝状态",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p1_40968521557:p38:a3:23f97c9b",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p1_40968521557",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "加速度模型、2.75等效帧与steering factor",
+    "quotes": [
+     {
+      "text": "停住寻路断绝之类的状态 也在寻路状态机之中",
+      "t_start": 3979,
+      "t_end": 3994
+     }
+    ],
+    "_upstream_quote": "停住寻路断绝之类的状态 也在寻路状态机之中"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-28-4",
+   "trial_rule_idx": 3,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1kRbQ6tEG9_p1_40968521557.txt [01:05:57]-[01:06:19] 为「然后的话停住寻路断绝之类的状态」与「也在寻路状态机之中」，claim 两句合并，主语与谓语在同窗口内相邻可闭合，属正确拼接。condition「敌人处于停住或寻路断绝状态」与源句枚举一致。claim 未把「停住、寻路断绝」扩展为「所有停止类状态」。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1kRbQ6tEG9_p1_40968521557.txt [01:05:57]-[01:06:19] 为「然后的话停住寻路断绝之类的状态」与「也在寻路状态机之中」，claim 两句合并，主语与谓语在同窗口内相邻可闭合，属正确拼接。condition「敌人处于停住或寻路断绝状态」与源句枚举一致。claim 未把「停住、寻路断绝」扩展为「所有停止类状态」。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+   "source_line_time": "01:06:19",
+   "supports": "跨行合并可闭合，状态枚举未扩大",
+   "derived_correction": "无。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-28-4#r4",
+  "claim": "停住或寻路断绝时不走，是因为目标速度为零。",
+  "subject": "目标速度",
+  "condition": "敌人处于停住或寻路断绝状态",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p1_40968521557:p38:a4:9aaf6e0a",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p1_40968521557",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "加速度模型、2.75等效帧与steering factor",
+    "quotes": [
+     {
+      "text": "他们不走了 是因为目标速度是零",
+      "t_start": 3979,
+      "t_end": 3994,
+      "t_start_upstream": 3979,
+      "t_start_line": 3979,
+      "t_line_label": "01:06:19"
+     }
+    ],
+    "_upstream_quote": "他们不走了 是因为目标速度是零"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-28-4",
+   "trial_rule_idx": 4,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1kRbQ6tEG9_p1_40968521557.txt [01:06:19] 逐字为「也在寻路状态机之中 但是他们不走了 是因为目标速度是零 目标速度是零」，claim「停住或寻路断绝时不走，是因为目标速度为零」与该句因果一致，主语「他们」在同窗口 [01:05:57] 明确为停住/寻路断绝状态，回指可闭合。主播重复「目标速度是零」属强调，claim 单写一次语义未变。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1kRbQ6tEG9_p1_40968521557.txt [01:06:19] 逐字为「也在寻路状态机之中 但是他们不走了 是因为目标速度是零 目标速度是零」，claim「停住或寻路断绝时不走，是因为目标速度为零」与该句因果一致，主语「他们」在同窗口 [01:05:57] 明确为停住/寻路断绝状态，回指可闭合。主播重复「目标速度是零」属强调，claim 单写一次语义未变。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+   "source_line_time": "01:06:19",
+   "supports": "因果句与主语回指均可闭合，结论成立",
+   "derived_correction": "无。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-28-4#r5",
+  "claim": "怪从出生或停住开始寻路时速度为零，生来不会给自己规定方向速度。",
+  "subject": "怪（敌人）",
+  "condition": "怪从出生或停住开始寻路",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p1_40968521557:p38:a5:079c502a",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p1_40968521557",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "加速度模型、2.75等效帧与steering factor",
+    "quotes": [
+     {
+      "text": "一个怪从出生或者是停住 开始寻路的过程中都是零的 怪生来是不知道自己要往哪个方向走的 所以怪不会生来 给自己规定一个向什么方向的速度",
+      "t_start": 4091,
+      "t_end": 4122
+     }
+    ],
+    "_upstream_quote": "一个怪从出生或者是停住 开始寻路的过程中都是零的 怪生来是不知道自己要往哪个方向走的 所以怪不会生来 给自己规定一个向什么方向的速度"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-28-4",
+   "trial_rule_idx": 5,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1kRbQ6tEG9_p1_40968521557.txt [01:08:11]-[01:08:28] 为「一个怪从出生或者是停住 开始寻路的过程中都是零的 怪生来是不知道自己要往哪个方向走的 所以怪不会生来」与「给自己规定一个向什么方向的速度」，claim 两分句（开始时速度为零、不会给自己规定方向速度）与该两句对应，因果连词「所以」保留。claim 未把「都是零的」误加宾语（源句省略了",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1kRbQ6tEG9_p1_40968521557.txt [01:08:11]-[01:08:28] 为「一个怪从出生或者是停住 开始寻路的过程中都是零的 怪生来是不知道自己要往哪个方向走的 所以怪不会生来」与「给自己规定一个向什么方向的速度」，claim 两分句（开始时速度为零、不会给自己规定方向速度）与该两句对应，因果连词「所以」保留。claim 未把「都是零的」误加宾语（源句省略了「速度」）——claim 写作「速度为零」是按同段 [01:07:28] 的目标速度/实际速度术语补全，有据。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+   "source_line_time": "01:08:11",
+   "supports": "两个分句与因果连词均来自源句，补全有术语依据",
+   "derived_correction": "无。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-28-5#r0",
+  "claim": "加速度为移速差的 steering factor 倍，steering factor 是一个倍数。",
+  "subject": "未点名",
+  "condition": "未标注",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p1_40968521557:p41:a1:5f5ddcf8",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p1_40968521557",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "加速度模型、2.75等效帧与steering factor",
+    "quotes": [
+     {
+      "text": "加速度为移速差的steering factor倍 这个东西是倍数",
+      "t_start": 4228,
+      "t_end": 4264,
+      "t_start_upstream": 4228,
+      "t_start_line": 4246,
+      "t_line_label": "01:10:46"
+     }
+    ],
+    "_upstream_quote": "加速度为移速差的steering factor倍 这个东西是倍数"
+   },
+   {
+    "id": "ctx=sub:BV1kRbQ6tEG9_p1_40968521557:4246",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+    "requested_second": 4246,
+    "quotes": [
+     {
+      "text": "[01:10:46] 这个这个东西就是哎不对 等一下啊 这个东西这个东西就是加速度倍数 这里加速度为移速差的steering factor倍 这个东西是倍数",
+      "t_start": 4246,
+      "t_end": null,
+      "t_line_label": "01:10:46",
+      "t_start_line": 4246
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-28-5",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1kRbQ6tEG9_p1_40968521557.txt [01:10:46] 逐字为「这个这个东西就是哎不对 等一下啊 这个东西这个东西就是加速度倍数 这里加速度为移速差的steering factor倍 这个东西是倍数」，claim 两分句（加速度为移速差的 steering factor 倍、steering factor 是倍数）与该句对应，claim 保留了源本身的口述表述形式",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1kRbQ6tEG9_p1_40968521557.txt [01:10:46] 逐字为「这个这个东西就是哎不对 等一下啊 这个东西这个东西就是加速度倍数 这里加速度为移速差的steering factor倍 这个东西是倍数」，claim 两分句（加速度为移速差的 steering factor 倍、steering factor 是倍数）与该句对应，claim 保留了源本身的口述表述形式（此处主播在念专栏原文）。citation 1（p41:a1）与 citation 2 引同一句，属同一句的重复定位，非独立互证，但结论仍由该句单独支撑。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+   "source_line_time": "01:10:46",
+   "supports": "与源句一致，单句独立支撑结论",
+   "derived_correction": "源句首「这个这个东西就是哎不对 等一下啊」为主播自我中断重述，同句后半给出正式表述；claim 取正式表述，语义未变，引文原文保留不改。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-29-0#r0",
+  "claim": "加速度上限会决定一个单位很难真正拥有超高的实际移速。",
+  "subject": "未点名",
+  "condition": "未标注",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p1_40968521557:p44:a2:0fa9f4c5",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p1_40968521557",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "寻路力避障力分离力、加速度上限与高速漂移现象",
+    "quotes": [
+     {
+      "text": "加速度上限 会决定 一个单位是很难真正的拥有超高的实际移速的",
+      "t_start": 4519,
+      "t_end": 4539,
+      "t_start_upstream": 4519,
+      "t_start_line": 4519,
+      "t_line_label": "01:15:19"
+     }
+    ],
+    "_upstream_quote": "加速度上限 会决定 一个单位是很难真正的拥有超高的实际移速的"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-29-0",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1kRbQ6tEG9_p1_40968521557.txt [01:15:19] 逐字为「寻路力和避障力的和统称为加速度 而加速度的上限就是这个数值八或者100 加速度上限 会决定 一个单位是很难真正的拥有超高的实际移速的」，claim 与该句末段一致，「很难真正拥有」这一弱化限定保留，未写成「不可能达到高移速」。同窗口 [01:15:56]「因为十倍额加速度上限十的限制 实际上这些怪没有",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1kRbQ6tEG9_p1_40968521557.txt [01:15:19] 逐字为「寻路力和避障力的和统称为加速度 而加速度的上限就是这个数值八或者100 加速度上限 会决定 一个单位是很难真正的拥有超高的实际移速的」，claim 与该句末段一致，「很难真正拥有」这一弱化限定保留，未写成「不可能达到高移速」。同窗口 [01:15:56]「因为十倍额加速度上限十的限制 实际上这些怪没有办法真正到达 一个超高的移速」为独立印证（时间点不同）。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+   "source_line_time": "01:15:19",
+   "supports": "弱化限定保留，另有 [01:15:56] 独立印证",
+   "derived_correction": "源 [01:15:56]「十倍额加速度上限十」为口述重复（十倍/上限十），指同一加速度上限；引文原文保留不改。",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "fc1:寻路-3-3#r0",
+  "claim": "寻路地图创建完成后会平整化拉直，得到最终巡逻光标。",
+  "subject": "寻路地图",
+  "condition": "寻路地图创建完成后",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV14y8269EbS_p1_41164079923:p26:a0:d88263e3",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV14y8269EbS_p1_41164079923.txt",
+    "bvid_stem": "BV14y8269EbS_p1_41164079923",
+    "recorded_at": "2026-08-22",
+    "speaker": "神祇读神奇",
+    "chapter": "第三讲开篇：空间坐标与路径点指令/寻路光标",
+    "quotes": [
+     {
+      "text": "这个巡逻地图创建完之后 然后又会如何平整化拉直 然后得到一个最终的这个巡逻光标",
+      "t_start": 1997,
+      "t_end": 2012,
+      "t_start_upstream": 1997,
+      "t_start_line": 1997,
+      "t_line_label": "33:17"
+     }
+    ],
+    "_upstream_quote": "这个巡逻地图创建完之后 然后又会如何平整化拉直 然后得到一个最终的这个巡逻光标"
+   },
+   {
+    "id": "ctx=sub:BV14y8269EbS_p1_41164079923:1997",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV14y8269EbS_p1_41164079923.txt",
+    "requested_second": 1997,
+    "quotes": [
+     {
+      "text": "[33:17] 这个寻路光标呃 这个巡逻地图创建完之后 然后又会如何平整化拉直 然后得到一个最终的这个巡逻光标 再然后的话进行应用 应用的时候 又会去讲那个就是它会生成目标速度",
+      "t_start": 1997,
+      "t_end": null,
+      "t_line_label": "33:17",
+      "t_start_line": 1997
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV14y8269EbS_p1_41164079923.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-3-3",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV14y8269EbS_p1_41164079923.txt [33:17] 逐字为「这个巡逻地图创建完之后 然后又会如何平整化拉直 然后得到一个最终的这个巡逻光标」，claim 与该句一致，主语「这个巡逻地图」在同句内即寻路地图（[33:10]「然后这个寻路地图创建完之后的话」紧接），属正确回填。claim 保留了「平整化拉直」与「最终」两个限定词。citation 2 与 citatio",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV14y8269EbS_p1_41164079923.txt [33:17] 逐字为「这个巡逻地图创建完之后 然后又会如何平整化拉直 然后得到一个最终的这个巡逻光标」，claim 与该句一致，主语「这个巡逻地图」在同句内即寻路地图（[33:10]「然后这个寻路地图创建完之后的话」紧接），属正确回填。claim 保留了「平整化拉直」与「最终」两个限定词。citation 2 与 citation 1 引同一句，属重复定位。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV14y8269EbS_p1_41164079923.txt",
+   "source_line_time": "00:33:17",
+   "supports": "主语回填与限定词均与源句一致",
+   "derived_correction": "源 [33:17]「这个寻路光标呃 这个巡逻地图创建完之后」中「这个寻路光标呃」为主播起头后自我更正（改称巡逻地图），claim 取更正后版本；引文原文保留不改。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-3-3#r1",
+  "claim": "应用最终巡逻光标时会生成目标速度。",
+  "subject": "最终巡逻光标应用",
+  "condition": "已得到最终巡逻光标",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV14y8269EbS_p1_41164079923:p26:a1:94916c6f",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV14y8269EbS_p1_41164079923.txt",
+    "bvid_stem": "BV14y8269EbS_p1_41164079923",
+    "recorded_at": "2026-08-22",
+    "speaker": "神祇读神奇",
+    "chapter": "第三讲开篇：空间坐标与路径点指令/寻路光标",
+    "quotes": [
+     {
+      "text": "进行应用 应用的时候 又会去讲那个就是它会生成目标速度",
+      "t_start": 1997,
+      "t_end": 2012,
+      "t_start_upstream": 1997,
+      "t_start_line": 1997,
+      "t_line_label": "33:17"
+     }
+    ],
+    "_upstream_quote": "进行应用 应用的时候 又会去讲那个就是它会生成目标速度"
+   },
+   {
+    "id": "ctx=sub:BV14y8269EbS_p1_41164079923:1997",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV14y8269EbS_p1_41164079923.txt",
+    "requested_second": 1997,
+    "quotes": [
+     {
+      "text": "[33:17] 这个寻路光标呃 这个巡逻地图创建完之后 然后又会如何平整化拉直 然后得到一个最终的这个巡逻光标 再然后的话进行应用 应用的时候 又会去讲那个就是它会生成目标速度",
+      "t_start": 1997,
+      "t_end": null,
+      "t_line_label": "33:17",
+      "t_start_line": 1997
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV14y8269EbS_p1_41164079923.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-3-3",
+   "trial_rule_idx": 1,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV14y8269EbS_p1_41164079923.txt [33:17] 末段逐字为「再然后的话进行应用 应用的时候 又会去讲那个就是它会生成目标速度」，claim 与该句一致，condition「已得到最终巡逻光标」取自同句前文「得到一个最终的这个巡逻光标」，动作时序正确。claim 未把「会生成目标速度」扩写成「直接按目标速度移动」。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV14y8269EbS_p1_41164079923.txt [33:17] 末段逐字为「再然后的话进行应用 应用的时候 又会去讲那个就是它会生成目标速度」，claim 与该句一致，condition「已得到最终巡逻光标」取自同句前文「得到一个最终的这个巡逻光标」，动作时序正确。claim 未把「会生成目标速度」扩写成「直接按目标速度移动」。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV14y8269EbS_p1_41164079923.txt",
+   "source_line_time": "00:33:17",
+   "supports": "与源句一致，时序与强度均未被改写",
+   "derived_correction": "源「又会去讲那个就是它会生成目标速度」中「那个就是」为口述填充，claim 略去；引文原文不改。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-3-3#r3",
+  "claim": "寻路过程中会判定离坑、障碍物、不可通行地块有多近，并计算避障力向量。",
+  "subject": "寻路过程",
+  "condition": "寻路应用过程中",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV14y8269EbS_p1_41164079923:p26:a4:85c3cca6",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV14y8269EbS_p1_41164079923.txt",
+    "bvid_stem": "BV14y8269EbS_p1_41164079923",
+    "recorded_at": "2026-08-22",
+    "speaker": "神祇读神奇",
+    "chapter": "第三讲开篇：空间坐标与路径点指令/寻路光标",
+    "quotes": [
+     {
+      "text": "判定离坑有多近 离障碍物有多近 离不可通行地块有多近",
+      "t_start": 2024,
+      "t_end": 2052,
+      "t_start_upstream": 2024,
+      "t_start_line": 2024,
+      "t_line_label": "33:44"
+     },
+     {
+      "text": "然后去计算一个B张力向量",
+      "t_start": 2037,
+      "t_end": 2052,
+      "t_start_upstream": 2037,
+      "t_start_line": 2037,
+      "t_line_label": "33:57"
+     }
+    ],
+    "_upstream_quote": "判定离坑有多近 离障碍物有多近 离不可通行地块有多近"
+   },
+   {
+    "id": "ctx=sub:BV14y8269EbS_p1_41164079923:2024",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV14y8269EbS_p1_41164079923.txt",
+    "requested_second": 2024,
+    "quotes": [
+     {
+      "text": "[33:44] 就是改写自己的坐标 然后实现这么一个寻路效果 然后这中间音再加入其他的东西 比如说判定离坑有多近 离障碍物有多近 离不可通行地块有多近",
+      "t_start": 2024,
+      "t_end": null,
+      "t_line_label": "33:44",
+      "t_start_line": 2024
+     }
+    ]
+   },
+   {
+    "id": "ctx=sub:BV14y8269EbS_p1_41164079923:2037",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV14y8269EbS_p1_41164079923.txt",
+    "requested_second": 2037,
+    "quotes": [
+     {
+      "text": "[33:57] 然后去计算一个B张力向量 然后的话再来一个什么三针一盼这一部分 这些东西逐步的往上加上去 形成了完整的寻路过过程 明白吧",
+      "t_start": 2037,
+      "t_end": null,
+      "t_line_label": "33:57",
+      "t_start_line": 2037
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV14y8269EbS_p1_41164079923.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-3-3",
+   "trial_rule_idx": 3,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：claim 两分句分别对应源 BV14y8269EbS_p1_41164079923.txt [33:44]「比如说判定离坑有多近 离障碍物有多近 离不可通行地块有多近」与 [33:57]「然后去计算一个B张力向量」，两行时间点不同，属两处独立证据。claim 完整保留三个判定对象（坑/障碍物/不可通行地块），未合并简化；「B张力向量」这一 source 写法原样保留未改。citation 2、3",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "claim 两分句分别对应源 BV14y8269EbS_p1_41164079923.txt [33:44]「比如说判定离坑有多近 离障碍物有多近 离不可通行地块有多近」与 [33:57]「然后去计算一个B张力向量」，两行时间点不同，属两处独立证据。claim 完整保留三个判定对象（坑/障碍物/不可通行地块），未合并简化；「B张力向量」这一 source 写法原样保留未改。citation 2、3 与 citation 1 同源同行，属重复定位。 【派生文本订正】claim：「寻路过程中会判定离坑、障碍物、不可通行地块有多近，并计算B张力向量。」→「寻路过程中会判定离坑、障碍物、不可通行地块有多近，并计算避障力向量。」。引文保持原始逐字文本不变。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV14y8269EbS_p1_41164079923.txt",
+   "source_line_time": "00:33:44",
+   "supports": "两个独立源行支撑，三对象枚举完整保留",
+   "derived_correction": "「B张力」= 避障力（本讲 [33:32]「臂张力」、[33:57]「B张力向量」为同一术语的两种讹写，与本系列其他讲次中「避障力」「壁障向量」的可闭合正确形式一致）；claim 沿用源写法未擅改，引文原文不改。",
+   "derived_correction_disposition": "applied",
+   "repaired_fields": [
+    {
+     "field": "claim",
+     "from": "寻路过程中会判定离坑、障碍物、不可通行地块有多近，并计算B张力向量。",
+     "to": "寻路过程中会判定离坑、障碍物、不可通行地块有多近，并计算避障力向量。",
+     "justification": "引文逐字作「计算一个B张力向量」，而「B张力」是 ASR 对「避障力」的讹写：同文件 [02:23:48]「避障力 驯鹿力和分离力」给出正式术语，[02:30:47]「他的避障判定区」、[02:36:40]「这个B张力向量的话 然后在这一步要乘以这个系数」与 [02:53:49]「避障判定力 避障判定的中心」同为该向量的描述。引文保持原字，派生 claim 用订正术语。"
+    }
+   ]
+  },
+  "derived_text_repairs": {
+   "count": 1,
+   "changes": [
+    {
+     "field": "claim",
+     "from": "寻路过程中会判定离坑、障碍物、不可通行地块有多近，并计算B张力向量。",
+     "to": "寻路过程中会判定离坑、障碍物、不可通行地块有多近，并计算避障力向量。"
+    }
+   ],
+   "note": "仅订正派生 claim/subject/condition；引文保持原始逐字文本不变。"
+  }
+ },
+ {
+  "id": "fc1:寻路-3-3#r5",
+  "claim": "上述部分会逐步往上叠加，形成完整寻路过程。",
+  "subject": "完整寻路过程",
+  "condition": "上述部分逐步往上叠加时",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV14y8269EbS_p1_41164079923:p26:a6:c6a94d6e",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV14y8269EbS_p1_41164079923.txt",
+    "bvid_stem": "BV14y8269EbS_p1_41164079923",
+    "recorded_at": "2026-08-22",
+    "speaker": "神祇读神奇",
+    "chapter": "第三讲开篇：空间坐标与路径点指令/寻路光标",
+    "quotes": [
+     {
+      "text": "这些东西逐步的往上加上去 形成了完整的寻路过过程",
+      "t_start": 2037,
+      "t_end": 2052,
+      "t_start_upstream": 2037,
+      "t_start_line": 2037,
+      "t_line_label": "33:57"
+     }
+    ],
+    "_upstream_quote": "这些东西逐步的往上加上去 形成了完整的寻路过过程"
+   },
+   {
+    "id": "ctx=sub:BV14y8269EbS_p1_41164079923:2037",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV14y8269EbS_p1_41164079923.txt",
+    "requested_second": 2037,
+    "quotes": [
+     {
+      "text": "[33:57] 然后去计算一个B张力向量 然后的话再来一个什么三针一盼这一部分 这些东西逐步的往上加上去 形成了完整的寻路过过程 明白吧",
+      "t_start": 2037,
+      "t_end": null,
+      "t_line_label": "33:57",
+      "t_start_line": 2037
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV14y8269EbS_p1_41164079923.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-3-3",
+   "trial_rule_idx": 5,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV14y8269EbS_p1_41164079923.txt [33:57] 末段逐字为「这些东西逐步的往上加上去 形成了完整的寻路过过程 明白吧」，claim 与该句一致。「逐步的往上加上去」这一过程性限定保留，claim 未把结论简化为「这些构成寻路过程」而丢掉「逐步叠加」的时序含义。citation 2 与 citation 1 引同一句，属重复定位。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV14y8269EbS_p1_41164079923.txt [33:57] 末段逐字为「这些东西逐步的往上加上去 形成了完整的寻路过过程 明白吧」，claim 与该句一致。「逐步的往上加上去」这一过程性限定保留，claim 未把结论简化为「这些构成寻路过程」而丢掉「逐步叠加」的时序含义。citation 2 与 citation 1 引同一句，属重复定位。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV14y8269EbS_p1_41164079923.txt",
+   "source_line_time": "00:33:57",
+   "supports": "逐字一致，过程性限定保留",
+   "derived_correction": "源「完整的寻路过过程」中「过过程」为口述叠字（过 + 过程），claim 写作「完整寻路过程」；引文原文保留不改。",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "fc1:寻路-30-4#r0",
+  "claim": "移动过程中施加强控时，不是从速度归零之后再从零走，而是直接退出巡逻状态；束缚也包括在内。",
+  "subject": "未点名",
+  "condition": "移动过程中;施加强控或束缚",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p2_40971603028:p28:a0:fc3197fc",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p2_40971603028",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "温蒂水炮实测11/15等比及阻挡不使速度归零",
+    "quotes": [
+     {
+      "text": "从归零之后从零再去走 并不是强控 是直接退出巡逻状态 包括束缚",
+      "t_start": 3072,
+      "t_end": 3102,
+      "t_start_upstream": 3072,
+      "t_start_line": 3072,
+      "t_line_label": "51:12"
+     }
+    ],
+    "_upstream_quote": "从归零之后从零再去走 并不是强控 是直接退出巡逻状态 包括束缚"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-30-4",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1kRbQ6tEG9_p2_40971603028.txt [51:12] 逐字为「如果说他在移动过程当中 我给他个强控的话 他是不是还就是从归零之后从零再去走 并不是强控 是直接退出巡逻状态 包括束缚」，claim 三要素（不从零再走 / 直接退出巡逻状态 / 束缚包括在内）与该句一致。source 中「并不是强控」是主播对提问的否定式回答，claim 正确理解为「并非从零走」而非「不存",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1kRbQ6tEG9_p2_40971603028.txt [51:12] 逐字为「如果说他在移动过程当中 我给他个强控的话 他是不是还就是从归零之后从零再去走 并不是强控 是直接退出巡逻状态 包括束缚」，claim 三要素（不从零再走 / 直接退出巡逻状态 / 束缚包括在内）与该句一致。source 中「并不是强控」是主播对提问的否定式回答，claim 正确理解为「并非从零走」而非「不存在强控」这一误读，与同窗口 [51:42]「所有这种能让人立刻停下来的东西 都不是改写它的速度 而是切出应用寻路的状态」互证。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+   "source_line_time": "00:51:12",
+   "supports": "三要素与源句一致，否定式回答的理解正确",
+   "derived_correction": "源 [51:12]「并不是强控 是直接退出巡逻状态」为省略式口述（承前否定「从零再走」），claim 补全为「不是从速度归零之后再从零走」，属字面补全非新增语义；引文原文不改。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-30-4#r1",
+  "claim": "虽然仍在移动状态机，也会直接跳过应用移速、计算移速的那个阶段/状态。",
+  "subject": "未点名",
+  "condition": "在移动状态机;施加强控/失衡等能让人立刻停下来的效果",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p2_40971603028:p28:a1:b2ba93ba",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p2_40971603028",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "温蒂水炮实测11/15等比及阻挡不使速度归零",
+    "quotes": [
+     {
+      "text": "虽然在移动状态机 但也直接跳过应用移速计算移速的那个阶段 那个状态",
+      "t_start": 3084,
+      "t_end": 3102,
+      "t_start_upstream": 3084,
+      "t_start_line": 3084,
+      "t_line_label": "51:24"
+     }
+    ],
+    "_upstream_quote": "虽然在移动状态机 但也直接跳过应用移速计算移速的那个阶段 那个状态"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-30-4",
+   "trial_rule_idx": 1,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1kRbQ6tEG9_p2_40971603028.txt [51:24] 逐字为「虽然在移动状态机 但也直接跳过应用移速计算移速的那个阶段 那个状态」，claim 与该句一致，「虽然…但也…」的让步结构保留，condition 中的「移动状态机」取自源句。claim 保留了源的「阶段/状态」双写（源句两个词都说），未强行二选一，与源表述一致。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1kRbQ6tEG9_p2_40971603028.txt [51:24] 逐字为「虽然在移动状态机 但也直接跳过应用移速计算移速的那个阶段 那个状态」，claim 与该句一致，「虽然…但也…」的让步结构保留，condition 中的「移动状态机」取自源句。claim 保留了源的「阶段/状态」双写（源句两个词都说），未强行二选一，与源表述一致。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+   "source_line_time": "00:51:24",
+   "supports": "让步结构与「阶段/状态」双写均保留",
+   "derived_correction": "源「应用移速计算移速」为口述连写（应用移速 / 计算移速），claim 用顿号并写，语义未变；引文原文不改。",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "fc1:寻路-30-4#r2",
+  "claim": "失衡与强控一样，直接退出巡逻并跳过应用移速、计算移速的阶段。",
+  "subject": "未点名",
+  "condition": "移动过程中;施加失衡",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p2_40971603028:p28:a2:b39abcae",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p2_40971603028",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "温蒂水炮实测11/15等比及阻挡不使速度归零",
+    "quotes": [
+     {
+      "text": "那失衡呢都一样",
+      "t_start": 3084,
+      "t_end": 3102,
+      "t_start_upstream": 3084,
+      "t_start_line": 3084,
+      "t_line_label": "51:24"
+     }
+    ],
+    "_upstream_quote": "那失衡呢都一样"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-30-4",
+   "trial_rule_idx": 2,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1kRbQ6tEG9_p2_40971603028.txt [51:24] 含「那失衡呢都一样」一句，紧接在 [51:12]-[51:24] 的强控与「直接跳过应用移速计算移速的那个阶段」讨论之后。claim「失衡与强控一样，直接退出巡逻并跳过应用移速、计算移速的阶段」把「都一样」的先行内容在同窗口内回指补全，属正确回填；claim 未把「都一样」扩大解读为「失衡与强控触发条件相同」。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1kRbQ6tEG9_p2_40971603028.txt [51:24] 含「那失衡呢都一样」一句，紧接在 [51:12]-[51:24] 的强控与「直接跳过应用移速计算移速的那个阶段」讨论之后。claim「失衡与强控一样，直接退出巡逻并跳过应用移速、计算移速的阶段」把「都一样」的先行内容在同窗口内回指补全，属正确回填；claim 未把「都一样」扩大解读为「失衡与强控触发条件相同」。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+   "source_line_time": "00:51:24",
+   "supports": "省略句的先行内容在同窗口内可闭合，结论成立",
+   "derived_correction": "源「那失衡呢都一样」为省略主语与谓语的问答式短句，claim 补全其指代内容，依据全在同窗口；引文原文不改。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-30-4#r4",
+  "claim": "所有能让人立刻停下来的效果都不是改写其速度，而是切出应用寻路的状态。",
+  "subject": "未点名",
+  "condition": "施加能让人立刻停下来的效果",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p2_40971603028:p28:a4:40601aa2",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p2_40971603028",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "温蒂水炮实测11/15等比及阻挡不使速度归零",
+    "quotes": [
+     {
+      "text": "所有这种能让人立刻停下来的东西 都不是改写它的速度 而是切出应用寻路的状态",
+      "t_start": 3102,
+      "t_end": 3112,
+      "t_start_upstream": 3102,
+      "t_start_line": 3102,
+      "t_line_label": "51:42"
+     }
+    ],
+    "_upstream_quote": "所有这种能让人立刻停下来的东西 都不是改写它的速度 而是切出应用寻路的状态"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-30-4",
+   "trial_rule_idx": 4,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1kRbQ6tEG9_p2_40971603028.txt [51:42] 逐字为「所有这种能让人立刻停下来的东西 都不是改写它的速度 而是切出应用寻路的状态」，claim 与该句一致，「所有」这一全称限定保留，正反两面（不是改写速度 / 而是切出状态）都保留。claim 未把「切出应用寻路的状态」缩写为「停止寻路」。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1kRbQ6tEG9_p2_40971603028.txt [51:42] 逐字为「所有这种能让人立刻停下来的东西 都不是改写它的速度 而是切出应用寻路的状态」，claim 与该句一致，「所有」这一全称限定保留，正反两面（不是改写速度 / 而是切出状态）都保留。claim 未把「切出应用寻路的状态」缩写为「停止寻路」。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+   "source_line_time": "00:51:42",
+   "supports": "全称限定与正反两面均保留，结论成立",
+   "derived_correction": "无。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-30-4#r5",
+  "claim": "阻挡之类的状态是直接切出寻路状态，而不应该理解为速度归零。",
+  "subject": "未点名",
+  "condition": "被阻挡",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p2_40971603028:p35:a3:12f880e4",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p2_40971603028",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "温蒂水炮实测11/15等比及阻挡不使速度归零",
+    "quotes": [
+     {
+      "text": "阻挡之类的状态 是直接切出寻路状态 而不应该理解为速度归零",
+      "t_start": 3661,
+      "t_end": 3686,
+      "t_start_upstream": 3661,
+      "t_start_line": 3661,
+      "t_line_label": "01:01:01"
+     }
+    ],
+    "_upstream_quote": "阻挡之类的状态 是直接切出寻路状态 而不应该理解为速度归零"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-30-4",
+   "trial_rule_idx": 5,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1kRbQ6tEG9_p2_40971603028.txt [01:01:01] 逐字为「这个就是我说的阻挡之类的状态 是直接切出寻路状态 而不应该理解为速度归零」，claim 与该句一致，「而不应该理解为」这一纠偏结构保留。同窗口 [01:00:41]「阻挡前后的移动是可以拼接的 就是说他会保他会保持阻挡前的移动速度」为独立印证（时间点不同），说明阻挡确不改写速度。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1kRbQ6tEG9_p2_40971603028.txt [01:01:01] 逐字为「这个就是我说的阻挡之类的状态 是直接切出寻路状态 而不应该理解为速度归零」，claim 与该句一致，「而不应该理解为」这一纠偏结构保留。同窗口 [01:00:41]「阻挡前后的移动是可以拼接的 就是说他会保他会保持阻挡前的移动速度」为独立印证（时间点不同），说明阻挡确不改写速度。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+   "source_line_time": "01:01:01",
+   "supports": "纠偏结构与源句一致，另有独立印证",
+   "derived_correction": "无。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-30-4#r6",
+  "claim": "速度可以变为零，但不能被直接归零；只能靠加速度逐帧归零。",
+  "subject": "未点名",
+  "condition": "未标注",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p2_40971603028:p36:a0:b93f038d",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p2_40971603028",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "温蒂水炮实测11/15等比及阻挡不使速度归零",
+    "quotes": [
+     {
+      "text": "可以是零 但是不能直接归零",
+      "t_start": 3686,
+      "t_end": 3703,
+      "t_start_upstream": 3686,
+      "t_start_line": 3686,
+      "t_line_label": "01:01:26"
+     }
+    ],
+    "_upstream_quote": "可以是零 但是不能直接归零"
+   },
+   {
+    "id": "BV1kRbQ6tEG9_p2_40971603028:p36:a1:beddf2e1",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p2_40971603028",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "温蒂水炮实测11/15等比及阻挡不使速度归零",
+    "quotes": [
+     {
+      "text": "只能靠加速度逐帧归零",
+      "t_start": 3686,
+      "t_end": 3703,
+      "t_start_upstream": 3686,
+      "t_start_line": 3686,
+      "t_line_label": "01:01:26"
+     }
+    ],
+    "_upstream_quote": "只能靠加速度逐帧归零"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-30-4",
+   "trial_rule_idx": 6,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：claim 两分句分别对应源 BV1kRbQ6tEG9_p2_40971603028.txt [01:01:26] 的「可以是零 但是不能直接归零」与「只能靠加速度逐帧归零」两处，两处引文时间点相同但实为同行的两个分句，属同段内的两条独立依据（可达零 / 归零途径）。claim 保留了「可以是零」与「不能直接归零」这一看似矛盾的并列，未擅自调和。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "claim 两分句分别对应源 BV1kRbQ6tEG9_p2_40971603028.txt [01:01:26] 的「可以是零 但是不能直接归零」与「只能靠加速度逐帧归零」两处，两处引文时间点相同但实为同行的两个分句，属同段内的两条独立依据（可达零 / 归零途径）。claim 保留了「可以是零」与「不能直接归零」这一看似矛盾的并列，未擅自调和。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+   "source_line_time": "01:01:26",
+   "supports": "两个分句各有源依据，并列关系未被擅改",
+   "derived_correction": "源同句前半「逐渐趋近于零 但是不可能是零」与后半「可以是零」表面冲突，实为主播即时补正；claim 取补正后的「可以是零」，引文原文保留不改。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-30-4#r7",
+  "claim": "单位跑着跑着速度突然变成零是做不到的。",
+  "subject": "未点名",
+  "condition": "未标注",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p2_40971603028:p36:a2:3a4bc23f",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p2_40971603028",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "温蒂水炮实测11/15等比及阻挡不使速度归零",
+    "quotes": [
+     {
+      "text": "跑着跑着突然就变成零了 这是做不到的",
+      "t_start": 3686,
+      "t_end": 3703,
+      "t_start_upstream": 3686,
+      "t_start_line": 3686,
+      "t_line_label": "01:01:26"
+     }
+    ],
+    "_upstream_quote": "跑着跑着突然就变成零了 这是做不到的"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-30-4",
+   "trial_rule_idx": 7,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1kRbQ6tEG9_p2_40971603028.txt [01:01:26] 末段逐字为「就是它跑着跑着突然就变成零了 这是做不到的」，claim「单位跑着跑着速度突然变成零是做不到的」与该句一致，claim 补出的「速度」来自同句前文「可以是零 但是不能直接归零 只能靠加速度逐帧归零」的宾语，同句内可闭合。claim 未把「做不到」扩写为「机制上禁止」。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1kRbQ6tEG9_p2_40971603028.txt [01:01:26] 末段逐字为「就是它跑着跑着突然就变成零了 这是做不到的」，claim「单位跑着跑着速度突然变成零是做不到的」与该句一致，claim 补出的「速度」来自同句前文「可以是零 但是不能直接归零 只能靠加速度逐帧归零」的宾语，同句内可闭合。claim 未把「做不到」扩写为「机制上禁止」。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+   "source_line_time": "01:01:26",
+   "supports": "宾语补全同句内可闭合，结论成立",
+   "derived_correction": "无。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-30-4#r8",
+  "claim": "目前没有任何方法可以让敌人的速度直接归零。",
+  "subject": "未点名",
+  "condition": "未标注",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p2_40971603028:p35:a5:a0e86ebd",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p2_40971603028",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "温蒂水炮实测11/15等比及阻挡不使速度归零",
+    "quotes": [
+     {
+      "text": "目前来讲 没有任何方法可以让敌人的速度直接归零",
+      "t_start": 3661,
+      "t_end": 3686,
+      "t_start_upstream": 3661,
+      "t_start_line": 3673,
+      "t_line_label": "01:01:13"
+     }
+    ],
+    "_upstream_quote": "目前来讲 没有任何方法可以让敌人的速度直接归零"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-30-4",
+   "trial_rule_idx": 8,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1kRbQ6tEG9_p2_40971603028.txt [01:01:13] 逐字为「这是驯鹿的典型特征 速度是始终保留的 目前来讲 没有任何方法可以让敌人的速度直接归零」，claim 与该句末段一致，「目前来讲」这一时效限定保留，claim 未删去它而写成永恒的机制断言。同窗口 [01:01:26]「只能靠加速度逐帧归零」为同论点的另一面。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1kRbQ6tEG9_p2_40971603028.txt [01:01:13] 逐字为「这是驯鹿的典型特征 速度是始终保留的 目前来讲 没有任何方法可以让敌人的速度直接归零」，claim 与该句末段一致，「目前来讲」这一时效限定保留，claim 未删去它而写成永恒的机制断言。同窗口 [01:01:26]「只能靠加速度逐帧归零」为同论点的另一面。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+   "source_line_time": "01:01:13",
+   "supports": "与源句一致，「目前来讲」时效限定保留",
+   "derived_correction": "源 [01:01:13]「这是驯鹿的典型特征」中「驯鹿」= 寻路（本文件内寻路系统讨论的连续语境，另有可闭合的正确形式）；引文原文保留不改。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-31-9#r0",
+  "claim": "恐惧初始可选格为半径十以内的所有格子。",
+  "subject": "恐惧",
+  "condition": "生成恐惧可选格时",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p2_40971603028:p43:a0:5898e686",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p2_40971603028",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "答疑：恐惧十格半径与五格寻路距离如何筛选",
+    "quotes": [
+     {
+      "text": "半径十以内的所有革新都会作为可选格",
+      "t_start": 4368,
+      "t_end": 4376,
+      "t_start_upstream": 4368,
+      "t_start_line": 4368,
+      "t_line_label": "01:12:48"
+     }
+    ],
+    "_upstream_quote": "半径十以内的所有革新都会作为可选格"
+   },
+   {
+    "id": "BV1kRbQ6tEG9_p2_40971603028:p43:a12:8f5fbe9f",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p2_40971603028",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "答疑：恐惧十格半径与五格寻路距离如何筛选",
+    "quotes": [
+     {
+      "text": "这个十是半径 五是寻路距离",
+      "t_start": 4493,
+      "t_end": 4515,
+      "t_start_upstream": 4493,
+      "t_start_line": 4493,
+      "t_line_label": "01:14:53"
+     }
+    ],
+    "_upstream_quote": "这个十是半径 五是寻路距离"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-31-9",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1kRbQ6tEG9_p2_40971603028.txt [01:12:48] 逐字为「十格是什么 半径十以内的所有革新都会作为可选格」，claim「恐惧初始可选格为半径十以内的所有格子」与该句一致。source「革新」= 格子（章标题作「恐惧十格半径」，同窗口 [01:12:56]「这些会加入那个可选的格子」给出正确形式可闭合），claim 取正确形式属有据纠正。citation 2 ",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1kRbQ6tEG9_p2_40971603028.txt [01:12:48] 逐字为「十格是什么 半径十以内的所有革新都会作为可选格」，claim「恐惧初始可选格为半径十以内的所有格子」与该句一致。source「革新」= 格子（章标题作「恐惧十格半径」，同窗口 [01:12:56]「这些会加入那个可选的格子」给出正确形式可闭合），claim 取正确形式属有据纠正。citation 2 [01:14:53]「这个十是半径 五是寻路距离」为独立印证（时间点不同）。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+   "source_line_time": "01:12:48",
+   "supports": "结论与源句一致，术语纠正有窗口与章标题依据",
+   "derived_correction": "源「革新」= 格子（同窗口 [01:12:56]「可选的格子」、章标题「恐惧十格半径」可闭合）；引文原文保留不改。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-31-9#r1",
+  "claim": "可选格中可通行且寻路连通的格子成为待备选恐惧目标格。",
+  "subject": "恐惧",
+  "condition": "格子可通行;格子寻路连通",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p2_40971603028:p43:a1:94e9cab4",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p2_40971603028",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "答疑：恐惧十格半径与五格寻路距离如何筛选",
+    "quotes": [
+     {
+      "text": "假设说是可通行的寻路连通的 那么他们就是带备选的恐惧目标格",
+      "t_start": 4376,
+      "t_end": 4413,
+      "t_start_upstream": 4376,
+      "t_start_line": 4376,
+      "t_line_label": "01:12:56"
+     }
+    ],
+    "_upstream_quote": "假设说是可通行的寻路连通的 那么他们就是带备选的恐惧目标格"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-31-9",
+   "trial_rule_idx": 1,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1kRbQ6tEG9_p2_40971603028.txt [01:12:56] 逐字为「这些会加入那个可选的格子 假设说是可通行的寻路连通的 那么他们就是带备选的恐惧目标格」，claim 与该句一致，两个并列条件（可通行 / 寻路连通）都保留。claim 未把「待备选恐惧目标格」误写成「恐惧目标格」（源用「带备选的」「待被选的」表示尚未定选，下一句 [01:13:33] 才随机选择）。s",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1kRbQ6tEG9_p2_40971603028.txt [01:12:56] 逐字为「这些会加入那个可选的格子 假设说是可通行的寻路连通的 那么他们就是带备选的恐惧目标格」，claim 与该句一致，两个并列条件（可通行 / 寻路连通）都保留。claim 未把「待备选恐惧目标格」误写成「恐惧目标格」（源用「带备选的」「待被选的」表示尚未定选，下一句 [01:13:33] 才随机选择）。source「带备选」为口述讹字。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+   "source_line_time": "01:12:56",
+   "supports": "两个并列条件与「待备选」的未定选含义均保留",
+   "derived_correction": "源「带备选的恐惧目标格」中「带」= 待（同句下文「这些待被选的恐惧目标格」给出正确形式可闭合）；引文原文保留不改。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-31-9#r2",
+  "claim": "生成恐惧路径点时，从待备选恐惧目标格中随机选择一个格子并进行检测。",
+  "subject": "恐惧",
+  "condition": "生成恐惧路径点",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p2_40971603028:p43:a2:c0b31894",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p2_40971603028",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "答疑：恐惧十格半径与五格寻路距离如何筛选",
+    "quotes": [
+     {
+      "text": "会选择这中间的任何一个随机格子 然后并且进行检测",
+      "t_start": 4413,
+      "t_end": 4426,
+      "t_start_upstream": 4413,
+      "t_start_line": 4413,
+      "t_line_label": "01:13:33"
+     }
+    ],
+    "_upstream_quote": "会选择这中间的任何一个随机格子 然后并且进行检测"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-31-9",
+   "trial_rule_idx": 2,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1kRbQ6tEG9_p2_40971603028.txt [01:13:33] 逐字为「这里在生成恐惧路径点的时候 会选择这中间的任何一个随机格子 然后并且进行检测」，claim 与该句一致，condition「生成恐惧路径点」取自源句，claim 保留了「任何一个随机格子」的任意性限定，未写成「按权重选择」。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1kRbQ6tEG9_p2_40971603028.txt [01:13:33] 逐字为「这里在生成恐惧路径点的时候 会选择这中间的任何一个随机格子 然后并且进行检测」，claim 与该句一致，condition「生成恐惧路径点」取自源句，claim 保留了「任何一个随机格子」的任意性限定，未写成「按权重选择」。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+   "source_line_time": "01:13:33",
+   "supports": "与源句一致，任意性限定保留",
+   "derived_correction": "源「然后并且」为口述叠加（然后 + 并且），claim 略去其中一个；引文原文不改。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-31-9#r3",
+  "claim": "若所选格到敌人当前位置的寻路距离大于五，则将该格从可选格中排除。",
+  "subject": "恐惧",
+  "condition": "所选格寻路距离>5格",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p2_40971603028:p43:a4:f6137277",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p2_40971603028",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "答疑：恐惧十格半径与五格寻路距离如何筛选",
+    "quotes": [
+     {
+      "text": "这个格子会被排除掉可选格之中",
+      "t_start": 4449,
+      "t_end": 4465,
+      "t_start_upstream": 4449,
+      "t_start_line": 4449,
+      "t_line_label": "01:14:09"
+     },
+     {
+      "text": "直到随机到一个寻路距离五以内的",
+      "t_start": 4449,
+      "t_end": 4465,
+      "t_start_upstream": 4449,
+      "t_start_line": 4449,
+      "t_line_label": "01:14:09"
+     }
+    ],
+    "_upstream_quote": "这个格子会被排除掉可选格之中"
+   },
+   {
+    "id": "BV1kRbQ6tEG9_p2_40971603028:p43:a11:c617d654",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p2_40971603028",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "答疑：恐惧十格半径与五格寻路距离如何筛选",
+    "quotes": [
+     {
+      "text": "五是单次的判定 十是最开始的总区间",
+      "t_start": 4493,
+      "t_end": 4515,
+      "t_start_upstream": 4493,
+      "t_start_line": 4493,
+      "t_line_label": "01:14:53"
+     }
+    ],
+    "_upstream_quote": "五是单次的判定 十是最开始的总区间"
+   },
+   {
+    "id": "BV1kRbQ6tEG9_p2_40971603028:p43:a12:8f5fbe9f",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p2_40971603028",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "答疑：恐惧十格半径与五格寻路距离如何筛选",
+    "quotes": [
+     {
+      "text": "这个十是半径 五是寻路距离",
+      "t_start": 4493,
+      "t_end": 4515,
+      "t_start_upstream": 4493,
+      "t_start_line": 4493,
+      "t_line_label": "01:14:53"
+     }
+    ],
+    "_upstream_quote": "这个十是半径 五是寻路距离"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-31-9",
+   "trial_rule_idx": 3,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：claim 的结论与阈值各有源行：BV1kRbQ6tEG9_p2_40971603028.txt [01:13:46]「这个格子的寻路距离是多少呢 123456789十 寻路距离是10pass」给出大于五的确例，[01:14:09]「然后它会进行什么处理 这个格子会被排除掉可选格之中」给出排除处理，[01:14:53]「五是单次的判定 十是最开始的总区间」明确五为单次判定阈值，三处 citatio",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "claim 的结论与阈值各有源行：BV1kRbQ6tEG9_p2_40971603028.txt [01:13:46]「这个格子的寻路距离是多少呢 123456789十 寻路距离是10pass」给出大于五的确例，[01:14:09]「然后它会进行什么处理 这个格子会被排除掉可选格之中」给出排除处理，[01:14:53]「五是单次的判定 十是最开始的总区间」明确五为单次判定阈值，三处 citation 时间点不同（01:14:09 / 01:14:53 / 01:14:53），后两处同行属重复定位。claim 的阈值方向（大于五则排除）与源一致，未写反。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+   "source_line_time": "01:14:09",
+   "supports": "阈值方向与处理动作均有源依据，未写反",
+   "derived_correction": "源同段亦用「五以外叉掉」表达同一判定；引文原文不改。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-31-9#r4",
+  "claim": "排除后会继续随机选择并排除，直到随机到寻路距离五以内的格子。",
+  "subject": "恐惧",
+  "condition": "前次随机所选格寻路距离>5格",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p2_40971603028:p43:a5:6e18e6ac",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p2_40971603028",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "答疑：恐惧十格半径与五格寻路距离如何筛选",
+    "quotes": [
+     {
+      "text": "如果再选排除 如果再选排除 直到随机到一个寻路距离五以内的",
+      "t_start": 4449,
+      "t_end": 4465,
+      "t_start_upstream": 4449,
+      "t_start_line": 4449,
+      "t_line_label": "01:14:09"
+     }
+    ],
+    "_upstream_quote": "如果再选排除 如果再选排除 直到随机到一个寻路距离五以内的"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-31-9",
+   "trial_rule_idx": 4,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1kRbQ6tEG9_p2_40971603028.txt [01:14:09] 逐字为「然后的话如果再选排除 如果再选排除 直到随机到一个寻路距离五以内的 比如说这里」，claim 与该句一致，主播重复「如果再选排除」属强调，claim 归并后语义未变；迭代终止条件「直到…五以内」原样保留。同窗口 [01:14:38]「发现寻路距离五以外叉掉 然后又选到这里」为独立印证（时间点不同）。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1kRbQ6tEG9_p2_40971603028.txt [01:14:09] 逐字为「然后的话如果再选排除 如果再选排除 直到随机到一个寻路距离五以内的 比如说这里」，claim 与该句一致，主播重复「如果再选排除」属强调，claim 归并后语义未变；迭代终止条件「直到…五以内」原样保留。同窗口 [01:14:38]「发现寻路距离五以外叉掉 然后又选到这里」为独立印证（时间点不同）。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+   "source_line_time": "01:14:09",
+   "supports": "迭代与终止条件保留，另有独立印证",
+   "derived_correction": "无。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-31-9#r5",
+  "claim": "随机到寻路距离五以内的格子后判定通过，走到该格。",
+  "subject": "恐惧",
+  "condition": "所选格寻路距离≤5格",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p2_40971603028:p43:a6:23cf2f83",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p2_40971603028",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "答疑：恐惧十格半径与五格寻路距离如何筛选",
+    "quotes": [
+     {
+      "text": "通过寻路距离五以内可以走 那么就会通过走到这里",
+      "t_start": 4465,
+      "t_end": 4478,
+      "t_start_upstream": 4465,
+      "t_start_line": 4465,
+      "t_line_label": "01:14:25"
+     }
+    ],
+    "_upstream_quote": "通过寻路距离五以内可以走 那么就会通过走到这里"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-31-9",
+   "trial_rule_idx": 5,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1kRbQ6tEG9_p2_40971603028.txt [01:14:25] 逐字为「然后的话哦通过寻路距离五以内可以走 那么就会通过走到这里」，claim 与该句一致，condition「所选格寻路距离≤5格」与源「五以内」对应（含等于，与 [01:14:53]「五是单次的判定」的阈值语义一致）。claim 未把「可以走」写成「必走」——但源句用「那么就会通过走到这里」，claim ",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1kRbQ6tEG9_p2_40971603028.txt [01:14:25] 逐字为「然后的话哦通过寻路距离五以内可以走 那么就会通过走到这里」，claim 与该句一致，condition「所选格寻路距离≤5格」与源「五以内」对应（含等于，与 [01:14:53]「五是单次的判定」的阈值语义一致）。claim 未把「可以走」写成「必走」——但源句用「那么就会通过走到这里」，claim 写作「判定通过，走到该格」，强度与源一致。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+   "source_line_time": "01:14:25",
+   "supports": "与源句一致，阈值与强度均未被改写",
+   "derived_correction": "无。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-31-9#r6",
+  "claim": "踩到该恐惧路径点后，在当前位置重新选定一个新的格子。",
+  "subject": "恐惧",
+  "condition": "已踩到恐惧路径点",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p2_40971603028:p43:a7:565c861d",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p2_40971603028",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "答疑：恐惧十格半径与五格寻路距离如何筛选",
+    "quotes": [
+     {
+      "text": "踩到这个恐惧路定点之后 再会在这里 然后重新进行选定 又会选定一个新的格子",
+      "t_start": 4465,
+      "t_end": 4478,
+      "t_start_upstream": 4465,
+      "t_start_line": 4465,
+      "t_line_label": "01:14:25"
+     }
+    ],
+    "_upstream_quote": "踩到这个恐惧路定点之后 再会在这里 然后重新进行选定 又会选定一个新的格子"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-31-9",
+   "trial_rule_idx": 6,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1kRbQ6tEG9_p2_40971603028.txt [01:14:25] 末段逐字为「踩到这个恐惧路定点之后 再会在这里 然后重新进行选定 又会选定一个新的格子」，claim 与该句一致。source「恐惧路定点」= 恐惧路径点（同窗口 [01:13:33]「在生成恐惧路径点的时候」给出正确形式可闭合）。claim 保留了「重新进行选定」的迭代含义，未写成「继续用原格子」。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1kRbQ6tEG9_p2_40971603028.txt [01:14:25] 末段逐字为「踩到这个恐惧路定点之后 再会在这里 然后重新进行选定 又会选定一个新的格子」，claim 与该句一致。source「恐惧路定点」= 恐惧路径点（同窗口 [01:13:33]「在生成恐惧路径点的时候」给出正确形式可闭合）。claim 保留了「重新进行选定」的迭代含义，未写成「继续用原格子」。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+   "source_line_time": "01:14:25",
+   "supports": "迭代语义保留，术语纠正有窗口依据",
+   "derived_correction": "源「恐惧路定点」= 恐惧路径点（同窗口 [01:13:33]「生成恐惧路径点」可闭合）；引文原文保留不改。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-31-9#r7",
+  "claim": "重新选定新格子时同样以寻路距离五筛选：五以外排除、五以内通过。",
+  "subject": "恐惧",
+  "condition": "重新选定新格子",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p2_40971603028:p43:a8:851429fc",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p2_40971603028",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "答疑：恐惧十格半径与五格寻路距离如何筛选",
+    "quotes": [
+     {
+      "text": "发现寻路距离五以外叉掉 然后又选到这里 寻路距离五以内",
+      "t_start": 4478,
+      "t_end": 4493,
+      "t_start_upstream": 4478,
+      "t_start_line": 4478,
+      "t_line_label": "01:14:38"
+     }
+    ],
+    "_upstream_quote": "发现寻路距离五以外叉掉 然后又选到这里 寻路距离五以内"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-31-9",
+   "trial_rule_idx": 7,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1kRbQ6tEG9_p2_40971603028.txt [01:14:38] 逐字为「发现寻路距离五以外叉掉 然后又选到这里 寻路距离五以内」，claim「重新选定新格子时同样以寻路距离五筛选：五以外排除、五以内通过」与该句的两个分支一一对应，正反两面都保留。该句紧承 [01:14:25] 的「重新进行选定」，其迭代语境在窗口内可闭合。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1kRbQ6tEG9_p2_40971603028.txt [01:14:38] 逐字为「发现寻路距离五以外叉掉 然后又选到这里 寻路距离五以内」，claim「重新选定新格子时同样以寻路距离五筛选：五以外排除、五以内通过」与该句的两个分支一一对应，正反两面都保留。该句紧承 [01:14:25] 的「重新进行选定」，其迭代语境在窗口内可闭合。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+   "source_line_time": "01:14:38",
+   "supports": "两个分支与迭代语境均与源一致",
+   "derived_correction": "源「叉掉」为口语，claim 写作「排除」，语义未变；引文原文不改。",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "fc1:寻路-31-9#r8",
+  "claim": "寻路距离五的筛选会使对应格子从可选格中被删除。",
+  "subject": "恐惧",
+  "condition": "寻路距离五不通过",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p2_40971603028:p43:a10:2df2a0fd",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p2_40971603028",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "答疑：恐惧十格半径与五格寻路距离如何筛选",
+    "quotes": [
+     {
+      "text": "但是后续的话是会因为这个五",
+      "t_start": 4478,
+      "t_end": 4493,
+      "t_start_upstream": 4478,
+      "t_start_line": 4478,
+      "t_line_label": "01:14:38"
+     },
+     {
+      "text": "寻路距离的不通过 从而删除的",
+      "t_start": 4493,
+      "t_end": 4515,
+      "t_start_upstream": 4493,
+      "t_start_line": 4493,
+      "t_line_label": "01:14:53"
+     }
+    ],
+    "_upstream_quote": "但是后续的话是会因为这个五"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-31-9",
+   "trial_rule_idx": 8,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：claim 两处引文分别对应源 BV1kRbQ6tEG9_p2_40971603028.txt [01:14:38]「但是后续的话是会因为这个五」与 [01:14:53]「寻路距离的不通过 从而删除的」，两行相邻且时间点不同，属同一陈述的两半分句，合起来完整表达删除条件。claim 保留了「删除」这一源用词，未弱化为「忽略」。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "claim 两处引文分别对应源 BV1kRbQ6tEG9_p2_40971603028.txt [01:14:38]「但是后续的话是会因为这个五」与 [01:14:53]「寻路距离的不通过 从而删除的」，两行相邻且时间点不同，属同一陈述的两半分句，合起来完整表达删除条件。claim 保留了「删除」这一源用词，未弱化为「忽略」。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+   "source_line_time": "01:14:53",
+   "supports": "跨行分句合并，删除语义保留",
+   "derived_correction": "源句被字幕切分为两行（「因为这个五」/「寻路距离的不通过 从而删除的」），claim 合并后语义完整；引文原文不改。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-32-11#r0",
+  "claim": "寻路从路径点所在格开始，按上、右、下、左的顺序推地块。",
+  "subject": "寻路遍历过程",
+  "condition": "从路径点所在格开始遍历;寻路第一步",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1MimABGEjs_p1_34575026662:p0:a0:cedab5b6",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+    "bvid_stem": "BV1MimABGEjs_p1_34575026662",
+    "recorded_at": "2025-12-07",
+    "speaker": "神祇读神奇",
+    "chapter": "寻路遍历与平整化机制精讲",
+    "quotes": [
+     {
+      "text": "首先从这一格开始上右下左的顺序推地块",
+      "t_start": 264,
+      "t_end": 303,
+      "t_start_upstream": 264,
+      "t_start_line": 290,
+      "t_line_label": "04:50"
+     }
+    ],
+    "_upstream_quote": "首先从这一格开始上右下左的顺序推地块"
+   },
+   {
+    "id": "ctx=sub:BV1MimABGEjs_p1_34575026662:264",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+    "requested_second": 264,
+    "quotes": [
+     {
+      "text": "[04:24] 首先是这一步上右下左的顺序进行寻路 这个我们看着这个图演示一下 这里是这个路径点 就是首先从这一格开始对吧 哎",
+      "t_start": 264,
+      "t_end": null,
+      "t_line_label": "04:24",
+      "t_start_line": 264
+     }
+    ]
+   },
+   {
+    "id": "ctx=sub:BV1MimABGEjs_p1_34575026662:290",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+    "requested_second": 290,
+    "quotes": [
+     {
+      "text": "[04:50] 首先从这一格开始上右下左的顺序推地块 先是上 然后上一格就记录了它的来源是下 再然后的话从上面这格格在上右下",
+      "t_start": 290,
+      "t_end": null,
+      "t_line_label": "04:50",
+      "t_start_line": 290
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-32-11",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1MimABGEjs_p1_34575026662.txt [04:50] 逐字为「首先从这一格开始上右下左的顺序推地块」，且 [04:24]「首先是这一步上右下左的顺序进行寻路 这个我们看着这个图演示一下 这里是这个路径点 就是首先从这一格开始对吧」明确「这一格」即路径点所在格，claim 的主语限定在窗口内可闭合。三处 citation 分别引 04:24、04:50（04:50 重复",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1MimABGEjs_p1_34575026662.txt [04:50] 逐字为「首先从这一格开始上右下左的顺序推地块」，且 [04:24]「首先是这一步上右下左的顺序进行寻路 这个我们看着这个图演示一下 这里是这个路径点 就是首先从这一格开始对吧」明确「这一格」即路径点所在格，claim 的主语限定在窗口内可闭合。三处 citation 分别引 04:24、04:50（04:50 重复两次），属同一论述的重复定位，非三处独立证据。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+   "source_line_time": "00:04:50",
+   "supports": "起始格与推序均在窗口内可闭合",
+   "derived_correction": "源 [04:24]「首先是这一步上右下左的顺序进行寻路」与 [04:50]「首先从这一格开始上右下左的顺序推地块」为同一演示的两次表述；引文原文不改。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-32-11#r1",
+  "claim": "被推到的格子记录自己的来源方向：从上推来则记来源为下，从右推来则记来源为左，从左推来则记来源为右。",
+  "subject": "被推到的格子",
+  "condition": "按上右下左顺序推地块",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1MimABGEjs_p1_34575026662:p0:a1:b0dc2fe3",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+    "bvid_stem": "BV1MimABGEjs_p1_34575026662",
+    "recorded_at": "2025-12-07",
+    "speaker": "神祇读神奇",
+    "chapter": "寻路遍历与平整化机制精讲",
+    "quotes": [
+     {
+      "text": "上一格就记录了它的来源是下",
+      "t_start": 264,
+      "t_end": 303,
+      "t_start_upstream": 264,
+      "t_start_line": 290,
+      "t_line_label": "04:50"
+     },
+     {
+      "text": "右记录是从左边来的 左记录它是从右边来的",
+      "t_start": 303,
+      "t_end": 318,
+      "t_start_upstream": 303,
+      "t_start_line": 303,
+      "t_line_label": "05:03"
+     }
+    ],
+    "_upstream_quote": "上一格就记录了它的来源是下"
+   },
+   {
+    "id": "ctx=sub:BV1MimABGEjs_p1_34575026662:290",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+    "requested_second": 290,
+    "quotes": [
+     {
+      "text": "[04:50] 首先从这一格开始上右下左的顺序推地块 先是上 然后上一格就记录了它的来源是下 再然后的话从上面这格格在上右下",
+      "t_start": 290,
+      "t_end": null,
+      "t_line_label": "04:50",
+      "t_start_line": 290
+     }
+    ]
+   },
+   {
+    "id": "ctx=sub:BV1MimABGEjs_p1_34575026662:303",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+    "requested_second": 303,
+    "quotes": [
+     {
+      "text": "[05:03] 左下已经被排过一次了 就不排了 然后的话是先上这个记录 它是从下边来的 右记录是从左边来的 左记录它是从右边来的",
+      "t_start": 303,
+      "t_end": null,
+      "t_line_label": "05:03",
+      "t_start_line": 303
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-32-11",
+   "trial_rule_idx": 1,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：claim 三类对应关系各有源依据：BV1MimABGEjs_p1_34575026662.txt [04:50]「先是上 然后上一格就记录了它的来源是下」对应从上推来记来源为下，[05:03]「右记录是从左边来的 左记录它是从右边来的」对应从右推来记来源为左、从左推来记来源为右，三处 citation 时间点不同（04:24 / 04:50 / 05:03），属独立依据。claim 三类列举与源",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "claim 三类对应关系各有源依据：BV1MimABGEjs_p1_34575026662.txt [04:50]「先是上 然后上一格就记录了它的来源是下」对应从上推来记来源为下，[05:03]「右记录是从左边来的 左记录它是从右边来的」对应从右推来记来源为左、从左推来记来源为右，三处 citation 时间点不同（04:24 / 04:50 / 05:03），属独立依据。claim 三类列举与源一一对应，未推及源未提的「从下推来记来源为上」（源 [05:03]「左下已经被排过一次了 就不排了」给出了下方向不入队的语境，claim 未擅自补全，处理正确）。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+   "source_line_time": "00:05:03",
+   "supports": "三类对应关系逐一有源，未越界补全",
+   "derived_correction": "无。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-32-11#r3",
+  "claim": "按该顺序遍历，直到排完所有可通行地块。",
+  "subject": "寻路遍历过程",
+  "condition": "从路径点开始推地块",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1MimABGEjs_p1_34575026662:p0:a3:d4595d26",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+    "bvid_stem": "BV1MimABGEjs_p1_34575026662",
+    "recorded_at": "2025-12-07",
+    "speaker": "神祇读神奇",
+    "chapter": "寻路遍历与平整化机制精讲",
+    "quotes": [
+     {
+      "text": "直到排完所有的那个可通行地块之后",
+      "t_start": 385,
+      "t_end": 411,
+      "t_start_upstream": 385,
+      "t_start_line": 385,
+      "t_line_label": "06:25"
+     }
+    ],
+    "_upstream_quote": "直到排完所有的那个可通行地块之后"
+   },
+   {
+    "id": "ctx=sub:BV1MimABGEjs_p1_34575026662:385",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+    "requested_second": 385,
+    "quotes": [
+     {
+      "text": "[06:25] 后面我就不写了 这是他地块的遍历顺序 直到排完所有的那个可通行地块之后 然后的话每一个地块 像这个地块都会记录他是从哪个格子来的",
+      "t_start": 385,
+      "t_end": null,
+      "t_line_label": "06:25",
+      "t_start_line": 385
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-32-11",
+   "trial_rule_idx": 3,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1MimABGEjs_p1_34575026662.txt [06:25] 逐字为「后面我就不写了 这是他地块的遍历顺序 直到排完所有的那个可通行地块之后」，claim 与该句一致，condition「从路径点开始推地块」取自同窗口 [04:50] 的起始描述。claim 保留了「所有」与「可通行」两个限定，未写成「直到排完所有地块」。citation 2 与 citation 1 引同一",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1MimABGEjs_p1_34575026662.txt [06:25] 逐字为「后面我就不写了 这是他地块的遍历顺序 直到排完所有的那个可通行地块之后」，claim 与该句一致，condition「从路径点开始推地块」取自同窗口 [04:50] 的起始描述。claim 保留了「所有」与「可通行」两个限定，未写成「直到排完所有地块」。citation 2 与 citation 1 引同一句，属重复定位。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+   "source_line_time": "00:06:25",
+   "supports": "终止条件与两个限定均保留，结论成立",
+   "derived_correction": "无。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-32-11#r4",
+  "claim": "每个地块都会记录自己是从哪个格子推过来的，最终形成一张寻路地图。",
+  "subject": "寻路地图",
+  "condition": "已排完所有可通行地块",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1MimABGEjs_p1_34575026662:p0:a4:0b237deb",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+    "bvid_stem": "BV1MimABGEjs_p1_34575026662",
+    "recorded_at": "2025-12-07",
+    "speaker": "神祇读神奇",
+    "chapter": "寻路遍历与平整化机制精讲",
+    "quotes": [
+     {
+      "text": "都会记录他是从哪个格子来的",
+      "t_start": 385,
+      "t_end": 411,
+      "t_start_upstream": 385,
+      "t_start_line": 385,
+      "t_line_label": "06:25"
+     },
+     {
+      "text": "最终也就形成了这样一张寻路地图",
+      "t_start": 385,
+      "t_end": 411,
+      "t_start_upstream": 385,
+      "t_start_line": 399,
+      "t_line_label": "06:39"
+     }
+    ],
+    "_upstream_quote": "都会记录他是从哪个格子来的"
+   },
+   {
+    "id": "ctx=sub:BV1MimABGEjs_p1_34575026662:385",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+    "requested_second": 385,
+    "quotes": [
+     {
+      "text": "[06:25] 后面我就不写了 这是他地块的遍历顺序 直到排完所有的那个可通行地块之后 然后的话每一个地块 像这个地块都会记录他是从哪个格子来的",
+      "t_start": 385,
+      "t_end": null,
+      "t_line_label": "06:25",
+      "t_start_line": 385
+     }
+    ]
+   },
+   {
+    "id": "ctx=sub:BV1MimABGEjs_p1_34575026662:399",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+    "requested_second": 399,
+    "quotes": [
+     {
+      "text": "[06:39] 比如说他是从五推过来的 那他就记录着自己是向左的 最终也就形成了这样一张寻路地图",
+      "t_start": 399,
+      "t_end": null,
+      "t_line_label": "06:39",
+      "t_start_line": 399
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-32-11",
+   "trial_rule_idx": 4,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：claim 两分句分别对应源 BV1MimABGEjs_p1_34575026662.txt [06:25]「每一个地块 像这个地块都会记录他是从哪个格子来的」与 [06:39]「最终也就形成了这样一张寻路地图」，两行时间点不同（06:25 / 06:39），属两处独立依据；[06:39] 另有「比如说他是从五推过来的 那他就记录着自己是向左的」作为记录内容的具体例证。citation 2、3 与",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "claim 两分句分别对应源 BV1MimABGEjs_p1_34575026662.txt [06:25]「每一个地块 像这个地块都会记录他是从哪个格子来的」与 [06:39]「最终也就形成了这样一张寻路地图」，两行时间点不同（06:25 / 06:39），属两处独立依据；[06:39] 另有「比如说他是从五推过来的 那他就记录着自己是向左的」作为记录内容的具体例证。citation 2、3 与引文重复，属同一句的窗口定位。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+   "source_line_time": "00:06:25",
+   "supports": "记录内容与成图结论各有独立源行",
+   "derived_correction": "无。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-32-12#r0",
+  "claim": "刚遍历完时，寻路地图上每个格子的指向只指向自己的相邻格。",
+  "subject": "寻路地图上的格子指向",
+  "condition": "刚遍历完时",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1MimABGEjs_p1_34575026662:p1:a0:c5ee73bc",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+    "bvid_stem": "BV1MimABGEjs_p1_34575026662",
+    "recorded_at": "2025-12-07",
+    "speaker": "神祇读神奇",
+    "chapter": "寻路遍历与平整化机制精讲",
+    "quotes": [
+     {
+      "text": "每个格子的指向只是指向自己相邻格的",
+      "t_start": 427,
+      "t_end": 460,
+      "t_start_upstream": 427,
+      "t_start_line": 427,
+      "t_line_label": "07:07"
+     }
+    ],
+    "_upstream_quote": "每个格子的指向只是指向自己相邻格的"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-32-12",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1MimABGEjs_p1_34575026662.txt [07:07] 逐字为「在这张寻路地图的时候 每个格子的指向只是指向自己相邻格的 他还没有指向那个就是呃他还没有开始拉直线」，claim 与该句一致，「只是」这一限定词保留，claim 未把「只指向相邻格」写成「指向相邻格之一」。condition「刚遍历完时」与源同窗口 [06:25] 的遍历结束点及 [07:07]「在这张寻路",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1MimABGEjs_p1_34575026662.txt [07:07] 逐字为「在这张寻路地图的时候 每个格子的指向只是指向自己相邻格的 他还没有指向那个就是呃他还没有开始拉直线」，claim 与该句一致，「只是」这一限定词保留，claim 未把「只指向相邻格」写成「指向相邻格之一」。condition「刚遍历完时」与源同窗口 [06:25] 的遍历结束点及 [07:07]「在这张寻路地图的时候」一致。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+   "source_line_time": "00:07:07",
+   "supports": "「只是」限定保留，condition 有窗口依据",
+   "derived_correction": "无。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-32-12#r1",
+  "claim": "刚遍历完时，寻路地图还没有开始拉直线。",
+  "subject": "寻路地图的指向处理",
+  "condition": "刚遍历完时",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1MimABGEjs_p1_34575026662:p1:a1:12334ed2",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+    "bvid_stem": "BV1MimABGEjs_p1_34575026662",
+    "recorded_at": "2025-12-07",
+    "speaker": "神祇读神奇",
+    "chapter": "寻路遍历与平整化机制精讲",
+    "quotes": [
+     {
+      "text": "他还没有开始拉直线",
+      "t_start": 427,
+      "t_end": 460,
+      "t_start_upstream": 427,
+      "t_start_line": 427,
+      "t_line_label": "07:07"
+     }
+    ],
+    "_upstream_quote": "他还没有开始拉直线"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-32-12",
+   "trial_rule_idx": 1,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1MimABGEjs_p1_34575026662.txt [07:07] 含「他还没有指向那个就是呃他还没有开始拉直线」，claim 与该句主句一致。主播先起头「他还没有指向那个就是」后自我改口为「他还没有开始拉直线」，claim 取改口后的完整表述，与下文 [07:40]「然后平整化操作是什么意思呢」的平整化（即拉直）话题衔接一致。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1MimABGEjs_p1_34575026662.txt [07:07] 含「他还没有指向那个就是呃他还没有开始拉直线」，claim 与该句主句一致。主播先起头「他还没有指向那个就是」后自我改口为「他还没有开始拉直线」，claim 取改口后的完整表述，与下文 [07:40]「然后平整化操作是什么意思呢」的平整化（即拉直）话题衔接一致。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+   "source_line_time": "00:07:07",
+   "supports": "取自我改口后的完整表述，与下文的平整化话题衔接",
+   "derived_correction": "源「他还没有指向那个就是呃他还没有开始拉直线」前段为主播起头后中断的残句，claim 取其后半完整表述；引文原文保留不改。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-32-9#r1",
+  "claim": "卡墙跳路径点可以保证即使巡逻断绝也能回到自己的正路上。",
+  "subject": "卡墙跳路径点",
+  "condition": "巡逻断绝",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p3_40974353533:p36:a2:6221f036",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p3_40974353533.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p3_40974353533",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "勘误路径点机制，并讨论有利bug、攻击间隔与浮点不死",
+    "quotes": [
+     {
+      "text": "可以保证即使巡逻断绝 也回到自己的正路上",
+      "t_start": 5500,
+      "t_end": 5508,
+      "t_start_upstream": 5500,
+      "t_start_line": 5500,
+      "t_line_label": "01:31:40"
+     }
+    ],
+    "_upstream_quote": "可以保证即使巡逻断绝 也回到自己的正路上"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p3_40974353533.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-32-9",
+   "trial_rule_idx": 1,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1kRbQ6tEG9_p3_40974353533.txt [01:31:40] 逐字为「可以保证即使巡逻断绝 也回到自己的正路上」，claim 与该句一致，claim 补出的主语「卡墙跳路径点」来自同窗口 [01:31:03]「比如说卡墙跳路径点这个东西 这个东西就属于一个防bug的机制」，主语回指可闭合，未把主语误挂到「传送门」。claim 保留了「即使…也…」的让步结构。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1kRbQ6tEG9_p3_40974353533.txt [01:31:40] 逐字为「可以保证即使巡逻断绝 也回到自己的正路上」，claim 与该句一致，claim 补出的主语「卡墙跳路径点」来自同窗口 [01:31:03]「比如说卡墙跳路径点这个东西 这个东西就属于一个防bug的机制」，主语回指可闭合，未把主语误挂到「传送门」。claim 保留了「即使…也…」的让步结构。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p3_40974353533.txt",
+   "source_line_time": "01:31:40",
+   "supports": "主语回指有窗口依据，让步结构保留",
+   "derived_correction": "源 [01:31:19]「类似老鼠这种传送乱蹦的时候」中「老鼠」为鼠类传送机制的指称，与 claim 无关，未引发歧义。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-33-0#r0",
+  "claim": "平整化的顺序是从左到右、从下到上。",
+  "subject": "平整化",
+  "condition": "对象采用平整化推导/推送",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1MimABGEjs_p1_34575026662:p4:a0:925b1391",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+    "bvid_stem": "BV1MimABGEjs_p1_34575026662",
+    "recorded_at": "2025-12-07",
+    "speaker": "神祇读神奇",
+    "chapter": "寻路遍历与平整化机制精讲",
+    "quotes": [
+     {
+      "text": "是从左到右 从下到上",
+      "t_start": 677,
+      "t_end": 694,
+      "t_start_upstream": 677,
+      "t_start_line": 677,
+      "t_line_label": "11:17"
+     }
+    ],
+    "_upstream_quote": "是从左到右 从下到上"
+   },
+   {
+    "id": "BV1MimABGEjs_p1_34575026662:p14:a0:9fdd8cac",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+    "bvid_stem": "BV1MimABGEjs_p1_34575026662",
+    "recorded_at": "2025-12-07",
+    "speaker": "神祇读神奇",
+    "chapter": "寻路遍历与平整化机制精讲",
+    "quotes": [
+     {
+      "text": "从左到右 从上下到上推的过程中",
+      "t_start": 1395,
+      "t_end": 1412,
+      "t_start_upstream": 1395,
+      "t_start_line": 1395,
+      "t_line_label": "23:15"
+     }
+    ],
+    "_upstream_quote": "从左到右 从上下到上推的过程中"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-33-0",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：claim 的顺序结论在两处独立源行中一致：BV1MimABGEjs_p1_34575026662.txt [11:17]「那么平整化的顺序是什么呢 是从左到右 从下到上 是先这个这个这个 然后是这一个这一个这一个」与 [23:15]「那么由于他们在从左到右 从上下到上推的过程中」，两处时间点相差约十二分钟，属独立互证。source 第二处「从上下到上」为口述叠字，等同于「从下到上」，claim ",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "claim 的顺序结论在两处独立源行中一致：BV1MimABGEjs_p1_34575026662.txt [11:17]「那么平整化的顺序是什么呢 是从左到右 从下到上 是先这个这个这个 然后是这一个这一个这一个」与 [23:15]「那么由于他们在从左到右 从上下到上推的过程中」，两处时间点相差约十二分钟，属独立互证。source 第二处「从上下到上」为口述叠字，等同于「从下到上」，claim 取第一处的规范表达，未改变方向顺序。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+   "source_line_time": "00:11:17",
+   "supports": "两处独立源行一致，顺序方向未变",
+   "derived_correction": "源 [23:15]「从上下到上」为口述叠字（从下到上），与 [11:17]「从下到上」同义，claim 取规范表达；引文原文保留不改。",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "fc1:寻路-33-0#r1",
+  "claim": "平整化推送是从下往上推。",
+  "subject": "平整化推送",
+  "condition": "对象采用平整化推送",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1MimABGEjs_p1_34575026662:p13:a2:7d236b86",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+    "bvid_stem": "BV1MimABGEjs_p1_34575026662",
+    "recorded_at": "2025-12-07",
+    "speaker": "神祇读神奇",
+    "chapter": "寻路遍历与平整化机制精讲",
+    "quotes": [
+     {
+      "text": "它是从下往上推",
+      "t_start": 1333,
+      "t_end": 1349,
+      "t_start_upstream": 1333,
+      "t_start_line": 1302,
+      "t_line_label": "21:42"
+     }
+    ],
+    "_upstream_quote": "它是从下往上推"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-33-0",
+   "trial_rule_idx": 1,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1MimABGEjs_p1_34575026662.txt [22:13] 逐字为「所以的话就是因为它是从下往上推 所以我们做的测试中 就是嗯只有下这个方向会有问题」，claim 与该句一致。同窗口 [21:42]「因为它是从下往上推 所以的话只有接近这个出口的 接近这个出口这边的格子先被推了 他才会影响到远离出口」为同论点的因果展开（时间点不同），属独立印证。claim 未把「从下往上」",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1MimABGEjs_p1_34575026662.txt [22:13] 逐字为「所以的话就是因为它是从下往上推 所以我们做的测试中 就是嗯只有下这个方向会有问题」，claim 与该句一致。同窗口 [21:42]「因为它是从下往上推 所以的话只有接近这个出口的 接近这个出口这边的格子先被推了 他才会影响到远离出口」为同论点的因果展开（时间点不同），属独立印证。claim 未把「从下往上」扩展为「按坐标升序」。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+   "source_line_time": "00:22:13",
+   "supports": "与源句一致，另有 [21:42] 因果展开印证",
+   "derived_correction": "无。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-33-2#r2",
+  "claim": "格子连通性判定使用魔改的直线算法，该算法判定起点和终点连线中间的所有地块是否为不可通行和障碍物地块。",
+  "subject": "未点名",
+  "condition": "进行格子连通性判定",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1MimABGEjs_p1_34575026662:p15:a1:685f200a",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+    "bvid_stem": "BV1MimABGEjs_p1_34575026662",
+    "recorded_at": "2025-12-07",
+    "speaker": "神祇读神奇",
+    "chapter": "寻路遍历与平整化机制精讲",
+    "quotes": [
+     {
+      "text": "魔改的直线算法 这个直线算法要判定起点和终点呃 连线中间的所有地块是否是不可通行和障碍物 地块",
+      "t_start": 1486,
+      "t_end": 1503,
+      "t_start_upstream": 1486,
+      "t_start_line": 1486,
+      "t_line_label": "24:46"
+     }
+    ],
+    "_upstream_quote": "魔改的直线算法 这个直线算法要判定起点和终点呃 连线中间的所有地块是否是不可通行和障碍物 地块"
+   },
+   {
+    "id": "ctx=sub:BV1MimABGEjs_p1_34575026662:1472",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+    "requested_second": 1472,
+    "quotes": [
+     {
+      "text": "[24:32] 他下一步要判断和四一这个格子的连通性 这个格子和这个格子判断连通性 判断规则由这篇文章中的这个算法解释",
+      "t_start": 1472,
+      "t_end": null,
+      "t_line_label": "24:32",
+      "t_start_line": 1472
+     }
+    ]
+   },
+   {
+    "id": "ctx=sub:BV1MimABGEjs_p1_34575026662:1486",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+    "requested_second": 1486,
+    "quotes": [
+     {
+      "text": "[24:46] 这个算法解释魔改的直线算法 这个直线算法要判定起点和终点呃 连线中间的所有地块是否是不可通行和障碍物 地块",
+      "t_start": 1486,
+      "t_end": null,
+      "t_line_label": "24:46",
+      "t_start_line": 1486
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-33-2",
+   "trial_rule_idx": 2,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1MimABGEjs_p1_34575026662.txt [24:46] 逐字为「这个算法解释魔改的直线算法 这个直线算法要判定起点和终点呃 连线中间的所有地块是否是不可通行和障碍物 地块」，claim 与该句一致，三处 citation 分别引 24:32（连通性判定）、24:46（两次），属同一论述的重复定位。claim 保留了「所有地块」与「不可通行和障碍物」的并列判定对象，未只留",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1MimABGEjs_p1_34575026662.txt [24:46] 逐字为「这个算法解释魔改的直线算法 这个直线算法要判定起点和终点呃 连线中间的所有地块是否是不可通行和障碍物 地块」，claim 与该句一致，三处 citation 分别引 24:32（连通性判定）、24:46（两次），属同一论述的重复定位。claim 保留了「所有地块」与「不可通行和障碍物」的并列判定对象，未只留其一。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+   "source_line_time": "00:24:46",
+   "supports": "判定对象与范围限定均保留，与源句一致",
+   "derived_correction": "无。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-35-10#r0",
+  "claim": "反射算法是鹰角写的单纯根据起点和落点判断的东西，它和unity的物理碰撞箱从根本上来讲是两个东西",
+  "subject": "反射算法与Unity物理碰撞箱",
+  "condition": "未标注",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1qReG6XE6W_p1_41897493495:p12:a0:e0cd0cbe",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
+    "bvid_stem": "BV1qReG6XE6W_p1_41897493495",
+    "recorded_at": "2026-09-15",
+    "speaker": "神祇读神奇",
+    "chapter": "推拉物理机制入门：胶囊碰撞箱实测、失衡规则、力度方向与45度归属",
+    "quotes": [
+     {
+      "text": "反射算法是那个鹰角写的 一个单纯根据起点和落点判断的东西 它和unity的这个物理碰撞箱 从根本上来讲是两个东西",
+      "t_start": 2135,
+      "t_end": 2150,
+      "t_start_upstream": 2135,
+      "t_start_line": 2135,
+      "t_line_label": "35:35"
+     }
+    ],
+    "_upstream_quote": "反射算法是那个鹰角写的 一个单纯根据起点和落点判断的东西 它和unity的这个物理碰撞箱 从根本上来讲是两个东西"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-35-10",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1qReG6XE6W_p1_41897493495.txt [35:35] 逐字为「我们说啊 之前说的这个反射算法是那个鹰角写的 一个单纯根据起点和落点判断的东西 它和unity的这个物理碰撞箱 从根本上来讲是两个东西」，claim 与该句一致，「从根本上来讲」「单纯」两个限定词都保留。claim 未把「两个东西」扩写为「互不相关」（源 [35:50] 仍说明两者在失衡下共同生效）。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1qReG6XE6W_p1_41897493495.txt [35:35] 逐字为「我们说啊 之前说的这个反射算法是那个鹰角写的 一个单纯根据起点和落点判断的东西 它和unity的这个物理碰撞箱 从根本上来讲是两个东西」，claim 与该句一致，「从根本上来讲」「单纯」两个限定词都保留。claim 未把「两个东西」扩写为「互不相关」（源 [35:50] 仍说明两者在失衡下共同生效）。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
+   "source_line_time": "00:35:35",
+   "supports": "与源句一致，两个限定词保留，未被扩大",
+   "derived_correction": "无。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-35-10#r2",
+  "claim": "在巡逻的状态下敌人可以自由地进出墙体，完全无视墙体的物理碰撞箱",
+  "subject": "巡逻状态的敌人",
+  "condition": "巡逻状态",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1qReG6XE6W_p1_41897493495:p12:a2:ec952747",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
+    "bvid_stem": "BV1qReG6XE6W_p1_41897493495",
+    "recorded_at": "2026-09-15",
+    "speaker": "神祇读神奇",
+    "chapter": "推拉物理机制入门：胶囊碰撞箱实测、失衡规则、力度方向与45度归属",
+    "quotes": [
+     {
+      "text": "在巡逻的状态下 敌人可以自由地进出墙体 完全无视这个墙体的物理碰撞箱",
+      "t_start": 2150,
+      "t_end": 2165,
+      "t_start_upstream": 2150,
+      "t_start_line": 2150,
+      "t_line_label": "35:50"
+     }
+    ],
+    "_upstream_quote": "在巡逻的状态下 敌人可以自由地进出墙体 完全无视这个墙体的物理碰撞箱"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-35-10",
+   "trial_rule_idx": 2,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1qReG6XE6W_p1_41897493495.txt [35:50] 逐字为「这是因为方舟的设置的话 它在非失衡的状态是不激活物理碰撞的 在巡逻的状态下 敌人可以自由地进出墙体 完全无视这个墙体的物理碰撞箱」，claim 与该句一致，「自由地进出」与「完全无视」两个强度表述原样保留。condition「巡逻状态」取自源句，claim 未把它扩大到「所有非失衡状态」（源句「非失衡的状态",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1qReG6XE6W_p1_41897493495.txt [35:50] 逐字为「这是因为方舟的设置的话 它在非失衡的状态是不激活物理碰撞的 在巡逻的状态下 敌人可以自由地进出墙体 完全无视这个墙体的物理碰撞箱」，claim 与该句一致，「自由地进出」与「完全无视」两个强度表述原样保留。condition「巡逻状态」取自源句，claim 未把它扩大到「所有非失衡状态」（源句「非失衡的状态」是更宽的前提，claim 取其中的巡逻态，未越界）。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
+   "source_line_time": "00:35:50",
+   "supports": "强度表述保留，condition 取源句内的子集未越界",
+   "derived_correction": "无。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-35-10#r3",
+  "claim": "在推拉状态下，在墙里一旦进入失衡，就会因为物理碰撞箱的相互排斥而推开，这才是物理碰撞箱的表现",
+  "subject": "推拉状态的单位",
+  "condition": "推拉状态;在墙里;进入失衡",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1qReG6XE6W_p1_41897493495:p12:a3:2624c4aa",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
+    "bvid_stem": "BV1qReG6XE6W_p1_41897493495",
+    "recorded_at": "2026-09-15",
+    "speaker": "神祇读神奇",
+    "chapter": "推拉物理机制入门：胶囊碰撞箱实测、失衡规则、力度方向与45度归属",
+    "quotes": [
+     {
+      "text": "在推拉在墙里面 一旦进入失衡的话 就会因为物理碰撞箱的相互排斥而推开 这才是物理碰撞箱的表现",
+      "t_start": 2165,
+      "t_end": 2182,
+      "t_start_upstream": 2165,
+      "t_start_line": 2165,
+      "t_line_label": "36:05"
+     }
+    ],
+    "_upstream_quote": "在推拉在墙里面 一旦进入失衡的话 就会因为物理碰撞箱的相互排斥而推开 这才是物理碰撞箱的表现"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-35-10",
+   "trial_rule_idx": 3,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1qReG6XE6W_p1_41897493495.txt [36:05] 逐字为「而这在推拉状态下是绝对不可能的 在推拉在墙里面 一旦进入失衡的话 就会因为物理碰撞箱的相互排斥而推开 这才是物理碰撞箱的表现」，claim 与该句后半一致，三个 condition（推拉状态 / 在墙里 / 进入失衡）均取自源句。claim 保留了「这才是物理碰撞箱的表现」这一对照性收句，未删去。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1qReG6XE6W_p1_41897493495.txt [36:05] 逐字为「而这在推拉状态下是绝对不可能的 在推拉在墙里面 一旦进入失衡的话 就会因为物理碰撞箱的相互排斥而推开 这才是物理碰撞箱的表现」，claim 与该句后半一致，三个 condition（推拉状态 / 在墙里 / 进入失衡）均取自源句。claim 保留了「这才是物理碰撞箱的表现」这一对照性收句，未删去。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
+   "source_line_time": "00:36:05",
+   "supports": "三个条件与收句均与源句一致",
+   "derived_correction": "源「在推拉在墙里面」为主播口述连写（在推拉 / 在墙里），claim 分开表述，语义未变；引文原文不改。",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "fc1:寻路-35-10#r4",
+  "claim": "鹰角并不支持常态开启物理碰撞箱，这是寻路有可能进入物理碰撞箱的根基",
+  "subject": "鹰角（物理碰撞箱常态开启策略）",
+  "condition": "未标注",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1qReG6XE6W_p1_41897493495:p12:a4:16aab890",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
+    "bvid_stem": "BV1qReG6XE6W_p1_41897493495",
+    "recorded_at": "2026-09-15",
+    "speaker": "神祇读神奇",
+    "chapter": "推拉物理机制入门：胶囊碰撞箱实测、失衡规则、力度方向与45度归属",
+    "quotes": [
+     {
+      "text": "鹰角并不支持常态开启这个东西",
+      "t_start": 2182,
+      "t_end": 2196,
+      "t_start_upstream": 2182,
+      "t_start_line": 2182,
+      "t_line_label": "36:22"
+     },
+     {
+      "text": "这是寻路有可能进入物理碰撞箱的根基",
+      "t_start": 2196,
+      "t_end": 2219,
+      "t_start_upstream": 2196,
+      "t_start_line": 2196,
+      "t_line_label": "36:36"
+     }
+    ],
+    "_upstream_quote": "鹰角并不支持常态开启这个东西"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-35-10",
+   "trial_rule_idx": 4,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：claim 两处引文分别对应源 BV1qReG6XE6W_p1_41897493495.txt [36:22]「但是鹰角并不支持常态开启这个东西」与 [36:36]「这是寻路有可能进入物理碰撞箱的根基」，两行时间点不同（36:22 / 36:36），属两处独立依据。claim 把「这个东西」在窗口内回填为「物理碰撞箱」，依据是 [35:35]-[36:22] 的整段物理碰撞箱讨论，回指可闭合，未歪",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "claim 两处引文分别对应源 BV1qReG6XE6W_p1_41897493495.txt [36:22]「但是鹰角并不支持常态开启这个东西」与 [36:36]「这是寻路有可能进入物理碰撞箱的根基」，两行时间点不同（36:22 / 36:36），属两处独立依据。claim 把「这个东西」在窗口内回填为「物理碰撞箱」，依据是 [35:35]-[36:22] 的整段物理碰撞箱讨论，回指可闭合，未歪曲为「不支持物理引擎」。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
+   "source_line_time": "00:36:36",
+   "supports": "两处独立源行支撑，代词回填窗口内可闭合",
+   "derived_correction": "无。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-36-2#r0",
+  "claim": "敌人会根据自己的寻路状态和寻路目标设置一个理论移速。",
+  "subject": "敌人",
+  "condition": "敌人根据寻路状态和寻路目标决定理论移速时",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1TomVBBEK1_p1_34675165371:p0:a1:5f1b46fc",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
+    "bvid_stem": "BV1TomVBBEK1_p1_34675165371",
+    "recorded_at": "2025-12-12",
+    "speaker": "神祇读神奇",
+    "chapter": "敌人寻路加速度循环、刹车等比数列与2.75帧距离推导",
+    "quotes": [
+     {
+      "text": "敌人会根据自己的寻路状态和寻路目标 设置一个理论移速",
+      "t_start": 598,
+      "t_end": 622
+     }
+    ],
+    "_upstream_quote": "敌人会根据自己的寻路状态和寻路目标 设置一个理论移速"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-36-2",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1TomVBBEK1_p1_34675165371.txt [09:58]-[10:03] 为「敌人会根据自己的寻路状态和寻路目标」与「设置一个理论移速」，claim 两行合并，主语与谓宾完整，属正确拼接而非推断。condition「敌人根据寻路状态和寻路目标决定理论移速时」取自源句，claim 未擅自补充「寻路状态」的枚举内容。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1TomVBBEK1_p1_34675165371.txt [09:58]-[10:03] 为「敌人会根据自己的寻路状态和寻路目标」与「设置一个理论移速」，claim 两行合并，主语与谓宾完整，属正确拼接而非推断。condition「敌人根据寻路状态和寻路目标决定理论移速时」取自源句，claim 未擅自补充「寻路状态」的枚举内容。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
+   "source_line_time": "00:09:58",
+   "supports": "跨行合并完整，未擅补源句未给的内容",
+   "derived_correction": "无。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-36-2#r1",
+  "claim": "在停住状态下，理论移速应为零，因为该状态下没有寻路目标。",
+  "subject": "敌人",
+  "condition": "停住状态;没有寻路目标",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1TomVBBEK1_p1_34675165371:p0:a2:34f7849c",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
+    "bvid_stem": "BV1TomVBBEK1_p1_34675165371",
+    "recorded_at": "2025-12-12",
+    "speaker": "神祇读神奇",
+    "chapter": "敌人寻路加速度循环、刹车等比数列与2.75帧距离推导",
+    "quotes": [
+     {
+      "text": "在停住这种状态下 这个理论移速就应该是零 因为在这个状态下 他没有寻路目标",
+      "t_start": 598,
+      "t_end": 622,
+      "t_start_upstream": 598,
+      "t_start_line": 607,
+      "t_line_label": "10:07"
+     }
+    ],
+    "_upstream_quote": "在停住这种状态下 这个理论移速就应该是零 因为在这个状态下 他没有寻路目标"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-36-2",
+   "trial_rule_idx": 1,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1TomVBBEK1_p1_34675165371.txt [10:07] 逐字为「嗯这里在停住这种状态下 这个理论移速就应该是零 因为在这个状态下 他没有寻路目标对吧」，claim 与该句一致，因果结构「因为…没有寻路目标」保留，两个 condition（停住状态 / 没有寻路目标）都取自源句。claim 未把「应该是零」写成「必为零」，保留了源的推定语气。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1TomVBBEK1_p1_34675165371.txt [10:07] 逐字为「嗯这里在停住这种状态下 这个理论移速就应该是零 因为在这个状态下 他没有寻路目标对吧」，claim 与该句一致，因果结构「因为…没有寻路目标」保留，两个 condition（停住状态 / 没有寻路目标）都取自源句。claim 未把「应该是零」写成「必为零」，保留了源的推定语气。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
+   "source_line_time": "00:10:07",
+   "supports": "因果结构与推定语气均与源句一致",
+   "derived_correction": "无。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-36-2#r2",
+  "claim": "敌人的速度要指向自己的寻路目标。",
+  "subject": "敌人",
+  "condition": "敌人有寻路目标时",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1TomVBBEK1_p1_34675165371:p3:a1:3940cbb6",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
+    "bvid_stem": "BV1TomVBBEK1_p1_34675165371",
+    "recorded_at": "2025-12-12",
+    "speaker": "神祇读神奇",
+    "chapter": "敌人寻路加速度循环、刹车等比数列与2.75帧距离推导",
+    "quotes": [
+     {
+      "text": "他的速度要指向自己的这个寻路目标",
+      "t_start": 1178,
+      "t_end": 1186,
+      "t_start_upstream": 1178,
+      "t_start_line": 1178,
+      "t_line_label": "19:38"
+     }
+    ],
+    "_upstream_quote": "他的速度要指向自己的这个寻路目标"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-36-2",
+   "trial_rule_idx": 2,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1TomVBBEK1_p1_34675165371.txt [19:38] 逐字为「他的速度要指向自己的这个寻路目标」，claim 与该句一致，「要指向」这一要求性表述保留。主语「他」在同窗口 [19:29]「斜走的原因就是因为它是指向这里的」的敌人语境中可回指，condition「敌人有寻路目标时」与源句的「自己的这个寻路目标」一致。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1TomVBBEK1_p1_34675165371.txt [19:38] 逐字为「他的速度要指向自己的这个寻路目标」，claim 与该句一致，「要指向」这一要求性表述保留。主语「他」在同窗口 [19:29]「斜走的原因就是因为它是指向这里的」的敌人语境中可回指，condition「敌人有寻路目标时」与源句的「自己的这个寻路目标」一致。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
+   "source_line_time": "00:19:38",
+   "supports": "与源句一致，主语回指与 condition 均在窗口内可闭合",
+   "derived_correction": "无。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-36-5#r0",
+  "claim": "刹车怎么算，决定了鹰角的怪在拐弯之后究竟是越过路径点还是不到路径点。",
+  "subject": "刹车计算",
+  "condition": "怪在拐弯之后",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1TomVBBEK1_p1_34675165371:p10:a0:c37bd842",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
+    "bvid_stem": "BV1TomVBBEK1_p1_34675165371",
+    "recorded_at": "2025-12-12",
+    "speaker": "神祇读神奇",
+    "chapter": "敌人寻路加速度循环、刹车等比数列与2.75帧距离推导",
+    "quotes": [
+     {
+      "text": "刹车怎么算 他决定了方额 鹰角的怪 在拐弯之后究竟是越过路径点还是不到路径点",
+      "t_start": 2862,
+      "t_end": 2868,
+      "t_start_upstream": 2862,
+      "t_start_line": 2868,
+      "t_line_label": "47:48"
+     }
+    ],
+    "_upstream_quote": "刹车怎么算 他决定了方额 鹰角的怪 在拐弯之后究竟是越过路径点还是不到路径点"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-36-5",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1TomVBBEK1_p1_34675165371.txt [47:48] 逐字为「这个就是停住拐弯 各种状态下刹车怎么算 他决定了方额 鹰角的怪 在拐弯之后究竟是越过路径点还是不到路径点」，claim 与该句一致，condition「怪在拐弯之后」取自源句。source「方额」为口述讹字（主播改口前的残音，紧接说「鹰角的怪」），claim 取「鹰角的怪」未引发歧义；claim 保留「究竟",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1TomVBBEK1_p1_34675165371.txt [47:48] 逐字为「这个就是停住拐弯 各种状态下刹车怎么算 他决定了方额 鹰角的怪 在拐弯之后究竟是越过路径点还是不到路径点」，claim 与该句一致，condition「怪在拐弯之后」取自源句。source「方额」为口述讹字（主播改口前的残音，紧接说「鹰角的怪」），claim 取「鹰角的怪」未引发歧义；claim 保留「究竟…还是…」的二择结构。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
+   "source_line_time": "00:47:48",
+   "supports": "二择结构与 condition 均与源句一致",
+   "derived_correction": "源「方额」为主播改口残音（其后即修正为「鹰角的怪」）；引文原文保留不改。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-37-1#r2",
+  "claim": "加速度的概念只是在寻路的状态下，对于寻路的速度进行更新。",
+  "subject": "加速度与寻路速度更新",
+  "condition": "处于寻路状态下",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1TomVBBEK1_p1_34675165371:p33:a5:df347794",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
+    "bvid_stem": "BV1TomVBBEK1_p1_34675165371",
+    "recorded_at": "2025-12-12",
+    "speaker": "神祇读神奇",
+    "chapter": "眩晕束缚阻挡不更新寻路速度、惯性滑动及海默入坑实例",
+    "quotes": [
+     {
+      "text": "加速度的概念只是在寻路的状态下 对于寻路的速度进行更新的状态",
+      "t_start": 7157,
+      "t_end": 7172,
+      "t_start_upstream": 7157,
+      "t_start_line": 7157,
+      "t_line_label": "01:59:17"
+     }
+    ],
+    "_upstream_quote": "加速度的概念只是在寻路的状态下 对于寻路的速度进行更新的状态"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-37-1",
+   "trial_rule_idx": 2,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1TomVBBEK1_p1_34675165371.txt [01:59:17] 逐字为「我们说加速度的概念只是在寻路的状态下 对于寻路的速度进行更新的状态 眩晕是不会更新寻路的速度的」，claim 取该句前半，两个限定（只在寻路状态下、针对寻路的速度）都保留，未泛化为「加速度只在移动时生效」。同窗口 [01:59:07]「喂喂幸运没有把他们的速度降为轻 他只是直接切出了不走路的状态」为独",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1TomVBBEK1_p1_34675165371.txt [01:59:17] 逐字为「我们说加速度的概念只是在寻路的状态下 对于寻路的速度进行更新的状态 眩晕是不会更新寻路的速度的」，claim 取该句前半，两个限定（只在寻路状态下、针对寻路的速度）都保留，未泛化为「加速度只在移动时生效」。同窗口 [01:59:07]「喂喂幸运没有把他们的速度降为轻 他只是直接切出了不走路的状态」为独立印证（时间点不同）。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
+   "source_line_time": "01:59:17",
+   "supports": "两个限定均保留，另有 [01:59:07] 独立印证",
+   "derived_correction": "源 [01:59:07]「幸运」= 眩晕、「降为轻」= 降为零（同窗口 [01:59:17] 有正确形式「眩晕是不会更新寻路的速度的」可闭合）；引文原文保留不改。",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "fc1:寻路-37-1#r3",
+  "claim": "眩晕不会更新寻路的速度。",
+  "subject": "眩晕对寻路速度更新的影响",
+  "condition": "对象处于眩晕状态",
+  "scope": "universal",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1TomVBBEK1_p1_34675165371:p33:a6:c50534e7",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
+    "bvid_stem": "BV1TomVBBEK1_p1_34675165371",
+    "recorded_at": "2025-12-12",
+    "speaker": "神祇读神奇",
+    "chapter": "眩晕束缚阻挡不更新寻路速度、惯性滑动及海默入坑实例",
+    "quotes": [
+     {
+      "text": "眩晕是不会更新寻路的速度的",
+      "t_start": 7157,
+      "t_end": 7172,
+      "t_start_upstream": 7157,
+      "t_start_line": 7157,
+      "t_line_label": "01:59:17"
+     }
+    ],
+    "_upstream_quote": "眩晕是不会更新寻路的速度的"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:寻路-37-1",
+   "trial_rule_idx": 3,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1TomVBBEK1_p1_34675165371.txt [01:59:17] 末段逐字为「眩晕是不会更新寻路的速度的」，claim 与之逐字一致，subject 与 condition 均取自源句。claim 未把「不会更新寻路的速度」写成「速度为零」——源同窗口 [01:59:07]「他只是直接切出了不走路的状态」明确了这是切出而非归零，claim 的处理与此一致，未混淆两者。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1TomVBBEK1_p1_34675165371.txt [01:59:17] 末段逐字为「眩晕是不会更新寻路的速度的」，claim 与之逐字一致，subject 与 condition 均取自源句。claim 未把「不会更新寻路的速度」写成「速度为零」——源同窗口 [01:59:07]「他只是直接切出了不走路的状态」明确了这是切出而非归零，claim 的处理与此一致，未混淆两者。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
+   "source_line_time": "01:59:17",
+   "supports": "逐字一致，且未与「切出状态」混淆",
+   "derived_correction": "无。",
+   "derived_correction_disposition": "applied"
+  }
+ }
+]

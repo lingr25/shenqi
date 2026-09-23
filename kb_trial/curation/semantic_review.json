@@ -1,0 +1,6573 @@
+{
+ "schema_version": 1,
+ "scope": "kb_trial/curation/candidates.json 中已入选（decisions=accept）的全部 814 条；只审已入选条目，未重审全库。",
+ "reviewer": "agent (Kimi Code subagent, deepseek) — 单代理逐条读 claim 正文与其所附引文后判定，非独立第三方复核",
+ "method": "逐条读取 claim 正文与 kb_trial/evidence.jsonl 中该条 citation_refs 指向的原始引文（QQ 窗口条读取 qq_cards/cards.jsonl 的 source_spans），按「可独立用于 RAG 的明确机制」这一单一判据判定。判定记录两个互不替代的维度：support（引文是否支持该 claim）与 info_value（该 claim 是否值得入库）。本轮为 claim 层语义内审，不等于证据核听：除 B010 外未回读原视频/原字幕文件逐字核听，因此 support 标 supported 只表示「所附引文支持该 claim」，不表示「已核听原片确认」。",
+ "dimensions": {
+  "support": [
+   "supported",
+   "unsupported",
+   "unread_source"
+  ],
+  "info_value": [
+   "reusable_rule",
+   "instance_only",
+   "opinion",
+   "advice",
+   "void",
+   "no_params",
+   "not_self_contained"
+  ],
+  "verdict": "keep = 可独立用于 RAG 的明确机制；drop = 其余情形",
+  "not_self_contained": "claim 无独立主语或结论对象未定义，逐字引文也不能救。该值与冗余无关：冗余条目会被豁免保留，本类不豁免。"
+ },
+ "self_containment_isolation": {
+  "count": 9,
+  "note": "父代理点名的 4 条。判据是「claim 是否自包含且对象有定义」，不是「引文是否逐字」。每条均已回读源文件/源字幕并把查到的事实写进 reason，不猜新主体、不造对象。",
+  "ids": [
+   "fc1:其他-0-10#r0",
+   "fc1:寻路-37-10#r2",
+   "fc1:寻路-39-7#r4",
+   "fc1:寻路-39-7#r5",
+   "fc1:帧时序与计时器-13-3#r5",
+   "fc1:帧时序与计时器-31-7#r0",
+   "fc1:状态效果-10-6#r4",
+   "fc1:索敌-28-7#r3",
+   "fc1:索敌-3-2#r9"
+  ]
+ },
+ "source_context_checks": [
+  {
+   "entry_id": "B010-event-order-exceptions#r0",
+   "action": "回读源文件上下文",
+   "detail": "引文只到「失衡是单独拎出来处理的」，而 claim 还断言「与连续攻击中抬手有关的部分事件也单独拎出」。已回读 transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt 的 [02:36:08] 行，原文完整包含「然后的话连续攻击中抬手有关的部分事件也是单独拎出来处理的」，故 claim 成立，仅原引文被截断，本条保留；引文截断问题记入验证报告。"
+  }
+ ],
+ "coverage_correction": "本轮重建工单时发现上一版抽样遗漏 2 条已入选条目（fc1:索敌-11-9#r8、fc1:索敌-22-14#r1），本版已补审并计入（812 → 814 条）。两条均已回读原字幕核实引文并判 keep：索敌-11-9#r8 引文「童真部署时以时间为仇恨的干员是同仇恨的」逐字支持；索敌-22-14#r1 引文所在 [40:06] 原文含「这里需要注意一下条件二技能同样也需要攻击冷却清零」，逐字支持。该遗漏属上一版工单生成的口径问题，已在本版修正。",
+ "counts": {
+  "total": 814,
+  "keep": 670,
+  "drop": 144
+ },
+ "drop_by_info_value": {
+  "opinion": 30,
+  "void": 63,
+  "advice": 27,
+  "instance_only": 15,
+  "not_self_contained": 9
+ },
+ "records": [
+  {
+   "entry_id": "B010-event-order-exceptions#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "B020-endpoints-not-gates#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "B022-target-speed-in-path#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "B028-tile-bfs-order#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "B036-path-not-wallhack#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "B069-dir-to-radial#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "B074-imbalance-speed-separate#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "B085-same-frame-unblock#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "B093-halo-needs-collider#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-0-4#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-0-9#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-0-9#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-0-9#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-0-9#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-0-9#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-0-9#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-1-6#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-1-6#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-1-6#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-12-12#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-12-12#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-12-12#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-12-20#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-12-20#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-12-20#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-12-20#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-12-20#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-12-9#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-12-9#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-12-9#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-13-0#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-13-0#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-13-0#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-13-0#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-13-0#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-13-2#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-13-2#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-13-7#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-13-7#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-13-7#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-13-9#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-13-9#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-14-7#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-14-7#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-16-15#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-16-15#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-16-15#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-18-15#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-18-15#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-18-16#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-18-16#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-18-17#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-2-0#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-2-0#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-3-11#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "引文「费用是一个最大的问题」为主观评价，无机制信息。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-3-11#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-4-4#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-4-4#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-4-4#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:伤害结算-4-4#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-1-0#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-1-0#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-1-0#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-1-16#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-1-16#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-1-5#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-1-5#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-1-5#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-1-5#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-1-5#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-10-1#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-10-1#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-10-1#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-10-1#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-10-1#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-10-1#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-10-1#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-10-1#r7",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-10-1#r8",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-10-1#r9",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-10-1#r10",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-10-1#r11",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-10-1#r12",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-10-1#r13",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-10-1#r16",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-10-1#r17",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-10-2#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-10-2#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-10-2#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-10-2#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-10-2#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-10-2#r7",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-10-2#r8",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-10-2#r9",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-11-5#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「位移相关基础设置存在很多变种，其中一例是…」未给出可复用的判定内容。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-11-5#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「该判断可以不做判断」为讲解备注，无机制信息。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-11-7#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-11-7#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-12-0#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-12-0#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-12-0#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-12-0#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-13-2#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「合力是和速度合的」为残句，脱离上下文不可复用。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-13-2#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-14-5#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「可以在拐弯的时候部署一个单位，然后高台去打他」为操作技巧建议，未给出机制。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-15-4#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-15-4#r2",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "instance_only",
+   "reason": "「往右推一点，敌人就会往左走很多」为单次推力方向的现象片段，缺少起止条件与站位信息，无法独立复用。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-15-4#r4",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "只否定他人表述「因果逻辑不对」，未给出正确因果，无可复用信息。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-15-4#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-15-6#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-15-6#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-18-4#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-18-7#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-18-7#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-19-0#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「可以用推拉把怪拉到高台附近」为打法建议，非机制。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-19-0#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "引文「推拉本身还是算是比较下层的 不如阻挡」为强弱评价，非机制。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-2-4#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-2-4#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-2-4#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-2-4#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-2-4#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-2-4#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-2-4#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-22-3#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-22-3#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-22-3#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-22-3#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-22-4#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「寻路速度与失衡速度各自有自己定义的速度」为同义反复，与同组 r1/r2 重复。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-22-4#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-22-4#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-22-4#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-22-4#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-22-5#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-22-5#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-22-5#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-23-1#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-23-1#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-23-1#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-26-15#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-26-15#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-26-15#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-27-6#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-27-6#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-29-10#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-29-10#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-29-10#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-29-10#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-29-6#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-29-6#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-30-3#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-30-3#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-30-5#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-30-6#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-30-7#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-31-1#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-31-1#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-31-2#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-31-2#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-31-2#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-31-2#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-31-5#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「该机制可以让他无视当前的速度」中「该机制」为空指代，通篇未说明所指。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-31-5#r2",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「该机制并不能绝对保证防止越过路径点」同样为空指代，无法独立使用。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-4-14#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-4-2#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-4-5#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-6-2#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-6-9#r7",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:位移-7-4#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-0-10#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "not_self_contained",
+   "reason": "claim 是主播个人测试手段而非机制句，且「可以」的对象未界定。回读 transcripts_txt/BV14gby6LEni_p3_40944668620.txt 的 [03:20]「绑在敌人身上的偏移的话 我可以通过寻路去精确的控制它的坐标 然后去去测到一个五位数的精度」，紧接着 [03:34] 明说「像这种在干员身上的偏移的话 我没有办法测他们」，可知该结论只对敌人生效、对干员不成立，是有条件的一次性实测手段。claim 把主语「我」省掉后，「可以通过寻路精确控制其坐标」被读成机制通则（寻路能控制坐标），与源义不符，属方法/实证冒充机制。不猜补，故隔离。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-1-0#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「无法以该精度调节干员坐标去放置干员」为测量能力自述，非游戏机制。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-1-0#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「实测只能大概确定干员身上偏移的方向在哪里」为测量能力自述。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-1-10#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「合约含金量口径：人少则含金量更高」为外部评价口径，非游戏机制。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-1-17#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-1-17#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-1-9#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「算得有多累就有多难」为难度评价口径，非机制。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-10-4#r3",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「看费用条会更好」为观察建议。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-10-8#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-10-8#r4",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「作为测试都没有资格抱怨」为无关态度评论。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-14-5#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-14-5#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-14-7#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-14-7#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-14-7#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-14-7#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-16-1#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-16-1#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-16-4#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-16-4#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-18-3#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-19-13#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "instance_only",
+   "reason": "「双晶树卖一个，不全卖」是单关经营决策，被当作通则收录；实例冒通则，父代理已点名。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-19-21#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-19-21#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-3-19#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-3-22#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-3-22#r4",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "只泛称「上下方向很多东西不对称」，未给出任何具体不对称项，无可用信息。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-3-22#r5",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「上下方向不对称是比较普遍的情况」为泛述，无具体不对称项。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-7-10#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「推进阵容至少得有一个奶」为阵容建议。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-8-10#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "只称鹰角「原则上可以」因图改怪属性，未给出规则或判别方法。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-8-10#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "只称鹰角「完全有能力」单独改某一关的敌人属性，未给出规则。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-8-10#r3",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「某一关仅在这一关的属性，这东西真的没法写」是作者自述，不含机制信息。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-9-1#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-9-1#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-9-1#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-9-1#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-9-1#r8",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-9-1#r9",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-9-1#r10",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-9-10#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-9-13#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-9-13#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-9-13#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-9-13#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-9-13#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:其他-9-8#r2",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「方向力的好处是可以站在高台上」为使用建议，机制本体由方向力条目覆盖。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-0-11#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-0-11#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-1-13#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-1-13#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-1-13#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-1-13#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-10-10#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「寻路是非常基础、非常重要的东西」为主观评价，无可复用机制。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-10-10#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「必须知道自己何时开技能、敌人什么时候在哪」为攻略建议，非机制陈述。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-10-11#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「对于干员来讲没有坐标的分区分，是时间的问题」为含糊口语，无法解析为可复用规则。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-10-4#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「基础题应做更简单、更直白的直角拐弯」为练习建议。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-10-4#r3",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「无路径点寻路用来学比较差」为学习方法评价。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-13-8#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-13-8#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-14-0#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-14-13#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-14-13#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-14-13#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-14-13#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-14-16#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-14-16#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-14-16#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-14-16#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-14-16#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-14-16#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-14-16#r8",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-14-5#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "instance_only",
+   "reason": "「只有原北猎场有斜走的羊」为单关卡实例分布，不构成通则。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-15-2#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-15-2#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-15-2#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-15-2#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-15-4#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-15-4#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-15-4#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-15-4#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-15-4#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-15-4#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-16-0#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-16-2#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-16-2#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-16-2#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-16-2#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-16-2#r7",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-16-3#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-16-3#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-16-3#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-16-3#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-16-3#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-16-3#r7",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-16-3#r8",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-16-3#r9",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-16-3#r10",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-16-4#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-2-0#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-2-0#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-2-1#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-2-1#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-2-3#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-2-3#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-2-3#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-2-4#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-2-4#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-2-6#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-2-6#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-2-6#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-2-8#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-2-8#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-2-8#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-20-1#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-20-1#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-20-1#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-20-1#r5",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「格子坐标从原点往右加一、往上加一递推」为残句，脱离上下文不成立。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-20-1#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-20-1#r8",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-20-17#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "instance_only",
+   "reason": "「山如果破得早，会让鱼和蛤蟆回不来」为单关卡实例，含关卡专属要素，无法独立复用。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-20-5#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-20-5#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-21-1#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-21-1#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-21-10#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-21-10#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-21-10#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-21-10#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-21-3#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-21-3#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-21-3#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-21-3#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-21-5#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-21-9#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-21-9#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-21-9#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-21-9#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-22-2#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「卡墙当减速用减不了多少速」为战术效果评价，非机制陈述。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-22-2#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「卡墙当减速用充其量提供一点斜方向上的加时」为战术效果评价。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-22-2#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-24-12#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-24-12#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-24-12#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-24-13#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-24-13#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-24-13#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-24-13#r7",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-24-13#r9",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「同一批次中先被推到的记为二一，后被推到的记为二二」为讲解编号约定，非游戏机制。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-26-0#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-26-0#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-26-10#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「用陷阱师可以看见格判对应的这一圈」为工具选择建议。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-26-10#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「隔畔测定敌人格子最好用陷阱师」为工具选择建议。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-26-10#r4",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「没有陷阱师的话很多信息看不出来」为工具依赖说明，非机制。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-26-3#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-26-3#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-26-3#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-26-3#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-26-3#r5",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「是否重新加入队列不会对结果产生影响」为算法实现细节，与同组「不加入队列」条重复。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-27-4#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-27-4#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-27-4#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-27-4#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-27-4#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-27-4#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-27-4#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-27-4#r7",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-27-4#r8",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-27-4#r9",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-27-4#r10",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-27-4#r11",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-27-4#r12",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-27-4#r13",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-27-8#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-27-8#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-27-8#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-28-0#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-28-4#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-28-4#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-28-4#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-28-4#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-28-4#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-28-5#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-28-5#r6",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「时至今日鹰角已不按照这些条条框框设置加速度倍率」为对厂商做法的元评论。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-29-0#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-3-3#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-3-3#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-3-3#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-3-3#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-30-4#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-30-4#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-30-4#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-30-4#r3",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「应用寻路的速度只在寻路过程中改写」为口号式泛述，且与同组 22-4#r1「寻路的速度只在寻路过程中应用」重复；subject 原为「未点名」。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-30-4#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-30-4#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-30-4#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-30-4#r7",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-30-4#r8",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-31-9#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-31-9#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-31-9#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-31-9#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-31-9#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-31-9#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-31-9#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-31-9#r7",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-31-9#r8",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-32-11#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-32-11#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-32-11#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-32-11#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-32-12#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-32-12#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-32-9#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-33-0#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-33-0#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-33-2#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-33-4#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「寻路图格子里面写的数字表示目标」为寻路图读图约定，属讲解工具而非游戏机制。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-33-4#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「寻路图格子外边的数字表示该格的位置」为寻路图读图约定。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-35-10#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-35-10#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-35-10#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-35-10#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-35-9#r2",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「该设置用于防止敌人因移速太快踩不到路径点」中「该设置」为空指代，无法确定所指。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-36-2#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-36-2#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-36-2#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-36-5#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-37-1#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-37-1#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-37-1#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-37-1#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-37-10#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-37-10#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-37-10#r2",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "not_self_contained",
+   "reason": "结论对象「可通过」在 claim 内无定义，须以原邻窗补明已有对象，否则隔离。回读 transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt 的 [02:25:17]-[02:25:58]，原话完整为「在停住状态下／B正力只能垂直于寻路方向／但是他现在的寻路方向是零／他的任何方向均是它的垂直方向／所以任何方向均可通过／因为他在停住」，可知「可通过」指的是 B正力可通过，而非「单位可通过」或「地块可通过」。claim 把「B正力」这一主语省掉后，「任何方向均可通过」在句内无法解析为已知机制对象，且这会改变结论含义（误读成单位可通行）。不猜补，故隔离；同段已有保留的兄弟条 fc1:寻路-37-10#r0「在停住状态下，B正力只能垂直于寻路方向」完整承载该机制，本条属其不完整派生。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-37-10#r3",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「停住状态下的缓慢移动不是要回到原本位置」只有否定，未给出正确成因。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-37-2#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-37-2#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-37-2#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-37-4#r4",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「除眩晕外，阻挡也是一样的」为空指代承接句，脱离上下文不可复用。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-37-9#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-37-9#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-37-9#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-38-0#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-38-1#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-38-1#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-38-1#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-38-1#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-38-1#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-38-3#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-38-3#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-38-3#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-38-3#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-38-3#r7",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-38-3#r8",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-38-4#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-38-4#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-38-4#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-38-6#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-38-6#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-38-6#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-39-3#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「上右下左的寻路规则不是推地块规则，基本上决定了…」表述自相纠缠且未给出准则，无法复用。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-39-5#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「同一组的第一个、第二个和第三个必须处理完一组之后才处理下一组」中「一组」为空指代，脱离讲解不可复用。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-39-7#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-39-7#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-39-7#r4",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "not_self_contained",
+   "reason": "设问残留 + 首词指代悬空，且首尾自我指涉。回读 transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt 的 [13783]-[13786]，原文为「比如说他在这里有一个偏移量／这个偏移量决定了什么呢 决定了从出起点 出生终点 每个路径点都要加这么一个偏移量」。claim 保留了「决定了什么呢」的设问痕迹，首词「这个偏移量」在 claim 内无先行词，句尾又回指同一个「这个偏移量」，形成自我指涉循环。同组 fc1:寻路-39-7#r5 已给出该偏移量的定义，本条属其不完整派生，故隔离。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-39-7#r5",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "not_self_contained",
+   "reason": "首词指代悬空：claim「这个偏移量是实体坐标相对于寻路坐标的」以「这个偏移量」开头，而 claim 内没有任何先行词说明该偏移量是谁的。回读 transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt 的 [13737]「敌人的实体坐标和光标坐标是有偏移的」与 [13800]「对其实可以反过来说 这个偏移量是实体坐标 相对于寻路坐标的」，可知主体是「敌人实体坐标相对寻路坐标的偏移量」。属可修复型缺失，但本轮不替源补主体（不造），故与 r4 一并隔离。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-39-7#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-39-7#r7",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「实体坐标可以基于寻路坐标产生偏移」与同组偏移量条目重复，保留后者。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-39-7#r8",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-39-7#r9",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「实体坐标是你能看的那个东西」为口语解释，非机制。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-40-5#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-40-5#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-42-11#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「罚站中走到某个路径点的指令和平常拐角格那路径点没有任何不同」为否定式比较，未给出机制。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-42-2#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「滚动的球不影响巡逻」为否定式片段，未给出机制。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-42-2#r2",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「他停下来才会影响驯鹿」中「他」为空指代，实体为具体关卡特有单位。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-5-5#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「记不住完整推地块规则时，至少要记…」为记忆建议。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-6-2#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-6-2#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-6-2#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-6-4#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-6-4#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-6-4#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-6-4#r3",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「肉鸽地图里没有临时路径点」为关卡范畴备注，机制本体由同组其它条覆盖。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-7-0#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-7-0#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-7-0#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-7-1#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-7-1#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-7-4#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-7-4#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-7-4#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-8-1#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-8-2#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-8-2#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-8-4#r3",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「VX与VY在向量计算过程中没有任何区别」为数学常识，非方舟机制。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-8-5#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-8-5#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-8-5#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:寻路-8-7#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-10-1#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「入空之后循环相对简单」为空泛过渡语。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-10-1#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-10-1#r8",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-11-3#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-11-8#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「出怪帧确定后即可知道怪何时走到何处」为自明推论，无新机制。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-11-8#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「出怪帧确定后即可知道何时能打到」为自明推论。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-12-10#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-12-10#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-12-3#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-12-8#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-13-3#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-13-3#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-13-3#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-13-3#r5",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "not_self_contained",
+   "reason": "「动画程度的下限」经查为源文本原话、非 ASR 讹字，无需改词；但该 claim 作为独立条目不合格。已回读 subtitles/BV14VZCB1EJR_p1_36119907781.json，sid 3049「不是攻速上限和攻速上限和动画程度的下限」、sid 3052「他会吃到动画长度的下限」、sid 3061「第二是动画程度下限」、sid 3085「他理论上动画程度允许他到那个两针」均为官方字幕原文，故「动画程度」是主播自用术语，不是转写错误。但本条只陈述「两者是两回事」的比较关系，未给出任一侧的定义或数值，属对照半句；其正面内容由同组 fc1:帧时序与计时器-13-3「最短攻击间隔受攻速上限、动画程度下限、三针索敌等共同限制」条完整承载，故隔离。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-13-3#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-13-3#r7",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-13-4#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-13-8#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「PC端性能对攻略很有可能有很大影响」为不确定的体感评价。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-13-8#r2",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「PC端、模拟器和手机都有可能不一样」为不确定的体感陈述，无可复用数值。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-13-8#r3",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「高性能可以比较稳定，但低性能也未必代表不好」为设备评价。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-13-9#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「动画本来就应该各种掉帧」为现象感慨，无机制。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-13-9#r2",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「即使完全不掉帧，波动也不可能完全消失」为定性描述，与同组 #r3/#r4/#r5 的机制句重复。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-13-9#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-13-9#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-13-9#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-14-5#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「无目标时整间隔为前摇加保底后摇…是与动画无关的一种弹道播放」中「弹道播放」指代未在句内闭合。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-15-4#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-15-4#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-17-13#r3",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「大部分图不具有那么高的精度需求」为定性泛述。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-17-3#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-19-0#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「实战中可以发现精确轴与实战不符等方方面面的问题」为空泛陈述。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-19-0#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「严格来讲不是不会算这类轴偏差」为作者自述。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-19-0#r2",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「不可能在该阶段就预言到这类问题」为作者自述。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-19-0#r3",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「操作总是要一步一步来」为泛泛经验谈。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-19-0#r4",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「在更早的步骤要提供更多、更泛用的数据」为方法建议。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-19-2#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「给出这些分段数据的目的是…」为讲解方法自述，非机制。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-27-3#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-27-3#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-27-7#r2",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「在非寻路针上，避障不会触发」为否定式片段，肯定机制由同组其它条覆盖。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-27-7#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-27-7#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-27-7#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-27-7#r7",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-28-5#r3",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「阻挡挤压与阻挡偏移是同一个行为」中「阻挡挤压」未定义，为空指代对照结论。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-28-8#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-28-8#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-28-8#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-28-8#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-28-8#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-28-8#r6",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「在某一逻辑帧内…代理可以结算」为结论条的一个举例说明。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-28-8#r8",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-29-6#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-29-6#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-29-6#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-29-6#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-29-6#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-30-3#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-30-3#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-30-8#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「动画时长有意义，可涉及很广泛的攻击间隔计算」为泛述，无具体机制。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-30-8#r2",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「每个动画具体对应什么并不清楚」为认知边界自述，无机制内容。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-30-9#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「动画数值只是基础数值，是参考」空泛无信息，父代理已点名。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-30-9#r2",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「干员的动画数值不太准」为笼统不确定表述，无法用于检索。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-31-11#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「视觉算法强行算出时间的最大问题…」为对某类工具的通性评价，未给出具体机制门槛。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-31-11#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「只要不是子弹时间，屏幕上的一些画面就不足够可信」为定性判断，无量化条件。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-31-11#r2",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「程序可能把没过帧当成过帧」为不确定性描述，与上两条同属对视觉算法的评述。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-31-7#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "not_self_contained",
+   "reason": "主体未确认为已确认实体，不能猜。claim「简的攻击动画不依赖攻速」的「简」：prts_entities.json 的 operators 与 operator_aliases 中均无「简」；kb_trial/entity_index.json 只有「简妮」→「琴柳」，未含裸「简」。回读 transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt 的 [03:48:27] 段，原文为「像简那种是不依赖攻速」，主播自陈「我想想谁不依赖攻速」，即当场凭记忆举例，未给出可核对的干员身份。既无已确认实体别名，也不得猜为「琴柳」，故隔离。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-31-8#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-31-8#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-31-8#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-32-6#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-32-6#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-35-0#r7",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-35-0#r16",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-36-3#r2",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「需要思考有哪些资源可以调入水」为打轴思路建议，且依赖具体关卡。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-36-5#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-36-5#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-37-1#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-37-1#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-37-1#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-37-5#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-37-5#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-37-5#r4",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「CPU很擅长计算逻辑帧」为常识陈述，非方舟机制。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-37-5#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-45-12#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-45-12#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "instance_only",
+   "reason": "「可用MATLAB程序算出极限返还到该处的时间」为个人工作流描述，非游戏机制。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-46-14#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-46-14#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-46-6#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-46-6#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-46-6#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-47-5#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-47-7#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-47-7#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-48-2#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-53-11#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-54-6#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「需要有能给出费用和全局时间的费用参照物」为打轴方法建议，非机制。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-55-2#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-56-0#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「以宏观钉死再用精细量逆推，结果会有一个范围」为操作方法经验。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-56-0#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「必须有一定的认知基础/解剖基础」为学习建议。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-63-3#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-63-3#r4",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「速度不可能为负」为常识。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-63-3#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-63-3#r8",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-63-7#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-63-7#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-63-7#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-63-7#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-64-11#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「眩晕是多两帧的」缺基准（相对什么多两帧），无单位语境，无法独立复用。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-64-11#r2",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「睡眠是多两帧的」同样缺基准，无法独立复用。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-65-3#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-65-3#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-69-6#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "instance_only",
+   "reason": "「部署三个最长再部署的小车…」为具体测量手法描述，含「直接乘十」等操作细节，非机制。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-70-6#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-70-6#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-70-6#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-70-6#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-70-7#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-70-7#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-70-7#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-70-7#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-73-5#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-73-5#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-74-0#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-74-0#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:帧时序与计时器-76-7#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-11-11#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-11-11#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-11-11#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-14-1#r3",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「打轴器应对概率的能力比赛博塑料稍微强一点」为工具强弱比较。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-14-1#r4",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「应对太过杂的概率仍然很差」为工具评价。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-14-2#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「赛博塑料是开发的一个脚本工具」为外部工具介绍，非方舟机制。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-14-2#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「赛博塑料可以通过文字输入指定操作谁干什么」为外部工具功能描述。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-14-2#r2",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「赛博塑料会在指定的时间和位置操作该干员」为外部工具功能描述。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-14-2#r3",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「赛博塑料的好处是可以如同代理一样」为外部工具评价。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-14-2#r4",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「赛博塑料应对概率的能力很差」为外部工具评价。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-14-2#r5",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「可以提前写多少帧的行为然后自动执行」为外部工具功能描述。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-15-16#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「合约准备第一天要手测出怪帧数，并且需要两个人去校对」为工作流程建议。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-15-16#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「数值准备包含每个tag的检测」为准备工作流程。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-15-16#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-15-16#r3",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「所有数值大体上都要测一遍…至少也得抽样测」为流程建议。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-17-1#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-17-1#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-17-1#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-17-1#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-17-1#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-21-12#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-21-12#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-24-11#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "instance_only",
+   "reason": "「合约切怪是否可优化取决于合约的人数」为具体合约下的人数评论，未给机制参数。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-24-11#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "instance_only",
+   "reason": "「五部署条件下干员使用数不同会导致打法差异非常大」为泛泛打法评论。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-3-12#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "instance_only",
+   "reason": "「通过调整铃兰的开技能时间与技能结束时间，缩短两者间距」为单干员排轴建议，未给规则。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-3-13#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "instance_only",
+   "reason": "「上路爆三条、下路爆两条时，几乎没有资源处理警察」为单关卡排轴讨论。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-3-13#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "instance_only",
+   "reason": "「能处理警察的就只有这俩」中「这俩」为空指代，且属单关卡排轴。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-3-13#r2",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "instance_only",
+   "reason": "「上路本来就比下路快」属单关卡出怪节奏。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-3-13#r3",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "instance_only",
+   "reason": "「要让上路变得更快、变得极快」为单关卡打法操作。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-4-3#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「代码里写的东西最后不一定是实际表现出来的东西」为解包局限的泛述。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-4-3#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「解包得到的那些只是参数」为通性提醒，无具体机制。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-4-3#r2",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「攻击间隔是解包可以找到的参数」为通性提醒。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-4-3#r3",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「实际战斗表现与解包参数基本上不完全一致」为通性提醒。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-5-5#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「永控只是酒神强度的一部分」为主观评价，父代理已点名。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:技能特例-5-5#r2",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「酒神的伤害确实也很可观」为主观评价，与上条同段，一并剔除。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-1-6#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-1-6#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-1-6#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-1-6#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-10-5#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-10-5#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-10-5#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-10-6#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-10-6#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-10-6#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-10-6#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-10-6#r4",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "not_self_contained",
+   "reason": "行为主体未明：claim「它们之间的所有行为都是通过格子上是什么字进行判定的」中的「它们」在 claim 内无着落，subject 字段本身填的就是「未点名或general」。回读 transcripts_txt/BV1g3NC6pEFt_p1_39902972402.txt 的 [1851]，源文「然后他们之间的所有行为 都是通过这个字是什么 然后进行判定的」中的「他们」指前文改写地块字的鱼、书刀、放字等，claim 脱离该上下文后主体不可恢复。（「格子上是什么字」是 claim 自行补明的，这部分没有问题。）主体未明，故隔离。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-10-6#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-11-7#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「控制相互之间独立…」为主观论断，与其后同组条目重复。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-11-7#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「控制之间没有绝对优劣」为强弱评价。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-11-7#r2",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「控制极其吃地形和图tag」为定性评价。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-11-7#r3",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「同类控制可以比高低」为评价口径。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-11-7#r4",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「不同类控制没有办法比高低」为评价口径。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-13-15#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-15-12#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-15-14#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-15-14#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-15-14#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-15-14#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-15-15#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-15-5#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-15-9#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-16-11#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-16-11#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-16-11#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-16-2#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-19-3#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-19-3#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-19-3#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-2-12#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「抵抗和免疫麻痹终究只是对某一波怪的人选考量」为组队思路评价。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-2-13#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-2-13#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-2-13#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-2-13#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-2-7#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「只是零星的抗性就可以决定一个打法的成立和不行」为经验论断。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-2-7#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「只有两个怪有眩晕抗性并不代表眩晕不能用」为组队判断。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-2-7#r2",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「不能过分地把一个东西的抗性直接视为所有怪都有」为经验提醒。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-20-13#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「疗养卡不能反复使用」为具体藏品单点结论，引文仅「疗养卡不行」半句，未闭合。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-20-13#r1",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「是因为不可清除」承接上条，同样未闭合。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-21-3#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-21-3#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-22-12#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-22-12#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-22-15#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-3-10#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-3-10#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-3-10#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-3-10#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-3-7#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-3-7#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-3-7#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-3-7#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-7-2#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-8-0#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-9-10#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-9-10#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-9-10#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:状态效果-9-4#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-11-2#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-11-2#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-11-8#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-11-8#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-11-8#r3",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「对于自身规则无法排序的两个单位，都是打新创建的」与其后同主播口径的「都是打先创建的」直接矛盾；保留更正后版本，本条剔除。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-11-8#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-11-9#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-11-9#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-11-9#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-11-9#r8",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-11-9#r9",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-12-5#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-12-5#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-12-5#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-13-8#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-14-7#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-14-7#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-14-7#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-14-7#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-14-7#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-14-7#r10",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-15-6#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-16-10#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-16-10#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-16-10#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-16-10#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-16-10#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-16-10#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-16-10#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-16-10#r7",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-19-12#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-19-12#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-2-9#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "instance_only",
+   "reason": "「拆弹确实可以进阻挡塑料」为口语确认，主体「拆弹」「阻挡塑料」均未定义，片段不足以独立复用。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-20-10#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-20-10#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-20-12#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-20-12#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-20-12#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-20-12#r5",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "advice",
+   "reason": "「转身音效不明显…会导致判断错误」为经验教训，非机制。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-20-14#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-20-14#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-20-14#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-20-14#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-20-14#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-20-14#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-20-3#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-20-3#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-20-3#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-20-4#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-20-4#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-20-4#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-20-6#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-20-7#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-20-7#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-21-1#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-21-5#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-21-5#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-21-5#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-21-5#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-21-5#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-21-5#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-21-5#r8",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-22-12#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-22-12#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-22-12#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-22-14#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-22-14#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-22-14#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-23-1#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-23-1#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-23-3#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-23-3#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-23-3#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-23-3#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-23-3#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-23-3#r7",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-23-3#r8",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-23-8#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-26-2#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-26-2#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-26-2#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-26-2#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-26-2#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-26-2#r5",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-26-2#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-26-2#r7",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-26-2#r10",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-27-6#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-27-6#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-28-2#r0",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "opinion",
+   "reason": "「锁地板一词因使用者未区分清楚概念」为术语使用评论，未给出该概念的正确定义。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-28-6#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-28-6#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-28-7#r2",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "void",
+   "reason": "「索敌帧决定能否触发这个事」中「这个事」为空指代。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-28-7#r3",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "not_self_contained",
+   "reason": "无独立主语与结论对象，须隔离，不能因引文逐字就收。claim「只要敌我的位置相对固定的话，他就可以无视他自己是怎么部署的」中的「他」在引文里无先行词；回读 transcripts_txt/BV1qReG6XE6W_p3_41897689954.txt 的 [00:11]-[06:15] 附近，主体始终是演示单位与「索尼」，从未点名为可复用的干员名。subject 字段原填「波普」，但该分P 出现「波普」的位置是另一段无关讨论（[56:33] 「有人问波普…结论是在索敌帧的前一帧 开技能会触发异常现象」），与 [04:20] 本条不是同一话题，故 subject 属错填，不猜新名，直接隔离。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-28-7#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-3-2#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-3-2#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-3-2#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-3-2#r6",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-3-2#r7",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-3-2#r8",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-3-2#r9",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "not_self_contained",
+   "reason": "属操作建议而非机制陈述（父代理点名的「建议」类）。回读 transcripts_txt/BV14y8269EbS_p2_41167359561.txt 的 [4591]，原文即为「所以我们这里的小技巧是不被抢人头 我们卡了一下索敌帧 保证索敌的时候 这个人索敌到前摇 索敌的前摇阶段 这个人不会死」，主播自陈是「小技巧」；上文 [4539]「你能不能通过操作去规避」也把话题定性为操作层面。claim 保留「小技巧」字样，前半句「不被抢人头」是战绩目标而非机制，后半句「卡一下索敌帧」是打法操作。本条不给机制定义、不给条件参数，属建议冒充机制，故隔离。同分P 的机制本体另有条目承载。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-30-6#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-30-6#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-31-1#r4",
+   "verdict": "drop",
+   "support": "supported",
+   "info_value": "instance_only",
+   "reason": "「EW是三段索敌」为单干员实例标注，未给判定规则。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-31-4#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-31-4#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-31-4#r2",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-31-4#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文支持该句（与同组另一条内容重叠，属冗余而非无价值，重复只影响召回排序不影响知识成立）。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-31-4#r4",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-9-15#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-9-15#r1",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "fc1:索敌-9-15#r3",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "window:w000006#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "window:w000012#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "window:w000027#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "window:w000031#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "窗口内 span「changableMotionMode在定义飞行」「起飞只防地面单位索敌」「buff和状态机都没了」构成可复用结论；但该条 claim 文本是窗口标题而非机制句，使用时须以窗口内 span 为准，这一措辞缺口如实记录。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "window:w000033#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "window:w000036#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "窗口内 span「群攻干员的伤害顺序…从先到后」「每次部署给全局仇恨计数硬性+1来规避同仇恨值」「不看仇恨值…同帧依旧是先部署」构成可复用结论；但「4号：仇恨降序 越晚的仇恨应该越高」一句属未确认推测，不应引用；该条 claim 文本是窗口标题而非机制句，措辞缺口如实记录。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "window:w000037#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "window:w000040#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "window:w000041#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "window:w000042#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  {
+   "entry_id": "window:w000044#r0",
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "窗口内 span「嘲讽就是+1000仇恨」「嘲讽一直正常生效」「被干员超过了那是干员的事」构成可复用结论；末尾「阿怎么这么正常」属未闭合现场观测，不应引用；该条 claim 文本是窗口标题而非机制句，措辞缺口如实记录。",
+   "reviewer_type": "agent"
+  }
+ ]
+}

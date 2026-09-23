@@ -1,0 +1,2132 @@
+{
+ "note": "本清单说明生成器修复后哪些工单的读源依据发生变化，供审核员只重读受影响的部分。仅列 seq 与原因，不含任何昵称/QQ号/群号。",
+ "what_changed": {
+  "was_truncated": "旧版正文本截断到 280 字符，新版为全文。（实测：旧版取数范围内的消息没有一条超过 280 字符，因此该缺陷是**潜在**的、「完整」这一说法不成立，但并未实际切掉任何已交付的 seq。超过 280 字符的消息都在新版新增范围内，因此记为 missing_before。）",
+  "identity_redacted": "新版去除了该消息里的身份信息（正文昵称/账号数字/@对象改写），机制数值保留。",
+  "missing_before": "旧版取数范围过窄而整条漏掉的消息，新版补入。",
+  "dropped_before_only": "旧版按时间范围误取、而本窗并不包含的消息，新版不再收录。"
+ },
+ "participant_roster_note": "日报机器人的 `参与者:` 名单行也曾泄漏群昵称。修前只改写第一条名单行，一条 4.4k 字符的报告里有 12 条名单行、其余 11 条原样带昵称出厂；现改为逐行改写全部 `参与者:` 名单。此修复只影响名单行文本，不改变消息条数与 seq，故未计入 affected。",
+ "truncation_verified": {
+  "old_slice_messages_over_280_chars": 0,
+  "note": "生成前后均以实测统计；旧版未实际截断任何已交付消息，此条为口径修正而非内容修复。"
+ },
+ "anchoring_note": "旧版按 windows.jsonl 的 start_ts/end_ts 取数，新版按本窗 source_msg_ids 取连续消息块。实测两边时间口径一致（重叠 2706/2707 条），偏移 +3600 秒在两侧相互抵消，因此问题不是「取错时段」，而是时间范围过窄导致漏取。",
+ "unaffected_note": "未列出的工单其 raw_messages 逐条一致，审核员无需重读。",
+ "sources": {
+  "messages_before_total": 2707,
+  "messages_after_total": 3206
+ },
+ "affected_counts": {
+  "missing_before": 75,
+  "identity_redacted": 5,
+  "dropped_before_only": 7
+ },
+ "affected_workorders": 80,
+ "total_workorders": 80,
+ "total_changed_messages": 899,
+ "entries": [
+  {
+   "workorder_id": "qq_wo_001",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_001.json",
+   "window_id": "w000013",
+   "message_count_before": 60,
+   "message_count_after": 71,
+   "changes_total": 20,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    2,
+    4,
+    5,
+    16,
+    18,
+    19,
+    21,
+    22,
+    24,
+    26,
+    27,
+    31,
+    38,
+    41,
+    42,
+    48,
+    52,
+    54,
+    65,
+    69
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_002",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_002.json",
+   "window_id": "w000078",
+   "message_count_before": 60,
+   "message_count_after": 65,
+   "changes_total": 10,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    7,
+    11,
+    13,
+    20,
+    25,
+    32,
+    37,
+    45,
+    50,
+    61
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_003",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_003.json",
+   "window_id": "w000105",
+   "message_count_before": 21,
+   "message_count_after": 23,
+   "changes_total": 4,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    2,
+    4,
+    20,
+    22
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_004",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_004.json",
+   "window_id": "w000107",
+   "message_count_before": 42,
+   "message_count_after": 52,
+   "changes_total": 17,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    1,
+    11,
+    13,
+    16,
+    19,
+    27,
+    32,
+    35,
+    37,
+    40,
+    42,
+    43,
+    44,
+    48,
+    50,
+    51,
+    52
+   ],
+   "reasons": [
+    "identity_redacted",
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_005",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_005.json",
+   "window_id": "w000118",
+   "message_count_before": 60,
+   "message_count_after": 62,
+   "changes_total": 12,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    6,
+    7,
+    14,
+    20,
+    21,
+    24,
+    29,
+    30,
+    44,
+    51,
+    58,
+    59
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_006",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_006.json",
+   "window_id": "w000307",
+   "message_count_before": 15,
+   "message_count_after": 17,
+   "changes_total": 5,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    4,
+    5,
+    6,
+    12,
+    16
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_007",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_007.json",
+   "window_id": "w000324",
+   "message_count_before": 47,
+   "message_count_after": 59,
+   "changes_total": 22,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    8,
+    10,
+    14,
+    15,
+    16,
+    19,
+    20,
+    22,
+    23,
+    29,
+    30,
+    31,
+    39,
+    40,
+    48,
+    49,
+    50,
+    53,
+    55,
+    57,
+    58,
+    59
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_008",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_008.json",
+   "window_id": "w000425",
+   "message_count_before": 13,
+   "message_count_after": 16,
+   "changes_total": 6,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    1,
+    6,
+    8,
+    9,
+    12,
+    15
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_009",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_009.json",
+   "window_id": "w000570",
+   "message_count_before": 20,
+   "message_count_after": 21,
+   "changes_total": 2,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    5,
+    6
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_010",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_010.json",
+   "window_id": "w000679",
+   "message_count_before": 45,
+   "message_count_after": 53,
+   "changes_total": 13,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    8,
+    9,
+    12,
+    14,
+    19,
+    22,
+    27,
+    38,
+    39,
+    42,
+    45,
+    48,
+    49
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_011",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_011.json",
+   "window_id": "w000810",
+   "message_count_before": 58,
+   "message_count_after": 70,
+   "changes_total": 17,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    3,
+    7,
+    14,
+    19,
+    20,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    38,
+    40,
+    45,
+    55,
+    61,
+    70
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_012",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_012.json",
+   "window_id": "w000819",
+   "message_count_before": 60,
+   "message_count_after": 71,
+   "changes_total": 25,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    2,
+    3,
+    5,
+    7,
+    8,
+    9,
+    14,
+    15,
+    17,
+    19,
+    20,
+    23,
+    26,
+    29,
+    32,
+    33,
+    34,
+    37,
+    44,
+    46,
+    54,
+    55,
+    58,
+    61,
+    65
+   ],
+   "reasons": [
+    "identity_redacted",
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_013",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_013.json",
+   "window_id": "w000937",
+   "message_count_before": 18,
+   "message_count_after": 22,
+   "changes_total": 6,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    2,
+    4,
+    5,
+    10,
+    11,
+    17
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_014",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_014.json",
+   "window_id": "w001078",
+   "message_count_before": 60,
+   "message_count_after": 79,
+   "changes_total": 22,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    3,
+    4,
+    6,
+    16,
+    19,
+    21,
+    22,
+    23,
+    31,
+    32,
+    33,
+    37,
+    38,
+    39,
+    45,
+    57,
+    58,
+    63,
+    70,
+    73,
+    76,
+    77
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_015",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_015.json",
+   "window_id": "w001101",
+   "message_count_before": 30,
+   "message_count_after": 60,
+   "changes_total": 35,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    3,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    13,
+    14,
+    16,
+    17,
+    18,
+    19,
+    22,
+    24,
+    26,
+    27,
+    28,
+    29,
+    31,
+    32,
+    34,
+    36,
+    37,
+    38,
+    39,
+    40,
+    42,
+    46,
+    48,
+    49,
+    53,
+    56,
+    57
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_016",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_016.json",
+   "window_id": "w001135",
+   "message_count_before": 24,
+   "message_count_after": 30,
+   "changes_total": 15,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    9,
+    12,
+    13,
+    14,
+    17,
+    20,
+    21,
+    23,
+    24,
+    27
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_017",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_017.json",
+   "window_id": "w001232",
+   "message_count_before": 60,
+   "message_count_after": 68,
+   "changes_total": 21,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    1,
+    2,
+    6,
+    7,
+    8,
+    9,
+    13,
+    14,
+    20,
+    22,
+    31,
+    34,
+    38,
+    43,
+    44,
+    46,
+    47,
+    50,
+    57,
+    61,
+    63
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_018",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_018.json",
+   "window_id": "w001250",
+   "message_count_before": 28,
+   "message_count_after": 43,
+   "changes_total": 21,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    5,
+    7,
+    8,
+    9,
+    10,
+    12,
+    13,
+    14,
+    15,
+    19,
+    21,
+    22,
+    23,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    40
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_019",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_019.json",
+   "window_id": "w001276",
+   "message_count_before": 37,
+   "message_count_after": 55,
+   "changes_total": 21,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    7,
+    11,
+    16,
+    18,
+    21,
+    22,
+    23,
+    26,
+    27,
+    32,
+    33,
+    36,
+    37,
+    38,
+    41,
+    44,
+    45,
+    46,
+    47,
+    48,
+    52
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_020",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_020.json",
+   "window_id": "w001294",
+   "message_count_before": 42,
+   "message_count_after": 45,
+   "changes_total": 17,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    2,
+    4,
+    9,
+    10,
+    11,
+    12,
+    13,
+    20,
+    22,
+    25,
+    26,
+    28,
+    29,
+    31,
+    32,
+    36,
+    37
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_021",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_021.json",
+   "window_id": "w000032",
+   "message_count_before": 27,
+   "message_count_after": 34,
+   "changes_total": 12,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    4,
+    8,
+    11,
+    12,
+    15,
+    16,
+    21,
+    23,
+    24,
+    26,
+    27,
+    30
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_022",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_022.json",
+   "window_id": "w000036",
+   "message_count_before": 32,
+   "message_count_after": 38,
+   "changes_total": 9,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    2,
+    5,
+    6,
+    7,
+    9,
+    10,
+    13,
+    24,
+    30
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_023",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_023.json",
+   "window_id": "w000038",
+   "message_count_before": 60,
+   "message_count_after": 68,
+   "changes_total": 20,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    4,
+    6,
+    10,
+    12,
+    14,
+    17,
+    19,
+    20,
+    22,
+    23,
+    35,
+    37,
+    38,
+    41,
+    43,
+    45,
+    47,
+    49,
+    50,
+    52
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_024",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_024.json",
+   "window_id": "w000041",
+   "message_count_before": 17,
+   "message_count_after": 22,
+   "changes_total": 9,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    2,
+    3,
+    8,
+    9,
+    12,
+    13,
+    16,
+    18,
+    20
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_025",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_025.json",
+   "window_id": "w000047",
+   "message_count_before": 60,
+   "message_count_after": 68,
+   "changes_total": 19,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    7,
+    9,
+    21,
+    25,
+    26,
+    28,
+    31,
+    38,
+    43,
+    47,
+    49,
+    52,
+    53,
+    54,
+    57,
+    58,
+    59,
+    60,
+    61
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_026",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_026.json",
+   "window_id": "w000048",
+   "message_count_before": 24,
+   "message_count_after": 27,
+   "changes_total": 7,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    7,
+    10,
+    14,
+    15,
+    21,
+    22,
+    23
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_027",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_027.json",
+   "window_id": "w000049",
+   "message_count_before": 27,
+   "message_count_after": 29,
+   "changes_total": 2,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    4,
+    28
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_028",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_028.json",
+   "window_id": "w000050",
+   "message_count_before": 17,
+   "message_count_after": 17,
+   "changes_total": 3,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    3,
+    4,
+    12
+   ],
+   "reasons": []
+  },
+  {
+   "workorder_id": "qq_wo_029",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_029.json",
+   "window_id": "w000055",
+   "message_count_before": 20,
+   "message_count_after": 26,
+   "changes_total": 9,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    5,
+    10,
+    12,
+    13,
+    14,
+    20,
+    22,
+    23,
+    24
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_030",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_030.json",
+   "window_id": "w000056",
+   "message_count_before": 26,
+   "message_count_after": 32,
+   "changes_total": 8,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    3,
+    8,
+    12,
+    15,
+    26,
+    27,
+    28,
+    30
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_031",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_031.json",
+   "window_id": "w000060",
+   "message_count_before": 11,
+   "message_count_after": 14,
+   "changes_total": 3,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    2,
+    6,
+    13
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_032",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_032.json",
+   "window_id": "w000063",
+   "message_count_before": 60,
+   "message_count_after": 67,
+   "changes_total": 11,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    4,
+    5,
+    13,
+    22,
+    29,
+    38,
+    44,
+    45,
+    52,
+    61,
+    62
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_033",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_033.json",
+   "window_id": "w000064",
+   "message_count_before": 48,
+   "message_count_after": 60,
+   "changes_total": 16,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    2,
+    6,
+    7,
+    9,
+    13,
+    15,
+    18,
+    20,
+    24,
+    32,
+    33,
+    42,
+    43,
+    46,
+    56,
+    58
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_034",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_034.json",
+   "window_id": "w000073",
+   "message_count_before": 48,
+   "message_count_after": 51,
+   "changes_total": 12,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    5,
+    8,
+    12,
+    13,
+    16,
+    19,
+    22,
+    27,
+    28,
+    39,
+    48,
+    49
+   ],
+   "reasons": [
+    "identity_redacted",
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_035",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_035.json",
+   "window_id": "w000074",
+   "message_count_before": 35,
+   "message_count_after": 42,
+   "changes_total": 12,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    4,
+    6,
+    7,
+    10,
+    11,
+    13,
+    20,
+    25,
+    26,
+    33,
+    34,
+    40
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_036",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_036.json",
+   "window_id": "w000079",
+   "message_count_before": 13,
+   "message_count_after": 15,
+   "changes_total": 2,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    10,
+    12
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_037",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_037.json",
+   "window_id": "w000084",
+   "message_count_before": 16,
+   "message_count_after": 18,
+   "changes_total": 3,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    12,
+    13,
+    17
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_038",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_038.json",
+   "window_id": "w000088",
+   "message_count_before": 45,
+   "message_count_after": 49,
+   "changes_total": 12,
+   "dropped_before_only": 1,
+   "needs_reread": true,
+   "changed_seq": [
+    2,
+    6,
+    8,
+    9,
+    25,
+    27,
+    28,
+    35,
+    40,
+    41,
+    42,
+    48
+   ],
+   "reasons": [
+    "dropped_before_only",
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_039",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_039.json",
+   "window_id": "w000089",
+   "message_count_before": 60,
+   "message_count_after": 70,
+   "changes_total": 19,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    7,
+    15,
+    21,
+    22,
+    25,
+    26,
+    27,
+    31,
+    32,
+    37,
+    42,
+    47,
+    48,
+    49,
+    53,
+    61,
+    66,
+    67,
+    69
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_040",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_040.json",
+   "window_id": "w000092",
+   "message_count_before": 26,
+   "message_count_after": 30,
+   "changes_total": 7,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    1,
+    5,
+    10,
+    11,
+    22,
+    24,
+    25
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_041",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_041.json",
+   "window_id": "w000031",
+   "message_count_before": 38,
+   "message_count_after": 42,
+   "changes_total": 11,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    2,
+    3,
+    9,
+    13,
+    15,
+    16,
+    18,
+    31,
+    32,
+    36,
+    37
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_042",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_042.json",
+   "window_id": "w000061",
+   "message_count_before": 5,
+   "message_count_after": 5,
+   "changes_total": 1,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    2
+   ],
+   "reasons": []
+  },
+  {
+   "workorder_id": "qq_wo_043",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_043.json",
+   "window_id": "w000077",
+   "message_count_before": 25,
+   "message_count_after": 27,
+   "changes_total": 5,
+   "dropped_before_only": 1,
+   "needs_reread": true,
+   "changed_seq": [
+    8,
+    14,
+    17,
+    19,
+    22
+   ],
+   "reasons": [
+    "dropped_before_only",
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_044",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_044.json",
+   "window_id": "w000082",
+   "message_count_before": 60,
+   "message_count_after": 71,
+   "changes_total": 20,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    2,
+    11,
+    12,
+    14,
+    15,
+    17,
+    21,
+    23,
+    28,
+    29,
+    31,
+    36,
+    51,
+    53,
+    56,
+    60,
+    63,
+    67,
+    69,
+    70
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_045",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_045.json",
+   "window_id": "w000111",
+   "message_count_before": 60,
+   "message_count_after": 71,
+   "changes_total": 16,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    5,
+    8,
+    16,
+    20,
+    22,
+    24,
+    26,
+    31,
+    33,
+    35,
+    39,
+    49,
+    52,
+    56,
+    61,
+    62
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_046",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_046.json",
+   "window_id": "w000123",
+   "message_count_before": 17,
+   "message_count_after": 20,
+   "changes_total": 10,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    1,
+    2,
+    5,
+    7,
+    8,
+    10,
+    13,
+    15,
+    18,
+    20
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_047",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_047.json",
+   "window_id": "w000140",
+   "message_count_before": 41,
+   "message_count_after": 45,
+   "changes_total": 8,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    1,
+    5,
+    11,
+    15,
+    25,
+    27,
+    42,
+    43
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_048",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_048.json",
+   "window_id": "w000158",
+   "message_count_before": 28,
+   "message_count_after": 38,
+   "changes_total": 20,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    12,
+    13,
+    14,
+    16,
+    18,
+    19,
+    21,
+    22,
+    25,
+    26,
+    29,
+    30,
+    31,
+    37
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_049",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_049.json",
+   "window_id": "w000177",
+   "message_count_before": 18,
+   "message_count_after": 17,
+   "changes_total": 1,
+   "dropped_before_only": 1,
+   "needs_reread": true,
+   "changed_seq": [
+    15
+   ],
+   "reasons": [
+    "dropped_before_only"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_050",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_050.json",
+   "window_id": "w000196",
+   "message_count_before": 24,
+   "message_count_after": 27,
+   "changes_total": 7,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    2,
+    3,
+    8,
+    9,
+    15,
+    20,
+    21
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_051",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_051.json",
+   "window_id": "w000202",
+   "message_count_before": 20,
+   "message_count_after": 28,
+   "changes_total": 13,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    1,
+    3,
+    4,
+    5,
+    10,
+    11,
+    14,
+    15,
+    17,
+    19,
+    22,
+    23,
+    28
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_052",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_052.json",
+   "window_id": "w000209",
+   "message_count_before": 18,
+   "message_count_after": 18,
+   "changes_total": 1,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    18
+   ],
+   "reasons": []
+  },
+  {
+   "workorder_id": "qq_wo_053",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_053.json",
+   "window_id": "w000220",
+   "message_count_before": 17,
+   "message_count_after": 21,
+   "changes_total": 6,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    2,
+    3,
+    6,
+    8,
+    11,
+    14
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_054",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_054.json",
+   "window_id": "w000250",
+   "message_count_before": 45,
+   "message_count_after": 53,
+   "changes_total": 21,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    5,
+    7,
+    13,
+    14,
+    15,
+    16,
+    18,
+    20,
+    21,
+    24,
+    31,
+    34,
+    37,
+    38,
+    43,
+    44,
+    45,
+    47,
+    49,
+    51,
+    53
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_055",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_055.json",
+   "window_id": "w000271",
+   "message_count_before": 60,
+   "message_count_after": 65,
+   "changes_total": 14,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    2,
+    3,
+    4,
+    7,
+    8,
+    10,
+    15,
+    18,
+    23,
+    41,
+    48,
+    49,
+    51,
+    54
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_056",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_056.json",
+   "window_id": "w000300",
+   "message_count_before": 31,
+   "message_count_after": 41,
+   "changes_total": 11,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    2,
+    3,
+    4,
+    5,
+    11,
+    13,
+    16,
+    19,
+    23,
+    38,
+    40
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_057",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_057.json",
+   "window_id": "w000315",
+   "message_count_before": 52,
+   "message_count_after": 59,
+   "changes_total": 14,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    10,
+    12,
+    13,
+    17,
+    21,
+    25,
+    32,
+    33,
+    34,
+    42,
+    51,
+    53,
+    54,
+    57
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_058",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_058.json",
+   "window_id": "w000316",
+   "message_count_before": 17,
+   "message_count_after": 21,
+   "changes_total": 8,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    3,
+    5,
+    8,
+    9,
+    10,
+    13,
+    19,
+    20
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_059",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_059.json",
+   "window_id": "w000329",
+   "message_count_before": 60,
+   "message_count_after": 74,
+   "changes_total": 16,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    2,
+    3,
+    6,
+    20,
+    21,
+    25,
+    35,
+    40,
+    42,
+    46,
+    49,
+    51,
+    53,
+    61,
+    64,
+    72
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_060",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_060.json",
+   "window_id": "w000348",
+   "message_count_before": 17,
+   "message_count_after": 25,
+   "changes_total": 9,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    1,
+    9,
+    10,
+    11,
+    12,
+    14,
+    19,
+    20,
+    22
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_061",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_061.json",
+   "window_id": "w000059",
+   "message_count_before": 11,
+   "message_count_after": 11,
+   "changes_total": 1,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    6
+   ],
+   "reasons": []
+  },
+  {
+   "workorder_id": "qq_wo_062",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_062.json",
+   "window_id": "w000072",
+   "message_count_before": 17,
+   "message_count_after": 19,
+   "changes_total": 4,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    5,
+    6,
+    8,
+    14
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_063",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_063.json",
+   "window_id": "w000363",
+   "message_count_before": 30,
+   "message_count_after": 31,
+   "changes_total": 5,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    7,
+    11,
+    25,
+    26,
+    30
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_064",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_064.json",
+   "window_id": "w000389",
+   "message_count_before": 29,
+   "message_count_after": 40,
+   "changes_total": 13,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    1,
+    5,
+    8,
+    9,
+    13,
+    14,
+    17,
+    20,
+    23,
+    26,
+    36,
+    38,
+    39
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_065",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_065.json",
+   "window_id": "w000487",
+   "message_count_before": 19,
+   "message_count_after": 25,
+   "changes_total": 6,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    2,
+    4,
+    9,
+    10,
+    19,
+    21
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_066",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_066.json",
+   "window_id": "w000488",
+   "message_count_before": 14,
+   "message_count_after": 15,
+   "changes_total": 2,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    8,
+    11
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_067",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_067.json",
+   "window_id": "w000510",
+   "message_count_before": 9,
+   "message_count_after": 11,
+   "changes_total": 3,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    5,
+    8,
+    10
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_068",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_068.json",
+   "window_id": "w000611",
+   "message_count_before": 60,
+   "message_count_after": 65,
+   "changes_total": 16,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    4,
+    6,
+    8,
+    9,
+    15,
+    21,
+    27,
+    35,
+    40,
+    43,
+    44,
+    45,
+    48,
+    51,
+    52,
+    53
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_069",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_069.json",
+   "window_id": "w000781",
+   "message_count_before": 24,
+   "message_count_after": 26,
+   "changes_total": 4,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    11,
+    12,
+    18,
+    24
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_070",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_070.json",
+   "window_id": "w000796",
+   "message_count_before": 6,
+   "message_count_after": 7,
+   "changes_total": 1,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    5
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_071",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_071.json",
+   "window_id": "w001044",
+   "message_count_before": 25,
+   "message_count_after": 31,
+   "changes_total": 8,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    6,
+    7,
+    10,
+    11,
+    19,
+    24,
+    27,
+    30
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_072",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_072.json",
+   "window_id": "w001050",
+   "message_count_before": 61,
+   "message_count_after": 80,
+   "changes_total": 26,
+   "dropped_before_only": 1,
+   "needs_reread": true,
+   "changed_seq": [
+    3,
+    12,
+    15,
+    16,
+    17,
+    18,
+    20,
+    23,
+    24,
+    25,
+    26,
+    27,
+    30,
+    31,
+    42,
+    46,
+    47,
+    52,
+    53,
+    56,
+    57,
+    58,
+    64,
+    65,
+    71,
+    74
+   ],
+   "reasons": [
+    "dropped_before_only",
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_073",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_073.json",
+   "window_id": "w001365",
+   "message_count_before": 28,
+   "message_count_after": 29,
+   "changes_total": 3,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    3,
+    22,
+    27
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_074",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_074.json",
+   "window_id": "w001418",
+   "message_count_before": 33,
+   "message_count_after": 46,
+   "changes_total": 20,
+   "dropped_before_only": 1,
+   "needs_reread": true,
+   "changed_seq": [
+    2,
+    6,
+    9,
+    10,
+    11,
+    12,
+    14,
+    16,
+    17,
+    18,
+    19,
+    20,
+    22,
+    24,
+    27,
+    36,
+    40,
+    42,
+    43,
+    46
+   ],
+   "reasons": [
+    "dropped_before_only",
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_075",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_075.json",
+   "window_id": "w001465",
+   "message_count_before": 21,
+   "message_count_after": 26,
+   "changes_total": 10,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    3,
+    5,
+    6,
+    10,
+    11,
+    14,
+    15,
+    16,
+    19,
+    21
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_076",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_076.json",
+   "window_id": "w001472",
+   "message_count_before": 34,
+   "message_count_after": 36,
+   "changes_total": 7,
+   "dropped_before_only": 1,
+   "needs_reread": true,
+   "changed_seq": [
+    9,
+    12,
+    13,
+    14,
+    24,
+    34,
+    36
+   ],
+   "reasons": [
+    "dropped_before_only",
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_077",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_077.json",
+   "window_id": "w001473",
+   "message_count_before": 49,
+   "message_count_after": 52,
+   "changes_total": 9,
+   "dropped_before_only": 1,
+   "needs_reread": true,
+   "changed_seq": [
+    2,
+    4,
+    8,
+    28,
+    31,
+    36,
+    42,
+    43,
+    51
+   ],
+   "reasons": [
+    "dropped_before_only",
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_078",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_078.json",
+   "window_id": "w001680",
+   "message_count_before": 50,
+   "message_count_after": 56,
+   "changes_total": 16,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    3,
+    5,
+    6,
+    8,
+    9,
+    10,
+    11,
+    16,
+    19,
+    34,
+    35,
+    36,
+    43,
+    46,
+    54,
+    56
+   ],
+   "reasons": [
+    "identity_redacted",
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_079",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_079.json",
+   "window_id": "w001681",
+   "message_count_before": 23,
+   "message_count_after": 28,
+   "changes_total": 10,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    3,
+    5,
+    13,
+    14,
+    15,
+    20,
+    21,
+    22,
+    25,
+    27
+   ],
+   "reasons": [
+    "missing_before"
+   ]
+  },
+  {
+   "workorder_id": "qq_wo_080",
+   "file": "kb_trial/curation/qq_expansion/workorders/qq_wo_080.json",
+   "window_id": "w001780",
+   "message_count_before": 39,
+   "message_count_after": 45,
+   "changes_total": 17,
+   "dropped_before_only": 0,
+   "needs_reread": true,
+   "changed_seq": [
+    6,
+    7,
+    9,
+    10,
+    11,
+    15,
+    17,
+    19,
+    21,
+    25,
+    28,
+    30,
+    32,
+    34,
+    42,
+    43,
+    44
+   ],
+   "reasons": [
+    "identity_redacted",
+    "missing_before"
+   ]
+  }
+ ]
+}

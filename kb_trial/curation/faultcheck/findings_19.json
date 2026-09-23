@@ -1,0 +1,333 @@
+{
+ "chunk": "19",
+ "reviewed": 50,
+ "faulty": [
+  {
+   "id": "qq_expansion:w000254:c01",
+   "faults": [
+    {
+     "type": "evidence_mismatch",
+     "detail": "引文 seq 56「元素爆条固定6000」在全窗语境里与测试靶血量重合：同窗 seq 38（0f17ac97）先给出「6000血，0元素抗性，抵挡物理/法术伤害」，seq 39「被酒神爆条稳定0血」。原文从未区分「爆条伤害=6000」与「6000血靶被爆条打死（6000 可能只是下限）」两种读法，claim 却写成「元素爆条造成的伤害是固定的 6000」这一跨元素类型的机制常数；本窗只涉及酒神这一种元素，claim 的「元素爆条」属外推。",
+     "fix": "改写为「酒神的元素爆条在 6000 血、0 元素抗性靶上稳定打出 0 血（原文只说『固定6000』）」并补引 seq 38/39；仅凭 seq 56 一条不宜断言跨元素固定值"
+    },
+    {
+     "type": "number_suspect",
+     "detail": "6000 与同窗靶体血量完全同值，存在「观察下限」被写成「机制固定值」的风险；条目 limitations 只提「是否随元素类型或版本变化未说明」，未提靶血重合这一更根本的疑点。",
+     "fix": "在 limitations 记明 6000 与靶血同值，或 demote 待复核"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w000267:c01",
+   "faults": [
+    {
+     "type": "asr_error",
+     "detail": "引文 seq 45「静态也闯」的「闯」应为「创」（创伤）：同窗 seq 42（1e95af8e）写「我说非静态创伤（）」，可见这段讨论的用词是「创伤」。条目 limitations 却把「闯」当成「原文用字，未展开其含义」，未识别错字，claim 又据此直译成「静态（不动）时同样会造成伤害」。",
+     "fix": "引文保真不动，但在 limitations / derived_text_repairs 记明「闯」应为「创（创伤）」；claim 用「创伤」并标注原字"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w000375:c01",
+   "faults": [
+    {
+     "type": "overclaim",
+     "detail": "该规则出自群友 15f865a0（seq 31），他本人随后说「不过我没研究太深不知道完不完整」（seq 35）；主播 589e9b6d 立即回「你知道的肯定是不够的」（seq 30）与「嗯，但是不止如此」（seq 33）。条目把这些明确的不完整声明全部抹掉，claim 与 subject（「地图出怪的时间偏移构成」）都把它写成构成法则，scope 也标为 general_mechanism。",
+     "fix": "改写为「（群友提出并自述不完整）每只怪累计偏移1帧；主播补充『不止如此』」，并保留 seq 30/33/35 的限制，或 demote"
+    },
+    {
+     "type": "evidence_mismatch",
+     "detail": "第 3 条引文 seq 21「时间的偏移还是坐标的偏移」是提问句，review.reason 却写成「同一发言者在邻窗（w000376）对同一命题的重申（『红线，怪物信息这些都算一只怪…』）」——引文文本与所述功能不符，且该句对结论没有任何支持作用。",
+     "fix": "删掉 seq 21 引文，或把 reason 改述为「同窗他人追问偏移是时间还是坐标」"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w000376:c02",
+   "faults": [
+    {
+     "type": "not_self_contained",
+     "detail": "claim 直接沿用原句的代词：「关卡控制器里它的每个操作 +1 帧」——单读不知「它」指什么；review.reason 自承「原文未点名『它』的完整称谓（本窗只以回指形式出现），本审按同窗上下文写为『关卡控制器里的』」，即主体是审稿人补的。「每个操作+1帧」的方向（每个操作多占 1 帧，还是操作表逐帧推进）原文也没说明，条目 limitations 亦承认「『每个操作』是否含预告类操作用一帧，见 excluded 中的待定项」。",
+     "fix": "删除，或与 w000376:c01 合并成一条并把主体与「+1帧」含义写清；单条保留须先补出处"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w000482:c01",
+   "faults": [
+    {
+     "type": "overclaim",
+     "detail": "结论所依据的两句都是推测语气：seq 12「应该是以干员朝向建系」、seq 14「或者哪里有根据干员朝向做旋转」；提问方 seq 8 也在问「是yj这么显示，但是实际还是正常坐标系吧）」，主播自己在 seq 18 说「这里的实现要再看」。claim 把「通常是按干员朝向建系（旋转本身是普遍的）」写成了读偏移坐标的通行规则，只留「通常」一词不足以反映原文的猜测性质。",
+     "fix": "demote 为 pending，或在 claim/limitations 明写「（推测）应为按干员朝向建系；出处与旋转范围未确认」"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w000482:c02",
+   "faults": [
+    {
+     "type": "evidence_mismatch",
+     "detail": "本条两条引文（seq 20 提问「再部署不提高费用是模组效果还是自带的」、seq 21「自带的」）都没有点名「空爆」。「空爆」在整窗只出现一次，即 seq 25 另一位发言者问「空爆的潜能是会影响模组新增的效果吗」，与 seq 20/21 无直接连接。claim 的主体归属（空爆的再部署不提高费用）在本条引文内无逐字出处，属按窗内邻近话题补的主体。",
+     "fix": "补引 seq 25 并说明主体归属，或把 claim/subject 中的「空爆」改为中性表述，否则 demote"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w000509:c01",
+   "faults": [
+    {
+     "type": "overclaim",
+     "detail": "结论来源是反问句「锁死动画和不吃攻速是两回事吧」（seq 47），窗内无后续确认（条目 limitations 自己承认「该区分来自一句反问，窗内没有后续确认，只可作『不可互推』这一弱命题使用」）。claim 仍写成「『锁死动画』与『不吃攻速』是两回事，不能由前者直接推出后者」的定论，属把疑问句写成机制事实。",
+     "fix": "demote 为 pending，或改写为「主播以反问形式提出两者不可互推，窗内未再确认」"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w000509:c03",
+   "faults": [
+    {
+     "type": "evidence_mismatch",
+     "detail": "claim 讲「移动类传送若终点落在不可通行地块，则不进行传送」，唯一引文 seq 15 却是「[表情]@某人@某人 我发完消息一看算式感觉不对劲就自骂傻逼了。。。」（同窗 seq 17 接着「刚睡醒人不清醒」），与结论毫无关系。grep 校验：结论句「传送终点若为不可通行地块则不传送」在 qq_wo_b3_181.json 出现 0 次，在 qq_wo_b3_016.json（窗口 w001356，位移）出现 4 次。review.reason 里「seq 15 单独成句给出条件与结果『传送终点若为不可通行地块则不传送』」是对本窗原文的虚构转述。",
+     "fix": "从甄选层删除；如保留须重挂 qq_wo_b3_016 并去重（该命题已以 qq_expansion:w001356:c01 发布）"
+    },
+    {
+     "type": "duplicate",
+     "detail": "与另一窗口的 qq_expansion:w001356:c01（引文 seq 15「传送终点若为不可通行地块则不传送」）实质重复：同一浅层命题在 curated 层出现两次，只有 w001356 那条有真实引文。",
+     "fix": "删除本条，保留 w001356:c01"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w000509:c04",
+   "faults": [
+    {
+     "type": "evidence_mismatch",
+     "detail": "claim 讲「传送与避障互不干涉」，引文却是 seq 20「[多媒体消息或表情]」与 seq 21「我不知道我只按攻击间隔算的没看动画时长」（当窗在讨论空爆1技能的攻速与动画）。review.reason 声称 seq 20「避障正常算寻路，传送是单纯传送」、seq 21「分开互不干涉」——这两句在本窗任何 seq 都不存在（实为 qq_wo_b3_016 seq 20/21）。",
+     "fix": "删除（或改挂 qq_wo_b3_016，与已发布的 w001356:c02 去重）"
+    },
+    {
+     "type": "duplicate",
+     "detail": "与 qq_expansion:w001356:c02 实质重复，仅本条引文是错的。",
+     "fix": "删除本条"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w000509:c05",
+   "faults": [
+    {
+     "type": "evidence_mismatch",
+     "detail": "claim 讲「失衡速度与寻路速度都不容许敌人抬手攻击」，唯一引文 seq 33 是「呜哇」——在本窗 seq 29-33 是多人连续刷的同一句话。review.reason 称「seq 33 一句同时给出两个主语（失衡速度、寻路速度）与结果（都不容许抬手攻击）」，该内容在本窗完全不存在（实为 qq_wo_b3_016 seq 33）。",
+     "fix": "删除（或改挂 qq_wo_b3_016，与 w001356:c03 前半去重）"
+    },
+    {
+     "type": "duplicate",
+     "detail": "与 qq_expansion:w001356:c03 前半句实质重复（该条引文为 seq 33「失衡速度和寻路速度都不容许敌人抬手攻击」）。",
+     "fix": "删除本条"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w000509:c06",
+   "faults": [
+    {
+     "type": "evidence_mismatch",
+     "detail": "claim 讲「抬手不在寻路状态，因此抬手时敌人不移动；这与『速度为0』不是同一种情况」，引文 seq 53/57/58/59 却是「那也不是不吃攻速啊」「他也是完整动画然后待机」「第一轮斩都不是攻击怎么吃攻速」「待机时长增加」——全窗内容是空爆1技能吃攻速。review.reason 引的 seq 57「不是速度为0不移动」、seq 59「这个区别很重要」在 qq_wo_b3_181.json 中不存在（实为 qq_wo_b3_016 seq 57/59）。",
+     "fix": "删除（或与 w001356:c03 后半合并去重）"
+    },
+    {
+     "type": "duplicate",
+     "detail": "与 qq_expansion:w001356:c03 后半句实质重复。",
+     "fix": "删除本条"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w000509:c07",
+   "faults": [
+    {
+     "type": "evidence_mismatch",
+     "detail": "claim 讲「单纯加加速度无法让抬手中的敌人下坑，能做到的是传送」，引文却是 seq 38「[多媒体消息或表情]」、seq 39「6」、seq 51「[多媒体消息或表情]」、seq 53「那也不是不吃攻速啊」、seq 64「问题是他也不固定啊，好像有加速」，与结论无关；review.reason 引的「只有传送可以」「从演示效果上，当前版本」「加速度无法让敌人抬手的时候能下坑」在本窗均不存在（实为 qq_wo_b3_016 seq 38/39/64）。",
+     "fix": "删除（或改挂 qq_wo_b3_016，与已发布的 w001356:c04 去重）"
+    },
+    {
+     "type": "duplicate",
+     "detail": "与 qq_expansion:w001356:c04 实质重复。",
+     "fix": "删除本条"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w000511:c02",
+   "faults": [
+    {
+     "type": "number_suspect",
+     "detail": "claim 写「每格约 10^-6 的误差」，但唯一算式引文 seq 3「弹道飞行本身就是10*0.0333333*3=0.999999」给出的是整段飞行（3 格）累计差 1e-6，「每格」与「累计」口径不一致（相差 3 倍）。条目 limitations 已察觉「原文说『每格』，而该算式是 3 格累计差 1e-6」，却仍把 claim 写成「每格约10^-6」。",
+     "fix": "claim 改为「整段弹道飞行的累计误差约 1e-6（原文写作『每格会有10^-6误差』，与算式口径不符）」，或 demote 待重算"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w000541:c01",
+   "faults": [
+    {
+     "type": "evidence_mismatch",
+     "detail": "claim 末句「因此不受该限制」是审稿人的推论，两条引文只给出规则（seq 28）与笼子的阻挡类型（seq 29）。该结论的逐字出处其实是同窗 seq 23「酒神的牢笼可以无视围墙的ban阻挡哎」/seq 24「因为阻挡类型不是『地面阻挡』」，未被引用。此外紧随其后的 seq 31「牢笼不能上高台」、seq 33「上高台太可怕了」、seq 36「上高台直接把人拽进高台里面了」表明高台一侧在窗内并未澄清，claim 却把「围栏和高台」并列断言。",
+     "fix": "补引 seq 23/24；把「高台」部分拆出或标注「窗内未澄清」"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w000548:c01",
+   "faults": [
+    {
+     "type": "trivial",
+     "detail": "唯一内容是程度判断「这个帧时长在寻路中不是很重要」（seq 17），无判据、无范围、无量级（条目 limitations 自承「原文未给出任何可量化的判据」「单句给出，窗内无对照测试」）。另一条引文 seq 15 只是回答「这是什么」的「帧时长」一词，不构成证据。作为机制知识条目无可复述内容。",
+     "fix": "删除；若要保留，应与 c02（浮点改定点）合并为一条「帧时长的精度与作用」"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w000548:c02",
+   "faults": [
+    {
+     "type": "overclaim",
+     "detail": "claim 写成完整因果「因为这个帧时长会因为浮点数精度变化，所以鹰角把它改成不是浮点数，而是定点数」。但「会因浮点精度变化」是提问方 seq 23「这个不是会因为浮点精度变化吗？」的前提，回答者 seq 24「因为会因为浮点数精度变化」只是把该前提回声一遍（句子本身是病句），seq 25「所以鹰角让他不是浮点数了」建立在这个未被验证的前提上；窗内没有独立证据表明精度确实变化。claim 把提问前提与开发者动机写成机制事实。",
+     "fix": "改写为「（依原文因果表述）帧时长已改为定点数，理由是浮点精度；原文未给独立依据」，或 demote"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w000564:c01",
+   "faults": [
+    {
+     "type": "not_self_contained",
+     "detail": "claim 只写「存在『保留技力再部署』这一例外」，但「例外」所针对的规则（seq 1「意思是不准增减」、seq 2「我也没看到例外」）没有进引文，单读不知是什么的例外；后半句「即存在可以不在数量上增减技力的情形」与原句同义反复，等于没有补充信息。",
+     "fix": "补引 seq 1/2 并写清被例外的那条规则，或删除"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w000618:c01",
+   "faults": [
+    {
+     "type": "trivial",
+     "detail": "引文只有一句口语反驳「正常拉力本来就是拉3次贴脸了」（seq 9，句首还接着上文 seq 8 的「不是」）。「正常拉力」「贴脸」都没有定义，力度/距离/单位条件全无（条目 limitations 自承「『贴脸』的距离阈值原文未给」，也承认该句是对对方判断的否定后更正）。属对话碎片，不构成机制知识。",
+     "fix": "删除，或补齐同窗上下文（对方说法、对照单位、力度）后降级为情境观察"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w000618:c02",
+   "faults": [
+    {
+     "type": "evidence_mismatch",
+     "detail": "claim 把 seq 10（「水月不行是因为他13帧就强停位移了啊」）与 seq 13（「定时拉。弹道结束时清空失衡速度」）合并，并把「定时拉/弹道结束时清空失衡速度」判归水月。seq 13 是独立成句的陈述，原文未指明主体是水月（seq 11/12 是两条表情/多媒体消息，无文字衔接），「不行」的对象也只在 seq 7-9 的算拉距离话题里。",
+     "fix": "拆成两条，或把 seq 13 写成不指名的机制陈述（「另一种拉法为定时拉，弹道结束时清空失衡速度」）"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w000660:c01",
+   "faults": [
+    {
+     "type": "not_self_contained",
+     "detail": "claim 正文只有「最后一层是 cardbuff。」，没有说明是哪条结算链的最后一层；引文是问答（seq 17「最后是cardbuff？」＋ seq 19「对啊」＋ seq 20「最后是cardbuff啊」），链条本身（passivebuff/deckbuff/符文…）在同窗其它条目（c02/c03）里。单读本条无法知道「最后」的参照系。",
+     "fix": "claim 补全为「局内 buff 结算链的最后一层是 cardbuff」，或把 c01/c02/c03 合并为一条链路条目"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w000949:c04",
+   "faults": [
+    {
+     "type": "overclaim",
+     "detail": "claim 把「技能打断部署动画则回费丢失」写成通则，但窗内紧跟其后 seq 25 主播自己补了「目前有个例外是断罪者」，条目既未引用也未在 limitations 记入——把带例外的规则写成无例外的定论。",
+     "fix": "在 claim 或 limitations 补记 seq 25 的例外（断罪者），否则 demote"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w001022:c01",
+   "faults": [
+    {
+     "type": "not_self_contained",
+     "detail": "claim 的「牢笼」没有锚定主体：本语料他处一律写「酒神的牢笼/笼子」（如 qq_wo_b3_183 seq 23、qq_wo_b3_021），本条只有「牢笼」，单读不知是谁的召唤物。且第二条引文 seq 6「影子在坐标偏下0.2左右」讲的是「影子」的坐标偏移，条目 limitations 自承「『影子』是否即牢笼本体、以及蓝门的判定半径，原文均未说明」，却仍把它并进「牢笼生成位置判定」的 claim。",
+     "fix": "主体写全为「酒神的牢笼」；把 0.2 与「影子」的关系标为未澄清，或把该半句拆出为另一条"
+    }
+   ]
+  }
+ ],
+ "verbatim_spotcheck": [
+  {
+   "id": "qq_expansion:w000511:c02",
+   "quote_fragment": "弹道飞行本身就是10*0.0333333*3=0.999999",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_182.json"
+  },
+  {
+   "id": "qq_expansion:w000618:c02",
+   "quote_fragment": "水月不行是因为他13帧就强停位移了啊",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_191.json"
+  },
+  {
+   "id": "qq_expansion:w000949:c03",
+   "quote_fragment": "部署完成时，和所谓的落地隐解除同时",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_196.json"
+  },
+  {
+   "id": "qq_expansion:w001065:c01",
+   "quote_fragment": "部署后1.3立刻生效",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_199.json"
+  },
+  {
+   "id": "qq_expansion:w000375:c01",
+   "quote_fragment": "时间的偏移还是坐标的偏移",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_172.json"
+  },
+  {
+   "id": "qq_expansion:w000509:c03",
+   "quote_fragment": "传送终点若为不可通行地块则不传送（本条 claim 的实际出处句，在被引工单中）",
+   "result": "not_found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_181.json"
+  },
+  {
+   "id": "qq_expansion:w000509:c03",
+   "quote_fragment": "传送终点若为不可通行地块则不传送",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_016.json"
+  },
+  {
+   "id": "qq_expansion:w000509:c05",
+   "quote_fragment": "失衡速度和寻路速度都不容许敌人抬手攻击",
+   "result": "not_found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_181.json"
+  },
+  {
+   "id": "qq_expansion:w000509:c06",
+   "quote_fragment": "不是速度为0不移动",
+   "result": "not_found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_181.json"
+  },
+  {
+   "id": "qq_expansion:w000509:c07",
+   "quote_fragment": "加速度无法让敌人抬手的时候能下坑",
+   "result": "not_found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_181.json"
+  }
+ ],
+ "stats": {
+  "trivial": 2,
+  "not_self_contained": 4,
+  "overclaim": 5,
+  "evidence_mismatch": 10,
+  "asr_error": 1,
+  "number_suspect": 2,
+  "duplicate": 5,
+  "privacy": 0
+ }
+}

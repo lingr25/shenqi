@@ -1,0 +1,342 @@
+{
+ "chunk": "09",
+ "reviewed": 48,
+ "verdicts": [
+  {
+   "id": "qq_expansion:w000130:c01",
+   "verdict": "withdraw",
+   "fault_type_kept": "",
+   "suggestion": "",
+   "reason": "两条主命题「动画长度在抬手时固定」「冷却按攻速实时计算」都有逐字引文（seq13-15），中间的『先减攻速再加攻速』场景用『由此会出现』明示为推论，且同窗 seq7「加攻速本来就会让冷却＜动画」、seq8「动画结束立刻抬手」正是该推论的同向原文，不构成证据不符。"
+  },
+  {
+   "id": "qq_expansion:w000168:c01",
+   "verdict": "fix",
+   "fault_type_kept": "not_self_contained",
+   "suggestion": "望的棋子为 3 帧索敌，望的跟子为 4 帧检测循环。",
+   "reason": "「棋子/跟子」是干员「望」的专属召唤物（库内 w000977、w001181、w001825 等一律写作「望的棋子/跟子」），补主体后可按干员检索，成本极低。"
+  },
+  {
+   "id": "qq_expansion:w000168:c02",
+   "verdict": "minor",
+   "fault_type_kept": "evidence_mismatch",
+   "suggestion": "",
+   "reason": "主命题「索敌同帧可伤」有 seq10 逐字支撑；seq4（出伤帧以生成帧为起算点）属同窗相邻话题，作为附证冗余但无害，且引文不得改写。"
+  },
+  {
+   "id": "qq_expansion:w000211:c01",
+   "verdict": "fix",
+   "fault_type_kept": "overclaim",
+   "suggestion": "费用自然回复速度改变的效果是改变冷却大小（CD 大小），而不是改变每帧的冷却回复速度——此为群内说法，同窗另一位成员当场表示要实测复核（原文「真的假的」「我等会测试一下去」），窗内未见复核结果。",
+   "reason": "结论句与引文一致，但同窗确有人质疑并称要复测（seq58「真的假的」、seq60「我等会测试一下去」），claim 未带这份不确定性，补一句限定即可。"
+  },
+  {
+   "id": "qq_expansion:w000215:c01",
+   "verdict": "fix",
+   "fault_type_kept": "asr_error",
+   "suggestion": "在 derived_text_repairs 增加一条：「这一阵」→「这一帧」（同音误写，上下文为帧时序）；引文「你操作上的东西，永远是这一阵结算完成了进行的」保持原文不动，claim 措辞本身已正确。",
+   "reason": "帧时序语境下「这一阵」系「这一帧」的同音误写，按仓库规矩引文保留原文、只在 derived_text_repairs 记订正。"
+  },
+  {
+   "id": "qq_expansion:w000215:c02",
+   "verdict": "fix",
+   "fault_type_kept": "not_self_contained",
+   "suggestion": "多个技力回复光环同时作用时取最高值（不叠加）；本窗示例为白面（白面鸮）的技力回复光环，部署后下一帧按 1.65 结算一次。",
+   "reason": "「多个技力回复光环取最高」有 seq22 逐字支撑，但 1.65 缺主体与来源（原文 seq16 作「白面的1.65技力光环」），补出归属后数值才可复用。"
+  },
+  {
+   "id": "qq_expansion:w000256:c01",
+   "verdict": "minor",
+   "fault_type_kept": "not_self_contained",
+   "suggestion": "",
+   "reason": "「该闪现敌人」全语料未给名称（grep「阻挡直径」仅此一窗），无名字可补；但 claim 已给出阻挡直径 1.4、闪现 1.5 等可检索特征，指代模糊尚可容忍。"
+  },
+  {
+   "id": "qq_expansion:w000256:c02",
+   "verdict": "fix",
+   "fault_type_kept": "not_self_contained,overclaim",
+   "suggestion": "该敌人（群内未点名，指会闪现越位的那个单位）两次表现不同源于阻挡帧的差异（阻挡为三帧判定，起始坐标不同）；群内提出：若第一次阻挡尽可能靠上，敌人就不会被寻路带下去，可用干员调整部署帧来验证（该说法为同窗建议，提问方称会再试，窗内无实测结果）。",
+   "reason": "原文「调部署帧就行了」被写成「可复现」，且该预测同窗未验证（提问方只说「我再试下」），应改为可验证并补未点名注记。"
+  },
+  {
+   "id": "qq_expansion:w000263:c01",
+   "verdict": "minor",
+   "fault_type_kept": "number_suspect",
+   "suggestion": "",
+   "reason": "237 帧与 0.10-8.07 出自同一句原话（seq52），claim 只是并列转述、未自造换算；口径不明属来源自身问题，可容忍（可在 condition 注明「237 为群内点数」）。"
+  },
+  {
+   "id": "qq_expansion:w000263:c02",
+   "verdict": "fix",
+   "fault_type_kept": "not_self_contained",
+   "suggestion": "灵知每 15 帧一次的触发伤害并非发生在奎隆进门前一帧，而是与进门同帧、结算顺序更早的事件；依据是同一表现既已证明其进门（无敌血条未消失）而寻路不会错，由此逆推得到移动帧数。",
+   "reason": "「该触发出伤」的来源在窗内明确是灵知每 15 帧一次的触发伤害（seq15），落名后条目即可读。"
+  },
+  {
+   "id": "qq_expansion:w000317:c01",
+   "verdict": "withdraw",
+   "fault_type_kept": "",
+   "suggestion": "",
+   "reason": "主命题「一般图用 1 帧 1 帧出的波次控制」有 seq66 逐字支撑；另一人的「隔一帧出一只怪」是同窗未经确认的猜测（「应该」），且此人刚被纠正过「怪只能一只一只出」，不构成必须并列的分歧。"
+  },
+  {
+   "id": "qq_expansion:w000319:c01",
+   "verdict": "withdraw",
+   "fault_type_kept": "",
+   "suggestion": "",
+   "reason": "claim 的三句内容即引文原文，且「集成战略」限定出自同一发言人紧邻的 seq5（同窗同人，非条目外补入），窗内无人反驳，属对群内断言的如实转述。"
+  },
+  {
+   "id": "qq_expansion:w000374:c01",
+   "verdict": "remove",
+   "fault_type_kept": "not_self_contained,evidence_mismatch",
+   "suggestion": "",
+   "reason": "「那个图」在窗内无任何地图线索、全语料亦无可锚定对象，属指代完全不可解；第二条引文「需要做局内测试修寻路程序」与本命题无关，靠改写无法补救。"
+  },
+  {
+   "id": "qq_expansion:w000461:c01",
+   "verdict": "fix",
+   "fault_type_kept": "evidence_mismatch",
+   "suggestion": "推拉力度变大一般不能把单位直接推进墙里，但不是绝对不能（原文「但是不绝对不能」）：连续性碰撞检测下不能穿墙，群内提到还存在离散型碰撞检测，但其具体表现原文未说明。",
+   "reason": "原文只有「连续性碰撞检测不能」「但是还有离散型」，claim 的括号「（穿墙）」歧义，且把离散型的结论补全成了原文没有的因果，按原文限缩即可。"
+  },
+  {
+   "id": "qq_expansion:w000465:c02",
+   "verdict": "minor",
+   "fault_type_kept": "duplicate",
+   "suggestion": "",
+   "reason": "与 w000130:c01 共享「动画长度锁定＋抬手帧减速再加攻速」这一前提，但本条落点是「测下次索敌间隔」的应用手法，两卡抽象层级不同，重叠可容忍（宜加交叉引用）。"
+  },
+  {
+   "id": "qq_expansion:w000467:c01",
+   "verdict": "fix",
+   "fault_type_kept": "not_self_contained,number_suspect",
+   "suggestion": "夜刀的投射物需飞行 0.1 格才能造成一次伤害；本窗讨论的另一技能（原文未点名）同为「夜刀同款」机制，但需飞行 0.25 格才造成一次伤害。",
+   "reason": "对照技能原文未点名应如实标注；「飞0.1/0.25」缺单位（另一窗同类表述为「飞出0.25格」），补「格」可消除与帧/秒的混淆。"
+  },
+  {
+   "id": "qq_expansion:w000467:c02",
+   "verdict": "fix",
+   "fault_type_kept": "not_self_contained",
+   "suggestion": "该投射物（夜刀同款机制）的弹道速度高于其出伤所需的飞行阈值时，表现为 1 帧 1 伤。",
+   "reason": "原文是对某一投射物的判断，claim 用「该出伤阈值」跨条指代并把主语升格为「弹道」，限缩回该投射物即可。"
+  },
+  {
+   "id": "qq_expansion:w000483:c02",
+   "verdict": "fix",
+   "fault_type_kept": "not_self_contained",
+   "suggestion": "异格杰西卡 2 技能满攻速（2 帧冷却、2 帧动画）持续攻击时，索敌帧序列为 0、2、6、8、12：第 0 帧为自然索敌，第 2 帧为动画结束索敌；到第 4 帧动画再次结束时索敌冷却非 0 而不能索敌，故延后到第 6 帧自然索敌。",
+   "reason": "主体在窗内明确（seq7「异格杰西卡2技能」），claim 却写成「原文的干员2技能」，落名后即可按干员/技能检索。"
+  },
+  {
+   "id": "qq_expansion:w000483:c03",
+   "verdict": "minor",
+   "fault_type_kept": "duplicate",
+   "suggestion": "",
+   "reason": "与同窗 c02 同人同源、由同一序列归纳而来，但一条是具体算例、一条是交替间隔的规律，检索用途不同，重叠可容忍。"
+  },
+  {
+   "id": "qq_expansion:w000493:c01",
+   "verdict": "fix",
+   "fault_type_kept": "evidence_mismatch,privacy",
+   "suggestion": "弹道的偏移来自美术绑定：可以把弹道绑定到发射点上，绑定偏上是为了视觉自然（原文否定了「俯视视角/飞行图层碰撞箱」一类解释，并对「偏左」的说法提出质疑）。另须脱敏：把引文中「某人」按脱敏规则替换为「某人」，引文脱敏不计入引文改写。",
+   "reason": "「偏左」原话是被发言者质疑的前提、「并非俯视视角/图层碰撞箱」对应的是未引的假设句；同时引文残留未脱敏昵称，隐私闸门要求处理。"
+  },
+  {
+   "id": "qq_expansion:w000506:c01",
+   "verdict": "minor",
+   "fault_type_kept": "not_self_contained",
+   "suggestion": "",
+   "reason": "「掉血先锋」所指在引文 seq51 内已给出（所有先锋落地 -99% 血量），核心信息「卡夫卡落地有迷彩、一般先锋没有」可复用；「被选中」的主体窗内未明，属可容忍的语境缺失。"
+  },
+  {
+   "id": "qq_expansion:w000506:c02",
+   "verdict": "fix",
+   "fault_type_kept": "overclaim,not_self_contained",
+   "suggestion": "据群内转述（原文作「忍冬说是要1帧」，窗内无实测），忍冬落地生效需要 1 帧；生效对象原文未说明，同窗另有「但是每次部署都有」的说法。",
+   "reason": "「说是」的转述被写成定论，且「什么效果生效」在条目内无着落，补限定与未明说明即可。"
+  },
+  {
+   "id": "qq_expansion:w000550:c02",
+   "verdict": "fix",
+   "fault_type_kept": "evidence_mismatch",
+   "suggestion": "位移时间的换算可简化为 30/8-1（30 为一秒帧数、8 为加速度倍率，结果以帧计，原文举例算得 2.75）；含小数时在抵达路径点 b 时取整。",
+   "reason": "原式算的是以帧计的等效量（seq52 的 1/(1-11/15)-1=2.75），claim 丢掉量纲与含义后无法复用，需补回。"
+  },
+  {
+   "id": "qq_expansion:w000597:c01",
+   "verdict": "fix",
+   "fault_type_kept": "not_self_contained",
+   "suggestion": "喷火兵直接就是开技能、每 3 帧进行一次技能索敌；其技能开出来后不会被战栗打断，但会因为战栗而开不出来。",
+   "reason": "引文已点名「喷火兵」，claim 与 subject 却写成「该敌方单位」，落名后可按敌人检索。"
+  },
+  {
+   "id": "qq_expansion:w000597:c03",
+   "verdict": "fix",
+   "fault_type_kept": "not_self_contained,number_suspect",
+   "suggestion": "惊蛰开技能后第 3 帧出战栗，因此喷火兵在第 4 帧及之后无法抬手，原文据此称「只有 2 帧可以抬手」（该 2 帧的起算口径原文未说明）。",
+   "reason": "惊蛰与喷火兵在引文中均已点名；且「第 3 帧战栗、第 4 帧起无法抬手」与「只有 2 帧可以抬手」不自洽，应并列原文并注明口径未明。"
+  },
+  {
+   "id": "qq_expansion:w000598:c02",
+   "verdict": "fix",
+   "fault_type_kept": "evidence_mismatch",
+   "suggestion": "费用尺按时间采样判定：每 5 个采样算 1 帧（原文例：5 个 30 像素、5 个 35、5 个 40 都算 1 帧）；10 个 0 像素的采样，这个「0」要算 2 帧。",
+   "reason": "claim 抽掉了「5 个采样＝1 帧」的比例，导致「10 个 0 采样＝2 帧」失去依据，并自加了原文没有的「相邻」。"
+  },
+  {
+   "id": "qq_expansion:w000609:c01",
+   "verdict": "fix",
+   "fault_type_kept": "evidence_mismatch",
+   "suggestion": "buff 创建 buff 时，高的是父 buff、低的是子 buff（原文未说明「高/低」指哪个字段或维度）。",
+   "reason": "「层级」是整理者补入的比较维度（原文只有「高的是父/低的是子」），应改回原文措辞并注明未说明；category 记「帧时序」也与 buff 父子关系不符，宜另行归类。"
+  },
+  {
+   "id": "qq_expansion:w000901:c01",
+   "verdict": "fix",
+   "fault_type_kept": "evidence_mismatch,not_self_contained",
+   "suggestion": "中点判定是判定敌人坐标（如酒神天赋的 1.3、2 技能的 1.5 溅射，以及阻挡之类直接计算敌我坐标的机制）；格判是判定敌人的所属格（如陷阱师、黍）。",
+   "reason": "「中点判定」与 1.3/1.5 出自同窗 seq11/12、「酒神」出自 seq11，补回主体与数字后 claim 才有引文可核。"
+  },
+  {
+   "id": "qq_expansion:w001023:c01",
+   "verdict": "fix",
+   "fault_type_kept": "not_self_contained",
+   "suggestion": "酒神技能生成的牢笼：第二次爆条会刷新第一个牢笼的阻挡，刷新阻挡是 0 帧生效；新生成牢笼则是 0 帧出生、1 帧才有阻挡；因此一个牢笼 0 帧撤退不会阻挡，两个牢笼 0 帧撤退会阻挡。",
+   "reason": "牢笼在本语料即「酒神的牢笼」（w000005/w001181 等窗已锚定），补主体后条目才有检索落点；爆条来源原文未点名，如实保留。"
+  },
+  {
+   "id": "qq_expansion:w001039:c01",
+   "verdict": "fix",
+   "fault_type_kept": "not_self_contained",
+   "suggestion": "爆条（元素损伤爆发）类伤害是按每秒触发结算（不是每次攻击触发）；本窗给出的上限为单秒 600、持续 15 秒、合计 9000，满攻速下总量上限同样是 9000（原文未点名是哪种爆条或哪个模式）。",
+   "reason": "去掉无先行词的「该」，并如实标注原文未点名爆条来源。"
+  },
+  {
+   "id": "qq_expansion:w001039:c02",
+   "verdict": "fix",
+   "fault_type_kept": "evidence_mismatch,number_suspect",
+   "suggestion": "要在 15 秒内叠到 9000 这一总量上限，第一秒内的攻击频率需达到 10 轮/秒（即 3 帧一轮），原文据此断言这基本做不到。",
+   "reason": "9000 是 15 秒的总量（单秒上限 600），claim 写成「第一秒内打满 9000」，与同窗数值自相矛盾，应改回原文语义。"
+  },
+  {
+   "id": "qq_expansion:w001040:c01",
+   "verdict": "remove",
+   "fault_type_kept": "trivial",
+   "suggestion": "",
+   "reason": "本条只是通用编程术语（不稳定排序）的定义澄清，不含任何方舟机制内容，与公开机制 RAG 的收录口径不符；若需保留，应改写成出怪队列排序的机制命题并补引本窗 seq29-36。"
+  },
+  {
+   "id": "qq_expansion:w001046:c01",
+   "verdict": "fix",
+   "fault_type_kept": "not_self_contained",
+   "suggestion": "寒霜的光环以 10 帧为循环检测周期；用伊神 2 技能规避时，可以一帧帧穷举，也可以从生成开始数过去。",
+   "reason": "claim 用占位符留空主体，而窗内问句 seq2「伊神2怎么躲寒霜」与答句 seq3 共同指向寒霜光环，落名后即可用。"
+  },
+  {
+   "id": "qq_expansion:w001139:c01",
+   "verdict": "minor",
+   "fault_type_kept": "duplicate",
+   "suggestion": "",
+   "reason": "与同窗 c02 重叠于「出怪路径展示（红线黄线）」这半句（两条都引 seq37），但 c01 侧重出怪/装置、c02 侧重图鉴/摄像机，拆分尚可容忍（宜互相引用）。"
+  },
+  {
+   "id": "qq_expansion:w001184:c03",
+   "verdict": "withdraw",
+   "fault_type_kept": "",
+   "suggestion": "",
+   "reason": "claim 与原话「没有所谓的『跳起来』」「只是改飞行而已」措辞一致，一般化出自发言者本人而非整理者升格，且该判断在方舟语境下（不存在跳跃状态）可跨场景复用。"
+  },
+  {
+   "id": "qq_expansion:w001194:c02",
+   "verdict": "withdraw",
+   "fault_type_kept": "",
+   "suggestion": "",
+   "reason": "原话本身带「一般来说」的限定，claim 逐字对应；单方群友陈述是 QQ 轨的固有属性，图层口径已声明 text-source-supported，且窗内无人就同一命题反驳。"
+  },
+  {
+   "id": "qq_expansion:w001194:c03",
+   "verdict": "fix",
+   "fault_type_kept": "not_self_contained,asr_error",
+   "suggestion": "银灰该技能能否普攻属于碰撞判定，而选择弹道角度属于格判（原文作「找人选择弹道的角度」，「找人」疑为输入讹写；该技能名原文未点名）。",
+   "reason": "「该技能」无先行词、引文里的「找人」不可读（疑为「找目标」输入讹写），claim 需改为可读表述并注明讹写，引文仍保留原文。"
+  },
+  {
+   "id": "qq_expansion:w001255:c01",
+   "verdict": "minor",
+   "fault_type_kept": "not_self_contained",
+   "suggestion": "",
+   "reason": "「传送带」是游戏内通用元素，claim 已给全量纲（一倍速/格/s/游戏秒），0.8 与库内 w001424:c01、w001789:c01 一致；未点名具体技能属可容忍。"
+  },
+  {
+   "id": "qq_expansion:w001312:c02",
+   "verdict": "minor",
+   "fault_type_kept": "trivial",
+   "suggestion": "",
+   "reason": "内容确实单薄（近乎术语对照），但「路径点 vs 检查点」的命名澄清对寻路语料有消歧价值，属 glossary 级可容忍条目。"
+  },
+  {
+   "id": "qq_expansion:w001316:c01",
+   "verdict": "minor",
+   "fault_type_kept": "not_self_contained",
+   "suggestion": "",
+   "reason": "「踩路径点」在窗内可由上下文（路径点的执行、与停驻的并行）读作「触发/执行路径点」，claim 也如实保留了「不再」（原文「那是后续改的东西」）；改动时点未说明属来源限制。"
+  },
+  {
+   "id": "qq_expansion:w001424:c01",
+   "verdict": "minor",
+   "fault_type_kept": "duplicate",
+   "suggestion": "",
+   "reason": "0.8/30 格每帧与 w001789:c01（通用传送带矢量）、w001255:c01（0.8 格/s）是同一常数，本条只把主体换成珊比的传送带；重叠可容忍（宜三条互相引用），另数值仅出自提问句（回答只有「嗯」），支持强度偏弱。"
+  },
+  {
+   "id": "qq_expansion:w001461:c01",
+   "verdict": "minor",
+   "fault_type_kept": "duplicate",
+   "suggestion": "",
+   "reason": "0.7071 与 w001727:c02（地面默认 0.7071）重叠但口径更窄（角色类/召唤物），claim 本身有 seq19 逐字支撑，第二条引文 seq20 与本 claim 无关属冗余。"
+  },
+  {
+   "id": "qq_expansion:w001461:c02",
+   "verdict": "minor",
+   "fault_type_kept": "trivial",
+   "suggestion": "",
+   "reason": "内容偏薄（只回答「这是不是 bug」），但陈述有逐字支撑、是真实的阻挡半径后果，保留无害（宜与同窗 c01 的 0.7071 合并）。"
+  },
+  {
+   "id": "qq_expansion:w001585:c01",
+   "verdict": "minor",
+   "fault_type_kept": "duplicate",
+   "suggestion": "",
+   "reason": "与 w001789:c01/c02 覆盖同一情形，但描述的是不同修正点（传送目的地 vs 传送矢量拆分），疑为两条代码路径而非矛盾；claim 有 seq17 逐字支撑，宜互相标注而非删除。"
+  },
+  {
+   "id": "qq_expansion:w001727:c03",
+   "verdict": "minor",
+   "fault_type_kept": "number_suspect",
+   "suggestion": "",
+   "reason": "0.8944×1.23=1.1001 与 claim 自洽，另见「1.1000」「扩大0.23倍」两种群内说法；claim 取了算术自洽的读法，属可容忍（宜注明另说）。"
+  },
+  {
+   "id": "qq_expansion:w001789:c01",
+   "verdict": "fix",
+   "fault_type_kept": "overclaim,duplicate",
+   "suggestion": "在 claim 末尾补注来源性质：本条规则出自群内成员现场撰写的 wiki 草稿（原文含 {{特殊机制|…}}、'''…''' 标记），同窗仍在删改、未经复核。",
+   "reason": "唯一条引文是带 wiki 标记的现场草稿（作者随即问「这么写会不会没人能看懂啊」、同窗仍在删改），claim 需标明来源性质；且与 c02 同引一条消息，宜合并或互相引用。"
+  },
+  {
+   "id": "qq_expansion:w001789:c02",
+   "verdict": "fix",
+   "fault_type_kept": "overclaim",
+   "suggestion": "在 claim 中补注：本条出自群内 wiki 草稿（未经复核），「同一水片线」原文如此、疑为「同一水平线」的输入讹写；该 0.2 规则在同窗被质疑并拟删（原文：「你把原版的左右加个0.2就得了吧」「那不对啊」「有点y偏移就可以不触发0.2了」「直接取消」）。",
+   "reason": "引文是 wiki 草稿且其中的 0.2 规则在同窗被质疑并拟删，claim 写成定论不当；「同一水片线」亦属不可解读的讹写，需注明。"
+  },
+  {
+   "id": "qq_expansion:w000096:c01",
+   "verdict": "fix",
+   "fault_type_kept": "not_self_contained,evidence_mismatch",
+   "suggestion": "该段位移/碰撞判定的计算路径随地图坐标变化（原文未点名具体主体）：坐标 <4 时浮点数精度较高（原文残句作「可以精确分辨0.05真值小于0.05」，语义不完整），因此需要多一帧碰撞；坐标 >4 时直接做除法即可。",
+   "reason": "窗内无主体可锚定、原句是残句，claim 却把「0.05真值小于0.05」补成完整命题，应如实标注而非替它补全。"
+  }
+ ]
+}

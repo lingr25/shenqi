@@ -1,0 +1,393 @@
+[
+  {
+    "id": "fc1:寻路-16-3#r3",
+    "decision": "confirmed_fix",
+    "reason": "本次改动把「敌人处于非停驻、移动类路径点时，目标方向基于路径点或拐角格中心，指向该路径点。」改写为「敌人处于非停驻状态（如移动类路径点）时，目标方向取自路径点方向、拐角格中心或指向该路径点三者之一（源为推断语气）。」逐字复核源 transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt 第 240 行 [01:05:57]「如果敌人是处在非停驻状态下 比如说移动类路径点情况下 它应该会有一个基于路径点的一个目标方向 或者是拐角格中心 或者是指向这个路径点」（本条唯一引文即该行，已核逐字命中；引文时间跨度 [01:04:54]-[01:09:12] 覆盖该行）：源确以「或者…或者…或者是指向」并列三项，claim 的「三者之一」与源的「应该会」推测语气都可逐字对上；claim 的三项、condition 两项（非停驻状态、存在移动类路径点）全部取自引文行，未引入源外事实，也未触及干员/敌人/技能名与数字。挑刺所指的「读起来像同时成立的三项」在源里确系并列备选，改写方向成立；subject 仍为「目标方向」、所指明确。全条改动落在引用范围内，判 confirmed_fix。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_05.json",
+      "kb_trial/curation/faultcheck/triage_03.json",
+      "kb_trial/curation/faultcheck/chunk_03.json",
+      "transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/_fix_dump.txt",
+      "kb_trial/curation/faultcheck/_remediation_plan.json",
+      "kb_trial/curation/faultcheck/_review05_before_after.txt",
+      "kb_trial/curation/faultcheck/_review05_windows.txt"
+    ],
+    "term_flags": [
+      "claim 末尾括注「（源为推断语气）」属源情态说明，非新增机制事实；本层 claim 内含此类括注者共 444/1462 条（「推断语气」2 条、「未说明/未给出」23 条），若父层要求 claim 只留机制命题，本条只需删括注即可，机制表述不受影响"
+    ]
+  },
+  {
+    "id": "fc1:寻路-21-3#r2",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把原无条件断言「无论用什么办法把敌人从A点移到B点，阻挡还是推拉都一样，从B点开始的寻路都一样」改写为带例外的「无论用什么办法把敌人从 A 点移到 B 点（阻挡、阻挡偏移、酒神的拉或推、传送等），只要中途没有踩到路径点/罚站点，从 B 点开始的寻路都一样。」本地核对：transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt 共 230 行，第 114 行 [22:35]「就是你无论什么办法把这个敌人从那里从A点移到B点 是阻挡还是推拉都是一样的」＋第 115 行 [22:48]「对他从B点开始的寻路都是一样的哦 就是不管你用什么方式 不管你是阻挡偏移 不管你是酒神的拉或者什么推 或者是传送或者是传送传送」——本条唯一引文正是这两行的拼接（任一单行都查不到该整串，t_line_label 为 null）。新增括注「阻挡、阻挡偏移、酒神的拉或推、传送等」逐字落在第 115 行内；例外句「除非你这个中间踩路径点了」在第 116 行 [22:59]（= 引文跨度末端 1379 s），而「他踩了一个罚站点 这个可能和传送就有区别了 这种例外」在第 117 行 [23:15]（1395 s），比引文跨度末端晚 16 s、在该跨度之外。即「路径点」半边在引用范围内、「罚站点」半边超出，须先补引第 117 行（或扩跨度）才能把本条称完整修复；改写方向本身成立（源 [22:59]-[23:15] 确给例外，原 claim 把例外删净）。引文为跨行拼合且无时间标签、新增内容一半超出引用范围，判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_05.json",
+      "kb_trial/curation/faultcheck/triage_03.json",
+      "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/_fix_dump.txt",
+      "kb_trial/curation/faultcheck/_review05_before_after.txt",
+      "kb_trial/curation/faultcheck/_review05_lean.txt"
+    ],
+    "term_flags": [
+      "「罚站点」在 transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt 第 117 行 [23:15] 出源，但落在本条引文跨度（[22:35]-[22:59]）之外；全语料「罚站点」9 处/6 文件（「罚站」98 处/15 文件），词形可用但须补引",
+      "引文为跨行拼合（第 114 行行尾＋第 115 行行首），发布层不存在该完整单行，且 t_line_label 为 null；同批 triage_03 称该拼接属已裁定可接受的清洗形态"
+    ]
+  },
+  {
+    "id": "fc1:寻路-3-3#r5",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把「上述部分会逐步往上叠加，形成完整寻路过程。」展开为「改写坐标实现寻路、判定离坑/障碍物/不可通行地块的距离、计算避障力向量、三帧一判等模块会逐步往上叠加，形成完整的寻路过程。」条目的两条引文（atom 与 ctx=sub 窗口）都落在 transcripts_txt/BV14y8269EbS_p1_41164079923.txt 第 149 行 [33:57]「然后去计算一个B张力向量 然后的话再来一个什么三针一盼这一部分 这些东西逐步的往上加上去 形成了完整的寻路过过程 明白吧」，已核逐字；引文跨度 [33:57]-[34:12]。但改写的四个模块中，只有「计算避障力向量」（第 149 行）与「三帧一判」（第 149 行「三针一盼」）落在引文行内：「改写坐标」与「判定离坑/障碍物/不可通行地块的距离」出自紧邻的上一行第 148 行 [33:44]「就是改写自己的坐标 然后实现这么一个寻路效果 然后这中间音再加入其他的东西 比如说判定离坑有多近 离障碍物有多近 离不可通行地块有多近」，该行早于引文跨度起点 [33:57]，在引用范围之外。另核术语：源作「三针一盼」，claim 直接写「三帧一判」——transcripts_txt 全量「三帧一判」0 命中、「三针一判」3 命中（transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt）、「三针一盼」1 命中（即本条源行），本层 1462 条中「三帧一判」仅见于本条，且该条 derived_text_repairs 为 null（未登记 三针一盼→三帧一判）。「展开部分超出引用范围＋派生用词未登记」两事本地都不能自定对错，判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_05.json",
+      "kb_trial/curation/faultcheck/triage_04.json",
+      "kb_trial/curation/faultcheck/chunk_04.json",
+      "transcripts_txt/BV14y8269EbS_p1_41164079923.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "kb_trial/curation/faultcheck/_review05_before_after.txt",
+      "kb_trial/curation/faultcheck/_review05_lean.txt"
+    ],
+    "term_flags": [
+      "「三针一盼」→「三帧一判」：字幕层「三帧一判」0 命中、「三针一盼」1 命中（本条源行）、「三针一判」3 命中（transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt）；kb_trial/curation/qq_expansion/workorders/qq_wo_068.json 与 kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_009.json 内有 QQ 轨「三帧一判」实写，方向有据但字幕层无该词形，是否入 claim 须人工裁定（引文须保持「三针一盼」原字）",
+      "claim 的「改写坐标」「判定离坑/障碍物/不可通行地块的距离」取自引文跨度外的第 148 行 [33:44]，须补引或删该两项后才能算完整修复"
+    ]
+  },
+  {
+    "id": "fc1:寻路-30-4#r6",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把「速度可以变为零，但不能被直接归零；只能靠加速度逐帧归零。」改写为「敌人的速度可以变为零（指在寻路意义上归零，数值上不必为零），但不能被直接归零，只能靠加速度逐帧递减到归零。」逐字复核源 transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt 第 313 行 [01:01:26]「嗯就是逐渐趋近于零 但是不可能是零 可以是零 但是不能直接归零 只能靠加速度逐帧归零 就是它跑着跑着突然就变成零了 这是做不到的」（本条两条引文即该行内两个片段，均已核逐字；引文跨度 [01:01:26]-[01:01:43]，覆盖第 313-314 行）。核心事实成立，但本次改动新增的两处内容均在引用范围之外：(a) 括注「（指在寻路意义上归零，数值上不必为零）」出自第 323 行 [01:03:16]「他在这一帧就在寻路的意义上归零了 但实际上他那个数值不是零」（[01:03:16] 远晚于引文跨度末端 [01:01:43]，triage_04 自己也要求「建议同时补引 [01:03:00]-[01:03:16]」）；(b) 主语「敌人」出自第 311 行 [01:01:13]「没有任何方法可以让敌人的速度直接归零」，该行早于引文跨度起点 [01:01:26]；curated 条目的 subject 字段仍是「未点名」、condition 仍为「未标注」，与 claim 里新写出的「敌人」不同步。新增内容超出引用范围、且 subject 未同步，判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_05.json",
+      "kb_trial/curation/faultcheck/triage_04.json",
+      "kb_trial/curation/faultcheck/chunk_04.json",
+      "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/_fix_dump.txt",
+      "kb_trial/curation/faultcheck/_review05_before_after.txt",
+      "kb_trial/curation/faultcheck/_review05_windows.txt"
+    ],
+    "term_flags": [
+      "「寻路意义上归零」这一限定出自引文跨度外的第 323 行 [01:03:16]，须补引后才能把该括注视为引用范围内内容",
+      "claim 已写「敌人」而 subject 仍为「未点名」、condition 仍为「未标注」，同一字段组不同步（subject 变更须父裁定）"
+    ]
+  },
+  {
+    "id": "fc1:寻路-35-10#r2",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把「在巡逻的状态下敌人可以自由地进出墙体，完全无视墙体的物理碰撞箱」改写为「在寻路（非失衡）状态下，敌人可以自由地进出墙体，完全无视墙体的物理碰撞箱。」源 transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt 第 179 行 [35:50]「这是因为方舟的设置的话 它在非失衡的状态是不激活物理碰撞的 在巡逻的状态下 敌人可以自由地进出墙体 完全无视这个墙体的物理碰撞箱」（本条唯一引文即该行，落在引文跨度 [35:50]-[36:05] 内，已核逐字）。机制部分（非失衡＝不激活物理碰撞、可自由进出墙体、无视碰撞箱）逐字成立，但改动把源字面的「巡逻」在 claim 里换成了「寻路」，并把两个并列从句（非失衡状态／巡逻状态）合并成「寻路（非失衡）状态」，这是术语层面的改写。本地证据两向：支持方向——entity_corrector.py 第 96 行有 (r\"巡逻地图\", \"寻路地图\") 规则，同文件第 264 行 [01:10:19] 也写「索敌帧」；反方向——kb_trial/entity_index.json 记「巡逻」「Patrol」为模板条目（source=qq）并有「巡逻移动／patrol_move」，本层另有 5 条 claim、11 条引文保留「巡逻」（如 fc1:索敌-20-3#r1「只有在巡逻状态机下才可以进行远程索敌」、fc1:寻路-3-3#r0「巡逻光标」），transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt 第 108 行 [21:02] 主播还把「寻路」当场改口为「巡逻」（「怪的寻路在非寻路状态下…寻路速度在非巡逻状态下始终是保留的啊」），而 entity_corrector.py 的「巡逻」规则只覆盖「巡逻地图」这一搭配、不含「巡逻状态」。另核：curated 条目 subject 仍为「巡逻状态的敌人」、condition 仍为「巡逻状态」，与 claim 的「寻路（非失衡）状态」并存于同一条内，未同步。术语方向本地不能定夺，判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_05.json",
+      "kb_trial/curation/faultcheck/triage_04.json",
+      "kb_trial/curation/faultcheck/chunk_04.json",
+      "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
+      "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt",
+      "kb_trial/curated_high_quality.json",
+      "entity_corrector.py",
+      "kb_trial/entity_index.json",
+      "kb_trial/curation/faultcheck/_review05_before_after.txt"
+    ],
+    "term_flags": [
+      "巡逻／寻路 是同一位置两说：entity_corrector.py 第 96 行只订正「巡逻地图」→「寻路地图」（不含状态）；kb_trial/entity_index.json 以「巡逻」「巡逻移动」为条目；本层 5 条 claim/11 条引文沿用「巡逻」，同源另一录播主播改口「非巡逻状态」。是否把本条 claim 的「巡逻状态」统一写成「寻路」须人工裁定",
+      "同一条内不一致：claim 作「寻路（非失衡）状态」，subject 仍「巡逻状态的敌人」、condition 仍「巡逻状态」"
+    ]
+  },
+  {
+    "id": "fc1:寻路-38-3#r2",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把「分离力在斗区有应用，别的地方没有。」改写为「分离力只在敌人互相推挤的『斗蛐蛐』场景有应用，常规关卡中敌人离得再近也不会产生这种力」，并把 condition 由「讨论分离力」改为「敌人之间发生推挤时」。源 transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt 第 806 行 [02:39:31]「在斗区区里有应用啊 别的地方没有应用 正常情况下 敌人即使离得很近 也不会有这个东西」（本条唯一引文，落在引文跨度 [02:39:13]-[02:39:52] 内，已核逐字）。术语方向本地有据：同文件第 774 行附近 [02:24:04] 主播原话「分离力是斗蛐蛐 那种让敌人和敌人之间倾向于相互远离的力」（本层已发布条目 fc1:位移-30-6#r2 即引该行、claim 亦用「斗蛐蛐」），全语料「斗蛐蛐」5 处/2 文件、「斗区区」1 处、「斗区」1 处（均为同文件 hapax 讹写）；QQ 轨亦用「斗蛐蛐」（kb_trial/curation/qq_expansion/reviews_b4/qq_wo_b4_391.json 窗内 seq 11/14「斗蛐蛐那个？」「斗蛐蛐有毒雾吗」，该窗被判 pending、只作场景辨认）。两处须人判：(a)「斗蛐蛐」是主播黑话，且 [02:24:04] 那句在本条引文跨度（[02:39:13]-[02:39:52]）之外，claim 用它替换源字面「斗区区」属术语改写，是否直接入 claim 须裁定；(b) 新增的「敌人互相推挤」与改后的 condition「敌人之间发生推挤时」在源句内无对应（源同场景表述是「相互远离」，第 806 行只说「离得很近」），属修者补入的机制描述。判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_05.json",
+      "kb_trial/curation/faultcheck/triage_04.json",
+      "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
+      "kb_trial/curated_high_quality.json",
+      "entity_corrector.py",
+      "kb_trial/entity_index.json",
+      "kb_trial/curation/qq_expansion/reviews_b4/qq_wo_b4_391.json",
+      "kb_trial/curation/qq_expansion/approved_manifest_b4.json",
+      "kb_trial/curation/faultcheck/_review05_windows.txt"
+    ],
+    "term_flags": [
+      "「斗区区」→「斗蛐蛐」：方向有据（同文件 [02:24:04] 主播原话，本层 fc1:位移-30-6#r2 已发布条目即用该词；QQ 轨亦用），但该佐证行在本条引文跨度之外，且属主播黑话，须人工确认后入 claim（引文保持「斗区区」原字）",
+      "claim 的「敌人互相推挤」与 condition「敌人之间发生推挤时」为新增描述：源第 806 行只说「敌人即使离得很近」，同场景的「相互远离」表述在第 805/774 行附近，均非「推挤」"
+    ]
+  },
+  {
+    "id": "fc1:寻路-38-6#r1",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把「避障力有一个垂直于自己的寻路方向投影的机制，因此实际上倾向于让敌人斜走。」改写为「避障力的做法是把中间量减去它在寻路方向上的投影，所得向量必定垂直于寻路方向，因此实际效果是让敌人斜走。」源 transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt 第 950 行 [03:03:41]「我再说一个东西 就是在 因为它有一个垂直于自己的那个寻路方向 投影的机制对吧 嗯对 所以他实际上是倾向让敌人 倾向于斜走的一个东西」（本条唯一引文，落在引文跨度 [03:03:41]-[03:03:59] 内，已核逐字）：引文只给了「垂直于寻路方向投影的机制」与「倾向让敌人斜走」两点。而 claim 前半的机制步骤「把中间量减去它在寻路方向上的投影，所得向量必定垂直于寻路方向」在同文件另一段逐字存在——第 763 行 [02:32:01]「这个嗯对 就是这个B站中间量 B站中间量 然后减去给定方向上的投影 得到的这个B站里向量 它是必定垂直于寻路方向的」——但 [02:32:01] 比本条引文跨度起点 [03:03:41] 早约 31 分钟，在引用范围之外。即本次改写引入的机制细节出自另一段时间点，属「新增内容超出引用范围」，本地不能自定是否该由本条承载（或应另立条目并挂第 763 行引文），判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_05.json",
+      "kb_trial/curation/faultcheck/triage_04.json",
+      "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/_review05_before_after.txt",
+      "kb_trial/curation/faultcheck/_review05_windows.txt"
+    ],
+    "term_flags": [
+      "claim 的「中间量…减去…投影，所得向量必定垂直于寻路方向」逐字出自同文件第 763 行 [02:32:01]（引文跨度外约 31 分钟）；若保留，须补引该行或另立条目",
+      "引文措辞是「倾向让敌人斜走」，claim 的「必定垂直于」较源更强，措辞强度归属须人工裁定"
+    ]
+  },
+  {
+    "id": "fc1:寻路-8-7#r0",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把「当单位进入坑的避障判定区，且该帧避障判定为真时，由于单位速度太低，会被避障力顶回来，本来能进入坑的结果没进去。」改写为「当单位进入坑的避障判定区、且该帧恰为避障判定帧（避障力每三帧结算一次）时，因单位速度太低会被避障力顶回来，本来能进坑却没进去。」源 transcripts_txt/BV14y8269EbS_p2_41167359561.txt 第 172 行 [30:37]「…由于进入了坑的避障判定区的话 他那个呃就是如果运气不好 这一针直接就是避障判定真的话 那么会因为他的速度实在是太低了」、第 173 行 [30:56]「他会直接被那个就是强大的避障力给顶回来」、第 174 行 [31:02]「本来能进去 结果没进去是吧」（本条 4 条引文＋3 条 ctx 窗口，均已核逐字，跨度 [30:37]-[31:02]）。两处须人判：(a)「避障判定真」被改写为「避障判定帧」——字幕全量「避障判定帧」0 命中、「避障判定真」2 命中、「避障判定针」1 命中，entity_corrector.py 只有 (r\"避障针\", \"避障帧\")，「判定真→判定帧」属派生订正且该条 derived_text_repairs 为 null（未登记）；(b) 括注「（避障力每三帧结算一次）」不在引文跨度内：同文件最近的对应句是第 190 行 [34:04]「他也仍需要去判定一些避障力卡 避障针卡三针避障」（[34:04] 晚于跨度末端 [31:02] 约 3 分钟），另见 transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt 第 262 行 [01:09:45]「这个避障力向量是每三帧被计算一次」。另核：curated 条目 condition 仍是「该帧避障判定为真」，与 claim 的「避障判定帧」不同步。术语订正未登记、括注超出引用范围、condition 未同步，判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_05.json",
+      "kb_trial/curation/faultcheck/triage_04.json",
+      "transcripts_txt/BV14y8269EbS_p2_41167359561.txt",
+      "transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt",
+      "kb_trial/curated_high_quality.json",
+      "entity_corrector.py",
+      "kb_trial/curation/faultcheck/_review05_before_after.txt"
+    ],
+    "term_flags": [
+      "「避障判定真」→「避障判定帧」：字幕层「避障判定帧」0 命中（「避障判定真」2、「避障判定针」1），entity_corrector.py 只有「避障针→避障帧」；该订正未登记在 derived_text_repairs（本条为 null），须人工裁定用字（引文保持「避障判定真」原字）",
+      "括注「（避障力每三帧结算一次）」不在本条引文跨度 [30:37]-[31:02] 内，同文件对应句为第 190 行 [34:04]",
+      "condition 仍作「该帧避障判定为真」，与 claim 的「避障判定帧」不同步"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-27-3#r0",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把「空飞针有两帧。」改写为「空费帧（费用条为零的那一帧）有两帧，属费用条显示精度问题。」源 transcripts_txt/BV1aTeV6yENP_p4_41898281814.txt 第 270 行 [56:39]「他们不知道空飞针有两针 电影调精度问题对吧 就是很多谣言传出来是有理由的」（本条唯一引文，落在引文跨度 [56:39]-[56:52] 内，已核逐字；该段主题即「谣言溯源」，源说的是「他们（传谣言者）不知道空飞针有两针」）。术语本身已获用户确认且本地有据：kb_trial/entity_index.json 记「Empty Cost Frame」→ canonical「空费帧」（source=qq），本层已发布 QQ 条目引文实写该词（qq_expansion:w000598:c01 引文「才会都是空费帧」；qq_expansion:w000559:c01 引文「就是前十费有两个空费帧，难以区分」，见 kb_trial/curation/qq_expansion/approved_manifest_b4.json／kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_059.json），kb_trial/curation/qq_expansion/reviews_b3/qq_wo_b3_050.json 亦用「（非）空费帧」。故任何把本条回改为「空费针／空飞针」的建议都不予采用，引文按策略保持「空飞针」原字。但本次改动同时写入两处无据内容：(a) 括注「（费用条为零的那一帧）」不在引文行内——该含义的字面线索只在第 269 行 [56:24]「都是空费针开的 部署的人」（[56:24] 早于跨度起点 [56:39]，在范围外），且 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_059.json 的 review_limitations 明写「「空费帧」的具体形态（是显示缺失还是该段本就不产生费用）窗内未说明」；(b)「属费用条显示精度问题」是对引文内讹写片段「电影调精度问题」的改写（「显示精度」在 transcripts_txt 全量 0 命中），且 claim 丢掉了源的「他们不知道」这一谣言溯源框架。另核：同族条目 fc1:帧时序与计时器-27-3#r1 的 claim 仍是「空飞针」、kb_trial/curation/evidence_verdicts.jsonl 第 398 行历史上把「空费针」订为「空飞针」，与用户确认的「空费帧」方向相反（kb_trial/curation/faultcheck/REMEDIATION_REPORT.md §5 D／§8.1 记为留待父裁定），同族两条用字不一致。新增括注无据、改写丢框架、同族不一致，判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_05.json",
+      "kb_trial/curation/faultcheck/triage_05.json",
+      "kb_trial/curation/faultcheck/chunk_09.json",
+      "transcripts_txt/BV1aTeV6yENP_p4_41898281814.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "kb_trial/curation/evidence_verdicts.jsonl",
+      "kb_trial/curation/faultcheck/REMEDIATION_REPORT.md",
+      "kb_trial/curation/qq_expansion/approved_manifest_b4.json",
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_059.json",
+      "kb_trial/curation/qq_expansion/reviews_b3/qq_wo_b3_050.json",
+      "kb_trial/curation/faultcheck/_review05_before_after.txt",
+      "kb_trial/curation/faultcheck/_review05_lean.txt"
+    ],
+    "term_flags": [
+      "「空费帧」为正确术语（用户已确认；kb_trial/entity_index.json 记 Empty Cost Frame→空费帧；本层 QQ 引文实写），不得回改为「空费针／空飞针」，引文须保持源字「空飞针」——本条及同族两条均不得自动采用空费针／空飞针方向的建议",
+      "括注「（费用条为零的那一帧）」在引文跨度 [56:39]-[56:52] 内无来源；QQ 侧 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_059.json 亦记「空费帧」具体形态未说明，须人工裁定是否保留该解释",
+      "「属费用条显示精度问题」系对引文内讹写「电影调精度问题」的改写（「显示精度」全语料 0 命中），且 claim 丢掉了源「他们不知道…」的谣言溯源框架",
+      "同族 fc1:帧时序与计时器-27-3#r1 现状仍写「空飞针」（kb_trial/curation/faultcheck/REMEDIATION_REPORT.md §8.1 留待父裁定），同族用字不一致"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-27-7#r7",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把「退出寻路状态时避障冷却不计算，导致眩晕前后的三个寻路针进行拼接（即避障按三寻路针间隔拼接）。」改写为「退出寻路状态时避障冷却不计算，导致眩晕前后的三个寻路帧被拼接起来。」源 transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt 第 265 行 [01:10:31]「避障冷却会在退出寻路状态的时候不计算 从而导致他在那个他会在眩眩 眩晕前后的那个三个」与第 266 行 [01:10:47]「寻路针进行一个拼接 进行一个拼接」——两条引文分别命中这两行（第二条引文「眩晕前后的那个三个 寻路针进行一个拼接」是跨行拼接，不存在该完整单行，且 t_line_label 为 null），均在跨度 [01:10:31]-[01:10:55] 内。改动删去的括注「（即避障按三寻路针间隔拼接）」其依据只在第 263 行 [01:10:01]「它是一个典型的每三个寻路针一应用…他的这个三针冷却也不会转」（[01:10:01] 早于跨度起点 [01:10:31]，范围外），故删除与引用范围一致；但同一改动把「寻路针」统一写成「寻路帧」：字幕全量「寻路帧」0 命中、「寻路针」16 命中/4 文件（含本条源文件第 263/266 行），同文件第 264 行同时出现「索敌帧」与「避障针」；QQ 轨有「寻路帧」实写（kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_003.json／w000521:c01 引文「每3个寻路帧一次避障力向量的结算」、kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_001.json／w000446:c02「也是每3个寻路帧」），本层「寻路帧」另见 fc1 与其他 QQ 条目共 3 条 claim。术语方向有旁证但字幕层无该词形，且该条 derived_text_repairs 为 null、第二条引文无时间标签，判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_05.json",
+      "kb_trial/curation/faultcheck/triage_05.json",
+      "kb_trial/curation/faultcheck/chunk_09.json",
+      "transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_003.json",
+      "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_001.json",
+      "kb_trial/curation/faultcheck/_review05_before_after.txt",
+      "kb_trial/curation/faultcheck/_review05_lean.txt"
+    ],
+    "term_flags": [
+      "「寻路针」→「寻路帧」：字幕层「寻路帧」0 命中、「寻路针」16 命中（含本条源行）；QQ 轨与 entity_index 无「寻路帧」条目但有 QQ 引文实写，用字待人工裁定（引文保持「寻路针」原字）",
+      "第二条引文为跨行拼接（第 265 行行尾＋第 266 行行首）且无 t_line_label；发布层不存在该完整单行",
+      "被删括注「（即避障按三寻路针间隔拼接）」的依据为跨度外的第 263 行 [01:10:01]，删除与引用范围一致，但若父层认为该结论应保留，需另立条目并挂第 263 行引文"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-28-8#r3",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把「代理与玩家手操是同真的。」改写为「代理与玩家手操是同帧的。」源 transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt 第 177 行 [54:51]「就是这些以时间为单位的东西 就是也就是角色类单位 代理可以通真操作 这个我们要去严肃的去说明一下 代理是和你的操作同真的 这也是为什么那个祖拜尔可以被挤下坑」（本条唯一引文，落在引文跨度 [54:51]-[55:27] 内，已核逐字），第 178 行 [55:10] 复述作「完全同真」，第 180 行 [55:27] 又作「童真」——源内三种写法并存（同真/通真/童真）。术语方向本地有据：字幕全量「同帧」11 命中/5 文件、「同真」12 命中/7 文件；kb_trial/entity_index.json 记「Same Frame」→ canonical「同帧」（type=shenqi_slang，source=qq_alias）；本层 1462 条中 claim 用「同帧」40 条、用「同真」0 条；entity_corrector.py 第 39/134 行两条规则只覆盖「童真→同帧」，并未覆盖「同真」。但该订正属术语／讹写层面的改动，且本条的 derived_text_repairs 为 null（未登记「同真→同帧」，kb_trial/curation/faultcheck/REMEDIATION_REPORT.md §5 C 记该类登记建议本轮整体跳过）；claim 同时把源的「你的操作」写作「玩家手操」，属派生措辞。术语入 claim 与否须人工裁定，判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_05.json",
+      "kb_trial/curation/faultcheck/triage_05.json",
+      "kb_trial/curation/faultcheck/chunk_09.json",
+      "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+      "kb_trial/curated_high_quality.json",
+      "entity_corrector.py",
+      "kb_trial/entity_index.json",
+      "kb_trial/curation/faultcheck/REMEDIATION_REPORT.md",
+      "kb_trial/curation/faultcheck/_review05_before_after.txt",
+      "kb_trial/curation/faultcheck/_review05_lean.txt"
+    ],
+    "term_flags": [
+      "「同真」→「同帧」：entity_index.json 以「同帧」为 canonical（Same Frame, shenqi_slang）、本层 claim 40 条用「同帧」；但 entity_corrector.py 只订正「童真→同帧」，未含「同真」，且未登记 derived_text_repairs，是否把该订正写进 claim 须人工裁定（引文保持「同真／童真」原字）",
+      "claim 的「玩家手操」是源「你的操作」的派生措辞"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-28-8#r4",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把「即使代理表现稳定，其操作与手操在同真下的结算顺序仍不同，因而会出现问题。」改写为「即使代理表现稳定，其操作与手操在同帧下的结算顺序仍不同，因而会出现一些问题。」源 transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt 第 180 行 [55:27]「但是为什么这么稳定的代理会出现一些问题呢 是因为他的操作和你手操的童真的 结算顺序是不同的 我们说我们一个操作是在逻辑帧上的 但是这个认知其实是有一点瑕疵的」（本条唯一引文，落在引文跨度 [55:27]-[55:56] 内，已核逐字）；同源第 185-187 行 [56:33]-[57:10] 进一步讲代理与手操在逻辑帧内的结算差异，机制方向成立。须人判：(a) claim 的「同帧」订正同 #r3，属术语改写且未登记 derived_text_repairs（本条为 null）；(b) 更要紧的是 condition 字段仍是「同真;代理表现稳定」——全层 1462 条中仅本条 condition 残留「同真」（其余 condition 用「同帧」14 条），同一字段组内「同帧/同真」并存，未随 claim 同步。判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_05.json",
+      "kb_trial/curation/faultcheck/triage_05.json",
+      "kb_trial/curation/faultcheck/chunk_09.json",
+      "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+      "kb_trial/curated_high_quality.json",
+      "entity_corrector.py",
+      "kb_trial/entity_index.json",
+      "kb_trial/curation/faultcheck/_review05_before_after.txt"
+    ],
+    "term_flags": [
+      "「同真」→「同帧」同 #r3：方向有 entity_index／本层 40 条 claim 旁证，但未登记 derived_text_repairs，用字待人工裁定",
+      "condition 仍作「同真;代理表现稳定」，是本层唯一残留「同真」的 condition 字段，与 claim 的「同帧」不同步"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-29-6#r0",
+    "decision": "confirmed_fix",
+    "reason": "本次改动把「局外Buff是局内所有加成在局外的东西。」改写为「局外Buff 是数值来源在局外的那部分加成；一旦进图，属性值会全部取整。」源 transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt 第 497 行 [02:17:24]「就是局外Buff 就是局内所有加成在局外的这些东西 一旦进图的话 属性值会全部取整的」（本条两条引文——atom 句与 ctx=sub 整行窗口——均已核逐字命中该行，引文跨度 [02:17:24]-[02:17:36] 覆盖该行）。原 claim 是口播残句（缺谓语），改后的两个分句都能在**同一被引行内**逐字找到来源：「一旦进图，属性值会全部取整」＝该行后半「一旦进图的话 属性值会全部取整的」；前半是对同一行「局外Buff 就是局内所有加成在局外的这些东西」的可判定化改写，与该条既有 condition「该加成属于局内所享、但其数值来源在局外」（本次未改）用词一致。全条改动未触及干员/敌人/技能名、未改数字、未把内容挪到引文范围外，subject「局外Buff」所指明确，判 confirmed_fix。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_05.json",
+      "kb_trial/curation/faultcheck/triage_05.json",
+      "kb_trial/curation/faultcheck/chunk_09.json",
+      "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/_fix_dump.txt",
+      "kb_trial/curation/faultcheck/_review05_before_after.txt",
+      "kb_trial/curation/faultcheck/_review05_lean.txt"
+    ],
+    "term_flags": [
+      "claim 的「数值来源在局外」在 transcripts_txt 全量 0 命中，系对同源残句「局内所有加成在局外的这些东西」的改写；该措辞与该条既有 condition 一致，若父层要求 claim 只用源字，可退回原句"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-45-12#r0",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把「在蛤蟆中途没有影响过寻路的前提下，破箱帧可由蛤蟆的出生帧加上抛两个硬币的时间直接算出。」改写为「单关卡排轴案例（蛤蟆为该关特定敌人）：若蛤蟆中途没有影响过寻路，破箱帧可由蛤蟆出生帧加上抛两个硬币的时间直接算出（仅适用于该关的计算组排轴，非通用规则）。」源 transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt 第 72 行 [13:47]「他说没有 没有的话啊 那我就知道了 我可以直接用蛤蟆的出生针加上抛两个硬币的时间 直接算出来他就是哪一帧破箱子 然后极限返还到这里的时间」与第 71 行 [13:32]「那就会轮到计算组这种情况下 限定这种情况下会使计算更快 然后计算的话就会需要他们提供所有的这个信息条件 比如说这个蛤蟆有没有中间影响过驯鹿」（两条引文即该两行，跨度 [13:32]-[13:58]，已核逐字）。三件事须人判：(a) 本条是**单关卡**排轴案例（claim 自己写明「仅适用于该关的计算组排轴，非通用规则」、蛤蟆为该关特定敌人），但 triage 要求的 scope 由 universal 降为 stage_specific 未落地——curated 条目 scope 仍为 universal（kb_trial/curation/faultcheck/REMEDIATION_REPORT.md §5 记 scope 属本层改不到的字段），claim 与 scope 自相矛盾；(b) claim 用「出生帧」而引文源字是「出生针」：字幕全量「出生帧」0 命中、「出生针」19 命中/11 文件，QQ 轨「出生帧」106 处（如 kb_trial/curation/qq_expansion/final_reviews/qq_wo_057.json），且本条 derived_text_repairs 只登记了「驯鹿→寻路」与 subject/condition 改写，未登记该针/帧订正；(c) claim 已把源「驯鹿」订为「寻路」（登记在 derived_text_repairs，count=3），方向与本层订正一致但同属术语层改动。单关卡、术语、scope 三事本地都不能自定，判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_05.json",
+      "kb_trial/curation/faultcheck/triage_05.json",
+      "kb_trial/curation/faultcheck/chunk_09.json",
+      "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/REMEDIATION_REPORT.md",
+      "kb_trial/curation/faultcheck/_review05_before_after.txt",
+      "kb_trial/curation/faultcheck/_review05_lean.txt"
+    ],
+    "term_flags": [
+      "单关卡案例：claim 自述「单关卡排轴案例…非通用规则」，但 curated 条目 scope 仍为 universal（scope 在本层改不到，见 kb_trial/curation/faultcheck/REMEDIATION_REPORT.md §5），须父裁定",
+      "「出生针」→「出生帧」：字幕层「出生帧」0 命中、「出生针」19 命中（含本条源行），QQ 轨有「出生帧」实写；本条 derived_text_repairs 未登记该订正（引文保持「出生针」原字）",
+      "claim 的「驯鹿→寻路」订正已登记在 derived_text_repairs（count=3），同属术语层改动"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-46-6#r3",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把「塞雷娅三技能会以整个攻击间隔为前摇。」改写为「无出伤/出奶/出弹道等事件通知它时，塞雷娅三技能会以整个攻击间隔为前摇。」源 transcripts_txt/BV1jd3m68E6f_p1_40508197659.txt 第 180 行 [45:33]「塞雷亚是一个无动化机制 无动化机制会以整个攻击间隔为前摇 加上一针保底后摇哦 当然前提是如果没有东西通知他 应该出出事件 出奶出伤出弹道的话」与第 181 行 [45:50]「同样是无动画机制 也有酒神那样的特例…所以的话他会以整个攻击间隔为前摇」（本条唯一引文是第 181 行，跨度 [45:50]-[46:05]，已核逐字）。新增的前提限定语「无出伤/出奶/出弹道等事件通知它时」逐字出自第 180 行 [45:33]，而 [45:33] 早于引文跨度起点 [45:50]、在引用范围之外（同文件第 176-180 行才是本章的机制陈述段）——即挑刺要求补的前提确实存在于源内，但当前引文集不含它，须补引第 180 行。另核实体名：源行写「塞雷亚／赛雷亚」，claim 写「塞雷娅」（entity_corrector.py 第 42 行确有 (r\"[赛塞]雷亚\", \"塞雷娅\")），属干员名订正；而本条 citations[].chapter 仍是「塞雷亚无动画索敌与出奶帧」、kb_trial/curation/faultcheck/REMEDIATION_REPORT.md §5 B-1 记录该引文层字段在本层改不到，故同一条内「塞雷娅/塞雷亚」并存。新增前提超出引用范围、干员名与引文层不同步，判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_05.json",
+      "kb_trial/curation/faultcheck/triage_05.json",
+      "kb_trial/curation/faultcheck/chunk_09.json",
+      "transcripts_txt/BV1jd3m68E6f_p1_40508197659.txt",
+      "kb_trial/curated_high_quality.json",
+      "entity_corrector.py",
+      "kb_trial/curation/faultcheck/REMEDIATION_REPORT.md",
+      "kb_trial/curation/faultcheck/_review05_before_after.txt",
+      "kb_trial/curation/faultcheck/_review05_lean.txt"
+    ],
+    "term_flags": [
+      "干员名「塞雷亚」→「塞雷娅」：entity_corrector.py 第 42 行有 [赛塞]雷亚→塞雷娅，方向有据；但本条引文的 chapter 字段仍写「塞雷亚」（引文层字段本层改不到，见 kb_trial/curation/faultcheck/REMEDIATION_REPORT.md §5 B-1），同条内两种写法并存",
+      "新增前提「无出伤/出奶/出弹道等事件通知它时」出自跨度外的第 180 行 [45:33]，须补引后才在引用范围内"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-53-11#r1",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把「若加速度为十，则加速路程为 V 平方的二十分之一。」改写为「自然寻路中加速度上限为十，加速路程为 V²/20；由此推算，跨过三帧阻挡需要约每秒 14 的速度。」源 transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt 第 344 行 [01:16:18]「额2A分之V方 2A分之V方加速度如果是十 那么2A分之V方 这个路程就是20分之V的平方 如果要到达一个跨过三针阻挡的状态」与第 345 行 [01:16:38]「也就是每三至少要每三帧1.4 也就是一秒钟要14的速度 一秒钟要14的速度的话 就需要14的平方 也就是两百两百比上20」（本条唯一引文，跨度 [01:16:18]-[01:16:58]，已核逐字）。新增的「跨过三帧阻挡需要约每秒 14 的速度」确实落在引文跨度内（第 345 行 [01:16:38]），方向成立；但前半被改写成断言式的「自然寻路中加速度上限为十」有两处本地问题：(a)「自然寻路」与「加速度上限十」的表述出自跨度外——第 342 行 [01:15:56]「因为十倍额加速度上限十的限制」、第 339 行 [01:15:19]「寻路力和避障力的和统称为加速度 而加速度的上限就是这个数值八或者100」，其中第 339 行给的上限是「八或者100」，与 claim 的「上限为十」不同；引文行本身写的是假设句「加速度如果是十」；(b) subject 仍为「未点名」、condition 仍只写「加速度为十」，claim 也未点明主体（是敌人／单位／哪一类），同批 triage 要求的补主体未落地。数字口径不一致＋改动超出引用范围＋主语不明，判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_05.json",
+      "kb_trial/curation/faultcheck/triage_05.json",
+      "kb_trial/curation/faultcheck/chunk_10.json",
+      "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/_review05_before_after.txt",
+      "kb_trial/curation/faultcheck/_review05_lean.txt"
+    ],
+    "term_flags": [
+      "上限口径不一致：引文行是假设句「加速度如果是十」，同文件第 339 行 [01:15:19] 说上限是「八或者100」，claim 写成定论「加速度上限为十」，数值口径须人工裁定",
+      "「自然寻路」的限定出自跨度外的第 342 行 [01:15:56]；subject 仍为「未点名」，claim 无主体"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-55-2#r3",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把「踩完路径点后，目标速度已改成零。」改写为「（敌人）寻路踩过路径点后，目标速度即被置零。」源 transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt 第 148 行 [28:38]「他都已经踩了路径点了 目标速度都已经改成零了对吧 假设说这里是一针 这里是一针 这里是一针 这里是一针 在这一帧再往下一帧走的时候 它还能是它还能是V0吗」（本条唯一引文，跨度 [28:38]-[28:53]，已核逐字）：机制句「踩了路径点→目标速度改成零」逐字成立。但本次改动只是把主语写成括注占位「（敌人）」：curated 条目的 subject 字段仍是「未点名」，条件仍是「已踩路径点」，claim 里也没有可判定的主体；源的「他」在该窗口只能靠上下文还原。另核新增的「寻路」二字：本条引文跨度内无「寻路」字样（该文件第 130-175 行只有第 173 行 [32:34]「寻路后从零开始 67帧停住」含「寻路」，在跨度之外），属修者按语境补入的限定。主语不明＋限定词无引文支撑，判 needs_human_confirmation（机制句本身可核，若父层直接点名主体即可落定）。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_05.json",
+      "kb_trial/curation/faultcheck/triage_05.json",
+      "kb_trial/curation/faultcheck/chunk_10.json",
+      "transcripts_txt/BV1kRbQ6tEG9_p2_40971603028.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/_review05_before_after.txt",
+      "kb_trial/curation/faultcheck/_review05_lean.txt"
+    ],
+    "term_flags": [
+      "subject 仍为「未点名」，claim 只有括注占位「（敌人）」；源的「他」须靠窗口还原，主体是否可写作「敌人」须人工裁定",
+      "claim 中的「寻路」二字不在引文跨度 [28:38]-[28:53] 内（同文件最近含「寻路」的行为第 173 行 [32:34]）"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-70-6#r3",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把「陷阱师在传送前结算」改写为「陷阱师在传送前结算（主播为推断语气；同一录播 [02:34:27] 另称在传送之后结算，两说并列待定）。」源 transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt 第 350 行 [02:35:57]「然后的话陷阱师应该是在传送前结算嗯 陷阱师是在传送前」（两项引文＝atom 句与该行 ctx=sub 窗口，跨度 [02:35:57]-[02:36:08]，已核逐字）——括注里的「主播为推断语气」对应源行「应该是在传送前」。但括注并列的另一说「在传送之后结算」出自第 343 行 [02:34:27]「失衡的话非常特殊 他在就是所有的干员tick弹道tick他们之后结算 然后的话那个陷阱师不知道为什么也在那个就是属传送之后结算」——[02:34:27] 早于引文跨度起点 [02:35:57] 约 90 秒，在本条引文范围之外。即本次写入的「两说并列」有一半内容不在引用范围内（triage_05 亦要求「应按 conflict_policy 补语气与并列的另一说」，但未同时要求补引），须补引第 343 行才能自足；另核 claim 正文承载「同一录播 [02:34:27] 另称…两说并列待定」这类编辑过程信息，本层确有先例（claim 含「两说并列」6 条、kb_trial/curation/faultcheck/REMEDIATION_REPORT.md §5 E 曾把两处同类注记判为「不入机制命题正文」并跳过），口径不一，须父裁定。判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_05.json",
+      "kb_trial/curation/faultcheck/triage_05.json",
+      "kb_trial/curation/faultcheck/chunk_10.json",
+      "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/REMEDIATION_REPORT.md",
+      "kb_trial/curation/faultcheck/_review05_before_after.txt",
+      "kb_trial/curation/faultcheck/_review05_lean.txt"
+    ],
+    "term_flags": [
+      "括注并列的另一说（[02:34:27]「陷阱师…也在那个就是属传送之后结算」）落在引文跨度 [02:35:57]-[02:36:08] 之外，须补引第 343 行",
+      "claim 正文含「同一录播 [02:34:27] 另称…两说并列待定」这类编辑过程注记：本层 claim 含「两说并列」者 6 条（先例存在），但 kb_trial/curation/faultcheck/REMEDIATION_REPORT.md §5 E 曾判同类注记不入 claim 正文，口径须父裁定"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-70-7#r3",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把「「创建」不能简单说成是实体，因为部分非实体的东西也参与，且其创建也会受到这个影响。」改写为「「创建顺序」这一规则的作用对象不能简单说成是实体：部分非实体对象也参与，它们的创建同样受「按创建顺序决定事件更新」的影响。」源 transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt 第 354 行 [02:36:52]「嗯所以创建这个东西的话 没有办法简单说成是实体 因为部分非实体的东西也参与也他们的创建也会受到这个影响」（本条唯一引文，跨度 [02:36:52]-[02:37:09]，已核逐字）。改动把源里的两个无所指成分都补成了具体所指：「创建」→「创建顺序」、「这个影响」→「「按创建顺序决定事件更新」」。两处补语的来源分别是第 353 行 [02:36:49]「创建顺序」与第 351 行 [02:36:08]「实体按创建顺序对决定对应事件的更新 是的 但是有一些事件的话 它又是单独拎出来处理的」——这两行都比引文跨度起点 [02:36:52] 早（[02:36:49]／[02:36:08]），在本条引文范围之外（triage_05 自己也说「须依赖未引的 [02:36:08]/[02:36:26] 才能解出」）。即改写让条目自足的方向正确，但补入的所指全部来自引用范围之外，是否补引第 351/353 行或另立条目须父裁定，判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_05.json",
+      "kb_trial/curation/faultcheck/triage_05.json",
+      "kb_trial/curation/faultcheck/chunk_10.json",
+      "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/_review05_before_after.txt",
+      "kb_trial/curation/faultcheck/_review05_lean.txt"
+    ],
+    "term_flags": [
+      "claim 的「创建顺序」「按创建顺序决定事件更新」分别取自引文跨度外的第 353 行 [02:36:49] 与第 351 行 [02:36:08]；须补引或另立条目"
+    ]
+  },
+  {
+    "id": "fc1:帧时序与计时器-74-0#r0",
+    "decision": "needs_human_confirmation",
+    "reason": "本次改动把「碰撞时作为不可选中的目标加入时针循环列表，进行周期性检测。」改写为「有落地隐匿的干员在与敌人碰撞时，会以不可选中目标的身份被加入一个周期性检测列表（源作「时针循环的列表」，词形待核听，不作术语）。」源 transcripts_txt/BV1wPuG6aEyY_p2_40722629133.txt 第 84 行 [13:38]「所以的话他会加入一个循环检测 这个东西是一旦加入进去之后呃 就是一旦就是碰撞的时候 是作为不可选中的目标的 碰撞的时候是作为不可选中的目标的」、第 85 行 [13:58]「那么的话他就会加入一个时针循环的列表」、第 86 行 [14:05]「进行周期性检测」（跨度 [13:38]-[14:05]；atom 引文是第 84 行行尾＋第 85 行行首的拼接，任一单行都查不到，ctx 窗口命中第 84 行）。四处须人判：(a) 碰撞对象「与敌人」不在被引行内——第 84 行只说「碰撞的时候」，同段讲光环「使用一个碰撞箱」（第 79 行 [12:28]）在引文跨度之外，claim 把碰撞对象写实为敌人属补入；(b) 主体由「有落地隐的干员」改写为「有落地隐匿的干员」，而 subject 字段仍是「有落地隐的干员」——entity_corrector.py 第 33 行只订正「落地引→落地隐」，kb_trial/entity_index.json 同时收「落地隐」与「落地隐匿」两条（source=qq），本层 claim 用「落地隐」12 条／「落地隐匿」4 条，两种写法并存；(c) 术语「时针循环」被移出命题、改为括注「（源作「时针循环的列表」，词形待核听，不作术语）」——字幕层「时针循环」2 处/2 文件（含本条源行）、「实时循环」0 命中，本层 claim 含「源作…」括注者 5 条（先例存在），但该括注是否应占 claim 正文须裁定；(d) derived_text_repairs 为 null，上述订正均未登记。判 needs_human_confirmation。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_05.json",
+      "kb_trial/curation/faultcheck/triage_05.json",
+      "kb_trial/curation/faultcheck/chunk_10.json",
+      "transcripts_txt/BV1wPuG6aEyY_p2_40722629133.txt",
+      "kb_trial/curated_high_quality.json",
+      "entity_corrector.py",
+      "kb_trial/entity_index.json",
+      "kb_trial/curation/faultcheck/_review05_before_after.txt",
+      "kb_trial/curation/faultcheck/_review05_lean.txt"
+    ],
+    "term_flags": [
+      "「时针循环」在字幕层仅 2 处/2 文件（含本条源行），「实时循环」0 命中；claim 把它降为括注、命题只写「周期性检测列表」，是否保留该括注须人工裁定（引文保持「时针循环的列表」原字）",
+      "「落地隐」→「落地隐匿」：entity_corrector.py 第 33 行只订正「落地引→落地隐」；entity_index.json 两条并存，本层两种写法并用（落地隐 12 条／落地隐匿 4 条），subject 字段仍作「有落地隐的干员」，与 claim 不同步",
+      "claim 的「与敌人碰撞」在被引行内无对应（第 84 行只说「碰撞的时候」；光环碰撞箱的说明在第 79 行 [12:28]，在引文跨度外）",
+      "引文为跨行拼接（第 84 行行尾＋第 85 行行首），发布层不存在该完整单行；该条 derived_text_repairs 为 null，术语订正未登记"
+    ]
+  }
+]

@@ -1,0 +1,336 @@
+{
+  "chunk": "13",
+  "reviewed": 48,
+  "verdicts": [
+    {
+      "id": "qq_expansion:w001462:c01",
+      "verdict": "fix",
+      "fault_type_kept": "number_suspect; not_self_contained",
+      "suggestion": "以方程 3y-x=0 表示斜率关系时，用 3-1=2 除以 √(3²+1)=√10 得 2/√10≈0.6324555320；原文用截断值 3.162277 算得 0.6324556641，即单位会“路过”约 0.6325 宽度的阻挡（该阻挡物的所指依赖原文配图，本层未保留）。",
+      "reason": "claim 把「=2/根号10」与「2/3.162277=0.6324556641」并成一条等式，而 2/√10 实为 0.6324555320，等式在 claim 内自相矛盾，须按原文两段分开写，并说明「这个阻挡」依赖已丢失的配图。"
+    },
+    {
+      "id": "qq_expansion:w001464:c01",
+      "verdict": "fix",
+      "fault_type_kept": "overclaim",
+      "suggestion": "沉默、缴械（以及战栗）在同一发言者的口径里是“阻止这个动作发生”，而这类控制能否被“制约”取决于实现（“看yj怎么写”）；实例是夹心糖、万顷、桃金娘被缴械后就不奶人了。（“狂躁＝看动作有没有发生、麻痹＝发生后中断结果”的对照出自同窗另一发言者的推断，其本人随后自陈“好像也不是”，仅作原文保留、不作判据。）",
+      "reason": "claim 的核心有逐字出处，但 subject 与主题句把被发言者本人收回的“狂躁/麻痹”对照写成既定差异，须在 claim 内注明该对照作废。"
+    },
+    {
+      "id": "qq_expansion:w001507:c01",
+      "verdict": "minor",
+      "fault_type_kept": "not_self_contained",
+      "note": "「没有偏移不代表不能偏移」的所指窗内未给，条目 limitation 已如实记录该句「是对可能性的提示、未给出具体对象」；主命题「受击半径 0.1＝半径 0.1 的受击碰撞箱／看碰撞箱」为通用字段语义、可独立理解，不改动。",
+      "reason": "缺锚定的分句已被条目标注为无对象的提示，主命题自足，属可容忍。"
+    },
+    {
+      "id": "qq_expansion:w001553:c01",
+      "verdict": "fix",
+      "fault_type_kept": "asr_error; evidence_mismatch",
+      "suggestion": "灵知不清冷却（不重置冷却）时，开完技能后会随机残留 0-1 点“技力”（会留绿条）。subject 改为「灵知（不清冷却时）技能结束的技力残留」，删去未经出处的技能序号“3”。",
+      "reason": "claim 把原文「如果灵知不清冷却的话」抄成「不清楚冷却」，语义由“不重置冷却”变成“不了解冷却”；subject 的「灵知3」序号在窗内与本条引文中都没有出处。"
+    },
+    {
+      "id": "qq_expansion:w001587:c02",
+      "verdict": "fix",
+      "fault_type_kept": "evidence_mismatch",
+      "suggestion": "反例边界：绑定能“飞出去”的只有少数；例如冻血镰曾跟着安洁莉娜飞走、而实际判定还在原位（该现象为复制安洁的 bug，同窗已确认“修了”，属历史现象）。",
+      "reason": "同窗紧接的“修了／竟然修了……”既未进引文也未进 claim，读者会把已修复的 bug 当现行机制，须在 claim 内加修复状态。"
+    },
+    {
+      "id": "qq_expansion:w001637:c02",
+      "verdict": "withdraw",
+      "fault_type_kept": "",
+      "reason": "指控的 overclaim 前提不成立：条目 review_limitations 已明记“本窗内没有其他发言者对该条技术解释作出确认或反驳，属单人陈述”，evidence_review.reason 也写明未采信“主播认可”的表述；claim 本身是可自证的技术命题。"
+    },
+    {
+      "id": "qq_expansion:w001755:c01",
+      "verdict": "fix",
+      "fault_type_kept": "trivial",
+      "suggestion": "现象（原文未给关卡、敌人与减速数值，同窗亦未收束）：有群友称“减速反倒走的更快，奇怪”，主播以“这里还有那个实验，减速下敌人可以避障走的更快”接住；同窗随后就该方向与阈值出现争议（“反了吧”“第一个是v >0.125”“不是速度大的才会0.0625吗”），无结论。",
+      "reason": "claim 以“存在实验现象”的元陈述起头并把审读过程（“被主播以实验表述接住”）写进正文，须改写为现象本身，并并列同窗未收束的争议。"
+    },
+    {
+      "id": "qq_expansion:w001791:c01",
+      "verdict": "fix",
+      "fault_type_kept": "number_suspect",
+      "suggestion": "一帧 ≈ 0.0333333 秒 = 69905×2⁻²¹（二进制精确值 0.033333301544189453…秒，与 0.0333333 非严格相等）。",
+      "reason": "原文等式 0.0333333=69905*2^-21 并不严格成立（差约 1.5e-9），claim 还漏了单位“秒”，并与同 chunk w001637:c02 的取值口径不统一，须改为近似式。"
+    },
+    {
+      "id": "qq_expansion:w001791:c02",
+      "verdict": "fix",
+      "fault_type_kept": "overclaim",
+      "suggestion": "战斗精通必须连续打；主播称哪怕自己下号再上也一样，但同窗又表示不确定触发条件究竟是重新登录还是清游戏后台。",
+      "reason": "条目 limitation 自称“丢失触发条件（登录还是清游戏后台）原文明确为不确定，不写入本条”，但 claim 恰恰把这未定的半句写成事实，须把不确定状态写回 claim。"
+    },
+    {
+      "id": "qq_expansion:w001793:c01",
+      "verdict": "minor",
+      "fault_type_kept": "not_self_contained",
+      "note": "「改写技力」是效果名而非代词，其所属干员/技能窗内不可确指（条目 condition 已如实标注“该干员在本窗不可确指”，limitation 亦记录未说明改写前取值）；claim 其余部分（把技力改写成 10、可改写客户端真实数值）自足可读，不改动。",
+      "reason": "主体为命名效果、不可确指一事条目已自陈，属可容忍的定位短板。"
+    },
+    {
+      "id": "qq_expansion:w001834:c01",
+      "verdict": "fix",
+      "fault_type_kept": "evidence_mismatch",
+      "suggestion": "「放置不是部署」：出分身这一类行为不属于部署，因而不吃部署相关的限制（群内口径）。另据主播，关卡里本来就有 800 个装置开局摆在不可部署地块（forbidden）上——那是关卡侧的既有布置，不是玩家按该做法放上去的。",
+      "reason": "claim 用“因此”把群友的玩家行为规则与主播的关卡内容事实拼成因果，并使“那些装置”指向不明，须拆成两句、去掉因果连接。"
+    },
+    {
+      "id": "qq_expansion:w001912:c01",
+      "verdict": "withdraw",
+      "fault_type_kept": "",
+      "reason": "指控的 evidence_mismatch 不成立：claim 已按原文三个阶段顺序记述（一般过滤器→二次过滤器互换→嘲讽过滤器按嘲讽等级排序），末句即终态“把刁民排到末尾”，不存在把中间态当终态的误读；同窗“不对／为什么只有一个飞行兵受影响”针对的是实测观察且已被“站的远手不够长”回应。"
+    },
+    {
+      "id": "qq_expansion:w001933:c01",
+      "verdict": "fix",
+      "fault_type_kept": "overclaim",
+      "suggestion": "一位群内成员的模型称：“上火车”其实是一个可以被傀儡师清除的 Buff，而不是玩家以为的唯一物理状态，因此会出现“在火车上再上火车”、每上一次火车就多一套加成；并称 YJ 对这类位置机制的直接实现是“给这个干员套一个发光 buff”（对照：损伤条不是 buff，傀儡师不专门清就不会乱清）。（该模型出自该成员的第一人称解释，主播同窗未确认。）",
+      "reason": "机制内容全部来自单一群友的推测式解释，claim 却写成像 YJ 实现事实，须在 claim 内标明来源与“未确认”。"
+    },
+    {
+      "id": "qq_expansion:w001933:c02",
+      "verdict": "remove",
+      "fault_type_kept": "duplicate; overclaim",
+      "reason": "与同窗同发言人的 w001933:c01 是同一模型的实例与概括，本条只把“上火车”抽象成“YJ 的大部分机制”的全称断言，机制信息更少且更不可核；保留 w001933:c01（其中已含“YJ 的实现＝套发光 buff”这一层）。"
+    },
+    {
+      "id": "qq_expansion:w001951:c02",
+      "verdict": "fix",
+      "fault_type_kept": "overclaim",
+      "suggestion": "「不能被眩晕」与「被眩晕没有效果」可理解为没有（实现上的）区别：主播对该二选一提问只回答“不是”；原话仅两字，读法由问答结构与同窗“抗性是免疫快捷键”的上下文推定。",
+      "reason": "唯一引文是一词回答“不是”，claim 却写成机制定论并自加“（机制上的）”定语，须把推定过程写回 claim。"
+    },
+    {
+      "id": "qq_expansion:w001993:c02",
+      "verdict": "fix",
+      "fault_type_kept": "not_self_contained",
+      "suggestion": "「无法选中／无法选择」包含起飞一类与迷彩一类（其余暂称其他一类）；迷彩比别的无法选择类特殊（特殊在哪、其余类别有哪些，原文未说明）。",
+      "reason": "claim 把“可以理解为起飞一类”“迷彩一类、其他一类”“起飞属于无法选择一类”三句拼在一起，首尾重复且层级不明，须重写为一句可读的分类。"
+    },
+    {
+      "id": "qq_expansion:w000142:c01",
+      "verdict": "fix",
+      "fault_type_kept": "evidence_mismatch",
+      "suggestion": "装置属于“角色类”、不是“敌人类”；敌方阵营的装置（如炮台）是敌方单位但仍不是敌人类。因此要求“敌方敌人类”的判定不会把装置算进去。",
+      "reason": "引文里“是敌方单位／不是敌人类”回答的是敌方炮台，claim 用“装置类单位……是敌方单位”统称会把我方装置（白铁装置）一起罩进去，须限定主体或拆句。"
+    },
+    {
+      "id": "qq_expansion:w001998:c01",
+      "verdict": "fix",
+      "fault_type_kept": "not_self_contained; evidence_mismatch",
+      "suggestion": "珊比 2 技能（群内称呼，正式名原文未给）的喷胶分两步：先往前喷，再给已喷的地块进行扩散；往前喷这一步配置的是向前 1 格。当前进喷洒只能喷 0 格（前 ban）时，会直接以施放者本体所在格喷一圈胶，且该特殊逻辑下的左右顺序是反的。",
+      "reason": "窗内 seq1/seq12 已点名“珊比2技能”，claim 与 subject 却只写“喷胶／正主／该特殊逻辑”，读者无法定位干员与技能；seq7“挤压起步”与该技能的等价关系未确证，不应写进 claim。"
+    },
+    {
+      "id": "qq_expansion:w001480:c01",
+      "verdict": "minor",
+      "fault_type_kept": "overclaim",
+      "note": "末句“与隐匿同类”确系群友口语类比（seq56），但 claim 前句已写明该地面规避“只针对敌方、我方干员仍能选中起飞单位”，读者不会把两者范围等同；条目 limitation 也已记录正式效果名未给出。",
+      "reason": "claim 自身已带范围限定语，类比句不改变适用范围，属可容忍。"
+    },
+    {
+      "id": "qq_expansion:w000136:c01",
+      "verdict": "fix",
+      "fault_type_kept": "evidence_mismatch",
+      "suggestion": "丰川祥子始终是远程攻击；近战/远程的分野应按“阻挡/非阻挡”区分，而不是套用“地面/飞行”分类。",
+      "reason": "末分句“地面单位同样会阻挡近战”是群友残句“哦地面单位阻挡近战”的补全式改写（主宾不明），主播同窗还举出“未许之地……阻挡飞行”的反例，须删去该分句。"
+    },
+    {
+      "id": "qq_expansion:w000225:c04",
+      "verdict": "fix",
+      "fault_type_kept": "evidence_mismatch",
+      "suggestion": "鹰角文本写成“攻击目标数等同阻挡数”（同窗所记的“打3”那一类写法）时，意为攻击目标数等同于阻挡数、最低打 1；同窗有群友主张该文本字面就是“攻击数3”，该分歧未收束。",
+      "reason": "claim 自行加了引文里没有的“群攻/群卫”职业限定，且同窗 seq68/69 的反驳只进了 limitation、未进 claim，须删去限定并并列分歧。"
+    },
+    {
+      "id": "qq_expansion:w000573:c03",
+      "verdict": "fix",
+      "fault_type_kept": "overclaim",
+      "suggestion": "有群友提出（未经确认）：干员的索敌与生成顺序有关——例如紫兰随机某一帧部署，若敌人比紫兰后生成，则敌人更有可能索到紫兰。",
+      "reason": "唯一依据 seq42 是“假设……下去”式推演、窗内无人确认也无实测，claim 抽掉具体干员后写成通则，须还原为带主体的未验证提案。"
+    },
+    {
+      "id": "qq_expansion:w000573:c04",
+      "verdict": "withdraw",
+      "fault_type_kept": "",
+      "reason": "指控的 trivial 不成立：条目给出的是可跨关复用的框架事实——出怪不由固定时间表驱动，而由波次、阻挡波次与检查点构成，属“误判为 trivial 但确含机制信息”的一类。"
+    },
+    {
+      "id": "qq_expansion:w000873:c02",
+      "verdict": "fix",
+      "fault_type_kept": "overclaim",
+      "suggestion": "银灰天赋的技力加成要求被加技力的干员费用低于风雪之眼；另有群友报告，只有按“银灰—小猫”交替再部署才会出现 27 费的小猫仍吃到技力、中途不再部署银灰就吃不到——该现象同窗被复现者本人称为“更像bug”，也有说法称天赋效果是一次性给的，成因未定。",
+      "reason": "claim 把复现者单方给出的条件链写成规则性结论，未并列同窗“更像bug”“确实好奇怪哦”“我记得不行／只加一次”的相反观察，须加来源与未定性。"
+    },
+    {
+      "id": "qq_expansion:w001557:c01",
+      "verdict": "minor",
+      "fault_type_kept": "not_self_contained",
+      "note": "“鼠鼠”是群内对该传送类敌人的称呼，正式名与关卡原文未给（条目 limitation 未单列此项）；但 claim 的机制谓词完整（寻路断绝→跳过右边 move 检查点→直接执行路径里的传送门传送），社区用户可按该称呼检索，补正式名须外部资料。",
+      "reason": "主体是可检索的群内称呼而非代词，机制描述自足，属可容忍的定位短板。"
+    },
+    {
+      "id": "qq_expansion:w001557:c02",
+      "verdict": "minor",
+      "fault_type_kept": "not_self_contained",
+      "note": "同 c01：“鼠鼠”为群内称呼、正式名未给；“tag”具体是哪一项原文未指明，条目 limitation 已如实记录；claim 的机制谓词（其实现就是近战）清晰。",
+      "reason": "主体与 tag 项均不可再确指，但条目已自陈、谓词可读，属可容忍。"
+    },
+    {
+      "id": "qq_expansion:w000980:c01",
+      "verdict": "fix",
+      "fault_type_kept": "number_suspect",
+      "suggestion": "干员属性按 1级属性+(满级属性-1级属性)*(当前等级-1)/(满级-1) 插值（原文写作“*当前等级/(满级-1)”，按字面代入 1 级与满级都不成立，属漏写 -1 的简写）；因此满级与 1 级属性相同的干员（如 20 抗）在任何等级都是同一数值。",
+      "reason": "照抄的公式按字面代入两端都得不到 1 级/满级属性，分子应为“当前等级-1”，须补注准确形式或标明为原文简写。"
+    },
+    {
+      "id": "qq_expansion:w000980:c02",
+      "verdict": "minor",
+      "fault_type_kept": "not_self_contained",
+      "note": "“死芒”为窗内称呼、正式名未给出（条目 limitation 未单列此项）；claim 的可复用点是“只改满级属性→未满级时法抗含小数、UI 未取整”，主体不可确指但不影响该机制点的理解。",
+      "reason": "主体为群内称呼、谓词自足且数值逐字有出处，属可容忍的定位短板。"
+    },
+    {
+      "id": "qq_expansion:w001410:c01",
+      "verdict": "minor",
+      "fault_type_kept": "evidence_mismatch",
+      "note": "“无视碰撞体”是主播原话，同窗 seq19/21（“拉不过墙不是碰撞箱的原因”→“是”）正说明墙的限制来自高台/不可通行判定而非碰撞箱，claim 与原文并不冲突，只是没写入这另一层限制；后续版本可补“仍受不可通行／高台判定限制”。",
+      "reason": "主命题（无视碰撞体的传送、每帧 0.02666 格）有逐字出处，指控的“与引文相反”不成立，仅漏写地形侧限制，属可容忍。"
+    },
+    {
+      "id": "qq_expansion:w001875:c01",
+      "verdict": "fix",
+      "fault_type_kept": "evidence_mismatch",
+      "suggestion": "肉鸽收藏品“赐福新生”的屏障加伤不认屏障来源：只要屏障量之和大于 0 即可，本条按 dynamic 判定（窗内称干员侧用 dynamic 一词的非屏障效果目前还没见到）。",
+      "reason": "“判定与其他来源类效果同样走 dynamic”在引文里没有出处，seq52 恰好说明干员侧尚未见其他非屏障效果走 dynamic，与该分句方向相反，须删去。"
+    },
+    {
+      "id": "qq_expansion:w001902:c02",
+      "verdict": "minor",
+      "fault_type_kept": "evidence_mismatch",
+      "note": "指控的“两条互斥表述”不成立：c01 的 condition 是“熊进入趴下（矮人）状态时”，c02 是“寻仇目标消失或打不到时”，是同窗发言人对不同触发路径的两段描述；但两条互不引用，且同窗参与者自陈“熊太混沌了”“前一步刚得出的结论再去测可能又被推翻”，条目 limitation 已记录 1帧1刷与检测周期关系未澄清。",
+      "reason": "互斥指控不成立，仅存跨条互不引用的小缺口，条目已如实记录未澄清处。"
+    },
+    {
+      "id": "qq_expansion:w000137:c01",
+      "verdict": "fix",
+      "fault_type_kept": "overclaim",
+      "suggestion": "群内整理口径把技能按前摇/触发方式分为三类：瞬发技为固定时长；替换技替换一次攻击、跟随攻击间隔；切换技/回费/陷阱+1 则直接触发、无动画。（该分类为个人整理口径，prts 尚未收录，非官方术语表。）",
+      "reason": "claim 以分类学定论写“技能按前摇方式可分为三类”，而“按前摇方式”这一分类维度是条目自行添加，须标明为群内个人口径。"
+    },
+    {
+      "id": "qq_expansion:w000162:c01",
+      "verdict": "minor",
+      "fault_type_kept": "overclaim",
+      "note": "seq13“还没人真的试出来过”与 seq14“理论上是这样的”回复的是提问者（seq10）关于“同帧35个后仇恨颠倒”的追问，未必覆盖 seq11 的优先级链；claim 系主播逐字陈述，条目 limitation 已记“本窗未给出新版规则的生效版本号或时间点”。",
+      "reason": "指控所指的“未加实测标注”存疑（那两句更像针对另一问），claim 为主播原话，仅版本锚点缺失，不改动。"
+    },
+    {
+      "id": "qq_expansion:w000162:c02",
+      "verdict": "minor",
+      "fault_type_kept": "not_self_contained",
+      "note": "claim 为原文逐字的历史陈述“以前是正前方1级嘲讽=1距离”，条目 limitation 已记“『以前』未指明具体版本或时间，无法定位该规则的有效区间”；与 w000761:c02 的旧版折算（1嘲讽=0.1重量）分属不同窗口，未必是同一套机制，故不宜按指控合并。",
+      "reason": "“以前”无版本锚点确为短板，但条目已如实标注、claim 逐字有源，属可容忍。"
+    },
+    {
+      "id": "qq_expansion:w000382:c01",
+      "verdict": "fix",
+      "fault_type_kept": "evidence_mismatch",
+      "suggestion": "妮符（原文用名）的出伤与同帧回血之间存在结算顺序，同帧普通回血不起作用；必须是复活甲这类插在应用中（结算流程中）的回血机制才会介入。subject 同步改回“妮符出伤与同帧怪回血的结算顺序”。",
+      "reason": "claim/subject 的主体写成“罗小黑”，而本窗 seq21 与本条自己的 reason 均作“妮符”（该工单内“罗小黑”0 命中），主体被换成了另一名干员；同一错误已随 approved_manifest_b4.json 落地，需一并回改。"
+    },
+    {
+      "id": "qq_expansion:w000408:c01",
+      "verdict": "fix",
+      "fault_type_kept": "evidence_mismatch",
+      "suggestion": "删去 evidence_review.reason 中“群友 seq 11『我怎么记得晕眩不脱离阻挡，是我记错了吗』作为独立回忆与之同向”一句（本窗 seq 11 实为“依旧紫曰”，该句位于同批另一工单 qq_wo_b4_206.json／窗 w000410，且未进 citations），改为“本条仅以主播 seq 28『被晕不解阻挡啊』为据，无同窗独立旁证”。claim 文本不变。",
+      "reason": "reason 里引用的是本窗并不存在的旁证（seq11 实为“依旧紫曰”），须删去或改为显式跨窗引用。"
+    },
+    {
+      "id": "qq_expansion:w000430:c01",
+      "verdict": "minor",
+      "fault_type_kept": "number_suspect",
+      "note": "claim 已用“长时间后（如 1w 秒）”的举例式写法，数字逐字来自原文提问，条目 limitation 亦记“本窗未说明『1w 秒』是否为触发该规则的阈值，也未给出更短的等效时间”，不构成把该数字当机制参数的断言。",
+      "reason": "不可核的“1w 秒”已在 claim 内以“如”限定并在 limitation 记录，属可容忍。"
+    },
+    {
+      "id": "qq_expansion:w000430:c02",
+      "verdict": "remove",
+      "fault_type_kept": "duplicate",
+      "reason": "与同窗 w000430:c01 是同一问答链（c02 的 seq3-6 即 c01 的 seq1-2 之后续），只把主语换成“开局 0 帧玛恩纳”、无新增机制信息，且同样依赖未核实的“1w 秒”前提；保留 w000430:c01。"
+    },
+    {
+      "id": "qq_expansion:w000455:c01",
+      "verdict": "minor",
+      "fault_type_kept": "evidence_mismatch",
+      "note": "“（集成战略）”为条目自加的模式归属、本窗无出处（该窗“集成战略”0 命中）；符文属该模式的常识性归属、误伤风险低，故不改动；若日后确认符文亦见于其他模式，应删去该括注。",
+      "reason": "自加的模式归属确无原文支撑但大概率成立，属可容忍。"
+    },
+    {
+      "id": "qq_expansion:w000500:c01",
+      "verdict": "fix",
+      "fault_type_kept": "not_self_contained; overclaim",
+      "suggestion": "（“花”／“这些召唤物”原文未给出对应干员或技能，该说法出自同窗单一发言者、未获验证）某召唤物体系要求下一次也必须同帧部署、同帧撤退，否则其他召唤物会一起失效。",
+      "reason": "claim 以无先行词的“这些召唤物（花）”起句、又用确定句式写一条被动的单方陈述（条目 reason 亦自陈被质疑且未验证），须把主体不可定位与未验证状态写进 claim。"
+    },
+    {
+      "id": "qq_expansion:w000500:c02",
+      "verdict": "fix",
+      "fault_type_kept": "not_self_contained; evidence_mismatch",
+      "suggestion": "（“花”原文未给出对应干员或技能）该召唤物体系相关的“二天赋加攻”只能吃一次、不能叠加（原文未指明该“二天赋”属召唤物还是其干员）。",
+      "reason": "claim 把原文未指明归属的“二天赋”固定成召唤物的天赋，且同样以无先行词的“这些召唤物（花）”起句，须按原文不指定主体或明标归属未明。"
+    },
+    {
+      "id": "qq_expansion:w000748:c01",
+      "verdict": "minor",
+      "fault_type_kept": "evidence_mismatch",
+      "note": "原文两种措辞（seq7/8“禁止手动部署”与 seq12“挂了个禁止再部署，直至下次部署”）都已列入本条 quotes，claim 取其一；主链“挂禁止部署标志→校验不通过→卡死在该状态”有逐字出处。",
+      "reason": "两版措辞在引文中同时可见，claim 未并列属表述粗糙而非失实，可容忍。"
+    },
+    {
+      "id": "qq_expansion:w000761:c02",
+      "verdict": "minor",
+      "fault_type_kept": "not_self_contained",
+      "note": "claim 为原文逐字的旧版折算，limitation 已记“『以前』未指明具体版本或时间，无法定位该折算的有效区间”；与 w000162:c02 的旧版折算分属不同窗口，未必同一套机制。",
+      "reason": "版本锚点缺失已由条目 limitation 如实记录，claim 逐字有源，属可容忍。"
+    },
+    {
+      "id": "qq_expansion:w000761:c03",
+      "verdict": "minor",
+      "fault_type_kept": "not_self_contained",
+      "note": "“她→早露”的指控不成立：同窗 seq6“枣子姐不锁刺”、seq19/20“攻城手……优先看重量”、seq29“早露很强的说”可自证该指代；但“刺”的正式单位名窗内确实未给，条目 limitation 已记录。",
+      "reason": "指代绑定成立、短名不可展开一事条目已自陈，属可容忍。"
+    },
+    {
+      "id": "qq_expansion:w000761:c05",
+      "verdict": "fix",
+      "fault_type_kept": "evidence_mismatch; not_self_contained",
+      "suggestion": "同窗问答：有群友问“她也是12345变41235吗”，主播答“不是，变54321”；1-5 编号对应的对象（目标、位次还是朝向）、适用场景，以及与 c01“重量优先、再仇恨”的关系，原文均未说明。",
+      "reason": "claim 把纯数字串解释为“敌对目标被索敌时的顺序”，而条目 limitation 自陈“本窗未说明 1-5 编号对应的是什么”，claim 与自身 limitation 冲突，须按原文改述。"
+    },
+    {
+      "id": "qq_expansion:w001151:c01",
+      "verdict": "fix",
+      "fault_type_kept": "overclaim",
+      "suggestion": "群内流传的藏品说明底稿（出处未明，非拆包或主播确认）称：藏品“犬植浆”使所有干员获得光环能力，其光环范围读取自干员当前使用的攻击范围数据、受攻击距离影响。",
+      "reason": "claim 以确定句呈现机制事实，唯一依据是单一成员粘贴的一段底稿、出处不明（条目 limitation 自陈“本窗未说明该说明底稿的出处”），须在 claim 内标明来源与未证实状态。"
+    },
+    {
+      "id": "qq_expansion:w001151:c04",
+      "verdict": "fix",
+      "fault_type_kept": "not_self_contained; evidence_mismatch",
+      "suggestion": "额外减攻与原本的 50% 减攻互为独立乘区：0.5×0.7=0.35。（两个减攻来源的名称原文未给出；数值前提见本条未列入引文的 seq12。）",
+      "reason": "claim 的“该套装效果／原有减攻”在条内没有任何先行词、来源不可定位，且 0.5 与 0.7 的数值前提（seq12）不在引文中，须改为自述式表述。"
+    },
+    {
+      "id": "qq_expansion:w001328:c01",
+      "verdict": "remove",
+      "fault_type_kept": "trivial",
+      "reason": "“撤退这件事本身就会导致技能结束”对任何干员都成立，是常识复述而非独立机制命题，且已被同窗 w001328:c02 的事件链（雪崩撤退→技能结束→触发迪斯科→重新再部署→雪崩强制部署）完全覆盖；保留 w001328:c02。"
+    }
+  ]
+}

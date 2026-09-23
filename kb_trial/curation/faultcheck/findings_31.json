@@ -1,0 +1,299 @@
+{
+ "chunk": "31",
+ "reviewed": 20,
+ "note": "任务描述称 chunk_31.json 含 50 条，实际该文件只有 20 条（30 个前置 chunk 各 50 条，本文件是尾块，20 条）。本次逐条审查全部 20 条，reviewed=20。另：本 chunk 全部为 qq_expansion:(阶段四 b4 批) 条目，无任何 fc1: 条目，故无官方字幕/云 ASR 引文可核，asr_error 类不适用；20 条 claim/subject/condition/引文全文中「针」字出现 0 次，无帧/针误写可判。",
+ "faulty": [
+  {
+   "id": "qq_expansion:w001977:c01",
+   "faults": [
+    {
+     "type": "overclaim",
+     "detail": "工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_419.json 全窗只有 3 条消息（seq1/2/3），全部出自同一 speaker 0f17ac97，窗内没有第二人确认、没有实测、没有回看原片；claim 却把这段单方发言写成判定规则的定论（「「足以致命」的判定是伤害量≥当前生命值就算足以致命，不管其它任何因素」）。原文是脏话式吐槽口径（「那个其实不是bug是“足以致命”这个判定本身就很傻逼（伤害量≥当前生命值就算足以致命，不管你有什么三七二十一的）」），条目自己的 review 也写明「全窗无人发言，属单方定性」，但 claim 文本里没有任何单方口径的标记。",
+     "fix": "在 claim 或条目内显式标注「单方口径、未实测、窗内无他人确认」，或把该条降为 pending/agent 提示级；不要把单方断言写成判定规则。"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w001983:c01",
+   "faults": [
+    {
+     "type": "overclaim",
+     "detail": "claim 写「望的一技能棋子确实是无来源」，但证据在工单 qq_wo_b4_420.json 里是：seq4「[表情]快进到望一技能棋子无来源」（玩梗式预测句式），seq5「一技能还真是无来源了吧」（句末不确定语气词「吧」）。claim 把玩梗预测 + 带「吧」的弱确认改写成「确实是」的确定结论，强度被抬高。",
+     "fix": "改写为原文口径（例：「原文：快进到望一技能棋子无来源 → 回应：一技能还真是无来源了吧」），或标注「未定论」并降 pending。"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w001983:c02",
+   "faults": [
+    {
+     "type": "not_self_contained",
+     "detail": "claim 以「该无来源的实现方式为」开头，「该」没有先行词：本条没有点出对象是「望一技能棋子」（主体只出现在同窗上一条 c01 里），单读本条无法知道在讲哪个技能、哪个机制。引文本身也不自足：seq11 原文是「[表情]@fadcf284 伤害计算后改为无来源形式施加」，是带 @ 对象的回复体，脱离被回复者不可解。",
+     "fix": "把主体写全（「望一技能棋子的无来源实现方式为：伤害计算后改为无来源形式施加」），并保留原回复语境或去掉 @ 片段标注来源。"
+    },
+    {
+     "type": "overclaim",
+     "detail": "该句出自同一段玩笑式推测链：seq8「[表情]嗯？」、seq10「我们要不叫他在城内是有来源，在城外是无来源」、随后 seq12 追问「这...这样吗...」（表示存疑），claim 却把实现顺序写成确定的代码事实。",
+     "fix": "措辞改为「按原文口径（未验证）」，或降 pending 等待旁证。"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w002004:c01",
+   "faults": [
+    {
+     "type": "evidence_mismatch",
+     "detail": "citations 里的 seq4「@589e9b6d」与 seq5「难道说？」是完全无内容的片段（一条纯 @、一条不完整线索），不承载任何命题；而真正承载该话题的 seq9「这是什么 开一次技能算五次部署？」、seq10「清五次buff……」、seq17/seq25 反而没有收进引文（工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_423.json）。条目自己的 audit_note 已写「claim 的 evidence 里含 seq4『@589e9b6d』与 seq5『难道说？』两条无内容片段，非承载句，父可据本注剔除」，但入库版仍然保留这两条，且 claim 只有否定式结论（「是误区」）没有正面机制（audit_note 亦承认「窗内没有给出『切替身』的正确定性…不宜当作正面定义」）。",
+     "fix": "删去 seq4/seq5 两条引文，改引 seq9/seq10/seq23 的连续上下文；claim 或条目标注「仅是否定式纠误、无正面定义」，否则降 pending。"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w002015:c01",
+   "faults": [
+    {
+     "type": "overclaim",
+     "detail": "claim 把「敌人有「阻挡攻击」与「普通攻击」两套逻辑」写成确凿的分工事实，但引文 seq34 自带限定「一般来说敌人阻挡和非阻挡用的两套逻辑」，同段 seq35「可能两套逻辑的攻击是同一个」、seq36「但你当两个理解就行」这两处自陈近似/退让都没有进入 claim（工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_425.json）。「一般来说」与「可能…是同一个」被抹平后，结论的确定度高于原文。",
+     "fix": "claim 补回原文限定（如「（原文口径：一般来说…；作者自注「可能两套逻辑的攻击是同一个」，此处按两种理解处理）」），或降级为 agent 提示。"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w001374:c01",
+   "faults": [
+    {
+     "type": "evidence_mismatch",
+     "detail": "claim 的两半互相矛盾且未处理窗内分歧：前半「GroupPack 里含有多个 Group」照抄 seq2（f5aa2007 的读图自述「一个GroupPack里含多个Group这里上面的GroupKey是''hua''，下面的是null」），后半「同一个组的多个 GroupPack 在出怪时会随机选择一个 pack（s/d/e）」照抄 seq3（另一位 8627ff81 的答复「它们都是同一个组的，出怪时会随机选择一个pack（s/d/e）」）——后者的包含方向与前句相反（多个 GroupPack 属于同一个组）。seq1「这两个不是一个Group的吧……」正是对包含关系的疑问（工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_430.json），而 review 却写成「窗内无反驳、无追问，属闭合的一问一答」。",
+     "fix": "按 seq3 订正 Group/GroupPack 的包含方向，或明确写「窗内对包含方向存在两种读法，未闭合」；删去「闭合」判定。"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w000385:c01",
+   "faults": [
+    {
+     "type": "evidence_mismatch",
+     "detail": "claim 与 condition 自行把作用对象限定为干员（「同名同源的（干员）效果」「同一干员身上存在多个同类效果」），但四条引文（seq15 规则句、seq13、seq9 可露希尔迟钝、seq12 脆弱）通篇没有出现「干员」或任何作用对象，语境是效果命名与刷新（同窗 seq5「所以不会缓慢跌回0%而是60%持续3秒」、seq3「然后刷新了持续时间」）。「干员」这一限定在引文里没有出处（工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_431.json）。",
+     "fix": "删去「（干员）」与「同一干员身上」，改为作用对象中立的表述（如「同一目标身上」「不论作用对象」）。"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w000589:c01",
+   "faults": [
+    {
+     "type": "not_self_contained",
+     "detail": "claim 的核心对象「某类伤害」没有点名：窗内该类型只以昵称指代（seq1「隐隐吃文存？」、seq4「不吃啊」），citations 里没有任何一句说明是哪一类伤害。条目自己的 audit_note 已写「被排除的类型在窗内只以『隐隐』指代，claim 写成『某类伤害』，实际对象需回原窗确认，故入库时应补注或另取名」，但入库版没有补注。结果是该条既不可检索（不知道该查什么伤害类型）也不可核对。",
+     "fix": "按源补上对象名（如「隐隐（该指代需回原窗确认）」），或改写为可定位的表述后重新过审；否则降 pending。"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w000861:c01",
+   "faults": [
+    {
+     "type": "evidence_mismatch",
+     "detail": "claim 前半「14 费时部署 15 费干员，费用变为 −1，且不额外吃费用」的唯一承载句是工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_434.json 的 seq11「[表情]@b4dcc920 就，你14费的时候部署15费干员，变为-1费，不额外吃你费用」，但该条的 origin.message_seqs 与 citations 只有 [7,18,15,12]，seq11 没有进引文——claim 有一半算例在证据里找不到出处。",
+     "fix": "把 seq11 补进 citations/message_seqs，或删去 claim 中该算例。"
+    },
+    {
+     "type": "overclaim",
+     "detail": "「费用下限 −5」这一结论来自同一人读拆包/截图的带自疑推测：seq7「如果没错的话，那这里应该是-10，但因为费用下限-5，所以部署后实际费用-5是吧@某人@某人」、seq16「我指如果没写错，能允许扣到负费的话」；窗内的「确认」是同一人自问自答（seq18「那此时实际剩余费用应该是-5咯？」→ seq19「还真是。」），且当事人称这段代码本身「有问题」（seq15「就是你们说的能不能扣到负费但是有问题的代码嘛（）」）。claim 把这些写成「受费用下限 −5 约束」的机制定论，并把它表述成实战部署场景，未标明这是读代码/拆包推测。",
+     "fix": "claim 标注「口径：读拆包推测（原文『如果没错的话』），未实测」，并把「−1 不触底」与「−10→−5 截断」两个算例拆成两句分别陈述。"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w001033:c01",
+   "faults": [
+    {
+     "type": "evidence_mismatch",
+     "detail": "claim 把两处来源并进主语，写成「深度调查的烟雾弹属于「黑蓑影卫分队」的效果」：数值句由 seq10「0.75秒后落地，效果持续300秒」承载、归属句由 seq18「黑蓑影卫分队效果」承载，而「深度调查」出自 seq15「深度调查的效果」——该句是另一位群友对 seq14（PRTS 链接）的回应，窗内没有任何一句说明烟雾弹与「深度调查」的归属关系（工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_435.json）。条目自己的 audit_note 已写「『深度调查』与烟雾弹的关系在窗内未闭合，入库时宜删去或另注」，入库版仍保留。",
+     "fix": "删去主语里的「深度调查的」，改为「黑蓑影卫分队的烟雾弹（seq18）」；或按 audit_note 加注说明未闭合。"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w001285:c02",
+   "faults": [
+    {
+     "type": "not_self_contained",
+     "detail": "claim 全用相对指代（「更早的时点」「下一个时点」），既没有点名时点链（「受到伤害时」/「输出伤害时」/「成功造成伤害时」的先后），也没有点出被取消的对象，单读本条（不含同窗 c01）无法定位它在讲哪条时间线上的哪一环；引文本身也是续句——seq168「但如果是在上一个时点，比如“输出伤害时”进行的取消，就不会存在下一个时点了」承 c01 的「上一个时点」而来，seq170「就差不多这样的逻辑」是收尾填充句（工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_436.json）。",
+     "fix": "把时点链与被取消对象写进 claim（如「若「输出伤害时」已取消该伤害，则不会进入「成功造成伤害时」」），或与 c01 合并为一条时间线条目。"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w002042:c01",
+   "faults": [
+    {
+     "type": "not_self_contained",
+     "detail": "claim 保留了「新干员」与「罗师傅天赋」两个未锚定指代：读者无法知道 ×130% 是哪个干员、『罗师傅』是谁（窗内也没给出名字，工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_440.json 的提问 seq1 只写「术法冲盈是加多少伤害啊？」）。二者在本仓库统一实体索引/别名表（kb_trial/entity_index.json、qq_cards/entity_aliases.json）中均无条目，而同条的「术法充盈」「夜刀」「战争术师盾」都有条目，说明这两个名字没有走实体回填。",
+     "fix": "回填具体干员名（或用「新干员（该窗未具名，需回源确认）」并标 unanchored），给「罗师傅」补实体注并核实其指代，否则主体不可检索。"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w002042:c02",
+   "faults": [
+    {
+     "type": "not_self_contained",
+     "detail": "claim 的两个关键对象都没有锚定：「另一个对象（加莉）」直接照抄 seq31「这个命名是由加莉开始的」，而「更晚的对象」是原文 seq39「yukari出来才补的叠加名」的模糊化改写——把 yukari 抹成「更晚的对象」后，读者既不知道是谁，也无法核对命名沿革；「加莉」「yukari」在本仓库实体索引/别名表（kb_trial/entity_index.json、qq_cards/entity_aliases.json）中均无条目，「叠加名」这一术语条目内也没有定义。同时 claim 里「名字是在后续版本才补上的」与「这一版本给夜刀补名」（seq32）两个时间口径并列出现而未说明关系。",
+     "fix": "回填实体名并标出未识别项（如「yukari（该名未收录，需回源确认）」），保留原文名而非模糊化改写；补一句说明「后续版本补名」与「这一版本给夜刀补名」各自指哪一层名字。"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w002064:c01",
+   "faults": [
+    {
+     "type": "not_self_contained",
+     "detail": "claim 把源句里唯一的主体「四月」抽象成「某单位」，但丢掉了该抽象成立的前提：源句是「最简单的微时序现象：四月落地隐结束的那一帧，但实体update还未处理到四月，所以四月此时没有迷彩，这会的update的敌人就能选择到四月」——「隐匿结束却还没有迷彩」只对该单位成立，因为它接着本应获得（落地迷彩类）效果（工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_428.json）。抽掉「四月」后，这一帧为何「没有迷彩」失去依据，读者也无从知道被举例的是哪位干员、核不到具体角色。",
+     "fix": "保留示例主体（如「以四月落地隐匿结束的那一帧为例：…」），或补注「该单位落地后本应获得迷彩」这一前提。"
+    }
+   ]
+  },
+  {
+   "id": "qq_expansion:w002066:c01",
+   "faults": [
+    {
+     "type": "evidence_mismatch",
+     "detail": "citations 的第二条 seq79「明日方舟早期喜欢这么干」属同窗另一个话题：seq66~85 讨论的是「特殊效果失效/特殊能力失效=沉默」这类旧命名习惯（seq78「他是把沉默的效果读了出来」、seq83「就像无法被其他角色治疗=禁疗 特殊能力失效=沉默」），不是本条（「无视物理闪避」名字与效果反着写，见 seq41「没办法明日方舟有两种『无视闪避』」、seq62/63/64）的承载句。条目自己的 audit_note 已写「seq79 属另一话题…并非本条的承载句，父可据本注剔除」，但 review.reason 反而把 seq79 说成「同一发言者补充其成因（该 term 是把沉默的效果读出来的早期写法之一）」——那句内容其实出自未引用的 seq78/seq83，审读理由与引文对不上。",
+     "fix": "删去 seq79，改引 seq41/seq62/seq63 作为互证；同步修正 review.reason 与 evidence_review.reason 中对 seq79 的表述。"
+    }
+   ]
+  }
+ ],
+ "verbatim_spotcheck": [
+  {
+   "id": "qq_expansion:w001952:c01",
+   "quote_fragment": "现在吃不了国王套 / 过去也吃不了，未来也吃不了",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_418.json (seq8, seq14，逐字)"
+  },
+  {
+   "id": "qq_expansion:w001952:c02",
+   "quote_fragment": "除了符文相关，几乎啥藏品都不吃啊",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_418.json (seq20，逐字)"
+  },
+  {
+   "id": "qq_expansion:w001977:c01",
+   "quote_fragment": "那个其实不是bug是“足以致命”这个判定本身就很傻逼（伤害量≥当前生命值就算足以致命，不管你有什么三七二十一的）",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_419.json (seq3，逐字)"
+  },
+  {
+   "id": "qq_expansion:w001983:c01",
+   "quote_fragment": "一技能还真是无来源了吧",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_420.json (seq5，逐字)"
+  },
+  {
+   "id": "qq_expansion:w001983:c02",
+   "quote_fragment": "[表情]@fadcf284 伤害计算后改为无来源形式施加",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_420.json (seq11，逐字)"
+  },
+  {
+   "id": "qq_expansion:w001986:c01",
+   "quote_fragment": "总攻击在倒地人数0，有效人数0的情况下也可以发动（因为0≥0），但是因为没有目标所以不会发动",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_421.json (seq17，逐字)"
+  },
+  {
+   "id": "qq_expansion:w002004:c01",
+   "quote_fragment": "到底谁在说傀儡师切替身是再部署[视频]",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_423.json (seq12，逐字；同句在 seq13/seq14 重复出现，为三人连发)"
+  },
+  {
+   "id": "qq_expansion:w002015:c01",
+   "quote_fragment": "发动的是“阻挡攻击”才会有优先打阻挡的逻辑",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_425.json (seq37，逐字)"
+  },
+  {
+   "id": "qq_expansion:w002064:c01",
+   "quote_fragment": "最简单的微时序现象：四月落地隐结束的那一帧，但实体update还未处理到四月，所以四月此时没有迷彩，这会的update的敌人就能选择到四月",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_428.json (seq17，逐字)"
+  },
+  {
+   "id": "qq_expansion:w001374:c01",
+   "quote_fragment": "它们都是同一个组的，出怪时会随机选择一个pack（s/d/e）",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_430.json (seq3，逐字)"
+  },
+  {
+   "id": "qq_expansion:w000385:c01",
+   "quote_fragment": "同名同源可叠加，直至上限\\n不同名/不同源间取最高",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_431.json (seq15，逐字含换行)"
+  },
+  {
+   "id": "qq_expansion:w000589:c01",
+   "quote_fragment": "其他的我不一定清楚啊，文存的damagescale逻辑里专门筛选不给这种伤害加倍",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_432.json (seq27，逐字)"
+  },
+  {
+   "id": "qq_expansion:w000762:c01",
+   "quote_fragment": "给人感觉就是伤害打出来了损伤被闪了",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_433.json (seq47，逐字)"
+  },
+  {
+   "id": "qq_expansion:w000861:c01",
+   "quote_fragment": "如果没错的话，那这里应该是-10，但因为费用下限-5，所以部署后实际费用-5是吧@某人@某人",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_434.json (seq7，逐字；另 confirm claim 前半所据 seq11「就，你14费的时候部署15费干员，变为-1费，不额外吃你费用」也逐字存在，但未入引文)"
+  },
+  {
+   "id": "qq_expansion:w001033:c01",
+   "quote_fragment": "0.75秒后落地，效果持续300秒",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_435.json (seq10，逐字)"
+  },
+  {
+   "id": "qq_expansion:w001285:c01",
+   "quote_fragment": "已取消的伤害不会被闪避格挡这种二度取消",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_436.json (seq167，逐字)"
+  },
+  {
+   "id": "qq_expansion:w001285:c02",
+   "quote_fragment": "但如果是在上一个时点，比如“输出伤害时”进行的取消，就不会存在下一个时点了",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_436.json (seq168，逐字)"
+  },
+  {
+   "id": "qq_expansion:w002042:c01",
+   "quote_fragment": "[表情]@fe7f4aff 新干员是*130%\\n计算法抗、罗师傅天赋后，\\n计算对面战争术师盾、屏障前\\n处理",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_440.json (seq6，逐字含换行)"
+  },
+  {
+   "id": "qq_expansion:w002042:c02",
+   "quote_fragment": "yukari出来才补的叠加名",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_440.json (seq39，逐字)"
+  },
+  {
+   "id": "qq_expansion:w002066:c01",
+   "quote_fragment": "无视物理闪避的意思是无视闪避，但只有自己是物理伤害才有用",
+   "result": "found",
+   "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_441.json (seq64，逐字)"
+  }
+ ],
+ "stats": {
+  "trivial": 0,
+  "not_self_contained": 6,
+  "overclaim": 5,
+  "evidence_mismatch": 6,
+  "asr_error": 0,
+  "number_suspect": 0,
+  "duplicate": 0,
+  "privacy": 0
+ }
+}

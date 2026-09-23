@@ -1,0 +1,342 @@
+{
+ "chunk": "08",
+ "reviewed": 48,
+ "verdicts": [
+  {
+   "id": "qq_expansion:w000105:c01",
+   "verdict": "fix",
+   "fault_type_kept": "evidence_mismatch",
+   "suggestion": "受击碰撞箱与坐标是两个不同的东西：直觉看到的第一是受击碰撞箱，第二才是坐标（也就是弹道飞去哪里）；原文只给出这一顺序性分界，未说明伤害判定的归属。",
+   "reason": "所引 seq12-16 只是「直觉顺序」，claim 的「接收伤害判定用」这一功能归属在窗内无任何出处，limitations 亦自认弹道取坐标只是顺序性说明。"
+  },
+  {
+   "id": "qq_expansion:w000158:c01",
+   "verdict": "minor",
+   "fault_type_kept": "evidence_mismatch",
+   "suggestion": null,
+   "reason": "condition 的「非异格形态」限定出自被明确排除为证据的 bot 回复，证据链不闭合；但该限定方向是收窄而非扩张，不致误导，可容忍（建议在 evidence 注明该限定来自未引的 seq8/9）。"
+  },
+  {
+   "id": "qq_expansion:w001250:c01",
+   "verdict": "minor",
+   "fault_type_kept": "not_self_contained",
+   "suggestion": null,
+   "reason": "「大脚」未锚定一事条目已在 review_limitations 自陈，主命题（Cardbuff 影响再部署时间、典型例为「战士应当视死如归」）由同窗 seq24/25/27-30 展开支撑；「大脚」作为例子不可检索但无害，可容忍。"
+  },
+  {
+   "id": "qq_expansion:w000300:c01",
+   "verdict": "minor",
+   "fault_type_kept": "overclaim",
+   "suggestion": null,
+   "reason": "「扣攻击力才会影响」出自同窗群友的条件假设句 seq39、「减伤害不影响爆条」出自反问 seq26，语气偏硬；但「损伤基于攻击力」为直陈前提，结论可由其推出，且 limitations 已注明该 tag 场景是假设性的，可容忍。"
+  },
+  {
+   "id": "qq_expansion:w000425:c01",
+   "verdict": "fix",
+   "fault_type_kept": "evidence_mismatch,not_self_contained",
+   "suggestion": "小猫（原文昵称，未还原为具体干员/召唤物）本来就可以跳高台，只是没办法把重构体放到高台上；只要跳跃目标是高台就能跳上高台。来源同时指出该现象与技能描述及代码本意（跳到重构体位置）不符，属非预期实现（bug）。",
+   "reason": "同窗 seq5「这就是个bug」/seq7「跳船其实也是bug」的来源定性未进条目，会把非预期行为当作可依赖规则；主体「小猫」在库内无任何锚定。"
+  },
+  {
+   "id": "qq_expansion:w000446:c02",
+   "verdict": "fix",
+   "fault_type_kept": "evidence_mismatch",
+   "suggestion": "就算被眩晕断开，仍然是每 3 个寻路帧一次判定（按寻路帧拼接计数）；本条引文只说「判定」，判定对象未点名。",
+   "reason": "subject「避障判定周期…」中的「避障」来自另一窗 w000521:c01，本条引文无据，属跨窗缝句；收回 subject/claim 或补列另一窗证据即可。"
+  },
+  {
+   "id": "qq_expansion:w000521:c01",
+   "verdict": "withdraw",
+   "fault_type_kept": "none",
+   "suggestion": null,
+   "reason": "指控不成立：本条给出「避障力向量结算」这一判定对象，恰是 w000446:c02 所缺；两条并非子集关系，规则本身只有一条，不构成需删除的重复（重复度由 c02 的 subject 收回解决）。"
+  },
+  {
+   "id": "qq_expansion:w000679:c01",
+   "verdict": "fix",
+   "fault_type_kept": "evidence_mismatch,not_self_contained",
+   "suggestion": "方舟在帧的意义上是回合制：一帧等于一堆怪与干员的一个回合，一回合内按顺序结算各种事；因此同一回合内的「接触落地隐」与「迷彩」不能被理解成「无缝」（原文用字为「接触落地隐」，所指单位与技能语境原文未展开）。",
+   "reason": "尾句依赖条目内未交代的语境（无缝/迷彩/落地隐），且把原文「接触」私自订正为「解除」而无订正记录，与 audit_note 自述「未把尾句作为独立命题」互相矛盾。"
+  },
+  {
+   "id": "qq_expansion:w001365:c01",
+   "verdict": "minor",
+   "fault_type_kept": "evidence_mismatch",
+   "suggestion": null,
+   "reason": "把 seq2「失衡速度」与 seq13「寻路速度」并列成同义说法确有不妥、且「向右」是温蒂示例；但 claim 自己已收在「靠的是寻路速度」，limitations 亦已声明只对「带速度」这一情形成立，可容忍。"
+  },
+  {
+   "id": "qq_expansion:w001756:c02",
+   "verdict": "fix",
+   "fault_type_kept": "number_suspect",
+   "suggestion": "可通行地块的避障力向量不被归一化：原文称其可以等于 (1，1)，且「可以＞1」（该「＞1」指分量还是模长原文未说明，与同窗「归一化只在可通行地块触发的避障力用」的口径如何并存亦未说明）。",
+   "reason": "「可以＞1」的指代（分量/模长）原文未定，claim 单选模长读法，与同窗归一化说法相抵且无 limitations 说明。"
+  },
+  {
+   "id": "qq_expansion:w001466:c02",
+   "verdict": "fix",
+   "fault_type_kept": "duplicate",
+   "suggestion": "某帧的间距若落在 0.005 到 0.01 之间，这帧可以到达该位置，下帧移动前会直接顶在碰撞箱上停止失衡。（「某帧＜0.005 则直接顶在 0.005」已由同窗 c01 覆盖，本条不再重复；subject 相应改为「相离碰撞区间内的位移落点」）",
+   "reason": "与同窗 c01 的阈值规则逐字重复（c01 另含 0.01 判定与相离碰撞定性），删去重复半句、只留本条独有的 0.005–0.01 后果描述即可，无须删除整条。"
+  },
+  {
+   "id": "qq_expansion:w001466:c03",
+   "verdict": "fix",
+   "fault_type_kept": "evidence_mismatch",
+   "suggestion": "见行者1技能只在触发「某帧距离小于 0.005、直接顶住」时才判定为「撞高台」；落在相离碰撞区间（0.005–0.01）时不判定。（并补引 seq18「这个在相离碰撞不生效的」）",
+   "reason": "「落在相离碰撞区间不判定」的直接出处是未收录的 seq18，现引的 seq27 指的是 17:31 的另一实例，等于把两次讨论缝成因果。"
+  },
+  {
+   "id": "qq_expansion:w000387:c01",
+   "verdict": "withdraw",
+   "fault_type_kept": "none",
+   "suggestion": null,
+   "reason": "指控不成立：条目是一条可跨关复用的机制信息（阻挡破隐无延迟），来源为主播对提问的正面直答，「延迟」所指环节未界定只是精度不足，不构成 trivial。"
+  },
+  {
+   "id": "qq_expansion:w000387:c02",
+   "verdict": "withdraw",
+   "fault_type_kept": "none",
+   "suggestion": null,
+   "reason": "指控不成立：claim「一个 buff，索敌的时候会检测他」与所引 seq32 逐字一致，且引文已含 seq47「隐匿buff提供隐匿异常效果」的分层表述；主播自述「记不全」针对的是敌方/我方隐匿之分，不推翻本条。"
+  },
+  {
+   "id": "qq_expansion:w000432:c02",
+   "verdict": "withdraw",
+   "fault_type_kept": "none",
+   "suggestion": null,
+   "reason": "指控不成立：claim 的 0/1/2 帧时序与所引 seq28-31/45 逐字对应，主播未解释的是「为何」有 0/1 帧之别，不影响时序本身被断言，不构成 overclaim。"
+  },
+  {
+   "id": "qq_expansion:w000563:c01",
+   "verdict": "fix",
+   "fault_type_kept": "overclaim",
+   "suggestion": "诗怀雅2技能：发射的弹道数量与金币数没有直接关系，有直接关系的是关技能时持有的金币数，此后扣金币与弹道不一定同步（本条为群内成员 0f17ac97 的归纳，主播未表态）。",
+   "reason": "已核 raw_messages：seq15/35/38 的 speaker 均为群友 0f17ac97 而非主播，条目 review 与 evidence_review 的「主播 seq 35/38 以更精确表述闭合」属 speaker 归属错误。"
+  },
+  {
+   "id": "qq_expansion:w000563:c02",
+   "verdict": "minor",
+   "fault_type_kept": "trivial,overclaim",
+   "suggestion": null,
+   "reason": "确为单次盯帧个例（诗怀雅2技能 9 发打出 10 次命中），且归因句同窗另有 seq44/63 两种未排除说法；但 condition 已限定为「实测盯帧场景」、归因句出自主播 seq69/71，可容忍。"
+  },
+  {
+   "id": "qq_expansion:w000957:c03",
+   "verdict": "fix",
+   "fault_type_kept": "not_self_contained",
+   "suggestion": "弑君者不吃「大盘鸡」（原文昵称，未指认具体单位）伤害，主播给出的解释是：大盘鸡的弹道落下时会进行判定，而那一帧它身上有隐匿；同窗另有「被动抵了」「锁地板」两说未排除。",
+   "reason": "「大盘鸡」全库仅出现在本条窗与 w001485、无任何指认，条目又无任何注明；归因句虽出自主播，但同窗替代说法与主播对推广提问答「看情况」使「原因是」偏硬。"
+  },
+  {
+   "id": "qq_expansion:w001313:c01",
+   "verdict": "fix",
+   "fault_type_kept": "overclaim",
+   "suggestion": "主播的说法（其自述为口语、随语境变化）：停驻在配置里是一个 checkpoint 指令，但它不需要移动到某点、不需要移动类路径点指令；只有移动相关的才是「那条路径点」。",
+   "reason": "主播同窗三处自陈该套术语是口语、强调重点随语境不同（seq9/15/17/25），claim 却写成配置层定论；补上口语限定即可保留。"
+  },
+  {
+   "id": "qq_expansion:w001313:c02",
+   "verdict": "fix",
+   "fault_type_kept": "evidence_mismatch,overclaim",
+   "suggestion": "停驻不是「去哪里停驻」的指令，而是「停驻多久」的指令；对「停驻的 checkpoint 与路径/坐标判定是否相关」，主播的答复是「没有」（一字确认；同窗关于无法抵达的停驻点是否存在的追问未收束）。",
+   "reason": "「完全没有关系」实为一字答复（seq36 封闭式提问 + seq40「没有」）、「单纯的计时器指令」出自未引的 seq42，claim 却写成绝对结论；补引与降绝对化即可。"
+  },
+  {
+   "id": "qq_expansion:w001356:c01",
+   "verdict": "fix",
+   "fault_type_kept": "overclaim",
+   "suggestion": "针对演示中的新位移表现，主播的判断是「传送终点若为不可通行地块则不传送」（当前版本口径、未实装验证）。",
+   "reason": "该句出现在讨论尚未实装的新机制时，同窗多处限定「等出了再说」「现在也猜不出啥」，条目无 limitations 记下时效；同窗 c04 已保留时效限定，本条应对齐。"
+  },
+  {
+   "id": "qq_expansion:w001563:c01",
+   "verdict": "fix",
+   "fault_type_kept": "overclaim",
+   "suggestion": "附加伤害（攻击类型）现在不触发烟花之手，且烟花之手本身的伤害类型被改成了附加伤害（本条出自群内成员陈述、非主播，窗内无人反驳）。",
+   "reason": "证据全部来自群友 0f17ac97，且 review 两处承诺的 review_note 字段在交付条目中并不存在（已核：全条目仅有两处悬空引用文本），身份披露实际缺失。"
+  },
+  {
+   "id": "qq_expansion:w001779:c02",
+   "verdict": "minor",
+   "fault_type_kept": "number_suspect",
+   "suggestion": null,
+   "reason": "总时间 6 帧确未在引文给出，但可由所引「移动2帧／剩余4帧」直接推出，36=6²、16=4² 因而可复核；c01 的 0.2 秒基准未定是另一问题，本条可容忍（建议在 condition 注明总时长口径未在引文给出）。"
+  },
+  {
+   "id": "qq_expansion:w001938:c01",
+   "verdict": "minor",
+   "fault_type_kept": "not_self_contained",
+   "suggestion": null,
+   "reason": "claim 用泛称「干员」填了回指空位，主体实为窗内正在分析的干员（seq20/41 点名结城理），且 limitations 未记录；但半血判定时点这一机制本身成立，可容忍（建议据源补主体）。"
+  },
+  {
+   "id": "qq_expansion:w000075:c01",
+   "verdict": "fix",
+   "fault_type_kept": "not_self_contained",
+   "suggestion": "牢笼（酒神技能生成的装置；原文只称「牢笼」）不对 0.2 半径以内的阻挡产生偏移，0.2 以外的单位会被拉到 0.2 以内；因此看准时机撤退不会产生阻挡偏移。",
+   "reason": "牢笼归属在窗内未给，而库内他处一律作「酒神的牢笼」（qq_atoms w000046 等），缺此锚定读者无法定位 0.2 半径作用于何物。"
+  },
+  {
+   "id": "qq_expansion:w000213:c01",
+   "verdict": "minor",
+   "fault_type_kept": "not_self_contained",
+   "suggestion": null,
+   "reason": "数值出处与「1帧范围内」的时间/空间歧义均已在 limitations 自陈，「速」扩写为「移速」是轻微引申；受作用对象（敌方）未写明，可容忍。"
+  },
+  {
+   "id": "qq_expansion:w000236:c01",
+   "verdict": "minor",
+   "fault_type_kept": "trivial,not_self_contained",
+   "suggestion": null,
+   "reason": "「被眩晕打断」所指环节残缺一事 limitations 已自陈；海沫为库内具名单位（qq_atoms 有「海沫具有3帧索敌机制」等），干员/敌方之别虽未界明，仍属可检索主体，可容忍。"
+  },
+  {
+   "id": "qq_expansion:w000270:c03",
+   "verdict": "withdraw",
+   "fault_type_kept": "none",
+   "suggestion": null,
+   "reason": "指控不成立：已核库内两条并存——本条给出事件帧=出伤姿势触发与后摇，w000929:c02 给出事件帧的触发方式，仅「抬手到事件帧叫前摇」一句重叠，各含对方缺失的定义面，不构成需删除的重复。"
+  },
+  {
+   "id": "qq_expansion:w000551:c01",
+   "verdict": "withdraw",
+   "fault_type_kept": "none",
+   "suggestion": null,
+   "reason": "指控不成立：「物理系统里敌人无转动自由度」是可复用机制信息；condition 已限定「转动惯量/朝向旋转的计算」语境、limitations 已声明朝向改变不在本条范围，字面误读风险已被条目自带限定覆盖。"
+  },
+  {
+   "id": "qq_expansion:w000569:c01",
+   "verdict": "minor",
+   "fault_type_kept": "evidence_mismatch",
+   "suggestion": null,
+   "reason": "「即」把「无法召唤」与「无召唤击杀」合成一条，但该二义性条目已在 review_limitations 逐字自陈；仅主播回忆性表述（seq30「我记得逻辑是这样的」）未标注，可容忍。"
+  },
+  {
+   "id": "qq_expansion:w000083:c01",
+   "verdict": "fix",
+   "fault_type_kept": "number_suspect",
+   "suggestion": "角色类按时间计算仇恨，数值*1000，同帧的后部署再依次+1仇恨；原文称一级嘲讽为「10000s」（数值 10000 带 s，是否指秒原文未说明——按一秒=1000 的比例约合 10 秒部署时间）。",
+   "reason": "claim 照录「10000s」后与自身「数值*1000」相抵（若按 1000/秒，一级嘲讽应对应 10 秒而非 10000 秒），limitations 未处理该单位冲突。"
+  },
+  {
+   "id": "qq_expansion:w000282:c01",
+   "verdict": "withdraw",
+   "fault_type_kept": "none",
+   "suggestion": null,
+   "reason": "指控不成立：2.75 是帧数还是距离、0.05 未标单位两点均已在 review_limitations 逐条自陈，claim 的「照抄不换算」是有记录的取舍，不构成未标注的量纲错误。"
+  },
+  {
+   "id": "qq_expansion:w000398:c01",
+   "verdict": "fix",
+   "fault_type_kept": "overclaim,number_suspect",
+   "suggestion": "群内成员引述的「夜刀」技能弹道参数：0.51 碰撞半径、8格/秒（≈0.267格/帧）移动速度，每帧判定一次攻击，每造成一次技能伤害使弹道突进距离+0.3格（该来源未说明出处、发言者随后自问「怎么不是1帧1判」；同窗另有「10格/s 1帧1判」，与 8 是否同一技能未明，须并列保留）。",
+   "reason": "该参数为群友 lead 级引述（limitations 已承认来源不明），claim 却写成「夜刀技能弹道的参数为」的确定事实；同窗 8 与 10 的数值分歧未按 conflict_policy 记录。"
+  },
+  {
+   "id": "qq_expansion:w000413:c02",
+   "verdict": "fix",
+   "fault_type_kept": "overclaim,evidence_mismatch",
+   "suggestion": "「双击」与「一次攻击造成两次伤害」在技能文本上写法相同（原文：yj这两种写的一毛一样），故原文以反问回应「你要怎么区分」、未给出区分方法；底层实现是否可区分原文未讨论。",
+   "reason": "claim 把反问「好问题，你要怎么区分」写成「无法区分」的定论，且「底层实现上无法区分」在本条引文与整窗都无出处。"
+  },
+  {
+   "id": "qq_expansion:w000469:c01",
+   "verdict": "fix",
+   "fault_type_kept": "not_self_contained",
+   "suggestion": "某未点名干员的 3 技能飞行弹道参数：飞行速度 10.0、碰撞半径 0.5，同帧伤害结算顺序为仇恨降序（干员名原文未给出，本条不替来源补名）。",
+   "reason": "主体只有裸「3技能」，窗内与上游工单均未点名干员，claim 却写成「飞行类弹道的判定口径」的泛化通则；若无法回源补名，宜按 pending 隔离而非留在可检索语料。"
+  },
+  {
+   "id": "qq_expansion:w000677:c02",
+   "verdict": "fix",
+   "fault_type_kept": "number_suspect",
+   "suggestion": "冷却帧数化后按帧四舍五入得到动画长度（例：伊内丝攻速+8 时 30/1.08≈27.78 帧，原文写作 27.77 帧，动画长度取 28 帧），动画结束的那一帧判断剩余冷却是否＜0.5，若小于 0.5 就立刻抬手；整体可简记为按帧四舍五入。",
+   "reason": "claim 把「30/1.08=27.77 帧」写成等式，算术不成立；limitations 虽已说明是照录原文近似写法，仍宜改为「≈」或写成「原文写 27.77 帧」。"
+  },
+  {
+   "id": "qq_expansion:w000779:c01",
+   "verdict": "minor",
+   "fault_type_kept": "overclaim",
+   "suggestion": null,
+   "reason": "「必定抬手是判断非结论」已在 limitations 自陈；未覆盖的是把「我从没见过」升级为「实际中不存在」，属经验否定，可容忍（建议软化或标注为主播经验判断）。"
+  },
+  {
+   "id": "qq_expansion:w001122:c02",
+   "verdict": "withdraw",
+   "fault_type_kept": "none",
+   "suggestion": null,
+   "reason": "指控不成立：limitations 已逐字写明 seq44 原文作「没走个格子」、按上下文应为「每个路过的格子」、claim 按上下文转写且 evidence 保留原文，即已按本层惯例登记，不存在静默改写。"
+  },
+  {
+   "id": "qq_expansion:w001181:c03",
+   "verdict": "fix",
+   "fault_type_kept": "asr_error",
+   "suggestion": "引文保持逐字不动，按本层惯例在 derived_text_repairs 登记「同针→同帧」（claim/subject 已是「同帧」，仅需补登记；引文集内 seq55「哪怕是同帧」与 raw seq34「同针落地」可自证）。",
+   "reason": "「同针」处于帧数/同帧结算语境，按针/帧专则属 ASR 讹字，条目无任何订正登记，读者会照字面当成独立概念。"
+  },
+  {
+   "id": "qq_expansion:w001326:c01",
+   "verdict": "minor",
+   "fault_type_kept": "trivial,not_self_contained",
+   "suggestion": null,
+   "reason": "条目确实只表达「攻击冷却↔索敌」交替、且缺主体；但原文未限定干员与场景一事已在 limitations 自陈，该交替关系本身是有效机制描述，可容忍（边界项：若从严可判 remove）。"
+  },
+  {
+   "id": "qq_expansion:w001431:c01",
+   "verdict": "withdraw",
+   "fault_type_kept": "none",
+   "suggestion": null,
+   "reason": "指控不成立：不构成纯对话碎片——「同帧必有结算顺序、不能同时结算」是帧式结算的可跨关复用性质，limitations 已明确不得由本条推出先后顺序，边界清楚。"
+  },
+  {
+   "id": "qq_expansion:w001586:c01",
+   "verdict": "fix",
+   "fault_type_kept": "evidence_mismatch,overclaim",
+   "suggestion": "高攻速敌人「原地罚站、一帧不动」不能由「同帧先移动后索敌」解释（若移动状态机才能索敌且同帧先移动后索敌，则不可能一帧不动）；「攻击/技能会阻止移动」是提问者的说法，主播当场以「不对呀」否认，未作为结论提出。",
+   "reason": "已核 raw：第二分句出自提问者 seq21，主播 seq23 以「不对呀」当场否掉后才改用反证链，条目把被否说法与主播反证拼成一条机制。"
+  },
+  {
+   "id": "qq_expansion:w001730:c01",
+   "verdict": "minor",
+   "fault_type_kept": "evidence_mismatch",
+   "suggestion": null,
+   "reason": "seq35 残句与「状态机消失」半句的出处缺失（seq36 未引）确为问题；但 limitations 已写明 claim 只保留可验证部分、不代来源补全，属有记录的保守处理，可容忍。"
+  },
+  {
+   "id": "qq_expansion:w001753:c02",
+   "verdict": "fix",
+   "fault_type_kept": "not_self_contained",
+   "suggestion": "坐标判定用的是足坐标，而不是足坐标再下偏 0.2；足坐标本身比实体一般下偏 0.2（原文未说明「坐标判定」具体指哪一类判定）。",
+   "reason": "原句是对当时在改的某条文档（避障/进入不可通行地块）的补充，claim 抽象成泛指「坐标判定」后适用范围不可知，limitations 亦未记录。"
+  },
+  {
+   "id": "qq_expansion:w001984:c01",
+   "verdict": "fix",
+   "fault_type_kept": "overclaim,evidence_mismatch",
+   "suggestion": "游戏高帧率（如60、120帧）设置调整的是画面帧与动画帧，战斗结算使用的逻辑帧（1秒30帧）不受影响；逻辑帧不能动，另有群友推测「tick 升高会带来很多性能负担」（未验证）。",
+   "reason": "「性能负担与许多计算内容上的改变」出自他人带「吧」的疑问句且「计算内容」在窗内无对应句（limitations 未记录）；「1秒30帧」的出处 limitations 已写明，属可保留部分。"
+  },
+  {
+   "id": "qq_expansion:w001999:c01",
+   "verdict": "withdraw",
+   "fault_type_kept": "none",
+   "suggestion": null,
+   "reason": "指控不成立：limitations 已逐字写明「结成理/结城理」在原文交替出现、均属同源讹写、claim 取规范形式且 evidence 原样保留各条原文，订正已按本层惯例记录，不存在未登记。"
+  },
+  {
+   "id": "qq_expansion:w000030:c01",
+   "verdict": "withdraw",
+   "fault_type_kept": "none",
+   "suggestion": null,
+   "reason": "指控不成立：两项指控均已被条目自陈——limitations 明写「seq28 句首『说是』表明该前件是转述他人说法，来源不可复核」与「原句未点名任何干员或技能，scope 按原文为通用」，属已带未复核标记。"
+  },
+  {
+   "id": "qq_expansion:w000030:c02",
+   "verdict": "withdraw",
+   "fault_type_kept": "none",
+   "suggestion": null,
+   "reason": "指控不成立：limitations 已写明原文未给技能名、claim 只写「塞雷娅」不指定技能编号，condition 的表述是照此收窄而非循环定义；31 帧亦为引文逐字。"
+  }
+ ]
+}

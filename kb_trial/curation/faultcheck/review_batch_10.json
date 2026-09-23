@@ -1,0 +1,1148 @@
+[
+ {
+  "id": "qq_expansion:w000759:c01",
+  "action": "fix",
+  "entry": {
+   "id": "qq_expansion:w000759:c01",
+   "claim": "踢球产生的推力默认需要来源，否则没法判定0.25半径和45°角力度-2这些参数；球按干员与球相对位置决定的是伤害部分（原文未展开『不是推力』）。",
+   "subject": "踢球推力的来源判定",
+   "condition": "踢球（打箱/推球类玩法）产生推力时",
+   "evidence": null,
+   "citations": [
+    {
+     "id": "qq:w000759",
+     "status": "resolved_qq_span",
+     "source_layers": [
+      "qq"
+     ],
+     "track": "qq_chat",
+     "window_id": "w000759",
+     "as_of": "2026-06-17 10:15:06",
+     "n_source_msgs": 2,
+     "quotes": [
+      {
+       "text": "推力默认需要来源，否则没法判定0.25半径和45°角力度-2那些东西",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "这个球的运动方向不是按干员和球相对位置来的吗（）",
+       "t_start": null,
+       "t_end": null
+      }
+     ],
+     "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+    }
+   ],
+   "source_layer": "QQ群聊",
+   "review": {
+    "status": "agent_verified",
+    "scope": "text_source_only",
+    "confidence": "text-source-supported",
+    "reason": "QQ扩展(阶段四b4批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 1 提出“撤梓兰后龙之箭推力没了”的现象，seq 5 给出推力需要来源的机制与具体参数，seq 6 追问“不是按干员和球相对位置来的吗”，然后明确区分“那是伤害部分”（seq 7，含 @ 提及未引作证据），问答闭合。",
+    "not_authoritative": true
+   }
+  },
+  "proposal": {
+   "claim": "踢球产生的推力默认需要来源，否则没法判定0.25半径和45°角力度-2这些参数；球按干员与球相对位置决定的是伤害部分（原文未展开『不是推力』）。",
+   "fault_type": "evidence_mismatch",
+   "note": "取建议的第二个方案（不加引文，按原文未展开收窄半句）。",
+   "source": "triage_12.json",
+   "suggestion": "在 citations 中补引 seq 7 原文「[表情]@b4dcc920 那是伤害部分」（@ 为合规匿名槽位），claim 后半即可落地；若不加引文，则把该半句收窄为「球按干员与球相对位置决定的是伤害部分（原文未展开『不是推力』）」。"
+  }
+ },
+ {
+  "id": "qq_expansion:w000780:c02",
+  "action": "fix",
+  "entry": {
+   "id": "qq_expansion:w000780:c02",
+   "claim": "从传送点进坑需要 2 帧位移超过 2.5 格（原文并列给出：下坑需要一帧 1.25 格、对应 37.5 的速度）；9 个金币理论打满速度只有 36，因此理论上做不到（『37.5=1.25 格/帧×30 帧/秒』与速度单位属本条推算，原文未给）",
+   "subject": "从传送点进坑的位移/速度条件",
+   "condition": "目标为从传送点进坑、且自身速度为9金币打满的36时",
+   "evidence": null,
+   "citations": [
+    {
+     "id": "qq:w000780",
+     "status": "resolved_qq_span",
+     "source_layers": [
+      "qq"
+     ],
+     "track": "qq_chat",
+     "window_id": "w000780",
+     "as_of": "2026-06-21 18:18:04",
+     "n_source_msgs": 5,
+     "quotes": [
+      {
+       "text": "我9个金币，理论上打满36的速度",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "下坑需要一帧1.25格",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "37.5的速度",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "[表情]2帧超过2.5，才能从传送点进坑",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "[表情]9个金币做不到啊",
+       "t_start": null,
+       "t_end": null
+      }
+     ],
+     "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+    }
+   ],
+   "source_layer": "QQ群聊",
+   "review": {
+    "status": "agent_verified",
+    "scope": "text_source_only",
+    "confidence": "text-source-supported",
+    "reason": "QQ扩展(阶段四b4批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 9/10/11/12 连贯给出三个参数与判定条件（36速度、一帧1.25格、37.5速度、2帧超过2.5），seq 13 给出“9个金币做不到啊”的结论，均为同一发言者连贯陈述且无反驳。",
+    "not_authoritative": true
+   }
+  },
+  "proposal": {
+   "claim": "从传送点进坑需要 2 帧位移超过 2.5 格（原文并列给出：下坑需要一帧 1.25 格、对应 37.5 的速度）；9 个金币理论打满速度只有 36，因此理论上做不到（『37.5=1.25 格/帧×30 帧/秒』与速度单位属本条推算，原文未给）",
+   "fault_type": "not_self_contained,number_suspect",
+   "source": "triage_12.json",
+   "suggestion": "claim 改为「从传送点进坑需要 2 帧位移超过 2.5 格（原文并列给出：下坑需要一帧 1.25 格、对应 37.5 的速度）；9 个金币理论打满速度只有 36，因此理论上做不到（『37.5=1.25 格/帧×30 帧/秒』与速度单位属本条推算，原文未给）」，condition 补「该活动/合约的传送进坑玩法（原文未给关卡名）」。"
+  }
+ },
+ {
+  "id": "qq_expansion:w000861:c01",
+  "action": "fix",
+  "entry": {
+   "id": "qq_expansion:w000861:c01",
+   "claim": "部署费用可以被扣到负值，但受费用下限 −5 约束（口径：读配置/代码的推测，原文「如果没错的话」，未实测）：14 费时部署 15 费干员，费用变为 −1 且不额外吃费用；按算法结果应为 −10 时，部署后实际剩余费用按 −5 截断。",
+   "subject": "扣费到负值与费用下限 −5 的结算",
+   "condition": "部署高费干员使剩余费用为负时",
+   "evidence": null,
+   "citations": [
+    {
+     "id": "qq:w000861",
+     "status": "resolved_qq_span",
+     "source_layers": [
+      "qq"
+     ],
+     "track": "qq_chat",
+     "window_id": "w000861",
+     "as_of": "2026-06-28 20:11:54",
+     "n_source_msgs": 4,
+     "quotes": [
+      {
+       "text": "如果没错的话，那这里应该是-10，但因为费用下限-5，所以部署后实际费用-5是吧@某人@某人",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "那此时实际剩余费用应该是-5咯？",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "就是你们说的能不能扣到负费但是有问题的代码嘛（）",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "15费的时候部署14费干员，变为1费，额外吃你1费，变为0费",
+       "t_start": null,
+       "t_end": null
+      }
+     ],
+     "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+    }
+   ],
+   "source_layer": "QQ群聊",
+   "review": {
+    "status": "agent_verified",
+    "scope": "text_source_only",
+    "confidence": "text-source-supported",
+    "reason": "QQ扩展(阶段四b4批)逐条回读 raw_messages 后确认该命题有逐字文本出处：群友 seq 7 先给出自己的读图结论（−10 被下限 −5 截断，带上「如果没错的话」与句末「是吧」两处自疑），seq 18 再次以问句复核，窗内无任何反驳或修正；seq 12 给出同一规则的另一方向算例（费用不足以支付全部差额时只扣到 0），seq 15 将其称为「有问题的代码」。属「带自疑的读图结论 + 同向算例」的闭合，故收录并保留其来源形态。",
+    "not_authoritative": true
+   }
+  },
+  "proposal": {
+   "claim": "部署费用可以被扣到负值，但受费用下限 −5 约束（口径：读配置/代码的推测，原文「如果没错的话」，未实测）：14 费时部署 15 费干员，费用变为 −1 且不额外吃费用；按算法结果应为 −10 时，部署后实际剩余费用按 −5 截断。",
+   "fault_type": "evidence_mismatch+overclaim",
+   "source": "triage_16.json",
+   "suggestion": "部署费用可以被扣到负值，但受费用下限 −5 约束（口径：读配置/代码的推测，原文「如果没错的话」，未实测）：14 费时部署 15 费干员，费用变为 −1 且不额外吃费用；按算法结果应为 −10 时，部署后实际剩余费用按 −5 截断。"
+  }
+ },
+ {
+  "id": "qq_expansion:w000863:c01",
+  "action": "fix",
+  "entry": {
+   "id": "qq_expansion:w000863:c01",
+   "claim": "（据 PRTS）敌人向寻路路径更低的格子走，而带字的地块不可通行，因此在字格拦路处只能来回跑（单关卡观察：山堵蓝门左下、鱼钻入中间字格；反例『右上角挖掉后不再如此』经主播解释为该处没有连片格子）",
+   "subject": "敌人寻路与字格通行性",
+   "condition": "寻路路径上出现不可通行的字格时",
+   "evidence": null,
+   "citations": [
+    {
+     "id": "qq:w000863",
+     "status": "resolved_qq_span",
+     "source_layers": [
+      "qq"
+     ],
+     "track": "qq_chat",
+     "window_id": "w000863",
+     "as_of": "2026-06-28 22:15:50",
+     "n_source_msgs": 3,
+     "quotes": [
+      {
+       "text": "向着寻路路径更低的格子走",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "但是有字的格没法走",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "所以只能来回跑",
+       "t_start": null,
+       "t_end": null
+      }
+     ],
+     "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+    }
+   ],
+   "source_layer": "QQ群聊",
+   "review": {
+    "status": "agent_verified",
+    "scope": "text_source_only",
+    "confidence": "text-source-supported",
+    "reason": "QQ扩展(阶段四b4批)逐条回读 raw_messages 后确认该命题有逐字文本出处：先指出引用 PRTS（seq 9，含 @ 提及未引作证据），再由 seq 10“向着寻路路径更低的格子走”、seq 11/12“但是有字的格没法走／所以只能来回跑”连贯给出规则与结果，窗内无人反驳。",
+    "not_authoritative": true
+   }
+  },
+  "proposal": {
+   "claim": "（据 PRTS）敌人向寻路路径更低的格子走，而带字的地块不可通行，因此在字格拦路处只能来回跑（单关卡观察：山堵蓝门左下、鱼钻入中间字格；反例『右上角挖掉后不再如此』经主播解释为该处没有连片格子）",
+   "fault_type": "evidence_mismatch,not_self_contained",
+   "source": "triage_12.json",
+   "suggestion": "claim 改为「（据 PRTS）敌人向寻路路径更低的格子走，而带字的地块不可通行，因此在字格拦路处只能来回跑（单关卡观察：山堵蓝门左下、鱼钻入中间字格；反例『右上角挖掉后不再如此』经主播解释为该处没有连片格子）」；condition 补「路线上存在带字地块时」；并把 review 理由的「窗内无人反驳」改为据实表述。"
+  }
+ },
+ {
+  "id": "qq_expansion:w000873:c02",
+  "action": "fix",
+  "entry": {
+   "id": "qq_expansion:w000873:c02",
+   "claim": "银灰天赋的技力加成要求被加技力的干员费用低于风雪之眼；另有群友报告，只有按“银灰—小猫”交替再部署才会出现 27 费的小猫仍吃到技力、中途不再部署银灰就吃不到——该现象同窗被复现者本人称为“更像bug”，也有说法称天赋效果是一次性给的，成因未定。",
+   "subject": "银灰天赋技力加成的触发前置",
+   "condition": "目标干员在银灰部署后经历过撤退与再部署时",
+   "evidence": null,
+   "citations": [
+    {
+     "id": "qq:w000873",
+     "status": "resolved_qq_span",
+     "source_layers": [
+      "qq"
+     ],
+     "track": "qq_chat",
+     "window_id": "w000873",
+     "as_of": "2026-06-29 14:32:20",
+     "n_source_msgs": 4,
+     "quotes": [
+      {
+       "text": "才能出现27费的小猫吃到天赋",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "本身费用要比风雪眼底",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "[表情]部署顺序",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "没有第二次部署银灰的话，27费的小猫吃不到（）",
+       "t_start": null,
+       "t_end": null
+      }
+     ],
+     "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+    }
+   ],
+   "source_layer": "QQ群聊",
+   "review": {
+    "status": "agent_verified",
+    "scope": "text_source_only",
+    "confidence": "text-source-supported",
+    "reason": "QQ扩展(阶段四b4批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 28「才能出现27费的小猫吃到天赋」+seq 29「本身费用要比风雪眼底」+seq 31「部署顺序」+seq 36「没有第二次部署银灰的话，27费的小猫吃不到（）」，由复现者逐条给出，seq 33 的复述被认可。",
+    "not_authoritative": true
+   }
+  },
+  "proposal": {
+   "claim": "银灰天赋的技力加成要求被加技力的干员费用低于风雪之眼；另有群友报告，只有按“银灰—小猫”交替再部署才会出现 27 费的小猫仍吃到技力、中途不再部署银灰就吃不到——该现象同窗被复现者本人称为“更像bug”，也有说法称天赋效果是一次性给的，成因未定。",
+   "fault_type": "overclaim",
+   "source": "triage_13.json",
+   "suggestion": "银灰天赋的技力加成要求被加技力的干员费用低于风雪之眼；另有群友报告，只有按“银灰—小猫”交替再部署才会出现 27 费的小猫仍吃到技力、中途不再部署银灰就吃不到——该现象同窗被复现者本人称为“更像bug”，也有说法称天赋效果是一次性给的，成因未定。"
+  }
+ },
+ {
+  "id": "qq_expansion:w000901:c01",
+  "action": "fix",
+  "entry": {
+   "id": "qq_expansion:w000901:c01",
+   "claim": "中点判定是判定敌人坐标（如酒神天赋的 1.3、2 技能的 1.5 溅射，以及阻挡之类直接计算敌我坐标的机制）；格判是判定敌人的所属格（如陷阱师、黍）。",
+   "subject": "中点判定与格判的区分及归类",
+   "condition": "讨论按坐标取目标与按格子取目标两类判定时",
+   "evidence": null,
+   "citations": [
+    {
+     "id": "qq:w000901",
+     "status": "resolved_qq_span",
+     "source_layers": [
+      "qq"
+     ],
+     "track": "qq_chat",
+     "window_id": "w000901",
+     "as_of": "2026-07-01 16:29:36",
+     "n_source_msgs": 5,
+     "quotes": [
+      {
+       "text": "判定敌人坐标",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "此外，阻挡之类的直接计算敌我坐标的都是",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "[表情]@6167879d 格判判定所属格",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "比如陷阱师",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "黍",
+       "t_start": null,
+       "t_end": null
+      }
+     ],
+     "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+    }
+   ],
+   "source_layer": "QQ群聊",
+   "review": {
+    "status": "agent_verified",
+    "scope": "text_source_only",
+    "confidence": "text-source-supported",
+    "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 11/12 给出中点判定的两个例子（1.3、1.5 溅射），seq 13 给出其判定本质（“判定敌人坐标”），seq 14 把阻挡归入同类，seq 15/16/17 给出格判的判据与例子（“格判判定所属格／比如陷阱师／黍”）。例中的干员名与数字逐字取自原文，未做译名或数值改动。",
+    "not_authoritative": true
+   }
+  },
+  "proposal": {
+   "claim": "中点判定是判定敌人坐标（如酒神天赋的 1.3、2 技能的 1.5 溅射，以及阻挡之类直接计算敌我坐标的机制）；格判是判定敌人的所属格（如陷阱师、黍）。",
+   "fault_type": "evidence_mismatch,not_self_contained",
+   "source": "triage_09.json",
+   "suggestion": "中点判定是判定敌人坐标（如酒神天赋的 1.3、2 技能的 1.5 溅射，以及阻挡之类直接计算敌我坐标的机制）；格判是判定敌人的所属格（如陷阱师、黍）。"
+  }
+ },
+ {
+  "id": "qq_expansion:w000949:c04",
+  "action": "fix",
+  "entry": {
+   "id": "qq_expansion:w000949:c04",
+   "claim": "技能打断了部署动画，就没有部署「完成」时点，回费因此丢失（原文另注：目前有个例外是断罪者，未展开）。",
+   "subject": "部署动画被打断时回费丢失的原因",
+   "condition": "技能打断部署动画时",
+   "evidence": null,
+   "citations": [
+    {
+     "id": "qq:w000949",
+     "status": "resolved_qq_span",
+     "source_layers": [
+      "qq"
+     ],
+     "track": "qq_chat",
+     "window_id": "w000949",
+     "as_of": "2026-07-05 00:40:47",
+     "n_source_msgs": 4,
+     "quotes": [
+      {
+       "text": "技能打断了部署动画自然没有部署“完成”时",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "落地动画结束回费？",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "对",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "动画被打断就没了",
+       "t_start": null,
+       "t_end": null
+      }
+     ],
+     "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+    }
+   ],
+   "source_layer": "QQ群聊",
+   "review": {
+    "status": "agent_verified",
+    "scope": "text_source_only",
+    "confidence": "text-source-supported",
+    "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 20 给出因果（打断部署动画自然没有部署「完成」时），seq 22 以问句复述「落地动画结束回费？」，seq 23「对」与 seq 24「动画被打断就没了」为直接确认，四句相邻。",
+    "not_authoritative": true
+   }
+  },
+  "proposal": {
+   "claim": "技能打断了部署动画，就没有部署「完成」时点，回费因此丢失（原文另注：目前有个例外是断罪者，未展开）。",
+   "fault_type": "overclaim",
+   "source": "triage_10.json",
+   "suggestion": "claim 改为：「技能打断了部署动画，就没有部署「完成」时点，回费因此丢失（原文另注：目前有个例外是断罪者，未展开）。」"
+  }
+ },
+ {
+  "id": "qq_expansion:w000957:c03",
+  "action": "fix",
+  "entry": {
+   "id": "qq_expansion:w000957:c03",
+   "claim": "弑君者不吃「大盘鸡」（原文昵称，未指认具体单位）伤害，主播给出的解释是：大盘鸡的弹道落下时会进行判定，而那一帧它身上有隐匿；同窗另有「被动抵了」「锁地板」两说未排除。",
+   "subject": "特定现象的解释路径",
+   "condition": "大盘鸡弹道落下的判定帧与隐匿状态重合时",
+   "evidence": null,
+   "citations": [
+    {
+     "id": "qq:w000957",
+     "status": "resolved_qq_span",
+     "source_layers": [
+      "qq"
+     ],
+     "track": "qq_chat",
+     "window_id": "w000957",
+     "as_of": "2026-07-05 18:54:06",
+     "n_source_msgs": 4,
+     "quotes": [
+      {
+       "text": "不吃伤害是因为大盘鸡的弹道落下时会进行判定",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "那时候有隐匿",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "因为大盘鸡锁的是地板，所以隐匿躲了（？）",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "[表情]意思是“是否判定可选”是弹道的一个单独属性么",
+       "t_start": null,
+       "t_end": null
+      }
+     ],
+     "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+    }
+   ],
+   "source_layer": "QQ群聊",
+   "review": {
+    "status": "agent_verified",
+    "scope": "text_source_only",
+    "confidence": "text-source-supported",
+    "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：群友 seq 20/31 先给出「被动抵了」「锁地板」两种替代解释，主播 seq 22/23 给出自己的归因，seq 25/27 以问答确认「隐匿可以影响弹道效果的结算」→「看情况」；本条作为现象归因为闭合，但仅限文本层。",
+    "not_authoritative": true
+   }
+  },
+  "proposal": {
+   "claim": "弑君者不吃「大盘鸡」（原文昵称，未指认具体单位）伤害，主播给出的解释是：大盘鸡的弹道落下时会进行判定，而那一帧它身上有隐匿；同窗另有「被动抵了」「锁地板」两说未排除。",
+   "fault_type": "not_self_contained",
+   "source": "triage_08.json",
+   "suggestion": "弑君者不吃「大盘鸡」（原文昵称，未指认具体单位）伤害，主播给出的解释是：大盘鸡的弹道落下时会进行判定，而那一帧它身上有隐匿；同窗另有「被动抵了」「锁地板」两说未排除。"
+  }
+ },
+ {
+  "id": "qq_expansion:w000980:c01",
+  "action": "fix",
+  "entry": {
+   "id": "qq_expansion:w000980:c01",
+   "claim": "干员属性按 1级属性+(满级属性-1级属性)*(当前等级-1)/(满级-1) 插值（原文写作“*当前等级/(满级-1)”，按字面代入 1 级与满级都不成立，属漏写 -1 的简写）；因此满级与 1 级属性相同的干员（如 20 抗）在任何等级都是同一数值。",
+   "subject": "干员属性随等级的插值公式",
+   "condition": "干员等级介于 1 级与满级之间时",
+   "evidence": null,
+   "citations": [
+    {
+     "id": "qq:w000980",
+     "status": "resolved_qq_span",
+     "source_layers": [
+      "qq"
+     ],
+     "track": "qq_chat",
+     "window_id": "w000980",
+     "as_of": "2026-07-08 15:47:05",
+     "n_source_msgs": 3,
+     "quotes": [
+      {
+       "text": "而明日方舟干员的属性相当于(满级属性-1级属性)*当前等级/(满级-1)",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "[表情]1级属性+(满级属性-1级属性)*当前等级/(满级-1)",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "[表情]所以不管多少级都是20抗",
+       "t_start": null,
+       "t_end": null
+      }
+     ],
+     "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+    }
+   ],
+   "source_layer": "QQ群聊",
+   "review": {
+    "status": "agent_verified",
+    "scope": "text_source_only",
+    "confidence": "text-source-supported",
+    "reason": "QQ扩展(阶段四b4批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 7 先给出近似式，seq 13 给出更精确的等式形式，seq 14 由该式推出「所以不管多少级都是20抗」作为一致性检验；同窗无异议。",
+    "not_authoritative": true
+   }
+  },
+  "proposal": {
+   "claim": "干员属性按 1级属性+(满级属性-1级属性)*(当前等级-1)/(满级-1) 插值（原文写作“*当前等级/(满级-1)”，按字面代入 1 级与满级都不成立，属漏写 -1 的简写）；因此满级与 1 级属性相同的干员（如 20 抗）在任何等级都是同一数值。",
+   "fault_type": "number_suspect",
+   "source": "triage_13.json",
+   "suggestion": "干员属性按 1级属性+(满级属性-1级属性)*(当前等级-1)/(满级-1) 插值（原文写作“*当前等级/(满级-1)”，按字面代入 1 级与满级都不成立，属漏写 -1 的简写）；因此满级与 1 级属性相同的干员（如 20 抗）在任何等级都是同一数值。"
+  }
+ },
+ {
+  "id": "qq_expansion:w001023:c01",
+  "action": "fix",
+  "entry": {
+   "id": "qq_expansion:w001023:c01",
+   "claim": "酒神技能生成的牢笼：第二次爆条会刷新第一个牢笼的阻挡，刷新阻挡是 0 帧生效；新生成牢笼则是 0 帧出生、1 帧才有阻挡；因此一个牢笼 0 帧撤退不会阻挡，两个牢笼 0 帧撤退会阻挡。",
+   "subject": "牢笼阻挡的刷新与生成在帧时序上的差别",
+   "condition": "第二个爆条刷新已有牢笼时；或新生成牢笼时；干员在相应帧被撤退",
+   "evidence": null,
+   "citations": [
+    {
+     "id": "qq:w001023",
+     "status": "resolved_qq_span",
+     "source_layers": [
+      "qq"
+     ],
+     "track": "qq_chat",
+     "window_id": "w001023",
+     "as_of": "2026-07-11 17:54:59",
+     "n_source_msgs": 5,
+     "quotes": [
+      {
+       "text": "[表情]@879b5159 第二个爆条刷新第一个牢笼的阻挡",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "刷新阻挡是0帧刷",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "如果是生成牢笼",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "0帧出生1帧阻挡",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "所以一个牢笼0帧撤不会阻挡，2个牢笼0帧撤阻会阻挡",
+       "t_start": null,
+       "t_end": null
+      }
+     ],
+     "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+    }
+   ],
+   "source_layer": "QQ群聊",
+   "review": {
+    "status": "agent_verified",
+    "scope": "text_source_only",
+    "confidence": "text-source-supported",
+    "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 9/10 给出刷新阻挡及其生效帧（“第二个爆条刷新第一个牢笼的阻挡／刷新阻挡是0帧刷”），seq 11/12 给出新生成牢笼的对照（“如果是生成牢笼／0帧出生1帧阻挡”），seq 13 给出两条可直接使用的结论（“所以一个牢笼0帧撤不会阻挡，2个牢笼0帧撤阻会阻挡”）。五句连续同出一人，0 帧与 1 帧逐字取自原文。",
+    "not_authoritative": true
+   }
+  },
+  "proposal": {
+   "claim": "酒神技能生成的牢笼：第二次爆条会刷新第一个牢笼的阻挡，刷新阻挡是 0 帧生效；新生成牢笼则是 0 帧出生、1 帧才有阻挡；因此一个牢笼 0 帧撤退不会阻挡，两个牢笼 0 帧撤退会阻挡。",
+   "fault_type": "not_self_contained",
+   "source": "triage_09.json",
+   "suggestion": "酒神技能生成的牢笼：第二次爆条会刷新第一个牢笼的阻挡，刷新阻挡是 0 帧生效；新生成牢笼则是 0 帧出生、1 帧才有阻挡；因此一个牢笼 0 帧撤退不会阻挡，两个牢笼 0 帧撤退会阻挡。"
+  }
+ },
+ {
+  "id": "qq_expansion:w001029:c01",
+  "action": "fix",
+  "entry": {
+   "id": "qq_expansion:w001029:c01",
+   "claim": "检查点的停驻时长按 time 而非 frame 配置（可以写 0.1），不会因整秒对齐而产生多帧少帧",
+   "subject": "检查点停驻的计时单位与帧对齐",
+   "condition": "检查点停驻时长配置时",
+   "evidence": null,
+   "citations": [
+    {
+     "id": "qq:w001029",
+     "status": "resolved_qq_span",
+     "source_layers": [
+      "qq"
+     ],
+     "track": "qq_chat",
+     "window_id": "w001029",
+     "as_of": "2026-07-11 20:31:03",
+     "n_source_msgs": 3,
+     "quotes": [
+      {
+       "text": "可以写0.1",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "[表情]@879b5159 不会",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "是time不是frame",
+       "t_start": null,
+       "t_end": null
+      }
+     ],
+     "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+    }
+   ],
+   "source_layer": "QQ群聊",
+   "review": {
+    "status": "agent_verified",
+    "scope": "text_source_only",
+    "confidence": "text-source-supported",
+    "reason": "QQ扩展(阶段四b4批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 9/10 提问「停驻帧数一定是整秒的吗，会不会有多帧少帧」，seq 13/16/19 由主播逐问回答（可写0.1、不会、是time不是frame），属闭合结论。",
+    "not_authoritative": true
+   }
+  },
+  "proposal": {
+   "claim": "检查点的停驻时长按 time 而非 frame 配置（可以写 0.1），不会因整秒对齐而产生多帧少帧",
+   "fault_type": "evidence_mismatch",
+   "source": "triage_12.json",
+   "suggestion": "claim 改为「检查点的停驻时长按 time 而非 frame 配置（可以写 0.1），不会因整秒对齐而产生多帧少帧」；并在条内交叉引用 w001029:c02（『多罚站一帧』的原因是 1 帧＜1/30、属冷却制计时）。"
+  }
+ },
+ {
+  "id": "qq_expansion:w001039:c02",
+  "action": "fix",
+  "entry": {
+   "id": "qq_expansion:w001039:c02",
+   "claim": "要在 15 秒内叠到 9000 这一总量上限，第一秒内的攻击频率需达到 10 轮/秒（即 3 帧一轮），原文据此断言这基本做不到。",
+   "subject": "打满该上限所需的攻速门槛",
+   "condition": "以第一秒内达到 3 帧一轮的攻击频率为前提",
+   "evidence": null,
+   "citations": [
+    {
+     "id": "qq:w001039",
+     "status": "resolved_qq_span",
+     "source_layers": [
+      "qq"
+     ],
+     "track": "qq_chat",
+     "window_id": "w001039",
+     "as_of": "2026-07-12 21:49:11",
+     "n_source_msgs": 3,
+     "quotes": [
+      {
+       "text": "更别提基本就不可能叠出9000伤",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "第一秒内你要a足足10轮（不是次）也就是3帧一轮你才有可能9000伤",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "这谁有办法做到啊",
+       "t_start": null,
+       "t_end": null
+      }
+     ],
+     "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+    }
+   ],
+   "source_layer": "QQ群聊",
+   "review": {
+    "status": "agent_verified",
+    "scope": "text_source_only",
+    "confidence": "text-source-supported",
+    "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 9 先断定“基本就不可能叠出9000伤”，seq 11 给出推导（“第一秒内你要a足足10轮（不是次）也就是3帧一轮你才有可能9000伤”），seq 12 给出结论（“这谁有办法做到啊”）。10 轮、3 帧、9000 全部逐字取自原文。",
+    "not_authoritative": true
+   }
+  },
+  "proposal": {
+   "claim": "要在 15 秒内叠到 9000 这一总量上限，第一秒内的攻击频率需达到 10 轮/秒（即 3 帧一轮），原文据此断言这基本做不到。",
+   "fault_type": "evidence_mismatch,number_suspect",
+   "source": "triage_09.json",
+   "suggestion": "要在 15 秒内叠到 9000 这一总量上限，第一秒内的攻击频率需达到 10 轮/秒（即 3 帧一轮），原文据此断言这基本做不到。"
+  }
+ },
+ {
+  "id": "qq_expansion:w001046:c01",
+  "action": "fix",
+  "entry": {
+   "id": "qq_expansion:w001046:c01",
+   "claim": "寒霜的光环以 10 帧为循环检测周期；用伊神 2 技能规避时，可以一帧帧穷举，也可以从生成开始数过去。",
+   "subject": "该光环效果的循环检测周期与规避取帧方式",
+   "condition": "用该干员的技能规避该光环效果时",
+   "evidence": null,
+   "citations": [
+    {
+     "id": "qq:w001046",
+     "status": "resolved_qq_span",
+     "source_layers": [
+      "qq"
+     ],
+     "track": "qq_chat",
+     "window_id": "w001046",
+     "as_of": "2026-07-13 11:03:29",
+     "n_source_msgs": 3,
+     "quotes": [
+      {
+       "text": "光环10帧的循环检测周期",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "一帧帧试",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "可以",
+       "t_start": null,
+       "t_end": null
+      }
+     ],
+     "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+    }
+   ],
+   "source_layer": "QQ群聊",
+   "review": {
+    "status": "agent_verified",
+    "scope": "text_source_only",
+    "confidence": "text-source-supported",
+    "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：提问（seq 2“伊神2怎么躲寒霜来着”）之后，seq 3 给出周期本体（“光环10帧的循环检测周期”）、seq 4 给出取帧方式（“一帧帧试”）、seq 5 追问“从生成开始数过去可行么”后 seq 6 答“可以”。数字 10 帧逐字取自原文。",
+    "not_authoritative": true
+   }
+  },
+  "proposal": {
+   "claim": "寒霜的光环以 10 帧为循环检测周期；用伊神 2 技能规避时，可以一帧帧穷举，也可以从生成开始数过去。",
+   "fault_type": "not_self_contained",
+   "source": "triage_09.json",
+   "suggestion": "寒霜的光环以 10 帧为循环检测周期；用伊神 2 技能规避时，可以一帧帧穷举，也可以从生成开始数过去。"
+  }
+ },
+ {
+  "id": "qq_expansion:w001052:c02",
+  "action": "fix",
+  "entry": {
+   "id": "qq_expansion:w001052:c02",
+   "claim": "把「狂躁」+50 攻速算入后，吃满 9000 伤害需要约 0.2727 秒的攻击间隔（8.18 帧）；窗内最初给出的「0.1」已被发言人当场更正。",
+   "subject": "吃满 9000 伤害所需的攻击间隔",
+   "condition": "按该攻速加成与技能一并计算时",
+   "evidence": null,
+   "citations": [
+    {
+     "id": "qq:w001052",
+     "status": "resolved_qq_span",
+     "source_layers": [
+      "qq"
+     ],
+     "track": "qq_chat",
+     "window_id": "w001052",
+     "as_of": "2026-07-13 13:36:01",
+     "n_source_msgs": 2,
+     "quotes": [
+      {
+       "text": "[表情]@0f5162c3 要0.1才能吃满9000",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "这不是算吃不吃的满狂躁吗（）",
+       "t_start": null,
+       "t_end": null
+      }
+     ],
+     "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+    }
+   ],
+   "source_layer": "QQ群聊",
+   "review": {
+    "status": "agent_verified",
+    "scope": "text_source_only",
+    "confidence": "text-source-supported",
+    "reason": "QQ扩展(阶段四b4批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 34 回答方给出「要0.1才能吃满9000」，seq 40 紧接「这不是算吃不吃的满狂躁吗（）」确认讨论对象就是狂躁的吃满问题；窗内无人提出不同阈值。数字 0.1 与 9000 均逐字取自 seq 34，未作换算或补齐单位。",
+    "not_authoritative": true
+   }
+  },
+  "proposal": {
+   "claim": "把「狂躁」+50 攻速算入后，吃满 9000 伤害需要约 0.2727 秒的攻击间隔（8.18 帧）；窗内最初给出的「0.1」已被发言人当场更正。",
+   "fault_type": "evidence_mismatch",
+   "source": "triage_14.json",
+   "suggestion": "把「狂躁」+50 攻速算入后，吃满 9000 伤害需要约 0.2727 秒的攻击间隔（8.18 帧）；窗内最初给出的「0.1」已被发言人当场更正。"
+  }
+ },
+ {
+  "id": "qq_expansion:w001148:c01",
+  "action": "fix",
+  "entry": {
+   "id": "qq_expansion:w001148:c01",
+   "claim": "给干员附魔的藏品的效果相当于两步：①由全场持有某个 buff 的单位获得该效果；②藏品给特定 id 的单位添加这个 buff（原文以「XXX 效果」留空，具体效果名原文未给出）。",
+   "subject": "给干员附魔的藏品的生效结构",
+   "condition": "藏品属于「给干员附魔」类时",
+   "evidence": null,
+   "citations": [
+    {
+     "id": "qq:w001148",
+     "status": "resolved_qq_span",
+     "source_layers": [
+      "qq"
+     ],
+     "track": "qq_chat",
+     "window_id": "w001148",
+     "as_of": "2026-07-17 15:57:04",
+     "n_source_msgs": 2,
+     "quotes": [
+      {
+       "text": "给干员附魔的藏品的效果相当于：\n①全场持有某个buff的单位获得XXX效果\n②藏品给特定id的单位添加这个buff",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "出来之前是我想多了",
+       "t_start": null,
+       "t_end": null
+      }
+     ],
+     "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+    }
+   ],
+   "source_layer": "QQ群聊",
+   "review": {
+    "status": "agent_verified",
+    "scope": "text_source_only",
+    "confidence": "text-source-supported",
+    "reason": "QQ扩展(阶段四b4批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 8 是一条自足的两步式陈述（①②并列），seq 7 是同一发言人在给出前的铺垫（「出来之前是我想多了」）。原文中「XXX 效果」是作者留下的占位写法，claim 照录该占位，不替原文补具体效果名。窗内无人反驳。",
+    "not_authoritative": true
+   }
+  },
+  "proposal": {
+   "claim": "给干员附魔的藏品的效果相当于两步：①由全场持有某个 buff 的单位获得该效果；②藏品给特定 id 的单位添加这个 buff（原文以「XXX 效果」留空，具体效果名原文未给出）。",
+   "fault_type": "not_self_contained",
+   "source": "triage_14.json",
+   "suggestion": "给干员附魔的藏品的效果相当于两步：①由全场持有某个 buff 的单位获得该效果；②藏品给特定 id 的单位添加这个 buff（原文以「XXX 效果」留空，具体效果名原文未给出）。"
+  }
+ },
+ {
+  "id": "qq_expansion:w001148:c02",
+  "action": "fix",
+  "entry": {
+   "id": "qq_expansion:w001148:c02",
+   "claim": "按该两步结构（全场 buff 联动 + 按单位 id 赋 buff）推断，这类「给干员附魔」藏品在局内生效（原文「所以全是局内」；同窗唯一的同向回应带「好像」，只作旁证）。",
+   "subject": "附魔藏品的局内/局外生效口径",
+   "condition": "藏品属于「给干员附魔」类时",
+   "evidence": null,
+   "citations": [
+    {
+     "id": "qq:w001148",
+     "status": "resolved_qq_span",
+     "source_layers": [
+      "qq"
+     ],
+     "track": "qq_chat",
+     "window_id": "w001148",
+     "as_of": "2026-07-17 15:57:04",
+     "n_source_msgs": 4,
+     "quotes": [
+      {
+       "text": "所以全是局内",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "给干员附魔的藏品的效果相当于：\n①全场持有某个buff的单位获得XXX效果\n②藏品给特定id的单位添加这个buff",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "[表情]@某人 这个好像是局内？",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "落地才体现出来",
+       "t_start": null,
+       "t_end": null
+      }
+     ],
+     "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+    }
+   ],
+   "source_layer": "QQ群聊",
+   "review": {
+    "status": "agent_verified",
+    "scope": "text_source_only",
+    "confidence": "text-source-supported",
+    "reason": "QQ扩展(阶段四b4批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 9「所以全是局内」是回答方对 seq 8 两步结构的直接推论；seq 12/13 群友以「这个好像是局内？」「落地才体现出来」作出同向确认（前者带「好像」，故只作旁证，不作为独立依据）。推理链与在场回应一致，窗内无相反主张。",
+    "not_authoritative": true
+   }
+  },
+  "proposal": {
+   "claim": "按该两步结构（全场 buff 联动 + 按单位 id 赋 buff）推断，这类「给干员附魔」藏品在局内生效（原文「所以全是局内」；同窗唯一的同向回应带「好像」，只作旁证）。",
+   "fault_type": "overclaim",
+   "source": "triage_14.json",
+   "suggestion": "按该两步结构（全场 buff 联动 + 按单位 id 赋 buff）推断，这类「给干员附魔」藏品在局内生效（原文「所以全是局内」；同窗唯一的同向回应带「好像」，只作旁证）。"
+  }
+ },
+ {
+  "id": "qq_expansion:w001151:c01",
+  "action": "fix",
+  "entry": {
+   "id": "qq_expansion:w001151:c01",
+   "claim": "群内流传的藏品说明底稿（出处未明，非拆包或主播确认）称：藏品“犬植浆”使所有干员获得光环能力，其光环范围读取自干员当前使用的攻击范围数据、受攻击距离影响。",
+   "subject": "犬植浆的光环范围读取方式",
+   "condition": "未标注",
+   "evidence": null,
+   "citations": [
+    {
+     "id": "qq:w001151",
+     "status": "resolved_qq_span",
+     "source_layers": [
+      "qq"
+     ],
+     "track": "qq_chat",
+     "window_id": "w001151",
+     "as_of": "2026-07-17 17:37:19",
+     "n_source_msgs": 1,
+     "quotes": [
+      {
+       "text": "犬植浆\n所有干员获得光环能力：光环范围读取自干员当前使用的攻击范围数据，受攻击距离影响（意思是可露西尔3和祥子还有惊蛰2这种可能有问题，谬谬和远牙3应该也有问题）\n所有受光环影响的我方单位：\n若受影响时未被阻挡，获得本藏品的迷彩（意思是0帧迷彩，但因为光环部署碰撞，需要延后1帧）\n阻挡状态发生变动时（新阻挡了敌人/敌人脱离自己阻挡），若当前阻挡着敌人，本藏品的迷彩立刻解除；反之，若没有本藏品提供的迷彩获得迷彩（意思是解除/进入阻挡0帧获得迷彩）",
+       "t_start": null,
+       "t_end": null
+      }
+     ],
+     "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+    }
+   ],
+   "source_layer": "QQ群聊",
+   "review": {
+    "status": "agent_verified",
+    "scope": "text_source_only",
+    "confidence": "text-source-supported",
+    "reason": "QQ扩展(阶段四b4批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 2 是把藏品说明底稿直接发进群的一段长文本，本窗对它没有任何反驳或改写，其后 seq 30「还有什么要看的吗」表示发帖人把该段当作已完成的内容。按判据 7，本条严格只取该文本中「光环能力 / 范围读取自当前使用的攻击范围数据 / 受攻击距离影响」这一层的字面表述，括号内对具体干员是否为「问题」的判断属于评价，未纳入 claim。",
+    "not_authoritative": true
+   }
+  },
+  "proposal": {
+   "claim": "群内流传的藏品说明底稿（出处未明，非拆包或主播确认）称：藏品“犬植浆”使所有干员获得光环能力，其光环范围读取自干员当前使用的攻击范围数据、受攻击距离影响。",
+   "fault_type": "overclaim",
+   "source": "triage_13.json",
+   "suggestion": "群内流传的藏品说明底稿（出处未明，非拆包或主播确认）称：藏品“犬植浆”使所有干员获得光环能力，其光环范围读取自干员当前使用的攻击范围数据、受攻击距离影响。"
+  }
+ },
+ {
+  "id": "qq_expansion:w001168:c01",
+  "action": "fix",
+  "entry": {
+   "id": "qq_expansion:w001168:c01",
+   "claim": "可露希尔的「迟钝」就是单纯攻击速度 -60%，延缓来自降低攻速而不是延长控制时间；至于酒神 3 的牢笼是否会更晚被破，窗内未闭合（后文另有「敌人 30s 本来就打不爆笼子」的反向说法）。",
+   "subject": "可露希尔「迟钝」的攻击速度修正与酒神3牢笼被击破时间的关系",
+   "condition": "酒神3牢笼控住敌人后，为敌人挂上迟钝时",
+   "evidence": null,
+   "citations": [
+    {
+     "id": "qq:w001168",
+     "status": "resolved_qq_span",
+     "source_layers": [
+      "qq"
+     ],
+     "track": "qq_chat",
+     "window_id": "w001168",
+     "as_of": "2026-07-19 07:42:27",
+     "n_source_msgs": 4,
+     "quotes": [
+      {
+       "text": "延缓也是因为降低敌人攻速了吧，又不是延长控制时间……[视频]",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "对啊",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "就是单纯攻击速度-60%",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "攻击变慢了那笼子为什么不会更晚被破",
+       "t_start": null,
+       "t_end": null
+      }
+     ],
+     "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+    }
+   ],
+   "source_layer": "QQ群聊",
+   "review": {
+    "status": "agent_verified",
+    "scope": "text_source_only",
+    "confidence": "text-source-supported",
+    "reason": "QQ扩展(阶段四b4批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 7 提问「可露希尔挂迟钝是不是可以延缓牢笼被击破」，seq 12 给出机制归属（延缓来自降低攻速、不是延长控制时间），seq 13「对啊」确认、seq 14 给出数值「-60%」，seq 16 的反问「攻击变慢了那笼子为什么不会更晚被破」是对上一条的反问式确认，整段闭合。「-60%」逐字取自 seq 14，未换算。",
+    "not_authoritative": true
+   }
+  },
+  "proposal": {
+   "claim": "可露希尔的「迟钝」就是单纯攻击速度 -60%，延缓来自降低攻速而不是延长控制时间；至于酒神 3 的牢笼是否会更晚被破，窗内未闭合（后文另有「敌人 30s 本来就打不爆笼子」的反向说法）。",
+   "fault_type": "overclaim",
+   "source": "triage_15.json",
+   "suggestion": "可露希尔的「迟钝」就是单纯攻击速度 -60%，延缓来自降低攻速而不是延长控制时间；至于酒神 3 的牢笼是否会更晚被破，窗内未闭合（后文另有「敌人 30s 本来就打不爆笼子」的反向说法）。"
+  }
+ },
+ {
+  "id": "qq_expansion:w001179:c02",
+  "action": "fix",
+  "entry": {
+   "id": "qq_expansion:w001179:c02",
+   "claim": "谬因用 3 技能时，模组开 3 级相当于 10% 攻击力；2 技能的情况答者不清楚。",
+   "subject": "该干员模组3级对3技能的等效攻击力",
+   "condition": "携带3技能并使用3级模组时",
+   "evidence": null,
+   "citations": [
+    {
+     "id": "qq:w001179",
+     "status": "resolved_qq_span",
+     "source_layers": [
+      "qq"
+     ],
+     "track": "qq_chat",
+     "window_id": "w001179",
+     "as_of": "2026-07-20 10:07:34",
+     "n_source_msgs": 3,
+     "quotes": [
+      {
+       "text": "用2和3技能",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "3的话就相当于10%攻击力",
+       "t_start": null,
+       "t_end": null
+      },
+      {
+       "text": "2的话我不清楚",
+       "t_start": null,
+       "t_end": null
+      }
+     ],
+     "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+    }
+   ],
+   "source_layer": "QQ群聊",
+   "review": {
+    "status": "agent_verified",
+    "scope": "text_source_only",
+    "confidence": "text-source-supported",
+    "reason": "QQ扩展(阶段四b4批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 6 提问者明确说「用2和3技能」，seq 9 给出3技能下的等效数值、seq 10 明确自认2技能不清楚。数值「10%」逐字取自 seq 9，未换算、未外推。",
+    "not_authoritative": true
+   }
+  },
+  "proposal": {
+   "claim": "谬因用 3 技能时，模组开 3 级相当于 10% 攻击力；2 技能的情况答者不清楚。",
+   "fault_type": "not_self_contained",
+   "source": "triage_15.json",
+   "suggestion": "谬因用 3 技能时，模组开 3 级相当于 10% 攻击力；2 技能的情况答者不清楚。"
+  }
+ },
+ {
+  "id": "qq_expansion:w001194:c03",
+  "action": "fix",
+  "entry": {
+   "id": "qq_expansion:w001194:c03",
+   "claim": "银灰该技能能否普攻属于碰撞判定，而选择弹道角度属于格判（原文作「找人选择弹道的角度」，「找人」疑为输入讹写；该技能名原文未点名）。",
+   "subject": "银灰技能的能否攻击判定与弹道角度判定",
+   "condition": "银灰技能在范围内有敌人但敌人不在范围地块内时",
+   "evidence": null,
+   "citations": [
+    {
+     "id": "qq:w001194",
+     "status": "resolved_qq_span",
+     "source_layers": [
+      "qq"
+     ],
+     "track": "qq_chat",
+     "window_id": "w001194",
+     "as_of": "2026-07-21 14:25:42",
+     "n_source_msgs": 1,
+     "quotes": [
+      {
+       "text": "[表情]@某人@某人 能不能a是碰撞判定，找人选择弹道的角度是格判",
+       "t_start": null,
+       "t_end": null
+      }
+     ],
+     "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
+    }
+   ],
+   "source_layer": "QQ群聊",
+   "review": {
+    "status": "agent_verified",
+    "scope": "text_source_only",
+    "confidence": "text-source-supported",
+    "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：seq 59 是同一方对 seq 52 的自我修正后的版本（seq 52 写的是「弹道是中点判定」并自带「凌弥记得是这么回事（？」的不确定），seq 59 把「中点判定」改成「格判」且去掉了不确定标记；随后 seq 63 的追问直接问「中点判定和格判有什么区别嘛」，seq 66「哦我明白有什么区别了」、seq 68「应该反过来问，判定所属格和坐标判定有什么关系吗」显示讨论转向概念澄清而非否定该句。",
+    "not_authoritative": true
+   }
+  },
+  "proposal": {
+   "claim": "银灰该技能能否普攻属于碰撞判定，而选择弹道角度属于格判（原文作「找人选择弹道的角度」，「找人」疑为输入讹写；该技能名原文未点名）。",
+   "fault_type": "not_self_contained,asr_error",
+   "source": "triage_09.json",
+   "suggestion": "银灰该技能能否普攻属于碰撞判定，而选择弹道角度属于格判（原文作「找人选择弹道的角度」，「找人」疑为输入讹写；该技能名原文未点名）。"
+  }
+ }
+]

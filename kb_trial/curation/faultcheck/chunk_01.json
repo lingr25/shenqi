@@ -1,0 +1,4403 @@
+[
+ {
+  "id": "B010-event-order-exceptions#r0",
+  "claim": "实体按创建顺序决定对应事件的更新；失衡事件单独拎出处理；与连续攻击中抬手有关的部分事件也单独拎出。不能简单说成只按实体创建。",
+  "subject": "未标注",
+  "condition": "未标注",
+  "scope": "未标注",
+  "category": "帧时序与计时器",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "inline:transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt@9368",
+    "status": "resolved_inline_evidence",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
+    "quotes": [
+     {
+      "text": "实体按创建顺序对决定对应事件的更新 是的 但是有一些事件的话 它又是单独拎出来处理的 失衡是单独拎出来处理的",
+      "t_start": 9368,
+      "t_end": null,
+      "t_start_upstream": 9368,
+      "t_start_line": 9368,
+      "t_line_label": "02:36:08"
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "B010-event-order-exceptions",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/batch100_round2/mechanisms.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1uLE86JEi1_p1_38942018351.txt [02:36:08] 逐字为「实体按创建顺序对决定对应事件的更新 是的 但是有一些事件的话 它又是单独拎出来处理的 失衡是单独拎出来处理的 然后的话连续攻击中抬手有关的部分事件也是单独拎出来处理的」。claim 三个分句均在源句内：实体按创建顺序决定更新、失衡单独拎出、连续攻击抬手相关事件单独拎出；收尾「不能简单说成只按实体创建」",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1uLE86JEi1_p1_38942018351.txt [02:36:08] 逐字为「实体按创建顺序对决定对应事件的更新 是的 但是有一些事件的话 它又是单独拎出来处理的 失衡是单独拎出来处理的 然后的话连续攻击中抬手有关的部分事件也是单独拎出来处理的」。claim 三个分句均在源句内：实体按创建顺序决定更新、失衡单独拎出、连续攻击抬手相关事件单独拎出；收尾「不能简单说成只按实体创建」对应同窗口 [02:36:52]「所以创建这个东西的话 没有办法简单说成是实体 因为部分非实体的东西也参与也他们的创建也会受到这个影响」，是源句的近义转述而非外推。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
+   "source_line_time": "02:36:08",
+   "supports": "三个分句与收尾限定句在源窗口内逐句可对应，结论成立",
+   "derived_correction": "源 [02:36:08]「实体按创建顺序对决定对应事件的更新」多一「对」字，属口述冗余，claim 写为「按创建顺序决定对应事件的更新」，语义未改，引文原文未动。",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "B020-endpoints-not-gates#r0",
+  "claim": "寻路的起点和终点是寻路参数，与红蓝门没有真正意义上的关系；寻路上只看终点。红门只具有标识效果。",
+  "subject": "未标注",
+  "condition": "未标注",
+  "scope": "未标注",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "inline:transcripts_txt/BV14y8269EbS_p1_41164079923.txt@1443",
+    "status": "resolved_inline_evidence",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV14y8269EbS_p1_41164079923.txt",
+    "quotes": [
+     {
+      "text": "起点和终点都是寻路的参数 它和红蓝门不拥有真正意义上的关系",
+      "t_start": 1443,
+      "t_end": null,
+      "t_start_upstream": 1443,
+      "t_start_line": 1443,
+      "t_line_label": "24:03"
+     }
+    ]
+   },
+   {
+    "id": "inline:transcripts_txt/BV14y8269EbS_p1_41164079923.txt@1475",
+    "status": "resolved_inline_evidence",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV14y8269EbS_p1_41164079923.txt",
+    "quotes": [
+     {
+      "text": "在寻路上只看终点",
+      "t_start": 1475,
+      "t_end": null,
+      "t_start_upstream": 1475,
+      "t_start_line": 1475,
+      "t_line_label": "24:35"
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV14y8269EbS_p1_41164079923.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "B020-endpoints-not-gates",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/batch100_round2/mechanisms.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源[24:03]「起点和终点都是寻路的参数 它和红蓝门不拥有真正意义上的关系」逐字支持 claim 第一句；[24:18]「红门只具有标识效果 但是不具有任何判定路径上的内容」支持第三句；[24:35]「在寻路上只看终点 只看终点」支持第二句。claim 三个分句各有一句源文逐字对应，且 citation 2/2 的独立窗口（@1475）与 citation 1/2（@1443）落在同一段落、互相",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源[24:03]「起点和终点都是寻路的参数 它和红蓝门不拥有真正意义上的关系」逐字支持 claim 第一句；[24:18]「红门只具有标识效果 但是不具有任何判定路径上的内容」支持第三句；[24:35]「在寻路上只看终点 只看终点」支持第二句。claim 三个分句各有一句源文逐字对应，且 citation 2/2 的独立窗口（@1475）与 citation 1/2（@1443）落在同一段落、互相印证，非章节相同式推断。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV14y8269EbS_p1_41164079923.txt",
+   "source_line_time": "00:24:03",
+   "supports": "起点终点是寻路参数、红门只标识、寻路上只看终点，三句均逐字有源",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "B022-target-speed-in-path#r0",
+  "claim": "寻路状态机里的目标速度：从自身寻路坐标指向拐角格中心，模长为理论移速。怪倾向于按该速度走，但不会直接变成该速度。停住、寻路断绝也在寻路状态机中，不走是因为目标速度为零。速度由目标速度、实际速度、加速度逐帧生成。",
+  "subject": "未标注",
+  "condition": "未标注",
+  "scope": "未标注",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "inline:transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt@3937",
+    "status": "resolved_inline_evidence",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+    "quotes": [
+     {
+      "text": "从自身的寻路坐标 指向这个拐角格中心的这样一个 然后模长为自身的理论移速的",
+      "t_start": 3937,
+      "t_end": null,
+      "t_start_upstream": 3937,
+      "t_start_line": 3937,
+      "t_line_label": "01:05:37"
+     }
+    ]
+   },
+   {
+    "id": "inline:transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt@3979",
+    "status": "resolved_inline_evidence",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+    "quotes": [
+     {
+      "text": "也在寻路状态机之中 但是他们不走了 是因为目标速度是零 目标速度是零",
+      "t_start": 3979,
+      "t_end": null,
+      "t_start_upstream": 3979,
+      "t_start_line": 3979,
+      "t_line_label": "01:06:19"
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "B022-target-speed-in-path",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/batch100_round2/mechanisms.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源[01:05:37]「从自身的寻路坐标 指向这个拐角格中心的这样一个 然后模长为自身的理论移速的」逐字支持「从自身寻路坐标指向拐角格中心、模长为理论移速」；[01:05:57]「怪会倾向于按照目标速度进行行进」支持「倾向于按该速度走」；[01:06:19]「也在寻路状态机之中 但是他们不走了 是因为目标速度是零」支持「停住/寻路断绝也在寻路状态机中、不走是因为目标速度为零」；[01:06:56]",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源[01:05:37]「从自身的寻路坐标 指向这个拐角格中心的这样一个 然后模长为自身的理论移速的」逐字支持「从自身寻路坐标指向拐角格中心、模长为理论移速」；[01:05:57]「怪会倾向于按照目标速度进行行进」支持「倾向于按该速度走」；[01:06:19]「也在寻路状态机之中 但是他们不走了 是因为目标速度是零」支持「停住/寻路断绝也在寻路状态机中、不走是因为目标速度为零」；[01:06:56]「目标速度只是怪倾向于走的那个速度 但是呢并不是说怪直接就会按照这个速度进行走」支持「不会直接变成该速度」；[01:06:34]「通过目标速度理论 移速加速度等种种逻辑去进行寻路」支持逐帧生成。五段 claim 各有独立源句，无未支持分句。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p1_40968521557.txt",
+   "source_line_time": "01:05:37",
+   "supports": "目标速度定义/倾向性/目标速度为零故不走/不直接变成该速度/逐帧生成，五段均逐字支持",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "B028-tile-bfs-order#r0",
+  "claim": "寻路地图按上右下左顺序推地块；每格记录来源方向；排完可通行地块后形成寻路地图。",
+  "subject": "未标注",
+  "condition": "未标注",
+  "scope": "未标注",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "inline:transcripts_txt/BV1MimABGEjs_p1_34575026662.txt@264",
+    "status": "resolved_inline_evidence",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+    "quotes": [
+     {
+      "text": "首先是这一步上右下左的顺序进行寻路",
+      "t_start": 264,
+      "t_end": null,
+      "t_start_upstream": 264,
+      "t_start_line": 264,
+      "t_line_label": "04:24"
+     }
+    ]
+   },
+   {
+    "id": "inline:transcripts_txt/BV1MimABGEjs_p1_34575026662.txt@385",
+    "status": "resolved_inline_evidence",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+    "quotes": [
+     {
+      "text": "每一个地块 像这个地块都会记录他是从哪个格子来的",
+      "t_start": 385,
+      "t_end": null,
+      "t_start_upstream": 385,
+      "t_start_line": 385,
+      "t_line_label": "06:25"
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "B028-tile-bfs-order",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/batch100_round2/mechanisms.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源[04:24]「首先是这一步上右下左的顺序进行寻路」支持「按上右下左顺序推地块」；[04:50]「上右下左的顺序推地块 先是上 然后上一格就记录了它的来源是下」支持「每格记录来源方向」；[06:25]「直到排完所有的那个可通行地块之后 然后的话每一个地块 像这个地块都会记录他是从哪个格子来的」+[06:39]「最终也就形成了这样一张寻路地图」支持后两句。时间顺序与因果均与 claim 一致。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源[04:24]「首先是这一步上右下左的顺序进行寻路」支持「按上右下左顺序推地块」；[04:50]「上右下左的顺序推地块 先是上 然后上一格就记录了它的来源是下」支持「每格记录来源方向」；[06:25]「直到排完所有的那个可通行地块之后 然后的话每一个地块 像这个地块都会记录他是从哪个格子来的」+[06:39]「最终也就形成了这样一张寻路地图」支持后两句。时间顺序与因果均与 claim 一致。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1MimABGEjs_p1_34575026662.txt",
+   "source_line_time": "00:04:24",
+   "supports": "上右下左推地块/每格记来源/排完可通行地块后成图，三句逐字支持",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "B036-path-not-wallhack#r0",
+  "claim": "卡墙只决定何时不发生传送，敌人怎么走由寻路机制决定；任何点位都按寻路向自己的路径点走。传送是改写坐标。抗性吃哪一种本段声明待研究，不入库。路径点完成半径数值不入库。",
+  "subject": "未标注",
+  "condition": "未标注",
+  "scope": "未标注",
+  "category": "寻路",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "inline:transcripts_txt/BV1jd3m68E6f_p1_40508197659.txt@6010",
+    "status": "resolved_inline_evidence",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1jd3m68E6f_p1_40508197659.txt",
+    "quotes": [
+     {
+      "text": "卡墙只是决定什么时候不发生这个传送现象 但是敌人会怎么走的话 一开始就是由敌人的寻路机制决定的",
+      "t_start": 6010,
+      "t_end": null,
+      "t_start_upstream": 6010,
+      "t_start_line": 6010,
+      "t_line_label": "01:40:10"
+     }
+    ]
+   },
+   {
+    "id": "inline:transcripts_txt/BV1jd3m68E6f_p1_40508197659.txt@6024",
+    "status": "resolved_inline_evidence",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1jd3m68E6f_p1_40508197659.txt",
+    "quotes": [
+     {
+      "text": "敌人在任何点位都是按照寻路规则向着自己的那个路径点在走",
+      "t_start": 6024,
+      "t_end": null,
+      "t_start_upstream": 6024,
+      "t_start_line": 6024,
+      "t_line_label": "01:40:24"
+     }
+    ]
+   },
+   {
+    "id": "inline:transcripts_txt/BV1jd3m68E6f_p1_40508197659.txt@6139",
+    "status": "resolved_inline_evidence",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1jd3m68E6f_p1_40508197659.txt",
+    "quotes": [
+     {
+      "text": "就是实际上传送这些机制的话 从一开始就没有什么特殊的 是一个单纯的改写坐标而已",
+      "t_start": 6139,
+      "t_end": null,
+      "t_start_upstream": 6139,
+      "t_start_line": 6139,
+      "t_line_label": "01:42:19"
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1jd3m68E6f_p1_40508197659.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "B036-path-not-wallhack",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/batch100_round2/mechanisms.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源[01:40:10]「卡墙只是决定什么时候不发生这个传送现象 但是敌人会怎么走的话 一开始就是由敌人的寻路机制决定的」支持前两句；[01:40:24]「敌人在任何点位都是按照寻路规则向着自己的那个路径点在走」支持「任何点位都按寻路向自己路径点走」；[01:42:19]「传送这些机制的话 从一开始就没有什么特殊的 是一个单纯的改写坐标而已」支持「传送是改写坐标」。claim 自带的「抗性吃哪一种待",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源[01:40:10]「卡墙只是决定什么时候不发生这个传送现象 但是敌人会怎么走的话 一开始就是由敌人的寻路机制决定的」支持前两句；[01:40:24]「敌人在任何点位都是按照寻路规则向着自己的那个路径点在走」支持「任何点位都按寻路向自己路径点走」；[01:42:19]「传送这些机制的话 从一开始就没有什么特殊的 是一个单纯的改写坐标而已」支持「传送是改写坐标」。claim 自带的「抗性吃哪一种待研究不入库」与源[01:42:32]「这个吃传送抗性吧 必定吃 但是吃哪一种还有待研究 得等调零的结果了」一致，属如实转述而非臆测。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1jd3m68E6f_p1_40508197659.txt",
+   "source_line_time": "01:40:10",
+   "supports": "卡墙只决定不传送/走法由寻路机制决定/任何点位按寻路走/传送即改写坐标，均逐字支持；待研究声明亦与源一致",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "B069-dir-to-radial#r0",
+  "claim": "方向力在过近或角度过大时转换成径向力，力度减二。践行者二技能和出血不会因距离过近或角度过大做该转换。径向力沿连线；方向力由干员朝向决定。",
+  "subject": "未标注",
+  "condition": "未标注",
+  "scope": "未标注",
+  "category": "技能特例",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "inline:transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt@3864",
+    "status": "resolved_inline_evidence",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
+    "quotes": [
+     {
+      "text": "转换成径向力的话 会力度减二 然后的话不满足我们上述这个范围条件的 比如说那个践行者二技能和出血",
+      "t_start": 3864,
+      "t_end": null,
+      "t_start_upstream": 3864,
+      "t_start_line": 3864,
+      "t_line_label": "01:04:24"
+     }
+    ]
+   },
+   {
+    "id": "inline:transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt@3881",
+    "status": "resolved_inline_evidence",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
+    "quotes": [
+     {
+      "text": "这两个是不会因为距离过近 或者是因为这个角度过大 产生这个径向力和方向力的转换的",
+      "t_start": 3881,
+      "t_end": null,
+      "t_start_upstream": 3881,
+      "t_start_line": 3881,
+      "t_line_label": "01:04:41"
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "B069-dir-to-radial",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/batch100_round2/mechanisms.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源[01:04:24]「如果是在外面这一片的话 就会是转换成径向力…转换成径向力的话 会力度减二」支持「过近或角度过大时转换成径向力、力度减二」（该行 ASR 夹带一句口误「转换成方向力」，但后半句「转换成径向力的话 会力度减二」为完整陈述，claim 取的是后者）；[01:04:41]「这两个是不会因为距离过近 或者是因为这个角度过大 产生这个径向力和方向力的转换的 这个大家应该就是用的也是比较",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源[01:04:24]「如果是在外面这一片的话 就会是转换成径向力…转换成径向力的话 会力度减二」支持「过近或角度过大时转换成径向力、力度减二」（该行 ASR 夹带一句口误「转换成方向力」，但后半句「转换成径向力的话 会力度减二」为完整陈述，claim 取的是后者）；[01:04:41]「这两个是不会因为距离过近 或者是因为这个角度过大 产生这个径向力和方向力的转换的 这个大家应该就是用的也是比较熟悉的」+[01:04:24]「比如说那个践行者二技能和出血」支持践行者二技能与出血的豁免；[01:05:02]「它由敌人的方向向自己的方向 那个按连线方向推 所以是径向力 方向力是由干员的朝向决定的 不由敌人的位置决定」支持末两句。四段 claim 均有独立源句。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
+   "source_line_time": "01:04:24",
+   "supports": "转换条件与力度减二/两技能豁免/径向力沿连线/方向力由朝向决定，四段逐字支持",
+   "derived_correction": "源[01:04:24]同一行内先有口误「转换成方向力」紧接「转换成径向力的话 会力度减二」；claim 依后半句写作「转换成径向力」，与[01:05:02]「按连线方向推 所以是径向力」互证，属上下文可闭合的口误，未改写引文",
+   "derived_correction_disposition": "applied"
+  }
+ },
+ {
+  "id": "B074-imbalance-speed-separate#r0",
+  "claim": "失衡状态下的速度与寻路状态下的速度从根本上不是一个东西。失衡时不计算寻路速度；推拉修正失衡速度。退出失衡后把该速度清零，再按寻路状态计算。",
+  "subject": "未标注",
+  "condition": "未标注",
+  "scope": "未标注",
+  "category": "位移",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "inline:transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt@14699",
+    "status": "resolved_inline_evidence",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
+    "quotes": [
+     {
+      "text": "就是失衡状态下的速度和寻路状态下的速度 从根本上不是一个东西",
+      "t_start": 14699,
+      "t_end": null,
+      "t_start_upstream": 14699,
+      "t_start_line": 14699,
+      "t_line_label": "04:04:59"
+     }
+    ]
+   },
+   {
+    "id": "inline:transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt@14731",
+    "status": "resolved_inline_evidence",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
+    "quotes": [
+     {
+      "text": "退出失衡之后 把这个速度清零 然后去改成寻路状态",
+      "t_start": 14731,
+      "t_end": null
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "B074-imbalance-speed-separate",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/batch100_round2/mechanisms.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源[04:04:59]「失衡状态下的速度和寻路状态下的速度 从根本上不是一个东西」支持第一句；[04:05:09]「就是在失衡状态下寻路的速度是完全不计算的」支持第二句；[04:05:31]「所有的推拉都是去修正这个速度 退出失衡之后 把这个速度清零」支持第三、四句；[04:05:47]「然后去改成寻路状态 启动寻路状态那个数量进行计算」支持「再按寻路状态计算」。claim 四段逐一有源，无缺口。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源[04:04:59]「失衡状态下的速度和寻路状态下的速度 从根本上不是一个东西」支持第一句；[04:05:09]「就是在失衡状态下寻路的速度是完全不计算的」支持第二句；[04:05:31]「所有的推拉都是去修正这个速度 退出失衡之后 把这个速度清零」支持第三、四句；[04:05:47]「然后去改成寻路状态 启动寻路状态那个数量进行计算」支持「再按寻路状态计算」。claim 四段逐一有源，无缺口。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
+   "source_line_time": "04:04:59",
+   "supports": "两种速度非同一物/失衡时不计算寻路速度/推拉修正/退出清零后按寻路算，四段逐字支持",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "B085-same-frame-unblock#r0",
+  "claim": "阻挡同帧撤退时，敌人不会抬手，不会进入 combat/attack 状态机；仍按寻路状态机，但无法按寻路状态机产生位移。",
+  "subject": "未标注",
+  "condition": "未标注",
+  "scope": "未标注",
+  "category": "位移",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "inline:transcripts_txt/BV14gby6LEni_p3_40944668620.txt@534",
+    "status": "resolved_inline_evidence",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV14gby6LEni_p3_40944668620.txt",
+    "quotes": [
+     {
+      "text": "如果阻部署后一帧撤的话 阻挡同真撤的话 敌人是不会抬手的 不会抬手 敌人就不会进入combat状态机",
+      "t_start": 534,
+      "t_end": null,
+      "t_start_upstream": 534,
+      "t_start_line": 534,
+      "t_line_label": "08:54"
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV14gby6LEni_p3_40944668620.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "B085-same-frame-unblock",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/batch100_round2/mechanisms.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源[08:54]「如果阻部署后一帧撤的话 阻挡同真撤的话 敌人是不会抬手的 不会抬手 敌人就不会进入combat状态机」支持「同帧撤退不抬手、不进 combat 状态机」；[09:05]「不会进入attack状态机」支持 attack 状态机部分；[09:18]「它在按照寻路状态机移动 但是无法按照寻路状态机产生位移」逐字支持「仍按寻路状态机但无法产生位移」。claim 三段全部逐字对应。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源[08:54]「如果阻部署后一帧撤的话 阻挡同真撤的话 敌人是不会抬手的 不会抬手 敌人就不会进入combat状态机」支持「同帧撤退不抬手、不进 combat 状态机」；[09:05]「不会进入attack状态机」支持 attack 状态机部分；[09:18]「它在按照寻路状态机移动 但是无法按照寻路状态机产生位移」逐字支持「仍按寻路状态机但无法产生位移」。claim 三段全部逐字对应。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV14gby6LEni_p3_40944668620.txt",
+   "source_line_time": "00:08:54",
+   "supports": "不抬手/不进 combat 与 attack 状态机/按寻路但不产生位移，三段逐字支持",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "B093-halo-needs-collider#r0",
+  "claim": "光环：用碰撞箱检测范围内单位并上 buff。全图光环没有碰撞箱，直接索敌到敌人。",
+  "subject": "未标注",
+  "condition": "未标注",
+  "scope": "未标注",
+  "category": "状态效果",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "inline:transcripts_txt/BV1wPuG6aEyY_p2_40722629133.txt@748",
+    "status": "resolved_inline_evidence",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1wPuG6aEyY_p2_40722629133.txt",
+    "quotes": [
+     {
+      "text": "使用一个碰撞箱 让一个范围内的人 然后呢当这个碰撞箱检测到了范围内有人了 然后就给他们上一个Buff 这种东西叫光环",
+      "t_start": 748,
+      "t_end": null,
+      "t_start_upstream": 748,
+      "t_start_line": 748,
+      "t_line_label": "12:28"
+     }
+    ]
+   },
+   {
+    "id": "inline:transcripts_txt/BV1wPuG6aEyY_p2_40722629133.txt@769",
+    "status": "resolved_inline_evidence",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1wPuG6aEyY_p2_40722629133.txt",
+    "quotes": [
+     {
+      "text": "全图光环是没有碰撞箱的 直接锁敌到敌人光环是需要碰撞箱的",
+      "t_start": 769,
+      "t_end": null,
+      "t_start_upstream": 769,
+      "t_start_line": 769,
+      "t_line_label": "12:49"
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1wPuG6aEyY_p2_40722629133.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "B093-halo-needs-collider",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/batch100_round2/mechanisms.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源[12:28]「使用一个碰撞箱 让一个范围内的人 然后呢当这个碰撞箱检测到了范围内有人了 然后就给他们上一个Buff 这种东西叫光环 光环是一个群体上Buff用的能力」逐字支持「用碰撞箱检测范围内单位并上 buff」；[12:49]「当然我们要区分光环和全图光环 全图光环是没有碰撞箱的 直接锁敌到敌人光环是需要碰撞箱的」逐字支持「全图光环没有碰撞箱、直接索敌」与「光环需要碰撞箱」。claim 两",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源[12:28]「使用一个碰撞箱 让一个范围内的人 然后呢当这个碰撞箱检测到了范围内有人了 然后就给他们上一个Buff 这种东西叫光环 光环是一个群体上Buff用的能力」逐字支持「用碰撞箱检测范围内单位并上 buff」；[12:49]「当然我们要区分光环和全图光环 全图光环是没有碰撞箱的 直接锁敌到敌人光环是需要碰撞箱的」逐字支持「全图光环没有碰撞箱、直接索敌」与「光环需要碰撞箱」。claim 两段均有独立源句。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1wPuG6aEyY_p2_40722629133.txt",
+   "source_line_time": "00:12:28",
+   "supports": "光环=碰撞箱检测+上buff/全图光环无碰撞箱直接索敌+光环需碰撞箱，两段逐字支持",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-0-4#r0",
+  "claim": "在肉鸽中，侵蚀损伤削弱的是肉鸽加成前的基础防御。",
+  "subject": "侵蚀损伤",
+  "condition": "在肉鸽中",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "云端ASR重转写(无官方字幕分P)",
+  "source_layers": [
+   "asr"
+  ],
+  "track": "vod_cloud",
+  "citations": [
+   {
+    "id": "BV14gby6LEni_p2_40943751084:p8:a0:b11a4a86",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV14gby6LEni_p2_40943751084_asr.txt",
+    "bvid_stem": "BV14gby6LEni_p2_40943751084",
+    "recorded_at": "2026-08-15",
+    "speaker": "神祇读神奇",
+    "chapter": "三匕测评视频校对与技能机制初步讨论",
+    "quotes": [
+     {
+      "text": "但在肉鸽中侵蚀损伤削弱的是肉鸽加成前的基础防御。",
+      "t_start": 951,
+      "t_end": 1025
+     }
+    ],
+    "_upstream_quote": "但在肉鸽中侵蚀损伤削弱的是肉鸽加成前的基础防御。"
+   },
+   {
+    "id": "ctx=sub:BV14gby6LEni_p2_40943751084:952",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV14gby6LEni_p2_40943751084_asr.txt",
+    "requested_second": 952,
+    "quotes": [
+     {
+      "text": "[15:52] 当然，物理系列的最大问题是有一个高额减仓无法逾越。但在肉哥中，轻蚀损伤削弱的是肉哥加成。",
+      "t_start": 952,
+      "t_end": null,
+      "t_line_label": "15:52",
+      "t_start_line": 952
+     }
+    ]
+   },
+   {
+    "id": "ctx=sub:BV14gby6LEni_p2_40943751084:959",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV14gby6LEni_p2_40943751084_asr.txt",
+    "requested_second": 959,
+    "quotes": [
+     {
+      "text": "[15:59] 前的基础防御嗯，我个人还是不太喜欢基础这个词，虽然没有毛病，但是的话很多人总是对基础这两个字抱有某种莫名其妙的就是解构，我认为直接就说是削弱的是肉哥加削弱的数值，在肉鸽加成前结算就行。同时在他这个肉鸽的话，因为它是直接加，然后肉鸽这是最终成，就怎么说呢，总说基础基础的话，就容易带来一些认知问题。比如说伊内斯三啊，也可以在肉鸽加成前，然后去偷这个攻击力。然后加一句基础的话，就总以为他的结算很早，但是实际上倒数第二呢，只是因为肉鸽这个加成是倒数第一吧了，的加持下比倒数第一早一步强能够永久的，然后这叫基础，这不是很奇怪吗？的防御变为0，在年高环境中有一定发挥。且三比的爆条都需要对敌人成功造成物理伤害。在面对闪必较高的敌人时较为看脸。总的来说三比是一个日常使用手感一般黑刘树凯能够打无偿能够穷局对策，可以有的读一份绝活等环境的干源，读一份绝活主要是来自于它的停顿的覆盖率和那个什么和那个传送。他这个侵实损伤的话呃。",
+      "t_start": 959,
+      "t_end": null,
+      "t_line_label": "15:59",
+      "t_start_line": 959
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "asr_drafts/BV14gby6LEni_p2_40943751084_asr.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-0-4",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "reason": "ASR 引文逐字支持：p8:a0「但在肉鸽中侵蚀损伤削弱的是肉鸽加成前的基础防御」；邻窗确认语境为侵蚀损伤与肉鸽加成的结算层次",
+   "not_authoritative": true,
+   "verification": "ASR 引文逐字支持：p8:a0「但在肉鸽中侵蚀损伤削弱的是肉鸽加成前的基础防御」；邻窗确认语境为侵蚀损伤与肉鸽加成的结算层次"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "inherited_verified",
+   "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
+   "reviewer_type": "agent",
+   "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-0-9#r0",
+  "claim": "物理和法术的攻击根据抗性计算伤害，这是抗性结算环节。",
+  "subject": "物理和法术的攻击",
+  "condition": "物理或法术攻击造成伤害前",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "云端ASR重转写(无官方字幕分P)",
+  "source_layers": [
+   "asr"
+  ],
+  "track": "vod_cloud",
+  "citations": [
+   {
+    "id": "BV14gby6LEni_p2_40943751084:p40:a1:234d333f",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV14gby6LEni_p2_40943751084_asr.txt",
+    "bvid_stem": "BV14gby6LEni_p2_40943751084",
+    "recorded_at": "2026-08-15",
+    "speaker": "神祇读神奇",
+    "chapter": "伤害计算抗性与伤判环节分离及真伤生命流失区别",
+    "quotes": [
+     {
+      "text": "物理和法术的攻击根据抗性计算伤害",
+      "t_start": 4861,
+      "t_end": 4895,
+      "t_start_upstream": 4861,
+      "t_start_line": 4870,
+      "t_line_label": "01:21:10"
+     }
+    ],
+    "_upstream_quote": "物理和法术的攻击根据抗性计算伤害"
+   },
+   {
+    "id": "BV14gby6LEni_p2_40943751084:p40:a4:8de60d70",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV14gby6LEni_p2_40943751084_asr.txt",
+    "bvid_stem": "BV14gby6LEni_p2_40943751084",
+    "recorded_at": "2026-08-15",
+    "speaker": "神祇读神奇",
+    "chapter": "伤害计算抗性与伤判环节分离及真伤生命流失区别",
+    "quotes": [
+     {
+      "text": "属性和属性之间，比如说攻击和防御，确定伤害，这是抗性结算环节",
+      "t_start": 4895,
+      "t_end": 4944
+     }
+    ],
+    "_upstream_quote": "属性和属性之间，比如说攻击和防御，确定伤害，这是抗性结算环节"
+   }
+  ],
+  "source_files": [
+   "asr_drafts/BV14gby6LEni_p2_40943751084_asr.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-0-9",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "reason": "ASR 引文逐字支持 p40:a1；邻窗 p40:a4 给出\"这是抗性结算环节\"",
+   "not_authoritative": true,
+   "verification": "ASR 引文逐字支持 p40:a1；邻窗 p40:a4 给出\"这是抗性结算环节\""
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "inherited_verified",
+   "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
+   "reviewer_type": "agent",
+   "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-0-9#r1",
+  "claim": "抗性结算完之后，伤判环节会改写伤害。",
+  "subject": "伤判环节",
+  "condition": "抗性结算完成后",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "云端ASR重转写(无官方字幕分P)",
+  "source_layers": [
+   "asr"
+  ],
+  "track": "vod_cloud",
+  "citations": [
+   {
+    "id": "BV14gby6LEni_p2_40943751084:p40:a5:4bb3fa44",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV14gby6LEni_p2_40943751084_asr.txt",
+    "bvid_stem": "BV14gby6LEni_p2_40943751084",
+    "recorded_at": "2026-08-15",
+    "speaker": "神祇读神奇",
+    "chapter": "伤害计算抗性与伤判环节分离及真伤生命流失区别",
+    "quotes": [
+     {
+      "text": "伤判环节，然后去改写这个伤害",
+      "t_start": 4895,
+      "t_end": 4944,
+      "t_start_upstream": 4895,
+      "t_start_line": 4889,
+      "t_line_label": "01:21:29"
+     }
+    ],
+    "_upstream_quote": "伤判环节，然后去改写这个伤害"
+   }
+  ],
+  "source_files": [
+   "asr_drafts/BV14gby6LEni_p2_40943751084_asr.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-0-9",
+   "trial_rule_idx": 1,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "reason": "ASR 引文逐字支持 p40:a5「伤判环节，然后去改写这个伤害」",
+   "not_authoritative": true,
+   "verification": "ASR 引文逐字支持 p40:a5「伤判环节，然后去改写这个伤害」"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "inherited_verified",
+   "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
+   "reviewer_type": "agent",
+   "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-0-9#r2",
+  "claim": "伤判是用来计算增伤和减伤的。",
+  "subject": "伤判",
+  "condition": "进入伤判环节时",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "云端ASR重转写(无官方字幕分P)",
+  "source_layers": [
+   "asr"
+  ],
+  "track": "vod_cloud",
+  "citations": [
+   {
+    "id": "BV14gby6LEni_p2_40943751084:p40:a2:3ed9602f",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV14gby6LEni_p2_40943751084_asr.txt",
+    "bvid_stem": "BV14gby6LEni_p2_40943751084",
+    "recorded_at": "2026-08-15",
+    "speaker": "神祇读神奇",
+    "chapter": "伤害计算抗性与伤判环节分离及真伤生命流失区别",
+    "quotes": [
+     {
+      "text": "伤判是用来计算增伤和减伤的",
+      "t_start": 4861,
+      "t_end": 4895,
+      "t_start_upstream": 4861,
+      "t_start_line": 4870,
+      "t_line_label": "01:21:10"
+     }
+    ],
+    "_upstream_quote": "伤判是用来计算增伤和减伤的"
+   }
+  ],
+  "source_files": [
+   "asr_drafts/BV14gby6LEni_p2_40943751084_asr.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-0-9",
+   "trial_rule_idx": 2,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "reason": "ASR 引文逐字支持 p40:a2「伤判是用来计算增伤和减伤的」",
+   "not_authoritative": true,
+   "verification": "ASR 引文逐字支持 p40:a2「伤判是用来计算增伤和减伤的」"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "inherited_verified",
+   "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
+   "reviewer_type": "agent",
+   "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-0-9#r4",
+  "claim": "吃不吃抗和吃不吃增伤从根本上来讲是两个环节的事儿。",
+  "subject": "抗性结算与伤判",
+  "condition": "判断某个效果是否受抗性和增伤影响时",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "云端ASR重转写(无官方字幕分P)",
+  "source_layers": [
+   "asr"
+  ],
+  "track": "vod_cloud",
+  "citations": [
+   {
+    "id": "BV14gby6LEni_p2_40943751084:p40:a0:e1afe5f0",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV14gby6LEni_p2_40943751084_asr.txt",
+    "bvid_stem": "BV14gby6LEni_p2_40943751084",
+    "recorded_at": "2026-08-15",
+    "speaker": "神祇读神奇",
+    "chapter": "伤害计算抗性与伤判环节分离及真伤生命流失区别",
+    "quotes": [
+     {
+      "text": "吃不吃抗和吃不吃增伤从根本上来讲是两个环节的事儿",
+      "t_start": 4841,
+      "t_end": 4861
+     }
+    ],
+    "_upstream_quote": "吃不吃抗和吃不吃增伤从根本上来讲是两个环节的事儿"
+   },
+   {
+    "id": "BV14gby6LEni_p2_40943751084:p42:a1:dc228eda",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV14gby6LEni_p2_40943751084_asr.txt",
+    "bvid_stem": "BV14gby6LEni_p2_40943751084",
+    "recorded_at": "2026-08-15",
+    "speaker": "神祇读神奇",
+    "chapter": "伤害计算抗性与伤判环节分离及真伤生命流失区别",
+    "quotes": [
+     {
+      "text": "伤判这个环节就是增伤和减伤，让这个伤害变大还是变小。它和抗性环节不是一个环节。",
+      "t_start": 5018,
+      "t_end": 5042
+     }
+    ],
+    "_upstream_quote": "伤判这个环节就是增伤和减伤，让这个伤害变大还是变小。它和抗性环节不是一个环节。"
+   }
+  ],
+  "source_files": [
+   "asr_drafts/BV14gby6LEni_p2_40943751084_asr.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-0-9",
+   "trial_rule_idx": 4,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "reason": "ASR 引文逐字支持 p40:a0；p42:a1 复述同一区分",
+   "not_authoritative": true,
+   "verification": "ASR 引文逐字支持 p40:a0；p42:a1 复述同一区分"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "inherited_verified",
+   "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
+   "reviewer_type": "agent",
+   "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-0-9#r5",
+  "claim": "面板加成通过四则运算确定属性。",
+  "subject": "面板加成",
+  "condition": "计算面板属性时",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "云端ASR重转写(无官方字幕分P)",
+  "source_layers": [
+   "asr"
+  ],
+  "track": "vod_cloud",
+  "citations": [
+   {
+    "id": "BV14gby6LEni_p2_40943751084:p40:a3:14bcd667",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV14gby6LEni_p2_40943751084_asr.txt",
+    "bvid_stem": "BV14gby6LEni_p2_40943751084",
+    "recorded_at": "2026-08-15",
+    "speaker": "神祇读神奇",
+    "chapter": "伤害计算抗性与伤判环节分离及真伤生命流失区别",
+    "quotes": [
+     {
+      "text": "是面板加成，通过四则运算确定属性",
+      "t_start": 4895,
+      "t_end": 4944
+     }
+    ],
+    "_upstream_quote": "是面板加成，通过四则运算确定属性"
+   }
+  ],
+  "source_files": [
+   "asr_drafts/BV14gby6LEni_p2_40943751084_asr.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-0-9",
+   "trial_rule_idx": 5,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "reason": "ASR 引文逐字支持 p40:a3「是面板加成，通过四则运算确定属性」",
+   "not_authoritative": true,
+   "verification": "ASR 引文逐字支持 p40:a3「是面板加成，通过四则运算确定属性」"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "inherited_verified",
+   "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
+   "reviewer_type": "agent",
+   "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-0-9#r6",
+  "claim": "伤判环节就是增伤和减伤，让伤害变大或变小，与抗性环节不是一个环节。",
+  "subject": "伤判环节",
+  "condition": "比较伤判与抗性环节时",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "云端ASR重转写(无官方字幕分P)",
+  "source_layers": [
+   "asr"
+  ],
+  "track": "vod_cloud",
+  "citations": [
+   {
+    "id": "BV14gby6LEni_p2_40943751084:p42:a1:dc228eda",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV14gby6LEni_p2_40943751084_asr.txt",
+    "bvid_stem": "BV14gby6LEni_p2_40943751084",
+    "recorded_at": "2026-08-15",
+    "speaker": "神祇读神奇",
+    "chapter": "伤害计算抗性与伤判环节分离及真伤生命流失区别",
+    "quotes": [
+     {
+      "text": "伤判这个环节就是增伤和减伤，让这个伤害变大还是变小。它和抗性环节不是一个环节。",
+      "t_start": 5018,
+      "t_end": 5042
+     }
+    ],
+    "_upstream_quote": "伤判这个环节就是增伤和减伤，让这个伤害变大还是变小。它和抗性环节不是一个环节。"
+   }
+  ],
+  "source_files": [
+   "asr_drafts/BV14gby6LEni_p2_40943751084_asr.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-0-9",
+   "trial_rule_idx": 6,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "reason": "ASR 引文逐字支持 p42:a1",
+   "not_authoritative": true,
+   "verification": "ASR 引文逐字支持 p42:a1"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "inherited_verified",
+   "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
+   "reviewer_type": "agent",
+   "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-1-6#r0",
+  "claim": "处于死亡状态时，敌人仍然可以作为弹道伤害的攻击来源。",
+  "subject": "敌人",
+  "condition": "敌人处于死亡状态",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV14VZCB1EJR_p1_36119907781:p19:a0:c7a1c4cf",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt",
+    "bvid_stem": "BV14VZCB1EJR_p1_36119907781",
+    "recorded_at": "2026-02-17",
+    "speaker": "神祇读神奇",
+    "chapter": "重构体死亡状态机与极限开局制衡",
+    "quotes": [
+     {
+      "text": "敌人仍然可以作为弹道伤害的攻击来源",
+      "t_start": 2320,
+      "t_end": 2408,
+      "t_start_upstream": 2320,
+      "t_start_line": 2320,
+      "t_line_label": "38:40"
+     }
+    ],
+    "_upstream_quote": "敌人仍然可以作为弹道伤害的攻击来源"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-1-6",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源[38:40]「这个状态就是死亡状态机 在这个状态下 敌干员 敌人仍然可以作为弹道伤害的攻击来源」逐字支持 claim「处于死亡状态时，敌人仍然可以作为弹道伤害的攻击来源」。subject=敌人、condition=敌人处于死亡状态 均与源中限定语「在这个状态下…敌人」精确对应，非泛化。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源[38:40]「这个状态就是死亡状态机 在这个状态下 敌干员 敌人仍然可以作为弹道伤害的攻击来源」逐字支持 claim「处于死亡状态时，敌人仍然可以作为弹道伤害的攻击来源」。subject=敌人、condition=敌人处于死亡状态 均与源中限定语「在这个状态下…敌人」精确对应，非泛化。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt",
+   "source_line_time": "00:38:40",
+   "supports": "死亡状态机下敌人仍可作弹道伤害来源，逐字支持",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-1-6#r1",
+  "claim": "敌人在死亡状态机时会清掉所有的Buff。",
+  "subject": "敌人",
+  "condition": "敌人处于死亡状态机",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV14VZCB1EJR_p1_36119907781:p19:a1:76bff09e",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt",
+    "bvid_stem": "BV14VZCB1EJR_p1_36119907781",
+    "recorded_at": "2026-02-17",
+    "speaker": "神祇读神奇",
+    "chapter": "重构体死亡状态机与极限开局制衡",
+    "quotes": [
+     {
+      "text": "在死亡状态机的时候 会清掉所有的Buff",
+      "t_start": 2320,
+      "t_end": 2408,
+      "t_start_upstream": 2320,
+      "t_start_line": 2320,
+      "t_line_label": "38:40"
+     }
+    ],
+    "_upstream_quote": "在死亡状态机的时候 会清掉所有的Buff"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-1-6",
+   "trial_rule_idx": 1,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源[38:40]「但是由于敌人干员在死亡状态机的时候 会清掉所有的Buff」逐字支持「敌人在死亡状态机时会清掉所有的Buff」，subject/condition 与源中主语「敌人干员…在死亡状态机的时候」一致。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源[38:40]「但是由于敌人干员在死亡状态机的时候 会清掉所有的Buff」逐字支持「敌人在死亡状态机时会清掉所有的Buff」，subject/condition 与源中主语「敌人干员…在死亡状态机的时候」一致。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt",
+   "source_line_time": "00:38:40",
+   "supports": "死亡状态机清掉所有 Buff，逐字支持",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-1-6#r2",
+  "claim": "在死亡状态机内加攻和减工都会不生效。",
+  "subject": "处于死亡状态机内的单位",
+  "condition": "单位处于死亡状态机内",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV14VZCB1EJR_p1_36119907781:p19:a2:a6df7134",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt",
+    "bvid_stem": "BV14VZCB1EJR_p1_36119907781",
+    "recorded_at": "2026-02-17",
+    "speaker": "神祇读神奇",
+    "chapter": "重构体死亡状态机与极限开局制衡",
+    "quotes": [
+     {
+      "text": "在这个状态机内加攻和减工都会不生效",
+      "t_start": 2320,
+      "t_end": 2408,
+      "t_start_upstream": 2320,
+      "t_start_line": 2338,
+      "t_line_label": "38:58"
+     }
+    ],
+    "_upstream_quote": "在这个状态机内加攻和减工都会不生效"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-1-6",
+   "trial_rule_idx": 2,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源[38:58]「在这个状态机内加攻和减工都会不生效」逐字支持「在死亡状态机内加攻和减工都会不生效」。claim 未把「减工」改写成「减攻」亦未擅改引文，保留原口误；[39:16]-[39:33]「他把那个攻击力Buff给清了…在一个无Buff的状态下打到了大家」为同段佐证，因果闭合。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源[38:58]「在这个状态机内加攻和减工都会不生效」逐字支持「在死亡状态机内加攻和减工都会不生效」。claim 未把「减工」改写成「减攻」亦未擅改引文，保留原口误；[39:16]-[39:33]「他把那个攻击力Buff给清了…在一个无Buff的状态下打到了大家」为同段佐证，因果闭合。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt",
+   "source_line_time": "00:38:58",
+   "supports": "死亡状态机内加攻减工均不生效，逐字支持（保留源「减工」口误未擅改）",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-12-12#r0",
+  "claim": "局外加成要先四舍五入，且这一步与肉鸽无关，是局外处理。",
+  "subject": "局外加成",
+  "condition": "计算局外加成时",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1dVcbzFEdd_p1_35992570681:p118:a0:1e6ecb40",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+    "bvid_stem": "BV1dVcbzFEdd_p1_35992570681",
+    "recorded_at": "2026-02-11",
+    "speaker": "神祇读神奇",
+    "chapter": "动画时长、攻击间隔与落地不能开技能；攻略组不碰读内存",
+    "quotes": [
+     {
+      "text": "局外加成要先四舍五入",
+      "t_start": 13169,
+      "t_end": 13178,
+      "t_start_upstream": 13169,
+      "t_start_line": 13169,
+      "t_line_label": "03:39:29"
+     }
+    ],
+    "_upstream_quote": "局外加成要先四舍五入"
+   },
+   {
+    "id": "BV1dVcbzFEdd_p1_35992570681:p118:a1:1c27d832",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+    "bvid_stem": "BV1dVcbzFEdd_p1_35992570681",
+    "recorded_at": "2026-02-11",
+    "speaker": "神祇读神奇",
+    "chapter": "动画时长、攻击间隔与落地不能开技能；攻略组不碰读内存",
+    "quotes": [
+     {
+      "text": "其实和肉鸽没关系 是局外要四舍五入",
+      "t_start": 13169,
+      "t_end": 13178,
+      "t_start_upstream": 13169,
+      "t_start_line": 13169,
+      "t_line_label": "03:39:29"
+     }
+    ],
+    "_upstream_quote": "其实和肉鸽没关系 是局外要四舍五入"
+   },
+   {
+    "id": "ctx=sub:BV1dVcbzFEdd_p1_35992570681:13169",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+    "requested_second": 13169,
+    "quotes": [
+     {
+      "text": "[03:39:29] 这个是关于局外加成要先四舍五入 其实和肉鸽没关系 是局外要四舍五入",
+      "t_start": 13169,
+      "t_end": null,
+      "t_line_label": "03:39:29",
+      "t_start_line": 13169
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-12-12",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源[03:39:29]「这个是关于局外加成要先四舍五入 其实和肉鸽没关系 是局外要四舍五入」一句同时逐字支持 claim 的两个分句（先四舍五入 / 与肉鸽无关、是局外处理）。citation 2/3 与 3/3 落在同一行的两个偏移切片上，属同一句复用而非重复计数。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源[03:39:29]「这个是关于局外加成要先四舍五入 其实和肉鸽没关系 是局外要四舍五入」一句同时逐字支持 claim 的两个分句（先四舍五入 / 与肉鸽无关、是局外处理）。citation 2/3 与 3/3 落在同一行的两个偏移切片上，属同一句复用而非重复计数。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+   "source_line_time": "03:39:29",
+   "supports": "局外加成先四舍五入且与肉鸽无关，两句均在同一源句内逐字支持",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-12-12#r1",
+  "claim": "进图会取整，且这是额外处理。",
+  "subject": "进图数值",
+  "condition": "进图时",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1dVcbzFEdd_p1_35992570681:p118:a2:390f5d22",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+    "bvid_stem": "BV1dVcbzFEdd_p1_35992570681",
+    "recorded_at": "2026-02-11",
+    "speaker": "神祇读神奇",
+    "chapter": "动画时长、攻击间隔与落地不能开技能；攻略组不碰读内存",
+    "quotes": [
+     {
+      "text": "这个进图就会取整",
+      "t_start": 13207,
+      "t_end": 13221,
+      "t_start_upstream": 13207,
+      "t_start_line": 13207,
+      "t_line_label": "03:40:07"
+     }
+    ],
+    "_upstream_quote": "这个进图就会取整"
+   },
+   {
+    "id": "BV1dVcbzFEdd_p1_35992570681:p118:a3:9fd135e1",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+    "bvid_stem": "BV1dVcbzFEdd_p1_35992570681",
+    "recorded_at": "2026-02-11",
+    "speaker": "神祇读神奇",
+    "chapter": "动画时长、攻击间隔与落地不能开技能；攻略组不碰读内存",
+    "quotes": [
+     {
+      "text": "是额外处理的",
+      "t_start": 13207,
+      "t_end": 13221,
+      "t_start_upstream": 13207,
+      "t_start_line": 13207,
+      "t_line_label": "03:40:07"
+     }
+    ],
+    "_upstream_quote": "是额外处理的"
+   },
+   {
+    "id": "ctx=sub:BV1dVcbzFEdd_p1_35992570681:13207",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+    "requested_second": 13207,
+    "quotes": [
+     {
+      "text": "[03:40:07] 进图会取整的 这个进图就会取整 是额外处理的 白值攻击力一定要是整数 其实也没那么一定 只是他做了取整这么一步处理 所以必须是整数",
+      "t_start": 13207,
+      "t_end": null,
+      "t_line_label": "03:40:07",
+      "t_start_line": 13207
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-12-12",
+   "trial_rule_idx": 1,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源[03:40:07]「进图会取整的 这个进图就会取整 是额外处理的」逐字支持「进图会取整」与「这是额外处理」两个分句。citation 1/3、2/3 分别切出「这个进图就会取整」与「是额外处理的」，与源行一致。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源[03:40:07]「进图会取整的 这个进图就会取整 是额外处理的」逐字支持「进图会取整」与「这是额外处理」两个分句。citation 1/3、2/3 分别切出「这个进图就会取整」与「是额外处理的」，与源行一致。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+   "source_line_time": "03:40:07",
+   "supports": "进图取整且为额外处理，两分句逐字支持",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-12-12#r2",
+  "claim": "白值攻击力并非本质上一定要是整数，只是因为做了取整这一步处理，所以必须是整数。",
+  "subject": "白值攻击力",
+  "condition": "涉及白值攻击力时",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1dVcbzFEdd_p1_35992570681:p118:a4:c38b7cdf",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+    "bvid_stem": "BV1dVcbzFEdd_p1_35992570681",
+    "recorded_at": "2026-02-11",
+    "speaker": "神祇读神奇",
+    "chapter": "动画时长、攻击间隔与落地不能开技能；攻略组不碰读内存",
+    "quotes": [
+     {
+      "text": "白值攻击力一定要是整数 其实也没那么一定 只是他做了取整这么一步处理 所以必须是整数",
+      "t_start": 13207,
+      "t_end": 13221,
+      "t_start_upstream": 13207,
+      "t_start_line": 13207,
+      "t_line_label": "03:40:07"
+     }
+    ],
+    "_upstream_quote": "白值攻击力一定要是整数 其实也没那么一定 只是他做了取整这么一步处理 所以必须是整数"
+   },
+   {
+    "id": "ctx=sub:BV1dVcbzFEdd_p1_35992570681:13207",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+    "requested_second": 13207,
+    "quotes": [
+     {
+      "text": "[03:40:07] 进图会取整的 这个进图就会取整 是额外处理的 白值攻击力一定要是整数 其实也没那么一定 只是他做了取整这么一步处理 所以必须是整数",
+      "t_start": 13207,
+      "t_end": null,
+      "t_line_label": "03:40:07",
+      "t_start_line": 13207
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-12-12",
+   "trial_rule_idx": 2,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源[03:40:07]「白值攻击力一定要是整数 其实也没那么一定 只是他做了取整这么一步处理 所以必须是整数」逐字支持 claim 的让步结构：不是本质上必须为整数，而是因为做了取整这步处理。claim 完整保留了源中「其实也没那么一定」的自我修正，未截断成单向断言。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源[03:40:07]「白值攻击力一定要是整数 其实也没那么一定 只是他做了取整这么一步处理 所以必须是整数」逐字支持 claim 的让步结构：不是本质上必须为整数，而是因为做了取整这步处理。claim 完整保留了源中「其实也没那么一定」的自我修正，未截断成单向断言。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+   "source_line_time": "03:40:07",
+   "supports": "白值攻击力非本质必须为整数、而是取整处理所致，逐字支持且保留原让步结构",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-12-20#r0",
+  "claim": "命中率定义的不命中与闪避是区分开的，不是一回事。",
+  "subject": "命中率定义的不命中与闪避",
+  "condition": "讨论命中率判定与闪避判定的区别时",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "云端ASR重转写(无官方字幕分P)",
+  "source_layers": [
+   "asr"
+  ],
+  "track": "vod_cloud",
+  "citations": [
+   {
+    "id": "BV1j4KC6KEse_p1_40109737103:p76:a0:21a7a346",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt",
+    "bvid_stem": "BV1j4KC6KEse_p1_40109737103",
+    "recorded_at": "2026-07-20",
+    "speaker": "神祇读神奇",
+    "chapter": "直播答疑：间隔计算细节伤判优先级及湖光M3案例",
+    "quotes": [
+     {
+      "text": "命中率定义的不命中是区分开的，不是一回事",
+      "t_start": 9465,
+      "t_end": 9470,
+      "t_start_upstream": 9465,
+      "t_start_line": 9464,
+      "t_line_label": "02:37:44"
+     }
+    ],
+    "_upstream_quote": "命中率定义的不命中是区分开的，不是一回事"
+   },
+   {
+    "id": "ctx=sub:BV1j4KC6KEse_p1_40109737103:9458",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt",
+    "requested_second": 9458,
+    "quotes": [
+     {
+      "text": "[02:37:38] 如果你问的是命中率那种判定的话，它和命中率是区分开的。",
+      "t_start": 9458,
+      "t_end": null,
+      "t_line_label": "02:37:38",
+      "t_start_line": 9458
+     }
+    ]
+   },
+   {
+    "id": "ctx=sub:BV1j4KC6KEse_p1_40109737103:9464",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt",
+    "requested_second": 9464,
+    "quotes": [
+     {
+      "text": "[02:37:44] 它和命中率定义的不命中是区分开的，不是一回事儿。",
+      "t_start": 9464,
+      "t_end": null,
+      "t_line_label": "02:37:44",
+      "t_start_line": 9464
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-12-20",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "reason": "ASR 引文逐字支持 p76:a0；邻窗确认\"和命中率定义的不命中是区分开的\"",
+   "not_authoritative": true,
+   "verification": "ASR 引文逐字支持 p76:a0；邻窗确认\"和命中率定义的不命中是区分开的\""
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "inherited_verified",
+   "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
+   "reviewer_type": "agent",
+   "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-12-20#r1",
+  "claim": "命中率的不命中是由一套攻击能力一起判定的。",
+  "subject": "命中率的不命中",
+  "condition": "判定命中率不命中时",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "云端ASR重转写(无官方字幕分P)",
+  "source_layers": [
+   "asr"
+  ],
+  "track": "vod_cloud",
+  "citations": [
+   {
+    "id": "BV1j4KC6KEse_p1_40109737103:p76:a1:03b3e8cd",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt",
+    "bvid_stem": "BV1j4KC6KEse_p1_40109737103",
+    "recorded_at": "2026-07-20",
+    "speaker": "神祇读神奇",
+    "chapter": "直播答疑：间隔计算细节伤判优先级及湖光M3案例",
+    "quotes": [
+     {
+      "text": "命中率的不命中是由攻击能力，是一套攻击能力的，一起判定的",
+      "t_start": 9537,
+      "t_end": 9562
+     }
+    ],
+    "_upstream_quote": "命中率的不命中是由攻击能力，是一套攻击能力的，一起判定的"
+   },
+   {
+    "id": "ctx=sub:BV1j4KC6KEse_p1_40109737103:9538",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt",
+    "requested_second": 9538,
+    "quotes": [
+     {
+      "text": "[02:38:58] 命中率的不命中是由攻击能力，是一套攻击能力的一起判定的。",
+      "t_start": 9538,
+      "t_end": null,
+      "t_line_label": "02:38:58",
+      "t_start_line": 9538
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-12-20",
+   "trial_rule_idx": 1,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "reason": "ASR 引文逐字支持 p76:a1",
+   "not_authoritative": true,
+   "verification": "ASR 引文逐字支持 p76:a1"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "inherited_verified",
+   "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
+   "reviewer_type": "agent",
+   "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-12-20#r2",
+  "claim": "不命中时一个攻击能力下的所有伤害都不会命中，连击整体全部不命中；连击为四次攻击时，四次攻击都不命中。",
+  "subject": "不命中的连击判定",
+  "condition": "一次攻击能力包含多次连击判定;该次攻击判定为不命中",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "云端ASR重转写(无官方字幕分P)",
+  "source_layers": [
+   "asr"
+  ],
+  "track": "vod_cloud",
+  "citations": [
+   {
+    "id": "BV1j4KC6KEse_p1_40109737103:p76:a2:a63ba618",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt",
+    "bvid_stem": "BV1j4KC6KEse_p1_40109737103",
+    "recorded_at": "2026-07-20",
+    "speaker": "神祇读神奇",
+    "chapter": "直播答疑：间隔计算细节伤判优先级及湖光M3案例",
+    "quotes": [
+     {
+      "text": "不命中的话，意思是这一个攻击能力下的所有伤害都不会命中，就是连击整体全部不命中",
+      "t_start": 9537,
+      "t_end": 9562,
+      "t_start_upstream": 9537,
+      "t_start_line": 9554,
+      "t_line_label": "02:39:14"
+     }
+    ],
+    "_upstream_quote": "不命中的话，意思是这一个攻击能力下的所有伤害都不会命中，就是连击整体全部不命中"
+   },
+   {
+    "id": "BV1j4KC6KEse_p1_40109737103:p76:a4:d346c60a",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt",
+    "bvid_stem": "BV1j4KC6KEse_p1_40109737103",
+    "recorded_at": "2026-07-20",
+    "speaker": "神祇读神奇",
+    "chapter": "直播答疑：间隔计算细节伤判优先级及湖光M3案例",
+    "quotes": [
+     {
+      "text": "它是四次攻击都不命中",
+      "t_start": 9592,
+      "t_end": 9616
+     }
+    ],
+    "_upstream_quote": "它是四次攻击都不命中"
+   }
+  ],
+  "source_files": [
+   "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-12-20",
+   "trial_rule_idx": 2,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "reason": "ASR 引文 p76:a2 + p76:a4 两句合证；邻窗给出爱国者四连击实例",
+   "not_authoritative": true,
+   "verification": "ASR 引文 p76:a2 + p76:a4 两句合证；邻窗给出爱国者四连击实例"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "inherited_verified",
+   "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
+   "reviewer_type": "agent",
+   "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-12-20#r4",
+  "claim": "闪避时四连击每次伤害独立判定。",
+  "subject": "闪避的连击判定",
+  "condition": "攻击为四连击;触发闪避判定",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "云端ASR重转写(无官方字幕分P)",
+  "source_layers": [
+   "asr"
+  ],
+  "track": "vod_cloud",
+  "citations": [
+   {
+    "id": "BV1j4KC6KEse_p1_40109737103:p76:a6:36b9cdea",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt",
+    "bvid_stem": "BV1j4KC6KEse_p1_40109737103",
+    "recorded_at": "2026-07-20",
+    "speaker": "神祇读神奇",
+    "chapter": "直播答疑：间隔计算细节伤判优先级及湖光M3案例",
+    "quotes": [
+     {
+      "text": "每次伤害独立判定",
+      "t_start": 9624,
+      "t_end": 9634,
+      "t_start_upstream": 9624,
+      "t_start_line": 9625,
+      "t_line_label": "02:40:25"
+     }
+    ],
+    "_upstream_quote": "每次伤害独立判定"
+   },
+   {
+    "id": "ctx=sub:BV1j4KC6KEse_p1_40109737103:9625",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt",
+    "requested_second": 9625,
+    "quotes": [
+     {
+      "text": "[02:40:25] 但是如果是闪B的话，就是这个四连机每每次伤害独立判定独立判定的嗯，明白。",
+      "t_start": 9625,
+      "t_end": null,
+      "t_line_label": "02:40:25",
+      "t_start_line": 9625
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-12-20",
+   "trial_rule_idx": 4,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "reason": "ASR 引文 p76:a6；邻窗确认比较对象为四连击闪避",
+   "not_authoritative": true,
+   "verification": "ASR 引文 p76:a6；邻窗确认比较对象为四连击闪避"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "inherited_verified",
+   "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
+   "reviewer_type": "agent",
+   "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-12-20#r5",
+  "claim": "一刀都打不到是不命中的表现；闪避不会一刀都打不到，只会有些打不到。",
+  "subject": "不命中与闪避的表现区别",
+  "condition": "观察攻击是否命中时",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "云端ASR重转写(无官方字幕分P)",
+  "source_layers": [
+   "asr"
+  ],
+  "track": "vod_cloud",
+  "citations": [
+   {
+    "id": "BV1j4KC6KEse_p1_40109737103:p76:a7:62d17427",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt",
+    "bvid_stem": "BV1j4KC6KEse_p1_40109737103",
+    "recorded_at": "2026-07-20",
+    "speaker": "神祇读神奇",
+    "chapter": "直播答疑：间隔计算细节伤判优先级及湖光M3案例",
+    "quotes": [
+     {
+      "text": "一刀都打不到，闪避是不会这样的，闪避只会有些打不到",
+      "t_start": 9668,
+      "t_end": 9690
+     }
+    ],
+    "_upstream_quote": "一刀都打不到，闪避是不会这样的，闪避只会有些打不到"
+   },
+   {
+    "id": "ctx=sub:BV1j4KC6KEse_p1_40109737103:9673",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt",
+    "requested_second": 9673,
+    "quotes": [
+     {
+      "text": "[02:41:13] 一刀都打不到闪臂是不会这样的，闪臂只会有些打不到，哪怕用那个什么闪臂最高的是什么燕尾吗？",
+      "t_start": 9673,
+      "t_end": null,
+      "t_line_label": "02:41:13",
+      "t_start_line": 9673
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-12-20",
+   "trial_rule_idx": 5,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "reason": "ASR 引文逐字支持 p76:a7",
+   "not_authoritative": true,
+   "verification": "ASR 引文逐字支持 p76:a7"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "inherited_verified",
+   "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
+   "reviewer_type": "agent",
+   "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-12-9#r0",
+  "claim": "无弹道的逻辑是真的没有位移，因此无弹道在代理下也没有位移。",
+  "subject": "无弹道",
+  "condition": "代理",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1dVcbzFEdd_p1_35992570681:p37:a0:94af890e",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+    "bvid_stem": "BV1dVcbzFEdd_p1_35992570681",
+    "recorded_at": "2026-02-11",
+    "speaker": "神祇读神奇",
+    "chapter": "温蒂命中帧撤炮演示代理多一帧位移，食铁兽真无弹道则无差",
+    "quotes": [
+     {
+      "text": "不是代理无弹道也是没有位移的 因为无弹道的逻辑是真的没有位移",
+      "t_start": 4020,
+      "t_end": 4038,
+      "t_start_upstream": 4020,
+      "t_start_line": 4020,
+      "t_line_label": "01:07:00"
+     }
+    ],
+    "_upstream_quote": "不是代理无弹道也是没有位移的 因为无弹道的逻辑是真的没有位移"
+   },
+   {
+    "id": "ctx=sub:BV1dVcbzFEdd_p1_35992570681:4020",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+    "requested_second": 4020,
+    "quotes": [
+     {
+      "text": "[01:07:00] 哦不是不是代理无弹道也是没有位移的 因为无弹道的逻辑是真的没有位移 但是温蒂并不是无弹道 温蒂即使撤了 也不是无弹道 他是弹道立即命中",
+      "t_start": 4020,
+      "t_end": null,
+      "t_line_label": "01:07:00",
+      "t_start_line": 4020
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-12-9",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源[01:07:00]「哦不是不是代理无弹道也是没有位移的 因为无弹道的逻辑是真的没有位移」逐字支持「无弹道的逻辑是真的没有位移」与「无弹道在代理下也没有位移」两句，且因果连接词「因为」与 claim「因此」对应。源中后半句「但是温蒂并不是无弹道」不与该 claim 冲突（claim 主体即「无弹道」，源明确把温蒂排除在无弹道之外）。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源[01:07:00]「哦不是不是代理无弹道也是没有位移的 因为无弹道的逻辑是真的没有位移」逐字支持「无弹道的逻辑是真的没有位移」与「无弹道在代理下也没有位移」两句，且因果连接词「因为」与 claim「因此」对应。源中后半句「但是温蒂并不是无弹道」不与该 claim 冲突（claim 主体即「无弹道」，源明确把温蒂排除在无弹道之外）。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+   "source_line_time": "01:07:00",
+   "supports": "无弹道逻辑真无位移、故代理下也无位移，逐字支持；温蒂排除语与 claim 主体不矛盾",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-12-9#r1",
+  "claim": "无弹道有没有代理都一样。",
+  "subject": "无弹道",
+  "condition": "比较代理与手操",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1dVcbzFEdd_p1_35992570681:p37:a4:35b994d2",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+    "bvid_stem": "BV1dVcbzFEdd_p1_35992570681",
+    "recorded_at": "2026-02-11",
+    "speaker": "神祇读神奇",
+    "chapter": "温蒂命中帧撤炮演示代理多一帧位移，食铁兽真无弹道则无差",
+    "quotes": [
+     {
+      "text": "无弹道有没有代理都一样的",
+      "t_start": 4060,
+      "t_end": 4064,
+      "t_start_upstream": 4060,
+      "t_start_line": 4060,
+      "t_line_label": "01:07:40"
+     }
+    ],
+    "_upstream_quote": "无弹道有没有代理都一样的"
+   },
+   {
+    "id": "BV1dVcbzFEdd_p1_35992570681:p38:a3:159b84df",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+    "bvid_stem": "BV1dVcbzFEdd_p1_35992570681",
+    "recorded_at": "2026-02-11",
+    "speaker": "神祇读神奇",
+    "chapter": "温蒂命中帧撤炮演示代理多一帧位移，食铁兽真无弹道则无差",
+    "quotes": [
+     {
+      "text": "真的无弹道是没问题的",
+      "t_start": 4144,
+      "t_end": 4178,
+      "t_start_upstream": 4144,
+      "t_start_line": 4144,
+      "t_line_label": "01:09:04"
+     }
+    ],
+    "_upstream_quote": "真的无弹道是没问题的"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-12-9",
+   "trial_rule_idx": 1,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源[01:07:40]「无弹道有没有代理都一样的」逐字等于 claim 全文；citation 2/2 的[01:09:04]「食铁兽这种就是真的无弹道是没问题的」给出同段实测佐证，与[01:08:04]「如果是食铁兽的话 他的代理就不会有区别」构成独立支撑。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源[01:07:40]「无弹道有没有代理都一样的」逐字等于 claim 全文；citation 2/2 的[01:09:04]「食铁兽这种就是真的无弹道是没问题的」给出同段实测佐证，与[01:08:04]「如果是食铁兽的话 他的代理就不会有区别」构成独立支撑。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+   "source_line_time": "01:07:40",
+   "supports": "无弹道有无代理都一样，逐字支持并有食铁兽实测佐证",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-12-9#r2",
+  "claim": "真的无弹道是没问题的，不会出现代理差异问题。",
+  "subject": "真的无弹道",
+  "condition": "代理",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1dVcbzFEdd_p1_35992570681:p38:a3:159b84df",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+    "bvid_stem": "BV1dVcbzFEdd_p1_35992570681",
+    "recorded_at": "2026-02-11",
+    "speaker": "神祇读神奇",
+    "chapter": "温蒂命中帧撤炮演示代理多一帧位移，食铁兽真无弹道则无差",
+    "quotes": [
+     {
+      "text": "真的无弹道是没问题的",
+      "t_start": 4144,
+      "t_end": 4178,
+      "t_start_upstream": 4144,
+      "t_start_line": 4144,
+      "t_line_label": "01:09:04"
+     }
+    ],
+    "_upstream_quote": "真的无弹道是没问题的"
+   },
+   {
+    "id": "ctx=sub:BV1dVcbzFEdd_p1_35992570681:4144",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+    "requested_second": 4144,
+    "quotes": [
+     {
+      "text": "[01:09:04] 食铁兽这种就是真的无弹道是没问题的",
+      "t_start": 4144,
+      "t_end": null,
+      "t_line_label": "01:09:04",
+      "t_start_line": 4144
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-12-9",
+   "trial_rule_idx": 2,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源[01:09:04]「食铁兽这种就是真的无弹道是没问题的」+[01:08:04]「如果是食铁兽的话 他的代理就不会有区别」逐字支持「真的无弹道是没问题的，不会出现代理差异问题」。claim 的「不会出现代理差异」不是外推——[01:08:04] 明说代理不会有区别，两句在同段内互为定义。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源[01:09:04]「食铁兽这种就是真的无弹道是没问题的」+[01:08:04]「如果是食铁兽的话 他的代理就不会有区别」逐字支持「真的无弹道是没问题的，不会出现代理差异问题」。claim 的「不会出现代理差异」不是外推——[01:08:04] 明说代理不会有区别，两句在同段内互为定义。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+   "source_line_time": "01:09:04",
+   "supports": "真无弹道无代理差异，由[01:09:04]与[01:08:04]两句同段互证",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-13-0#r0",
+  "claim": "闪避分类为伤判",
+  "subject": "闪避",
+  "condition": "未标注",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "云端ASR重转写(无官方字幕分P)",
+  "source_layers": [
+   "asr"
+  ],
+  "track": "vod_cloud",
+  "citations": [
+   {
+    "id": "BV1j4KC6KEse_p1_40109737103:p76:a10:9e5e6025",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt",
+    "bvid_stem": "BV1j4KC6KEse_p1_40109737103",
+    "recorded_at": "2026-07-20",
+    "speaker": "神祇读神奇",
+    "chapter": "直播答疑：间隔计算细节伤判优先级及湖光M3案例",
+    "quotes": [
+     {
+      "text": "闪避分类为伤判",
+      "t_start": 9725,
+      "t_end": 9750
+     }
+    ],
+    "_upstream_quote": "闪避分类为伤判"
+   },
+   {
+    "id": "BV1j4KC6KEse_p1_40109737103:p77:a2:9e5e6025",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt",
+    "bvid_stem": "BV1j4KC6KEse_p1_40109737103",
+    "recorded_at": "2026-07-20",
+    "speaker": "神祇读神奇",
+    "chapter": "直播答疑：间隔计算细节伤判优先级及湖光M3案例",
+    "quotes": [
+     {
+      "text": "闪避分类为伤判",
+      "t_start": 9725,
+      "t_end": 9750
+     }
+    ],
+    "_upstream_quote": "闪避分类为伤判"
+   }
+  ],
+  "source_files": [
+   "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-13-0",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "reason": "用户 #7 要求删改后可用，非\"优秀\"，故按代理核实收录。回读原 ASR [02:42:14] 得「闪避分类为商判，商判是什么呢？在伤害结算环节对伤害进行更改」（\"商判\"为\"伤判\"的 ASR 误写），规则句与源文一致；上游原子引用的 9725s 时间戳与实际 9762s 有偏差，以源文件行 [02:42:14] 为准。",
+   "not_authoritative": true,
+   "verification": "用户 #7 要求删改后可用，非\"优秀\"，故按代理核实收录。回读原 ASR [02:42:14] 得「闪避分类为商判，商判是什么呢？在伤害结算环节对伤害进行更改」（\"商判\"为\"伤判\"的 ASR 误写），规则句与源文一致；上游原子引用的 9725s 时间戳与实际 9762s 有偏差，以源文件行 [02:42:14] 为准。"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "inherited_verified",
+   "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
+   "reviewer_type": "agent",
+   "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-13-0#r1",
+  "claim": "伤判是在伤害结算环节对伤害进行更改",
+  "subject": "伤判",
+  "condition": "未标注",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "云端ASR重转写(无官方字幕分P)",
+  "source_layers": [
+   "asr"
+  ],
+  "track": "vod_cloud",
+  "citations": [
+   {
+    "id": "BV1j4KC6KEse_p1_40109737103:p76:a11:ce2994b9",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt",
+    "bvid_stem": "BV1j4KC6KEse_p1_40109737103",
+    "recorded_at": "2026-07-20",
+    "speaker": "神祇读神奇",
+    "chapter": "直播答疑：间隔计算细节伤判优先级及湖光M3案例",
+    "quotes": [
+     {
+      "text": "在结算环节对伤害进行更改",
+      "t_start": 9750,
+      "t_end": 9774
+     }
+    ],
+    "_upstream_quote": "在结算环节对伤害进行更改"
+   },
+   {
+    "id": "BV1j4KC6KEse_p1_40109737103:p77:a3:a881abbe",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt",
+    "bvid_stem": "BV1j4KC6KEse_p1_40109737103",
+    "recorded_at": "2026-07-20",
+    "speaker": "神祇读神奇",
+    "chapter": "直播答疑：间隔计算细节伤判优先级及湖光M3案例",
+    "quotes": [
+     {
+      "text": "在伤害结算。",
+      "t_start": 9725,
+      "t_end": 9750
+     },
+     {
+      "text": "在结算环节对伤害进行更改",
+      "t_start": 9750,
+      "t_end": 9774
+     }
+    ],
+    "_upstream_quote": "在伤害结算。"
+   }
+  ],
+  "source_files": [
+   "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-13-0",
+   "trial_rule_idx": 1,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "reason": "同一段 [02:42:14] 逐字给出「在伤害结算环节对伤害进行更改」，支持\"伤判是在伤害结算环节对伤害进行更改\"。",
+   "not_authoritative": true,
+   "verification": "同一段 [02:42:14] 逐字给出「在伤害结算环节对伤害进行更改」，支持\"伤判是在伤害结算环节对伤害进行更改\"。"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "inherited_verified",
+   "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
+   "reviewer_type": "agent",
+   "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-13-0#r2",
+  "claim": "减伤属于减免",
+  "subject": "减伤",
+  "condition": "未标注",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "云端ASR重转写(无官方字幕分P)",
+  "source_layers": [
+   "asr"
+  ],
+  "track": "vod_cloud",
+  "citations": [
+   {
+    "id": "BV1j4KC6KEse_p1_40109737103:p76:a13:4fdaa221",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt",
+    "bvid_stem": "BV1j4KC6KEse_p1_40109737103",
+    "recorded_at": "2026-07-20",
+    "speaker": "神祇读神奇",
+    "chapter": "直播答疑：间隔计算细节伤判优先级及湖光M3案例",
+    "quotes": [
+     {
+      "text": "减伤属于减免",
+      "t_start": 9750,
+      "t_end": 9774
+     }
+    ],
+    "_upstream_quote": "减伤属于减免"
+   },
+   {
+    "id": "BV1j4KC6KEse_p1_40109737103:p77:a5:4fdaa221",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt",
+    "bvid_stem": "BV1j4KC6KEse_p1_40109737103",
+    "recorded_at": "2026-07-20",
+    "speaker": "神祇读神奇",
+    "chapter": "直播答疑：间隔计算细节伤判优先级及湖光M3案例",
+    "quotes": [
+     {
+      "text": "减伤属于减免",
+      "t_start": 9750,
+      "t_end": 9774
+     }
+    ],
+    "_upstream_quote": "减伤属于减免"
+   }
+  ],
+  "source_files": [
+   "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-13-0",
+   "trial_rule_idx": 2,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "reason": "[02:42:14]「减商属于减免」即\"减伤属于减免\"，术语层一致；\"减商\"为 ASR 误写，已按标准术语收录。",
+   "not_authoritative": true,
+   "verification": "[02:42:14]「减商属于减免」即\"减伤属于减免\"，术语层一致；\"减商\"为 ASR 误写，已按标准术语收录。"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "inherited_verified",
+   "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
+   "reviewer_type": "agent",
+   "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-13-0#r3",
+  "claim": "增伤属于增加",
+  "subject": "增伤",
+  "condition": "未标注",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "云端ASR重转写(无官方字幕分P)",
+  "source_layers": [
+   "asr"
+  ],
+  "track": "vod_cloud",
+  "citations": [
+   {
+    "id": "BV1j4KC6KEse_p1_40109737103:p76:a14:fff6210c",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt",
+    "bvid_stem": "BV1j4KC6KEse_p1_40109737103",
+    "recorded_at": "2026-07-20",
+    "speaker": "神祇读神奇",
+    "chapter": "直播答疑：间隔计算细节伤判优先级及湖光M3案例",
+    "quotes": [
+     {
+      "text": "增伤属于增加",
+      "t_start": 9750,
+      "t_end": 9774
+     }
+    ],
+    "_upstream_quote": "增伤属于增加"
+   },
+   {
+    "id": "BV1j4KC6KEse_p1_40109737103:p77:a6:fff6210c",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt",
+    "bvid_stem": "BV1j4KC6KEse_p1_40109737103",
+    "recorded_at": "2026-07-20",
+    "speaker": "神祇读神奇",
+    "chapter": "直播答疑：间隔计算细节伤判优先级及湖光M3案例",
+    "quotes": [
+     {
+      "text": "增伤属于增加",
+      "t_start": 9750,
+      "t_end": 9774
+     }
+    ],
+    "_upstream_quote": "增伤属于增加"
+   }
+  ],
+  "source_files": [
+   "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-13-0",
+   "trial_rule_idx": 3,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "reason": "[02:42:14]「增商属于增加」即\"增伤属于增加\"，术语层一致；\"增商\"为 ASR 误写。",
+   "not_authoritative": true,
+   "verification": "[02:42:14]「增商属于增加」即\"增伤属于增加\"，术语层一致；\"增商\"为 ASR 误写。"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "inherited_verified",
+   "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
+   "reviewer_type": "agent",
+   "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-13-0#r4",
+  "claim": "格挡也是归零",
+  "subject": "格挡",
+  "condition": "未标注",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "云端ASR重转写(无官方字幕分P)",
+  "source_layers": [
+   "asr"
+  ],
+  "track": "vod_cloud",
+  "citations": [
+   {
+    "id": "BV1j4KC6KEse_p1_40109737103:p76:a15:bf769712",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt",
+    "bvid_stem": "BV1j4KC6KEse_p1_40109737103",
+    "recorded_at": "2026-07-20",
+    "speaker": "神祇读神奇",
+    "chapter": "直播答疑：间隔计算细节伤判优先级及湖光M3案例",
+    "quotes": [
+     {
+      "text": "格挡什么的也是也是归零",
+      "t_start": 9750,
+      "t_end": 9774,
+      "t_start_upstream": 9750,
+      "t_start_line": 9762,
+      "t_line_label": "02:42:42"
+     }
+    ],
+    "_upstream_quote": "格挡什么的也是也是归零"
+   },
+   {
+    "id": "BV1j4KC6KEse_p1_40109737103:p77:a7:bf769712",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt",
+    "bvid_stem": "BV1j4KC6KEse_p1_40109737103",
+    "recorded_at": "2026-07-20",
+    "speaker": "神祇读神奇",
+    "chapter": "直播答疑：间隔计算细节伤判优先级及湖光M3案例",
+    "quotes": [
+     {
+      "text": "格挡什么的也是也是归零",
+      "t_start": 9750,
+      "t_end": 9774,
+      "t_start_upstream": 9750,
+      "t_start_line": 9762,
+      "t_line_label": "02:42:42"
+     }
+    ],
+    "_upstream_quote": "格挡什么的也是也是归零"
+   }
+  ],
+  "source_files": [
+   "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-13-0",
+   "trial_rule_idx": 4,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "reason": "[02:42:42]「然后的话格挡什么的也是也是归零」，支持\"格挡也是归零\"。注意同句原文含\"吴敌不是上判\"（即\"无敌不是伤判\"），该句已被用户 #7 明确判为无意义，未进入本规则句。",
+   "not_authoritative": true,
+   "verification": "[02:42:42]「然后的话格挡什么的也是也是归零」，支持\"格挡也是归零\"。注意同句原文含\"吴敌不是上判\"（即\"无敌不是伤判\"），该句已被用户 #7 明确判为无意义，未进入本规则句。"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "inherited_verified",
+   "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
+   "reviewer_type": "agent",
+   "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-13-2#r0",
+  "claim": "所有伤判之间的处理顺序由优先级和赋予顺序决定；优先级不同时优先处理优先级高的，优先级相同时优先处理先赋予的 buff。",
+  "subject": "伤判",
+  "condition": "存在多个伤判需要处理顺序时",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "云端ASR重转写(无官方字幕分P)",
+  "source_layers": [
+   "asr"
+  ],
+  "track": "vod_cloud",
+  "citations": [
+   {
+    "id": "BV1j4KC6KEse_p1_40109737103:p78:a0:df91ba4f",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt",
+    "bvid_stem": "BV1j4KC6KEse_p1_40109737103",
+    "recorded_at": "2026-07-20",
+    "speaker": "神祇读神奇",
+    "chapter": "直播答疑：间隔计算细节伤判优先级及湖光M3案例",
+    "quotes": [
+     {
+      "text": "所有的这些伤判它们之间的处理顺序是由优先级和那个赋予顺序决定的。优先级不同的话，优先优先级高的；优先级相同的话，优先那个先赋予的buff。",
+      "t_start": 9782,
+      "t_end": 9806
+     }
+    ],
+    "_upstream_quote": "所有的这些伤判它们之间的处理顺序是由优先级和那个赋予顺序决定的。优先级不同的话，优先优先级高的；优先级相同的话，优先那个先赋予的buff。"
+   },
+   {
+    "id": "ctx=sub:BV1j4KC6KEse_p1_40109737103:9783",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt",
+    "requested_second": 9783,
+    "quotes": [
+     {
+      "text": "[02:43:03] 嗯，对对最所有的这些商判，他们之间的处理顺序是由优先级和那个赋予顺序决定的。优先级不同的话，优先优先级高的优先级相同的话，优先那个先赋予的buuff。",
+      "t_start": 9783,
+      "t_end": null,
+      "t_line_label": "02:43:03",
+      "t_start_line": 9783
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-13-2",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "reason": "ASR 引文逐字支持 p78:a0（商判为伤判的 ASR 误写，语义为伤判）",
+   "not_authoritative": true,
+   "verification": "ASR 引文逐字支持 p78:a0（商判为伤判的 ASR 误写，语义为伤判）"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "inherited_verified",
+   "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
+   "reviewer_type": "agent",
+   "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-13-2#r2",
+  "claim": "每一个伤判 buff 有自己的优先级设置。",
+  "subject": "伤判 buff",
+  "condition": "存在伤判 buff 时",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "云端ASR重转写(无官方字幕分P)",
+  "source_layers": [
+   "asr"
+  ],
+  "track": "vod_cloud",
+  "citations": [
+   {
+    "id": "BV1j4KC6KEse_p1_40109737103:p78:a4:e6a383f1",
+    "status": "resolved_atom",
+    "source_layers": [
+     "asr"
+    ],
+    "transcript_file": "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt",
+    "bvid_stem": "BV1j4KC6KEse_p1_40109737103",
+    "recorded_at": "2026-07-20",
+    "speaker": "神祇读神奇",
+    "chapter": "直播答疑：间隔计算细节伤判优先级及湖光M3案例",
+    "quotes": [
+     {
+      "text": "每一个伤判buff有自己的优先级设置",
+      "t_start": 9924,
+      "t_end": 9974
+     }
+    ],
+    "_upstream_quote": "每一个伤判buff有自己的优先级设置"
+   }
+  ],
+  "source_files": [
+   "asr_drafts/BV1j4KC6KEse_p1_40109737103_asr.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-13-2",
+   "trial_rule_idx": 2,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "reason": "ASR 引文逐字支持 p78:a4",
+   "not_authoritative": true,
+   "verification": "ASR 引文逐字支持 p78:a4"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "inherited_verified",
+   "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
+   "reviewer_type": "agent",
+   "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-13-7#r0",
+  "claim": "踩路径点以及寻路意义上的踩格子均由寻路坐标判定。",
+  "subject": "踩路径点与寻路意义上的踩格子",
+  "condition": "未标注",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1j4KC6KEse_p2_40109932632:p22:a0:53858d0c",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt",
+    "bvid_stem": "BV1j4KC6KEse_p2_40109932632",
+    "recorded_at": "2026-07-20",
+    "speaker": "神祇读神奇",
+    "chapter": "LS-4小偷炸高台棋：出生实体坐标与寻路光标偏移",
+    "quotes": [
+     {
+      "text": "在寻路意义上的踩格子 踩路径点都是由寻路坐标判定的",
+      "t_start": 1751,
+      "t_end": 1778,
+      "t_start_upstream": 1751,
+      "t_start_line": 1751,
+      "t_line_label": "29:11"
+     }
+    ],
+    "_upstream_quote": "在寻路意义上的踩格子 踩路径点都是由寻路坐标判定的"
+   },
+   {
+    "id": "ctx=sub:BV1j4KC6KEse_p2_40109932632:1751",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt",
+    "requested_second": 1751,
+    "quotes": [
+     {
+      "text": "[29:11] 哦原来他这个无论是踩路径点 踩格子 寻路上 在寻路意义上的踩格子 踩路径点都是由寻路坐标判定的嗯 但是能不能炸到这个怪是由它的碰撞箱判定的",
+      "t_start": 1751,
+      "t_end": null,
+      "t_line_label": "29:11",
+      "t_start_line": 1751
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-13-7",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源[29:11]「哦原来他这个无论是踩路径点 踩格子 寻路上 在寻路意义上的踩格子 踩路径点都是由寻路坐标判定的」逐字支持「踩路径点与寻路意义上的踩格子均由寻路坐标判定」；[28:24]「他后面的所有寻路都是由自己的寻路光标判定的」+[28:39]「它的寻路坐标都要比自己的那个实体低于0.2格」给出机制解释，与 claim 的 subject 精确对应（claim 未涉及该行末尾 ASR 讹字「驯",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源[29:11]「哦原来他这个无论是踩路径点 踩格子 寻路上 在寻路意义上的踩格子 踩路径点都是由寻路坐标判定的」逐字支持「踩路径点与寻路意义上的踩格子均由寻路坐标判定」；[28:24]「他后面的所有寻路都是由自己的寻路光标判定的」+[28:39]「它的寻路坐标都要比自己的那个实体低于0.2格」给出机制解释，与 claim 的 subject 精确对应（claim 未涉及该行末尾 ASR 讹字「驯鹿」，取的是[29:11]完整句）。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt",
+   "source_line_time": "00:29:11",
+   "supports": "踩路径点与寻路意义踩格子由寻路坐标判定，逐字支持；同段末行「驯鹿」讹字未被 claim 采用",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-13-7#r1",
+  "claim": "能不能炸到这个怪由它的碰撞箱判定。",
+  "subject": "爆炸命中判定",
+  "condition": "未标注",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1j4KC6KEse_p2_40109932632:p22:a1:2ae90a18",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt",
+    "bvid_stem": "BV1j4KC6KEse_p2_40109932632",
+    "recorded_at": "2026-07-20",
+    "speaker": "神祇读神奇",
+    "chapter": "LS-4小偷炸高台棋：出生实体坐标与寻路光标偏移",
+    "quotes": [
+     {
+      "text": "能不能炸到这个怪是由它的碰撞箱判定的",
+      "t_start": 1751,
+      "t_end": 1778,
+      "t_start_upstream": 1751,
+      "t_start_line": 1751,
+      "t_line_label": "29:11"
+     }
+    ],
+    "_upstream_quote": "能不能炸到这个怪是由它的碰撞箱判定的"
+   },
+   {
+    "id": "ctx=sub:BV1j4KC6KEse_p2_40109932632:1751",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt",
+    "requested_second": 1751,
+    "quotes": [
+     {
+      "text": "[29:11] 哦原来他这个无论是踩路径点 踩格子 寻路上 在寻路意义上的踩格子 踩路径点都是由寻路坐标判定的嗯 但是能不能炸到这个怪是由它的碰撞箱判定的",
+      "t_start": 1751,
+      "t_end": null,
+      "t_line_label": "29:11",
+      "t_start_line": 1751
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-13-7",
+   "trial_rule_idx": 1,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源[29:11]「但是能不能炸到这个怪是由它的碰撞箱判定的」逐字等于 claim 全文，且 citation 2/2 的窗口含该行前后文（[29:24]「碰撞箱在正常情况下无偏移的情况下 是以实体坐标为中心画圆的」）佐证同一判定的对偶关系，非章节相同式推断。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源[29:11]「但是能不能炸到这个怪是由它的碰撞箱判定的」逐字等于 claim 全文，且 citation 2/2 的窗口含该行前后文（[29:24]「碰撞箱在正常情况下无偏移的情况下 是以实体坐标为中心画圆的」）佐证同一判定的对偶关系，非章节相同式推断。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt",
+   "source_line_time": "00:29:11",
+   "supports": "能否炸到该怪由碰撞箱判定，逐字支持",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-13-7#r2",
+  "claim": "在正常情况下无偏移的情况下，碰撞箱是以实体坐标为中心画圆的。",
+  "subject": "碰撞箱",
+  "condition": "正常情况下无偏移",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1j4KC6KEse_p2_40109932632:p22:a2:20f4fc09",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt",
+    "bvid_stem": "BV1j4KC6KEse_p2_40109932632",
+    "recorded_at": "2026-07-20",
+    "speaker": "神祇读神奇",
+    "chapter": "LS-4小偷炸高台棋：出生实体坐标与寻路光标偏移",
+    "quotes": [
+     {
+      "text": "碰撞箱在正常情况下无偏移的情况下 是以实体坐标为中心画圆的",
+      "t_start": 1751,
+      "t_end": 1778,
+      "t_start_upstream": 1751,
+      "t_start_line": 1764,
+      "t_line_label": "29:24"
+     }
+    ],
+    "_upstream_quote": "碰撞箱在正常情况下无偏移的情况下 是以实体坐标为中心画圆的"
+   },
+   {
+    "id": "ctx=sub:BV1j4KC6KEse_p2_40109932632:1764",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt",
+    "requested_second": 1764,
+    "quotes": [
+     {
+      "text": "[29:24] 而碰撞箱在正常情况下无偏移的情况下 是以实体坐标为中心画圆的 所以其实是因为他那个实体坐标相当于他当时判定在那个高台上 对实体坐标在高台上",
+      "t_start": 1764,
+      "t_end": null,
+      "t_line_label": "29:24",
+      "t_start_line": 1764
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-13-7",
+   "trial_rule_idx": 2,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源[29:24]「而碰撞箱在正常情况下无偏移的情况下 是以实体坐标为中心画圆的」逐字等于 claim（含 condition「正常情况下无偏移」）。citation 2/2 窗口含[29:38]「但是他的寻路还是在他的寻路在下面」，说明 claim 的 scope 限定语与源中「正常/无偏移」的对比语境一致。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源[29:24]「而碰撞箱在正常情况下无偏移的情况下 是以实体坐标为中心画圆的」逐字等于 claim（含 condition「正常情况下无偏移」）。citation 2/2 窗口含[29:38]「但是他的寻路还是在他的寻路在下面」，说明 claim 的 scope 限定语与源中「正常/无偏移」的对比语境一致。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt",
+   "source_line_time": "00:29:24",
+   "supports": "无偏移时碰撞箱以实体坐标为中心画圆，逐字支持",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-13-9#r0",
+  "claim": "正常来讲，攻击不需要目标实体进入格子/范围",
+  "subject": "正常攻击",
+  "condition": "正常攻击（非隔墙类特殊情形）",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1j4KC6KEse_p2_40109932632:p29:a0:c7333389",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt",
+    "bvid_stem": "BV1j4KC6KEse_p2_40109932632",
+    "recorded_at": "2026-07-20",
+    "speaker": "神祇读神奇",
+    "chapter": "高台围墙无阻挡、受击半径擦边与假高台演示",
+    "quotes": [
+     {
+      "text": "正常来讲攻击其实都不需要他的实体进去",
+      "t_start": 2040,
+      "t_end": 2076,
+      "t_start_upstream": 2040,
+      "t_start_line": 2050,
+      "t_line_label": "34:10"
+     }
+    ],
+    "_upstream_quote": "正常来讲攻击其实都不需要他的实体进去"
+   },
+   {
+    "id": "ctx=sub:BV1j4KC6KEse_p2_40109932632:2050",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt",
+    "requested_second": 2050,
+    "quotes": [
+     {
+      "text": "[34:10] 但他在那个就是他的实体在高台上 他也会被那个攻击到什么对啊 不额攻在呃 正常来讲攻击其实都不需要他的实体进去 只是你那个雷的话 他是隔畔",
+      "t_start": 2050,
+      "t_end": null,
+      "t_line_label": "34:10",
+      "t_start_line": 2050
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-13-9",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源[34:10]「正常来讲攻击其实都不需要他的实体进去」逐字支持 claim；claim 的 condition「非隔墙类特殊情形」直接来自同句后半「只是你那个雷的话 他是隔畔 所以比较特殊」，即源文本自身给出的例外限定，属如实收窄而非添加。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源[34:10]「正常来讲攻击其实都不需要他的实体进去」逐字支持 claim；claim 的 condition「非隔墙类特殊情形」直接来自同句后半「只是你那个雷的话 他是隔畔 所以比较特殊」，即源文本自身给出的例外限定，属如实收窄而非添加。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt",
+   "source_line_time": "00:34:10",
+   "supports": "正常攻击不需实体进入，逐字支持；例外（雷/隔墙）取自源同句",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-13-9#r2",
+  "claim": "只要受击半径与格子相切或重叠，甚至小距离相离，也可以打到",
+  "subject": "命中判定",
+  "condition": "受击半径与攻击格子相切、重叠，或小距离相离",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1j4KC6KEse_p2_40109932632:p29:a3:0c601c24",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt",
+    "bvid_stem": "BV1j4KC6KEse_p2_40109932632",
+    "recorded_at": "2026-07-20",
+    "speaker": "神祇读神奇",
+    "chapter": "高台围墙无阻挡、受击半径擦边与假高台演示",
+    "quotes": [
+     {
+      "text": "只要受击半径和那个格子相切重叠 甚至小距离的相离也可以",
+      "t_start": 2040,
+      "t_end": 2076,
+      "t_start_upstream": 2040,
+      "t_start_line": 2063,
+      "t_line_label": "34:23"
+     }
+    ],
+    "_upstream_quote": "只要受击半径和那个格子相切重叠 甚至小距离的相离也可以"
+   },
+   {
+    "id": "ctx=sub:BV1j4KC6KEse_p2_40109932632:2063",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt",
+    "requested_second": 2063,
+    "quotes": [
+     {
+      "text": "[34:23] 所以比较特殊 正常来讲 擦边有0.1收集半径的 我们只要在受击半径在那个攻击 只要受击半径和那个格子相切重叠 甚至小距离的相离也可以",
+      "t_start": 2063,
+      "t_end": null,
+      "t_line_label": "34:23",
+      "t_start_line": 2063
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-13-9",
+   "trial_rule_idx": 2,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源[34:23]「正常来讲 擦边有0.1收集半径的 我们只要在受击半径在那个攻击 只要受击半径和那个格子相切重叠 甚至小距离的相离也可以」逐字支持「相切或重叠、甚至小距离相离也可以」。condition 三项（相切/重叠/小距离相离）与源列举顺序一致，无增补。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源[34:23]「正常来讲 擦边有0.1收集半径的 我们只要在受击半径在那个攻击 只要受击半径和那个格子相切重叠 甚至小距离的相离也可以」逐字支持「相切或重叠、甚至小距离相离也可以」。condition 三项（相切/重叠/小距离相离）与源列举顺序一致，无增补。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1j4KC6KEse_p2_40109932632.txt",
+   "source_line_time": "00:34:23",
+   "supports": "受击半径相切/重叠/小距离相离均可命中，逐字支持",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-14-7#r0",
+  "claim": "当法术伤害刚好等于目标血量时，会因浮点数精度问题导致目标刚好不死。",
+  "subject": "法术伤害结算",
+  "condition": "法术伤害数值刚好等于目标血量数值",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p3_40974353533:p39:a0:66d55f93",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p3_40974353533.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p3_40974353533",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "勘误路径点机制，并讨论有利bug、攻击间隔与浮点不死",
+    "quotes": [
+     {
+      "text": "法伤刚好等于血量的时候 会因为浮点数精度的问题 刚好不死",
+      "t_start": 5884,
+      "t_end": 5898,
+      "t_start_upstream": 5884,
+      "t_start_line": 5884,
+      "t_line_label": "01:38:04"
+     }
+    ],
+    "_upstream_quote": "法伤刚好等于血量的时候 会因为浮点数精度的问题 刚好不死"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p3_40974353533.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-14-7",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源[01:38:04]「再比如说血量 就是血量刚好等于防御的时候不是血 法伤刚好等于血量的时候 会因为浮点数精度的问题 刚好不死」逐字支持 claim 全文，含 subject（法术伤害结算）与 condition（数值刚好等于血量）。源中主播自我纠错（「血量刚好等于防御的时候不是血」）后落到法伤结论，claim 取的是纠正后的版本，未取半句。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源[01:38:04]「再比如说血量 就是血量刚好等于防御的时候不是血 法伤刚好等于血量的时候 会因为浮点数精度的问题 刚好不死」逐字支持 claim 全文，含 subject（法术伤害结算）与 condition（数值刚好等于血量）。源中主播自我纠错（「血量刚好等于防御的时候不是血」）后落到法伤结论，claim 取的是纠正后的版本，未取半句。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p3_40974353533.txt",
+   "source_line_time": "01:38:04",
+   "supports": "法伤刚好等于血量时因浮点精度不死，逐字支持",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-14-7#r1",
+  "claim": "该浮点精度导致刚好不死的现象既可发生在敌人身上，也可发生在干员身上。",
+  "subject": "浮点精度导致刚好不死的受体",
+  "condition": "发生法伤刚好等于血量因浮点精度不死的现象时",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1kRbQ6tEG9_p3_40974353533:p39:a5:aeda95bf",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1kRbQ6tEG9_p3_40974353533.txt",
+    "bvid_stem": "BV1kRbQ6tEG9_p3_40974353533",
+    "recorded_at": "2026-08-16",
+    "speaker": "神祇读神奇",
+    "chapter": "勘误路径点机制，并讨论有利bug、攻击间隔与浮点不死",
+    "quotes": [
+     {
+      "text": "敌人可以刚好不死 但是其实干员也可以",
+      "t_start": 5968,
+      "t_end": 5985,
+      "t_start_upstream": 5968,
+      "t_start_line": 5968,
+      "t_line_label": "01:39:28"
+     }
+    ],
+    "_upstream_quote": "敌人可以刚好不死 但是其实干员也可以"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1kRbQ6tEG9_p3_40974353533.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-14-7",
+   "trial_rule_idx": 1,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源[01:39:28]「但是反过来说的话 我们难道就这种东西就没有利用空间吗 敌人可以刚好不死 但是其实干员也可以」逐字支持「既可发生在敌人身上，也可发生在干员身上」。claim 未把「也可以」当成对干员的独立断言加以扩大——源后句[01:39:45]「在敌我公平的基础下」正说明该说法同时覆盖敌我。",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源[01:39:28]「但是反过来说的话 我们难道就这种东西就没有利用空间吗 敌人可以刚好不死 但是其实干员也可以」逐字支持「既可发生在敌人身上，也可发生在干员身上」。claim 未把「也可以」当成对干员的独立断言加以扩大——源后句[01:39:45]「在敌我公平的基础下」正说明该说法同时覆盖敌我。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1kRbQ6tEG9_p3_40974353533.txt",
+   "source_line_time": "01:39:28",
+   "supports": "浮点不死对敌我均适用，逐字支持",
+   "derived_correction_disposition": "not_needed"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-16-15#r0",
+  "claim": "每两帧判断一次伤害并不错误；但该机制调用的是敌人身上记录自身坐标的参数，该坐标记录每五帧记录一次。",
+  "subject": "该机制（DOT伤害判断）",
+  "condition": "伤害判断间隔为每两帧;调用敌人自身坐标记录参数",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1qReG6XE6W_p1_41897493495:p38:a0:c553ba40",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
+    "bvid_stem": "BV1qReG6XE6W_p1_41897493495",
+    "recorded_at": "2026-09-15",
+    "speaker": "神祇读神奇",
+    "chapter": "推拉计算与结算细节：逐帧衰减、弹道命中差异、代理影响及旧帖勘误",
+    "quotes": [
+     {
+      "text": "PRTS说的每两帧判断一次伤害没有错误",
+      "t_start": 6128,
+      "t_end": 6153,
+      "t_start_upstream": 6128,
+      "t_start_line": 6128,
+      "t_line_label": "01:42:08"
+     }
+    ],
+    "_upstream_quote": "PRTS说的每两帧判断一次伤害没有错误"
+   },
+   {
+    "id": "BV1qReG6XE6W_p1_41897493495:p38:a1:6164fa68",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
+    "bvid_stem": "BV1qReG6XE6W_p1_41897493495",
+    "recorded_at": "2026-09-15",
+    "speaker": "神祇读神奇",
+    "chapter": "推拉计算与结算细节：逐帧衰减、弹道命中差异、代理影响及旧帖勘误",
+    "quotes": [
+     {
+      "text": "它调用的是敌人身上 一个记录自身坐标的这样一个参数 而这个记录的东西是每五帧记录一次的",
+      "t_start": 6128,
+      "t_end": 6153,
+      "t_start_upstream": 6128,
+      "t_start_line": 6128,
+      "t_line_label": "01:42:08"
+     }
+    ],
+    "_upstream_quote": "它调用的是敌人身上 一个记录自身坐标的这样一个参数 而这个记录的东西是每五帧记录一次的"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-16-15",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "reason": "official 引文 p38:a0 + p38:a1 两句逐字支持",
+   "not_authoritative": true,
+   "verification": "official 引文 p38:a0 + p38:a1 两句逐字支持"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "inherited_verified",
+   "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
+   "reviewer_type": "agent",
+   "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-16-15#r1",
+  "claim": "移动距离五帧更新一次，因此实际伤害间隔为4~6帧上下横跳，平均五帧一次；即使每四帧或每六帧跳一次伤害，其对应的仍是间隔五帧的位移能力。",
+  "subject": "该机制（DOT伤害与位移结算）",
+  "condition": "移动距离五帧更新一次;伤害判断按两帧检测",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1qReG6XE6W_p1_41897493495:p38:a2:14176998",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
+    "bvid_stem": "BV1qReG6XE6W_p1_41897493495",
+    "recorded_at": "2026-09-15",
+    "speaker": "神祇读神奇",
+    "chapter": "推拉计算与结算细节：逐帧衰减、弹道命中差异、代理影响及旧帖勘误",
+    "quotes": [
+     {
+      "text": "移动距离是五帧更新一次 所以实际伤害间隔是4~6帧 上下横跳平均五针一次 但是每次或六帧更新一次 五针的位移计算",
+      "t_start": 6190,
+      "t_end": 6207,
+      "t_start_upstream": 6190,
+      "t_start_line": 6190,
+      "t_line_label": "01:43:10"
+     }
+    ],
+    "_upstream_quote": "移动距离是五帧更新一次 所以实际伤害间隔是4~6帧 上下横跳平均五针一次 但是每次或六帧更新一次 五针的位移计算"
+   },
+   {
+    "id": "BV1qReG6XE6W_p1_41897493495:p38:a3:bce39168",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
+    "bvid_stem": "BV1qReG6XE6W_p1_41897493495",
+    "recorded_at": "2026-09-15",
+    "speaker": "神祇读神奇",
+    "chapter": "推拉计算与结算细节：逐帧衰减、弹道命中差异、代理影响及旧帖勘误",
+    "quotes": [
+     {
+      "text": "就是他虽然每四帧或者每六帧跳一次 但是这四帧或者六针间隔跳的伤害 是间隔五距离",
+      "t_start": 6207,
+      "t_end": 6220,
+      "t_start_upstream": 6207,
+      "t_start_line": 6207,
+      "t_line_label": "01:43:27"
+     },
+     {
+      "text": "是间隔五针的位移能力",
+      "t_start": 6220,
+      "t_end": 6223,
+      "t_start_upstream": 6220,
+      "t_start_line": 6220,
+      "t_line_label": "01:43:40"
+     }
+    ],
+    "_upstream_quote": "就是他虽然每四帧或者每六帧跳一次 但是这四帧或者六针间隔跳的伤害 是间隔五距离"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-16-15",
+   "trial_rule_idx": 1,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "reason": "official 引文 p38:a2 + p38:a3 两句支持；引文自带\"上下横跳\"的波动限定",
+   "not_authoritative": true,
+   "verification": "official 引文 p38:a2 + p38:a3 两句支持；引文自带\"上下横跳\"的波动限定"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "inherited_verified",
+   "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
+   "reviewer_type": "agent",
+   "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-16-15#r2",
+  "claim": "该DOT每五帧更新一次距离；无论两帧检测还是三帧检测，每次检测到的都是五帧更新的距离，而非四或六帧的距离。",
+  "subject": "该DOT",
+  "condition": "DOT伤害距离结算;检测间隔为两帧或三帧",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1qReG6XE6W_p1_41897493495:p39:a0:d4712bd3",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
+    "bvid_stem": "BV1qReG6XE6W_p1_41897493495",
+    "recorded_at": "2026-09-15",
+    "speaker": "神祇读神奇",
+    "chapter": "推拉计算与结算细节：逐帧衰减、弹道命中差异、代理影响及旧帖勘误",
+    "quotes": [
+     {
+      "text": "他这个dot的话就是五帧更新一次距离",
+      "t_start": 6356,
+      "t_end": 6369,
+      "t_start_upstream": 6356,
+      "t_start_line": 6356,
+      "t_line_label": "01:45:56"
+     }
+    ],
+    "_upstream_quote": "他这个dot的话就是五帧更新一次距离"
+   },
+   {
+    "id": "BV1qReG6XE6W_p1_41897493495:p39:a1:a6af1a4d",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt",
+    "bvid_stem": "BV1qReG6XE6W_p1_41897493495",
+    "recorded_at": "2026-09-15",
+    "speaker": "神祇读神奇",
+    "chapter": "推拉计算与结算细节：逐帧衰减、弹道命中差异、代理影响及旧帖勘误",
+    "quotes": [
+     {
+      "text": "无论是两针检测还是三针检测 他每次检测到的都是那个五帧更新的距离 它不会说是四或六的距离",
+      "t_start": 6356,
+      "t_end": 6369,
+      "t_start_upstream": 6356,
+      "t_start_line": 6356,
+      "t_line_label": "01:45:56"
+     }
+    ],
+    "_upstream_quote": "无论是两针检测还是三针检测 他每次检测到的都是那个五帧更新的距离 它不会说是四或六的距离"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1qReG6XE6W_p1_41897493495.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-16-15",
+   "trial_rule_idx": 2,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "reason": "official 引文 p39:a0 + p39:a1 两句逐字支持",
+   "not_authoritative": true,
+   "verification": "official 引文 p39:a0 + p39:a1 两句逐字支持"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "inherited_verified",
+   "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
+   "reviewer_type": "agent",
+   "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-18-15#r0",
+  "claim": "面对无法推动的正常敌人横射，每个敌人三次判定。",
+  "subject": "未点名",
+  "condition": "目标为无法推动的正常敌人;进行横射",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1uLE86JEi1_p1_38942018351:p43:a0:865c6888",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
+    "bvid_stem": "BV1uLE86JEi1_p1_38942018351",
+    "recorded_at": "2026-06-08",
+    "speaker": "神祇读神奇",
+    "chapter": "巨型Boss判定次数详解：4.95缝隙与紫兰弹道过整导致横少一判",
+    "quotes": [
+     {
+      "text": "面对无法推动的正常敌人横射 每个敌人三次判定",
+      "t_start": 10769,
+      "t_end": 10784,
+      "t_start_upstream": 10769,
+      "t_start_line": 10769,
+      "t_line_label": "02:59:29"
+     }
+    ],
+    "_upstream_quote": "面对无法推动的正常敌人横射 每个敌人三次判定"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-18-15",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "reason": "official 引文 p43:a0 逐字一致「面对无法推动的正常敌人横射 每个敌人三次判定」",
+   "not_authoritative": true,
+   "verification": "official 引文 p43:a0 逐字一致「面对无法推动的正常敌人横射 每个敌人三次判定」"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "inherited_verified",
+   "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
+   "reviewer_type": "agent",
+   "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-18-15#r1",
+  "claim": "面对无法推动的正常敌人竖射，每个敌人四次判定。",
+  "subject": "未点名",
+  "condition": "目标为无法推动的正常敌人;进行竖射",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1uLE86JEi1_p1_38942018351:p43:a1:789925b9",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
+    "bvid_stem": "BV1uLE86JEi1_p1_38942018351",
+    "recorded_at": "2026-06-08",
+    "speaker": "神祇读神奇",
+    "chapter": "巨型Boss判定次数详解：4.95缝隙与紫兰弹道过整导致横少一判",
+    "quotes": [
+     {
+      "text": "竖射 每个敌人四次判定",
+      "t_start": 10784,
+      "t_end": 10805,
+      "t_start_upstream": 10784,
+      "t_start_line": 10784,
+      "t_line_label": "02:59:44"
+     }
+    ],
+    "_upstream_quote": "竖射 每个敌人四次判定"
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-18-15",
+   "trial_rule_idx": 1,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "reason": "official 引文 p43:a1「竖射 每个敌人四次判定」；与 idx0 同段，主语正确",
+   "not_authoritative": true,
+   "verification": "official 引文 p43:a1「竖射 每个敌人四次判定」；与 idx0 同段，主语正确"
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "inherited_verified",
+   "reason": "本条未进入本轮证据审读工单；其 review.status=agent_verified 来自上一轮由用户反馈与代理文本审核作出的判定，本轮未重读、未核听。",
+   "reviewer_type": "agent",
+   "limitation": "继承的旧判定未经本轮复核，也未做人工核听；「all reviewed」不代表「all correct」。"
+  }
+ },
+ {
+  "id": "fc1:伤害结算-18-16#r0",
+  "claim": "纵打因为不整，所以打满。",
+  "subject": "未点名",
+  "condition": "纵打;条件：不整",
+  "scope": "universal",
+  "category": "伤害结算",
+  "recorded_ym": null,
+  "source_layer": "官方AI字幕",
+  "source_layers": [
+   "official"
+  ],
+  "track": "vod_official",
+  "citations": [
+   {
+    "id": "BV1uLE86JEi1_p1_38942018351:p48:a0:9fbbabe1",
+    "status": "resolved_atom",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
+    "bvid_stem": "BV1uLE86JEi1_p1_38942018351",
+    "recorded_at": "2026-06-08",
+    "speaker": "神祇读神奇",
+    "chapter": "偏移精确为0.232而非0.233及横纵判定过整对称性讨论",
+    "quotes": [
+     {
+      "text": "纵打因为不整 所以就打满了",
+      "t_start": 11800,
+      "t_end": 11806,
+      "t_start_upstream": 11800,
+      "t_start_line": 11800,
+      "t_line_label": "03:16:40"
+     }
+    ],
+    "_upstream_quote": "纵打因为不整 所以就打满了"
+   },
+   {
+    "id": "ctx=sub:BV1uLE86JEi1_p1_38942018351:11800",
+    "status": "resolved_timestamp_window",
+    "source_layers": [
+     "official"
+    ],
+    "transcript_file": "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
+    "requested_second": 11800,
+    "quotes": [
+     {
+      "text": "[03:16:40] 纵打对啊 纵打不整 纵打因为不整 所以就打满了",
+      "t_start": 11800,
+      "t_end": null,
+      "t_line_label": "03:16:40",
+      "t_start_line": 11800
+     }
+    ]
+   }
+  ],
+  "source_files": [
+   "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt"
+  ],
+  "origin": {
+   "trial_doc_id": "fc1:伤害结算-18-16",
+   "trial_rule_idx": 0,
+   "trial_manifest_outputs": "kb_trial/docs.jsonl",
+   "upstream_record": "kb_pilot_synth/user_review_round1/revised_default.jsonl",
+   "card_section": "规则"
+  },
+  "review": {
+   "status": "agent_verified",
+   "scope": "text_source_only",
+   "confidence": "text-source-supported",
+   "reason": "本轮逐条读源核实（文本层，未核听原片）：源 BV1uLE86JEi1_p1_38942018351.txt [03:16:40] 逐字为「纵打对啊 纵打不整 纵打因为不整 所以就打满了」。claim「纵打因为不整，所以打满」与源句完全一致，condition「纵打;条件：不整」也精确取自源句。citation 1 与 citation 2 的时间点均为 03:16:40（t_start=11800），citation 2 是 ctx=s",
+   "not_authoritative": true
+  },
+  "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
+  "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。上游授权与公开范围由项目负责人决定。",
+  "semantic_review": {
+   "verdict": "keep",
+   "support": "supported",
+   "info_value": "reusable_rule",
+   "reason": "claim 为可独立用于检索的机制陈述；所附引文逐字或同义支持该句，主体与条件由规则本身可确定，未新造主体。",
+   "reviewer_type": "agent"
+  },
+  "evidence_review": {
+   "status": "supported",
+   "reason": "源 BV1uLE86JEi1_p1_38942018351.txt [03:16:40] 逐字为「纵打对啊 纵打不整 纵打因为不整 所以就打满了」。claim「纵打因为不整，所以打满」与源句完全一致，condition「纵打;条件：不整」也精确取自源句。citation 1 与 citation 2 的时间点均为 03:16:40（t_start=11800），citation 2 是 ctx=sub 的窗口定位，属同一句的重复定位，非两处独立证据；结论仍由该单句单独支撑。",
+   "reviewer_type": "agent",
+   "confidence": "text-source-supported",
+   "review_basis": "本轮为 agent 依据 packet 内嵌的 SOURCE WINDOW 与已解析引文逐条比对后作出的文本层判定；未做人工核听、未回看原片视频。置信上限为「有文本出处支持该派生表述」，不等于游戏内真值已验证（非 game-truth verified）。",
+   "limitation": "局限：判定依据是转录文本（官方 AI 字幕层或云端 ASR 草稿层），不是原片音画；ASR 讹写会同时污染引文与派生文本，本轮只订正了能由同源上下文自证的确定讹写，其余存疑处未改动并在 derived_correction_applied 中记明。「all reviewed」不代表「all correct」。",
+   "source_path": "transcripts_txt/BV1uLE86JEi1_p1_38942018351.txt",
+   "source_line_time": "03:16:40",
+   "supports": "claim 与源句逐字一致，单句独立支撑",
+   "derived_correction": "无。源句语义完整闭合。",
+   "derived_correction_disposition": "applied"
+  }
+ }
+]

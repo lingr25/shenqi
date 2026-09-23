@@ -1,0 +1,278 @@
+[
+ {
+  "id": "fc1:帧时序与计时器-10-1#r1",
+  "decision": "needs_human_confirmation",
+  "reason": "移除理由为『单关卡排轴口播、指代不可解、scope 与粒度错配』。本地同源可证：引文在 transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt:471 逐字存在，该文件第 1 行标题为『【神奇】看弧光7人，讲机制，计算，历程│20260216直播』，466-490 行全为同一关（弧光7人）排轴的临场口播；『入空』在全语料仅本文件出现（3 行），『中路/他/3号』为关卡内指代，条目 scope 标 universal 与内容粒度不符。移除的文本依据成立，但定性依赖『单关卡内容不入可复用层』与『入空/中路』这类主播关卡黑话，按本次规则归入 needs_human_confirmation。",
+  "evidence_paths": [
+   "transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/review_batch_02.json",
+   "kb_trial/curation/faultcheck/_remove_dump.txt",
+   "kb_trial/curation/faultcheck/chunk_09.json"
+  ],
+  "term_flags": [
+   "入空：主播关卡内黑话，全语料仅 BV14VZCB1EJR_p1 出现（3 行），无可复用定义",
+   "中路/他/3号：条内与同窗口均无先行词，属关卡内指代",
+   "弧光7人：单关卡内容（视频标题行可证）"
+  ]
+ },
+ {
+  "id": "fc1:帧时序与计时器-10-1#r8",
+  "decision": "needs_human_confirmation",
+  "reason": "移除理由为『一次性排轴口播、这两个无锚定、惊蛰采为惊蛰踩讹写』。本地同源可证：引文跨 transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt:476-477 逐字拼接存在（『只能在打断中路这两个的前提条件下』+『在他的前摇之中选择惊蛰采的时间』），『这两个』指 476 行的中路两个打断目标；同文件对同一动作有『惊蛰踩』5 处（479/486/721 等）与『惊蛰采』3 处（332/400/477）两种写法并存。移除的文本依据成立，但涉及干员名『惊蛰』与采/踩两种 ASR 写法，且为单关卡内容，按本次规则归入 needs_human_confirmation。",
+  "evidence_paths": [
+   "transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt",
+   "kb_trial/entity_index.json",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/_remove_dump.txt",
+   "kb_trial/curation/faultcheck/chunk_09.json"
+  ],
+  "term_flags": [
+   "惊蛰：干员名（kb_trial/entity_index.json 记为 prts/operator）",
+   "惊蛰采 vs 惊蛰踩：同一动作同源两种写法并存（采 3 处 / 踩 5 处），entity_corrector.py 未登记该订正",
+   "这两个：指 476 行『中路』两个目标，属关卡内指代",
+   "单关卡（弧光7人）"
+  ]
+ },
+ {
+  "id": "fc1:帧时序与计时器-27-7#r6",
+  "decision": "confirmed_remove",
+  "reason": "duplicate：被删条与被保留条 fc1:帧时序与计时器-27-7#r7 引用同一 atom（BV1CZ8t6wEyr_p1_41192326752:p26:a6:7cddb81c）与同一源行，r7 的 claim 逐字包含本条 claim 并追加后果『导致眩晕前后的三个寻路针进行拼接』（其第二引文取同文件 266 行）。本地核验：本条引文在 transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt:265 逐字存在，266 行为『寻路针进行一个拼接 进行一个拼接』；r7 仍在 kb_trial/curated_high_quality.json 中。删除本条不丢信息。",
+  "evidence_paths": [
+   "transcripts_txt/BV1CZ8t6wEyr_p1_41192326752.txt",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/chunk_09.json"
+  ],
+  "term_flags": [
+   "寻路针/避障针：源文与保留条用『针』指帧（同源另有『索敌帧』），entity_corrector.py 未登记通用的针→帧规则；本次未据此改名"
+  ]
+ },
+ {
+  "id": "fc1:帧时序与计时器-28-8#r8",
+  "decision": "confirmed_remove",
+  "reason": "duplicate：本条结论（代理操作的结算顺序与手操不同）被仍在精选层的 fc1:帧时序与计时器-28-8#r4 完整覆盖，r4 多出条件（代理表现稳定 / 同帧）与后果（会出现问题）。本地核验：本条引文在 transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt:276 逐字存在，r4 引文在同文件 180 行逐字存在（『…是因为他的操作和你手操的童真的 结算顺序是不同的』）。两条同视频同结论，删弱留强，不丢信息。",
+  "evidence_paths": [
+   "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/chunk_09.json"
+  ],
+  "term_flags": [
+   "童真/同真：源字幕对『同帧』的 ASR 变体（童真部署已被 entity_corrector.py 订正为同帧部署）；保留条 r4 的 claim 仍写作『同真』，属保留条自身风险，与本次删除判定无关"
+  ]
+ },
+ {
+  "id": "fc1:帧时序与计时器-31-8#r0",
+  "decision": "needs_human_confirmation",
+  "reason": "duplicate（同源三连）：本条与 #r1、#r2 同源于 transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt:875 同一行，本条引文『像正常求白那种是依赖攻速』逐字存在；#r2（『正常仇白依赖攻速时会卡到动画时长上限』）仍在精选层且信息更全。但判定依赖干员名『正常仇白』（源字幕作『求白』，entity_corrector.py 与 entity_index.json 已登记 user 授权的 求白→仇白）及『正常』这一源内未定义的限定，按本次规则归入 needs_human_confirmation。",
+  "evidence_paths": [
+   "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+   "entity_corrector.py",
+   "kb_trial/entity_index.json",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/chunk_09.json"
+  ],
+  "term_flags": [
+   "仇白：干员名；源字幕作『求白』，项目已登记 求白→仇白（entity_corrector.py、entity_index.json 记 user 授权）",
+   "『正常』限定：语义未在源内定义（875 行『像正常求白那种是依赖攻速』）"
+  ]
+ },
+ {
+  "id": "fc1:帧时序与计时器-31-8#r1",
+  "decision": "needs_human_confirmation",
+  "reason": "duplicate（同源三连）：本条与 #r0、#r2 同源于 BV1dVcbzFEdd_p1_35992570681.txt:875，引文『但是他依赖攻速卡到了动画的时长上限』逐字存在；#r2 仍在精选层，故删除的信息依据基本成立（本条只少了源句中的『正常』限定）。但判定依赖把『仇白』（源作『求白』）与『正常』限定对齐，属干员名/限定语义判断，按本次规则归入 needs_human_confirmation。",
+  "evidence_paths": [
+   "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+   "entity_corrector.py",
+   "kb_trial/entity_index.json",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/chunk_09.json"
+  ],
+  "term_flags": [
+   "仇白/求白：同上（项目已登记别名，源字幕为 求白）",
+   "『正常』限定：源句内存在而本条 claim 未保留，语义未定义"
+  ]
+ },
+ {
+  "id": "fc1:帧时序与计时器-32-6#r0",
+  "decision": "confirmed_remove",
+  "reason": "截断碎片：本条 claim（『在一套动画结束之后，会进入一个检测』）是源句 transcripts_txt/BV1dVcbzFEdd_p3_35992830013.txt:83 的前半截，源句后半『这个检测会检测剩余零冷却是否小于0.5 然后立刻抬手』未进入 claim，单读不知检测什么；同源结论已由仍在精选层的 fc1:帧时序与计时器-32-6#r2（引文同文件 79 行『在攻击间隔的计算中 鹰角四舍五入的方法是 动画结束时清空剩余冷却 然后立刻抬手』）承载。注：原移除理由称『检测剩余冷却<0.5』由 r2 承载并不准确（r2 的 claim 未含该阈值），但本条 claim 亦不含该信息，故删除不造成信息损失。",
+  "evidence_paths": [
+   "transcripts_txt/BV1dVcbzFEdd_p3_35992830013.txt",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/chunk_09.json"
+  ],
+  "term_flags": []
+ },
+ {
+  "id": "fc1:状态效果-1-6#r0",
+  "decision": "confirmed_remove",
+  "reason": "duplicate/弱化半句：本条（『干员死亡时，可部署数不会立刻返还』）与仍在精选层的 #r3（『可部署数在死亡状态机结束之后才会返还』）同源同段，两条引文分别在 transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt:211、212 逐字存在；r3 是完整规则，本条是其弱化前半句，删除不丢信息。",
+  "evidence_paths": [
+   "transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/_remove_dump.txt",
+   "kb_trial/curation/faultcheck/chunk_11.json"
+  ],
+  "term_flags": []
+ },
+ {
+  "id": "fc1:状态效果-1-6#r1",
+  "decision": "confirmed_remove",
+  "reason": "duplicate：本条（干员死亡后原部署格可立即再部署）与仍在精选层的 #r2（死亡状态机期间该单位还在场但不阻止在其位置部署）同源同句对；引文分别在 transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt:211（『但是他部署的这个位置 这个格子可以立马放下去』逐字）与 212 行逐字存在。r2 含主语与机理解释，本条为同一事实的重复表述，删除不丢信息。",
+  "evidence_paths": [
+   "transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/_remove_dump.txt",
+   "kb_trial/curation/faultcheck/chunk_11.json"
+  ],
+  "term_flags": []
+ },
+ {
+  "id": "fc1:状态效果-15-12#r0",
+  "decision": "needs_human_confirmation",
+  "reason": "术语不可解：claim 中的『科技COMBUFF』在全语料（transcripts_txt 及各派生 json）仅 transcripts_txt/BV1qArGBPEQ8_p2_35297037660.txt:33 一处出现、无任何定义，前后 32/34 行皆为 PRTS 界面串读残行（『异常状态反制』『异常反制』），出自 2026-01-09『看看缇缇』开场闲聊章；引文逐字存在，但其性质（PRTS 条目用语 / 讹写 / 黑话）无法由本地文本判定，且 claim 含机制名词『状态免疫』，按本次规则归入 needs_human_confirmation。",
+  "evidence_paths": [
+   "transcripts_txt/BV1qArGBPEQ8_p2_35297037660.txt",
+   "kb_trial/curation/faultcheck/chunk_11.json",
+   "kb_trial/curation/evidence_verdicts.jsonl",
+   "kb_trial/entity_index.json"
+  ],
+  "term_flags": [
+   "科技COMBUFF：全语料单次出现、无定义，kb_trial/entity_index.json 无该词条",
+   "状态免疫：机制名词，本条未定义其判定范围"
+  ]
+ },
+ {
+  "id": "fc1:状态效果-15-5#r0",
+  "decision": "needs_human_confirmation",
+  "reason": "指代不可解 + 单次实机测试碎语：引文在 transcripts_txt/BV1qArGBPEQ8_p1_35288975300.txt:511 逐字存在（『哎我是不是撤早了哦 还好还好 这个和他撤的时间没有关系』），其前后 507-517 行只有数字残行（14帧处 / 11真血 / 6.10 / 还是14），『他』在本地无先行词；subject『光环/睡眠挂上』是把 512 行『他没撤 这个光环也挂上 这个睡眠也挂上』名词化的卡片自造表述，condition 亦为元描述。移除的文本依据成立，但涉及光环/睡眠机制名词与单次实机测试场景，按本次规则归入 needs_human_confirmation。",
+  "evidence_paths": [
+   "transcripts_txt/BV1qArGBPEQ8_p1_35288975300.txt",
+   "kb_trial/entity_index.json",
+   "kb_trial/curation/faultcheck/chunk_11.json"
+  ],
+  "term_flags": [
+   "光环：kb_trial/entity_index.json 记为 qq/untyped（非 PRTS），全语料 30 处 / 8 文件",
+   "他：条内与本地 20 行窗口内均无先行词",
+   "单次实机测试场景（14帧 / 6.10 等残行，无关卡与单位名）"
+  ]
+ },
+ {
+  "id": "fc1:状态效果-2-13#r3",
+  "decision": "confirmed_remove",
+  "reason": "duplicate：本条（睡眠控制与阻挡控制相互之间没有竞争）与仍在精选层的 #r2（『睡眠控制并不会碾压阻挡控制 阻挡控制也不会碾压睡眠控制』）同段同结论；引文分别在 transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt:1132、1131 逐字存在，1130 行另有『控制是相互独立的 A控制和B控制是没有关系的』作为同上位陈述。保留 r2 后本条无独立信息。",
+  "evidence_paths": [
+   "transcripts_txt/BV14VZCB1EJR_p1_36119907781.txt",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/chunk_11.json"
+  ],
+  "term_flags": []
+ },
+ {
+  "id": "fc1:状态效果-22-12#r1",
+  "decision": "confirmed_remove",
+  "reason": "逐字重复：本条 claim『光环是一个群体上Buff用的能力』正是仍在精选层的 #r0 引文尾段——transcripts_txt/BV1wPuG6aEyY_p2_40722629133.txt:79 为『就是说使用一个碰撞箱 让一个范围内的人 … 这种东西叫光环 光环是一个群体上Buff用的能力』，本条引文与该行逐字一致，信息完全被 r0 覆盖，删除不丢信息。",
+  "evidence_paths": [
+   "transcripts_txt/BV1wPuG6aEyY_p2_40722629133.txt",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/chunk_11.json"
+  ],
+  "term_flags": [
+   "光环：非 PRTS 词条（kb_trial/entity_index.json 记 qq/untyped），但同源句内自带定义，全语料 30 处 / 8 文件"
+  ]
+ },
+ {
+  "id": "fc1:状态效果-3-10#r2",
+  "decision": "confirmed_remove",
+  "reason": "overclaim + 冗余：唯一引文是反问句（transcripts_txt/BV14y8269EbS_p3_41169782383.txt:376『我们怎么可能算一个对停住的怪的减速』逐字存在），claim 把它升格为普适断言；同段 376 行前半『我们根本就没有说在刹车过程中 然后突然给你一个减速 这种计算 这不存在的』与 379-380 行『他已经刹车停住了 他已经不是一个运动的单位了 / 我为什么要算他的控制覆盖率』分别由仍在精选层的 #r1、#r3 承载（引文均逐字存在）。删除后该段仍有 r1、r3 覆盖，不丢信息。",
+  "evidence_paths": [
+   "transcripts_txt/BV14y8269EbS_p3_41169782383.txt",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/chunk_11.json"
+  ],
+  "term_flags": []
+ },
+ {
+  "id": "fc1:索敌-11-2#r0",
+  "decision": "needs_human_confirmation",
+  "reason": "移除理由与本地原文不完全相符，且判定涉及版本改动定性：transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt:476 原文为『童真部署现在挺乱的 这很明显不是一个基于仇恨值的改动 就是他现在对这个童真部署的反转现象 影响了很多本不基于仇恨值进行结算的东西』，即同一条源行前段已点名 童真部署（同帧部署），同文件 650-651 行亦提到『实装了童真部署』；因此『该改动在条内与同窗口都无锚定』的表述不准确。改用/删除取决于把该句判为不可复用的版本改动（保留层 fc1:索敌-11-2#r1 已承载其后果），归入 needs_human_confirmation。",
+  "evidence_paths": [
+   "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/chunk_12.json"
+  ],
+  "term_flags": [
+   "童真部署：源字幕 ASR 写法，entity_corrector.py 已登记 童真→同帧（童真部署→同帧部署）",
+   "该改动：源行内可推为近期实装的同帧部署改动，但『是否版本级内容』无法由本地文本判定"
+  ]
+ },
+ {
+  "id": "fc1:索敌-11-8#r1",
+  "decision": "needs_human_confirmation",
+  "reason": "duplicate 判定依赖术语对齐：本条（『排序算法不会交换同质项』，transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt:535 逐字存在）被仍在精选层的 fc1:索敌-12-5#r0 覆盖（引文同文件 567 行『由于排序算法不会交换同指向 所以顺序就是最原始的顺序 单位创建顺序』逐字存在），去冗余方向成立（本条 condition 为『未标注』的裸子命题）。但同一视频对同一概念有三种写法（279 行『同值项』/535 行『同质项』/567 行『同指向』），entity_corrector.py 未登记该订正，需人对术语写法拍板，故归入 needs_human_confirmation。",
+  "evidence_paths": [
+   "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+   "entity_corrector.py",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/chunk_12.json"
+  ],
+  "term_flags": [
+   "同质项 / 同指向 / 同值项：同一视频内三种写法（279 / 535 / 567 行），entity_corrector.py 未登记该订正"
+  ]
+ },
+ {
+  "id": "fc1:索敌-11-8#r4",
+  "decision": "needs_human_confirmation",
+  "reason": "claim 超出引文 + 去冗余：引文『所以才有童真部署解大仙部署的情况』（transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt:536 逐字存在）只描述现象，claim 却写成『可以用同帧部署解决(打先/打后)部署的问题』并补入前提，其中『打后』不在该行；同一前提与结论另由仍在精选层的 fc1:索敌-12-5#r1（同文件 568 行『对于自身规则无法排序的两个单位 都是打先创建的』）与 #r2（568 行『所以才有同帧部署 打先部署的情况』）承载，删除方向成立。但引文含『童真部署/大仙部署』两处 ASR 写法（大仙部署=打先部署需靠 568 行同源对照推定，entity_corrector.py 未登记），按本次规则归入 needs_human_confirmation。",
+  "evidence_paths": [
+   "transcripts_txt/BV1dVcbzFEdd_p1_35992570681.txt",
+   "entity_corrector.py",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/chunk_12.json"
+  ],
+  "term_flags": [
+   "童真部署：entity_corrector.py 已登记 童真→同帧（童真部署→同帧部署）",
+   "大仙部署：疑为『打先部署』（同源 568 行有『同帧部署 打先部署』），但 entity_corrector.py 未登记，属未定 ASR",
+   "打后：不在本条引文内"
+  ]
+ },
+ {
+  "id": "fc1:索敌-22-14#r2",
+  "decision": "confirmed_remove",
+  "reason": "同 atom 子集：本条与仍在精选层的 #r0 引用同一 atom（BV1jd3m68E6f_p1_40508197659:p21:a5:7d4317bf）与同一源行，本条 claim 丢掉『技能冷却清零』条件。本地核验：transcripts_txt/BV1jd3m68E6f_p1_40508197659.txt:160『释放技能需要攻击和技能冷却都清零 … 还需要技能冷却清零 这里需要注意一下条件二技能同样也需要攻击冷却清零』逐字存在，161 行为本条第二引文；#r0 保留两冷却条件，是完整规则，本条删除避免残缺表述进入检索层。",
+  "evidence_paths": [
+   "transcripts_txt/BV1jd3m68E6f_p1_40508197659.txt",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/chunk_13.json"
+  ],
+  "term_flags": []
+ },
+ {
+  "id": "fc1:索敌-31-4#r2",
+  "decision": "confirmed_remove",
+  "reason": "口语重复碎片：本条 claim『打先创建的单位。』（subject/condition 为卡片补写）来自 transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt:1051『打先创建 理解吧 打先创建的单位』，是上一行 1050（『…如果我同仇恨 那么就按照自然序创建顺序打先部署』）的口语复述；1050 的完整规则与 1052-1053 的一般化表述仍由精选层的 #r1、#r3 承载（引文均逐字存在）。删除不丢信息。",
+  "evidence_paths": [
+   "transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/chunk_13.json"
+  ],
+  "term_flags": [
+   "打先创建/打仙部署：源字幕『打先』系 ASR 写法（同一窗口 1048 行作『童真部署打仙部署』），entity_corrector.py 未登记；本次未据此改名"
+  ]
+ },
+ {
+  "id": "qq_expansion:w000374:c01",
+  "decision": "needs_human_confirmation",
+  "reason": "QQ 工单可证『那个图』在窗内无锚定：审读 kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_094.json 的 raw_messages（19 条，2026-05-28 13:02:26-13:03:59），seq10『那个图重力面相3帧一判定吃加速』、seq11『需要做局内测试修寻路程序』，其余为 cos/赶路闲聊（seq12『你54来绒绒贝利就能看见牢猫女仆装cos了』等），全窗无地图名或关卡线索；第二条引文与 claim 命题无关。移除的 not_self_contained / evidence_mismatch 依据在本地成立，但 claim 是单一地图的重力面向判定（单关卡内容），且『重力面向/重力面相』为 ASR 两写，按本次规则归入 needs_human_confirmation。",
+  "evidence_paths": [
+   "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_094.json",
+   "kb_trial/curation/faultcheck/chunk_17.json",
+   "kb_trial/entity_index.json"
+  ],
+  "term_flags": [
+   "该图/那个图：工单 raw_messages 19 条内与本地均无地图锚定对象",
+   "重力面向 / 重力面相：ASR 两写（kb_trial/entity_index.json 记 重力面向 为 qq/untyped）",
+   "3 帧一判定 / 吃加速：数值与单关卡口径未经本地复核"
+  ]
+ }
+]

@@ -1,0 +1,65 @@
+{
+ "removes": {},
+ "fixes": {
+  "qq_expansion:w000047:c01": {
+   "fault_type": "evidence_mismatch",
+   "source": "triage_07.json",
+   "suggestion": "condition 删去「原文以『净化者』类同现象作对照」，改为「该单位开技能或移动产出召唤物时；原文未给出对照对象」。",
+   "condition": "该单位开技能或移动产出召唤物时；原文未给出对照对象"
+  },
+  "qq_expansion:w000048:c01": {
+   "fault_type": "not_self_contained",
+   "source": "triage_07.json",
+   "suggestion": "claim 改为「『复制出来的』单位不一定会带有完整部署流程产生的效果（具体是哪一项效果窗内未点名），原因是它没有跑完整个部署流程」，并在条目内标注指代缺失待回源补名。",
+   "claim": "『复制出来的』单位不一定会带有完整部署流程产生的效果（具体是哪一项效果窗内未点名），原因是它没有跑完整个部署流程"
+  },
+  "qq_expansion:w000064:c01": {
+   "fault_type": "evidence_mismatch",
+   "source": "triage_07.json",
+   "suggestion": "把 seq 21（来个4k大屏）与 seq 24（不，看不到的）补入 citations，或把 claim 中「而不是显示设备或分辨率不够」删去、只保留「费用条逻辑本身的限制」。",
+   "claim": "在 120 帧下，费用条上细节「怎么也看不到」，原因是鹰角费用条逻辑本身的限制。",
+   "note": "取建议的第二个方案（删去引文未覆盖的半句）；未增补引文。"
+  },
+  "qq_expansion:w000088:c01": {
+   "fault_type": "not_self_contained",
+   "source": "triage_07.json",
+   "suggestion": "subject 改为「被推拉位移单位在路径点间的瞬移（来源称『闪现』）」；claim 改为「被拉动位移的敌人在路径点之间出现的『闪现』：一帧可达半径内存在下个移动类路径点时，无视当前移速直接瞬移抵达（该半径按当前/理论移速计算）」。",
+   "claim": "被拉动位移的敌人在路径点之间出现的『闪现』：一帧可达半径内存在下个移动类路径点时，无视当前移速直接瞬移抵达（该半径按当前/理论移速计算）",
+   "subject": "被推拉位移单位在路径点间的瞬移（来源称『闪现』）"
+  },
+  "qq_expansion:w000105:c01": {
+   "fault_type": "evidence_mismatch",
+   "source": "triage_08.json",
+   "suggestion": "受击碰撞箱与坐标是两个不同的东西：直觉看到的第一是受击碰撞箱，第二才是坐标（也就是弹道飞去哪里）；原文只给出这一顺序性分界，未说明伤害判定的归属。",
+   "claim": "受击碰撞箱与坐标是两个不同的东西：直觉看到的第一是受击碰撞箱，第二才是坐标（也就是弹道飞去哪里）；原文只给出这一顺序性分界，未说明伤害判定的归属。"
+  },
+  "qq_expansion:w000425:c01": {
+   "fault_type": "evidence_mismatch,not_self_contained",
+   "source": "triage_08.json",
+   "suggestion": "小猫（原文昵称，未还原为具体干员/召唤物）本来就可以跳高台，只是没办法把重构体放到高台上；只要跳跃目标是高台就能跳上高台。来源同时指出该现象与技能描述及代码本意（跳到重构体位置）不符，属非预期实现（bug）。",
+   "claim": "小猫（原文昵称，未还原为具体干员/召唤物）本来就可以跳高台，只是没办法把重构体放到高台上；只要跳跃目标是高台就能跳上高台。来源同时指出该现象与技能描述及代码本意（跳到重构体位置）不符，属非预期实现（bug）。"
+  },
+  "qq_expansion:w000679:c01": {
+   "fault_type": "evidence_mismatch,not_self_contained",
+   "source": "triage_08.json",
+   "suggestion": "方舟在帧的意义上是回合制：一帧等于一堆怪与干员的一个回合，一回合内按顺序结算各种事；因此同一回合内的「接触落地隐」与「迷彩」不能被理解成「无缝」（原文用字为「接触落地隐」，所指单位与技能语境原文未展开）。",
+   "claim": "方舟在帧的意义上是回合制：一帧等于一堆怪与干员的一个回合，一回合内按顺序结算各种事；因此同一回合内的「接触落地隐」与「迷彩」不能被理解成「无缝」（原文用字为「接触落地隐」，所指单位与技能语境原文未展开）。"
+  }
+ },
+ "applied_at": "2026-09-22",
+ "script": "kb_trial/curation/faultcheck/_faultcheck_apply.py",
+ "source": {
+  "triage_aggregate": "kb_trial/curation/faultcheck/_triage_agg.json",
+  "triage_files": "kb_trial/curation/faultcheck/triage_01..16.json",
+  "extract": "kb_trial/curation/faultcheck/_fix_plan.json"
+ },
+ "counts": {
+  "fix_total": 338,
+  "fix_applied": 305,
+  "fix_skipped": 33,
+  "remove_total": 58,
+  "batch_removes": 0,
+  "batch_fixes": 7
+ },
+ "policy": "只改 claim/subject/condition 等派生文本；引文（quotes/evidence 文本）一个字不动。移除按批次落在产出器（b3/b4 走 faultcheck_*.json，vod 走 decisions.jsonl 的 reject）。"
+}

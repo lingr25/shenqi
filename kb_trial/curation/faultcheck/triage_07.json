@@ -1,0 +1,317 @@
+{
+  "chunk": "07",
+  "reviewed": 48,
+  "verdicts": [
+    {
+      "id": "fc1:索敌-16-10#r2",
+      "verdict": "fix",
+      "fault_type_kept": "asr_error,evidence_mismatch",
+      "suggestion": "引文逐字保留；claim 改为「如果目标丢掉，就会重新抬手，并在该事件帧重新索敌」。补条目级 ASR 订正记录：「事剑针」→事件帧、「出商」→出伤、「伊为斯」→伊内丝、「这一针」→这一帧（针→帧）。citations[0]（atom）的 transcript_file 指向 cloud_clips/asr_cloud/BV1j4KC6KEse_p1_40109737103.jsonl，window 引文保留本地草稿路径并注明取自草稿层。",
+      "reason": "window 引文里「就在这一针重新索敌」处于帧数/判定语境，按「针→帧」专项规则订正；同时 atom 引文实际取自云端 jsonl，出处却标成本地草稿，两处都需改。"
+    },
+    {
+      "id": "fc1:索敌-16-10#r3",
+      "verdict": "minor",
+      "fault_type_kept": "evidence_mismatch",
+      "reason": "claim「事件帧是由动画的播放通知决定的」与引文逐字对应，唯一实缺是 transcript_file 标成本地草稿（引文取自云端 jsonl，草稿同秒作「通知它」），属索敌-16-10 组统一的元数据错标，建议整组批量改指云端层即可，不必改文本。"
+    },
+    {
+      "id": "fc1:索敌-16-10#r4",
+      "verdict": "fix",
+      "fault_type_kept": "evidence_mismatch,asr_error",
+      "suggestion": "claim 改为「事件帧与出伤、出弹道属于同一事件下包含的不同子事件，内容完全一样（重索敌检测就发生在这个事件帧上）」；引文逐字保留，补「初商/初弹道→出伤/出弹道」订正注记；citations[0] 出处改指云端 jsonl。",
+      "reason": "引文里的「它」紧邻上文主语是「事件帧」，claim 却单方面断定为「重索敌检测」，属指代被单向填实；window 引文的「初商初弹道」讹写也未标注。"
+    },
+    {
+      "id": "fc1:索敌-16-10#r5",
+      "verdict": "minor",
+      "fault_type_kept": "asr_error",
+      "reason": "claim 由云端 atom 引文逐字支持；被点名的「潜游/引匿/引力」讹写位于与 r6/r7 共用的 window 引文中，该段不承载本条结论，可并入该组统一的窗口订正注记与出处订正，不改 claim。"
+    },
+    {
+      "id": "fc1:索敌-16-10#r6",
+      "verdict": "fix",
+      "fault_type_kept": "evidence_mismatch,asr_error",
+      "suggestion": "claim 改为「多目标攻击的敌人（源作『正常的打多的敌人』）在前摇过程中即使有人解除隐匿，也不会因此增加自己的弹道/打数」；引文逐字保留，补「潜游→前摇、引匿/引力→隐匿」订正注记。",
+      "reason": "源结论只针对「正常的打多的敌人」，claim 丢掉该主体限定后把适用范围扩到所有单位，且「正常的」成了悬空修饰语。"
+    },
+    {
+      "id": "fc1:索敌-16-10#r7",
+      "verdict": "minor",
+      "fault_type_kept": "evidence_mismatch",
+      "reason": "引文由云端相邻两段拼合（缺口「也就是。就是」），但每一字都来自同一 atom 窗口、claim 与云端文本一致；建议标注拼接点与来源层，属可容忍的引文展示问题，不需改 claim。"
+    },
+    {
+      "id": "fc1:索敌-20-12#r1",
+      "verdict": "withdraw",
+      "fault_type_kept": "none",
+      "reason": "被指控为 trivial，但该句是「用可撤退单位测索敌帧」这一方法的真实限定（不能只依赖抬手动画），具备跨关复用的方法信息，不成立；顶多与 fc1:索敌-20-12#r2 合并。"
+    },
+    {
+      "id": "fc1:索敌-20-12#r2",
+      "verdict": "withdraw",
+      "fault_type_kept": "none",
+      "reason": "被指控 not_self_contained，但 claim 保留源中「很多时候/要依赖」的软表述与三项辅助判据，判定对象（索敌帧）由条目 category/condition 与同组 r1/r3 可确定；subject 栏写成动作主体属可选润色，达不到必须改动的缺主体。"
+    },
+    {
+      "id": "fc1:索敌-20-12#r3",
+      "verdict": "fix",
+      "fault_type_kept": "asr_error",
+      "suggestion": "引文逐字保留；把条目内的 derived_correction 改为「源中『N减一针撤退/N针撤退』的『针』为『帧』讹写（同视频 [13:09]、[13:45] 可自证）」，并在引用该窗口处标注；claim 不变。",
+      "reason": "窗口引文中的「针」处于帧数/撤退计时语境，按专项规则须订正；且现有「无术语讹写」的订正记录与实际引文直接矛盾。"
+    },
+    {
+      "id": "fc1:索敌-20-4#r0",
+      "verdict": "withdraw",
+      "fault_type_kept": "none",
+      "reason": "被指控为近乎同义反复，但「高地是『高台』地块的属性之一」是 r1（高地设置取消阻挡）赖以成立的属性层陈述，并非零信息；可与 r1 合并，但不构成错误。"
+    },
+    {
+      "id": "fc1:索敌-20-4#r2",
+      "verdict": "fix",
+      "fault_type_kept": "asr_error,evidence_mismatch",
+      "suggestion": "claim 改为「高台上的干员不能阻挡敌人；该结论与敌人是否位于该高台格内无关（源作『在不在内阁』，疑为『格内』的 ASR 讹写）」；把「内阁→格内（待核听）」登记为条目级订正；引文逐字保留。",
+      "reason": "全语料无「内阁」这一概念，claim 却直接把不可解讹写写实成「高台内部」且无任何标注，须把疑义写回 claim 而不是隐藏。"
+    },
+    {
+      "id": "fc1:索敌-20-6#r1",
+      "verdict": "fix",
+      "fault_type_kept": "not_self_contained",
+      "suggestion": "claim 改为「位于『围墙』（地面版高台类地块）内的干员同样不能阻挡敌人」；subject 改为「位于围墙内的干员」。",
+      "reason": "原句「围墙内部不可阻挡」在中文上两解（干员不能阻挡／无法被阻挡），且「围墙」是源中现场命名，补主语与地块说明后才能自足检索。"
+    },
+    {
+      "id": "fc1:索敌-20-7#r1",
+      "verdict": "fix",
+      "fault_type_kept": "asr_error",
+      "suggestion": "引文逐字保留；补条目级 ASR 订正记录（「索敌针」→索敌帧、「这一针」→这一帧，依据同行后半「如果这一帧锁敌成功」自证），检索侧对「针/真/帧」做同义归一；claim 不变。",
+      "reason": "同一行内帧/针混用，属帧数单位讹写，按专项规则订正；否则下游会按字面检索出并不存在的概念「索敌针」。"
+    },
+    {
+      "id": "fc1:索敌-20-7#r2",
+      "verdict": "fix",
+      "fault_type_kept": "asr_error",
+      "suggestion": "引文逐字保留；补条目级订正记录（「N减一针撤退」→N减一帧撤退，同行「按帧撤退」可自证）；如 claim/condition 中用到该量，写成「N-1 帧」。",
+      "reason": "同行内已正确写作「按帧撤退」又写成「N减一针撤退」，属帧数单位的讹写，按专项规则订正。"
+    },
+    {
+      "id": "fc1:索敌-21-5#r2",
+      "verdict": "fix",
+      "fault_type_kept": "not_self_contained",
+      "suggestion": "claim 改为「远程走A敌人在一次『停下攻击』（该次停下期间为攻击状态机）结束、恢复移动后处于移动状态机」；或与 r0/r1 合并为一条走A循环描述（行走=移动状态机；该次停下=攻击状态机；停后恢复移动=移动状态机）。",
+      "reason": "「停下来之后」没有参照点，单独读与同段拆出的 r1「停下来那段时间是攻击状态机」呈相反结论，必须补参照或合并。"
+    },
+    {
+      "id": "fc1:索敌-21-5#r5",
+      "verdict": "minor",
+      "fault_type_kept": "evidence_mismatch",
+      "reason": "引文由 [18:36] 行尾与 [18:50] 行首拼合，但每字都出自同一 atom 窗口且 claim 结论在 [19:12] 有同源重复；标注拼接点即可，属可容忍的引文展示问题。"
+    },
+    {
+      "id": "fc1:索敌-21-5#r8",
+      "verdict": "minor",
+      "fault_type_kept": "duplicate",
+      "reason": "与 fc1:索敌-21-5#r4 近重复（同段同 condition），但 r8 含「冷却一转好就立刻抬手索敌」这一 r4 没有的增量，不满足「实质重复且信息量更少」的删除条件；建议保留两条并互为 cross-reference，引文拼接点加标注。"
+    },
+    {
+      "id": "fc1:索敌-22-12#r0",
+      "verdict": "fix",
+      "fault_type_kept": "asr_error,overclaim,evidence_mismatch",
+      "suggestion": "claim 改为「技能索敌帧在已有条件外追加条件四：技能冷却归零（按技力判定的版本为技力归零）」；把「G力→技力」登记为条目级 ASR 订正；condition/note 补记源中 [39:30] 的反例（精粹的激光头一类普攻与技能共用索敌帧，机制并非绝对）；引文逐字保留。",
+      "reason": "claim 中的「或G力版」是「技力」讹写、双条件实际丢失一半；且源紧接就声明「很多机制都不是绝对的」并举反例，条目未纳入，不能按 universal 读。"
+    },
+    {
+      "id": "fc1:索敌-22-12#r3",
+      "verdict": "fix",
+      "fault_type_kept": "not_self_contained",
+      "suggestion": "subject 改为「索敌条件为『攻击冷却归零』（本讲条件二）的技能」；condition 展开为「该技能属于以攻击冷却归零为索敌条件的类型」；claim 改为「条件二类技能（其索敌条件即攻击冷却归零）同样需要攻击冷却清零」。",
+      "reason": "subject/condition 使用本讲内部编号且 condition 自指（用「条件二技能」定义「条件二技能」），脱离上下文不可用；宜同时注明本条是 fc1:索敌-22-12#r2 的子类补充。"
+    },
+    {
+      "id": "fc1:索敌-22-14#r0",
+      "verdict": "minor",
+      "fault_type_kept": "evidence_mismatch",
+      "reason": "引文跨 [40:06]/[40:30] 两行拼合，但逐字出自同一 atom 窗口，claim 的双冷却结论由 [40:06] 整行直接支持（「释放技能需要攻击和技能冷却都清零」）；标注拼接点即可，不需改文本。"
+    },
+    {
+      "id": "fc1:索敌-22-14#r2",
+      "verdict": "remove",
+      "fault_type_kept": "duplicate,evidence_mismatch",
+      "reason": "与 fc1:索敌-22-14#r0 同一 atom、同一引文（BV1jd3m68E6f_p1_40508197659:p21:a5:7d4317bf），claim 是 r0 的子集且丢掉「技能冷却」这一条件，易被读成完整规则；保留 r0，本条不应出现在公开 RAG 层。"
+    },
+    {
+      "id": "fc1:索敌-23-1#r0",
+      "verdict": "fix",
+      "fault_type_kept": "not_self_contained",
+      "suggestion": "subject 改为「占用攻击间隔的技能的单位（切模式决战技一类）」；claim 改为「这些单位若从未进行过普攻，就不存在能把普攻冷却与技能冷却强制对齐的状态」。",
+      "reason": "subject 写「未点名单位」是占位符，源中「这些单位」指同章 [40:06] 起讨论的占用攻击间隔的技能的单位；claim 又只取了未完成假设从句的前半，须回填。"
+    },
+    {
+      "id": "fc1:索敌-23-1#r4",
+      "verdict": "fix",
+      "fault_type_kept": "evidence_mismatch,not_self_contained",
+      "suggestion": "subject 同 r0 回填为「占用攻击间隔的技能的单位」；claim 改为「已发动过攻击、仍在攻击冷却计数内时：技能冷却与三帧索敌冷却先行归零，攻击冷却归零的那一帧才立刻抬手」（删去引文中无对应的「而对齐」）。",
+      "reason": "「而对齐」在两条引文中都没有对应文字（「对齐」出自相邻的 r0 语料），该半句语法不通、条件含义不明，须按源窗口重写并回填主体。"
+    },
+    {
+      "id": "fc1:索敌-23-3#r8",
+      "verdict": "minor",
+      "fault_type_kept": "evidence_mismatch",
+      "reason": "claim 的主命题（两套独立索敌冷却互不影响、与切模式决战技实质不同）由 [43:06]「它们相互之间是不会影响对方的运转的」与 [41:51] 对比句直接支持；缺的只是把「上面这个情况＝城防炮」这一指代在条目内回填（城防炮出自同场 [35:13]/[35:48]）以及第一条引文的跨行拼接标注，属可容忍。"
+    },
+    {
+      "id": "fc1:索敌-26-2#r0",
+      "verdict": "minor",
+      "fault_type_kept": "evidence_mismatch",
+      "reason": "引文逐字出自云端 jsonl，只是 transcript_file 标到同场的本地草稿（该文件作「有一下没索到」，语义等价）；这是索敌-26-2 整组 10 条的同一处元数据错标，建议整组改指云端层，不必逐条改文本。"
+    },
+    {
+      "id": "fc1:索敌-26-2#r3",
+      "verdict": "minor",
+      "fault_type_kept": "duplicate,evidence_mismatch",
+      "reason": "与同文件 r1（必要式）、r2（逆否）是同一事实的不同方向表述，且带同组出处错标；但三条方向各异、条目自身也未宣称两处独立依据，建议合并为一条或互为 cross-reference，不满足「重复且信息量更少」的删除条件。"
+    },
+    {
+      "id": "fc1:索敌-26-2#r5",
+      "verdict": "minor",
+      "fault_type_kept": "evidence_mismatch",
+      "reason": "同 26-2 组：引文取自云端 jsonl（草稿同段作「他会检测…」），claim 与引文语义一致，属批量出处订正范围。"
+    },
+    {
+      "id": "fc1:索敌-26-2#r7",
+      "verdict": "minor",
+      "fault_type_kept": "evidence_mismatch,duplicate",
+      "reason": "同组出处错标；与 fc1:索敌-30-6#r0 是不同场次的同一机制（触发措辞为「目标全部死亡」vs「被队友抢人头」），跨源互证对检索有益，不构成必须删除的重复。"
+    },
+    {
+      "id": "fc1:索敌-26-2#r10",
+      "verdict": "minor",
+      "fault_type_kept": "asr_error",
+      "reason": "claim 已把引文的「出逃」订正为「出膛」（同页 [01:27:50]「就可以随便出膛」自证），引文按规范保留原文；缺的只是条目级结构化订正记录（出逃→出膛），建议登记，claim 不必改。"
+    },
+    {
+      "id": "fc1:索敌-27-6#r0",
+      "verdict": "fix",
+      "fault_type_kept": "not_self_contained",
+      "suggestion": "subject 去掉「(光环)」改为「睡眠（格判索敌）」；claim 改为「睡眠的索敌优先选择范围内生命比例最低的干员（源 [35:18]；主播当场复测后确认）」；条目内注记「『光环』为弹幕猜测，[36:08]『我不太认为这是一个光环』、[40:57]『他果然不是光环』、[41:22]『他肯定是格判』已否认」。",
+      "reason": "题头把被主播当场否认的「光环」写进 subject，与引文所属章节名「睡眠格判索敌」也相冲突；overclaim 指控不成立（源内主播复测后即确认「哦那还真是」）。"
+    },
+    {
+      "id": "fc1:索敌-27-6#r1",
+      "verdict": "fix",
+      "fault_type_kept": "not_self_contained",
+      "suggestion": "subject 同 r0 改为「睡眠（格判索敌）」；claim 保留两级规则并与 r0 合并为「生命比例最低优先，同比例看仇恨（睡眠格判索敌）」一条两级规则。",
+      "reason": "与 r0 共用错误的「光环」主体，且本条是同一句 [35:18] 拆出的第二级规则，单独读不知道「同生命比例」在与哪条规则配对。"
+    },
+    {
+      "id": "fc1:索敌-28-6#r0",
+      "verdict": "fix",
+      "fault_type_kept": "not_self_contained",
+      "suggestion": "subject 改为「〈施加传染的单位〉的传染效果（本段属『纳斯提回转修正及传染对群相互减伤机制推导』）」；claim 改为「传染会对除传染源自身之外仇恨最高的单位施加沉睡」。",
+      "reason": "claim 里的「该敌人」在条目内没有先行词、「传染」也无单位归属，单独读不知是谁对谁施加沉睡，必须回填主体与指代（entity_index 亦无「传染」实体）。"
+    },
+    {
+      "id": "fc1:索敌-28-6#r1",
+      "verdict": "minor",
+      "fault_type_kept": "evidence_mismatch",
+      "reason": "claim 语义清楚（敌人多时可对非沉睡敌人施加沉睡、伤害分散），两条 ctx 引文各自单行逐字，问题只在 atom 引文把 [01:32:12]/[01:32:23] 两行合成一句、以及 subject 的「传染」缺单位归属；可与 r0 一并回填主体并在拼接处加标注，claim 不必改。"
+    },
+    {
+      "id": "fc1:索敌-28-7#r6",
+      "verdict": "fix",
+      "fault_type_kept": "asr_error",
+      "suggestion": "subject 由「波普」改为「波卜」，并在条目内注记「源作『波普』，为波卜的 ASR 讹写（entity_index 已登记别名 波普→波卜）」；claim 与引文逐字不动。",
+      "reason": "引文按规范保留源文本，但 subject 用讹写会污染实体挂接，且按「波卜」检索的用户查不到本条（源文件 [56:33]「有人问波普」同属讹写）。"
+    },
+    {
+      "id": "fc1:索敌-3-2#r0",
+      "verdict": "withdraw",
+      "fault_type_kept": "none",
+      "reason": "被指控缺主体、缺维度，但「抬手/索敌/前摇」是本域通用术语，「固定」的维度在同章 [01:05:47]「因为随机的前摇，导致之后的索敌帧是随机的」即已给出，claim 三句逐字忠实；指控「单独读几乎无法使用」偏高，至多后续补一个维度括注。"
+    },
+    {
+      "id": "fc1:索敌-3-2#r8",
+      "verdict": "minor",
+      "fault_type_kept": "evidence_mismatch",
+      "reason": "源行 [01:16:14] 确为一条被打断的口述因果链（含同义重复「被K头了／被抢人头」），claim 忠实到把残句「不是技能动画」也写成完整断言；可精简为「该处索敌帧的概率来自前摇、来自骗前摇，即前摇过程中被抢人头」，但现文本未歪曲源意，属可容忍。"
+    },
+    {
+      "id": "fc1:索敌-30-6#r1",
+      "verdict": "fix",
+      "fault_type_kept": "overclaim",
+      "suggestion": "claim 改为「被队友抢人头、索敌主目标死亡后，干员不会照旧抬手打旧的位置（源推测原因为『鹰角要保证不浪费』，非机制定论；现代版本是否仍如此，源内未确认）」，condition 保留原触发条件。",
+      "reason": "被引行 [01:18:09] 的末尾就是主播自己的存疑（「但是现代是这样的吗」，下一行「现代感觉不太一样吧」），条目却把设计意图写成 universal 的因果定论。"
+    },
+    {
+      "id": "fc1:索敌-31-4#r2",
+      "verdict": "remove",
+      "fault_type_kept": "duplicate,trivial,not_self_contained",
+      "reason": "与 fc1:索敌-31-4#r1（「如果仇恨相同，则按照自然序创建顺序，打先部署的单位」）同段同结论，[03:19:55] 只是 [03:19:36] 的口语重复；本条无条件无对象、信息量明显更少，保留 r1（r3 为其一般化表述）即可。"
+    },
+    {
+      "id": "fc1:索敌-31-4#r4",
+      "verdict": "minor",
+      "fault_type_kept": "duplicate",
+      "reason": "与 fc1:索敌-31-4#r3 同段同结论，但 r4 多出「排序算法不会交换同指向同仇恨的目标」这一排序稳定性增量，不满足「重复且信息量更少」；建议两条互为 cross-reference，并把 claim 写成「排序键相同时按创建顺序，排序算法不会交换同指向同仇恨的目标」。"
+    },
+    {
+      "id": "fc1:索敌-9-15#r1",
+      "verdict": "minor",
+      "fault_type_kept": "trivial",
+      "reason": "「敌人类单位／角色类单位」是游戏内部单位分类，claim 取自源中口语判据（[53:03]「满地跑的」对应 [53:21]「站在格子中心不动」），信息真实但粗糙；建议补入同课 [54:39]「敌人类单位是以路径为仇恨的／角色类单位是以时间为仇恨的」的严谨判据，无需删除。"
+    },
+    {
+      "id": "window:w000012#r0",
+      "verdict": "withdraw",
+      "fault_type_kept": "none",
+      "reason": "被指控 overclaim（把「我记得」删掉、升格为必然因果），但 claim 已保留源中「部分」限定，回忆性来源已写入条目自身字段 claim_derivation.note（明说「『我记得』表明这是回忆性陈述」），且未说成全部群攻能力的普遍结构；至多在 claim 末加一句「（群友回忆性表述）」作可选优化。"
+    },
+    {
+      "id": "window:w000027#r0",
+      "verdict": "minor",
+      "fault_type_kept": "asr_error",
+      "reason": "「targetVaildator」无法确证是笔误还是拆包字段的原拼写（条目 review 亦说明系刻意沿用），按「拿不准则 minor」处理；建议在 claim/subject 中括注「源拼作 targetVaildator，疑为 targetValidator」或把两种拼写都放进检索字段，引文不动。"
+    },
+    {
+      "id": "window:w000040#r0",
+      "verdict": "fix",
+      "fault_type_kept": "evidence_mismatch",
+      "suggestion": "claim 改为「在麻痹免疫相关判定中，被认作『有免疫』（配置 _isUnset 关着）的单位才通得过判定；源本意该判『没有麻痹免疫』，却写成了『并非没有麻痹免疫』」。",
+      "reason": "现 claim 把配置开关的「关着」写成免疫本身「关着」，读起来正好与 span「关了=『有免疫』才能过判定」相反；两层含义（开关状态／是否具备免疫）被混成一句。"
+    },
+    {
+      "id": "qq_expansion:w000038:c01",
+      "verdict": "minor",
+      "fault_type_kept": "evidence_mismatch",
+      "reason": "内容逐字成立（seq 9 给结论、seq 8/10/11 给位置说明），问题只在引文按 9→8→11 排、跨了三位发言者，claim 把「结论←原因」写成单线；建议按时间序重排引文并标明「结论」与「位置说明」分属不同发言者，claim 文字不必改。"
+    },
+    {
+      "id": "qq_expansion:w000047:c01",
+      "verdict": "fix",
+      "fault_type_kept": "evidence_mismatch",
+      "suggestion": "condition 删去「原文以『净化者』类同现象作对照」，改为「该单位开技能或移动产出召唤物时；原文未给出对照对象」。",
+      "reason": "窗内 raw_messages（qq_wo_025，seq 1–68）通篇没有「净化者」字样，condition 里的这层对照是凭空补入的元数据，会让检索者以为窗内比较过净化者与贝洛内。"
+    },
+    {
+      "id": "qq_expansion:w000048:c01",
+      "verdict": "fix",
+      "fault_type_kept": "not_self_contained",
+      "suggestion": "claim 改为「『复制出来的』单位不一定会带有完整部署流程产生的效果（具体是哪一项效果窗内未点名），原因是它没有跑完整个部署流程」，并在条目内标注指代缺失待回源补名。",
+      "reason": "claim 的核心宾语「某项效果」是占位符，窗内 seq 14「复制出来的不一定有」、seq 17「毕竟没跑完整个部署流程」全是回指，单独检索无可用信息；补不出具体效果时至少要把「指代未点名」写进 claim。"
+    },
+    {
+      "id": "qq_expansion:w000064:c01",
+      "verdict": "fix",
+      "fault_type_kept": "evidence_mismatch",
+      "suggestion": "把 seq 21（来个4k大屏）与 seq 24（不，看不到的）补入 citations，或把 claim 中「而不是显示设备或分辨率不够」删去、只保留「费用条逻辑本身的限制」。",
+      "reason": "claim 最有力的一层（排除设备因素）在条目给出的三条 citations 里找不到证据，只出现在 condition/audit_note，引文清单无法支撑该半句。"
+    },
+    {
+      "id": "qq_expansion:w000088:c01",
+      "verdict": "fix",
+      "fault_type_kept": "not_self_contained",
+      "suggestion": "subject 改为「被推拉位移单位在路径点间的瞬移（来源称『闪现』）」；claim 改为「被拉动位移的敌人在路径点之间出现的『闪现』：一帧可达半径内存在下个移动类路径点时，无视当前移速直接瞬移抵达（该半径按当前/理论移速计算）」。",
+      "reason": "claim 以「该『闪现』」开头而条目内无先行词，读者不知道说的是哪种单位、哪种位移；窗内 seq 3/4 的对答（「那为什么拉动会那样」「正常不是拉到另一个地方接着罚站」）已给出语境，回填后即可自足。"
+    }
+  ]
+}

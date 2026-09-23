@@ -1,0 +1,415 @@
+{
+  "chunk": "21",
+  "reviewed": 50,
+  "note": "本 chunk 50 条全部为 qq_expansion（QQ 轨道），无 fc1 条目，故抽查全部落在 kb_trial/curation/qq_expansion/workorders_b3/ 与 workorders_b4/。另用脚本把本 chunk 全部 169 条引文对冻结工单 raw_messages 做逐字比对（仅归一化 [表情]/[图片]/@匿名槽位/空白），结果 169/169 found。发言角色（主播 589e9b6d / 专家 0f17ac97 / 普通群友）取自 qq_info/windows.jsonl 各窗 authorities 字段。「针」字全 chunk 仅 2 处，均为「针对」（出现在 condition 与 review 文本），未发现本语料常见的「帧」误写成「针」的 ASR 讹误。",
+  "faulty": [
+    {
+      "id": "qq_expansion:w002077:c01",
+      "faults": [
+        {
+          "type": "not_self_contained",
+          "detail": "claim 的两个主体词都没有锚定：引文只有「[表情]@8627ff81 黄线和怪牌」「有」「影响出怪帧」三句。同窗工单 qq_wo_b3_247.json 里「怪牌」只出现这一次，全窗再无第二处出现，也没有任何解释；「黄线」的解释在未被引用的 seq11/12（「显示路线」「就这个参数控制出红黄线」）。单读本条不知道「黄线」「怪牌」是地图元素、拆包字段还是 UI 预览物，也无法判断 condition「关卡中存在黄线/怪牌时」是否可操作。",
+          "fix": "把黄线=关卡显示路线（seq11/12）写进 condition，并补出「怪牌」的原文出处与含义；若原文确实未解释，在条目内标注「原文未展开」或删去该主体。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000053:c01",
+      "faults": [
+        {
+          "type": "overclaim",
+          "detail": "该命题出自群内的实现方案讨论，而非已确认的游戏实现：seq9 是提问者 0f17ac97 自述「弹道我不太能理解如何实现打最近的n个目标」，seq11/13 由群友 d629c89f 给出「算碰撞就完事了」「设一个最高打数」，seq14 主播 589e9b6d 接「定碰撞数就行了呗」、seq15「对啊」。条目却以 general_mechanism 收录，把「可以用碰撞实现」写成「这类弹道的实现方式」，读者会读成游戏实际做法；原文中指向「这是方案讨论」的语境（seq19「把hitbehaviour换一下，可以变成确定性的」）没有被呈现，也没有拆包或实测出处。",
+          "fix": "claim 改写为「群内提出的实现思路（未验证，主播附和）：…」，或降为 pending，不以 general_mechanism 收作游戏实现事实。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000117:c02",
+      "faults": [
+        {
+          "type": "overclaim",
+          "detail": "唯一出处是群内「专家」0f17ac97 的两条发言（seq20「会吃但不是一个通道」、seq21「吃的另一个包的随机数」；角色见 qq_info/windows.jsonl 中 w000117 的 authorities，专家不等于主播），主播 589e9b6d 在同一串里只有 seq22「我都忘了」，没有以主播口径确认，窗内也无第二人复核、无实测。条目把这两句写成 general_mechanism 定论「干员语音会消耗随机数，但不是同一个通道…」，未标注单方口径。",
+          "fix": "标注来源为群内专家口径、未经主播或实测确认；或降 pending 等旁证。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000119:c01",
+      "faults": [
+        {
+          "type": "overclaim",
+          "detail": "同窗存在与 claim 相反、且被条目整段排除的主张：seq22「90+50就是100，你计算的时候又不是最终取值」、seq23「实际就是100啊」、seq24「就算这里写100也不是100」、seq25「实际是100那减抗就是70」——即有人主张 140 仍按 100 处理、减抗后应为 70。条目只取「98」一侧，并在 review_limitations 里把对方口径解释成「说的是显示值/最终取值」（原文并无这句区分），claim 仍以定论写成「按 140×0.7=98 结算，而非 100×0.7=70」。另「法抗可以超过100」出自群友 seq1，主播只对算式答了「98」。",
+          "fix": "按本仓库 conflict_policy 在条目内并列两方口径（98 vs 70 及各自理由），不替人工裁掉一方；或把该条移入 conflict 层。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000155:c01",
+      "faults": [
+        {
+          "type": "not_self_contained",
+          "detail": "claim 写「每帧速度差是速度差的 8 倍」，是把引文片段 seq4「[表情]@eb1917ed 每帧速度差的8倍」直接搬进句子后形成的自指句（速度差 = 速度差×8），语义不可解析：本条没有给出「速度差」是哪两个量之差，也没有出现「加速度」这个主词（本窗 seq8 只是提问者回「不会恢复到原速度」）。可读的定义式在同 chunk 的 qq_expansion:w000157:c01（seq5「这两者速度差的8倍是加速度」）。",
+          "fix": "用 w000157:c01 的定义补全为「加速度 = 8 ×（目标速度 − 原速度）」，或把本条并入 w000157:c01。"
+        },
+        {
+          "type": "duplicate",
+          "detail": "与同 chunk 的 qq_expansion:w000157:c01（w000157，2026-05-15 20:09，与本案仅隔约 44 分钟）实质重复同一条「速度差的 8 倍」关系；本条表述更含糊，信息量是对方的子集（对方有三量定义，本条只有片段）。",
+          "fix": "两条合并，保留 w000157:c01 的定义式表述。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000179:c01",
+      "faults": [
+        {
+          "type": "not_self_contained",
+          "detail": "引文只有主播两句（seq10「浮点数会让“帧间隔”不稳」、seq11「t2-t1的大小会随局内时间变化」），条目未说明是哪个系统的帧间隔、t1 与 t2 各指什么量。同窗上下文显示讨论对象并不单一：seq6 群友「不知道定点数存在的意义在哪里」、seq19「我其实是讲调零刚才说的代码里的定点数啦」、seq26「那meiyou视频里的结论还有效吗」。单读本条无法判断结论适用于游戏本体、某个模拟器还是某段外部代码，读者无法核对。",
+          "fix": "在 claim/condition 补出讨论对象（游戏本体 / 具体代码）与 t1、t2 的定义；无法确定时标注「原文未指明对象」，并与 w000179:c02 合并。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w001182:c01",
+      "faults": [
+        {
+          "type": "asr_error",
+          "detail": "引文 seq13 原文是「[表情]@c0f71202 同帧部署后部署增加部署数仇恨」，语序错乱（应为「同帧部署后，部署数仇恨增加」），字面读不通；条目在 claim 里改成通顺表述，却没有留下任何原文讹误的注记（本条无 derived_text_repairs 字段），下游只看引文会把「部署增加部署数仇恨」误读成机制表述。",
+          "fix": "引文保持逐字不动，另在条目内加注原文语序讹误与可读转写。"
+        },
+        {
+          "type": "duplicate",
+          "detail": "与同 chunk 的 qq_expansion:w000046:c01（w000046，含每帧清空/无上限）、qq_expansion:w001317:c01（w001317，含「时间*1000+同帧部署数」）讲同一条规则；本条「同帧第 n 个部署 +n」是「每帧部署数 +1」的等价重述，信息量最少。",
+          "fix": "并入 w000046:c01 或 w001317:c01，不单列为独立条目。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w001182:c03",
+      "faults": [
+        {
+          "type": "not_self_contained",
+          "detail": "「角色类绝对没有位移能力，只能再部署」中的「位移能力」在引文与条目里都没有定义：可读成「不能自行沿路径移动」，也可读成「不会被推拉位移」，两种读法对应完全不同的机制结论。条目自己的 review 也写明「原文用词即『位移能力』，本审按原样保留、未展开其含义」，即整理者已知此处未定却仍按定论收录。",
+          "fix": "补出「位移能力」在原文语境下的所指（自行移动 / 被推拉位移），或标注该词含义未展开、不得直接引用为机制结论。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000141:c01",
+      "faults": [
+        {
+          "type": "not_self_contained",
+          "detail": "主体写作群内简称「祥子」，条目未给全名或 PRTS 实体锚定（本仓库有 entity_index 可锚），非本群读者读不出是哪个干员。对照对象同样不明：引文 seq6 的「他们」没有实体（前文 seq1-4 只有「祥子不是/不对/都不是」）。全语料对同一对象还有「祥2」「丰川祥子」等写法，条目之间也不统一。",
+          "fix": "claim/subject 补全名（丰川祥子）并挂实体；「他们」若原文未给，标注「对照对象原文未指名」。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000141:c02",
+      "faults": [
+        {
+          "type": "not_self_contained",
+          "detail": "同一条目链的主体写法不统一且指代不明：引文 seq12 作「祥2物理形态」，条目写成「祥子2（物理形态）」，其中「2」指二技能、第二形态还是别的东西没有任何说明，且「祥2」与「物理形态」是否同一对象原文也未交代。单读本条无法确定在讲哪个干员、哪个形态。",
+          "fix": "补全干员名并说明「祥2」在原窗口的所指；无法确定时标注「原文未指明」。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000141:c03",
+      "faults": [
+        {
+          "type": "number_suspect",
+          "detail": "claim 同时给出「帧间隔 0.05（游戏秒）」「1 现实秒对应 30 游戏帧」「1 费为 20 帧」三个数，但它们互不相容：0.05 s/帧 对应 20 帧/秒，与「1 现实秒 30 帧」矛盾（30 帧/秒对应 1/30≈0.0333 s）。原文 seq62/63 正是这样并列给出的（「boss图帧间隔0.05s游戏秒」「1现实秒30帧游戏」），条目照抄数字却未标注单位口径冲突，读者会据条目算出两种不同的帧率。",
+          "fix": "回查原片确认 30 与 0.05 各自的单位口径（现实秒/游戏秒），把冲突写进条目，或删去无法自洽的数值。"
+        },
+        {
+          "type": "evidence_mismatch",
+          "detail": "claim 用「因此」把「Boss 图 1 费为 20 帧」写成由前两个数推出的结论，但引文里 20 帧不是推出来的：seq64 是提问者猜「所以只有boss图是1费20帧吗」，seq65 主播只回一个「嗯」，seq66/67 的补充「如果1费仍然是30帧 我就会叫他倍速了」也没有给出 1 费=20 帧的推导。条目把单字确认加上自己的算术连成了因果链。",
+          "fix": "改为原文口径（原文：提问「1费20帧？」—问答确认），不要以「因此」表述为由帧间隔数值推出的结论。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000459:c04",
+      "faults": [
+        {
+          "type": "duplicate",
+          "detail": "与同窗、同 chunk 的 qq_expansion:w000459:c03 讲同一件事：c03 已判定「动画制/冷却制切换其实都是 3 帧、2/4 是同帧结算顺序的表现」，本条 seq54/55 只是主播紧接着的同一机制的举例式推论（条目自己的 review 也写「是 c03 机制的直接推论」），合并阅读没有新增机制信息；而原文本条之后紧跟的实体锚点 seq56「涤火杰西卡」被条目丢弃，使本条退化为无对象的假设句。",
+          "fix": "并入 c03；若要单列，补上原文给出的具体干员（涤火杰西卡）。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w001342:c03",
+      "faults": [
+        {
+          "type": "duplicate",
+          "detail": "seq40「假设技能结束，进入非技能的帧数是x，索敌冷却是0，那x就是索敌帧」是同窗 qq_expansion:w001342:c01 定义的直接代入（c01 seq31「索敌帧是索敌冷却归0的时间」），条目 review 亦自述「与 seq 31/32 的口径一致」；本条不引入新参数或新例外，只是把定义套进提问者给的符号 x。",
+          "fix": "并入 c01 作为算例，不单列。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w002057:c01",
+      "faults": [
+        {
+          "type": "not_self_contained",
+          "detail": "claim 前半句「右侧不能传送」没有关卡锚定：引文 seq6 是群友在讨论某段具体录像（同窗 seq1-5 讲「可露希尔的部署cd变成了0.0」，seq12 问「有没有藏品列表，携带的干员和视频」），「右边」指哪张图、哪一侧，条目完全没有交代，读者无法回到场景核对；只有后半句「只能传送到和终点寻路连通的地方」是主播口径（seq24）。",
+          "fix": "删去单图观察（右侧不能传送…）或补出关卡/地图标识，只保留可通则化的部分。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000489:c01",
+      "faults": [
+        {
+          "type": "overclaim",
+          "detail": "现象是主播说的（seq3「0帧有些东西没法结算」），但 claim 里的因果解释整句是群友 ae4d9f3e 的推断（seq4「因为部署那一帧该结算的事件大都结算完了，其他事件肯定要推到下一帧」，其中「肯定」表达的是该群友的确信而非复述），窗内无第二方复核、无实测。条目把「因为…所以…」写成机制定论，读者会以为因果链出自主播。",
+          "fix": "区分「主播陈述的现象」与「群友给出的解释」，或把因果部分标为待验证并降 pending。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000577:c01",
+      "faults": [
+        {
+          "type": "duplicate",
+          "detail": "claim 后半「仇恨同值时打先创建的单位」与同 chunk 的 qq_expansion:w001711:c02（w001711，seq10「同仇恨打先创建」）逐字同义；前半「同帧部署时后部署的单位仇恨更高」又与 qq_expansion:w001182:c01、qq_expansion:w000046:c01 同题。本条实为两条已有命题的合并，单列会重复计分（同一规则在本 chunk 出现三次以上）。",
+          "fix": "与 w001711:c02、w001182:c01 去重，只保留证据更完整的一条。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000577:c02",
+      "faults": [
+        {
+          "type": "asr_error",
+          "detail": "引文 seq66 原文「干员和地方单位的前摇和后摇动具体帧数有整理吗」含两处讹误：「地方单位」应为「敌方单位」（全语料其余处均作「敌方/敌方单位」，「地方单位」语义不通），「后摇动」应为「后摇」。条目 claim 已静默订正为「干员与敌方单位的前摇/后摇」，但没有留下订正记录（本条无 derived_text_repairs 字段），下游无从知道引文与 claim 的实体不一致。",
+          "fix": "引文保持逐字，另在 derived_text_repairs 登记「地方单位→敌方单位」「后摇动→后摇」并注明判定依据。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000600:c03",
+      "faults": [
+        {
+          "type": "overclaim",
+          "detail": "本条唯一证据 seq19 是提问者 8aa55a4b（非主播）对主播前述数据的总结推论（句首即「也就是…」）；其后窗内再无主播回应（seq16/17 是另一个人另起话题请群友实测），上游 original_card 自述该结论「未获主播进一步定性」。条目却以 general_mechanism 写成定论（「只有…才会…」「够用到 600 攻速上限」），连「600 攻速上限」这个原文未给出处的数值也一并定为事实。",
+          "fix": "标为群友推论/未获主播定性并降 pending，或补引主播关于 600 攻速上限的原始出处。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w001711:c02",
+      "faults": [
+        {
+          "type": "duplicate",
+          "detail": "「同仇恨打先创建」与同 chunk 的 qq_expansion:w000577:c01（w000577，2026-06-04）中的同一规则逐字同义；「不同仇恨打高仇恨」也与 qq_expansion:w001317:c01、w001182:c01 的索敌排序规则同向。同一条规则在不同窗口被重复收录为独立条目。",
+          "fix": "与 w000577:c01 去重，保留证据更完整的一条。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w001931:c01",
+      "faults": [
+        {
+          "type": "not_self_contained",
+          "detail": "核心词「平行组」是拆包/配置术语，引文只有 seq35「平行组是减攻速加攻速」一句，条目没有说明平行组是什么、属于哪份配置，也没有说明「多出一帧」是相对什么（原提问 seq30「平行组多1帧的问题？」本身就是省略句）。单读本条无法落地，也无法判断本条与 c02 的关系。",
+          "fix": "补出「平行组」的定义/出处；若原文未给，标为未定义术语并把本条并入 c02。"
+        },
+        {
+          "type": "evidence_mismatch",
+          "detail": "claim 在括注里把引文写成「（减攻速、加攻速类的一组技能）」，原文 seq35 只说「平行组是减攻速加攻速」，没有说它是一组技能；这是整理者补的解释，在窗内没有对应文本（c02 里主播对同类问题的口径 seq39 是「没加攻速的时候攻击间隔是整帧数」，也不构成技能分类）。",
+          "fix": "删去括注，或改为原文措辞「平行组：减攻速、加攻速」。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w002074:c01",
+      "faults": [
+        {
+          "type": "overclaim",
+          "detail": "claim 把两处不确定表述写成了确定事实：seq41 是群友 b4dcc920 的「那个飞行兵貌似没有描述这件事（）」（带「貌似」），seq43 同一人「能被晕下来压根没写相关文案」；条目写成「能被晕下来的那个飞行兵没有相关文案（属未明示的隐藏机制）」，并进一步推出「能否落地取决于具体单位自身的配置」——后者只是对 seq42「所以可以落地只是飞行兵的装备太拉了」的解读，原文并未说这是配置项。",
+          "fix": "改为原文口径（「群友称貌似没有相关文案」），删去「取决于配置」这一推断或明确标为推断。"
+        },
+        {
+          "type": "not_self_contained",
+          "detail": "「那个飞行兵」在引文与条目里都没有实体名（同窗其他消息也只说「飞行兵」「似兽」），读者无法知道是哪个敌人，也就无法核对「能被晕下来」这一观察对应的单位。",
+          "fix": "补出敌人名/关卡；确实无法确定时标注「原文未指名」。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000081:c01",
+      "faults": [
+        {
+          "type": "overclaim",
+          "detail": "两条引文都出自普通群友（seq15 bb42f5fd、seq17 4bbe615e；本窗 authorities 只有主播 589e9b6d，二人皆非主播或专家），且整串对话是单关问答（seq1「h17-3右上角的花理论上能阻挡偏移入坑吗？」、seq24「测右路」），主播在本窗只说了 seq11「不能」；条目却把这两句单关语境里的一般性断言收成 general_mechanism（位移/阻挡偏移），claim 既无量化（「非常多次」）也无位置条件。",
+          "fix": "降为「群友口径/未获主播确认」并标明该观察出自 h17-3 的具体讨论；或移入 pending。"
+        },
+        {
+          "type": "not_self_contained",
+          "detail": "claim 的「有些位置则可以直接把敌人挤下去」里的「有些位置」没有任何锚定（哪张图、哪个坐标、什么地形），单读既无法使用也无法核对。",
+          "fix": "补出具体关卡/位置（同窗 seq25 有配图）；否则删去该半句。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000180:c01",
+      "faults": [
+        {
+          "type": "evidence_mismatch",
+          "detail": "claim 两侧主体写作「萨卡兹门（门）」和「罗德门」，但 8 条引文里只出现「门」「罗德门」，没有任何一处出现「萨卡兹门」；该词只出现在同窗未被引用的 seq1 提问（「萨卡兹门抓同帧先部署的也是因为仇恨精度么」），因此单看引文无法核实主体指向，也看不出「门」=「萨卡兹门」这一步是谁定的。此外同窗 seq16/18 群友 392e94c8 说的「罗门是看最后一个部署的人」「门是场上最后一个部署的人」与主播 seq25/26 的口径并不一致，引文把这一相反口径整段排除，claim 却写成无争议的定论。",
+          "fix": "把 seq1（或 seq10）纳入引文或注记，明确「门」=萨卡兹门的出处；并对群友 seq18 的相反口径做并列说明。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000180:c02",
+      "faults": [
+        {
+          "type": "trivial",
+          "detail": "本条不陈述任何机制事实，只是对「仇恨精度」这一讲解术语做元层面澄清（seq46/47「仇恨精度的描述和讲解，都是“非同值而视为同值”」「同帧达成的同值一开始就和它无关」）；其唯一信息点（仇恨精度不能区分同帧同值）已逐字含在同窗 qq_expansion:w000180:c01 的引文 seq24「仇恨精度不可能区分同帧」里，作为独立条目没有独立知识增量。",
+          "fix": "并入 w000180:c01，或降为注释性条目而不作为独立机制条目。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000416:c01",
+      "faults": [
+        {
+          "type": "overclaim",
+          "detail": "「所谓撤退动画即死亡状态机」的唯一出处是群友 2aaa8356 的总结（seq29「标记了一块芝士：撤退动画就是死亡状态机」）；主播 589e9b6d 自己的措辞只是 seq25/27「撤退播放的动画」「或者说死亡动画把」，从未说「状态机」。条目把群友的术语升级写成定论，并据此给出规范性结论「用『死亡动画』表述更不易有歧义」。",
+          "fix": "区分主播原话与群友转述，或把「死亡状态机」标为群友总结口径。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000554:c01",
+      "faults": [
+        {
+          "type": "overclaim",
+          "detail": "claim 以定论给出单方顺序「加力→磨损→位移」，但同一知识库的录播轨在相反顺序上有逐字条目：curated 层 fc1:帧时序与计时器-37-1#r1「摩擦力结算之后，同帧内接着结算推拉力」、fc1:帧时序与计时器-37-1#r2「推拉力之后进行失衡移动：失衡移动先造成速度，速度之后才是移动」（即 摩擦力→推拉力→失衡移动）。条目自己的 review 记录了该分歧，但 claim/condition 里没有任何并列或标注，违反本仓库 conflict_policy（不得自动裁决、须并列呈现），只看条目会得到与录播轨相反的结论。",
+          "fix": "在 claim 内并列两方顺序（或注明「与录播轨口径相反，待人工裁定」），把分歧从 review 备注提到条目正文。"
+        }
+      ]
+    },
+    {
+      "id": "qq_expansion:w000554:c02",
+      "faults": [
+        {
+          "type": "overclaim",
+          "detail": "结论建立在提问者自述的二选一定义上，而非独立验证：seq22 群友 0065bdfd 问「墙面摩擦是瞬时还是持续的」，seq23 主播先反问「什么叫瞬时和持续」，seq24 群友给出自己的定义，seq28/29 主播才说「那从你这样的描述上 / 也只能是持续的啊」——「从你这样的描述上」表明这是在该定义框架下的推断。条目把「只能是持续的」写成机制判定，并替它补出「与地面一样一直有加速度」的机制内容（该内容出自提问者的定义，不是主播的确认）。",
+          "fix": "标注结论依赖提问者的定义框架（引原文「从你这样的描述上…也只能是持续的啊」），或补引主播独立给出的墙面摩擦规则后再定论。"
+        }
+      ]
+    }
+  ],
+  "verbatim_spotcheck": [
+    {
+      "id": "qq_expansion:w002077:c01",
+      "quote_fragment": "[表情]@8627ff81 黄线和怪牌 / 影响出怪帧",
+      "result": "found",
+      "where": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_247.json (raw_messages seq4、seq8，逐字；两片亦在 source_spans_excerpts 内)"
+    },
+    {
+      "id": "qq_expansion:w000119:c01",
+      "quote_fragment": "吃-30％减抗后为140*0.7=98还是100*0.7=70",
+      "result": "found",
+      "where": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_251.json (seq2，逐字；同时核到 seq3/4/5/6 四次「98」复述，但 seq22-25 的同窗相反口径未进引文)"
+    },
+    {
+      "id": "qq_expansion:w000155:c01",
+      "quote_fragment": "每帧速度差的8倍 / 速度差构成11/15的等比数列",
+      "result": "found",
+      "where": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_254.json (seq4、seq5，逐字；数值自洽性另核：1−8/30=11/15，与 30 帧/秒口径一致)"
+    },
+    {
+      "id": "qq_expansion:w000179:c02",
+      "quote_fragment": "至少现在计算帧间隔可以使用一个固定值69905/1024/2048做一切精细计算",
+      "result": "found",
+      "where": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_256.json (seq17，逐字；数值另核：69905/1024/2048 = 69905/2^21 ≈ 0.033333 = 1/30，不是可疑数字)"
+    },
+    {
+      "id": "qq_expansion:w000141:c03",
+      "quote_fragment": "boss图帧间隔0.05s游戏秒 / 1现实秒30帧游戏 / 所以只有boss图是1费20帧吗 / 嗯",
+      "result": "found",
+      "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_004.json (seq62、seq63、seq64、seq65，逐字；seq64 是提问、seq65 只是单字「嗯」)"
+    },
+    {
+      "id": "qq_expansion:w000141:c01",
+      "quote_fragment": "他们是一个模式下的两个攻击，祥子是一个攻击，根据阻挡与否改倍率",
+      "result": "found",
+      "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_004.json (seq6，逐字；同窗另有 seq12「祥2物理形态」、seq19「祥子连着A了两下」，全窗无「丰川祥子」全名)"
+    },
+    {
+      "id": "qq_expansion:w001182:c01",
+      "quote_fragment": "同帧部署后部署增加部署数仇恨",
+      "result": "found",
+      "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_002.json (seq13，逐字——原文语序即如此错乱)"
+    },
+    {
+      "id": "qq_expansion:w000577:c02",
+      "quote_fragment": "干员和地方单位的前摇和后摇动具体帧数有整理吗",
+      "result": "found",
+      "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_013.json (seq66，逐字——「地方单位」「后摇动」是原文讹误，claim 已静默订正)"
+    },
+    {
+      "id": "qq_expansion:w002074:c01",
+      "quote_fragment": "那个飞行兵貌似没有描述这件事",
+      "result": "found",
+      "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_019.json (seq41，逐字；该句后面还有「（）」)"
+    },
+    {
+      "id": "qq_expansion:w000180:c01",
+      "quote_fragment": "门吃先部署，因为无法分辨 / 罗德门吃后部署 / 门是时间排序",
+      "result": "found",
+      "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_021.json (seq25、seq26、seq56，逐字；全窗仅 seq1 出现「萨卡兹门」)"
+    },
+    {
+      "id": "qq_expansion:w000554:c01",
+      "quote_fragment": "加力，磨损，位移 / 循环 / 按顺序算就是了",
+      "result": "found",
+      "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_023.json (seq19、seq20、seq21，逐字；与录播轨 fc1:帧时序与计时器-37-1#r1/r2 顺序相反)"
+    },
+    {
+      "id": "qq_expansion:w000489:c01",
+      "quote_fragment": "因为部署那一帧该结算的事件大都结算完了，其他事件肯定要推到下一帧",
+      "result": "found",
+      "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_012.json (seq4，逐字；同 seq3「0帧有些东西没法结算」为主播所说)"
+    },
+    {
+      "id": "qq_expansion:w000600:c03",
+      "quote_fragment": "也就是只有攻击间隔缩短和高攻速两个条件都吃到才会因为动画播放影响攻击，一般的干员的0.1倍动画其实是够用到600攻速上限的",
+      "result": "found",
+      "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_014.json (seq19，逐字；说话者为提问者 8aa55a4b)"
+    },
+    {
+      "id": "qq_expansion:w001931:c01",
+      "quote_fragment": "平行组不会多一帧啊 / 平行组是减攻速加攻速",
+      "result": "found",
+      "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_018.json (seq33、seq35，逐字)"
+    },
+    {
+      "id": "qq_expansion:w000081:c01",
+      "quote_fragment": "偏移入坑要非常多次换阻挡 / 有些位置是能直接挤下去的",
+      "result": "found",
+      "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_020.json (seq15、seq17，逐字；说话者 bb42f5fd、4bbe615e 均为普通群友)"
+    },
+    {
+      "id": "qq_expansion:w002057:c01",
+      "quote_fragment": "只能传送到和终点寻路连通的地方",
+      "result": "found",
+      "where": "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_008.json (seq24，逐字；主播 589e9b6d)"
+    }
+  ],
+  "stats": {
+    "trivial": 1,
+    "not_self_contained": 10,
+    "overclaim": 10,
+    "evidence_mismatch": 3,
+    "asr_error": 2,
+    "number_suspect": 1,
+    "duplicate": 6,
+    "privacy": 0
+  }
+}

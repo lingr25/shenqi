@@ -1,0 +1,372 @@
+[
+  {
+    "id": "qq_expansion:w001179:c02",
+    "decision": "needs_human_confirmation",
+    "reason": "3 条引文在 workorders_b4/qq_wo_b4_347.json（window=w001179，11 条消息）内 3/3 逐字命中：seq6「用2和3技能」、seq9「3的话就相当于10%攻击力」、seq10「2的话我不清楚」；10% 逐字在引文内、未换算。fix 补上主体名「谬因」，但该名只出现在引文之外：seq1「谬因模组开1还是3级比较好啊」（以及 seq2「要用就三级吧，减再部署感觉蛮有用的」、seq3「用1技能的话开3级蛮必要的」，均未引）；本条引文不含任何主体名，也不含「模组」及其等级语境（seq6 只说「用2和3技能」，seq9/10 只答 2、3），故「谬因」与「模组开 3 级」的「3 级」都属超引用范围。落地亦不完整：发布层 subject 仍为改前的「该干员模组3级对3技能的等效攻击力」，与 claim 直写干员名口径不一致（triage_15 判的正是 not_self_contained，fix 只改了 claim）。实体侧另需父层留意：entity_index 记「谬因」为 prts/operator，而本库他条把同一名称写作「谬因（缪尔赛思）」，本条未加还原注。补引 seq1/2/3 并同步 subject 后即可确认。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_10.json",
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_347.json",
+      "kb_trial/curation/faultcheck/triage_15.json",
+      "kb_trial/curation/faultcheck/chunk_29.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/_remediation_plan.json",
+      "kb_trial/entity_index.json",
+      "qq_info/messages_clean.jsonl"
+    ],
+    "term_flags": [
+      "「谬因」entity_index 记 prts/operator，但仅出现在引文外 seq1-3；本库他条写作「谬因（缪尔赛思）」，本条未加还原注，口径待父层统一",
+      "主体名与「模组开 3 级」的语境均出自引文外；本条引文只有「用2和3技能」「3的话就相当于10%攻击力」「2的话我不清楚」",
+      "数字 3、10% 逐字在引文内，未换算、未外推",
+      "subject 仍作「该干员…」，与 claim 直写干员名口径不一致（fix 未同步）",
+      "该窗 has_host_authority=false（authorities=[0f17ac97/expert]）；未据旧知识补模组名与技能名"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001194:c03",
+    "decision": "needs_human_confirmation",
+    "reason": "唯一引文（workorders_b3/qq_wo_b3_124.json，window=w001194，76 条消息）逐字命中 1/1：seq59「[表情]@某人@某人 能不能a是碰撞判定，找人选择弹道的角度是格判」。fix 相对改前 chunk_18（「银灰该技能能不能普攻是碰撞判定，找人选择弹道的角度是格判。」）做了可读化改写并加注，方向可以，但两处仍需人工：①主体「银灰」在本窗只出现于 seq41「银灰在干嘛」与 seq49「[表情]@某人@某人 银灰的这个技能是中点判定来着」（seq52 的自我修正句「能不能a是碰撞判定，但是弹道是中点判定，凌弥记得是这么回事（？」亦未引，其句内无「银灰」二字），两条均不在引文内（引文里没有「银灰」二字），技能名也无从落名（claim 自陈「该技能名原文未点名」属实）；②「「找人」疑为输入讹写」是术语/讹写判断：entity_index 无「找人」条目、entity_corrector.py 无对应规则，也无引文可自证（「找人」正是引文原字），同时「普攻」是对源字「a」的术语替换（entity_index 记 普攻=curated/mechanic）。按「不据旧知识改名、术语判断转人工」的纪律，这类订正应由父层裁定；补引 seq49/52 并确认「找人」按原字保留还是加注后即可确认。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_10.json",
+      "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_124.json",
+      "kb_trial/curation/faultcheck/triage_09.json",
+      "kb_trial/curation/faultcheck/chunk_18.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/curation/faultcheck/_remediation_plan.json",
+      "kb_trial/entity_index.json",
+      "entity_corrector.py",
+      "qq_info/windows.jsonl"
+    ],
+    "term_flags": [
+      "「银灰」entity_index 记 prts/operator＋prts/mechanic，仅在引文外 seq41、seq49（seq52 的自我修正句亦未引）",
+      "「找人」entity_index 0 命中、entity_corrector.py 无对应规则：引文原字保留，claim 另加「疑为输入讹写」注属术语判断、无引文可自证",
+      "「普攻」为对源字「a」的替换（entity_index 记 curated/mechanic）；「能不能a」的「a」在引文内",
+      "「格判」「碰撞判定」entity_index 均 qq/untyped，claim 沿用源字；「弹道」记 prts+qq_alias/mechanic",
+      "该窗 authorities=[589e9b6d/host]，claim 未写主播口径；无数字；未据旧知识补技能名"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001206:c01",
+    "decision": "needs_human_confirmation",
+    "reason": "改写把原 claim「小力推对三重按 0-3=-3 计算，不行（不能打断）。」扩成完整句，机制核心有本条引文支撑，但连接词与参数化超出引用范围。逐字复核工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_098.json（window=w001206，19 条消息，authorities=[589e9b6d host]）：本条 2 条引文均在窗 raw_messages 内逐字命中——seq5「小力的推能不能打断三重的？」（提问者 2dbc00d8，非主播）与 seq11「[表情]@… 0-3=-3不行」（589e9b6d=host，归属正确）；算式里的 0、3、-3 与「不行」都逐字在引文内，「小力的推」「三重的」亦然。但改后 claim 的「小力推」（源作「小力的推」）、「三重」（源作「三重的」）是缩略改写；「力度等级 0 的推动」「作用于重量 3 的敌人」「力度差为负」是编辑对算式做的参数化解释（源只给「0-3=-3不行」）；最关键的是「无法用**失衡**打断其动作」把「不行」接到了「失衡」上，而「失衡」只出自本条**未引**的 seq7「[表情]@… 能进入失衡状态机就能打断」（7bf55033，群友、非主播）——即打断条件由一条未引、非主播的发言补出。落地核实：_remediation_plan.json 的 applied claim/condition 与发布层 curated_high_quality.json 该条现文本、与 review_batch_11.json 的 proposal 逐字一致（applied=True、skipped=False），不在 fix_skipped 之列，引文未动。转人工：请裁定是否接受「失衡」这一连接（若接受，宜补引 seq7 并注明其为群友表述、不是主播 0-3=-3 答复的组成部分），以及「小力推／三重／力度等级 0／重量 3」的缩略与参数化写法（源窗未展开全称、未说明 0 与 3 各对应哪一量级）。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_11.json",
+      "kb_trial/curation/faultcheck/_remediation_plan.json",
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_098.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ],
+    "term_flags": [
+      "「失衡」出自未引的 seq7「能进入失衡状态机就能打断」，为群友表述，非主播答复内容；entity_index 记 失衡 为 qq/untyped",
+      "「小力推」为源「小力的推」的缩略、「三重」为源「三重的」的缩略，二者在 entity_index 记 qq/untyped，未登记为实体",
+      "「力度等级 0」「重量 3」「力度差为负」为编辑参数化解释，源仅作「0-3=-3不行」"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001210:c02",
+    "decision": "needs_human_confirmation",
+    "reason": "六条引文逐字命中、数字全在引文内，但把数值定性为「阻挡半径」这一步没有引文覆盖，且 suggestion 的后半项未落地。逐字复核工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_099.json（window=w001210，55 条消息，authorities=[0f17ac97 expert, 589e9b6d host]）：引文 seq1「0.894是正好吃不到隔壁一格正中间过路的敌人」与 seq5「是正好」、seq7「0.9就有可能能吃到了」为 0f17ac97（expert），seq2「基础数值为0.8944」、seq3「0.8944*1.23=1.100112」为 589e9b6d（host），seq6「差0.1呢」为提问者，六条均在窗 raw_messages 内逐字命中；claim 的 0.8944、1.23、1.100112、0.894、0.9 与夹注里的 0.1 全部照录未换算。问题一：claim/subject/condition 三处都用「**阻挡半径**」限定该数值，而引文 seq2 只作「基础数值为0.8944」；「阻挡」与「受击半径」的区分出现在本窗**未引**的 seq13「阻挡没0.1半径」、seq32「你怎么也把阻挡+受击半径」、seq34「不吃受击半径的」、seq36「如果要阻挡一个正中的只能1.0」，即把 0.8944 定性成阻挡半径的基础值，是本条引用覆盖之外的一步。问题二：suggestion 明确要求「并在描述中补出 1.23 的倍率来源或注明原文未说明」，本次只落在 evidence_review.review_limitations（「基础数值 0.8944 与倍率 1.23 分别出自谁、对应哪个干员/条件，原文未写明，本审不代补」），claim 正文未注明，要求只执行了一半。落地核实：applied==发布层==batch.proposal（applied=True、skipped=False），引文未动。转人工：请裁定「阻挡半径」这一定性是否保留（若保留，宜补引 seq32/34/36 并说明），或退回源口径「基础数值为 0.8944」；同时定夺「只把倍率来源缺失记在证据说明、不进 claim」的落地方式是否算完成建议。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_11.json",
+      "kb_trial/curation/faultcheck/_remediation_plan.json",
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_099.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ],
+    "term_flags": [
+      "「阻挡半径」为未引行（seq13/32/34/36）支撑的定性，entity_index 记 阻挡半径 为 qq/untyped",
+      "倍率 1.23 的来源（谁的哪个数值/条件）窗内未说明，claim 未注，只记在 review_limitations",
+      "数字 0.8944、1.23、1.100112、0.894、0.9 照录未换算，均在引文内"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001236:c01",
+    "decision": "needs_human_confirmation",
+    "reason": "改后 claim 逐字可落到本条引文（本次 asr_error 修法方向正确），但 subject 把 claim 明说「含义未定」的词定性成「范围伤害」，同条目内部自相矛盾。逐字复核工单 kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_208.json（window=w001236，21 条消息，authorities=[589e9b6d host, 0f17ac97 expert]）：引文 seq6「酒神开技能时」与 seq9「所有已爆条单位对1.3半径内造成一次群体建设」均为 589e9b6d（host）连续发言、逐字命中；数字 1.3 在引文内，claim 照录未换算。改后 claim 保留源字「群体建设」并加注「原文用字，疑为输入讹字，含义未定」，正是本次要修的 asr_error（改前把「群体建设」误作「群体伤害」），这一步成立。问题在 subject：「酒神技能开启时的爆条**范围伤害**」把 claim 明确声明含义未定的「群体建设」直接定性为范围伤害；「爆条」在 entity_index 记 shenqi_slang，「群体建设」无词条。落地核实：applied==发布层==batch.proposal（applied=True、skipped=False），引文 2 条未动。转人工：请裁定 subject 是否改为不作分类断定的写法（如「酒神技能开启时的『群体建设』效果」），或让 claim 与 subject 统一保留源字并同样注明类别未定。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_11.json",
+      "kb_trial/curation/faultcheck/_remediation_plan.json",
+      "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_208.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ],
+    "term_flags": [
+      "subject 的「范围伤害」是对 claim 声明「含义未定」的「群体建设」的分类性定性，窗内无来源字",
+      "「群体建设」为源文用字，entity_index 无该词条；「爆条」记 shenqi_slang",
+      "数字 1.3 逐字出自引文 seq9，未换算"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001273:c02",
+    "decision": "needs_human_confirmation",
+    "reason": "改写逐句可落到本条引文，但主语与源指代不齐、且窗内正有 2 技能/3 技能之争，属主语不明。逐字复核工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_351.json（window=w001273，36 条消息，authorities=[0f17ac97 expert]，无 host）：引文 seq21「我记得也是，安洁莉娜这样肯定会筛不能阻挡的单位的」（0f17ac97，句首自带「我记得也是」这一回忆限定）、seq22「不然会一直鬼畜的跑来跑去」、seq25「技能描述是可以阻挡的单位」（0f5162c3）三条均逐字命中。改后 claim 把源「筛」写成「筛掉」、把「鬼畜的」写成「鬼畜地」，属措辞改动而非机制改动；源 seq22 的后果句与 seq25 的技能描述佐证也都在引文内。但主语是实质问题：claim 写「安洁莉娜的技能」，源 seq21 的指代是「这样」（承 seq20「浮空不是会直接取消阻挡吗」），而本窗 seq6「[表情]不是说的是3技能吗」、seq9「怎么不是2技能」、seq10「3技能没有缚地」正在区分 2 技能与 3 技能——claim 以「安洁莉娜的技能」泛化，未定是哪一个；subject 又作「安洁莉娜**类**技能」，与 claim 的单干员写法不一致。落地核实：applied==发布层==batch.proposal（applied=True、skipped=False），引文未动。转人工：请裁定主语写法（保留源指代「这样」并把 seq20 补入引文，或明确到具体技能序号），以及「筛掉」是否回改为源字「筛」。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_11.json",
+      "kb_trial/curation/faultcheck/_remediation_plan.json",
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_351.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ],
+    "term_flags": [
+      "claim 的「安洁莉娜的技能」相对源指代「这样」（承 seq20）为泛化，窗内 seq6/9/10 正讨论 2 技能与 3 技能之别",
+      "subject 作「安洁莉娜类技能」，与 claim 的单干员写法不一致；安洁莉娜在 entity_index 记 operator(+mechanic)",
+      "「筛掉」源作「筛」，属措辞改动，非机制改动"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001301:c01",
+    "decision": "needs_human_confirmation",
+    "reason": "机制句有引文支撑，但本次补入的两处括注与其中的实体名全部超出引用覆盖。逐字复核工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_262.json（window=w001301，45 条消息，authorities=[0f17ac97 expert]，无 host）：引文 8 条（seq33 提问、seq35/36/37/38 机制断言、seq39 复述、seq40「吃得到」、seq42「吃不到撤退藏」）在窗 raw_messages 内逐字命中，改后 claim 的机制句（初动藏＝部署时+sp、吃得到部署藏、吃不到撤退藏）都能落到引文，机制命题与改前一致。超出引用范围的是本次新增的括注：①「本窗证据为**贝洛内**空中形态回位、**安洁莉娜 3 技能**落地两例」——「贝洛内空中ver」在**未引**的 seq23，「安洁莉娜 3 技能」（异格安姐三技能/安洁3技能）在**未引**的 seq15/29；②「同窗另指出『部分部署相关的效果』（如**退行**）另算」出自**未引**的 seq44「然后部分部署相关的效果，比如退行」。引文内出现的只是昵称「贝贝」（seq33/39），条目却在 claim 与 subject 里写成实体名「贝洛内」（entity_index：operator），即补入的实体名与括注均未落引。落地核实：applied==发布层==batch.proposal（applied=True、skipped=False），引文未动。转人工：请裁定是否补引 seq15/23/29/44，或把括注退回引文口径（「贝贝」）；若保留「贝洛内」「退行」，宜一并决定术语归属（「退行」在 entity_index 未登记）。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_11.json",
+      "kb_trial/curation/faultcheck/_remediation_plan.json",
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_262.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ],
+    "term_flags": [
+      "「贝洛内」为引文外补入的实体名（引文只作昵称「贝贝」），entity_index 记 operator；出处 seq23 未落引",
+      "「安洁莉娜 3 技能」的例句出处 seq15/29 未落引",
+      "「退行」出自未引的 seq44，entity_index 未登记该词条"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001319:c03",
+    "decision": "needs_human_confirmation",
+    "reason": "claim 骨架可落到引文，但「长边」未引、用词统一未执行、subject 的算法名超出引文且与实体索引映射冲突。逐字复核工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_109.json（window=w001319，45 条消息，authorities=[589e9b6d host]）：引文 8 条（seq9「原版的b算法只会判定灰色地块」、seq10「鹰角小修了一下」、seq11「让灰色发生变行的时候」、seq12「对应的两个对角」、seq13「也就是蓝色那几个」、seq14「也加进去一起判定」、seq15 与 seq18 的改动意图）均为 589e9b6d（host）连续发言、逐字命中；claim 的「原版 b 算法」「小修」「把对应的两个对角格也加入判定」「扩大墙的判定范围、避免敌人净贴着墙走」都能对上。三处未落地或超范围：①「灰格沿**长边**推进」的「长边」出自**未引**的 seq26「原版b算法是只判长边」与 seq27「判定方法是长边每走一格取个整」，引文内只有「灰色地块」「变行」；②「发生**换行**」源作「变行」（seq11），suggestion 明确要求「并统一『变行／形变』用词」，本次只改了 claim（用「换行」），condition 仍作「灰格沿长边推进发生**变行**时」，两种写法在同一发布条目内并存，统一要求未执行；③ subject「鹰角对 **Bresenham** 判格的修改」里的算法名出自**未引**的 seq42（提问者请人讲解）与 seq43（长段排版文字，按 b4 批次对 bot/排版段的 speaker 策略不宜作机制证据），且 entity_index 把 Bresenham 记为 canonical「平整化」（qq_alias/shenqi_slang），与 subject 的直接用法不一致。落地核实：applied==发布层==batch.proposal（applied=True、skipped=False），引文未动。转人工：请裁定是否补引 seq11/26/27/42，并决定用词（变行／换行）与算法名的规范写法（Bresenham 还是「平整化」）。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_11.json",
+      "kb_trial/curation/faultcheck/_remediation_plan.json",
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_109.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ],
+    "term_flags": [
+      "「长边」出自未引的 seq26/27；claim 与 condition 的用词（换行／变行）不统一，suggestion 的「统一用词」未执行",
+      "subject 的「Bresenham」出自未引的 seq42/43（seq43 为排版段），且 entity_index 将该词 canonical 记作「平整化」",
+      "「变行」为源文用字（seq11），未换算、未改写"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001319:c04",
+    "decision": "needs_human_confirmation",
+    "reason": "算式与数字全在引文内、发言者归属正确，但 claim/subject/condition 的核心名词「关卡 rune」不在引文里。逐字复核工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_109.json（window=w001319，45 条消息，authorities=[589e9b6d host]）：引文 3 条为 seq40「[表情]这个的加算和乘算可以举个例子吗」（提问者 0f5162c3）、seq44「[表情]@… 比如假设突袭，全体敌人+200防御，然后敌人a防御*200%」与 seq45「就会是+200)*2」（均 589e9b6d=host，归属正确），三条均逐字命中；「+200」「*200%」「+200)*2」「假设」都在引文内，数字 200 与倍数 2 照录未换算。问题：改后 claim/subject/condition 都用了「**关卡 rune**」，而该词出自**未引**的 seq47「藏rune？」（23eb0202）与 seq50「关卡rune」（host）；「rune」在三 条引文内 0 命中。夹注「（主播口述示例；原话片段作『就会是+200)*2』）」也不是引文字句，而是编辑说明；suggestion 要求「不要用『（+200）*2』呈现公式」，本次改成「结算为（原防御+200）×2」并附源片段，属折中落地，但把编辑换算与源片段并置，读者可能误读为源即如此。落地核实：applied==发布层==batch.proposal（applied=True、skipped=False），引文未动。转人工：请裁定「关卡 rune」是否保留（若保留，宜补引 seq50 并注明 seq47 为提问方用词），以及该夹注的呈现方式是否可接受。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_11.json",
+      "kb_trial/curation/faultcheck/_remediation_plan.json",
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_109.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ],
+    "term_flags": [
+      "「关卡 rune」出自未引的 seq47/50，3 条引文内 0 命中「rune」",
+      "夹注「（主播口述示例；原话片段作『就会是+200)*2』）」为编辑说明与源片段的并置，需确认呈现口径",
+      "「rune」未在 entity_index 登记为实体/术语"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001356:c01",
+    "decision": "needs_human_confirmation",
+    "reason": "唯一引文逐字命中、归属正确，但 claim 的两处限定词都靠窗内未引发言补出。逐字复核工单 kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_016.json（window=w001356，64 条消息，authorities=[589e9b6d host]）：本条只挂 1 条引文 seq15「传送终点若为不可通行地块则不传送」，为 589e9b6d（host）逐字命中，claim 把它归为「主播的判断」正确，condition「传送的终点格不可通行时」与引文一致；窗内 seq2/5/8/13 围绕过墙的追问与 seq18「完毕」收束也支持这是答复而非闲谈。超出引用范围的是本次补入的两个限定：①「针对**演示中的新位移表现**」——「演示」出自**未引**的 seq39「[表情]从演示效果上，当前版本只有传送可以做到他的表现」，旁证 seq27「新机制有感觉吗」、seq3「感觉本质余传送」也未引；②括注「（当前版本口径、**未实装验证**）」——「实装」出自**未引**的 seq52「等实装了只能，现在也猜不出啥」（0065bdfd）。即 claim 的时间与来源限定挂在未引行上，本条又只有 1 条引文，覆盖缺口明显。落地核实：applied==发布层==batch.proposal（applied=True、skipped=False），引文未动。转人工：请裁定是否补引 seq27/39/52，或把限定改为不依赖未引行的一般表述。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_11.json",
+      "kb_trial/curation/faultcheck/_remediation_plan.json",
+      "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_016.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ],
+    "term_flags": [
+      "「演示」的出处为未引的 seq39（旁证 seq27），「实装」的出处为未引的 seq52",
+      "本条仅 1 条引文（seq15），claim 的两处限定均在其外",
+      "「位移」在 entity_index 记 qq/untyped，非改名"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001360:c02",
+    "decision": "needs_human_confirmation",
+    "reason": "本条引文只有两行，改后 claim 的核心限定词（黍传／余传免疫）却出自同窗未引发言。逐字复核工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_112.json（window=w001360，13 条消息，authorities=[589e9b6d host]）：引文 seq12「珊比必须让自己去检测他们中的哪个」与 seq13「才能去被哪个影响」为 589e9b6d（host）连续两行、逐字命中，衔接完整。但 claim 把源中的指代「他们」「哪个」解析为「目标带的是**黍传**还是**余传免疫**」并写入正文，而这两个词只出自**未引**的 seq6「现在的传送免疫」、seq7「只是免疫黍传和免疫余传」、seq9「并且余会判定免疫黍传」；condition「需要被某类传送影响时」亦无源字。按本层先例（faultcheck 批次 08 对 qq_expansion:w001360 同族条目已判「补出的先行词不在本条引用覆盖内即转人工」），本次解析同样未落引。suggestion 原本另给了「或把本条并入 qq_expansion:w001360:c01」的备选，本次未采用。落地核实：applied==发布层==batch.proposal（applied=True、skipped=False），引文未动。转人工：请裁定补引 seq6/7/9（或按 suggestion 并入 c01），以及「黍传／余传免疫」的写法（entity_index 均记 qq/untyped）。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_11.json",
+      "kb_trial/curation/faultcheck/_remediation_plan.json",
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_112.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ],
+    "term_flags": [
+      "「黍传」「余传」出自未引的 seq6/7/9，entity_index 均记 qq/untyped；引文内只有指代「他们」「哪个」",
+      "condition「需要被某类传送影响时」为编辑概括，窗内无对应源字",
+      "suggestion 的备选（并入 c01）未采用"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001364:c03",
+    "decision": "needs_human_confirmation",
+    "reason": "五条引文逐字命中、把「预期」标注清楚的改法方向正确，但「unity 物理引擎」与 condition 的「墙体」都超出引用覆盖。逐字复核工单 kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_219.json（window=w001364，67 条消息，authorities=[589e9b6d host]）：引文 seq39「当然，挤的时候，是不处于失衡状态的」、seq40「物理碰撞箱不激活」、seq41「但是一旦在这个位置推拉激活」、seq42「理所当然要往“最近的方向弹出”」、seq49「物理碰撞体当然应该优先往相切弹出啊」均为 589e9b6d（host）连续发言、逐字命中；claim 的三段与末句括注「原文以『理所当然/当然应该』给出，属预期而非实测」都与 seq42/49 的语气一致（改前把预期当断言，本次修正成立）。超出范围两处：①「按 **unity** 物理引擎的预期」——「unity物理引擎啊」出自**未引**的 seq47（同窗同一发言者的回答），五条机制引文内 0 命中「unity」，entity_index 亦无该词条；②condition「被**墙体**挤住的位置上再发生推拉时」——「墙体」出自**未引**的 seq2「是因为加了点墙体」与 seq3「0.2宽度的墙体」（墙体在 entity_index 记 curated/mechanic，但本条引文内无此词）；claim 的「**敌人**并不处于失衡」中「敌人」也非引文字面（源句主语省略）。落地核实：applied==发布层==batch.proposal（applied=True、skipped=False），引文未动。转人工：请裁定是否补引 seq2/3/47，或把「unity 物理引擎」换成引文内可核的表述。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_11.json",
+      "kb_trial/curation/faultcheck/_remediation_plan.json",
+      "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_219.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ],
+    "term_flags": [
+      "「unity 物理引擎」出自未引的 seq47，entity_index 无该词条，5 条引文内 0 命中",
+      "condition 的「墙体」出自未引的 seq2/3；claim 的「敌人」为引文外补入的主语",
+      "「理所当然/当然应该」的预期语气已按 suggestion 标注，属正确修法"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001384:c02",
+    "decision": "needs_human_confirmation",
+    "reason": "机制骨架逐字可落到引文，但本次补入的回忆限定与三个操作名都出自未引发言，且其中还缺一个数字出处。逐字复核工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_218.json（window=w001384，18 条消息，authorities=[0f17ac97 expert]，无 host）：引文 3 条为 seq19「这仨操作是能一起做的吗。。」（6617f148）、seq21「下和开是可以一起的，开和撤是可以一起的，但是这三个不能一起……这样？」、seq27「这仨就不能一起干。。」（均 0065bdfd），三条逐字命中，改后 claim 的机制句（下与开可一起、开与撤可一起、三者不能一起）逐字出自 seq21。超出引用覆盖：①「原发言自带『**好像**』」的出处是**未引**的 seq7「还有M3好像不能同帧下重构体开技能再撤重构体」，②「自陈『**有可能我搞错了，我再试一下**』」逐字出自**未引**的 seq13；③ claim 与 condition 用的「**M3**」「**下重构体**」「**开技能**」「**撤重构体**」四个名字的出处为未引的 seq7/16/17/18，三条引文里只有「这仨」「下和开」「开和撤」。同窗无 host，发言人为 0065bdfd 与 6617f148，claim 以「群内待复测的怀疑」表述，未误标主播；3-gram 扫描报出的数字「3」来自「M3」（引文内 0 命中）。落地核实：applied==发布层==batch.proposal（applied=True、skipped=False），引文未动。转人工：请裁定是否补引 seq7/13/16/17/18，以及「M3」「重构体」「同帧」的写法（entity_index：重构体、同帧 记 shenqi_slang，开技能 记 qq/untyped，M3 未登记）。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_11.json",
+      "kb_trial/curation/faultcheck/_remediation_plan.json",
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_218.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ],
+    "term_flags": [
+      "「M3」「下重构体」「开技能」「撤重构体」四名出自未引的 seq7/16/17/18；引文内只有「这仨」「下和开」「开和撤」",
+      "「好像」（seq7）与「有可能我搞错了，我再试一下」（seq13）均未落引，而 claim 的括注直接引用二者",
+      "数字「3」来自「M3」，引文内 0 命中；「重构体」「同帧」记 shenqi_slang"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001466:c03",
+    "decision": "needs_human_confirmation",
+    "reason": "判定句有引文支撑，但 claim 的两组数字与 condition 的关键词均不在本条引文内，且 suggestion 要求的补引被当成「指令片段」删掉了。逐字复核工单 kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_005.json（window=w001466，84 条消息，authorities=[589e9b6d host]）：引文 4 条为 seq62「[表情]见行者只在能触发这个情况的时候」、seq63「判定为\"撞高台\"」、seq27「见行者1技能是不判定的」、seq35「[表情]@… 因为推到墙上没晕」（均 589e9b6d=host），四条逐字命中，claim 的「只在触发…时才判定为『撞高台』」与「落在相离碰撞区间时不判定」的方向有 seq62/63 与 seq27 支撑。但本条 numbers_in_text_not_in_quotes 明确报 ['0.005','0.01']：claim 的两个数字不在引文内，其出处是同窗**未引**的 seq47「但是如果距离＜0.005，会把敌人推到…」、seq48「0.005到0.01之间」与 seq58–60；claim 的「落在相离碰撞区间时不判定」所依据的 seq18「这个在相离碰撞不生效的」也**未落引**——suggestion 原文明确要求「（并补引 seq18『这个在相离碰撞不生效的』）」，而 _remediation_plan.json 对本条的 note 记「已清掉建议尾部夹带的指令片段」，等于把该补引要求一并删除了，建议未执行。此外 condition「位移结算时最终落点为0.005位置（即**直接顶住**）时」中的「直接顶住」出自未引的 seq47/58。落地核实：applied==发布层==batch.proposal（applied=True、skipped=False），引文未动。转人工：请裁定是否补引 seq18 与 seq47/48（数字与「直接顶住」的出处），或在 claim 中把 0.005/0.01 标注为窗内他处表述。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_11.json",
+      "kb_trial/curation/faultcheck/_remediation_plan.json",
+      "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_005.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ],
+    "term_flags": [
+      "claim 的 0.005/0.01 不在本条引文内（未引 seq47/48/58-60），suggestion 要求的补引 seq18 未落地",
+      "condition 的「直接顶住」出自未引的 seq47/58",
+      "seq27 的上下文（seq26「在这种情况发生碰撞」）说的是「碰撞」而非「相离碰撞」，判定前提需与 seq18 一并核定"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001481:c02",
+    "decision": "needs_human_confirmation",
+    "reason": "结论句与反例逐字在引文内，但 claim 前半的两个核心名词（次数怪、元素损伤）都不在引文里。逐字复核工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_267.json（window=w001481，29 条消息，authorities=[0f17ac97 expert]，无 host）：引文 7 条（seq6「妮芙2也这样」、seq7「还有烛煌」、seq9「好像就这三人有问题」、seq10「妮芙2造成了高额的1点凋亡损伤！」、seq13「[表情]@… 没那么多.jpg」、seq23「妮芙有问题」、seq28「[表情]@… 妮芙不看伤害」）在窗 raw_messages 内逐字命中；改后 claim 的「不按实际造成的伤害结算」对应 seq28「妮芙不看伤害」，反例「高额的 1 点凋亡损伤」逐字来自 seq10，数字 1 与「烛煌」（seq7）都在引文内。未落引的是 claim 前半的「打**次数怪**时**元素损伤**结果不对」：「次数怪」出自**未引**的 seq1「咒愈按伤害算，所以次数怪一样能出治疗」与 seq16「Logos我记得打次数，元素部分没问题」；「元素损伤」一词在 7 条引文内 0 命中（seq10 作「凋亡损伤」），entity_index 把 元素损伤 记 prts/qq_alias status 与 prts shenqi_slang。claim 前句相对源「不看伤害」也是解释性改写（改写本身不改变结论）。落地核实：applied==发布层==batch.proposal（applied=True、skipped=False），引文未动。转人工：请裁定是否补引 seq1/16，以及「次数怪」「元素损伤」的写法（沿用源字「次数」「凋亡损伤」或另作说明）。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_11.json",
+      "kb_trial/curation/faultcheck/_remediation_plan.json",
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_267.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ],
+    "term_flags": [
+      "「次数怪」出自未引的 seq1/16；「元素损伤」在 7 条引文内 0 命中（引文作「凋亡损伤」）",
+      "「元素损伤」在 entity_index 记 status + shenqi_slang，属已登记术语但本条未落引",
+      "「不按实际造成的伤害结算」相对源「不看伤害」为解释性改写，结论未变"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001553:c01",
+    "decision": "needs_human_confirmation",
+    "reason": "本次要修的是 asr_error;evidence_mismatch，两处核心改动本身有引文支撑、方向正确，但新增括注把一个源词等同成了另一术语，需父层定夺。逐字复核工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_134.json（window=w001553，16 条消息，authorities=[589e9b6d host]）：引文 seq10「如果灵知不清冷却的话开完技能就会随机有0-1点\"技力\"啊」与 seq11「会留绿条的」均为 589e9b6d（host）连续发言、逐字命中；改前 claim 的「灵知**不清楚**冷却时」确属 ASR 讹写，本次订正为源字「不清冷却」成立；subject 删去未经出处的技能序号「3」也已落地（现作「灵知（不清冷却时）技能结束的技力残留」）；「0-1 点『技力』」与「绿条」照录未换算。问题：改后 claim 新增的括注「（**不重置冷却**）」不来自源——「重置」在本窗 16 条 raw_messages 内 0 命中，且「清冷却」「重置冷却」在 entity_index 均记 qq/untyped，即该括注是把源词「清冷却」等同于另一术语的编辑性解释（出自 faultcheck 的 suggestion 原文、由 fix 逐字落地）。落地核实：applied==发布层==batch.proposal（applied=True、skipped=False），引文未动。转人工：请裁定是否接受该术语等同括注（本层先例 review_decisions_08 对 suggestion 带来的非源字括注只记 term_flags、维持确认；若按「术语一律转人工」的严口径，本条即为待裁项），或删去括注、只保留源字「不清冷却」（condition 里既有的「（继续冷却）」不在本次改动范围内）。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_11.json",
+      "kb_trial/curation/faultcheck/_remediation_plan.json",
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_134.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl",
+      "entity_corrector.py"
+    ],
+    "term_flags": [
+      "claim 新增括注「（不重置冷却）」非源字：本窗「重置」0 命中，entity_index 把 清冷却／重置冷却 均记 qq/untyped",
+      "「残留」承接改前写法，源句作「随机有0-1点『技力』」；「技力」源文带引号，claim 保留引号",
+      "「灵知」在 entity_index 记 operator；asr 订正（不清楚→不清冷却）与 seq10 逐字一致，成立"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001586:c01",
+    "decision": "needs_human_confirmation",
+    "reason": "反证链逐字可落到引文，但归属句的两行出处未落引，且 condition 把内部工单序号暴露进了发布字段。逐字复核工单 kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_071.json（window=w001586，48 条消息，authorities=[589e9b6d host]）：引文 5 条为 seq20「[表情]@… 我问你个问题，敌人为什么攻速高会原地罚站，一帧不动」、seq24「如果移动状态机才能索敌」、seq25「同帧先移动后索敌」、seq26「就不可能一帧不动」、seq30「用逻辑和明显的现象去记就不会忘了」，其中 seq24/25/26/30 均为 589e9b6d（host）连续发言，五条逐字命中；改后 claim 的前半（不能由「同帧先移动后索敌」解释，若移动状态机才能索敌且同帧先移动后索敌则不可能一帧不动）逐字可落到 seq24–26。超出引用范围：claim 后半的归属句所本的两行**未落引**——「『攻击/技能会阻止移动』是**提问者**的说法」对应提问者 seq21「[表情]因为一直要攻击，无法移动」（6617f148），「主播当场以『**不对呀**』否认」所引的 seq23「[表情]@… 不对呀」也未落引；claim 把 seq21 重述为「攻击/技能会阻止移动」，与源句不是同一表述。更需处理的是发布字段污染：condition 现文直接写着「敌人攻击冷却极短、几乎每帧都在攻击时（**seq20 原文**「敌人为什么攻速高会原地罚站，一帧不动」）」，把内部工单序号写进了发布层（同族条目的修法就是删除正文中的 seq 编号），本次 fix 只改了 claim、未动 condition；3-gram 扫描报出的数字「20」即来自该括注。落地核实：applied==发布层==batch.proposal（applied=True、skipped=False）。转人工：请裁定① condition 删除「（seq20 原文…）」括注、改为直接引用原句；②是否补引 seq21/23 以支撑归属句。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_11.json",
+      "kb_trial/curation/faultcheck/_remediation_plan.json",
+      "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_071.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ],
+    "term_flags": [
+      "condition 正文含内部序号「（seq20 原文…）」，属发布字段污染，本次 fix 未处理",
+      "归属句所本的 seq21（提问者说法）与 seq23（主播否认「不对呀」）均未落引",
+      "claim 把 seq21 的「因为一直要攻击，无法移动」重述为「攻击/技能会阻止移动」，非逐字"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001616:c02",
+    "decision": "needs_human_confirmation",
+    "reason": "本条要修的是 number_suspect，但 fix 只加了「（…数字待核）」的自我声明，既未补引也未删数，数字覆盖问题仍在。逐字复核工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_382.json（window=w001616，43 条消息，authorities=[0f17ac97 expert]，无 host）：引文 5 条为 seq10「[表情]也就是说最终一帧会流失500帧的buff持续时间」、seq16「抵抗本质是加速时间流逝」（均 0f17ac97）、seq21「最后一帧的时间」、seq22「加速了500倍?」、seq25「第一帧就500倍」（均 e73229d4 与 0f17ac97），五条逐字命中，「500」在引文内。但 claim 的另两组数字不在引文内：本条 numbers_in_text_not_in_quotes 报 ['0.001','100','16.666']——「下限 **0.001**」出自**未引**的 seq4「可抵抗状态生效时间倍率计算下限就是0.001」，「**16.666** 秒分界」出自**未引**的 seq11「也就是说大于16.666秒的buff和小于16.666秒的buff」（seq13 续言实际生效时间不同），condition 的「**-100%**」出自未引的 seq1「[表情]时间倍率-」与 seq2「100％」；即 claim 与 condition 的三组数字里只有 500 有引文覆盖。claim 的「原文据此推出」把 seq4 的数值与 seq10 的推导合并陈述，而 seq4 不在引文中。落地核实：applied==发布层==batch.proposal（applied=True、skipped=False），引文未动。转人工：请裁定补引 seq1/2/4/11（使 0.001、-100%、16.666 秒分界各有引文）还是删去未被引文覆盖的数字；「数字待核」的自我声明不足以替代覆盖缺口。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_11.json",
+      "kb_trial/curation/faultcheck/_remediation_plan.json",
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_382.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ],
+    "term_flags": [
+      "claim 的 0.001 与 16.666、condition 的 -100% 均无引文覆盖（未引 seq1/2/4/11），仅 500 在引文内",
+      "「可抵抗状态」在 entity_index 记 mechanic/status，属已登记；「生效时间倍率」记 qq/untyped",
+      "fix 只增加「数字待核」声明，未执行补引或删数"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001617:c04",
+    "decision": "needs_human_confirmation",
+    "reason": "结论句与数字逐字在引文内，但本次用来收束 overclaim 的可适用边界（非卡德霍）全部出自未引发言。逐字复核工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_383.json（window=w001617，68 条消息，authorities=[0f17ac97 expert]，无 host）：引文 2 条为 seq21「但是被迟缓一拐」与 seq22「60迟缓下去，13.3333秒的buff就可以生效出1帧来了」（均 0f17ac97，20:26:55 与 20:27:23），两条逐字命中，数字 60、13.3333、1 帧均在引文内、未换算。但改后 claim 补入的两处限定都不在本条引文里：①括注引的「假设敌人不是卡德霍这种超级抗性怪」出自**未引**的 seq34「[表情]假设敌人不是卡德霍这种超级抗性怪，拐出来后，理论上灵知就能断boss技能了」；②「同窗后段亦指出该套对卡德霍不成立」出自**未引**的 seq48「对，卡德霍那套不成立。」与 seq50「它可抵抗生效时间倍率被拉满，迟缓拐下去buff还是瞬消，连1帧都挤不出来…」；claim 用来限定对象的「普通抗性」也来自未引的 seq50（「只对普通抗性的boss有效」）。即本条对其自身适用对象的边界全靠未引发言支撑，而 fix 正是以这层边界收束 overclaim。落地核实：applied==发布层==batch.proposal（applied=True、skipped=False），引文未动。转人工：请裁定是否补引 seq34/48/50，以及「卡德霍」的写法（entity_index 未登记该词，「超级抗性」「普通抗性」亦未登记）。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_11.json",
+      "kb_trial/curation/faultcheck/_remediation_plan.json",
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_383.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ],
+    "term_flags": [
+      "claim 的两处限定（原文口径句、同窗后段）出处 seq34 与 seq48/50 均未落引；「普通抗性」来自未引的 seq50",
+      "「卡德霍」在 entity_index 未登记；「超级抗性」「普通抗性」亦未登记",
+      "数字 60、13.3333、1 帧逐字出自引文 seq22，未换算"
+    ]
+  },
+  {
+    "id": "qq_expansion:w001655:c01",
+    "decision": "needs_human_confirmation",
+    "reason": "主命题与比喻的引文逐字命中，但本次补入的括注把非主播发言误标成「主播」，且该句本身未落引。逐字复核工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_385.json（window=w001655，15 条消息，authorities=[0f17ac97 expert]，该窗无 host）：引文 3 条为 seq3「聆风猎手用的和诱导是同款的判定」、seq5「理论上就是个超大号猫」、seq10「用的诱导同款判定」，均为 0f17ac97，三条逐字命中，主命题（两次复述一致）与比喻的出处成立，「聆风猎手」（entity_index：enemy）与「诱导」（entity_index：mechanic）为已登记词、写法无误，无数字。问题在改后 claim 的末句括注「讨论中**主播**怀疑其坐标算错，未验证」：①身份归属错误——「我怀疑坐标算错了」出自 **seq12**，其发言者在 window authorities 中为 0f17ac97（role=expert，该窗 has_host_authority=false、authorities 不含 host 589e9b6d），并非主播，claim 却写成「主播怀疑」；②该句未落引（引文止于 seq3/5/10，seq11「诱导你觉得能把敌人诱导穿墙吗」亦未引）。落地核实：applied==发布层==batch.proposal（applied=True、skipped=False），引文未动。转人工：请裁定把「主播」改为「群内讨论者」（并补引 seq11/12、注明非主播发言），或删去该括注；身份误标属实体/归属问题，不宜直接入库。",
+    "evidence_paths": [
+      "kb_trial/curation/faultcheck/review_batch_11.json",
+      "kb_trial/curation/faultcheck/_remediation_plan.json",
+      "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_385.json",
+      "kb_trial/curated_high_quality.json",
+      "kb_trial/entity_index.json",
+      "qq_info/windows.jsonl"
+    ],
+    "term_flags": [
+      "括注把 0f17ac97（expert）的「我怀疑坐标算错了」（seq12）写成「主播怀疑」，该窗 authorities 不含 host，属身份归属错误",
+      "seq11/12 未落引，claim 括注内容无引文覆盖",
+      "「聆风猎手」记 enemy、「诱导」记 mechanic，均为已登记词，写法无误"
+    ]
+  }
+]

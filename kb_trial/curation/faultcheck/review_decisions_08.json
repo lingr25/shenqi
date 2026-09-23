@@ -1,0 +1,374 @@
+[
+ {
+  "id": "qq_expansion:w000172:c02",
+  "decision": "confirmed_fix",
+  "reason": "逐字复核工单 kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_307.json（window=w000172，45 条消息，has_host_authority=false）：本条 3 条引文在该窗 raw_messages 内 3/3 逐字命中（seq14「查阅逻辑，发现提丰模组对于“停顿”触发箭雨的判定是于每次“其他Buff开始时”检测停顿buff…只有当“没有”改为“有”时才可能触发箭雨…」、seq23「需要在没有停顿的情况下挂一个不是停顿的buff才能刷新」、seq25「不然卡状态，死机了」）。改后 claim 的两个机制分句分别落在引文内（前句＝引文第二段、后句＝seq23）；括注「我不确定这个 bug 是不是真的能触发」为引文 seq14 尾段逐字，「窗内未复现」亦属实（seq16「但是想了想没验证的东西还是别乱发了」、seq17「有没有ela提丰厨试一试」）。改动相对改前 claim（chunk_28 记录：「如果没有在“没有停顿”的情况下挂上其他任何非停顿buff…」）只增补限定与括注，机制命题一字未改，未据旧游戏知识补写干员名（引文里的「提丰」未写入 claim），未新增数字。落地核实：_remediation_plan.json 的 applied 记录与发布层 curated_high_quality.json 该条 claim 与工单 entry 逐字一致（本批 20/20 实测通过），且不在 fix_skipped（33 条）之列。唯一非源字处是括注的「拆包逻辑推断」：本窗源句自述为「查阅逻辑」，全窗「拆包」0 命中，但该措辞由 faultcheck 的 suggestion 原文带来、fix 系逐字落地，本层另有 w001151:c01、w001948:c02 使用同类「拆包」来源标签，故只记 term_flags，不影响本条确认；若父层要求 claim 只用源字，把括注改为「查阅逻辑推断」即可，机制表述不变。",
+  "evidence_paths": [
+   "kb_trial/curation/faultcheck/review_batch_08.json",
+   "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_307.json",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/_remediation_plan.json",
+   "kb_trial/entity_index.json",
+   "qq_info/windows.jsonl"
+  ],
+  "term_flags": [
+   "「拆包逻辑推断」非源字：本窗源句作「查阅逻辑」（seq14），全窗「拆包」0 命中；措辞来自 faultcheck suggestion，fix 逐字落地",
+   "「停顿」为源句用词（引文 seq14），entity_index 记 停顿=prts/status；「箭雨」记 qq/untyped，claim 沿用未改名",
+   "未据旧知识补写干员名：引文含「提丰」（entity_index 记 prts/operator），claim 与 subject 均未写入",
+   "「窗内未复现」非源字，是对工单 seq16、seq17 的概括，属实",
+   "该窗 has_host_authority=false，claim 未写「主播／主讲人」口径，与工单一致"
+  ]
+ },
+ {
+  "id": "qq_expansion:w000178:c02",
+  "decision": "needs_human_confirmation",
+  "reason": "机制主干可自证（6 条引文在 workorders_b3/qq_wo_b3_158.json 内 6/6 逐字命中，含 seq36「如果没那么多同帧部署的话不会崩」、seq45「俩傀影3类的技能同一帧先部署后部署吃不同随机数？」、seq47「确实会这样」、以及 seq35「虽然看不懂你的代码，但是我听说float取整是会去尾的，3.99会变成3，感觉会出问题吧」），但改后 claim 有三处不能被本条引文覆盖。①超引用范围：「但同时称精度影响有限」所本是 seq56「精度影响不了多少」，「精度」在窗内仅 seq31、54、56，三条均不在引文内。②角色标签：「主讲人回应认可」——本窗「主讲」0 命中，且 seq47「确实会这样」的发言人为 0f17ac97（qq_info/windows.jsonl 记 role=expert；本窗 host 为 589e9b6d），是否属「主讲人」以及该认可覆盖到哪一步，需人工判。③落地不完整：_remediation_plan.json 对该条的 suggestion 明写「并删除正文中的 seq 编号」，claim 已删，但 condition 仍为「限于同帧部署的单位之间（seq 36「如果没那么多同帧部署的话不会崩」）」，发布层留下不可解析的 seq 号。建议补引 seq56 并核 seq47 发言身份，或删去「但同时称精度影响有限」半句、清掉 condition 的 seq 编号后即可确认。",
+  "evidence_paths": [
+   "kb_trial/curation/faultcheck/review_batch_08.json",
+   "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_158.json",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/_remediation_plan.json",
+   "kb_trial/entity_index.json",
+   "qq_info/windows.jsonl"
+  ],
+  "term_flags": [
+   "「同帧部署」逐字在引文内（seq36），entity_index 记 同帧=prts/qq_alias(shenqi_slang)，未改名",
+   "「去尾」逐字在引文内（seq35）；「浮点」本窗 0 命中（源句用英文 float 取整），claim 的「浮点转整型去尾」属转写措辞",
+   "角色标签：claim 的「主讲人」本窗 0 命中，seq47 发言人为 0f17ac97=expert，非 host 589e9b6d",
+   "condition 残留不可解析的 seq 编号「seq 36」（fix 要求删除但未落地）",
+   "claim 未新增数字与干员名"
+  ]
+ },
+ {
+  "id": "qq_expansion:w000211:c01",
+  "decision": "needs_human_confirmation",
+  "reason": "机制主干与对照项都能自证：5 条引文在 workorders_b3/qq_wo_b3_084.json 内 5/5 逐字命中（seq54「费用回复速度改变是改变cd大小还是cd回复速度」、seq55「cd大小」、seq56「每帧仍然-0.0333333」、seq57「cd大小，可露希尔改回复速度」、seq58「真的假的」），「窗内未见复核结果」属实。问题两处：①超引用范围：claim 括注的第二个引文「我等会测试一下去」是 seq60，不在 5 条引文内。②指认与工单说话人分布不符：实测该窗 seq55、56、58、60 的 speaker_id 同为 589e9b6d（windows.jsonl 记 role=host），seq57 为 0f17ac97（expert），seq54 提问者为 15f865a0（非 authority）；claim 写「同窗另一位成员当场表示要实测复核」，把同一发言人的自答与随后自我质疑说成「另一位成员」，与工单不符。改动相对改前 claim（只有结论句）只增补限定，机制命题未变；数字 -0.0333333 逐字出自引文 seq56、未换算。建议补引 seq54、seq60，或把「另一位成员」改成如实描述后确认。",
+  "evidence_paths": [
+   "kb_trial/curation/faultcheck/review_batch_08.json",
+   "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_084.json",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/_remediation_plan.json",
+   "kb_trial/entity_index.json",
+   "qq_info/windows.jsonl"
+  ],
+  "term_flags": [
+   "「可露希尔」在引文 seq57 内逐字，entity_index 记 prts/operator＋mechanic，claim 与 condition 均未改名",
+   "「CD 大小」「每帧」为源句用词（seq54、55、56），claim 沿用",
+   "角色标签不符：seq55、56 的回答与 seq58、60 的质疑同为 589e9b6d（host），claim 的「另一位成员」无对应发言人",
+   "括注引文「我等会测试一下去」（seq60）不在 citations 的 quotes 内",
+   "数字 -0.0333333 逐字出自引文 seq56，未换算、未改数"
+  ]
+ },
+ {
+  "id": "qq_expansion:w000215:c02",
+  "decision": "needs_human_confirmation",
+  "reason": "本条 3 条引文在 workorders_b3/qq_wo_b3_085.json 内 3/3 逐字命中（seq21「取最高啊」、seq22「下一帧才1.65」、seq28「不过部署下一帧还是按1.65结算没错」），1.65 与「部署后下一帧结算」逐字在引文内、未换算；但改后 claim 相对改前（「多个技力回复光环作用时取最高值，本窗给出的数值为 1.65。」）新增的两处都超出引文范围。①实体归属超范围：「本窗示例为白面（白面鸮）的技力回复光环」所本是引文外 seq16「所以白面的1.65技力光环…」（「白面」「技力光环」在本窗仅 seq16）；entity_index 确有 白面→白面鸮（prts_alias/operator），但发布层现存引文核不到「1.65 属于白面鸮」。②前提超范围：「（不叠加）」与「多个光环同时作用」的对照依据是引文外 seq17「不过这样全场-18%和范围内-33%…」（-18%、-33% 均不在引文内），「不叠加」在引文中亦无逐字对应。两处都是把同窗邻行结论写进 claim，需人工决定补引 seq16、17 还是删句。",
+  "evidence_paths": [
+   "kb_trial/curation/faultcheck/review_batch_08.json",
+   "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_085.json",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/_remediation_plan.json",
+   "kb_trial/entity_index.json"
+  ],
+  "term_flags": [
+   "「白面」在引文外（seq16），entity_index 记 白面→白面鸮（prts_alias/operator），claim 做括号内还原属实体判断",
+   "「技力」为源句用字；entity_corrector.py 有 激励|纪力|记力→技力 规则，claim 未改写",
+   "1.65 逐字在引文内，未换算、未改数",
+   "「取最高」逐字在引文内属源句措辞；「（不叠加）」为 claim 推断，-18%、-33% 未录入引文",
+   "未据旧知识补写技能名与模组名"
+  ]
+ },
+ {
+  "id": "qq_expansion:w000256:c02",
+  "decision": "needs_human_confirmation",
+  "reason": "阻挡帧与初始坐标的机制主干可由引文自证（5 条引文在 workorders_b3/qq_wo_b3_086.json 内 5/5 逐字命中，含 seq21「阻挡帧的不同吧」、seq22「三帧阻挡，初始坐标不一样」、seq25「第一次阻挡尽可能靠上，那就不会下去」、seq28「调部署帧就行了」）。问题三处：①遗留未被修复的源外用词：claim 写「敌人就不会被寻路带下去」，但本窗 raw_messages「寻路」0 命中，源句只作「那就不会下去」（seq25）——该词改前即存在，本次 fix 改写了同一句却未处理（同窗解释是 seq14「走进高台格子了不可阻挡才结束」、seq18「不可阻挡让他走了不止0.1格」、seq19「他下去了」）。②引文外内容：「提问方称会再试」本于 seq26「我再试下」（发言 854e86f2）、「可用干员调整部署帧来验证」中的「可用干员」本于 seq27「你可以用干员试」（发言 589e9b6d），两条均不在引文内（seq28 在引文内，只能支持「调整部署帧」）。③主语描述：「（群内未点名，指会闪现越位的那个单位）」所本 seq11、12、13、14 亦未引用。建议补引后将「被寻路」按源句删去或另找出处。",
+  "evidence_paths": [
+   "kb_trial/curation/faultcheck/review_batch_08.json",
+   "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_086.json",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/_remediation_plan.json",
+   "kb_trial/entity_index.json"
+  ],
+  "term_flags": [
+   "「寻路」在本窗 0 命中：claim 的「被寻路带下去」无本窗出处（源句作「那就不会下去」，在引文内）；该词改前即存在，fix 未处理",
+   "「不可阻挡」为源内用词但不在引文内（seq14、seq18）",
+   "「阻挡帧」「三帧阻挡」「初始坐标」逐字在引文内，未改数",
+   "「我再试下」（seq26）、「你可以用干员试」（seq27）未录入引文；seq28「调部署帧就行了」在引文内",
+   "claim 未据旧知识补写敌人名与干员名"
+  ]
+ },
+ {
+  "id": "qq_expansion:w000263:c02",
+  "decision": "needs_human_confirmation",
+  "reason": "6 条引文在 workorders_b3/qq_wo_b3_087.json 内 6/6 逐字命中（seq44「无敌血条不会消失」、seq46「所以表现证明此时已经进门」、seq47「寻路不会错」、seq48「逆推237帧移动」、seq53「从视频来看不是进门前一帧」、seq54「是同帧的更早结算事件」），机制句在引文内可自证；但本次 fix 相对改前 claim（「该触发出伤并非发生在奎隆进门前一帧…」）新增的主体与次数出自引文之外。实测本条 6 条引文内没有「灵知」「奎隆」「15帧」：「灵知」（entity_index 记 prts/operator）仅在 seq15、42，「奎隆」（qq/untyped）仅在 seq11、15、20，「每 15 帧一次」仅在 seq15。落名与补频率都超出本条引文范围，属实体＋数字判断，需人工决定补引 seq15 还是把 claim 写成「某干员每 15 帧一次的触发伤害」；「结算顺序」这一用词也需一并确认（见 term_flags）。",
+  "evidence_paths": [
+   "kb_trial/curation/faultcheck/review_batch_08.json",
+   "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_087.json",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/_remediation_plan.json",
+   "kb_trial/entity_index.json"
+  ],
+  "term_flags": [
+   "「灵知」（entity_index: prts/operator）与「奎隆」（qq/untyped）均仅出现在引文外 seq11、15、20、42",
+   "「每 15 帧一次」出自引文外 seq15，属本次 fix 新增数字（未换算）",
+   "「结算顺序」在本窗 0 命中：claim 的「结算顺序更早」是对引文「同帧的更早结算事件」的转写用词",
+   "「寻路不会错」「无敌血条」逐字在引文内，沿用源字"
+  ]
+ },
+ {
+  "id": "qq_expansion:w000267:c01",
+  "decision": "needs_human_confirmation",
+  "reason": "本条是一次同音订正（「闯」→「创（创伤）」），三个问题叠加。①自证句不在本条引文内：claim 括注引「同窗「移动创伤？」「我说非静态创伤」可自证」，但实测这两句是 seq32、seq42（workorders_b3/qq_wo_b3_166.json，49 条），本条 5 条引文（seq27「整套机制叫rupture」、seq33「他不一定是位移」、seq37「位移只是虚指」、seq45「静态也闯」、seq48「谁告诉你不动就没有伤害了」）内没有。②订正方向未获本层规则背书：entity_corrector.py 无「闯→创／创伤」类规则，kb_trial/entity_index.json 无「创伤」条目。③同窗正在讨论译名而 claim 单取一个：seq12「所以rupture怎么翻」、seq13「撕裂？」、seq15「破伤风？」、seq16「位移伤？」、seq17「切片」、seq20「间断」，「创伤」并非窗口唯一写法。④fix 还删去了改前 claim 中的「它不一定是位移，位移只是虚指」，而这两句恰在引文 seq33、seq37 内（属有引文覆盖的内容被删，删的是派生文本、引文未动，但需人工确认是否应恢复）。建议补引 seq32、42 后由父层裁定译名与删句。",
+  "evidence_paths": [
+   "kb_trial/curation/faultcheck/review_batch_08.json",
+   "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_166.json",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/_remediation_plan.json",
+   "kb_trial/entity_index.json",
+   "entity_corrector.py"
+  ],
+  "term_flags": [
+   "「闯」→「创（创伤）」属同音订正：entity_corrector.py 无该类规则，entity_index 无「创伤」条目，未获规则背书",
+   "同窗并存译名：「撕裂」（seq13）、「破伤风」（seq15）、「位移伤」（seq16）、「切片」（seq17）、「间断」（seq20），claim 单取「创伤」",
+   "「rupture」逐字在引文内（seq27），英文机制名沿用源字、未改名",
+   "自证句「移动创伤？」（seq32）与「我说非静态创伤」（seq42）不在本条引文内",
+   "fix 删去了改前 claim 中「他不一定是位移，位移只是虚指」——该两句逐字在引文 seq33、seq37 内，删除属改派生文本（引文未动），需确认是否恢复"
+  ]
+ },
+ {
+  "id": "qq_expansion:w000382:c01",
+  "decision": "needs_human_confirmation",
+  "reason": "fix 把主体从「罗小黑」改回「妮符（原文用名）」，方向与工单原文一致：5 条引文在 workorders_b4/qq_wo_b4_204.json 内 5/5 逐字命中（seq21「那要是妮符出伤同帧怪回血了会怎么样」、seq22「梅妃之类的」、seq24「有顺序的，没用」、seq25「必须是复活甲这种」、seq28「复活甲这种插在应用中的」），机制三层表述（存在结算顺序→同帧普通回血不起作用→须插在应用中的复活机制）无超范围，subject 也已同步为「妮符出伤与同帧怪回血的结算顺序」，applied 记录中确含 subject 字段、发布层与工单 entry 一致。仍需人工裁定两点：①用名与实体台账冲突——kb_trial/entity_index.json 记 罗小黑=prts/operator、雪绒=prts/operator（本窗 seq7、17 另提「雪绒」），而「妮符」记 qq/untyped、无 PRTS 条目；本条采信原文用名而非 PRTS 名，属实体判断。②review.reason 未同步——该条 review.reason 逐字写着「seq 21/22 是一手提问（罗小黑出伤同帧怪回血会怎样）」，与同一段末尾「「妮符」按工单原文保留」及 claim/subject 自相矛盾，须一并修正。该窗 has_host_authority=false，claim 未写主播口径。",
+  "evidence_paths": [
+   "kb_trial/curation/faultcheck/review_batch_08.json",
+   "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_204.json",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/_remediation_plan.json",
+   "kb_trial/entity_index.json",
+   "qq_info/windows.jsonl"
+  ],
+  "term_flags": [
+   "用名冲突：「妮符」（entity_index: qq/untyped）对「罗小黑」（prts/operator）与同窗「雪绒」（prts/operator，seq7、17）；claim 采「妮符（原文用名）」",
+   "review.reason 残留旧主体「罗小黑」，与同段「妮符」表述自相矛盾，须同步修改",
+   "「复活甲」「插在应用中」「同帧」为源内用词（引文逐字），claim 沿用未改名",
+   "未新增数字；claim 未据旧知识补最终干员名"
+  ]
+ },
+ {
+  "id": "qq_expansion:w000392:c01",
+  "decision": "needs_human_confirmation",
+  "reason": "本条 n_source_msgs=1，唯一引文只有 seq9「仇恨降序」四字（workorders_b4/qq_wo_b4_034.json，20 条），改后 claim 的三段里两段出自引文之外：①主体「异银」——仅在 seq3，kb_trial/entity_index.json 记 qq/untyped、无 PRTS 条目；②「系群内成员看到排序现象后的说法」——本于 seq8「哎呀，居然排序了」；③「适用范围（是否仅限 3 技能）原文未确认」与窗内实况不符：seq11「那是3技能」、seq13「2也是」、seq14「这个我清楚」、seq16「是，是么」、seq17「那我不清楚了」，claim 把已有回应写成「原文未确认」。实体、超引用范围、结论方向三类问题叠加，需人工决定补引 seq3、8、11-17 或改述。机制主干「仇恨降序」在引文内，未改名。",
+  "evidence_paths": [
+   "kb_trial/curation/faultcheck/review_batch_08.json",
+   "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_034.json",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/_remediation_plan.json",
+   "kb_trial/entity_index.json"
+  ],
+  "term_flags": [
+   "「异银」仅在引文外 seq3，entity_index 无该名条目（qq/untyped），claim 自陈「未给全名」",
+   "「仇恨降序」逐字在唯一引文内，entity_index 记 prts/mechanic，未改名",
+   "「居然排序了」（seq8）、「那是3技能」「2也是」「是，是么」「那我不清楚了」（seq11、13、16、17）均未录入引文",
+   "claim 未新增数字"
+  ]
+ },
+ {
+  "id": "qq_expansion:w000398:c01",
+  "decision": "needs_human_confirmation",
+  "reason": "①数字与参数本身无问题：唯一引文逐字含「0.51 碰撞半径，8格/秒（≈0.267格/帧）的移动速度，每帧判定一次攻击，每造成一次技能伤害使弹道突进距离+0.3格」，与 claim 完全一致（未换算、未改数），number_suspect 不成立；主体「夜刀」与参数串在改前 claim 中已并列出现，本次 fix 只加限定。②但限定所据的句子不在引文内：括注的「发言者随后自问「怎么不是1帧1判」」是 seq33、「同窗另有「10格/s 1帧1判」」是 seq34，两条均未录入本条唯一引文。③窗内分歧句同样未录入：seq17「1帧一判」与 8 格/秒 不自洽，claim 已写「须并列保留」，但分歧各句不在引文内。④主体归属仍靠引文外：引文句不含干员名，「夜刀」在 seq6、31、37、41、49、53（workorders_b3/qq_wo_b3_043.json，65 条）。属超引用范围＋归属靠引文外，需人工补引或改述。",
+  "evidence_paths": [
+   "kb_trial/curation/faultcheck/review_batch_08.json",
+   "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_043.json",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/_remediation_plan.json",
+   "kb_trial/entity_index.json"
+  ],
+  "term_flags": [
+   "「夜刀」不在引文内（仅 seq6、31、37、41、49、53），entity_index 记 prts/operator",
+   "数值 0.51、8、0.267、0.3 与「格」「秒」「帧」逐字在引文内，未换算、未改数",
+   "「怎么不是1帧1判」（seq33）、「10格/s 1帧1判」（seq34）、「1帧一判」（seq17）未录入 cite",
+   "「判定」「弹道」沿用源字，未改名"
+  ]
+ },
+ {
+  "id": "qq_expansion:w000413:c02",
+  "decision": "needs_human_confirmation",
+  "reason": "claim 本身改得干净：6 条引文在 workorders_b3/qq_wo_b3_045.json 内 6/6 逐字命中（seq15「双击是一轮攻击间隔打两次攻击」、seq17「一次攻击造成两次伤害和双击还不太一样吧」、seq18「好问题，你要怎么区分」、seq20「酒神1技能写的是下次攻击造成两次伤害」、seq21「yj这两种写的一毛一样」、seq22「还有同帧双击的」），改后三个分句都能落到引文，且实测本窗「实现」「代码」「底层」「文本」0 命中，故「底层实现是否可区分原文未讨论」属实，改前 claim 的越界断言（「在游戏文本与底层实现上无法区分」）已被收回。但本次 fix 只改了 claim、未同步 subject：发布层该条 subject 仍为「双击 vs 一次攻击两次伤害（文本与实现不可区分、含同帧双击）」，等于保留了刚被撤销的断言，而窗口对「实现」0 命中、无任何引文可覆盖；condition 亦未改（其「yj这两种写的一毛一样」在引文内，无问题）。属落地不完整＋残留超引用范围断言，人工补一次 subject 修改后即可确认。",
+  "evidence_paths": [
+   "kb_trial/curation/faultcheck/review_batch_08.json",
+   "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_045.json",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/_remediation_plan.json",
+   "kb_trial/entity_index.json"
+  ],
+  "term_flags": [
+   "「双击」为源内用词（引文 seq15、22），entity_index 记 qq/untyped，claim 未改名",
+   "「yj」为源句对鹰角的戏称（引文 seq21 逐字），沿用未还原",
+   "引文含干员名「酒神」（entity_index: prts/operator＋enemy＋mechanic），claim 未写入，未据旧知识加名",
+   "subject 残留「文本与实现不可区分」，与改后 claim 的「原文未讨论」矛盾且无引文覆盖（本窗「实现」0 命中）"
+  ]
+ },
+ {
+  "id": "qq_expansion:w000425:c01",
+  "decision": "needs_human_confirmation",
+  "reason": "①超引用范围：claim 末句「来源同时指出该现象与技能描述及代码本意（跳到重构体位置）不符，属非预期实现（bug）」所本是 seq5（「非预期」在本窗 0 命中；「跳到」「描述」「代码」「bug」仅在 seq5、7），而本条 n_source_msgs=3、共 3 条引文，都不含 seq5（引文为 seq4「本来就可以跳高台」、seq6「只是你没办法把重构体放高台上」、seq7「只要小猫的跳跃目标是高台就可以跳上高台」）。②实体与归类未定：「小猫」在 kb_trial/entity_index.json 0 命中、「重构体」记 prts/qq_alias(shenqi_slang)，claim 已用「（原文昵称，未还原为具体干员/召唤物）」标注、未补名（合规），但 subject 直写「小猫（召唤物）」——「召唤物」在本窗 0 命中，属 fix 未处理的残留归类。③该窗 has_host_authority=false，claim 用「来源」而非「主播」，无误。需人工决定补引 seq5、7 或删末句，并处理 subject 的「召唤物」。",
+  "evidence_paths": [
+   "kb_trial/curation/faultcheck/review_batch_08.json",
+   "kb_trial/curation/qq_expansion/workorders/qq_wo_008.json",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/_remediation_plan.json",
+   "kb_trial/entity_index.json"
+  ],
+  "term_flags": [
+   "「小猫」entity_index 0 命中；「重构体」记 prts/qq_alias(shenqi_slang)——claim 已标注未还原，符合「不据旧知识补名」",
+   "subject 与 claim 用「召唤物」归类，但本窗「召唤物」0 命中，无出处",
+   "「高台」「跳」为源内用词（引文逐字），沿用",
+   "claim 末句所本 seq5（「跳到重构体位置」「bug」）未录入 cite；「非预期」本窗 0 命中",
+   "未新增数字"
+  ]
+ },
+ {
+  "id": "qq_expansion:w000446:c02",
+  "decision": "needs_human_confirmation",
+  "reason": "引文 5 条（seq50「就算被眩晕断开」、seq51「也是每3个寻路帧」、seq52-54 帧号拼接演示、seq57「这样拼接」）逐字支持「每 3 个寻路帧一次判定（按寻路帧拼接计数）」，机制主干无问题；但本次 fix 加的限定与 subject 都不与本条引文相符。①claim 自陈不实：「本条引文只说「判定」，判定对象未点名」——引文原词是「寻路帧」，「判定」在本窗只出现在引文外 seq47，claim 的描述与引文用词不符。②subject 仍未收回：faultcheck 对该条的 reason 已写明「subject「避障判定周期…」中的「避障」来自另一窗 w000521:c01，本条引文无据，属跨窗缝句」，suggestion 也给了「收回 subject/claim 或补列另一窗证据」两条路，但 fix 只改了 claim，subject 仍为「避障判定周期在眩晕中断后的恢复」；实测「避障」在本窗仅 seq1、4、19、26，「避障帧」仅 seq26，均不在引文内。建议按 suggestion 收回 subject 或补列 w000521 证据。",
+  "evidence_paths": [
+   "kb_trial/curation/faultcheck/review_batch_08.json",
+   "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_001.json",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/_remediation_plan.json",
+   "kb_trial/entity_index.json"
+  ],
+  "term_flags": [
+   "「寻路帧」逐字在引文内（seq51），entity_index 记 qq/untyped；无独立「避障帧」条目",
+   "「避障」仅在本窗 seq1、4、19、26（引文外），subject 的「避障判定」无本条引文覆盖（faultcheck 指其来自另一窗 w000521:c01）",
+   "claim 自称「本条引文只说「判定」」与引文不符：引文作「寻路帧」，「判定」仅见引文外 seq47",
+   "「眩晕」沿用源字（引文 seq50、54）；未新增数字与实体名"
+  ]
+ },
+ {
+  "id": "qq_expansion:w000467:c01",
+  "decision": "confirmed_fix",
+  "reason": "两个数值与干员名逐字出自引文：工单 workorders_b3/qq_wo_b3_097.json（window=w000467，35 条）内 seq19「前面是夜刀同款，飞0.25才能出一次伤害」、seq22「夜刀是飞0.1才能出一次伤害」，本条 2 条引文 2/2 逐字命中。改后 claim 把 0.25 一方写作「本窗讨论的另一技能（原文未点名）」，与源句「前面是夜刀同款」同义（本窗确未点名该技能），并把「夜刀」标为「夜刀的投射物需飞行 0.1 格」，未据旧游戏知识补技能名、未改数（number_suspect 不成立）；subject「夜刀及该同款技能的投射物出伤飞行间隔」与 condition「投射物需达到规定飞行量才触发一次伤害」都能由引文自证。落地核实：_remediation_plan.json 的 applied 记录与发布层 curated_high_quality.json 该条 claim 与工单 entry 逐字一致，且不在 fix_skipped 之列。唯一非源字处是量词「格」——源句作「飞0.25」「飞0.1」，全窗「格」0 命中；但 faultcheck 的 suggestion 本就要求补单位（其 reason 记另一窗同类表述为「飞出0.25格」），且本层距离单位通用「格」写法（同批 w000398:c01 引文即作「8格/秒」「+0.3格」），数值未变，故只记 term_flags，不影响确认。",
+  "evidence_paths": [
+   "kb_trial/curation/faultcheck/review_batch_08.json",
+   "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_097.json",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/_remediation_plan.json",
+   "kb_trial/entity_index.json"
+  ],
+  "term_flags": [
+   "量词「格」非源字：源句作「飞0.25」「飞0.1」（seq19、22），全窗「格」0 命中；补单位系 faultcheck suggestion 的要求（其 reason 记另一窗作「飞出0.25格」）",
+   "数值 0.1、0.25 逐字在引文内，未换算、未改数（number_suspect 不成立）",
+   "「夜刀」逐字在引文内（entity_index 记 prts/operator），claim 未改名、未补技能名",
+   "「夜刀同款」为源句措辞（seq19），claim 沿用"
+  ]
+ },
+ {
+  "id": "qq_expansion:w000467:c02",
+  "decision": "needs_human_confirmation",
+  "reason": "本条引文只有 seq24「弹道速度都比这个高了」、seq25「本质1帧1伤」（workorders_b3/qq_wo_b3_097.json，35 条）。改后 claim 把主语从改前的「弹道」收窄为「该投射物（夜刀同款机制）」，方向正确，但仍留有跨条指代：「该投射物」「其出伤所需的飞行阈值」所需的先行词（seq19 的「夜刀同款，飞0.25 才能出一次伤害」、seq22「夜刀是飞0.1 才能出一次伤害」、seq23 的对照）都在本条引文之外，读者单看本条无法解析「这个」指什么；「阈值」在本窗 0 命中，属本层转写用词。属主语/指代不明（faultcheck 原判为 not_self_contained），需人工决定补引 seq19、22、23 或把主语写全。",
+  "evidence_paths": [
+   "kb_trial/curation/faultcheck/review_batch_08.json",
+   "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_097.json",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/_remediation_plan.json",
+   "kb_trial/entity_index.json"
+  ],
+  "term_flags": [
+   "「阈值」非源字（本窗 0 命中），系对「飞0.1／0.25 才能出一次伤害」的转写",
+   "「1帧1伤」逐字在引文内（seq25），沿用源字",
+   "claim 的先行词（夜刀同款 0.25 阈值与 0.1 对照）在本条引文外（seq19、22、23），属跨条指代",
+   "未新增实体名与数字"
+  ]
+ },
+ {
+  "id": "qq_expansion:w000469:c01",
+  "decision": "needs_human_confirmation",
+  "reason": "唯一引文 seq30「3技能飞行速度10.0，碰撞半径0.5，同帧伤害顺序为仇恨降序」逐字，claim 的全部参数（10.0、0.5、仇恨降序）都在引文内、未换算，fix 把改前 claim 的泛化写法（「飞行类弹道的判定口径为…」）收回为「某未点名干员的 3 技能…」，方向正确。但主体不可锚定：实测本窗「梓兰」0 命中，「3技能」只在 seq1、seq30（workorders_b3/qq_wo_b3_046.json，39 条），claim 也自陈「干员名原文未给出，本条不替来源补名」；faultcheck 的原判是「若无法回源补名，宜按 pending 隔离而非留在可检索语料」。是否收录一条主体不可锚定的参数条、或是否据邻窗（w000470 讨论「梓兰3」）补名，须父层裁定——补名属据外部信息改实体，本层不得自行改。另注：claim 的「结算」为源句「同帧伤害顺序」的补足用词；condition 引用的 limitations（seq4「必定要是＜0.515的数」）与 0.5 相容但未录入引文。",
+  "evidence_paths": [
+   "kb_trial/curation/faultcheck/review_batch_08.json",
+   "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_046.json",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/_remediation_plan.json",
+   "kb_trial/entity_index.json"
+  ],
+  "term_flags": [
+   "「梓兰」在本窗 0 命中；「3技能」仅 seq1、seq30，主体未点名（claim 已自陈不补名）",
+   "数值 10.0、0.5 逐字在引文内，未换算、未改数",
+   "「结算」非源字：源句作「同帧伤害顺序」；「碰撞半径」「仇恨降序」为源句用词（entity_index 记 仇恨降序=prts/mechanic）",
+   "condition 所引 limitations 的 seq4「必定要是＜0.515的数」未录入引文"
+  ]
+ },
+ {
+  "id": "qq_expansion:w000470:c01",
+  "decision": "needs_human_confirmation",
+  "reason": "本次 fix 订正了一件实事：改前 claim 的主句「每命中一名敌人只消耗一层」与唯一引文 seq16「一次判定命中多名敌人只减少一层」（workorders_b4/qq_wo_b4_041.json，27 条）含义相反，改后已按引文逐字订正，并补「来源为群内成员」（属实，seq16 发言人 23eb0202 不在该窗 authorities 内）与「窗内未说明『层』所指的具体计数」。但 claim 的三层框架（「同一层级内的多次「判定」伤害」「同层多判不叠加扣层」）需要引文外语境才能成立：seq9「3重以下还是可能有5判的」、seq10「梓兰3应该是按照造成伤害判定次数计算攻击次数的」、seq15、21 的七判，均不在引文内；「（同层多判不叠加扣层）」也是对引文的推断而非逐字。此外「层」是未定义术语（kb_trial/entity_index.json 无该词条），claim 自陈未说明其计数含义。主干既已按引文订正，若父层认可「层」可缺省表述，本条可降为 confirmed_fix；否则需补引 seq9、10、15 后确认。",
+  "evidence_paths": [
+   "kb_trial/curation/faultcheck/review_batch_08.json",
+   "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_041.json",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/_remediation_plan.json",
+   "kb_trial/entity_index.json"
+  ],
+  "term_flags": [
+   "「层」为未定义术语（entity_index 无该词条），claim 自陈窗内未说明其计数含义",
+   "「判定」「命中」逐字在引文内，沿用源字",
+   "支撑语境的 seq9「3重以下…5判」、seq10「梓兰3…」、seq15、21「七判」均未录入引文",
+   "「（同层多判不叠加扣层）」为对引文的推断，非逐字；来源归属（群内成员）与工单一致"
+  ]
+ },
+ {
+  "id": "qq_expansion:w000483:c02",
+  "decision": "needs_human_confirmation",
+  "reason": "引文 3 条（seq8「满攻速是2帧冷却，2帧动画」、seq12「0 2 6 8 12」、seq15 逐帧解释整句）逐字支持 claim 的全部内容与数字（2、0、2、6、8、12 均照录、未换算）；fix 相对改前 claim 只补了主体名（改前为「满攻速（2 帧冷却、2 帧动画）持续攻击时…」，subject 已作「以原文的干员2技能为例」）。但主体名「异格杰西卡 2 技能」只出现在引文外 seq7「异格杰西卡2技能」（workorders_b3/qq_wo_b3_098.json，26 条），且 kb_trial/entity_index.json 无「异格杰西卡」条目（只有 杰西卡=prts/operator、异格=prts/status），属实体＋超引用范围。subject 仍写「（以原文的干员2技能为例）」而 claim 直写干员名，两者口径不一致。建议补引 seq7，或把 claim 也改成不点名写法后确认。",
+  "evidence_paths": [
+   "kb_trial/curation/faultcheck/review_batch_08.json",
+   "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_098.json",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/_remediation_plan.json",
+   "kb_trial/entity_index.json"
+  ],
+  "term_flags": [
+   "「异格杰西卡」仅在引文外 seq7；entity_index 无该名条目（仅有 杰西卡=prts/operator、异格=prts/status）",
+   "数字 2、0、2、6、8、12 逐字在引文内，未换算、未改数",
+   "「索敌」「动画」「自然索敌」为源内用词（seq15 逐字），沿用未改名",
+   "subject 用「原文的干员2技能」对冲、claim 直写干员名，两者口径不一致"
+  ]
+ },
+ {
+  "id": "qq_expansion:w000500:c01",
+  "decision": "needs_human_confirmation",
+  "reason": "引文 2 条（seq4「这个打长线的话感觉有点意思啊」、seq5「[表情]@a83ea1f6 但问题是下一次也必须同帧部署同帧撤退，否则其他的所有花会一起失效」）在 workorders_b4/qq_wo_b4_210.json 内逐字命中；fix 新增的「该说法出自同窗单一发言者、未获验证」也属实（seq5 发言人 7bf55033 不在该窗 authorities 内，该窗 has_host_authority=false），且未据旧知识补干员名。问题在主体归类无出处：「花」在引文内（seq5「其他的所有花」）但 kb_trial/entity_index.json 0 命中；claim 写「“花”／“这些召唤物”原文未给出对应干员或技能」——窗口从未出现「召唤物」（全窗 0 命中），该词是改前 claim 就有的本层归类（改前作「这些召唤物（花）」），本次 fix 未处理，subject「召唤物同帧部署/撤退的连锁要求」同属本层归类。是否收录、以及能否把「花」称为召唤物，须父层裁定（建议与 c02 合并裁定，两条同主体）。",
+  "evidence_paths": [
+   "kb_trial/curation/faultcheck/review_batch_08.json",
+   "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_210.json",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/_remediation_plan.json",
+   "kb_trial/entity_index.json"
+  ],
+  "term_flags": [
+   "「花」在引文内（seq5「其他的所有花」）但 entity_index 0 命中，主体不可锚定",
+   "「召唤物」在本窗 0 命中：claim 的「这些召唤物」与 subject 的「召唤物」均为本层归类用词（改前即存在），fix 未处理",
+   "「同帧部署」「同帧撤退」逐字在引文内，沿用源字（entity_index: 同帧=shenqi_slang）",
+   "claim 未新增数字与干员名；未据旧知识补名"
+  ]
+ },
+ {
+  "id": "qq_expansion:w000500:c02",
+  "decision": "needs_human_confirmation",
+  "reason": "引文 2 条（seq12「可惜二天赋加攻只能吃一次」、seq13「不能叠加」）在 workorders_b4/qq_wo_b4_210.json 内逐字命中，claim 的内容（二天赋加攻只能吃一次、不能叠加、原文未指明该二天赋属召唤物还是其干员）或落在引文内、或为如实降级，fix 相对改前 claim（「这些召唤物（花）的二天赋加攻只能吃一次，不能叠加。」）确实把未定的归属标了出来。问题与 c01 同源：主体不可锚定——「花」在本条引文外（seq5、9），全窗「召唤物」0 命中（claim 的「该召唤物体系」与 subject「召唤物二天赋加攻的叠加性」都是本层归类），且 condition 为「未标注」。建议与 c01 合并由父层裁定主体归类（是否保留为原文未点名主体的独立条目、以及空 condition 是否可接受）。",
+  "evidence_paths": [
+   "kb_trial/curation/faultcheck/review_batch_08.json",
+   "kb_trial/curation/qq_expansion/workorders_b4/qq_wo_b4_210.json",
+   "kb_trial/curated_high_quality.json",
+   "kb_trial/curation/faultcheck/_remediation_plan.json",
+   "kb_trial/entity_index.json"
+  ],
+  "term_flags": [
+   "「花」在本条引文外（seq5、9）；「召唤物」全窗 0 命中——claim 的「该召唤物体系」与 subject 的「召唤物」为本层归类用词",
+   "「二天赋」「加攻」「叠加」逐字在引文内，沿用源字",
+   "condition 为「未标注」（空条件），与 claim 的「原文未指明」并存，需父层确认是否可接受",
+   "claim 未新增数字；未据旧知识补干员名"
+  ]
+ }
+]

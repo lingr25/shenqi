@@ -1,0 +1,93 @@
+{
+ "batch": {
+  "batch_id": "b3",
+  "by_bucket": {
+   "no_process": 260
+  },
+  "by_classification_group": {
+   "A_complete_mechanism": 7,
+   "B_number_formula_code": 164,
+   "C_mixed_or_guess": 26,
+   "D_other_random": 63
+  },
+  "limit": 260,
+  "ordering_rule": "先 no_process 后 no_candidates；组内按 (has_host_authority 降序, window_score 降序, window_id 升序)。确定性、可增量续跑，不用随机。",
+  "window_count": 260
+ },
+ "bucket_distribution": {
+  "final_keep": 30,
+  "keep_before_qq_fix": 0,
+  "no_candidates": 74,
+  "no_process": 627,
+  "qq_pending": 0,
+  "rescue": 2,
+  "retry": 0
+ },
+ "bucket_distribution_all": {
+  "final_keep": 30,
+  "no_candidates": 74,
+  "no_process": 627,
+  "rescue": 2,
+  "reviewed_b2": 48,
+  "shipped": 8
+ },
+ "bucket_notes": {
+  "final_keep": "本桶在阶段三候选池中为 **0**：阶段二有 keep 的 30 窗全部已在阶段二批内。（其中 w000041 同时是 rescue 样本；按「产出 keep」优先标注。）",
+  "keep_before_qq_fix": "本桶在阶段三候选池中为 **0**：历史上 supported/keep 的 11 窗，8 窗已入 curated、3 窗在阶段二批内。",
+  "no_candidates": "无 worklist 候选行的 raw-only 窗口，判定只能靠 raw_messages。",
+  "no_process": "阶段三池的主体：有候选行、但从未逐条读源。",
+  "qq_pending": "本桶在池中为 0（pending 是阶段二的窗口级判定，已在批内消化）。",
+  "rescue": "本桶在阶段三候选池中为 **0**：3 个救援样本 w000031/w000036/w000041 已在阶段二批内复核（w000041 因产出 keep 归入 final_keep）。",
+  "retry": "本桶在池中为 0（阶段三尚无需要重读的窗口）。"
+ },
+ "bucket_scope": {
+  "final_keep": "阶段二逐条读源后有 keep 的窗口",
+  "keep_before_qq_fix": "历史证据审核 supported / 语义内审 keep 的窗口",
+  "no_candidates": "无 worklist 候选行，只有原始消息（raw-only）",
+  "no_process": "有候选行、但从未逐条读源",
+  "qq_pending": "上一轮判定为 pending（证据在但口径未收束）的窗口",
+  "rescue": "上一轮判 source_cannot_settle_claim 并隔离的救援样本",
+  "retry": "需要重读的窗口"
+ },
+ "counts": {
+  "already_in_curated": 8,
+  "already_reviewed_stage2": 80,
+  "stage3_pool_unreviewed": 701,
+  "this_batch": 260,
+  "windows_total": 789
+ },
+ "generated_from": {
+  "curated": "kb_trial/curated_high_quality.json",
+  "stage2_workorders": "kb_trial/curation/qq_expansion/workorders/index.json",
+  "windows_inventory": "kb_trial/curation/qq_expansion/qq_worklist_inventory.json"
+ },
+ "note": "阶段三全量扩批的清单层。本文件只清点，不含任何审核判定。",
+ "pool_composition": {
+  "no_candidates": 74,
+  "no_process": 627
+ },
+ "raw_coverage": {
+  "missing_raw_count": 0,
+  "note": "missing_raw 非空即为「该窗原始消息无法在导出中定位」——按缺失处理，绝不编造。raw-only 窗口无上游候选行，但其原始消息仍可定位。",
+  "total_raw_messages": 10970,
+  "ts_order_quirk": [
+   "w000317"
+  ],
+  "ts_order_quirk_note": "源导出按消息 id 排序；个别窗口存在 id 序与时间序不一致的条目（相邻两条时间差 1 秒、顺序相反）。原样保留，不重排、不丢弃，raw_messages.seq 仍是导出顺序。",
+  "windows_missing_raw": [],
+  "windows_with_raw_located": 260
+ },
+ "stage": "phase3_scale_up",
+ "windows_by_category": {
+  "伤害结算": 21,
+  "位移": 45,
+  "关卡与出怪": 5,
+  "其他": 2,
+  "寻路": 49,
+  "帧时序": 86,
+  "干员机制": 5,
+  "拆包数据": 7,
+  "数值与读图": 5,
+  "索敌": 35
+ }
+}
