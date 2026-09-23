@@ -6,6 +6,7 @@
 隐私:  报告只使用昵称，不含 QQ 号；输出目录 qq_info/ 已被 .gitignore 保护。
 """
 import json
+import math
 import re
 import sys
 from collections import Counter, defaultdict
@@ -245,6 +246,83 @@ for mo in sorted(month_op):
     if sum(month_op[mo].values()) >= 50:
         monthly_top.append((mo, month_op[mo].most_common(3)))
 
+# ---------- XP 合拍度（余弦相似度） ----------
+# 每人提及向量 = 干员占比 × IDF(聊过该干员的人数)，全民老婆降权，突出个人特色
+idf = {op: 1.0 / math.log(1 + len(op_fans[op])) for op in op_mention}
+
+def xp_vec(sid):
+    c = mention[sid]
+    tot = sum(c.values())
+    return {op: (n / tot) * idf[op] for op, n in c.items()} if tot else {}
+
+vec_sids = [sid for sid in speaker_msgs
+            if sum(mention[sid].values()) >= 15 and len(mention[sid]) >= 3]
+vecs = {sid: xp_vec(sid) for sid in vec_sids}
+
+def cosine(a, b):
+    dot = sum(a[k] * b[k] for k in (set(a) & set(b)))
+    if not dot:
+        return 0.0
+    na = math.sqrt(sum(v * v for v in a.values()))
+    nb = math.sqrt(sum(v * v for v in b.values()))
+    return dot / (na * nb)
+
+best_match = {}   # sid -> (other_sid, sim)
+for i, sid in enumerate(vec_sids):
+    b, bs = None, -1.0
+    for oid in vec_sids:
+        if oid == sid:
+            continue
+        s = cosine(vecs[sid], vecs[oid])
+        if s > bs:
+            b, bs = oid, s
+    best_match[sid] = (b, bs)
+
+def shared_ops(sa, sb, k=3):
+    a, b = mention[sa], mention[sb]
+    return sorted((set(a) & set(b)), key=lambda op: -(a[op] + b[op]))[:k]
+
+seen = set()
+soulmates = []
+for sid, (oid, s) in best_match.items():
+    key = tuple(sorted((sid, oid)))
+    if oid is None or key in seen:
+        continue
+    seen.add(key)
+    soulmates.append((sid, oid, s, shared_ops(sid, oid)))
+soulmates.sort(key=lambda x: -x[2])
+
+orphans = sorted(((sid, s, oid) for sid, (oid, s) in best_match.items()),
+                 key=lambda x: x[1])[:10]
+
+# ---------- 单推忠诚度审计（官宣 vs 实际提及） ----------
+audit = []
+for sid, c in declared.items():
+    t, nick_cnt = c.most_common(1)[0]
+    canon = NAME2CANON.get(t, t if t in ops else None)
+    if not canon:
+        continue
+    mcnt = mention[sid].get(canon, 0)
+    mtotal = sum(mention[sid].values())
+    ranked = [op for op, _ in mention[sid].most_common()]
+    rank = ranked.index(canon) + 1 if canon in ranked else 0
+    top_op, top_cnt = (mention[sid].most_common(1)[0] if mtotal else (None, 0))
+    audit.append({
+        "sid": sid, "canon": canon, "nick_cnt": nick_cnt,
+        "mcnt": mcnt, "mtotal": mtotal, "rank": rank,
+        "top_op": top_op, "top_cnt": top_cnt,
+        "aff": affection[sid].get(canon, 0),
+    })
+# 判决: rank1=言行一致 / rank2-3=心里博爱 / 其余=叛徒
+for a in audit:
+    if a["rank"] == 1:
+        a["verdict"] = "言行一致"
+    elif 2 <= a["rank"] <= 3:
+        a["verdict"] = "心里博爱"
+    else:
+        a["verdict"] = "单推叛徒"
+audit.sort(key=lambda a: (a["rank"] == 0, a["rank"] or 99, a["mcnt"]))
+
 # ---------- 输出 ----------
 out = []
 out.append("# 桃大将军粉丝群 · 群友 XP 观察报告\n")
@@ -316,12 +394,60 @@ for sid, c in active:
     a3 = "、".join(f"{op}({n})" for op, n in affection[sid].most_common(3)) or "-"
     out.append(f"| {nick(sid)} | {c} | {m3} | {a3} |")
 
+out.append("\n## 八、XP 合拍榜（提及向量余弦相似度，提及≥15次且≥3个干员）\n")
+out.append("> 向量按干员占比 × IDF 加权：人人都聊的全民老婆不占分量，相似的是「口味」不是「热度」。\n")
+out.append("| 排名 | 群友 A | 群友 B | 合拍度 | 共同话题 TOP3 |")
+out.append("|---|---|---|---|---|")
+for i, (sa, sb, s, sh) in enumerate(soulmates[:15], 1):
+    out.append(f"| {i} | {nick(sa)} | {nick(sb)} | {s:.0%} | {'、'.join(sh)} |")
+
+out.append("\n### XP 孤儿榜（最合拍的人也合不来，口味最独特）\n")
+out.append("| 排名 | 群友 | 最高合拍度 | 灵魂群友 | TA 的怪味 TOP3 |")
+out.append("|---|---|---|---|---|")
+for i, (sid, s, oid) in enumerate(orphans, 1):
+    tops = "、".join(op for op, _ in mention[sid].most_common(3))
+    out.append(f"| {i} | {nick(sid)} | {s:.0%} | {nick(oid) if oid else '-'} | {tops} |")
+
+out.append("\n## 九、单推忠诚度审计（官宣本命 vs 实际提及榜）\n")
+out.append("> 判决口径：本命=本人提及榜第1 → 言行一致；第2~3名 → 心里博爱；其余 → 单推叛徒。\n")
+out.append("| 群友 | 官宣本命 | 本命提及 | 本命名次 | 实际最爱 | 判决 |")
+out.append("|---|---|---|---|---|---|")
+for a in audit:
+    rank = f"第{a['rank']}名" if a["rank"] else "查无此人"
+    top = f"{a['top_op']}({a['top_cnt']})" if a["top_op"] else "-"
+    out.append(f"| {nick(a['sid'])} | {a['canon']} | {a['mcnt']} | {rank} | {top} | {a['verdict']} |")
+
 report = "\n".join(out) + "\n"
 open("qq_info/xp_report.md", "w", encoding="utf-8").write(report)
 
 json.dump({
     "op_mention": op_mention.most_common(),
     "op_affection": op_affection.most_common(),
+    "op_fans": {op: len(s) for op, s in op_fans.items()},
+    "love_rate": [(op, round(r, 4)) for op, r, _, _ in love_rate],
+    "risky": sorted(RISKY_CANONS),
+    "declared": [
+        {"nick": nick(sid), "target": t, "canon": NAME2CANON.get(t, t if t in ops else None),
+         "count": cnt}
+        for sid, c in declared.items() for t, cnt in [c.most_common(1)[0]]
+    ],
+    "stan": [{"nick": nick(sid), "op": op, "cnt": cnt, "total": total, "rate": round(r, 4)}
+             for sid, op, cnt, total, r in stan],
+    "playboy": [{"nick": nick(sid), "n": n, "total": tot,
+                 "tops": affection[sid].most_common(5)} for sid, n, tot in playboy],
+    "chatty": [{"nick": nick(sid), "msgs": c, "ops": len(mention[sid])}
+               for sid, c in chatty],
+    "monthly": [{"month": mo, "tops": tops} for mo, tops in monthly_top],
+    "soulmates": [{"a": nick(sa), "b": nick(sb), "sim": round(s, 4), "shared": sh}
+                  for sa, sb, s, sh in soulmates[:15]],
+    "orphans": [{"nick": nick(sid), "sim": round(s, 4),
+                 "bestie": nick(oid) if oid else None,
+                 "tops": [op for op, _ in mention[sid].most_common(3)]}
+                for sid, s, oid in orphans],
+    "audit": [{"nick": nick(a["sid"]), "canon": a["canon"], "mcnt": a["mcnt"],
+               "mtotal": a["mtotal"], "rank": a["rank"], "top_op": a["top_op"],
+               "top_cnt": a["top_cnt"], "aff": a["aff"], "verdict": a["verdict"]}
+              for a in audit],
     "per_speaker": {
         nick(sid): {
             "msgs": speaker_msgs[sid],

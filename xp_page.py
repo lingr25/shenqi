@@ -103,7 +103,37 @@ for mo in d["monthly"]:
     blocks += f'<div class="month"><h4>{E(mo["month"])}</h4>{bars}</div>'
 sec.append(f'<h2>📈 逐月热点 <small>每月讨论量 TOP3，对应版本节奏</small></h2><div class="months">{blocks}</div>')
 
-# 6. XP 名片
+# 6. XP 合拍榜 + XP 孤儿榜 两栏
+sm = "".join(
+    f'<div class="row"><span class="medal">{medal(i)}</span>'
+    f'<span class="pname">{E(p["a"])}</span><span class="heart">💞</span><span class="pname">{E(p["b"])}</span>'
+    f'{bar(p["sim"], 1, "var(--pink)")}'
+    f'<span class="val pval">{p["sim"]:.0%}<i>{E("、".join(p["shared"][:3]))}</i></span></div>'
+    for i, p in enumerate(d["soulmates"][:10]))
+orp = "".join(
+    f'<div class="row"><span class="medal">{medal(i)}</span><span class="name nick">{E(o["nick"])}</span>'
+    f'{bar(o["sim"], 1, "var(--blue)")}'
+    f'<span class="val">{o["sim"]:.0%}<i>怪味：{E("、".join(o["tops"]))}</i></span></div>'
+    for i, o in enumerate(d["orphans"]))
+sec.append(f"""<div class="cols">
+<div><h2>💞 XP 合拍榜 <small>提及向量余弦相似度·IDF 降权全民老婆</small></h2><div class="chart">{sm}</div></div>
+<div><h2>🏝️ XP 孤儿榜 <small>最合拍的人也合不来，口味最独特</small></h2><div class="chart">{orp}</div></div></div>""")
+
+# 7. 单推忠诚度审计
+VSTYLE = {"言行一致": ("var(--green)", "✅"), "心里博爱": ("var(--accent)", "💛"), "单推叛徒": ("var(--pink)", "🗡️")}
+arows = ""
+for a in d["audit"]:
+    color, ico = VSTYLE[a["verdict"]]
+    rank = f'第{a["rank"]}名' if a["rank"] else "查无此人"
+    top = f'{E(a["top_op"])}({a["top_cnt"]})' if a["top_op"] else "-"
+    arows += (f'<div class="row"><span class="name nick">{E(a["nick"])}</span>'
+              f'<span class="tgt">{E(a["canon"])}</span>'
+              f'<span class="adet">提及×{a["mcnt"]} · 本命{rank} · 实际最爱 {top}</span>'
+              f'<span class="badge" style="border-color:{color};color:{color}">{ico} {a["verdict"]}</span></div>')
+sec.append(f"""<h2>🔍 单推忠诚度审计 <small>官宣本命 vs 本人实际提及榜 · 本命第1=一致 / 第2~3=博爱 / 其余=叛徒</small></h2>
+<div class="chart">{arows}</div>""")
+
+# 8. XP 名片
 cards = ""
 active = sorted(((n, v) for n, v in per_speaker.items() if v["msgs"] >= 100),
                 key=lambda x: -x[1]["msgs"])
@@ -176,6 +206,11 @@ font-size:12px;color:var(--fg)}}
 .tag i{{font-style:normal;color:var(--accent);margin-left:4px;font-size:11px}}
 .tag.love i{{color:var(--pink)}}
 .tag.none{{color:var(--dim);background:none;padding-left:0}}
+.pname{{width:118px;flex:none;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
+.heart{{flex:none;font-size:11px}}
+.pval{{width:104px}}
+.adet{{flex:1;font-size:12px;color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
+.badge{{flex:none;font-size:12px;border:1px solid;border-radius:12px;padding:2px 10px;white-space:nowrap}}
 footer{{margin-top:48px;color:var(--dim);font-size:12px;text-align:center;line-height:1.8}}
 </style></head><body>
 <header>
