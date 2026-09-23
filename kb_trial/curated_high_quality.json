@@ -3,7 +3,7 @@
  "name": "神祇读神奇 机制讲堂 甄选高质量规则",
  "status": "draft_curated",
  "release_note": "本地甄选草稿层；不是官方发布，也不宣称绝对无错。是否对外发布由项目负责人决定，本文件不构成发布许可判断。条目来源为录播官方 AI 字幕、缺官方字幕分P的云端 ASR 重转写与 QQ 群聊；各条实际来源见 source_layer 与 citations[].transcript_file，引用前须核该条证据落在哪一层。未混入本次甄选之外的检索层。",
- "entry_count": 1391,
+ "entry_count": 1390,
  "entry_count_before_semantic_review": 606,
  "semantic_review_note": "entries 已应用语义内审：claim 不是可独立用于检索的明确机制的条目已剔除，逐条判定与被剔原因见 kb_trial/curation/semantic_review.json（含被剔条目）。语义内审是 claim 层的单代理判定，不等于证据核听；两者分列于 semantic_review 与 review.status。",
  "semantic_review_counts": {
@@ -61210,101 +61210,6 @@
    "evidence_review": {
     "status": "supported",
     "reason": "主播 seq 33 给出速度类型的前提，群友 seq 41/48 提出「万一是修改敌人速度呢」「我直接往敌人速度上加一个向量」的反例，主播 seq 51/53/57/59 逐条驳回并强调区别，属闭合。",
-    "reviewer_type": "agent",
-    "confidence": "text-source-supported",
-    "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
-    "limitation": "局限：判定依据是群聊文本片段本身；片段经脱敏、丢失发言者与上下文顺序，提问、假设与结论同形，无法从中区分发言者的确定程度。「all reviewed」不代表「all correct」。",
-    "supports": "qq_raw_messages_verbatim",
-    "source_path": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_016.json",
-    "audit_decision": "kb_trial/curation/qq_expansion/audit_decisions_b3.json",
-    "reviewer_model": "ds/deepseek-v4.1-flash"
-   },
-   "conflict_policy": "no automatic precedence: where sources disagree, all sides must be shown and the disagreement left standing for a human to resolve; nothing is auto-adjudicated by source layer",
-   "disclaimer": "草稿层条目：本层是草稿，不是官方发布；数值与机制结论在用于生产前应回看引文所指时刻的原片。本条的来源是 QQ 群聊片段（已脱敏，不含群号、QQ 号与昵称），不是录播轨；与录播轨条目产生分歧时按 conflict_policy 并列呈现、留待人工判断。"
-  },
-  {
-   "id": "qq_expansion:w001356:c04",
-   "claim": "单纯给敌人加速度无法让它在抬手的时候移动（例如抬手下坑），因此该表现只能由传送解释；从演示效果上，当前版本只有传送可以做到。",
-   "subject": "抬手期间位移的实现方式归属",
-   "condition": "需要在敌人抬手期间发生位移时",
-   "scope": "general_mechanism",
-   "category": "位移/传送",
-   "recorded_ym": "202607",
-   "source_layer": "QQ群聊",
-   "source_layers": [
-    "qq"
-   ],
-   "track": "qq_chat",
-   "citations": [
-    {
-     "id": "qq:w001356",
-     "status": "resolved_qq_span",
-     "source_layers": [
-      "qq"
-     ],
-     "track": "qq_chat",
-     "window_id": "w001356",
-     "as_of": "2026-07-29 22:55:08",
-     "n_source_msgs": 4,
-     "quotes": [
-      {
-       "text": "[表情]只有传送可以",
-       "t_start": null,
-       "t_end": null
-      },
-      {
-       "text": "[表情]从演示效果上，当前版本只有传送可以做到他的表现",
-       "t_start": null,
-       "t_end": null
-      },
-      {
-       "text": "[表情]@某人@某人 那做不到抬手的时候还能动",
-       "t_start": null,
-       "t_end": null
-      },
-      {
-       "text": "加速度无法让敌人抬手的时候能下坑",
-       "t_start": null,
-       "t_end": null
-      }
-     ],
-     "note": "QQ 群聊原文片段，已脱敏：仅保留消息文本与窗口标识，不含群号、QQ 号或昵称。分段与时间戳见 origin.message_seqs。"
-    }
-   ],
-   "source_files": [],
-   "origin": {
-    "trial_doc_id": "w001356",
-    "trial_rule_idx": "c04",
-    "trial_manifest_outputs": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
-    "upstream_record": "kb_trial/curation/qq_expansion/workorders_b3/qq_wo_b3_016.json",
-    "card_section": "QQ扩展(阶段三b3批)",
-    "workorder_id": "qq_wo_b3_016",
-    "local_id": "c04",
-    "message_seqs": [
-     38,
-     39,
-     51,
-     64
-    ],
-    "message_count": 4
-   },
-   "claim_derivation": {
-    "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
-    "rule_idx": 0,
-    "from": null,
-    "to": "单纯给敌人加速度无法让它在抬手的时候移动（例如抬手下坑），因此该表现只能由传送解释；从演示效果上，当前版本只有传送可以做到。",
-    "note": "本条由阶段三 b3 批（260 窗）全量收敛审读产生：reviews_b3 的该窗口候选经逐条回读 raw_messages 后由 audit_decisions_b3.json 裁定，再由 approved_manifest_b3.json 汇总。claim 不是上游窗口标题。"
-   },
-   "review": {
-    "status": "agent_verified",
-    "scope": "text_source_only",
-    "confidence": "text-source-supported",
-    "reason": "QQ扩展(阶段三b3批)逐条回读 raw_messages 后确认该命题有逐字文本出处：主播 seq 25「目前的机制，只有传送能解释通」起头，群友 seq 22/24/41/46/48 先后提出「啊传送带真是传送吗」「原来不是给个什么速度吗」「万一是修改敌人速度呢」「修改吗」四次质疑，主播 seq 33/38/39/51/64 逐一闭合。原文措辞为「当前版本」，已如实保留该时效限定。",
-    "not_authoritative": true
-   },
-   "evidence_review": {
-    "status": "supported",
-    "reason": "主播 seq 25「目前的机制，只有传送能解释通」起头，群友 seq 22/24/41/46/48 先后提出「啊传送带真是传送吗」「原来不是给个什么速度吗」「万一是修改敌人速度呢」「修改吗」四次质疑，主播 seq 33/38/39/51/64 逐一闭合。原文措辞为「当前版本」，已如实保留该时效限定。",
     "reviewer_type": "agent",
     "confidence": "text-source-supported",
     "review_basis": "QQ扩展(阶段三b3批)：agent 逐条回读冻结工单 raw_messages 全文后确认该命题有逐字文本出处；未做人工核听、未回看原片，也未在游戏内复现。",
@@ -131033,7 +130938,7 @@
  "qq_expansion_manifest_b3": {
   "source": "kb_trial/curation/qq_expansion/approved_manifest_b3.json",
   "manifest_status": "approved_merged",
-  "appended": 304,
+  "appended": 303,
   "entry_ids": [
    "qq_expansion:w000446:c02",
    "qq_expansion:w000446:c03",
@@ -131070,7 +130975,6 @@
    "qq_expansion:w001356:c01",
    "qq_expansion:w001356:c02",
    "qq_expansion:w001356:c03",
-   "qq_expansion:w001356:c04",
    "qq_expansion:w001563:c01",
    "qq_expansion:w001580:c01",
    "qq_expansion:w001580:c02",
@@ -131812,18 +131716,18 @@
   "skipped_reason": null
  },
  "evidence_review_summary": {
-  "reviewed_supported": 1351,
+  "reviewed_supported": 1350,
   "reviewed_unsupported": 0,
   "reviewed_pending": 3,
   "inherited_verified": 40,
   "held_out_qq_overlay_pending": 3,
-  "qq_expansion_reverified": 792,
+  "qq_expansion_reverified": 791,
   "qq_expansion_reverified_by_batch": {
    "QQ扩展(阶段二试批)": 29,
-   "QQ扩展(阶段三b3批)": 304,
+   "QQ扩展(阶段三b3批)": 303,
    "QQ扩展(阶段四b4批)": 459
   },
-  "released": 1391,
+  "released": 1390,
   "staging": 6,
   "entries_with_derived_text_repairs": 75,
   "derived_correction_disposition": {

@@ -1,5 +1,5 @@
 {
- "note": "阶段三 b3 批（260 窗）全量收敛审读后的批准产物，只含本代理逐条回读 raw_messages 后认可的命题；每条 evidence 与冻结工单 raw_messages 逐字校验（evidence_sha256 可复核，算法=对 evidence 各条 {seq,speaker_id,time,text} 的 JSON（ensure_ascii=False、sort_keys=True、默认分隔符）取 sha256，与阶段二 approved_manifest.json 同式）。父已批准本批并已追加进 kb_trial/curated_high_quality.json，故 status 为终端态 approved_merged。本轮（材料层修复后重审）追加 w000511 的 c01/c02 两条（首轮因 privacy_redacted_number 移 pending，材料修复后判定量恢复、按四项判据回 keep），本批 keep 由 317 变为 319。此后（父裁定 2026-09-22）又对 4 条已发布条目的引文做了保真修复：054/083/084/213 中被旧隐私规则误抹的 6 条消息按源复原，w000208:c02 另补入 seq59 作为其 claim 数值的逐字出处；条数不变（319），见 audit_decisions_b3.json 的 quote_fidelity_repair。**本轮对抗性挑刺（faultcheck，2026-09-22）**：二审逐条挑刺后本批撤下 7 条（reason_code=faultcheck_remove）、按建议改写 55 条派生文本（引文一字未动），本批 keep 由 319 变为 312；见 audit_decisions_b3.json 的 faultcheck 块。 **本轮校准（calibration_decisions_01（2026-09-23））**：按 faultcheck/calibration_decisions_01.json 改写本批中被点名条目的派生 claim/subject/condition，并仅为 add_citation 条目追加与 raw_messages 逐字一致的引文；既有引文文本不改。",
+ "note": "阶段三 b3 批（260 窗）全量收敛审读后的批准产物，只含本代理逐条回读 raw_messages 后认可的命题；每条 evidence 与冻结工单 raw_messages 逐字校验（evidence_sha256 可复核，算法=对 evidence 各条 {seq,speaker_id,time,text} 的 JSON（ensure_ascii=False、sort_keys=True、默认分隔符）取 sha256，与阶段二 approved_manifest.json 同式）。父已批准本批并已追加进 kb_trial/curated_high_quality.json，故 status 为终端态 approved_merged。本轮（材料层修复后重审）追加 w000511 的 c01/c02 两条（首轮因 privacy_redacted_number 移 pending，材料修复后判定量恢复、按四项判据回 keep），本批 keep 由 317 变为 319。此后（父裁定 2026-09-22）又对 4 条已发布条目的引文做了保真修复：054/083/084/213 中被旧隐私规则误抹的 6 条消息按源复原，w000208:c02 另补入 seq59 作为其 claim 数值的逐字出处；条数不变（319），见 audit_decisions_b3.json 的 quote_fidelity_repair。**本轮对抗性挑刺（faultcheck，2026-09-22）**：二审逐条挑刺后本批撤下 7 条（reason_code=faultcheck_remove）、按建议改写 55 条派生文本（引文一字未动），本批 keep 由 319 变为 312；见 audit_decisions_b3.json 的 faultcheck 块。 **本轮校准（calibration_decisions_01（2026-09-23））**：按 faultcheck/calibration_decisions_01.json 改写本批中被点名条目的派生 claim/subject/condition，并仅为 add_citation 条目追加与 raw_messages 逐字一致的引文；既有引文文本不改。 **本轮（用户裁定 2026-09-23）**：w001356:c04「抬手期间位移只能由传送解释」撤下——该 claim 是群友对珊比前瞻PV演示现象的机制猜测（窗内自陈等实装了只能现在猜不出啥），非已实装结论，且 claim/引文均未点名珊比、主语不可锚定；底层真机制（抬手不在寻路状态故加速度无法位移）已由寻路态相关条目覆盖。audit_decisions_b3 同步 verdict=reject (user_ruling_remove)。",
  "schema": "qq-expansion-approved-1.0",
  "phase": "phase3_b3_full_convergence",
  "criteria": {
@@ -14,7 +14,7 @@
   "audit_decisions": "kb_trial/curation/qq_expansion/audit_decisions_b3.json"
  },
  "status": "approved_merged",
- "entry_count": 304,
+ "entry_count": 303,
  "hard_exclusions_enforced": [
   "w000446 qq_wo_b3_001/c01 unresolved_dispute",
   "w000387 qq_wo_b3_006/c03 unresolved_dispute",
@@ -1653,50 +1653,6 @@
    "evidence_sha256": "b7f0c801a92bcb59697114cc9d86a4187aed3315e87f2ac58b7777a961014cf8",
    "reviewer_model": "ds/deepseek-v4.1-flash",
    "review_reason": "主播 seq 33 给出速度类型的前提，群友 seq 41/48 提出「万一是修改敌人速度呢」「我直接往敌人速度上加一个向量」的反例，主播 seq 51/53/57/59 逐条驳回并强调区别，属闭合。",
-   "review_limitations": [],
-   "audit_note": null,
-   "claim_corrected_by_audit": false,
-   "claim_original": null
-  },
-  {
-   "workorder_id": "qq_wo_b3_016",
-   "window_id": "w001356",
-   "local_id": "c04",
-   "claim": "单纯给敌人加速度无法让它在抬手的时候移动（例如抬手下坑），因此该表现只能由传送解释；从演示效果上，当前版本只有传送可以做到。",
-   "subject": "抬手期间位移的实现方式归属",
-   "condition": "需要在敌人抬手期间发生位移时",
-   "scope": "general_mechanism",
-   "category": "位移/传送",
-   "as_of": "2026-07-29 22:55:08",
-   "evidence": [
-    {
-     "seq": 38,
-     "speaker_id": "589e9b6d",
-     "time": "2026-07-29 22:53:13",
-     "text": "[表情]只有传送可以"
-    },
-    {
-     "seq": 39,
-     "speaker_id": "589e9b6d",
-     "time": "2026-07-29 22:53:32",
-     "text": "[表情]从演示效果上，当前版本只有传送可以做到他的表现"
-    },
-    {
-     "seq": 51,
-     "speaker_id": "589e9b6d",
-     "time": "2026-07-29 22:54:31",
-     "text": "[表情]@某人@某人 那做不到抬手的时候还能动"
-    },
-    {
-     "seq": 64,
-     "speaker_id": "589e9b6d",
-     "time": "2026-07-29 22:55:08",
-     "text": "加速度无法让敌人抬手的时候能下坑"
-    }
-   ],
-   "evidence_sha256": "a366e7dde07471290aa1f433c6c432b75f85daec2ca5761d98b15a8ed69c610f",
-   "reviewer_model": "ds/deepseek-v4.1-flash",
-   "review_reason": "主播 seq 25「目前的机制，只有传送能解释通」起头，群友 seq 22/24/41/46/48 先后提出「啊传送带真是传送吗」「原来不是给个什么速度吗」「万一是修改敌人速度呢」「修改吗」四次质疑，主播 seq 33/38/39/51/64 逐一闭合。原文措辞为「当前版本」，已如实保留该时效限定。",
    "review_limitations": [],
    "audit_note": null,
    "claim_corrected_by_audit": false,
