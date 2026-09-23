@@ -67,6 +67,11 @@ shenqi/
 ├── audit_timeline.py       # [实验性/独立层] VAD采样时间轴 vs 原媒体时间轴审计，产出 cloud_clips/timeline_audit.json
 ├── xp_rank.py              # [娱乐向/本地私有] 群友 XP 榜单挖掘：干员提及/示爱/官宣单推统计，产物 xp_report.md/xp_data.json 只写入 qq_info/（gitignore 保护，仅昵称不含 QQ 号）
 ├── xp_page.py              # [娱乐向/本地私有] 把 xp_data.json 渲染成自包含 HTML 看板 xp_report.html（无外部依赖，仅昵称）
+├── LICENSE                 # 代码许可：MIT
+├── LICENSE-CONTENT         # 内容许可（知识库/逐字稿/词表/报告）：CC BY-NC-SA 4.0
+├── README.md               # 开源说明：产物、双协议分区、隐私边界、管线速览
+├── local_ids.py            # 本地身份注入：从 qq_info/identities.json（gitignore）读真实QQ号，脚本不得硬编码号码
+├── scripts/privacy_gate.py # [发布闸门] 全库隐私扫描：密钥/手机号/真实QQ+UID/花名，发布前必须通过；白名单 scripts/privacy_allowlist.txt 仅收人工核实的非身份误报
 └── local_asr_report.md     # [实验性/独立层] 本地实验性 ASR 进展、活跃度与草稿索引报告
 ```
 
@@ -124,7 +129,7 @@ shenqi/
 2. **官方字幕出现某字，不等于主播确实这么说**：字幕本身有 ASR 讹写（例：「寻路」→「驯鹿」、「伤判」→「商判」）。引文一律保留原始逐字文本不动；只在同源上下文可自证时订正派生 `claim`/`subject`/`condition`，并记录于 `derived_text_repairs`。
 3. **审核状态如实区分**：`user_verified` 仅限用户明确说「优秀」的整卡；「修改后可用」须降为 `agent_verified`。本版 `auto_screened` 为 0，未过审条目**隔离**在 `curation/curated_staging.json`，不静默丢弃也不入库。
 4. **`inherited_verified` 不等于核听**：它表示本条本轮未被重读，判定继承自上一轮的用户反馈与代理文本审核。
-5. **`--layer qq` 等过滤是硬过滤**，不回退到更宽的 `kb_trial` 层；QQ 引文已脱敏，不含群号、QQ 号与昵称。
+5. **`--layer qq` 等过滤是硬过滤**，不回退到更宽的 `kb_trial` 层；QQ 引文已脱敏，不含群号、QQ 号与昵称。发布前必须跑 `scripts/privacy_gate.py`（密钥/手机号/真实 QQ+UID/花名残留全库扫描，0 命中才允许推送公开远端）；`kb_curation_qq_expansion_loader.py` 内的 `PUBLISH_REDACTIONS` 表保存发布期身份词映射，新增泄漏词只加映射并重跑 loader 链路，不直接手改产物。
 6. **数字与 sha256 以实测为准**：改动甄选链路后必须重跑 `kb_curation_evidence_close.py` → `kb_curation_build.py` → `kb_curation_validate.py` → `kb_curated_search.py --self-test`，并同步更新 `CURATED_OVERVIEW.md` 与本节条数。**禁止**用旧版数字或旧层回归成绩背书本层。
 
 **已知短板**：QQ 轨目前 852 条入选（既有 8 条 + 阶段二试批 30 条 + 阶段三 b3 批 312 条 + 阶段四 b4 批 502 条，四批均已 `approved_merged` 并入；b3 的 312 含材料修复后重审追加的 2 条、并已扣掉 2026-09-22 对抗性挑刺撤下的 7 条；b4 的 502 = 508 keep − 6 挑刺撤下，含 2026-09-23 校准恢复的 6 条误撤），仍有大量候选待逐条读源，本层不代表完整知识库。
