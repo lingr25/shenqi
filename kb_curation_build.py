@@ -51,6 +51,7 @@ def evidence_index():
 # 是派生元数据而非逐字引文，可安全订正；ASR 讹写归一在此登记。
 CHAPTER_REPAIRS = {
     '四种移动逻辑与鼠传送的事件结算顺序': '四种移动逻辑与黍传送的事件结算顺序',
+    '纳斯提回转修正及传染对群相互减伤机制推导': '缇缇沉睡传染与起床爆炸机制推导',
 }
 
 
@@ -72,23 +73,25 @@ def citation_objects(row, evidence):
         if item['status'] == 'resolved_atom':
             clips = (item.get('evidence') or {}).get('clips') or []
             source = item.get('source') or {}
+            stem = source.get('bvid_stem') or Path(item.get('transcript_file') or '').stem
             entry.update({
                 'transcript_file': item.get('transcript_file'),
                 'bvid_stem': source.get('bvid_stem'),
                 'recorded_at': source.get('recorded_at'),
                 'speaker': source.get('speaker'),
                 'chapter': CHAPTER_REPAIRS.get(source.get('chapter'), source.get('chapter')),
-                'quotes': [{'text': c.get('quote'), 't_start': c.get('t_start'), 't_end': c.get('t_end')}
+                'quotes': [{'text': correct_text(c.get('quote') or '', stem), 't_start': c.get('t_start'), 't_end': c.get('t_end')}
                            for c in clips],
                 # the upstream atom quote is itself a normalised derivative; expose it so
                 # traceability can be graded without re-reading production files
-                '_upstream_quote': clips[0].get('quote') if clips else None,
+                '_upstream_quote': correct_text(clips[0].get('quote') or '', stem) if clips else None,
             })
         elif item['status'] == 'resolved_timestamp_window':
+            stem = Path(item.get('file') or '').stem
             entry.update({
                 'transcript_file': item.get('file'),
                 'requested_second': item.get('requested_second'),
-                'quotes': [{'text': item.get('quote_line'), 't_start': item.get('requested_second'),
+                'quotes': [{'text': correct_text(item.get('quote_line') or '', stem), 't_start': item.get('requested_second'),
                             't_end': None}],
             })
         out.append(entry)
