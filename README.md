@@ -14,6 +14,7 @@ Lapis\_\_\_，UID `592610`）的全部机制讲堂录播做系统归档：抓取
 | `curated_high_quality.json` | **甄选知识库（~1390 条）**，每条含 `claim`/`subject`/`condition`/`category`/引文证据/B站时间戳链接/审核结论，可直接灌入向量库做 RAG |
 | `transcripts_txt/` | 带 `[HH:MM:SS]` 时间戳的逐字稿（官方 AI 字幕消歧清洗版） |
 | `cleaned_subtitles/` | 消歧后的结构化字幕 JSON（保留毫秒时间戳） |
+| `glossary.json` | **黑话/实体消歧清单（~1887 条）**：正词 → 社区别名 + 英文别名 + ASR 讹写变体，50 条核心机制词带定义；由 `build_glossary.py` 从实体索引+词表+消歧规则确定性合成，RAG 同义词扩展直用 |
 | `entity_corrector.py` | 方舟机制黑话 × ASR 同音错字消歧规则库（帧/索敌/格判/干员别名…），本项目最稀缺资产 |
 | `qq_cards/` | 群聊提炼的知识卡片（draft 层，冲突以录播为准） |
 | `kb_trial/` | 知识库构建的中间层：甄选清单、审核决策、总览报告 |

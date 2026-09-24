@@ -72,6 +72,8 @@ shenqi/
 ├── README.md               # 开源说明：产物、双协议分区、隐私边界、管线速览
 ├── local_ids.py            # 本地身份注入：从 qq_info/identities.json（gitignore）读真实QQ号，脚本不得硬编码号码
 ├── scripts/privacy_gate.py # [发布闸门] 全库隐私扫描：密钥/手机号/真实QQ+UID/花名，发布前必须通过；白名单 scripts/privacy_allowlist.txt 仅收人工核实的非身份误报
+├── glossary.json           # [黑话清单/RAG直用] 正词→别名+英文+ASR讹写变体消歧清单，由 build_glossary.py 从实体索引+glossary+消歧规则确定性合成，禁止手改产物
+├── build_glossary.py       # 黑话清单重跑入口(纯本地,无API)
 └── local_asr_report.md     # [实验性/独立层] 本地实验性 ASR 进展、活跃度与草稿索引报告
 ```
 
