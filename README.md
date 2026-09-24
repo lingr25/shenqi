@@ -43,22 +43,6 @@ Lapis\_\_\_，UID `592610`）的全部机制讲堂录播做系统归档：抓取
   — 署名 + 非商业 + 相同方式共享。内容上游是主播讲解/B站字幕/群聊讨论，
   本许可仅覆盖本项目的整理汇编成果。
 
-## 隐私边界（不发布的内容）
-
-以下目录**仅存在于本地**，被 `.gitignore` 严格忽略、从未进入 git 历史：
-
-- `qq_info/` — 22.7 万条群聊原始记录（含真实 QQ 号/昵称，隐私红线）
-- `audios/`、`asr_drafts/`、`cloud_clips/`、`vad_results/` — 音频与实验性 ASR 草稿
-- `knowledge_pilot/` — 未审核实验产物
-
-群聊来源条目入库前经过多层脱敏（@对象→`@某人`/匿名 speaker id、号码按值抹除、
-昵称名单整行匿名）；发布前必须跑全库闸门：
-
-```bash
-python scripts/privacy_gate.py            # 密钥/手机/群号/真实QQ/昵称残留扫描
-python kb_curation_qq_expansion_privacy_scan.py   # qq_expansion 子树深扫
-```
-
 ## 管线速览
 
 ```
