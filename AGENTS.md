@@ -67,6 +67,8 @@ shenqi/
 ├── audit_timeline.py       # [实验性/独立层] VAD采样时间轴 vs 原媒体时间轴审计，产出 cloud_clips/timeline_audit.json
 ├── xp_rank.py              # [娱乐向/本地私有] 群友 XP 榜单挖掘：干员提及/示爱/官宣单推统计，产物 xp_report.md/xp_data.json 只写入 qq_info/（gitignore 保护，仅昵称不含 QQ 号）
 ├── xp_page.py              # [娱乐向/本地私有] 把 xp_data.json 渲染成自包含 HTML 看板 xp_report.html（无外部依赖，仅昵称）
+├── build_workbench.py      # [产品化/draft] 由甄选层 curated_high_quality.json 生成单文件交互式机制工作台（纯本地，不调用 API；QQ 引文原样引用已脱敏产物）
+├── workbench/              # [产品化/draft] 工作台前端模板与逻辑（template.html + app.js），产物输出至 dist/mechanics-workbench/index.html（dist/ 已被 .gitignore 忽略）
 ├── LICENSE                 # 代码许可：MIT
 ├── LICENSE-CONTENT         # 内容许可（知识库/逐字稿/词表/报告）：CC BY-NC-SA 4.0
 ├── README.md               # 开源说明：产物、双协议分区、隐私边界、管线速览
