@@ -264,6 +264,76 @@ def build_entries(decisions, evidence, verifications, semantic=None, qq_overlay=
     return entries, dropped
 
 
+def load_qq_semantic_verdicts(path):
+    """Load the adversarial semantic review of qq_expansion entries.
+
+    Schema: {id, verdict: keep|demote|reject, info_value: mechanism|question|trivia,
+             issues[], reason, fix}. Produced by qq_semantic_review/merge_verdicts.py
+    from 27 externally-run review batches. Returns {} (inert) when absent.
+    """
+    if not path.exists():
+        return {}
+    out = {}
+    for line in path.read_text(encoding='utf-8').splitlines():
+        if line.strip():
+            v = json.loads(line)
+            out[v['id']] = v
+    return out
+
+
+QQ_INFO_VALUE_LABEL = {
+    'mechanism': '可复用的机制规则/数值/判定逻辑',
+    'question': '有研究价值的开放问题/假设（非定论）',
+    'trivia': '即时性/单关卡/主观内容，无通用价值',
+}
+
+
+def apply_qq_semantic_verdicts(entries, verdicts):
+    """Attach or drop qq_expansion entries per the adversarial semantic pass.
+
+    keep   -> attach semantic_review with the pass's info_value
+    demote -> attach semantic_review; when the pass supplied `fix` (a claim rewrite
+              that marks the content as speculation/open question), adopt it and
+              record the change in claim_derivation
+    reject -> remove the entry (collected in `removed`; manifests stay untouched,
+              mirroring how semantic_review.json drops work)
+    """
+    removed, seen = [], set()
+    kept = []
+    for entry in entries:
+        v = verdicts.get(entry['id'])
+        if v is None:
+            kept.append(entry)
+            continue
+        seen.add(entry['id'])
+        if v['verdict'] == 'reject':
+            removed.append({'id': entry['id'], 'info_value': v['info_value'],
+                            'reason': v.get('reason', '')})
+            continue
+        entry['semantic_review'] = {
+            'verdict': v['verdict'],
+            'info_value': v['info_value'],
+            'info_value_label': QQ_INFO_VALUE_LABEL.get(v['info_value'], ''),
+            'issues': v.get('issues') or [],
+            'reason': v.get('reason', ''),
+            'reviewer_type': 'agent (external adversarial pass, qq_semantic_review)',
+        }
+        if v['verdict'] == 'demote' and v.get('fix') and v['fix'] != entry['claim']:
+            entry['claim_derivation'] = {
+                'source': 'kb_trial/curation/qq_semantic_review/qq_semantic_verdicts.jsonl',
+                'from': entry['claim'],
+                'to': v['fix'],
+                'note': '语义复审降级改写：' + (v.get('reason') or ''),
+            }
+            entry['claim'] = v['fix']
+        kept.append(entry)
+    unknown = sorted(set(verdicts) - seen - {r['id'] for r in removed})
+    if unknown:
+        raise SystemExit('QQ semantic verdicts reference unknown entry ids: %s'
+                         % unknown[:5])
+    return kept, removed
+
+
 def main():
     argparse.ArgumentParser(description=__doc__).parse_args()
     decisions = load_jsonl(OUT / 'decisions.jsonl')
@@ -314,6 +384,15 @@ def main():
                          % b4_report['failures'][:5])
 
     entries = entries + expansion_entries + b3_entries + b4_entries
+
+    # Phase-5: qq_expansion adversarial semantic review (27 externally-run batches).
+    # Unlike semantic_review.json (claim-level keep/drop on the decisions pipeline),
+    # this pass only covers qq_expansion:* ids; reject removes the entry from the
+    # shipped file, manifests stay untouched.
+    qq_sem = load_qq_semantic_verdicts(OUT / 'qq_semantic_review' / 'qq_semantic_verdicts.jsonl')
+    qq_sem_removed = []
+    if qq_sem:
+        entries, qq_sem_removed = apply_qq_semantic_verdicts(entries, qq_sem)
     payload = {
         'schema_version': SCHEMA_VERSION,
         'name': '神祇读神奇 机制讲堂 甄选高质量规则',
@@ -335,6 +414,17 @@ def main():
             'count': len(dropped),
             'by_info_value': dict(Counter(d['info_value'] for d in dropped).most_common()),
         },
+        'qq_semantic_review': ({
+            'source': 'kb_trial/curation/qq_semantic_review/qq_semantic_verdicts.jsonl',
+            'note': 'qq_expansion 条目的对抗性语义复审（27 批外部代理执行）。'
+                    'verdict: keep=维持；demote=内容真实但定级下调（多为开放推测，'
+                    'claim 已按 fix 改写并标明推测性质）；reject=已从本文件剔除。'
+                    'info_value: mechanism/question/trivia，与本文件主体的 '
+                    'semantic_review.info_value（reusable_rule 等）是两套词汇表。',
+            'covered': len(qq_sem),
+            'removed': qq_sem_removed,
+            'removed_count': len(qq_sem_removed),
+        } if qq_sem else None),
         'qq_expansion_manifest': {
             'source': 'kb_trial/curation/qq_expansion/approved_manifest.json',
             'manifest_status': expansion_report['manifest_status'],
