@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Build the consolidated Arknights-mechanism glossary (root glossary.json).
 
-Pure-local, deterministic. Merges three sources:
+Pure-local, deterministic. Merges four sources:
 
   1. qq_cards/glossary.jsonl      — 机制词条(50): short_def / mechanic_def /
                                     related_terms / status
@@ -13,6 +13,9 @@ Pure-local, deterministic. Merges three sources:
                                     剔除 lookaround/反引用/通配后展开成字面值
                                     作为 term 的 asr_variants。FILE_CONTEXT_RULES
                                     是文件级消歧(语义受 scope 限制)，不全局入库。
+  4. kb_trial/term_mining/user_entities.jsonl — 用户逐条裁定的新实体/黑话
+                                    (term/type/short_def)，来自转写稿未知术语
+                                    挖掘 round1 (2026-09-27)。
 
 Schema (glossary-1.0):
   entry = { term, type, aliases, asr_variants, short_def, mechanic_def,
@@ -51,6 +54,18 @@ def load_glossary_terms():
                 'status': g.get('status'),
             }
     return terms
+
+
+def load_user_entities():
+    """用户裁定的新实体/黑话: [{term, type, short_def, ...}]。"""
+    ents = []
+    path = ROOT / 'kb_trial' / 'term_mining' / 'user_entities.jsonl'
+    if path.exists():
+        for line in path.read_text(encoding='utf-8').splitlines():
+            if line.strip():
+                g = json.loads(line)
+                ents.append((g['term'], g['type'], g.get('short_def')))
+    return ents
 
 
 def load_index():
@@ -139,6 +154,7 @@ def load_asr_variants():
 
 def main():
     g_terms = load_glossary_terms()
+    user_ents = load_user_entities()
     canon = load_index()
     asr = load_asr_variants()
 
@@ -176,6 +192,11 @@ def main():
             ent['mechanic_def'] = g['mechanic_def']
             ent['related_terms'] = g['related_terms']
 
+    for term, typ, short_def in user_ents:
+        ent = ensure(term, typ, ['term_mining'])
+        ent['short_def'] = short_def
+        all_types[term].add(typ)  # 让 corrector asr_variants 挂到同类型条目上
+
     for term, vars_ in asr.items():
         cands = all_types.get(term)
         if cands:
@@ -210,7 +231,8 @@ def main():
         'schema_version': 'glossary-1.0',
         'generated_by': 'build_glossary.py',
         'sources': ['qq_cards/glossary.jsonl', 'kb_trial/entity_index.json',
-                    'entity_corrector.py CORRECTION_RULES'],
+                    'entity_corrector.py CORRECTION_RULES',
+                    'kb_trial/term_mining/user_entities.jsonl'],
         'entry_count': len(out_entries),
         'type_counts': dict(tc),
         'usage': ('RAG 同义词扩展/消歧清单: term 为官方或社区正词, aliases 为'

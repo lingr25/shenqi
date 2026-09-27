@@ -5,18 +5,20 @@
  "sources": [
   "qq_cards/glossary.jsonl",
   "kb_trial/entity_index.json",
-  "entity_corrector.py CORRECTION_RULES"
+  "entity_corrector.py CORRECTION_RULES",
+  "kb_trial/term_mining/user_entities.jsonl"
  ],
- "entry_count": 1887,
+ "entry_count": 2010,
  "type_counts": {
   "device": 5,
   "enemy": 18,
-  "mechanic": 24,
+  "mechanic": 29,
   "mechanism": 10,
   "operator": 453,
-  "shenqi_slang": 17,
+  "shenqi_slang": 20,
+  "slang": 8,
   "status": 27,
-  "term": 1333
+  "term": 1440
  },
  "usage": "RAG 同义词扩展/消歧清单: term 为官方或社区正词, aliases 为社区黑话与英文别名, asr_variants 为转写讹写(仅本语料有效); 同一 alias 可能命中多个 term, 检索端按并列处理。",
  "entries": [
@@ -251,9 +253,13 @@
    "aliases": [
     "Planetary Debris"
    ],
+   "asr_variants": [
+    "行星碎械"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "qq_alias"
    ]
   },
@@ -303,9 +309,15 @@
    "aliases": [
     "灌水贤者"
    ],
+   "asr_variants": [
+    "关水贤者",
+    "宋月贤者",
+    "送水贤者"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "user"
    ]
   },
@@ -319,6 +331,24 @@
    "mechanic_def": null,
    "sources": [
     "user"
+   ]
+  },
+  {
+   "term": "三帧一判",
+   "type": "mechanic",
+   "short_def": "部分机制（如阻挡）每三帧进行一次判定",
+   "mechanic_def": null,
+   "sources": [
+    "term_mining"
+   ]
+  },
+  {
+   "term": "上右下左",
+   "type": "mechanic",
+   "short_def": "明日方舟魔改的SPFA寻路机制",
+   "mechanic_def": null,
+   "sources": [
+    "term_mining"
    ]
   },
   {
@@ -407,6 +437,20 @@
    ]
   },
   {
+   "term": "分离力",
+   "type": "mechanic",
+   "asr_variants": [
+    "分离率",
+    "方林立"
+   ],
+   "short_def": "让敌人和敌人之间倾向于相互远离的力（与避障力/径向力并列讨论；精确定义待核，用户要求先记录）",
+   "mechanic_def": null,
+   "sources": [
+    "corrector",
+    "term_mining"
+   ]
+  },
+  {
    "term": "创建时间",
    "type": "mechanic",
    "aliases": [
@@ -444,6 +488,24 @@
    ]
   },
   {
+   "term": "坎诺特",
+   "type": "mechanic",
+   "short_def": "诡异商人坎诺特，肉鸽机制",
+   "mechanic_def": null,
+   "sources": [
+    "term_mining"
+   ]
+  },
+  {
+   "term": "寻路坐标",
+   "type": "mechanic",
+   "short_def": "寻路坐标，相对于实体坐标",
+   "mechanic_def": null,
+   "sources": [
+    "term_mining"
+   ]
+  },
+  {
    "term": "异常效果",
    "type": "mechanic",
    "aliases": [
@@ -461,9 +523,13 @@
    "aliases": [
     "湖光"
    ],
+   "asr_variants": [
+    "国光"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "user"
    ]
   },
@@ -474,6 +540,7 @@
     "Projectile"
    ],
    "asr_variants": [
+    "丹豆",
     "弹到"
    ],
    "short_def": "指远程攻击发射出的飞行物。它带有伤害数据，击中目标才结算伤害，因而会导致伤害延迟生效。",
@@ -555,6 +622,7 @@
     "索敌判定"
    ],
    "asr_variants": [
+    "所敌",
     "索地",
     "锁敌"
    ],
@@ -1176,7 +1244,8 @@
     "求白"
    ],
    "asr_variants": [
-    "求白"
+    "求白",
+    "球白"
    ],
    "short_def": null,
    "mechanic_def": null,
@@ -1207,6 +1276,7 @@
     "伊内斯"
    ],
    "asr_variants": [
+    "一内四",
     "伊为斯"
    ],
    "short_def": null,
@@ -1235,9 +1305,13 @@
    "aliases": [
     "Ethan"
    ],
+   "asr_variants": [
+    "一桑"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "prts_alias"
    ]
   },
@@ -1708,9 +1782,14 @@
     "Closure",
     "可露西尔"
    ],
+   "asr_variants": [
+    "克洛希尔",
+    "可洛西尔"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "prts_alias"
    ]
   },
@@ -2028,6 +2107,7 @@
    ],
    "asr_variants": [
     "塞雷亚",
+    "赛利亚",
     "赛雷亚"
    ],
    "short_def": null,
@@ -2067,9 +2147,13 @@
    "aliases": [
     "Dusk"
    ],
+   "asr_variants": [
+    "蜥"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "prts_alias"
    ]
   },
@@ -2093,9 +2177,13 @@
    "aliases": [
     "Yato"
    ],
+   "asr_variants": [
+    "野刀"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "prts_alias",
     "qq_alias"
    ]
@@ -2207,9 +2295,14 @@
    "aliases": [
     "Nymph"
    ],
+   "asr_variants": [
+    "尼服",
+    "尼福"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "prts_alias"
    ]
   },
@@ -2240,7 +2333,8 @@
    "asr_variants": [
     "拉斯提",
     "纳斯提",
-    "纳斯迪"
+    "纳斯迪",
+    "那斯提"
    ],
    "short_def": null,
    "mechanic_def": null,
@@ -2334,9 +2428,13 @@
     "杰格",
     "洁哥"
    ],
+   "asr_variants": [
+    "安吉丽娜"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "prts_alias",
     "qq_alias",
     "user"
@@ -2865,9 +2963,13 @@
    "aliases": [
     "Typhon"
    ],
+   "asr_variants": [
+    "提风"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "prts_alias"
    ]
   },
@@ -3176,9 +3278,13 @@
    "aliases": [
     "Wang"
    ],
+   "asr_variants": [
+    "旺"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "prts_alias"
    ]
   },
@@ -3442,7 +3548,8 @@
     "orchd2"
    ],
    "asr_variants": [
-    "紫兰"
+    "紫兰",
+    "紫蓝"
    ],
    "short_def": null,
    "mechanic_def": null,
@@ -3602,7 +3709,8 @@
     "波普"
    ],
    "asr_variants": [
-    "波普"
+    "波普",
+    "波补"
    ],
    "short_def": null,
    "mechanic_def": null,
@@ -3760,9 +3868,13 @@
     "DJ",
     "Jessica the Liberated"
    ],
+   "asr_variants": [
+    "底火杰西卡"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "prts_alias"
    ]
   },
@@ -4281,8 +4393,11 @@
    "asr_variants": [
     "三匕",
     "三比",
+    "山be",
     "山比",
-    "山米"
+    "山笔",
+    "山米",
+    "珊笔"
    ],
    "short_def": null,
    "mechanic_def": null,
@@ -4316,7 +4431,9 @@
     "贞德"
    ],
    "asr_variants": [
-    "前溜"
+    "前溜",
+    "秦六",
+    "秦柳"
    ],
    "short_def": null,
    "mechanic_def": null,
@@ -4465,9 +4582,13 @@
    "aliases": [
     "Mantra"
    ],
+   "asr_variants": [
+    "帧言"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "prts_alias",
     "qq_alias"
    ]
@@ -4690,9 +4811,20 @@
    "aliases": [
     "Makoto Yuki"
    ],
+   "asr_variants": [
+    "携程里",
+    "结乘里",
+    "结城里",
+    "结成利",
+    "结成礼",
+    "结成离",
+    "结成里",
+    "节省里"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "prts_alias"
    ]
   },
@@ -5019,9 +5151,13 @@
    "aliases": [
     "Ela"
    ],
+   "asr_variants": [
+    "埃拉"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "prts_alias",
     "qq_alias"
    ]
@@ -5759,9 +5895,13 @@
    "aliases": [
     "Logos"
    ],
+   "asr_variants": [
+    "罗格斯"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "prts_alias"
    ]
   },
@@ -5873,9 +6013,13 @@
    "aliases": [
     "Suzuran"
    ],
+   "asr_variants": [
+    "零男"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "prts_alias"
    ]
   },
@@ -6035,9 +6179,14 @@
    "aliases": [
     "Shaw"
    ],
+   "asr_variants": [
+    "阿夏",
+    "阿肖"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "prts_alias",
     "qq_alias"
    ]
@@ -6128,9 +6277,13 @@
     "隐德莱希",
     "隐隐"
    ],
+   "asr_variants": [
+    "引得来西"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "prts_alias"
    ]
   },
@@ -6251,9 +6404,13 @@
    "aliases": [
     "Lutonada"
    ],
+   "asr_variants": [
+    "路托"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "prts_alias"
    ]
   },
@@ -6637,9 +6794,13 @@
    "aliases": [
     "Ebenholz"
    ],
+   "asr_variants": [
+    "黑剑"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "prts_alias"
    ]
   },
@@ -6650,9 +6811,13 @@
     "Chilchuck",
     "奇尔查克"
    ],
+   "asr_variants": [
+    "切尔查克"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "prts_alias"
    ]
   },
@@ -6715,7 +6880,9 @@
    ],
    "asr_variants": [
     "同真",
-    "童真"
+    "童真",
+    "通真",
+    "铜帧"
    ],
    "short_def": null,
    "mechanic_def": null,
@@ -6751,6 +6918,15 @@
    "sources": [
     "corrector",
     "qq_alias"
+   ]
+  },
+  {
+   "term": "山雀",
+   "type": "shenqi_slang",
+   "short_def": "人（社区人物）",
+   "mechanic_def": null,
+   "sources": [
+    "term_mining"
    ]
   },
   {
@@ -6814,7 +6990,10 @@
     "Stun Gauge Depletion"
    ],
    "asr_variants": [
+    "报条",
+    "报桥",
     "报调",
+    "暴挑",
     "暴调"
    ],
    "short_def": "指单位累积的损伤量填满特定计量条后，瞬间触发负面效果或特殊机制的现象。",
@@ -6841,6 +7020,8 @@
     "索敌正",
     "索敌真",
     "索敌针",
+    "缩地帧",
+    "锁地震",
     "锁敌正",
     "锁敌真",
     "锁敌针"
@@ -6868,6 +7049,15 @@
    "mechanic_def": null,
    "sources": [
     "qq_alias"
+   ]
+  },
+  {
+   "term": "花佬",
+   "type": "shenqi_slang",
+   "short_def": "花见花开，擅长解包的人",
+   "mechanic_def": null,
+   "sources": [
+    "term_mining"
    ]
   },
   {
@@ -6929,7 +7119,8 @@
     "币涨",
     "弊杖",
     "必涨",
-    "臂脏"
+    "臂脏",
+    "避正"
    ],
    "short_def": null,
    "mechanic_def": null,
@@ -6946,6 +7137,16 @@
     "Obstacle Avoidance",
     "Obstacle Avoidance Force"
    ],
+   "asr_variants": [
+    "B张力",
+    "B站力",
+    "壁障力",
+    "毕张力",
+    "臂张力",
+    "逼张力",
+    "避障例",
+    "避障利益"
+   ],
    "short_def": "游戏底层用来防止敌人或单位互相穿模挤叠的推挤力，能使敌人绕开障碍或被挤离原路线。",
    "mechanic_def": "游戏底层用于防止单位穿模与重叠的向量修正机制。避障力向量每3个寻路帧结算一次，且仅在处于move（移动）状态机下进行结算与更新冷却；移动中的敌人计算避障力时会减去目标方向的投影，而处于非move状态（如罚站）时目标向量为0向量，避障力不结算且冷却不更新。",
    "related_terms": [
@@ -6955,6 +7156,7 @@
     "阻挡调帧"
    ],
    "sources": [
+    "corrector",
     "glossary",
     "qq_alias"
    ]
@@ -6990,6 +7192,91 @@
    "sources": [
     "glossary",
     "qq_alias"
+   ]
+  },
+  {
+   "term": "黑梭",
+   "type": "shenqi_slang",
+   "short_def": "黑蓑影卫攻略组",
+   "mechanic_def": null,
+   "sources": [
+    "term_mining"
+   ]
+  },
+  {
+   "term": "划火柴",
+   "type": "slang",
+   "short_def": "暂停部署的手法",
+   "mechanic_def": null,
+   "sources": [
+    "term_mining"
+   ]
+  },
+  {
+   "term": "大爹",
+   "type": "slang",
+   "short_def": "爱国者",
+   "mechanic_def": null,
+   "sources": [
+    "term_mining"
+   ]
+  },
+  {
+   "term": "整费",
+   "type": "slang",
+   "short_def": "费用条为0时",
+   "mechanic_def": null,
+   "sources": [
+    "term_mining"
+   ]
+  },
+  {
+   "term": "斗蛐蛐",
+   "type": "slang",
+   "short_def": "明日方舟的一个活动（争锋频道）",
+   "mechanic_def": null,
+   "sources": [
+    "term_mining"
+   ]
+  },
+  {
+   "term": "无藏",
+   "type": "slang",
+   "asr_variants": [
+    "武藏"
+   ],
+   "short_def": "不拿任何藏品打集成战略",
+   "mechanic_def": null,
+   "sources": [
+    "corrector",
+    "term_mining"
+   ]
+  },
+  {
+   "term": "狼头",
+   "type": "slang",
+   "short_def": "荒芜拉普兰德的浮游炮",
+   "mechanic_def": null,
+   "sources": [
+    "term_mining"
+   ]
+  },
+  {
+   "term": "猫车",
+   "type": "slang",
+   "short_def": "一星干员泰拉大陆调查团",
+   "mechanic_def": null,
+   "sources": [
+    "term_mining"
+   ]
+  },
+  {
+   "term": "赛博塑料",
+   "type": "slang",
+   "short_def": "帧级别自动复刻提前录好的轴的程序",
+   "mechanic_def": null,
+   "sources": [
+    "term_mining"
    ]
   },
   {
@@ -7428,6 +7715,18 @@
    ]
   },
   {
+   "term": "2技力",
+   "type": "term",
+   "asr_variants": [
+    "2G力"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "3同余",
    "type": "term",
    "aliases": [
@@ -7539,6 +7838,18 @@
    ]
   },
   {
+   "term": "Contact Offset",
+   "type": "term",
+   "asr_variants": [
+    "contact of set"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "DoT时序",
    "type": "term",
    "asr_variants": [
@@ -7574,6 +7885,32 @@
    ]
   },
   {
+   "term": "Move状态机",
+   "type": "term",
+   "asr_variants": [
+    "木状态机"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
+   "term": "PRTS",
+   "type": "term",
+   "asr_variants": [
+    "BTS",
+    "PITS",
+    "PRT"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "SPFA算法",
    "type": "term",
    "aliases": [
@@ -7583,6 +7920,20 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "Unity",
+   "type": "term",
+   "asr_variants": [
+    "NITY",
+    "尤尼ITY",
+    "有尼体"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -7604,6 +7955,18 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "end position",
+   "type": "term",
+   "asr_variants": [
+    "and position"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -7661,13 +8024,28 @@
    ]
   },
   {
+   "term": "wait for seconds",
+   "type": "term",
+   "asr_variants": [
+    "with for sex"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "一帧",
    "type": "term",
    "aliases": [
     "1 frame"
    ],
    "asr_variants": [
-    "一针"
+    "一针",
+    "义诊",
+    "异真",
+    "艺珍"
    ],
    "short_def": null,
    "mechanic_def": null,
@@ -7698,12 +8076,36 @@
    ]
   },
   {
+   "term": "一格封印许多鱼",
+   "type": "term",
+   "asr_variants": [
+    "异格封印许多余"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "一碰就碎的真怪",
    "type": "term",
    "short_def": null,
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "一级力",
+   "type": "term",
+   "asr_variants": [
+    "一吉利"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -7746,9 +8148,13 @@
     "3-frame Target Search",
     "Three-frame Target Search"
    ],
+   "asr_variants": [
+    "三诊所地"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "qq"
    ]
   },
@@ -7976,11 +8382,35 @@
    ]
   },
   {
+   "term": "两大盾",
+   "type": "term",
+   "asr_variants": [
+    "两大吨"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "两帧",
    "type": "term",
    "asr_variants": [
     "两针",
     "两针帧"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
+   "term": "两技力",
+   "type": "term",
+   "asr_variants": [
+    "两季利"
    ],
    "short_def": null,
    "mechanic_def": null,
@@ -8058,6 +8488,15 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "书刀",
+   "type": "term",
+   "short_def": "书刀（用户确认为正确词）",
+   "mechanic_def": null,
+   "sources": [
+    "term_mining"
    ]
   },
   {
@@ -8155,6 +8594,30 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "云中墨贼",
+   "type": "term",
+   "asr_variants": [
+    "云中飞贼"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
+   "term": "五帧",
+   "type": "term",
+   "asr_variants": [
+    "武镇"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -8623,6 +9086,18 @@
    ]
   },
   {
+   "term": "伪普攻",
+   "type": "term",
+   "asr_variants": [
+    "围普攻"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "伪装",
    "type": "term",
    "aliases": [
@@ -8731,6 +9206,18 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "低移速",
+   "type": "term",
+   "asr_variants": [
+    "低音速"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -8924,9 +9411,13 @@
     "WAIT_FOR_SECONDS",
     "Wait"
    ],
+   "asr_variants": [
+    "停住"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "qq"
    ]
   },
@@ -9148,6 +9639,18 @@
    ]
   },
   {
+   "term": "免疫余传",
+   "type": "term",
+   "asr_variants": [
+    "免疫渔船"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "免疫失衡",
    "type": "term",
    "aliases": [
@@ -9183,6 +9686,18 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "入控",
+   "type": "term",
+   "asr_variants": [
+    "入空"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -9271,6 +9786,18 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "八帧",
+   "type": "term",
+   "asr_variants": [
+    "八珍"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -9601,6 +10128,18 @@
    ]
   },
   {
+   "term": "减费",
+   "type": "term",
+   "asr_variants": [
+    "减废"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "减速",
    "type": "term",
    "aliases": [
@@ -9672,6 +10211,18 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "出伤的时间",
+   "type": "term",
+   "asr_variants": [
+    "出伤的世界"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -9886,9 +10437,13 @@
    "aliases": [
     "Spawn Frame"
    ],
+   "asr_variants": [
+    "出生真"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "qq"
    ]
   },
@@ -10000,6 +10555,18 @@
    ]
   },
   {
+   "term": "刚体",
+   "type": "term",
+   "asr_variants": [
+    "缸体"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "刚好在死的那一帧",
    "type": "term",
    "asr_variants": [
@@ -10090,6 +10657,18 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "判定圆",
+   "type": "term",
+   "asr_variants": [
+    "判定员"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -10199,6 +10778,10 @@
     "Windup",
     "攻击前摇"
    ],
+   "asr_variants": [
+    "前游",
+    "钱欧"
+   ],
    "short_def": "角色或装置从开始攻击到真正打出伤害之间的“抬手”准备时间。",
    "mechanic_def": "单位（干员或装置如地雷）从开始触发攻击/动作到实际产生判定或出伤之间的动作准备阶段。根据实测记录，前摇及弹道会导致出伤帧不稳定或存在帧数浮动（如干员前摇可能存在1帧浮动，地雷出伤帧存在3~5帧波动）。",
    "related_terms": [
@@ -10207,6 +10790,7 @@
     "索敌帧"
    ],
    "sources": [
+    "corrector",
     "glossary",
     "qq"
    ]
@@ -10296,6 +10880,18 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "加二帧",
+   "type": "term",
+   "asr_variants": [
+    "加二阵"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -10464,9 +11060,13 @@
    "aliases": [
     "Animation Duration"
    ],
+   "asr_variants": [
+    "动画市场"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "qq"
    ]
   },
@@ -10551,6 +11151,18 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "匀速度",
+   "type": "term",
+   "asr_variants": [
+    "云速度"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -10669,6 +11281,18 @@
    ]
   },
   {
+   "term": "协程",
+   "type": "term",
+   "asr_variants": [
+    "携程"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "单位属性",
    "type": "term",
    "aliases": [
@@ -10748,6 +11372,19 @@
    ]
   },
   {
+   "term": "卡索敌帧",
+   "type": "term",
+   "asr_variants": [
+    "卡索迪真",
+    "卡锁地震"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "卡那个帧",
    "type": "term",
    "asr_variants": [
@@ -10788,9 +11425,13 @@
    "aliases": [
     "Defensive Protocol"
    ],
+   "asr_variants": [
+    "位数协议"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "qq"
    ]
   },
@@ -11078,9 +11719,13 @@
     "Hit Radius",
     "Hurt Radius"
    ],
+   "asr_variants": [
+    "收集半径"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "qq"
    ]
   },
@@ -11165,6 +11810,18 @@
    "type": "term",
    "asr_variants": [
     "只要敌人不死就可以出逃"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
+   "term": "叫神祇",
+   "type": "term",
+   "asr_variants": [
+    "叫神奇"
    ],
    "short_def": null,
    "mechanic_def": null,
@@ -11344,6 +12001,18 @@
    ]
   },
   {
+   "term": "右三格",
+   "type": "term",
+   "asr_variants": [
+    "又三格"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "合约",
    "type": "term",
    "aliases": [
@@ -11414,6 +12083,20 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "同域共存",
+   "type": "term",
+   "asr_variants": [
+    "同位共存",
+    "同遇共存"
+   ],
+   "short_def": "关卡",
+   "mechanic_def": null,
+   "sources": [
+    "corrector",
+    "term_mining"
    ]
   },
   {
@@ -11653,9 +12336,13 @@
    "aliases": [
     "Hit Frame"
    ],
+   "asr_variants": [
+    "命中真"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "qq"
    ]
   },
@@ -11810,6 +12497,30 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "四帧",
+   "type": "term",
+   "asr_variants": [
+    "四诊"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
+   "term": "四帧撤",
+   "type": "term",
+   "asr_variants": [
+    "四诊车"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -12571,6 +13282,18 @@
    ]
   },
   {
+   "term": "奶后部署",
+   "type": "term",
+   "asr_variants": [
+    "乃后部署"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "妮符",
    "type": "term",
    "short_def": null,
@@ -12631,6 +13354,19 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "孤星",
+   "type": "term",
+   "asr_variants": [
+    "胡星"
+   ],
+   "short_def": "活动关卡",
+   "mechanic_def": null,
+   "sources": [
+    "corrector",
+    "term_mining"
    ]
   },
   {
@@ -12804,6 +13540,18 @@
    ]
   },
   {
+   "term": "对轴",
+   "type": "term",
+   "asr_variants": [
+    "对肘"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "寻仇",
    "type": "term",
    "aliases": [
@@ -12847,7 +13595,9 @@
     "Pathfinding"
    ],
    "asr_variants": [
-    "选露"
+    "学路",
+    "选露",
+    "驯鹿"
    ],
    "short_def": "指敌方或召唤物等单位在地图上规划移动路线、避开障碍物与计算坐标位移的底层逻辑。",
    "mechanic_def": "单位在移动过程中规划路线与避障的底层逻辑。包含三帧避障机制，计算受速度方向、寻路坐标及单位挤压影响；底层曾因浮点数（float）精度粗糙及向下取整导致临界点判定波动，后续已改为定点数表示以避免精度变化。",
@@ -12890,9 +13640,13 @@
     "Nav Target",
     "Pathfinding Cursor"
    ],
+   "asr_variants": [
+    "巡逻光标"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "qq"
    ]
   },
@@ -12912,9 +13666,15 @@
   {
    "term": "寻路力",
    "type": "term",
+   "asr_variants": [
+    "寻路例",
+    "寻路里",
+    "寻鹿力"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "qq"
    ]
   },
@@ -13016,6 +13776,18 @@
    ]
   },
   {
+   "term": "寻路的速度",
+   "type": "term",
+   "asr_variants": [
+    "巡逻的速度"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "寻路目标",
    "type": "term",
    "asr_variants": [
@@ -13088,6 +13860,15 @@
    ]
   },
   {
+   "term": "封护",
+   "type": "term",
+   "short_def": "缇缇的技能（用户确认「封护」为正确写法，不得改写为风护）",
+   "mechanic_def": null,
+   "sources": [
+    "term_mining"
+   ]
+  },
+  {
    "term": "封神令",
    "type": "term",
    "short_def": null,
@@ -13097,10 +13878,20 @@
    ]
   },
   {
+   "term": "将进酒",
+   "type": "term",
+   "short_def": "活动关卡",
+   "mechanic_def": null,
+   "sources": [
+    "term_mining"
+   ]
+  },
+  {
    "term": "小刻",
    "type": "term",
    "asr_variants": [
-    "小克"
+    "小克",
+    "小柯"
    ],
    "short_def": null,
    "mechanic_def": null,
@@ -13115,6 +13906,30 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "小娜迦",
+   "type": "term",
+   "asr_variants": [
+    "小娜家"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
+   "term": "少一判",
+   "type": "term",
+   "asr_variants": [
+    "少一派"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -13281,8 +14096,21 @@
    "type": "term",
    "asr_variants": [
     "时针",
+    "枕",
     "真",
     "针"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
+   "term": "帧乘以",
+   "type": "term",
+   "asr_variants": [
+    "真乘以"
    ],
    "short_def": null,
    "mechanic_def": null,
@@ -13315,6 +14143,30 @@
    ]
   },
   {
+   "term": "帧就是帧",
+   "type": "term",
+   "asr_variants": [
+    "真就是真"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
+   "term": "帧数",
+   "type": "term",
+   "asr_variants": [
+    "真数"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "帧时序",
    "type": "term",
    "aliases": [
@@ -13332,9 +14184,13 @@
    "aliases": [
     "Frame Duration"
    ],
+   "asr_variants": [
+    "真时长"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "qq"
    ]
   },
@@ -13344,9 +14200,13 @@
    "aliases": [
     "Frame Time"
    ],
+   "asr_variants": [
+    "真时间"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "qq"
    ]
   },
@@ -13410,6 +14270,30 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "帧运算",
+   "type": "term",
+   "asr_variants": [
+    "真运算"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
+   "term": "帧运算上",
+   "type": "term",
+   "asr_variants": [
+    "真月上算"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -13647,6 +14531,7 @@
    "term": "异德",
    "type": "term",
    "asr_variants": [
+    "一德",
     "伊德",
     "易德",
     "翼德"
@@ -14082,11 +14967,27 @@
    ]
   },
   {
-   "term": "径向力",
+   "term": "影子帧",
    "type": "term",
+   "asr_variants": [
+    "影子真"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector"
+   ]
+  },
+  {
+   "term": "径向力",
+   "type": "term",
+   "asr_variants": [
+    "镜像力"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector",
     "qq"
    ]
   },
@@ -14254,6 +15155,18 @@
    ]
   },
   {
+   "term": "愚人号",
+   "type": "term",
+   "asr_variants": [
+    "于仁浩"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "我42当时",
    "type": "term",
    "asr_variants": [
@@ -14407,6 +15320,31 @@
    ]
   },
   {
+   "term": "打先创建",
+   "type": "term",
+   "asr_variants": [
+    "掀床箭"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
+   "term": "打先部署",
+   "type": "term",
+   "asr_variants": [
+    "打仙部署",
+    "解大仙部署"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "打数",
    "type": "term",
    "aliases": [
@@ -14455,6 +15393,31 @@
    ]
   },
   {
+   "term": "托生莲座",
+   "type": "term",
+   "asr_variants": [
+    "托生莲坐",
+    "托生连坐"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
+   "term": "扣行动力",
+   "type": "term",
+   "asr_variants": [
+    "酷刑动力"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "扩散起点",
    "type": "term",
    "aliases": [
@@ -14472,6 +15435,11 @@
    "aliases": [
     "SP"
    ],
+   "asr_variants": [
+    "技里",
+    "记理",
+    "集里"
+   ],
    "short_def": "角色释放技能所需的能量点数（SP），攒满后可开启技能，通常为整数点数。",
    "mechanic_def": "角色释放技能所需的资源数值。常规情况下技力为整数，冷却进度积满后转化为1点技力；但在特定等比保留SP的机制下可能产生带小数的技力，系统因不足整点判定会导致必须积攒至超过阈值的带小数数值（如4.5须攒至5.5）方可满足释放条件。",
    "related_terms": [
@@ -14480,6 +15448,7 @@
     "等比保留SP"
    ],
    "sources": [
+    "corrector",
     "glossary",
     "qq"
    ]
@@ -14686,6 +15655,18 @@
    ]
   },
   {
+   "term": "抓券",
+   "type": "term",
+   "asr_variants": [
+    "抓卷"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "抓鱼帧",
    "type": "term",
    "short_def": null,
@@ -14707,6 +15688,18 @@
    ]
   },
   {
+   "term": "折射血",
+   "type": "term",
+   "asr_variants": [
+    "折射鞋"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "护愈之手",
    "type": "term",
    "short_def": null,
@@ -14724,9 +15717,13 @@
     "Attack Wind-up",
     "Attack Windup"
    ],
+   "asr_variants": [
+    "抬售"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "qq"
    ]
   },
@@ -14847,6 +15844,18 @@
    ]
   },
   {
+   "term": "拼好帧",
+   "type": "term",
+   "asr_variants": [
+    "拼好真"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "持续伤害",
    "type": "term",
    "aliases": [
@@ -14878,6 +15887,18 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "指南针",
+   "type": "term",
+   "asr_variants": [
+    "指南帧"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -15023,6 +16044,18 @@
    ]
   },
   {
+   "term": "换一帧",
+   "type": "term",
+   "asr_variants": [
+    "换衣帧"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "排序精度",
    "type": "term",
    "aliases": [
@@ -15044,6 +16077,18 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "控住",
+   "type": "term",
+   "asr_variants": [
+    "控主"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -15096,6 +16141,18 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "推赤金",
+   "type": "term",
+   "asr_variants": [
+    "推迟金"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -15317,6 +16374,18 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "攻击动画上限",
+   "type": "term",
+   "asr_variants": [
+    "攻击动画上线"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -15633,6 +16702,18 @@
    ]
   },
   {
+   "term": "敌玛恩纳",
+   "type": "term",
+   "asr_variants": [
+    "迪玛安娜"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "数据污染",
    "type": "term",
    "short_def": null,
@@ -15770,6 +16851,19 @@
    "sources": [
     "glossary",
     "qq"
+   ]
+  },
+  {
+   "term": "无弹道推",
+   "type": "term",
+   "asr_variants": [
+    "无弹倒推",
+    "无弹套推"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -16203,6 +17297,18 @@
    ]
   },
   {
+   "term": "有弹道推",
+   "type": "term",
+   "asr_variants": [
+    "有弹倒推"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "有效人数",
    "type": "term",
    "short_def": null,
@@ -16263,6 +17369,27 @@
    ]
   },
   {
+   "term": "本帧",
+   "type": "term",
+   "asr_variants": [
+    "本真"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
+   "term": "机械之灾",
+   "type": "term",
+   "short_def": "ISW-NO 关卡",
+   "mechanic_def": null,
+   "sources": [
+    "term_mining"
+   ]
+  },
+  {
    "term": "束流",
    "type": "term",
    "aliases": [
@@ -16281,6 +17408,18 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "杰哥",
+   "type": "term",
+   "asr_variants": [
+    "迭戈"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -16358,9 +17497,14 @@
     "Grid-based Check"
    ],
    "asr_variants": [
+    "阁判",
+    "阁畔",
     "隔P",
     "隔判",
     "隔板",
+    "隔派",
+    "隔畔",
+    "隔盘",
     "隔盼"
    ],
    "short_def": "游戏通过对实体坐标取整来判定其具体归属于哪一格地块的机制，常用于索敌、范围生效与地形触发。",
@@ -16546,6 +17690,31 @@
    ]
   },
   {
+   "term": "模长",
+   "type": "term",
+   "asr_variants": [
+    "模场",
+    "魔长"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
+   "term": "模长限制",
+   "type": "term",
+   "asr_variants": [
+    "魔唱限制"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "次数盾/次数怪",
    "type": "term",
    "aliases": [
@@ -16577,6 +17746,18 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "此帧",
+   "type": "term",
+   "asr_variants": [
+    "此真"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -16613,6 +17794,18 @@
    ]
   },
   {
+   "term": "歼灭机甲",
+   "type": "term",
+   "asr_variants": [
+    "监灭机架"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "残影",
    "type": "term",
    "aliases": [
@@ -16623,6 +17816,30 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "每帧",
+   "type": "term",
+   "asr_variants": [
+    "美珍"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
+   "term": "每帧施力",
+   "type": "term",
+   "asr_variants": [
+    "每帧失利"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -16641,6 +17858,18 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "毫秒数",
+   "type": "term",
+   "asr_variants": [
+    "好秒数"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -16969,6 +18198,18 @@
    ]
   },
   {
+   "term": "浪花是可以负的",
+   "type": "term",
+   "asr_variants": [
+    "浪花是可以付的"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "浮点数",
    "type": "term",
    "aliases": [
@@ -17041,6 +18282,18 @@
    ]
   },
   {
+   "term": "涂装黎波利",
+   "type": "term",
+   "asr_variants": [
+    "服装离婚率"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "消失状态",
    "type": "term",
    "aliases": [
@@ -17062,9 +18315,22 @@
    ]
   },
   {
+   "term": "涌动之餐",
+   "type": "term",
+   "asr_variants": [
+    "永动致残"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "涤墨",
    "type": "term",
    "asr_variants": [
+    "底墨",
     "迪莫"
    ],
    "short_def": null,
@@ -17083,6 +18349,18 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "深池",
+   "type": "term",
+   "asr_variants": [
+    "申驰"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -17268,6 +18546,9 @@
    "term": "火陈",
    "type": "term",
    "asr_variants": [
+    "火城",
+    "火成",
+    "火沉",
     "火辰"
    ],
    "short_def": null,
@@ -17464,6 +18745,18 @@
    ]
   },
   {
+   "term": "特里蒙城防军",
+   "type": "term",
+   "asr_variants": [
+    "特里蒙城方军"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "特限开",
    "type": "term",
    "asr_variants": [
@@ -17597,6 +18890,18 @@
    ]
   },
   {
+   "term": "玛露希尔",
+   "type": "term",
+   "asr_variants": [
+    "马路希尔"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "环绕运动",
    "type": "term",
    "aliases": [
@@ -17609,15 +18914,31 @@
    ]
   },
   {
+   "term": "理智",
+   "type": "term",
+   "asr_variants": [
+    "礼制"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "理论移速",
    "type": "term",
    "aliases": [
     "Theoretical Movement Speed",
     "v"
    ],
+   "asr_variants": [
+    "理论一素"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "qq"
    ]
   },
@@ -17796,9 +19117,14 @@
   {
    "term": "登临意",
    "type": "term",
+   "asr_variants": [
+    "登临一",
+    "登临翼"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "qq"
    ]
   },
@@ -17920,9 +19246,13 @@
    "aliases": [
     "Direct Multiplier"
    ],
+   "asr_variants": [
+    "直接成算"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "qq"
    ]
   },
@@ -18002,14 +19332,30 @@
    ]
   },
   {
+   "term": "真零",
+   "type": "term",
+   "asr_variants": [
+    "真灵"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "眠兽",
    "type": "term",
    "aliases": [
     "Slumberfoot"
    ],
+   "asr_variants": [
+    "棉兽"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "qq"
    ]
   },
@@ -18225,6 +19571,9 @@
     "Collision Box",
     "Hitbox"
    ],
+   "asr_variants": [
+    "碰撞相"
+   ],
    "short_def": "游戏中单位或障碍物所占的实际几何判定区域，用于计算伤害接触、阻挡与空间交互。",
    "mechanic_def": "用于判定物理阻挡、技能生效与坐标相交的空间范围。多边形碰撞箱判定相交时存在接触容差，其 contact offset 可以相加；墙体等障碍物的碰撞箱各墙独立；且单位碰撞箱大小存在差异（如普通干员未超出一格，大型单位体型更大），与地块格子判定（格判）有严格区分。",
    "related_terms": [
@@ -18234,6 +19583,7 @@
     "格判"
    ],
    "sources": [
+    "corrector",
     "glossary",
     "qq"
    ]
@@ -18265,9 +19615,14 @@
    "aliases": [
     "Wall Collision"
    ],
+   "asr_variants": [
+    "柯强",
+    "科强"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "qq"
    ]
   },
@@ -18305,6 +19660,18 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "神奇",
+   "type": "term",
+   "asr_variants": [
+    "申奇"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -18542,6 +19909,18 @@
    ]
   },
   {
+   "term": "穷兵黩武",
+   "type": "term",
+   "asr_variants": [
+    "穷兵独武"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "空buff列表",
    "type": "term",
    "short_def": null,
@@ -18619,9 +19998,13 @@
    "aliases": [
     "Empty Cost Frame"
    ],
+   "asr_variants": [
+    "空费真"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "qq"
    ]
   },
@@ -18647,6 +20030,18 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "第1A",
+   "type": "term",
+   "asr_variants": [
+    "DE1A"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -18924,12 +20319,33 @@
    ]
   },
   {
+   "term": "紧急建制",
+   "type": "term",
+   "short_def": "关卡",
+   "mechanic_def": null,
+   "sources": [
+    "term_mining"
+   ]
+  },
+  {
    "term": "紫框",
    "type": "term",
    "short_def": null,
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "红门格",
+   "type": "term",
+   "asr_variants": [
+    "鸿门阁"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -18985,7 +20401,8 @@
    "term": "维云斯",
    "type": "term",
    "asr_variants": [
-    "维尼斯"
+    "维尼斯",
+    "维恩斯"
    ],
    "short_def": null,
    "mechanic_def": null,
@@ -19030,6 +20447,18 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "罚站",
+   "type": "term",
+   "asr_variants": [
+    "发站"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -19309,6 +20738,30 @@
    ]
   },
   {
+   "term": "萨卡兹穿刺手",
+   "type": "term",
+   "asr_variants": [
+    "萨卡斯穿四首"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
+   "term": "萨尔贡",
+   "type": "term",
+   "asr_variants": [
+    "萨尔光"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "萨尔贡盟约",
    "type": "term",
    "aliases": [
@@ -19318,6 +20771,18 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "萨科塔",
+   "type": "term",
+   "asr_variants": [
+    "萨克塔"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -19409,9 +20874,13 @@
     "Blue Gate",
     "Exit"
    ],
+   "asr_variants": [
+    "栏门"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "qq"
    ]
   },
@@ -19618,6 +21087,18 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "覆潮之下",
+   "type": "term",
+   "asr_variants": [
+    "覆巢之下"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -20054,9 +21535,13 @@
    "aliases": [
     "Blessing of New Life"
    ],
+   "asr_variants": [
+    "四福新生"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "qq"
    ]
   },
@@ -20067,6 +21552,27 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "赤金",
+   "type": "term",
+   "asr_variants": [
+    "吃金"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
+   "term": "赤霄",
+   "type": "term",
+   "short_def": "陈的武器",
+   "mechanic_def": null,
+   "sources": [
+    "term_mining"
    ]
   },
   {
@@ -20385,6 +21891,18 @@
    ]
   },
   {
+   "term": "过帧",
+   "type": "term",
+   "asr_variants": [
+    "过真"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "过滤器",
    "type": "term",
    "aliases": [
@@ -20418,6 +21936,18 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "运行",
+   "type": "term",
+   "asr_variants": [
+    "月星"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -20494,6 +22024,30 @@
    ]
   },
   {
+   "term": "这帧",
+   "type": "term",
+   "asr_variants": [
+    "这真"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
+   "term": "进图",
+   "type": "term",
+   "asr_variants": [
+    "进土"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "进图取整",
    "type": "term",
    "aliases": [
@@ -20538,6 +22092,20 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "远北猎场",
+   "type": "term",
+   "asr_variants": [
+    "原北猎场",
+    "原被猎场",
+    "援北猎场"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -20587,6 +22155,18 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "连击间隔",
+   "type": "term",
+   "asr_variants": [
+    "联机间隔"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -20796,9 +22376,13 @@
    "aliases": [
     "Velocity Vector"
    ],
+   "asr_variants": [
+    "速度项链"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "qq"
    ]
   },
@@ -20852,6 +22436,7 @@
     "Tick"
    ],
    "asr_variants": [
+    "罗辑真",
     "逻辑真"
    ],
    "short_def": "游戏后台计算数值、位移与伤害的真实时间刻度，独立于画面显示的帧数。",
@@ -20923,12 +22508,25 @@
    ]
   },
   {
+   "term": "避障判定区",
+   "type": "term",
+   "asr_variants": [
+    "B站判定区"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "避障帧",
    "type": "term",
    "aliases": [
     "Obstacle Avoidance Frame"
    ],
    "asr_variants": [
+    "避障真",
     "避障针"
    ],
    "short_def": null,
@@ -21164,6 +22762,18 @@
    ]
   },
   {
+   "term": "醒酒车",
+   "type": "term",
+   "asr_variants": [
+    "行救车"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "重力开关",
    "type": "term",
    "short_def": null,
@@ -21273,6 +22883,21 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "钩索师",
+   "type": "term",
+   "asr_variants": [
+    "勾锁诗",
+    "钩索十",
+    "钩索诗",
+    "钩锁时"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -21479,9 +23104,13 @@
     "SP Recovery Lock",
     "Skill SP Lockout"
    ],
+   "asr_variants": [
+    "组回"
+   ],
    "short_def": null,
    "mechanic_def": null,
    "sources": [
+    "corrector",
     "qq"
    ]
   },
@@ -22008,6 +23637,18 @@
    ]
   },
   {
+   "term": "非寻路",
+   "type": "term",
+   "asr_variants": [
+    "非巡逻"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "非弹道",
    "type": "term",
    "aliases": [
@@ -22038,6 +23679,18 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "非箱图",
+   "type": "term",
+   "asr_variants": [
+    "非相图"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
@@ -22315,6 +23968,30 @@
    ]
   },
   {
+   "term": "骗前摇",
+   "type": "term",
+   "asr_variants": [
+    "骗钱腰"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
+   "term": "骨架动画",
+   "type": "term",
+   "asr_variants": [
+    "股价动画"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "骨骼动画",
    "type": "term",
    "aliases": [
@@ -22415,6 +24092,18 @@
    ]
   },
   {
+   "term": "高手理解",
+   "type": "term",
+   "asr_variants": [
+    "高手里剑"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
+   ]
+  },
+  {
    "term": "魂灵之影",
    "type": "term",
    "aliases": [
@@ -22445,6 +24134,18 @@
    "mechanic_def": null,
    "sources": [
     "qq"
+   ]
+  },
+  {
+   "term": "鸭爵",
+   "type": "term",
+   "asr_variants": [
+    "鸭血"
+   ],
+   "short_def": null,
+   "mechanic_def": null,
+   "sources": [
+    "corrector"
    ]
   },
   {
