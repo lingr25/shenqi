@@ -318,6 +318,8 @@ document.addEventListener('keydown', ev=>{
 });
 
 /* boot */
+const __guard = document.getElementById('tpl-guard-note');
+if (__guard) __guard.remove();
 ENTRIES.forEach(e=>{ e.qtext = e.ev.reduce((s,c)=>s+c.q.reduce((s2,q)=>s2+' '+q.x,''),'').toLowerCase(); });
 if (!location.hash) location.hash = '#/overview';
 route();

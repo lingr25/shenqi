@@ -362,6 +362,10 @@ function trackCounts(list){
   const c = {}; list.forEach(e=>{ c[e.tr]=(c[e.tr]||0)+1; }); return c;
 }
 </script>
+<div id="tpl-guard-note" style="max-width:760px;margin:40px auto;padding:20px 24px;border:1px solid #f5c542;border-radius:12px;color:#e8d9ae;background:rgba(245,197,66,.06);font-family:sans-serif;line-height:1.9">
+  <b>⚠ 你打开的是模板源文件 <code>workbench/template.html</code>，不是最终产物。</b><br>
+  请打开产物 <code>dist/mechanics-workbench/index.html</code>；若该文件不存在，先在仓库根目录运行 <code>python build_workbench.py</code> 生成。
+</div>
 __APP_JS__
 </body>
 </html>
