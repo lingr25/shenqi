@@ -1,0 +1,105 @@
+{
+  "bvid": "BV1PJeF6FETX",
+  "title": "【神祇读神奇】玩玩肉鸽│20260914直播",
+  "batch": "vod_b2",
+  "stems": [
+    "BV1PJeF6FETX_p1_41936683336"
+  ],
+  "pages_pending_asr": [],
+  "llm": {
+    "base_host": "lingr.aitreez.com",
+    "model": "lingr-free",
+    "fallback_models": [
+      "lingr-speed",
+      "lingr-pro"
+    ],
+    "temperature": 0.1
+  },
+  "prompts": {
+    "chapter_prompt_sha256": "0362183fd7fe",
+    "extract_prompt_sha256": "a3daf05e47cd",
+    "atomize_prompt_sha256": "690aae7c3ff9"
+  },
+  "parallel_parts": 3,
+  "usage_by_script": {
+    "chapter_extract_claims.py": {
+      "calls": 16,
+      "calls_lingr-speed": 5,
+      "prompt_tokens": 60440,
+      "completion_tokens": 134173,
+      "reasoning_tokens": 104896,
+      "total_tokens": 194613,
+      "seconds": 642.5,
+      "calls_lingr-free": 11
+    },
+    "atomize_claims.py": {
+      "calls": 59,
+      "calls_lingr-free": 56,
+      "prompt_tokens": 89585,
+      "completion_tokens": 165578,
+      "reasoning_tokens": 138745,
+      "total_tokens": 255163,
+      "seconds": 1360.9,
+      "calls_lingr-speed": 3
+    }
+  },
+  "usage_total": {
+    "calls": 75,
+    "prompt_tokens": 150025,
+    "completion_tokens": 299751,
+    "reasoning_tokens": 243641,
+    "total_tokens": 449776
+  },
+  "wall_seconds": [
+    {
+      "step": "BV1PJeF6FETX_p1_41936683336 extract",
+      "seconds": 970
+    },
+    {
+      "step": "BV1PJeF6FETX_p1_41936683336 atomize",
+      "seconds": 860
+    }
+  ],
+  "wall_seconds_total": 1830,
+  "counts": {
+    "BV1PJeF6FETX_p1_41936683336": {
+      "chapters": 6,
+      "claims": 59,
+      "atoms": 130,
+      "noise": 1,
+      "extract_models": {
+        "lingr-free": 45,
+        "lingr-speed": 14
+      },
+      "atomize_models": {
+        "lingr-free": 123,
+        "lingr-speed": 7
+      },
+      "failed_windows": [],
+      "atomize_fail": [],
+      "extract_summary": {
+        "pass": 58,
+        "quote_mismatch": 1,
+        "overlap_dedup": 0
+      },
+      "atomize_summary": {
+        "pass": 130,
+        "unbound": 0,
+        "llm_drop": 1,
+        "fail": 0,
+        "noise": 0
+      }
+    }
+  },
+  "inputs": {
+    "transcripts_txt/BV1PJeF6FETX_p1_41936683336.txt": "1d47cec8ab411c24f117b443f29d4181abceecc01e10a4fae97933890b6addfe"
+  },
+  "outputs_local_only": {
+    "knowledge_pilot/BV1PJeF6FETX_p1_41936683336.atoms.enriched.jsonl": "70322a5fba5cd961a4eaae161ee433b602f510d032f5795425928dd5d9bfec7f",
+    "knowledge_pilot/BV1PJeF6FETX_p1_41936683336.atoms.jsonl": "d2b493e48887677e95b0a4f823e699a83d1fc4367e832565c4679e91823c89df",
+    "knowledge_pilot/BV1PJeF6FETX_p1_41936683336.chapter_claims.jsonl": "21c93cec4286c9eb84f3bce3d9c1d07221f50c02a23eba1510a9123b103e1b78",
+    "knowledge_pilot/BV1PJeF6FETX_p1_41936683336.chapters.json": "9c9a089a8fbb74d24dfcd2293f5aff47d71e695b087961dc22c8ad36d8251c85",
+    "knowledge_pilot/BV1PJeF6FETX_p1_41936683336.noise.jsonl": "4ebaac9c7ad621be8b74e2ebbeb590487456f4fa519986b3364ffd8039ead0f9"
+  },
+  "note": "knowledge_pilot/ 草稿层不入库，只记 sha256。批量与其它视频并行（3 路），usage 按视频目录记账。"
+}
