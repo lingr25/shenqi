@@ -1,0 +1,25 @@
+{
+  "reviewer_type": "agent",
+  "n_clusters_non_noise": 2418,
+  "n_synth_ok": 2418,
+  "kinds": {"mechanism": 1242, "pending": 936, "experiment": 158, "reject": 82},
+  "events_jsonl": {
+    "n": 2526,
+    "ok": 2418,
+    "error": 108,
+    "http_429": 97,
+    "ssl_or_drop": 11,
+    "event_tokens_sum": 6434941
+  },
+  "main_run_usage_json": {
+    "calls": 2297,
+    "errors": 13,
+    "ok": 2284,
+    "cache_hit": 121,
+    "total_tokens": 6103436,
+    "elapsed_sec": 7667.5
+  },
+  "retry_13": {"calls": 13, "errors": 0, "total_tokens": 30469, "elapsed_sec": 32.8},
+  "trial_eval_40": {"calls": 40, "old_tokens": 24383, "new_tokens": 28846, "wall_sec": 76.92},
+  "note": "events 含 12-worker 波次的 429；主进程 usage.json 是 workers=4 续跑。补跑 13 条另计。勿把三套简单相加当互斥。"
+}

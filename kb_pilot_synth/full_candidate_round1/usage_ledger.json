@@ -1,0 +1,158 @@
+{
+  "reviewer_type": "agent",
+  "endpoint": "https://aitreez.com/v1",
+  "model": "deepseek-v4.1-flash",
+  "in_round_full_candidate_round1": {
+    "eval_trial_rag_gated_first_run": {
+      "fresh_calls_total": 14,
+      "old_fresh_calls": 7,
+      "new_fresh_calls": 7,
+      "tokens_fresh_total": 18835,
+      "note": "首次 gated 运行 7 old + 7 new 为真实调用; 第二次运行语料等同(corpus_sha 未变)全部命中 answers_cache.json, 0 次新调用"
+    },
+    "generation_events_ledger": {
+      "n_by_status": {
+        "ok": 2418,
+        "error": 108
+      },
+      "tokens_by_status": {
+        "ok": 6434941,
+        "error": 0
+      },
+      "n_zero_token_events": 108,
+      "tokens_ok_only": 6434941,
+      "span": [
+        "09-20 11:40:32",
+        "09-20 13:57:01"
+      ],
+      "events_by_hour": {
+        "09-20 11": 474,
+        "09-20 12": 950,
+        "09-20 13": 1102
+      }
+    },
+    "generation_events_ledger_at_main_done": {
+      "n_by_status": {
+        "ok": 2411,
+        "error": 108
+      },
+      "tokens_by_status": {
+        "ok": 6418320,
+        "error": 0
+      },
+      "n_zero_token_events": 108,
+      "tokens_ok_only": 6418320,
+      "span": [
+        "09-20 11:40:32",
+        "09-20 13:56:43"
+      ],
+      "events_by_hour": {
+        "09-20 11": 474,
+        "09-20 12": 950,
+        "09-20 13": 1095
+      }
+    },
+    "run_summary_main_usage": {
+      "prompt_tokens": 4792269,
+      "completion_tokens": 1311167,
+      "total_tokens": 6103436,
+      "calls": 2297,
+      "errors": 13,
+      "cache_hit": 121,
+      "ok": 2284,
+      "requests": 2297,
+      "elapsed_sec": 7667.5,
+      "synthesized": 2405,
+      "write_errors": 13
+    },
+    "run_summary_retry_usage": {
+      "prompt_tokens": 24250,
+      "completion_tokens": 6219,
+      "total_tokens": 30469,
+      "calls": 13,
+      "errors": 0,
+      "cache_hit": 0,
+      "ok": 13,
+      "requests": 13,
+      "elapsed_sec": 32.8,
+      "synthesized": 13,
+      "write_errors": 0
+    },
+    "usage_json_now_overwritten_by_retry": {
+      "prompt_tokens": 24250,
+      "completion_tokens": 6219,
+      "total_tokens": 30469,
+      "calls": 13,
+      "errors": 0,
+      "cache_hit": 0,
+      "ok": 13,
+      "requests": 13,
+      "elapsed_sec": 32.8,
+      "synthesized": 13,
+      "write_errors": 0
+    },
+    "usage_partial_midretry_snapshot": {
+      "prompt_tokens": 11109,
+      "completion_tokens": 2739,
+      "total_tokens": 13848,
+      "calls": 6,
+      "errors": 0,
+      "cache_hit": 0,
+      "ok": 6,
+      "requests": 7,
+      "elapsed_sec": 15.5
+    },
+    "eval_run_trial_eval_40calls": {
+      "calls": 40,
+      "old_tokens": 24383,
+      "new_tokens": 28846,
+      "wall_sec": 76.92
+    },
+    "eval_trial_rag_this_round": {
+      "calls": 14,
+      "total_tokens": 19781,
+      "retrieve_only": false,
+      "old_tokens": 7538,
+      "new_tokens": 12243
+    }
+  },
+  "prior_pilot_rounds_separate": {
+    "v1_v2_v3_pilot": {
+      "calls": 34,
+      "errors": 0,
+      "prompt_tokens": 49739,
+      "completion_tokens": 20614,
+      "total_tokens": 70353
+    },
+    "batch100_round2": {
+      "api_calls": 0,
+      "note": "batch100 纯本地抽段+代理逐条证据审核，未调用 LLM。审核墙钟未测。"
+    },
+    "retest_round2_26calls": {
+      "calls": 26,
+      "total_tokens": 30723
+    },
+    "cross_eval_round1_40calls": {
+      "calls": 40,
+      "total_tokens": 42642
+    },
+    "evidence_round1": {
+      "api_calls": 0,
+      "note": "纯本地证据整理, 无 usage 文件"
+    }
+  },
+  "verifiable_totals": {
+    "in_round_generation_tokens_ge": 6434941,
+    "in_round_eval_tokens": 91845,
+    "prior_rounds_tokens": 143718,
+    "repo_wide_tokens_ge": 6670504,
+    "why_ge": "events.jsonl 把 108 次失败尝试(429/SSL)记为 0 tokens, 其真实消耗不可恢复; events 早于主运行开始(12-worker 波次), 故不能与主/重试快照相加当总计费。"
+  },
+  "not_counted": [
+    "108 次失败尝试的真实 tokens (events 记 0, 无 usage 回包)",
+    "本轮之前的冒烟测试调用 (无落盘记录)",
+    "run_summary_main 的 cache_hit 121 条: 主运行计数器未计其 tokens, 但 events 账本计入了 -> 两口径差 301,036",
+    "endpoint 侧其他会话/其它仓库的调用 (本地无记录)"
+  ],
+  "claim_policy": "报告只能写「可核对下界 ≥ N tokens」, 不得写「总计费完整口径」; 主/重试段快照与他轮用量分列, 不相加。"
+}

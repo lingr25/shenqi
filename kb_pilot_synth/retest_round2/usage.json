@@ -1,0 +1,72 @@
+{
+  "model": "deepseek-v4.1-flash",
+  "base": "https://aitreez.com/v1",
+  "k": 6,
+  "per_hit_chars": 500,
+  "max_ctx_chars": 3000,
+  "workers": 2,
+  "questions_sha256": "443bb4dde8ba8abc707af918f7530f74babf1ea09a44a5256aaca2c7d7385858",
+  "retrieve_only": false,
+  "load_docs_sec": 0.57,
+  "index_sec": 6.84,
+  "old": {
+    "retrieve_sec": 3.82,
+    "llm_sec": 81.27,
+    "usage": {
+      "prompt_tokens": 13812,
+      "completion_tokens": 1660,
+      "total_tokens": 15472,
+      "calls": 13,
+      "errors": 0
+    }
+  },
+  "new": {
+    "retrieve_sec": 4.2,
+    "llm_sec": 42.36,
+    "usage": {
+      "prompt_tokens": 13672,
+      "completion_tokens": 1579,
+      "total_tokens": 15251,
+      "calls": 13,
+      "errors": 0
+    }
+  },
+  "qa_wall_sec": 68.04,
+  "corpus": {
+    "old": 25021,
+    "new": 25038,
+    "dropped": 23,
+    "downweighted": 7,
+    "extras": 40
+  },
+  "quarantine": {
+    "drop": [
+      "canonical:c0014",
+      "qqx:canonical:c0014",
+      "vod_atom:BV14VZCB1EJR_p1_36119907781:p115:a2:4ef07b70",
+      "vod_atom:BV14VZCB1EJR_p1_36119907781:p130:a7:bdb1827f",
+      "vod_atom:BV14y8269EbS_p1_41164079923:p76:a0:da8985bd",
+      "vod_atom:BV14y8269EbS_p1_41164079923:p76:a1:3d9dce8f",
+      "vod_atom:BV199KH6TEra_p1_40136673556:p46:a13:1f522cdf",
+      "vod_atom:BV1j4KC6KEse_p1_40109737103:p43:a0:affd9ed5",
+      "vod_entry:寻路-7-8",
+      "vod_entry:帧时序与计时器-12-7",
+      "vod_entry:帧时序与计时器-13-6",
+      "vod_entry:帧时序与计时器-40-5",
+      "vod_entry:帧时序与计时器-42-7"
+    ],
+    "downweight": [
+      "vod_atom:BV199KH6TEra_p1_40136673556:p26:a4:ab7d8941",
+      "vod_atom:BV199KH6TEra_p1_40136673556:p30:a0:fc86e17b",
+      "vod_atom:BV199KH6TEra_p1_40136673556:p33:a2:f32219d3",
+      "vod_atom:BV199KH6TEra_p1_40136673556:p33:a6:7fe0aefa",
+      "vod_atom:BV199KH6TEra_p1_40136673556:p41:a4:a184c34b",
+      "vod_atom:BV199KH6TEra_p1_40136673556:p45:a7:40e381ad",
+      "vod_entry:帧时序与计时器-40-13"
+    ],
+    "keep_unknown": [
+      "vod_entry:帧时序与计时器-27-7"
+    ],
+    "n": 21
+  }
+}

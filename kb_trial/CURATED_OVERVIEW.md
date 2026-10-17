@@ -76,7 +76,7 @@
 | `kb_trial/curation/qq_expansion/audit_decisions_b3.json` | 阶段三 b3 批 386 条候选的逐条裁定（含 `faultcheck` 段） |
 | `kb_trial/curation/qq_expansion/review_impact_manifest_b3.json` | b3 批 260 工单的读源影响清单（含交付文本逐 seq 复核） |
 
-**最终 sha256**（LF 口径）：<!-- stat:curated_sha256 -->6e321a5e7922f3710c4ab14dbee24467debdb21c094fcb034a5dbc87da412908<!-- /stat -->（2026-09-23 时点为 `9e5a44652bc80941b014c96dd051b56029bd8566a119d9cf93632cd12912f35d`）
+**最终 sha256**（LF 口径）：<!-- stat:curated_sha256 -->a50105a2c3ba3beb61db45fdc5df80b25e4b115b408154328f17306de00310bc<!-- /stat -->（2026-09-23 时点为 `9e5a44652bc80941b014c96dd051b56029bd8566a119d9cf93632cd12912f35d`）
 
 ### 数字（全部由最终 JSON 直接统计得出）
 
@@ -100,8 +100,8 @@
 | 隔离（`curation/curated_staging.json`） | 6 |
 | 黑话词表 `glossary.json` | 2100 条（`short_def` 76、`mechanic_def` 50） |
 | 逐字稿 / 清洗字幕 / 原始字幕 | 45 / 45 / 45 个分P文件 |
-| `curated_high_quality.json` sha256（LF） | `6e321a5e7922f3710c4ab14dbee24467debdb21c094fcb034a5dbc87da412908` |
-| 同上（CRLF 工作区口径） | `2a95320b7bd0c8aa10bf2b421b570ba7fdf1af094e1da07c120225e471b83ec9` |
+| `curated_high_quality.json` sha256（LF） | `a50105a2c3ba3beb61db45fdc5df80b25e4b115b408154328f17306de00310bc` |
+| 同上（CRLF 工作区口径） | `dab7078c3daa0f0dd22a57fc84c6f68c1e2b46dbabf91248c1bfbc151609a8f9` |
 <!-- stats:end -->
 
 **2026-09-23 时点记录**（保留原样，供对照）：

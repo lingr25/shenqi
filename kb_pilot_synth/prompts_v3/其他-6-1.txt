@@ -1,0 +1,69 @@
+你是明日方舟机制百科的撰写员。只用【命题与证据】和可选的【原字幕邻近】补证。禁止游戏常识。证据不够就删那一条 rule，保留能站住的部分，不要为了整洁把有用规则清空。
+
+输出严格JSON：
+{"title": "词条标题(含主语与关键条件)",
+ "applies_to": "适用对象；原话/议题标题已出现的可用；无法确认则「未点名」；禁止猜干员名、禁止用「通用」凑数",
+ "rules": [{"text": "一条自包含规则(含必要前提)", "subject": "该条主语", "when": ["该条生效条件"], "evidence_atom_ids": ["atom_id或ctx id"], "scope": "universal|instance|example"}],
+ "conditions": ["词条级机制前提"],
+ "exceptions": ["例外/边界"],
+ "open_questions": ["材料里真正未决的问题或 hypothesis"],
+ "scope": "universal|instance|example",
+ "confidence": "high|mid|low"}
+
+scope：
+- universal=跨对象可复用机制，when 必须写清前提
+- instance=某次实验/部署/关卡观测（零帧部署一帧撤退、空费帧演示、集海默）
+- example=带具体数值的演算例题或演示（如 1.95格、0.4、149→150）。example/instance 禁止标成 universal
+词条级 scope 取最窄（有 example 用 example；纯实验用 instance）。
+
+要求：
+1. 合并同义，但不同观测不要揉成一条。指代不清就保持原句（「它现在变成了零到五十九」不要改成「车辆位置范围」）。
+2. 每条 when 自包含。数字与原话等价即可（零帧=0帧、一针=1帧不算错误）；【原话】行保持原文。
+3. 「针」=「帧」听写，不要标成待听原音。只有「零二十四十四」这类才待听原音。
+4. hypothesis/question 只进 open_questions。无信息条目丢弃。
+5. 【原字幕邻近】只给已有讲解补证，必须引用 ctx= 编号；不能把字幕里一闪而过、无法确认的对象写进 applies_to。
+6. 演算例题 scope=example。取整若主播说成一般原则可 universal，when 写明「刚好整数/非整数」。
+7. confidence：明确完整直接讲述→high（单条也可以）。mid=需拼凑。low=含糊或 rules 空。open_questions 不扣分。缺多个来源不扣分。
+8. 不要把实验备注写进 conditions。
+
+[议题标题] 费用条车辆出现与移动帧机制
+[议题问题] 费用条车辆从何时开始、如何按帧移动，以及同位置规则如何？
+[档案备注] B7 对“五秒开始”的起点提出疑问；B5/B6 为帧移动推导，B2-B4 为车辆时间/范围/位置规则结论。
+
+[命题与证据]
+- [id=BV1JX8WzFEUU_p1_31284463292:p23:a0:741c0a5c] [conclusion] 第一辆车是开局五秒 (对象:未点名或general) (参数:第一辆车时间=五秒秒)
+  原话[2869s]: 第一辆车是开局五秒。
+  原话[2901s]: 开局五秒。
+- [id=BV1JX8WzFEUU_p1_31284463292:p23:a1:a1c94395] [conclusion] 它现在变成了零到五十九 (对象:未点名或general) (参数:范围=零到五十九无)
+  原话[2929s]: 它现在变成了零到五十九
+- [id=BV1JX8WzFEUU_p1_31284463292:p23:a2:83f7f5e3] [conclusion] 同位置是2n加一 (对象:未点名或general) (参数:同位置规则=二n加一无)
+  原话[2929s]: 同位置是二n加一
+- [id=BV1JX8WzFEUU_p1_31284463292:p24:a0:bb84cf2e] [derivation] 再过两帧动 (对象:未点名或general) (参数:移动间隔=两帧帧)
+  原话[3033s]: 再过两帧动。
+- [id=BV1JX8WzFEUU_p1_31284463292:p24:a1:991ccdc2] [derivation] 每一帧就有一个人动，解决了费用条它的数据不太好的问题 (对象:未点名或general)
+  原话[3047s]: 每一帧就有一个人动，我就解决了费用条它的数据不太好的问题
+- [id=BV1JX8WzFEUU_p1_31284463292:p24:a2:a58451d8] [question] 它是五秒开始，哪里开始 (对象:未点名或general) (参数:开始时间=五秒秒)
+  原话[3047s]: 它是五秒开始，哪里开始
+- [id=BV1JX8WzFEUU_p1_31284463292:p24:a3:0af537bf] [observation] 车来了 (对象:未点名或general)
+  原话[3071s]: 车来了。
+
+
+[原字幕邻近(补证, 与atom分开; 仅下列有界片段)]
+- [ctx=sub:BV1JX8WzFEUU_p1_31284463292:2847 file=asr_drafts/BV1JX8WzFEUU_p1_31284463292_asr.txt t=2847] 这一把我只要能试出来这一个车的入坑，就算成功。19603849BLI进入直播间。这一把我只要能试出来这一个东西入坑就算成功。
+- [ctx=sub:BV1JX8WzFEUU_p1_31284463292:2864 file=asr_drafts/BV1JX8WzFEUU_p1_31284463292_asr.txt t=2864] 吴恒刚商学进入直播间。
+- [ctx=sub:BV1JX8WzFEUU_p1_31284463292:2869 file=asr_drafts/BV1JX8WzFEUU_p1_31284463292_asr.txt t=2869] 第一辆车是开局5秒。
+- [ctx=sub:BV1JX8WzFEUU_p1_31284463292:2874 file=asr_drafts/BV1JX8WzFEUU_p1_31284463292_asr.txt t=2874] 开局5秒okK弟弟真的爱我进入直播间，那就出发吧。
+- [ctx=sub:BV1JX8WzFEUU_p1_31284463292:2890 file=asr_drafts/BV1JX8WzFEUU_p1_31284463292_asr.txt t=2890] 碧还进入直播间。
+- [ctx=sub:BV1JX8WzFEUU_p1_31284463292:2895 file=asr_drafts/BV1JX8WzFEUU_p1_31284463292_asr.txt t=2895] 长尼BFS进入直播间，海啸B进入直播。
+- [ctx=sub:BV1JX8WzFEUU_p1_31284463292:2901 file=asr_drafts/BV1JX8WzFEUU_p1_31284463292_asr.txt t=2901] 开局5秒。
+- [ctx=sub:BV1JX8WzFEUU_p1_31284463292:2908 file=asr_drafts/BV1JX8WzFEUU_p1_31284463292_asr.txt t=2908] 。
+- [ctx=sub:BV1JX8WzFEUU_p1_31284463292:2910 file=asr_drafts/BV1JX8WzFEUU_p1_31284463292_asr.txt t=2910] 容我想一下这个费用条是怎么回事的。进入直播间，正常来讲的话，我是0到29G数，然后它现在变成了。
+- [ctx=sub:BV1JX8WzFEUU_p1_31284463292:2922 file=asr_drafts/BV1JX8WzFEUU_p1_31284463292_asr.txt t=2922] 0到59进入直播间，一只普通的地图进入直播间。
+- [ctx=sub:BV1JX8WzFEUU_p1_31284463292:2930 file=asr_drafts/BV1JX8WzFEUU_p1_31284463292_asr.txt t=2930] 它现在变成了0到59，同位置是2N加1，没问题没问题，同位置是2N加1。
+- [ctx=sub:BV1JX8WzFEUU_p1_31284463292:2944 file=asr_drafts/BV1JX8WzFEUU_p1_31284463292_asr.txt t=2944] 垂钓鼠进入直播间，这个位置是0说中间教练可以直接挤下去吧，是一ZS进入直播间，这是2秒。哎，我电胡13岁，娘进入直播间啊，有点麻烦。
+- [ctx=sub:BV1JX8WzFEUU_p1_31284463292:3012 file=asr_drafts/BV1JX8WzFEUU_p1_31284463292_asr.txt t=3012] 做头经WOU进入直播间，周莫明进入直播间，乌冬面进入直播间。
+- [ctx=sub:BV1JX8WzFEUU_p1_31284463292:3025 file=asr_drafts/BV1JX8WzFEUU_p1_31284463292_asr.txt t=3025] 此名虚路必进入直播间，我是欧皇M进入直播间。
+- [ctx=sub:BV1JX8WzFEUU_p1_31284463292:3034 file=asr_drafts/BV1JX8WzFEUU_p1_31284463292_asr.txt t=3034] 我想下入再过两针洞。
+- [ctx=sub:BV1JX8WzFEUU_p1_31284463292:3044 file=asr_drafts/BV1JX8WzFEUU_p1_31284463292_asr.txt t=3044] OK.
+- [ctx=sub:BV1JX8WzFEUU_p1_31284463292:3048 file=asr_drafts/BV1JX8WzFEUU_p1_31284463292_asr.txt t=3048] 嗯这样每一帧就
+…(字幕上下文截断)

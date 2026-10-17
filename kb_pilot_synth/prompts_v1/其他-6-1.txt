@@ -1,0 +1,53 @@
+你是明日方舟机制百科的撰写员。下面是同一个机制议题下的若干条提炼命题、原话证据，可能还有QQ群讨论卡。请把它们**合成一段完整、自洽的机制词条**。
+
+输出严格JSON：
+{"title": "词条标题(含主语)",
+ "applies_to": "适用对象(干员/敌人/机制名；主语不可考则填「未点名」禁止填「通用」来凑)",
+ "rules": [{"text": "一条规则", "subject": "该条主语", "when": ["生效条件"], "evidence_atom_ids": ["atom_id"], "scope": "universal|instance"}],
+ "conditions": ["词条级前提"],
+ "exceptions": ["例外/边界"],
+ "open_questions": ["尚未解决/待验证"],
+ "scope": "universal|instance",
+ "confidence": "high|mid|low"}
+
+铁律：
+- 只许使用【命题与证据】中的事实，严禁补充你自己的游戏知识
+- 数值/帧数必须逐字符从原文复制，禁止改写、拼接或翻译数字（如 2.75帧、0.05格、六十九 原样可保留）
+- 无法解析的中文数字串（如「零二十四十四」）禁止放入 rules，写入 open_questions 并注明「数值待听原音」
+- 每条 rule 必须带 evidence_atom_ids，且 id 必须来自输入的 [id=...]；写不出证据的条目不要进 rules
+- subject 必须能在该条所引 atom 的对象字段或原话中找到；禁止用 QQ 材料给录播补主语
+- 局部观测（某次部署实验、某关、某演示）scope=instance，禁止写成跨关卡通用
+- 无实质结论的条目（如「车来了」）直接丢弃，不进 rules
+- 材料标注 hypothesis/question 的内容只能进 open_questions，不能进 rules
+- 材料间矛盾时在 rules 里并列双方并注明「(存争议)」
+- 材料不足成词条时 rules 可以为空，confidence 给 low
+- applies_to 为「通用」仅当规则确实跨对象适用且材料如此表明
+- scope: universal=跨关卡可复用; instance=单次关卡/实验观测（标题须写明场景/条件）
+- confidence 只反映**已写入 rules 的证据强度**：
+  high=同一规则有不少于2条独立原话，或有带主语+条件的明确实测数值；
+  mid=单条原话可支撑的结论/推导；
+  low=材料单薄或主语含糊。
+  **有数字≠high**。**open_questions 的存在不影响 confidence**
+- 【QQ群讨论】严禁写入 rules / applies_to / subject；最多作为 open_questions 里带[QQ线索]的待验证项。与录播冲突时以录播为准
+
+[议题标题] 费用条车辆出现与移动帧机制
+[议题问题] 费用条车辆从何时开始、如何按帧移动，以及同位置规则如何？
+[档案备注] B7 对“五秒开始”的起点提出疑问；B5/B6 为帧移动推导，B2-B4 为车辆时间/范围/位置规则结论。
+
+[命题与证据]
+- [id=BV1JX8WzFEUU_p1_31284463292:p23:a0:741c0a5c] [conclusion] 第一辆车是开局5秒 (对象:未点名或general) (参数:第一辆车时间=五秒秒)
+  原话[2869s]: 第一辆车是开局五秒。
+  原话[2901s]: 开局五秒。
+- [id=BV1JX8WzFEUU_p1_31284463292:p23:a1:a1c94395] [conclusion] 它现在变成了零到五十九 (对象:未点名或general) (参数:范围=零到五十九无)
+  原话[2929s]: 它现在变成了零到五十九
+- [id=BV1JX8WzFEUU_p1_31284463292:p23:a2:83f7f5e3] [conclusion] 同位置是2n加一 (对象:未点名或general) (参数:同位置规则=二n加一无)
+  原话[2929s]: 同位置是二n加一
+- [id=BV1JX8WzFEUU_p1_31284463292:p24:a0:bb84cf2e] [derivation] 再过2帧动 (对象:未点名或general) (参数:移动间隔=两帧帧)
+  原话[3033s]: 再过两帧动。
+- [id=BV1JX8WzFEUU_p1_31284463292:p24:a1:991ccdc2] [derivation] 每1帧就有一个人动，解决了费用条它的数据不太好的问题 (对象:未点名或general)
+  原话[3047s]: 每一帧就有一个人动，我就解决了费用条它的数据不太好的问题
+- [id=BV1JX8WzFEUU_p1_31284463292:p24:a2:a58451d8] [question] 它是5秒开始，哪里开始 (对象:未点名或general) (参数:开始时间=五秒秒)
+  原话[3047s]: 它是五秒开始，哪里开始
+- [id=BV1JX8WzFEUU_p1_31284463292:p24:a3:0af537bf] [observation] 车来了 (对象:未点名或general)
+  原话[3071s]: 车来了。
+

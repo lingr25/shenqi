@@ -1,0 +1,44 @@
+{
+  "model": "deepseek-v4.1-flash",
+  "base": "https://aitreez.com/v1",
+  "k": 6,
+  "per_hit_chars": 500,
+  "max_ctx_chars": 3000,
+  "workers": 2,
+  "questions_sha256": "ed1755a30486a304e2fb8af487c8c71d449b3305ba51d0db69f51b6549e66749",
+  "load_docs_sec": 0.55,
+  "index_sec": 4.43,
+  "old": {
+    "retrieve_sec": 3.24,
+    "llm_sec": 116.82,
+    "usage": {
+      "prompt_tokens": 18285,
+      "completion_tokens": 3308,
+      "total_tokens": 21593,
+      "calls": 20,
+      "errors": 0
+    }
+  },
+  "new": {
+    "retrieve_sec": 3.14,
+    "llm_sec": 58.29,
+    "usage": {
+      "prompt_tokens": 18074,
+      "completion_tokens": 2975,
+      "total_tokens": 21049,
+      "calls": 20,
+      "errors": 0
+    }
+  },
+  "qa_wall_sec": 110.43,
+  "kb_eval_baseline": {
+    "manual_hit": 22,
+    "manual_total": 22
+  },
+  "corpus": {
+    "old": 25021,
+    "new": 25049,
+    "dropped_vod_entry": 12,
+    "extras": 40
+  }
+}

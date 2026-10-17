@@ -28,6 +28,7 @@ appends. That is what keeps the 663 already-curated entries byte-identical when 
 """
 import hashlib
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -94,6 +95,46 @@ BATCHES = {
                            '3 条维持 keep、7 处改写批准后入库）。claim 不是上游窗口标题。',
     },
 }
+
+
+def discover_batches():
+    """Discover all manifest files in qq_expansion/ and dynamically register any new batches."""
+    for p in sorted(EXPANSION.glob('approved_manifest_*.json')):
+        m = re.match(r'approved_manifest_(.+)\.json$', p.name)
+        if m:
+            bname = m.group(1)
+            if bname not in BATCHES:
+                BATCHES[bname] = {
+                    'workorders': EXPANSION / f'workorders_{bname}',
+                    'reviews': EXPANSION / f'reviews_{bname}',
+                    'audit_path': EXPANSION / f'audit_decisions_{bname}.json',
+                    'manifest': p,
+                    'payload_key': f'qq_expansion_{bname}',
+                    'manifest_label': p.name,
+                    'claim_section': f'QQ扩展({bname})',
+                    'note': f'批次 {bname} 的增量条目。只追加，不改写既有条目；证据为已脱敏的 QQ 群聊片段，引文与冻结工单 raw_messages 逐字一致。',
+                    'derivation_note': f'本条由批次 {bname} 审读产生。',
+                }
+    return BATCHES
+
+
+def get_batch_config(batch: str):
+    if batch not in BATCHES:
+        discover_batches()
+    if batch not in BATCHES:
+        return {
+            'workorders': EXPANSION / f'workorders_{batch}',
+            'reviews': EXPANSION / f'reviews_{batch}',
+            'audit_path': EXPANSION / f'audit_decisions_{batch}.json',
+            'manifest': EXPANSION / f'approved_manifest_{batch}.json',
+            'payload_key': f'qq_expansion_{batch}',
+            'manifest_label': f'approved_manifest_{batch}.json',
+            'claim_section': f'QQ扩展({batch})',
+            'note': f'批次 {batch} 的增量条目。',
+            'derivation_note': f'本条由批次 {batch} 审读产生。',
+        }
+    return BATCHES[batch]
+
 
 ID_PREFIX = 'qq_expansion'
 APPROVED_STATUS = 'approved'
@@ -377,18 +418,19 @@ def append_to_payload(payload, entries, report=None, batch='phase2'):
 def main():
     import argparse
     import sys
+    discover_batches()
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--in', dest='src', default=str(ROOT / 'kb_trial' / 'curated_high_quality.json'))
     p.add_argument('--out', default=None, help='default: print the merged entry count only')
     p.add_argument('--allow-proposed', action='store_true',
                    help='load even while the manifest is still proposed (for a candidate file)')
-    p.add_argument('--batch', default='phase2', choices=sorted(BATCHES),
-                   help='which approved manifest to load; b3 = the stage-3 260-window batch')
+    p.add_argument('--batch', default='phase2',
+                   help='which approved manifest to load; phase2, b3, b4 or discovered batches')
     a = p.parse_args()
     if hasattr(sys.stdout, 'reconfigure'):
         sys.stdout.reconfigure(encoding='utf-8')
 
-    cfg = BATCHES[a.batch]
+    cfg = get_batch_config(a.batch)
     payload = _load(a.src)
     entries, report = load_expansion_entries(
         workorders=cfg['workorders'], reviews=cfg['reviews'], audit_path=cfg['audit_path'],

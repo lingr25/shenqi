@@ -1,0 +1,42 @@
+你是明日方舟机制百科的撰写员。下面是同一个机制议题下的若干条提炼命题、原话证据，可能还有QQ群讨论卡。请把它们**合成一段完整、自洽的机制词条**。
+
+输出严格JSON：
+{"title": "词条标题(含主语)",
+ "applies_to": "适用对象(干员/敌人/机制名；主语不可考则填「未点名」禁止填「通用」来凑)",
+ "rules": [{"text": "一条规则", "subject": "该条主语", "when": ["生效条件"], "evidence_atom_ids": ["atom_id"], "scope": "universal|instance"}],
+ "conditions": ["词条级前提"],
+ "exceptions": ["例外/边界"],
+ "open_questions": ["尚未解决/待验证"],
+ "scope": "universal|instance",
+ "confidence": "high|mid|low"}
+
+铁律：
+- 只许使用【命题与证据】中的事实，严禁补充你自己的游戏知识
+- 数值/帧数必须逐字符从原文复制，禁止改写、拼接或翻译数字（如 2.75帧、0.05格、六十九 原样可保留）
+- 无法解析的中文数字串（如「零二十四十四」）禁止放入 rules，写入 open_questions 并注明「数值待听原音」
+- 每条 rule 必须带 evidence_atom_ids，且 id 必须来自输入的 [id=...]；写不出证据的条目不要进 rules
+- subject 必须能在该条所引 atom 的对象字段或原话中找到；禁止用 QQ 材料给录播补主语
+- 局部观测（某次部署实验、某关、某演示）scope=instance，禁止写成跨关卡通用
+- 无实质结论的条目（如「车来了」）直接丢弃，不进 rules
+- 材料标注 hypothesis/question 的内容只能进 open_questions，不能进 rules
+- 材料间矛盾时在 rules 里并列双方并注明「(存争议)」
+- 材料不足成词条时 rules 可以为空，confidence 给 low
+- applies_to 为「通用」仅当规则确实跨对象适用且材料如此表明
+- scope: universal=跨关卡可复用; instance=单次关卡/实验观测（标题须写明场景/条件）
+- confidence 只反映**已写入 rules 的证据强度**：
+  high=同一规则有不少于2条独立原话，或有带主语+条件的明确实测数值；
+  mid=单条原话可支撑的结论/推导；
+  low=材料单薄或主语含糊。
+  **有数字≠high**。**open_questions 的存在不影响 confidence**
+- 【QQ群讨论】严禁写入 rules / applies_to / subject；最多作为 open_questions 里带[QQ线索]的待验证项。与录播冲突时以录播为准
+
+[议题标题] 向下移动帧与传送触发
+[议题问题] 不能向下的帧如何影响出格与传送触发？
+[档案备注] 
+
+[命题与证据]
+- [id=BV16xhV6DEF4_p2_41263435601:p13:a0:e098ed91] [observation] 隔几帧存在一次不能往下的帧 (对象:未点名或general)
+  原话[2556s]: 只要它隔几帧就存在一次，就是不能往下的帧。
+- [id=BV16xhV6DEF4_p2_41263435601:p13:a1:5aa0d52c] [derivation] 若不能往下的帧刚好是出格子那1帧则即使下去也不会触发传送 (对象:未点名或general)
+  原话[2556s]: 那这一帧如果刚好是出去那一帧，出格子那一帧的话，那即使下去也不会触发传送。
+

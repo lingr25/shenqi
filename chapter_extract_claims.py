@@ -16,7 +16,9 @@ chapter_extract_claims.py — 方案2: 章节优先的机制知识卡抽取管�
 """
 
 import argparse
+import hashlib
 import json
+import os
 import re
 import sys
 import time
@@ -41,6 +43,11 @@ CHAPTER_CONTRACT = """你是直播录播的内容结构分析器。输入是主�
 4. 机制推导、实测验证、勘误辟谣是本场最有价值的内容, 切分时要保证一个完整话题不被拦腰截断; 闲聊碎段可以合并成大章。
 5. 只输出 JSON, 不要输出其他文字:
 {"chapters": [{"title": "...", "start": 秒, "end": 秒, "kind": "...", "summary": "..."}]}"""
+
+CHAPTER_PROMPT_SHA256 = hashlib.sha256(CHAPTER_CONTRACT.encode("utf-8")).hexdigest()[:12]
+EXTRACT_PROMPT_SHA256 = hashlib.sha256(base.CONTRACT.encode("utf-8")).hexdigest()[:12]
+EXTRACT_MODEL = os.environ.get("GROK_MODEL") or getattr(base, "MODEL", "grok-4.6")
+
 
 
 def full_text(items):
@@ -141,8 +148,13 @@ def main():
     else:
         print(f"Pass1 章节切分: {args.stem} [{args.source}] {len(items)} 行", flush=True)
         chapters, problems, u1 = pass1_chapters(args.stem, items)
+        for c in chapters:
+            c["extract_model"] = EXTRACT_MODEL
+            c["extract_prompt_sha256"] = CHAPTER_PROMPT_SHA256
         doc = {"stem": args.stem, "source": args.source, "timeline": timeline,
-               "model": base.MODEL, "problems": problems, "chapters": chapters}
+               "model": EXTRACT_MODEL, "extract_model": EXTRACT_MODEL,
+               "extract_prompt_sha256": CHAPTER_PROMPT_SHA256,
+               "problems": problems, "chapters": chapters}
         ch_path.write_text(json.dumps(doc, ensure_ascii=False, indent=1), encoding="utf-8")
         print(f"  {len(chapters)} 章, 边界问题: {problems or '无'}", flush=True)
     for c in chapters:
@@ -188,6 +200,8 @@ def main():
             card["timeline"] = timeline
             card["status"] = "draft"
             card["quote_check"] = "pass" if base.validate(card, text) else "quote_mismatch"
+            card["extract_model"] = EXTRACT_MODEL
+            card["extract_prompt_sha256"] = EXTRACT_PROMPT_SHA256
             cards.append(card)
         return job, cards, result
 

@@ -81,16 +81,23 @@ python rag_eval.py            # 纯本地 bigram+BM25
 
 **A. 有官方 AI 字幕的分 P**（首选路径）：
 1. 确认 `transcripts_txt/{stem}.txt` 已生成（没有则先走原有的字幕抓取+`clean_transcripts.py` 流程）。
-2. `python chapter_extract_claims.py --stem {stem} --source official`
-3. `python atomize_claims.py --stem {stem}`
-4. 全部新分 P 跑完后：`python cluster_atoms.py` → `python merge_clusters.py` → `python enrich_atoms.py` → `python rag_eval.py`
-5. 人工审查 `clusters_merged_report.md` 的 conflict/open 区，再考虑升 canonical。
+2. `python chapter_extract_claims.py --stem {stem} --source official`（记录 `extract_model` 与 `extract_prompt_sha256`）
+3. `python atomize_claims.py --stem {stem}`（记录 `atomize_model` 与 `atomize_prompt_sha256`）
+4. 运行实体挂接：`python enrich_atoms.py`（纯本地，注入 `claim_id`、`recorded_at`、PRTS 实体词表链接）
+5. 全局议题归并（历史草稿层分析）：`python cluster_atoms.py` → `python merge_clusters.py` → `python rag_eval.py`
+6. **增量甄选扩展（权威草稿层入库，推荐路径）**：
+   - 导出审读工单：`python kb_curation_vod_expansion.py export --stem {stem} --batch {batch_id}`
+   - 代理按四大硬性闸门审读生成回执：`reviews_{batch}/vod_wo_{batch}_{idx:03d}.json`
+   - 汇聚裁定与清单：`python kb_curation_vod_expansion.py converge --batch {batch_id} [--approve]`
+   - 并入甄选高质量库：`python kb_curation_build.py`（经 `kb_curation_vod_loader.py` 追加）
+   - 质量门禁与检索自测：`python kb_curation_validate.py` && `python kb_curated_search.py --self-test`
+   - 发布/编译 RAG 生产语料：`python rag_pack/build_rag_pack.py`
 
 **B. 只有音频、无官方字幕的分 P**：
 1. `asr/plan_cloud_clips.py` / `asr/cut_cloud_clips.py` 切片 → `asr/transcribe_cloud.py` 走百炼
    `qwen3-asr-flash`（密钥从环境变量 `BAILIAN_API_KEY` 读取，勿写进脚本）→ `asr/audit_timeline.py` 校验时间轴。
    （以上脚本 2026-10 起位于 `asr/`，从仓库根目录运行。）
-2. `timeline_ok` 后同 A 的 2-4 步，`--source cloud`。
+2. `timeline_ok` 后同 A 的 2-6 步，`--source cloud`。
 3. `timeline_unverified` 先修时间轴再入库；源 AAC 损坏的切片（见 `dropped_unrecoverable.json`）不重试。
 
 ## 4. 规模适用性核查结论（2026-09 试点后）
@@ -135,3 +142,54 @@ python rag_eval.py            # 纯本地 bigram+BM25
 
 存量数据的补救见 `kb_quality_audit.py`（LLM 三档审计 keep/demote/drop，
 结果落 `kb/quality_audit.jsonl` 并回写 `kb/docs.jsonl`）。
+
+## 7. 录播增量并入甄选高质量库与 RAG 语料包管线 (VOD to Curated & RAG Pack)
+
+### 7.1 管线定位与背景
+历史全量归纳（`kb_pilot_synth/` 与 `kb/docs.jsonl`）属于旧层实验性全量综合，存在批量重跑成本高、难以局部追溯的问题。
+为实现**单视频/小批次增量接入、透明审查、可追溯版本与幂等并入**，本库建立了基于工单-回执-裁定-清单的 VOD 增量甄选扩展管线（`kb_trial/curation/vod_expansion/`），对齐 QQ 扩展（`qq_expansion`）的标准契约。
+
+### 7.2 完整流转路径图
+```
+新录播分P ──► transcripts_txt/{stem}.txt (官方逐字稿或 cloud ASR)
+              │
+              ├──► ① chapter_extract_claims.py (带 extract_model & prompt_sha256)
+              │    产出: {stem}.chapters.json & {stem}.chapter_claims.jsonl
+              │
+              ├──► ② atomize_claims.py (带 atomize_model & prompt_sha256)
+              │    产出: {stem}.atoms.jsonl
+              │
+              ├──► ③ enrich_atoms.py (纯本地)
+              │    产出: {stem}.atoms.enriched.jsonl (含 PRTS 实体链、recorded_at、claim_id)
+              │
+              ├──► ④ kb_curation_vod_expansion.py export --stem {stem} --batch {batch}
+              │    产出: workorders_{batch}/vod_wo_*.json & tasks_{batch}/task_*.md
+              │
+              ├──► ⑤ 代理审读 (Agent Review 遵循 PROMPT.md 四大闸门)
+              │    产出: reviews_{batch}/vod_wo_*.json (keep / reject / pending)
+              │
+              ├──► ⑥ kb_curation_vod_expansion.py converge --batch {batch}
+              │    校验: source_sha256 吻合 + 引文逐字匹配 transcripts_txt
+              │    产出: audit_decisions_{batch}.json & approved_manifest_{batch}.json
+              │
+              ├──► ⑦ 父代理/人工批准清单 (status: approved)
+              │
+              ├──► ⑧ kb_curation_build.py (经 kb_curation_vod_loader.py 挂载)
+              │    产出: kb_trial/curated_high_quality.json (追加 vod_expansion:* 条目)
+              │    门禁: kb_curation_validate.py 保证 0 泄漏、100% 幂等、引文可追溯
+              │
+              └──► ⑨ rag_pack/build_rag_pack.py (纯本地编译)
+                   产出: rag_pack/corpus.jsonl, corpus.json, system_prompt.txt (供外部生产 RAG 直接使用)
+```
+
+### 7.3 出处追溯与模型指纹 (Provenance Tracking)
+在整条管线中，每一处由模型生成或提取的节点均记录完整版本元数据：
+1. **章节抽取与初筛**：`extract_model` 与 `extract_prompt_sha256`（前 12 位 sha256 散列）。
+2. **原子化命题**：`atomize_model` 与 `atomize_prompt_sha256`。
+3. **审读回执与终审清单**：记录 `reviewer_model`、`source_sha256`（锁定工单当时字节）以及引文的 `evidence_sha256`。
+4. **甄选层条目**：条目 ID 为 `vod_expansion:{batch}:{stem}:{local_id}`，审核状态为 `agent_verified`，置信上限诚实标注为 `text-source-supported`，绝不谎称原片音画核听或游戏实测。
+
+### 7.4 质量守恒与防退化准则
+- **只追加、不改写**：`kb_curation_vod_loader.py` 严格遵循 append-only，若无已批准（`approved` / `approved_merged`）的 VOD manifest，构建产物 `curated_high_quality.json` 保持 100% 字节一致。
+- **发布闸门检测**：合并后必须顺序通过 `kb_curation_validate.py` 与 `kb_curated_search.py --self-test`。
+

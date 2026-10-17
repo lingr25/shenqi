@@ -16,10 +16,11 @@ atomize_claims.py — 将章节知识卡拆成原子命题 (草稿层)
 """
 
 import argparse
+import hashlib
 import json
+import os
 import re
 import sys
-import hashlib
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
@@ -68,6 +69,10 @@ CONTRACT = """你把一张父级机制知识卡拆成原子命题。输入含父
    "derivation_step": null,
    "parameters": [{"name": "...", "value": "...", "unit": "...", "source_span": "..."}],
    "evidence": [{"start": 秒, "end": 秒, "quote": "..."}]}]}"""
+
+ATOMIZE_PROMPT_SHA256 = hashlib.sha256(CONTRACT.encode("utf-8")).hexdigest()[:12]
+ATOMIZE_MODEL = os.environ.get("GROK_MODEL") or getattr(base, "MODEL", "grok-4.6")
+
 
 
 def lesson_kind(card: dict) -> str:
@@ -269,6 +274,8 @@ def main():
                         "chapter": card.get("chapter"),
                         "window": card.get("window"),
                         "status": "draft",
+                        "atomize_model": ATOMIZE_MODEL,
+                        "atomize_prompt_sha256": ATOMIZE_PROMPT_SHA256,
                     }
                     fa.write(json.dumps(atom, ensure_ascii=False) + "\n")
                     fa.flush()

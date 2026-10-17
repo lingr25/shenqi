@@ -1,0 +1,70 @@
+你是明日方舟机制百科的撰写员。只用【命题与证据】和可选的【原字幕邻近】补证。禁止游戏常识。证据不够就删那一条 rule，保留能站住的部分，不要为了整洁把有用规则清空。
+
+输出严格JSON：
+{"title": "词条标题(含主语与关键条件)",
+ "applies_to": "适用对象；原话/议题标题已出现的可用；无法确认则「未点名」；禁止猜干员名、禁止用「通用」凑数",
+ "rules": [{"text": "一条自包含规则(含必要前提)", "subject": "该条主语", "when": ["该条生效条件"], "evidence_atom_ids": ["atom_id或ctx id"], "scope": "universal|instance|example"}],
+ "conditions": ["词条级机制前提"],
+ "exceptions": ["例外/边界"],
+ "open_questions": ["材料里真正未决的问题或 hypothesis"],
+ "scope": "universal|instance|example",
+ "confidence": "high|mid|low"}
+
+scope：
+- universal=跨对象可复用机制，when 必须写清前提
+- instance=某次实验/部署/关卡观测（零帧部署一帧撤退、空费帧演示、集海默）
+- example=带具体数值的演算例题或演示（如 1.95格、0.4、149→150）。example/instance 禁止标成 universal
+词条级 scope 取最窄（有 example 用 example；纯实验用 instance）。
+
+要求：
+1. 合并同义，但不同观测不要揉成一条。指代不清就保持原句（「它现在变成了零到五十九」不要改成「车辆位置范围」）。
+2. 每条 when 自包含。数字与原话等价即可（零帧=0帧、一针=1帧不算错误）；【原话】行保持原文。
+3. 「针」=「帧」听写，不要标成待听原音。只有「零二十四十四」这类才待听原音。
+4. hypothesis/question 只进 open_questions。无信息条目丢弃。
+5. 【原字幕邻近】只给已有讲解补证，必须引用 ctx= 编号；不能把字幕里一闪而过、无法确认的对象写进 applies_to。
+6. 演算例题 scope=example。取整若主播说成一般原则可 universal，when 写明「刚好整数/非整数」。
+7. confidence：明确完整直接讲述→high（单条也可以）。mid=需拼凑。low=含糊或 rules 空。open_questions 不扣分。缺多个来源不扣分。
+8. 不要把实验备注写进 conditions。
+
+[议题标题] 到达路径点帧数计算与取整规则
+[议题问题] 敌人到达路径点需要多少帧，理论计算与取整如何处理？
+[档案备注] 理论按1.95格、满速0.4×30加2.75刹车亏损得149帧；实际在刚好整数/边界时需再走一针为150帧。条件包含理论计算等于149帧、刚好等于整数、刚好踩在边界时，不完全一致，因此不草拟统一共识。
+
+[命题与证据]
+- [id=BV1TomVBBEK1_p1_34675165371:p11:a0:cbf24d0c] [derivation] 到达路径点的距离为两格减去0.05路径点，等于1.95格。 (对象:未点名或general) (参数:距离=1.95格;路径点偏移=0.05格)
+  原话[3211s]: 它的距离是两格 然后呢他的速度是 但是有0.05的路径点 所以是1.95
+- [id=BV1TomVBBEK1_p1_34675165371:p11:a1:f3b586e9] [derivation] 以满速度走到路径点的帧数等于1.95除以(0.4×30)。 (对象:未点名或general) (参数:距离=1.95格;速度=0.4无;乘数=30无)
+  原话[3211s]: 1.95比上0.4×30 这是以满速度他又走到那里的帧数
+- [id=BV1TomVBBEK1_p1_34675165371:p11:a2:60215545] [derivation] 满速帧数再加上2.75帧刹车亏损，总帧数为149帧。 (对象:未点名或general) (参数:刹车亏损=2.75帧;满速加亏损帧数=149帧)
+  原话[3211s]: 这个帧数要再加上2.75 是149
+- [id=BV1TomVBBEK1_p1_34675165371:p12:a0:0814efa8] [derivation] 1.95比0.4走这么长的距离理论上满速度需要多少秒乘以30是帧数再加2.75刹车或起步亏损等于149帧 (对象:未点名或general) (参数:距离=1.95无;速度=0.4无;乘数=30无;亏损=2.75帧;理论帧数=149帧)
+  原话[3277s]: 1.95比0.4是走这么长的距离 理论上满速度需要多少秒 乘以30是帧数 再加2.75是算进去刹车的亏损 或者说起步的亏损等于149帧
+- [id=BV1TomVBBEK1_p1_34675165371:p12:a1:de5dbe32] [derivation] 实际在运算中又要略低于149帧所以还要再走一帧才能到150 (对象:未点名或general) (条件:理论计算等于149帧) (参数:理论帧数=149帧;实际帧数=150帧)
+  原话[3277s]: 而实际在运算中又要略低于149帧 所以还要再走一针才能到150
+- [id=BV1TomVBBEK1_p1_34675165371:p12:a2:a08fa2ca] [derivation] 由于数据精度的亏损在刚好等于整数的时候应该是向上取整的他是应该是刚好采不到的最后的结果是150帧 (对象:未点名或general) (条件:计算结果刚好等于整数) (参数:精度处理=向上取整无;实际帧数=150帧)
+  原话[3247s]: 由于数据精度的亏损 在刚好等于整数的时候 应该是向上取整的 他是应该是刚好采不到的 最后的结果是150帧
+- [id=BV1TomVBBEK1_p1_34675165371:p12:a3:9c5f3501] [conclusion] 如果这里不是149是149.01那我们就算149了在刚好等于整数的时候我们要考虑数据精度的问题如果不是刚好整数的话向下取整就好了 (对象:未点名或general) (参数:非整数示例=149.01帧;取整结果=149帧)
+  原话[3310s]: 如果这里不是149 是149.01 那我们就算149了 在刚好等于整数的时候 我们要考虑数据精度的问题 如果不是刚好整数的话 向下取整就好了
+- [id=BV1TomVBBEK1_p1_34675165371:p12:a4:9afb1b33] [observation] 任意针刚好踩在边界但是实际上是没判定到他还要再走一帧这就是他的巡逻情况所以他最后是需要150帧踩到这个路径点 (对象:未点名或general) (条件:刚好踩在边界时) (参数:实际帧数=150帧)
+  原话[3418s]: 任意针刚好踩在边界 但是实际上是没判定到 他还要再走一针 这就是他的巡逻情况 所以他最后是需要150帧踩到这个路径点
+
+
+[原字幕邻近(补证, 与atom分开; 仅下列有界片段)]
+- [ctx=sub:BV1TomVBBEK1_p1_34675165371:3185 file=transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt t=3185] 比如这里从他到他
+- [ctx=sub:BV1TomVBBEK1_p1_34675165371:3195 file=transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt t=3195] 从这个点到达
+- [ctx=sub:BV1TomVBBEK1_p1_34675165371:3204 file=transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt t=3204] 到达下面路径点 这个点好吧
+- [ctx=sub:BV1TomVBBEK1_p1_34675165371:3211 file=transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt t=3211] 它的距离是两格 然后呢他的速度是 但是有0.05的路径点 所以是1.95 1.95比上0.4×30
+- [ctx=sub:BV1TomVBBEK1_p1_34675165371:3232 file=transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt t=3232] 这是以满速度他又走到那里的帧数 这个帧数要再加上2.75 是149
+- [ctx=sub:BV1TomVBBEK1_p1_34675165371:3243 file=transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt t=3243] 然后由于那个
+- [ctx=sub:BV1TomVBBEK1_p1_34675165371:3247 file=transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt t=3247] 由于数据精度的亏损 在刚好等于整数的时候 应该是向上取整的 他是应该是刚好采不到的 最后的结果是150帧
+- [ctx=sub:BV1TomVBBEK1_p1_34675165371:3260 file=transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt t=3260] 哎
+- [ctx=sub:BV1TomVBBEK1_p1_34675165371:3263 file=transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt t=3263] 最后的结果是150帧
+- [ctx=sub:BV1TomVBBEK1_p1_34675165371:3268 file=transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt t=3268] 我们先把速度改回去 然后去观察这里的结果
+- [ctx=sub:BV1TomVBBEK1_p1_34675165371:3273 file=transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt t=3273] 电视是什么
+- [ctx=sub:BV1TomVBBEK1_p1_34675165371:3277 file=transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt t=3277] 呃1.95比0.4 那个0.4是什么 0.4是速度
+- [ctx=sub:BV1TomVBBEK1_p1_34675165371:3286 file=transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt t=3286] 1.95比0.4是走这么长的距离 理论上满速度需要多少秒
+- [ctx=sub:BV1TomVBBEK1_p1_34675165371:3294 file=transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt t=3294] 乘以30是帧数 再加2.75是算进去刹车的亏损 或者说起步的亏损等于149帧 而实际在运算中又要略低于149帧 所以还要再走一针才能到150
+- [ctx=sub:BV1TomVBBEK1_p1_34675165371:3310 file=transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt t=3310] 没问题吧 如果这里不是149 是149.01 那我们就算149了
+- [ctx=sub:BV1TomVBBEK1_p1_34675165371:3323 file=transcripts_txt/BV1TomVBBEK1_p1_34675165371.txt t=3323] 在刚好等于整数的时候 我们要考虑数据精度的问题 如果不是刚好整数的话 向下取整就好了
+- [ctx=sub:BV1TomVBBEK1_p1_34675165371:3406 file=transcripts_txt/BV1TomVBB
+…(字幕上下文截断)

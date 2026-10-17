@@ -1,0 +1,137 @@
+{
+  "reviewer_type": "agent",
+  "stage": "semantic_repair_round1",
+  "model": "deepseek-v4.1-flash",
+  "prompt_version": "semantic-v1",
+  "ledger": {
+    "semantic_repair": {
+      "calls_ok": 125,
+      "calls_error": 20,
+      "calls_total_attempted": 145,
+      "totals_tokens_ok_rows": 148224,
+      "sum_t_llm_sec_ok_rows": 763.1,
+      "error_kind": "HTTP 429 (网关限流), 20 条; 其 token 用量不可恢复",
+      "units_labeled": 276,
+      "cards_in_scope": 120,
+      "rules_in_scope": 276,
+      "runs": 3,
+      "note": "3 遍: --apply(100 ok/20 err, 119412 tok) + 重试(20 ok, 22582 tok) + 修引用后补跑(5 新调用, 6230 tok); 145 条账本行合计"
+    },
+    "heldout_eval_v2": {
+      "questions": 30,
+      "sides": 2,
+      "build1": {
+        "calls_ok_old_side": 30,
+        "calls_ok_new_side": 30,
+        "calls_error": 2,
+        "tokens_old_side": 45993,
+        "tokens_new_side": 42775,
+        "tokens": 88768,
+        "wall_sec": 130.94,
+        "note": "build1 语料: 首轮 60 次调用中 2 次 HTTP 429(X07/N12 新面, 脚本落盘为 abstain+空答), 再用缓存只重跑这 2 行补齐; 该 2 行 token 已并入新侧"
+      },
+      "build2": {
+        "calls_ok": 30,
+        "calls_error": 0,
+        "tokens": 42873,
+        "wall_sec": 41.91,
+        "note": "加入审核覆盖层(16 条)后重跑新侧 30 题; 旧侧 30 行因语料未变而全部缓存命中"
+      },
+      "calls_ok_total": 92,
+      "calls_error_total": 2,
+      "totals_tokens": 131641,
+      "wall_sec_total": 172.85,
+      "model": "deepseek-v4.1-flash"
+    },
+    "variance_recheck": {
+      "questions": 3,
+      "reps": 3,
+      "calls_ok": 9,
+      "calls_error": 0,
+      "totals_tokens": 12895,
+      "note": "variance_check.py: X07/N12/R03 在完全相同输入下各重跑 3 次, 用于分离采样方差"
+    },
+    "local_only_zero_llm": [
+      "compute_scope.py",
+      "triage_e1.py",
+      "gate_v2.py",
+      "validate_gates_v2.py",
+      "freeze_v2.py",
+      "dump_ctx.py",
+      "spotcheck_v2.py",
+      "spotcheck_worksheet.py",
+      "label_application_check.py",
+      "audit_overlay.py"
+    ],
+    "closing_round_build3": {
+      "v3": {
+        "label": "build3 对照(v1语料 vs build3语料, 配额 all)",
+        "quota_mode": null,
+        "calls_ok": 42,
+        "calls_error": 0,
+        "tokens": 59972,
+        "wall_sec": 81.63,
+        "old_fresh": 15,
+        "new_fresh": 27,
+        "n_docs": {
+          "old": 17340,
+          "new": 23225
+        }
+      },
+      "v4": {
+        "label": "build4 对照(配额 layer_only)",
+        "quota_mode": "layer_only",
+        "calls_ok": 40,
+        "calls_error": 0,
+        "tokens": 54990,
+        "wall_sec": 75.2,
+        "old_fresh": 15,
+        "new_fresh": 25,
+        "n_docs": {
+          "old": 17340,
+          "new": 23225
+        }
+      },
+      "v5": {
+        "label": "配额消融(QUOTA_MODE=off, 只跑新面 ctx 改变的 20 题)",
+        "quota_mode": "off",
+        "calls_ok": 20,
+        "calls_error": 0,
+        "tokens": 25389,
+        "wall_sec": 42.18,
+        "old_fresh": 0,
+        "new_fresh": 20,
+        "n_docs": {
+          "old": 17340,
+          "new": 23225
+        }
+      },
+      "attribution_noquota": {
+        "label": "X07 归因: build3 关配额重跑 X07×3/F04/F06/N09",
+        "quota_mode": "off",
+        "calls_ok": 6,
+        "calls_error": 0,
+        "tokens": 6879,
+        "why": "分离 registry 对齐 vs 同源配额 对 X07 的贡献"
+      }
+    }
+  },
+  "grand_total_calls_ok": 334,
+  "grand_total_calls_error_attempts": 22,
+  "grand_total_tokens_lower_bound": 439990,
+  "usage_semantic_json_crosscheck": {
+    "calls": 5,
+    "cache_hit": 115,
+    "total_tokens": 6230,
+    "note": "仅最后一次运行的增量, 不等于本阶段用量; 见 events_semantic.jsonl 聚合"
+  },
+  "not_counted": [
+    "22 条 429 失败尝试的请求 token (网关未返回 usage, 不可恢复): semantic 20 条 + 评测 2 条",
+    "重试期间因 cache 命中而未发生的重复调用 (本就不消耗 token; 评测第 2 次 run 命中 58 行)",
+    "第二轮(full_candidate_round1)的全部用量, 不在本阶段口径内",
+    "本地步骤(scope/triage/gate/validate/freeze/spotcheck/dump_ctx/fix_citations)零 LLM 调用",
+    "关配额/单变体消融脚本按 **ctx 指纹** 缓存, ctx 未变的题直接复用上一代答案行, 因此这些数字只统计真的发生的调用, 不是 30 题×2 面的全量重跑"
+  ],
+  "closing_round_calls_ok": 108,
+  "closing_round_tokens": 147230
+}

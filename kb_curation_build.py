@@ -19,6 +19,7 @@ from pathlib import Path
 
 import kb_curation_rules as R
 import kb_curation_qq_expansion_loader as EXPANSION_LOADER
+import kb_curation_vod_loader as VOD_LOADER
 from entity_corrector import correct_text
 
 ROOT = Path(__file__).resolve().parent
@@ -393,6 +394,16 @@ def main():
     qq_sem_removed = []
     if qq_sem:
         entries, qq_sem_removed = apply_qq_semantic_verdicts(entries, qq_sem)
+
+    # Phase-6: Incremental VOD expansion (approved manifests in kb_trial/curation/vod_expansion/)
+    vod_entries, vod_reports = VOD_LOADER.load_all_vod_expansions(
+        existing_ids=[e['id'] for e in entries])
+    for bname, brep in vod_reports.items():
+        if brep['failures']:
+            raise SystemExit('VOD expansion %s manifest failed re-verification: %s'
+                             % (bname, brep['failures'][:5]))
+    entries = entries + vod_entries
+
     payload = {
         'schema_version': SCHEMA_VERSION,
         'name': '神祇读神奇 机制讲堂 甄选高质量规则',
@@ -486,6 +497,16 @@ def main():
                     '父对 28 条存疑的裁决见该文件与 manifest 的 parent_ruling。',
             'skipped_reason': b4_report['skipped_reason'],
         }
+    for bname, brep in vod_reports.items():
+        if brep['loaded']:
+            payload[f'vod_expansion_manifest_{bname}'] = {
+                'source': brep['manifest_path'],
+                'manifest_status': brep['manifest_status'],
+                'appended': brep['loaded'],
+                'entry_ids': brep['entry_ids'],
+                'note': f'录播轨增量扩展批次 {bname} 的条目：来源为 VOD 逐字稿/ASR，经代理逐条读源审查通过。只追加不改写既有条目。',
+                'skipped_reason': brep['skipped_reason'],
+            }
     CURATED.write_text(json.dumps(payload, ensure_ascii=False, indent=1, sort_keys=False) + '\n',
                        encoding='utf-8')
     stats = {

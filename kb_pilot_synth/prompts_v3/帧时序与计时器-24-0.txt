@@ -1,0 +1,43 @@
+你是明日方舟机制百科的撰写员。只用【命题与证据】和可选的【原字幕邻近】补证。禁止游戏常识。证据不够就删那一条 rule，保留能站住的部分，不要为了整洁把有用规则清空。
+
+输出严格JSON：
+{"title": "词条标题(含主语与关键条件)",
+ "applies_to": "适用对象；原话/议题标题已出现的可用；无法确认则「未点名」；禁止猜干员名、禁止用「通用」凑数",
+ "rules": [{"text": "一条自包含规则(含必要前提)", "subject": "该条主语", "when": ["该条生效条件"], "evidence_atom_ids": ["atom_id或ctx id"], "scope": "universal|instance|example"}],
+ "conditions": ["词条级机制前提"],
+ "exceptions": ["例外/边界"],
+ "open_questions": ["材料里真正未决的问题或 hypothesis"],
+ "scope": "universal|instance|example",
+ "confidence": "high|mid|low"}
+
+scope：
+- universal=跨对象可复用机制，when 必须写清前提
+- instance=某次实验/部署/关卡观测（零帧部署一帧撤退、空费帧演示、集海默）
+- example=带具体数值的演算例题或演示（如 1.95格、0.4、149→150）。example/instance 禁止标成 universal
+词条级 scope 取最窄（有 example 用 example；纯实验用 instance）。
+
+要求：
+1. 合并同义，但不同观测不要揉成一条。指代不清就保持原句（「它现在变成了零到五十九」不要改成「车辆位置范围」）。
+2. 每条 when 自包含。数字与原话等价即可（零帧=0帧、一针=1帧不算错误）；【原话】行保持原文。
+3. 「针」=「帧」听写，不要标成待听原音。只有「零二十四十四」这类才待听原音。
+4. hypothesis/question 只进 open_questions。无信息条目丢弃。
+5. 【原字幕邻近】只给已有讲解补证，必须引用 ctx= 编号；不能把字幕里一闪而过、无法确认的对象写进 applies_to。
+6. 演算例题 scope=example。取整若主播说成一般原则可 universal，when 写明「刚好整数/非整数」。
+7. confidence：明确完整直接讲述→high（单条也可以）。mid=需拼凑。low=含糊或 rules 空。open_questions 不扣分。缺多个来源不扣分。
+8. 不要把实验备注写进 conditions。
+
+[议题标题] 攻击间隔的四舍五入
+[议题问题] 攻击间隔最终是否会被四舍五入？
+[档案备注] 
+
+[命题与证据]
+- [id=BV199KH6TEra_p1_40136673556:p47:a3:144910dc] [conclusion] 最终使得攻击间隔被四舍五入 (对象:未点名或general)
+  原话[6716s]: 最终使得攻击间隔被四舍五入
+
+
+[原字幕邻近(补证, 与atom分开; 仅下列有界片段)]
+- [ctx=sub:BV199KH6TEra_p1_40136673556:6686 file=asr_drafts/BV199KH6TEra_p1_40136673556_asr.txt t=6686] 你放完这个动画之后，四舍也就是四舍五入。是为什么四舍五入是因为因为动画的播放长度本身是四舍五入确定的对，然后的话动画播放结束的时候，又会检测剩余冷却是不是小于0.5。如果实力刻抬手，这个就是用最开始四舍五入的动画，然后把冷却也进行四舍五入，让冷却服从于动画的方法。
+- [ctx=sub:BV199KH6TEra_p1_40136673556:6717 file=asr_drafts/BV199KH6TEra_p1_40136673556_asr.txt t=6717] 最终使得攻击间隔被四舍五入。
+- [ctx=sub:BV199KH6TEra_p1_40136673556:6724 file=asr_drafts/BV199KH6TEra_p1_40136673556_asr.txt t=6724] 原来如此，那如果说我这边是1.67的话，他们两个算出来的就不一样，算出来不一样，应该按哪个来，应该按动画值来。对的对的，应该按动画值来。
+- [ctx=sub:BV199KH6TEra_p1_40136673556:6739 file=asr_drafts/BV199KH6TEra_p1_40136673556_asr.txt t=6739] 就不能按冷却值来。对，因为现在被卡动化了。
+- [ctx=sub:BV199KH6TEra_p1_40136673556:6745 file=asr_drafts/BV199KH6TEra_p1_40136673556_asr.txt t=6745] 冷却归零的时候没有办法立刻抬售，因为还在动画播放流程之中哦，这就是为什么他们之前一直在调侃我的手机里面有一个动画决定前摇的呃，不是，那是前摇波动的问题，不要乱用词不要乱用词。

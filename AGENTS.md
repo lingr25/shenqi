@@ -151,8 +151,8 @@ shenqi/
 | 隔离（`curation/curated_staging.json`） | 6 |
 | 黑话词表 `glossary.json` | 2100 条（`short_def` 76、`mechanic_def` 50） |
 | 逐字稿 / 清洗字幕 / 原始字幕 | 45 / 45 / 45 个分P文件 |
-| `curated_high_quality.json` sha256（LF） | `6e321a5e7922f3710c4ab14dbee24467debdb21c094fcb034a5dbc87da412908` |
-| 同上（CRLF 工作区口径） | `2a95320b7bd0c8aa10bf2b421b570ba7fdf1af094e1da07c120225e471b83ec9` |
+| `curated_high_quality.json` sha256（LF） | `a50105a2c3ba3beb61db45fdc5df80b25e4b115b408154328f17306de00310bc` |
+| 同上（CRLF 工作区口径） | `dab7078c3daa0f0dd22a57fc84c6f68c1e2b46dbabf91248c1bfbc151609a8f9` |
 <!-- stats:end -->
 
 甄选层是当前可直接接 RAG 的规则层，使用时必须遵守以下口径，**不得复述为权威或已验证**：
