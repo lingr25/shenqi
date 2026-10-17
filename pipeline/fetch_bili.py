@@ -207,30 +207,36 @@ def fetch_list(cli, stop_at=None):
     return fetch_list_medialist(cli, stop_at), "medialist"
 
 
-def fetch_list_medialist(cli, stop_at=None, max_pages=10):
-    out, oid, run = [], "", 0
+def fetch_list_medialist(cli, stop_at=None, max_pages=150):
+    """免登录兜底。注意 Lapis___ 是多位主播的录播号，medialist 不能按关键词过滤，
+    每页 20 条里多为其他主播；因此按发布时间翻到「已覆盖最新一期 - 7 天」为止
+    （stop_at 为空即全量时翻到 max_pages），再在本地按标题过滤系列。"""
+    cutoff = None
+    if stop_at:
+        known = [v for v in load_json(paths(ROOT)["search"], {}).get("videos", [])
+                 if v["bvid"] in stop_at]
+        if known:
+            cutoff = max(v["created"] for v in known) - 7 * 86400
+    out, oid = [], ""
     for _ in range(max_pages):
         d = cli.get_json(EP_MEDIALIST, {"type": 1, "biz_id": MID, "ps": 20, "oid": oid,
                                         "otype": 2, "direction": "false", "desc": "true",
                                         "sort_field": 1, "tid": 0, "with_current": "false"})
         items = d.get("media_list") or []
         for m in items:
-            if stop_at and m["bv_id"] in stop_at:
-                run += 1
-                if run >= STOP_AFTER_SEEN:
-                    return out
-                continue
-            run = 0
-            if not SERIES_RE.search(m.get("title", "")) and KEYWORD not in m.get("title", ""):
+            title = m.get("title", "")
+            if (stop_at and m["bv_id"] in stop_at) or not SERIES_RE.search(title):
                 continue
             # 字段名对齐 arc/search 的常用子集
-            out.append({"title": m["title"], "author": (m.get("upper") or {}).get("name", ""),
+            out.append({"title": title, "author": (m.get("upper") or {}).get("name", ""),
                         "mid": MID, "created": m.get("pubtime"), "aid": m.get("id"),
                         "bvid": m["bv_id"], "pic": m.get("cover", ""),
                         "description": m.get("intro", ""), "length":
                         "%d:%02d" % divmod(m.get("duration", 0), 60),
                         "dur_sec": m.get("duration", 0)})
         if not d.get("has_more") or not items:
+            break
+        if cutoff and items[-1].get("pubtime", 0) < cutoff:
             break
         oid = items[-1]["id"]
     return out
