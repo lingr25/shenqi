@@ -1,0 +1,191 @@
+{
+  "bvid": "BV1xRho6DEAQ",
+  "title": "【神祇读神奇】上课回,属性，伤害等│20260926直播",
+  "batch": "vod_b2",
+  "stems": [
+    "BV1xRho6DEAQ_p1_42224124252",
+    "BV1xRho6DEAQ_p2_42226486217",
+    "BV1xRho6DEAQ_p3_42227206884"
+  ],
+  "pages_pending_asr": [],
+  "llm": {
+    "base_host": "lingr.aitreez.com",
+    "model": "lingr-free",
+    "fallback_models": [
+      "lingr-speed",
+      "lingr-pro"
+    ],
+    "temperature": 0.1
+  },
+  "prompts": {
+    "chapter_prompt_sha256": "0362183fd7fe",
+    "extract_prompt_sha256": "a3daf05e47cd",
+    "atomize_prompt_sha256": "690aae7c3ff9"
+  },
+  "parallel_parts": 3,
+  "usage_by_script": {
+    "chapter_extract_claims.py": {
+      "calls": 62,
+      "calls_lingr-speed": 16,
+      "prompt_tokens": 134482,
+      "completion_tokens": 199572,
+      "reasoning_tokens": 144112,
+      "total_tokens": 334054,
+      "seconds": 1292.6,
+      "calls_lingr-free": 46
+    },
+    "atomize_claims.py": {
+      "calls": 119,
+      "calls_lingr-free": 107,
+      "prompt_tokens": 171947,
+      "completion_tokens": 240291,
+      "reasoning_tokens": 199870,
+      "total_tokens": 412238,
+      "seconds": 1758.6,
+      "calls_lingr-speed": 12
+    }
+  },
+  "usage_total": {
+    "calls": 181,
+    "prompt_tokens": 306429,
+    "completion_tokens": 439863,
+    "reasoning_tokens": 343982,
+    "total_tokens": 746292
+  },
+  "wall_seconds": [
+    {
+      "step": "BV1xRho6DEAQ_p1_42224124252 extract",
+      "seconds": 1040
+    },
+    {
+      "step": "BV1xRho6DEAQ_p1_42224124252 atomize",
+      "seconds": 1085
+    },
+    {
+      "step": "BV1xRho6DEAQ_p2_42226486217 extract",
+      "seconds": 985
+    },
+    {
+      "step": "BV1xRho6DEAQ_p2_42226486217 atomize",
+      "seconds": 592
+    },
+    {
+      "step": "BV1xRho6DEAQ_p3_42227206884 extract",
+      "seconds": 488
+    },
+    {
+      "step": "BV1xRho6DEAQ_p3_42227206884 atomize",
+      "seconds": 300
+    }
+  ],
+  "wall_seconds_total": 8664,
+  "counts": {
+    "BV1xRho6DEAQ_p1_42224124252": {
+      "chapters": 7,
+      "claims": 72,
+      "atoms": 141,
+      "noise": 2,
+      "extract_models": {
+        "lingr-speed": 11,
+        "lingr-free": 61
+      },
+      "atomize_models": {
+        "lingr-free": 132,
+        "lingr-speed": 9
+      },
+      "failed_windows": [],
+      "atomize_fail": [],
+      "extract_summary": {
+        "pass": 68,
+        "quote_mismatch": 4,
+        "overlap_dedup": 0
+      },
+      "atomize_summary": {
+        "pass": 141,
+        "unbound": 0,
+        "llm_drop": 2,
+        "fail": 0,
+        "noise": 0
+      }
+    },
+    "BV1xRho6DEAQ_p2_42226486217": {
+      "chapters": 26,
+      "claims": 39,
+      "atoms": 63,
+      "noise": 1,
+      "extract_models": {
+        "lingr-speed": 17,
+        "lingr-free": 22
+      },
+      "atomize_models": {
+        "lingr-free": 57,
+        "lingr-speed": 6
+      },
+      "failed_windows": [],
+      "atomize_fail": [],
+      "extract_summary": {
+        "pass": 39,
+        "quote_mismatch": 0,
+        "overlap_dedup": 0
+      },
+      "atomize_summary": {
+        "pass": 63,
+        "unbound": 0,
+        "llm_drop": 0,
+        "fail": 0,
+        "noise": 1
+      }
+    },
+    "BV1xRho6DEAQ_p3_42227206884": {
+      "chapters": 12,
+      "claims": 9,
+      "atoms": 14,
+      "noise": 1,
+      "extract_models": {
+        "lingr-speed": 3,
+        "lingr-free": 6
+      },
+      "atomize_models": {
+        "lingr-speed": 4,
+        "lingr-free": 10
+      },
+      "failed_windows": [],
+      "atomize_fail": [],
+      "extract_summary": {
+        "pass": 9,
+        "quote_mismatch": 0,
+        "overlap_dedup": 0
+      },
+      "atomize_summary": {
+        "pass": 14,
+        "unbound": 0,
+        "llm_drop": 1,
+        "fail": 0,
+        "noise": 0
+      }
+    }
+  },
+  "inputs": {
+    "transcripts_txt/BV1xRho6DEAQ_p1_42224124252.txt": "217b8400c92b191c98ab9c80bc860630b6a88341b48a5f98827800812dd40875",
+    "transcripts_txt/BV1xRho6DEAQ_p2_42226486217.txt": "78e45a1390c72185122e73468ef69337e6fc21ca43a488e2d8d836fb29e889df",
+    "transcripts_txt/BV1xRho6DEAQ_p3_42227206884.txt": "fe84e275f96ec4086e3557632e01c042aae235eb712b0322faab0994392f3652"
+  },
+  "outputs_local_only": {
+    "knowledge_pilot/BV1xRho6DEAQ_p1_42224124252.atoms.enriched.jsonl": "32d28b053fa505ed053f779f8995bbf7c54802c49966fe8da8266e63c9d52efe",
+    "knowledge_pilot/BV1xRho6DEAQ_p1_42224124252.atoms.jsonl": "74089f92e4843c6dfc66539bbd16742c77b8245f896774f1faf09223a04f252e",
+    "knowledge_pilot/BV1xRho6DEAQ_p1_42224124252.chapter_claims.jsonl": "8b3914c914a0801365a5fc4789245e16d2d9eeef6ef52327e70edc4f76b64f38",
+    "knowledge_pilot/BV1xRho6DEAQ_p1_42224124252.chapters.json": "f1f117c004e9111fa45a3fbd44f5ddd9dd407bcb7b067a1db6876e823f1c85cf",
+    "knowledge_pilot/BV1xRho6DEAQ_p1_42224124252.noise.jsonl": "688ad23bac88633db9d32e4af2ca977e84fdf7b65bafd4c53a0c0894e17f7ef2",
+    "knowledge_pilot/BV1xRho6DEAQ_p2_42226486217.atoms.enriched.jsonl": "ba5a98e8fb9a76a7bfb849345ece422b5782f7c14dad3be4374abfb9370c94ba",
+    "knowledge_pilot/BV1xRho6DEAQ_p2_42226486217.atoms.jsonl": "2c494c81ae788f01a5b4f6d81c804f8620adde2df736718af2d746b49896d47a",
+    "knowledge_pilot/BV1xRho6DEAQ_p2_42226486217.chapter_claims.jsonl": "2ee8b74f6b6273624355668de2360134c90c6d1189abf081379620f706eb2840",
+    "knowledge_pilot/BV1xRho6DEAQ_p2_42226486217.chapters.json": "e9fbec2a67a751bdbd94b730051517340bb3845a432cb63ace25af17f86cca59",
+    "knowledge_pilot/BV1xRho6DEAQ_p2_42226486217.noise.jsonl": "5ebb211486fd7903760c2a0b0ffdcbb6f39903b90293381479a5aa2aa9d6e65c",
+    "knowledge_pilot/BV1xRho6DEAQ_p3_42227206884.atoms.enriched.jsonl": "ce1a59ca10c1bed173f611595aa75926b4d3a086a81ec52032c2101e6981fd4d",
+    "knowledge_pilot/BV1xRho6DEAQ_p3_42227206884.atoms.jsonl": "832cf779dc324a45ae35f1f7ac667e5f806ebc53cd68f4a680ca02789a6c4101",
+    "knowledge_pilot/BV1xRho6DEAQ_p3_42227206884.chapter_claims.jsonl": "ca719b93f6ea0a043241155f788d18fa4705046745a4ebc3579c77012755f6ee",
+    "knowledge_pilot/BV1xRho6DEAQ_p3_42227206884.chapters.json": "bc3481afabdcbc573d6108d8ea1751cc22a2d261c49f30ffcf4faf8da9a25f0d",
+    "knowledge_pilot/BV1xRho6DEAQ_p3_42227206884.noise.jsonl": "19927cb3f4b1fafbd85761e1eb48a3d0e10b80207b82ccab4985228a3e22c077"
+  },
+  "note": "knowledge_pilot/ 草稿层不入库，只记 sha256。批量与其它视频并行（3 路），usage 按视频目录记账。"
+}
