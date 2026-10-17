@@ -1,0 +1,233 @@
+{
+  "bvid": "BV1BCpw6cENH",
+  "title": "【神祇读神奇】克莱门莎│20261006直播",
+  "batch": "vod_b2",
+  "stems": [
+    "BV1BCpw6cENH_p2_42513075262",
+    "BV1BCpw6cENH_p3_42516023078",
+    "BV1BCpw6cENH_p1_42510257112",
+    "BV1BCpw6cENH_p4_42517005027"
+  ],
+  "pages_pending_asr": [],
+  "llm": {
+    "base_host": "lingr.aitreez.com",
+    "model": "lingr-free",
+    "fallback_models": [
+      "lingr-speed",
+      "lingr-pro"
+    ],
+    "temperature": 0.1
+  },
+  "prompts": {
+    "chapter_prompt_sha256": "0362183fd7fe",
+    "extract_prompt_sha256": "a3daf05e47cd",
+    "atomize_prompt_sha256": "690aae7c3ff9"
+  },
+  "parallel_parts": 3,
+  "usage_by_script": {
+    "chapter_extract_claims.py": {
+      "calls": 74,
+      "calls_lingr-free": 55,
+      "prompt_tokens": 147620,
+      "completion_tokens": 351176,
+      "reasoning_tokens": 265977,
+      "total_tokens": 498796,
+      "seconds": 1931.4,
+      "calls_lingr-speed": 19
+    },
+    "atomize_claims.py": {
+      "calls": 234,
+      "calls_lingr-free": 216,
+      "prompt_tokens": 312350,
+      "completion_tokens": 539355,
+      "reasoning_tokens": 476109,
+      "total_tokens": 851705,
+      "seconds": 5243.1,
+      "calls_lingr-speed": 18
+    }
+  },
+  "usage_total": {
+    "calls": 308,
+    "prompt_tokens": 459970,
+    "completion_tokens": 890531,
+    "reasoning_tokens": 742086,
+    "total_tokens": 1350501
+  },
+  "wall_seconds": [
+    {
+      "step": "BV1BCpw6cENH_p2_42513075262 extract",
+      "seconds": 744
+    },
+    {
+      "step": "BV1BCpw6cENH_p2_42513075262 atomize",
+      "seconds": 1376
+    },
+    {
+      "step": "BV1BCpw6cENH_p3_42516023078 extract",
+      "seconds": 1062
+    },
+    {
+      "step": "BV1BCpw6cENH_p3_42516023078 atomize",
+      "seconds": 675
+    },
+    {
+      "step": "BV1BCpw6cENH_p1_42510257112 extract",
+      "seconds": 881
+    },
+    {
+      "step": "BV1BCpw6cENH_p1_42510257112 atomize",
+      "seconds": 1198
+    },
+    {
+      "step": "BV1BCpw6cENH_p4_42517005027 extract",
+      "seconds": 336
+    },
+    {
+      "step": "BV1BCpw6cENH_p4_42517005027 atomize",
+      "seconds": 752
+    }
+  ],
+  "wall_seconds_total": 10508,
+  "counts": {
+    "BV1BCpw6cENH_p2_42513075262": {
+      "chapters": 20,
+      "claims": 75,
+      "atoms": 103,
+      "noise": 10,
+      "extract_models": {
+        "lingr-speed": 7,
+        "lingr-free": 68
+      },
+      "atomize_models": {
+        "lingr-free": 100,
+        "lingr-speed": 3
+      },
+      "failed_windows": [],
+      "atomize_fail": [],
+      "extract_summary": {
+        "pass": 75,
+        "quote_mismatch": 0,
+        "overlap_dedup": 0
+      },
+      "atomize_summary": {
+        "pass": 103,
+        "unbound": 0,
+        "llm_drop": 8,
+        "fail": 0,
+        "noise": 2
+      }
+    },
+    "BV1BCpw6cENH_p3_42516023078": {
+      "chapters": 6,
+      "claims": 45,
+      "atoms": 73,
+      "noise": 2,
+      "extract_models": {
+        "lingr-speed": 14,
+        "lingr-free": 31
+      },
+      "atomize_models": {
+        "lingr-free": 67,
+        "lingr-speed": 6
+      },
+      "failed_windows": [],
+      "atomize_fail": [],
+      "extract_summary": {
+        "pass": 44,
+        "quote_mismatch": 1,
+        "overlap_dedup": 0
+      },
+      "atomize_summary": {
+        "pass": 73,
+        "unbound": 0,
+        "llm_drop": 2,
+        "fail": 0,
+        "noise": 0
+      }
+    },
+    "BV1BCpw6cENH_p1_42510257112": {
+      "chapters": 8,
+      "claims": 56,
+      "atoms": 84,
+      "noise": 2,
+      "extract_models": {
+        "lingr-speed": 12,
+        "lingr-free": 44
+      },
+      "atomize_models": {
+        "lingr-free": 76,
+        "lingr-speed": 8
+      },
+      "failed_windows": [],
+      "atomize_fail": [],
+      "extract_summary": {
+        "pass": 56,
+        "quote_mismatch": 0,
+        "overlap_dedup": 0
+      },
+      "atomize_summary": {
+        "pass": 84,
+        "unbound": 0,
+        "llm_drop": 2,
+        "fail": 0,
+        "noise": 0
+      }
+    },
+    "BV1BCpw6cENH_p4_42517005027": {
+      "chapters": 17,
+      "claims": 60,
+      "atoms": 97,
+      "noise": 5,
+      "extract_models": {
+        "lingr-free": 60
+      },
+      "atomize_models": {
+        "lingr-free": 96,
+        "lingr-speed": 1
+      },
+      "failed_windows": [],
+      "atomize_fail": [],
+      "extract_summary": {
+        "pass": 60,
+        "quote_mismatch": 0,
+        "overlap_dedup": 0
+      },
+      "atomize_summary": {
+        "pass": 97,
+        "unbound": 0,
+        "llm_drop": 5,
+        "fail": 0,
+        "noise": 0
+      }
+    }
+  },
+  "inputs": {
+    "transcripts_txt/BV1BCpw6cENH_p2_42513075262.txt": "090b97778aa0b5f26ceb0a2c57cf3ac0ef2cbac80df5dcbbead7c0c4f3a7c0db",
+    "transcripts_txt/BV1BCpw6cENH_p3_42516023078.txt": "5099cfdfce58083024c8daa510a010530cc6ced11f101c5e2086321034472c91",
+    "transcripts_txt/BV1BCpw6cENH_p1_42510257112.txt": "3ebd0de67091413c193095f88165bc6017dd6466c1c12edfcfd3208a28318c97",
+    "transcripts_txt/BV1BCpw6cENH_p4_42517005027.txt": "3397b9802824da92c276ebeb4cb76051747a94f9849120c36b1c422134bf80e3"
+  },
+  "outputs_local_only": {
+    "knowledge_pilot/BV1BCpw6cENH_p2_42513075262.atoms.enriched.jsonl": "6438fb9d54cdd5fa9dc7cca8622da4f60c0c2da03f117ceb4eac1465f9350c48",
+    "knowledge_pilot/BV1BCpw6cENH_p2_42513075262.atoms.jsonl": "a64b908e0ef5817d63351cadfe81b52cce30632062059dcb31be9730f4c2b4db",
+    "knowledge_pilot/BV1BCpw6cENH_p2_42513075262.chapter_claims.jsonl": "a36c547a1dfce8164c022af23bf5458328228e2bb0446069ea898e46cc172afb",
+    "knowledge_pilot/BV1BCpw6cENH_p2_42513075262.chapters.json": "561fc23a9ddc0c5da4164057f60fd2556bb83406f7c2ac85e2332fcf01199d6f",
+    "knowledge_pilot/BV1BCpw6cENH_p2_42513075262.noise.jsonl": "4735f770cee2266031673cbf544719b4d585a93315d8515b402a492e5c1aa3df",
+    "knowledge_pilot/BV1BCpw6cENH_p3_42516023078.atoms.enriched.jsonl": "4dd39bad92d76d8505451ce8f7af8ee8a841661f4560d5dfa6187c53d4de4a06",
+    "knowledge_pilot/BV1BCpw6cENH_p3_42516023078.atoms.jsonl": "8ab3a085ea2f92ae68de50f6944e29fb45aeaa3b5ccf44ebf9d75fc1dd599ab3",
+    "knowledge_pilot/BV1BCpw6cENH_p3_42516023078.chapter_claims.jsonl": "ef74d12b1f84c8d9680679374efd314f6b7c1aacbd7e6c5989ba55323464e286",
+    "knowledge_pilot/BV1BCpw6cENH_p3_42516023078.chapters.json": "8b0ae15eda1b2b559a8d6cd341b994c0b426a0de462aa7aba5ebb62ef7e44d53",
+    "knowledge_pilot/BV1BCpw6cENH_p3_42516023078.noise.jsonl": "de7fe80d4c7eec20e99e0010069a825c4333e6cea82e7965594a6c1d8157c989",
+    "knowledge_pilot/BV1BCpw6cENH_p1_42510257112.atoms.enriched.jsonl": "eca0ba19c336795934d0fa7a0da2709986d97206dec9c018415785fc617a6176",
+    "knowledge_pilot/BV1BCpw6cENH_p1_42510257112.atoms.jsonl": "2ddbb52e84d55632abe7d9458c023ce05f963e118883fe2f0f0721f598ad48e8",
+    "knowledge_pilot/BV1BCpw6cENH_p1_42510257112.chapter_claims.jsonl": "4223ccf2a9540d0749596b079d7d1805259138f82b9de77bb7140ae7772b50ac",
+    "knowledge_pilot/BV1BCpw6cENH_p1_42510257112.chapters.json": "a6bf4fee56480f843b89a9fcf185a008e3ba8ddf96deacbdd806f37af4ed852d",
+    "knowledge_pilot/BV1BCpw6cENH_p1_42510257112.noise.jsonl": "cf2efac05c1721c1fbf22d999393f3eea7ebb16a984b8a0a005aba3860b00cf5",
+    "knowledge_pilot/BV1BCpw6cENH_p4_42517005027.atoms.enriched.jsonl": "743772f70b57192801807f95fcbaaa855077c7ecae5f34d8c8aa54a0c4b17430",
+    "knowledge_pilot/BV1BCpw6cENH_p4_42517005027.atoms.jsonl": "4918aa48bf9a5691b403dea2de5e386f93cdbc04b259167df6bdb2d84428efe7",
+    "knowledge_pilot/BV1BCpw6cENH_p4_42517005027.chapter_claims.jsonl": "c92b593287d7e2f955761b55166f880c1c82f8f2b082a0f9062d5ddbc4e4fcba",
+    "knowledge_pilot/BV1BCpw6cENH_p4_42517005027.chapters.json": "b82bf0f3a04f171bd8a18bb75213044eaddb016c6121251fd2dcbda0b91590c7",
+    "knowledge_pilot/BV1BCpw6cENH_p4_42517005027.noise.jsonl": "db944fe689b221cb3f312317920e420902ec1f1ab63e878beb7aad2a9c8efa6b"
+  },
+  "note": "knowledge_pilot/ 草稿层不入库，只记 sha256。批量与其它视频并行（3 路），usage 按视频目录记账。"
+}
