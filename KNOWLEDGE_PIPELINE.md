@@ -87,8 +87,9 @@ python rag_eval.py            # 纯本地 bigram+BM25
 5. 人工审查 `clusters_merged_report.md` 的 conflict/open 区，再考虑升 canonical。
 
 **B. 只有音频、无官方字幕的分 P**：
-1. `plan_cloud_clips.py` / `cut_cloud_clips.py` 切片 → `transcribe_cloud.py` 走百炼
-   `qwen3-asr-flash`（密钥在脚本内，注意勿外泄）→ `audit_timeline.py` 校验时间轴。
+1. `asr/plan_cloud_clips.py` / `asr/cut_cloud_clips.py` 切片 → `asr/transcribe_cloud.py` 走百炼
+   `qwen3-asr-flash`（密钥从环境变量 `BAILIAN_API_KEY` 读取，勿写进脚本）→ `asr/audit_timeline.py` 校验时间轴。
+   （以上脚本 2026-10 起位于 `asr/`，从仓库根目录运行。）
 2. `timeline_ok` 后同 A 的 2-4 步，`--source cloud`。
 3. `timeline_unverified` 先修时间轴再入库；源 AAC 损坏的切片（见 `dropped_unrecoverable.json`）不重试。
 

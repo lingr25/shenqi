@@ -25,7 +25,7 @@ if hasattr(sys.stdout, "reconfigure"):
     except Exception:
         pass
 
-ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 仓库根目录（本脚本位于 qq/）
 DEFAULT_WINDOWS = os.path.join(ROOT_DIR, "qq_info", "windows.jsonl")
 DEFAULT_MESSAGES = os.path.join(ROOT_DIR, "qq_info", "messages_clean.jsonl")
 DEFAULT_SPEAKERS = os.path.join(ROOT_DIR, "qq_info", "speaker_map.json")

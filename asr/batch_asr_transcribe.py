@@ -9,7 +9,7 @@ from funasr import AutoModel
 
 sys.stdout.reconfigure(encoding='utf-8')
 
-ROOT_DIR = r"c:\Users\cheny\Downloads\shenqi"
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 仓库根目录（本脚本位于 asr/）
 if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
 

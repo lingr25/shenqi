@@ -53,8 +53,8 @@ shenqi/
 ├── vad_results/            # [实验性/独立层] FSMN-VAD 人声端点检测时间戳与 vad_report.md 人声活跃度大盘
 ├── asr_drafts/             # [实验性/独立层] SenseVoiceSmall 本地粗识别转写草稿，完全独立于 transcripts_txt/
 ├── cloud_clips/            # [实验性/独立层] 云端ASR切片产物：manifest.json 裁剪清单 + 按VAD/草稿过滤后的音频切片（文件名含原音频绝对时间轴），被.gitignore忽略
-├── plan_cloud_clips.py     # [实验性/独立层] 云端切片清单生成器：VAD段×草稿文本打分过滤→合并→pad→硬切
-├── cut_cloud_clips.py      # [实验性/独立层] 按 manifest 用 ffmpeg 流拷贝切片
+├── asr/plan_cloud_clips.py # [实验性/独立层] 云端切片清单生成器：VAD段×草稿文本打分过滤→合并→pad→硬切
+├── asr/cut_cloud_clips.py  # [实验性/独立层] 按 manifest 用 ffmpeg 流拷贝切片
 ├── knowledge_pilot/        # [实验性/独立层] 机制知识卡抽取试点：章节大纲、draft父卡、原子命题(*.atoms.jsonl)、噪声卡(*.noise.jsonl)，被.gitignore忽略，人工审核前不得升入权威层或公开发布
 ├── chapter_extract_claims.py # [实验性/独立层] 方案2章节优先知识卡抽取管线
 ├── atomize_claims.py       # [实验性/独立层] 父卡→原子命题拆分、证据重绑、类型分权（不合成「正确卡」）
@@ -64,15 +64,19 @@ shenqi/
 ├── rag_eval.py             # [实验性/独立层] RAG检索评测(纯本地BM25), 当前基线10/10
 ├── KNOWLEDGE_PIPELINE.md   # [实验性/独立层] 知识库生产管线文档, 新视频入库按此操作
 ├── pilot_extract_claims.py # [实验性/独立层] 方案1固定窗口知识卡抽取试点脚本（对照组）
-├── audit_timeline.py       # [实验性/独立层] VAD采样时间轴 vs 原媒体时间轴审计，产出 cloud_clips/timeline_audit.json
-├── xp_rank.py              # [娱乐向/本地私有] 群友 XP 榜单挖掘：干员提及/示爱/官宣单推统计，产物 xp_report.md/xp_data.json 只写入 qq_info/（gitignore 保护，仅昵称不含 QQ 号）
-├── xp_page.py              # [娱乐向/本地私有] 把 xp_data.json 渲染成自包含 HTML 看板 xp_report.html（无外部依赖，仅昵称）
+├── asr/audit_timeline.py   # [实验性/独立层] VAD采样时间轴 vs 原媒体时间轴审计，产出 cloud_clips/timeline_audit.json
+├── qq/xp_rank.py           # [娱乐向/本地私有] 群友 XP 榜单挖掘：干员提及/示爱/官宣单推统计，产物 xp_report.md/xp_data.json 只写入 qq_info/（gitignore 保护，仅昵称不含 QQ 号）
+├── qq/xp_page.py           # [娱乐向/本地私有] 把 xp_data.json 渲染成自包含 HTML 看板 xp_report.html（无外部依赖，仅昵称）
 ├── build_workbench.py      # [产品化/draft] 由甄选层 curated_high_quality.json 生成单文件交互式机制工作台（纯本地，不调用 API；QQ 引文原样引用已脱敏产物）
 ├── workbench/              # [产品化/draft] 工作台前端模板与逻辑（template.html + app.js），产物输出至 dist/mechanics-workbench/index.html（dist/ 已被 .gitignore 忽略）
+├── asr/                    # [实验性/独立层] 本地/云端 ASR 脚本集中目录（2026-10 由根目录迁入）：local_asr_pipeline / batch_vad_analysis / batch_asr_transcribe / benchmark_ground_truth（需 funasr/numpy/av）、plan_cloud_clips / cut_cloud_clips / transcribe_cloud / retry_failed_clips / audit_timeline；一律从仓库根目录运行，如 `python asr/plan_cloud_clips.py`
+├── qq/                     # [补充语料] QQ 群聊管线脚本集中目录（2026-10 由根目录迁入）：qq_clean_pipeline、qq_cards_*（export/pack/validate/repair/merge/ingest_* 等）、qq_drop_xiaoxiao、local_ids、xp_rank/xp_page；输入均在 qq_info/（gitignore），从仓库根目录运行，如 `python qq/qq_cards_validate.py`
+├── tools/                  # [发布校验] stats.py（统一统计并刷新文档数字，--check 校验）、validate_release.py（只用已提交文件的结构+引文校验）、check_json.py（全库 JSON/JSONL 解析）
+├── .github/workflows/ci.yml # [CI] 推送/PR 时跑上述校验 + py_compile + 清洗/词表可复现性
 ├── LICENSE                 # 代码许可：MIT
 ├── LICENSE-CONTENT         # 内容许可（知识库/逐字稿/词表/报告）：CC BY-NC-SA 4.0
 ├── README.md               # 开源说明：产物、双协议分区、隐私边界、管线速览
-├── local_ids.py            # 本地身份注入：从 qq_info/identities.json（gitignore）读真实QQ号，脚本不得硬编码号码
+├── qq/local_ids.py         # 本地身份注入：从 qq_info/identities.json（gitignore）读真实QQ号，脚本不得硬编码号码
 ├── scripts/privacy_gate.py # [发布闸门] 全库隐私扫描：密钥/手机号/真实QQ+UID/花名，发布前必须通过；白名单 scripts/privacy_allowlist.txt 仅收人工核实的非身份误报
 ├── glossary.json           # [黑话清单/RAG直用] 正词→别名+英文+ASR讹写变体消歧清单，由 build_glossary.py 从实体索引+glossary+消歧规则确定性合成，禁止手改产物
 ├── build_glossary.py       # 黑话清单重跑入口(纯本地,无API)

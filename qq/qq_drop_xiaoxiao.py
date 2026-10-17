@@ -16,7 +16,7 @@ if hasattr(sys.stdout, "reconfigure"):
     except Exception:
         pass
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 仓库根目录（本脚本位于 qq/）
 from local_ids import XIAOXIAO_QQ as QQ
 SID = "e3d07517"
 INFO = os.path.join(ROOT, "qq_info")

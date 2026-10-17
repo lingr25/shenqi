@@ -15,7 +15,7 @@ import sys
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
-ROOT = Path(__file__).parent
+ROOT = Path(__file__).resolve().parent.parent  # 仓库根目录（本脚本位于 asr/）
 AUD_DIR = ROOT / "audios"
 OUT_DIR = ROOT / "cloud_clips"
 

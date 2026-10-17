@@ -7,16 +7,16 @@
 - **本地 ASR 转写完成分P**：**32** 个核心分P
 - **本地 ASR 转写总字数**：**524,649** 字
 - **本地 ASR 时间戳语音句**：**16,439** 条
-- **本地草稿存储目录**：[`asr_drafts/`](file:///c:/Users/cheny/Downloads/shenqi/asr_drafts/)（已被 `.gitignore` 保护，不入库）
+- **本地草稿存储目录**：[`asr_drafts/`](asr_drafts/)（已被 `.gitignore` 保护，不入库）
 
 ## 1. 独立运行工具
 
-- **单文件转写/切片**：[`local_asr_pipeline.py`](file:///c:/Users/cheny/Downloads/shenqi/local_asr_pipeline.py)
+- **单文件转写/切片**：[`asr/local_asr_pipeline.py`](asr/local_asr_pipeline.py)
   ```powershell
-  python local_asr_pipeline.py -f audios/BV1aTeV6yENP_p5_41898410286.m4a
+  python asr/local_asr_pipeline.py -f audios/BV1aTeV6yENP_p5_41898410286.m4a
   ```
-- **全量 VAD 端点扫描**：[`batch_vad_analysis.py`](file:///c:/Users/cheny/Downloads/shenqi/batch_vad_analysis.py)
-- **全量批量 ASR 转写**：[`batch_asr_transcribe.py`](file:///c:/Users/cheny/Downloads/shenqi/batch_asr_transcribe.py)
+- **全量 VAD 端点扫描**：[`asr/batch_vad_analysis.py`](asr/batch_vad_analysis.py)
+- **全量批量 ASR 转写**：[`asr/batch_asr_transcribe.py`](asr/batch_asr_transcribe.py)
 
 ## 2. 39 个音频分P本地 ASR 转写状态明细表
 

@@ -24,7 +24,7 @@ if hasattr(sys.stdout, "reconfigure"):
 
 from qq_cards_pack import log, write_batches, write_readme
 
-ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 仓库根目录（本脚本位于 qq/）
 CARDS_PATH = os.path.join(ROOT_DIR, "qq_cards", "cards.jsonl")
 CANON_PATH = os.path.join(ROOT_DIR, "qq_cards", "canonical.jsonl")
 ALIAS_PATH = os.path.join(ROOT_DIR, "qq_cards", "entity_aliases.json")
@@ -305,7 +305,7 @@ def cmd_glossary(args: argparse.Namespace) -> int:
         f"""glossary 术语包
 输入：batch_XXX.jsonl（每行一术语）
 输出：cards_glossary_batch_XXX.jsonl
-验收：python -X utf8 qq_cards_validate.py --mode glossary --cards-dir {args.out_dir}
+验收：python -X utf8 qq/qq_cards_validate.py --mode glossary --cards-dir {args.out_dir}
 术语数={len(rows)} 批次数={n_batches}
 """,
     )
@@ -367,7 +367,7 @@ def cmd_split(args: argparse.Namespace) -> int:
         f"""大簇拆词条
 输入：split_batch_XXX.jsonl（每行一簇，含 cards[]）
 输出：cards_split_batch_XXX.jsonl（每行一个 JSON 数组）
-验收：python -X utf8 qq_cards_validate.py --mode split --cards-dir {args.out_dir}
+验收：python -X utf8 qq/qq_cards_validate.py --mode split --cards-dir {args.out_dir}
 簇={', '.join(r['cluster_id'] for r in rows)} 批次数={n_batches}
 """,
     )
@@ -460,7 +460,7 @@ def cmd_alias(args: argparse.Namespace) -> int:
         f"""实体消歧包
 输入：batch_XXX.jsonl（每行一中文主词）
 输出：cards_alias_batch_XXX.jsonl
-验收：python -X utf8 qq_cards_validate.py --mode alias --cards-dir {args.out_dir}
+验收：python -X utf8 qq/qq_cards_validate.py --mode alias --cards-dir {args.out_dir}
 条目={len(rows)} 批次数={n_batches}
 隐匿 vs 迷彩、仇恨 vs 嘲讽等级禁止合并。
 """,

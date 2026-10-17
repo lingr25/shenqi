@@ -28,7 +28,7 @@ import re
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).parent
+ROOT = Path(__file__).resolve().parent.parent  # 仓库根目录（本脚本位于 asr/）
 VAD_DIR = ROOT / "vad_results"
 ASR_DIR = ROOT / "asr_drafts"
 OUT_DIR = ROOT / "cloud_clips"

@@ -42,7 +42,7 @@ if hasattr(sys.stderr, "reconfigure"):
     except Exception:
         pass
 
-ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 仓库根目录（本脚本位于 qq/）
 DEFAULT_CSV = os.path.join(
     ROOT_DIR, "qq_info", "1097395794_桃大将军粉丝群_聊天记录.csv"
 )

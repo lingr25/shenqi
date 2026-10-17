@@ -25,7 +25,7 @@ if hasattr(sys.stdout, "reconfigure"):
     except Exception:
         pass
 
-ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 仓库根目录（本脚本位于 qq/）
 CARDS_PATH = os.path.join(ROOT_DIR, "qq_cards", "cards.jsonl")
 README_PATH = os.path.join(ROOT_DIR, "qq_cards", "README.md")
 CANON_PATH = os.path.join(ROOT_DIR, "qq_cards", "canonical.jsonl")

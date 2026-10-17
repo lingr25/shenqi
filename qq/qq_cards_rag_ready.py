@@ -41,7 +41,7 @@ from qq_cards_rag_prep import (
     privacy_scan,
 )
 
-ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 仓库根目录（本脚本位于 qq/）
 GLOSSARY_PATH = os.path.join(ROOT_DIR, "qq_cards", "glossary.jsonl")
 REPORT_PATH = os.path.join(ROOT_DIR, "qq_cards", "rag_ready_report.md")
 WINDOWS_PATH = os.path.join(ROOT_DIR, "qq_info", "windows.jsonl")

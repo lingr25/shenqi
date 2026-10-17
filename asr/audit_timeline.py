@@ -16,7 +16,7 @@ import os
 import subprocess
 from pathlib import Path
 
-ROOT = Path(__file__).parent
+ROOT = Path(__file__).resolve().parent.parent  # 仓库根目录（本脚本位于 asr/）
 FFPROBE = str(Path.home() / "AppData/Local/Microsoft/WinGet/Packages"
               / "Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe"
               / "ffmpeg-9.0.1-full_build/bin/ffprobe.exe")
