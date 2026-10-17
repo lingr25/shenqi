@@ -1,0 +1,111 @@
+{
+  "tool_chain": [
+    "chapter_extract_claims.py --source official",
+    "atomize_claims.py",
+    "enrich_atoms.py",
+    "kb_curation_vod_expansion.py export --batch vod_b1"
+  ],
+  "bvid": "BV1cmaa6VEPR",
+  "stems": [
+    "BV1cmaa6VEPR_p1_42251649424",
+    "BV1cmaa6VEPR_p2_42252239801"
+  ],
+  "llm": {
+    "base_host": "lingr.aitreez.com",
+    "api": "OpenAI-compatible /v1/chat/completions (stream, include_usage)",
+    "model": "lingr-free",
+    "temperature": 0.1
+  },
+  "prompts": {
+    "chapter_prompt_sha256": "0362183fd7fe",
+    "extract_prompt_sha256": "5c5ed77b66eb",
+    "atomize_prompt_sha256": "8546f83e6b68"
+  },
+  "usage_by_script": {
+    "chapter_extract_claims.py": {
+      "calls": 46,
+      "prompt_tokens": 82365,
+      "completion_tokens": 223150,
+      "reasoning_tokens": 155266,
+      "total_tokens": 305515,
+      "seconds": 999.4
+    },
+    "atomize_claims.py": {
+      "calls": 242,
+      "prompt_tokens": 290934,
+      "completion_tokens": 417450,
+      "reasoning_tokens": 329109,
+      "total_tokens": 708384,
+      "seconds": 2772.0
+    }
+  },
+  "usage_total": {
+    "calls": 288,
+    "prompt_tokens": 373299,
+    "completion_tokens": 640600,
+    "reasoning_tokens": 484375,
+    "total_tokens": 1013899
+  },
+  "wall_seconds": [
+    {
+      "step": "BV1cmaa6VEPR_p1_42251649424 extract",
+      "seconds": 996
+    },
+    {
+      "step": "BV1cmaa6VEPR_p1_42251649424 atomize",
+      "seconds": 1041
+    },
+    {
+      "step": "BV1cmaa6VEPR_p2_42252239801 extract",
+      "seconds": 164
+    },
+    {
+      "step": "BV1cmaa6VEPR_p2_42252239801 atomize",
+      "seconds": 255
+    },
+    {
+      "step": "enrich enrich",
+      "seconds": 0
+    }
+  ],
+  "wall_seconds_total": 2456,
+  "counts": {
+    "BV1cmaa6VEPR_p1_42251649424": {
+      "chapters": 37,
+      "claims": 215,
+      "atoms": 578,
+      "failed_windows": [
+        {
+          "chapter_start": 1144,
+          "window_start": 1144,
+          "error": "no json object（网关返回空内容，6 次重试后放弃）"
+        }
+      ]
+    },
+    "BV1cmaa6VEPR_p2_42252239801": {
+      "chapters": 8,
+      "claims": 29,
+      "atoms": 74
+    }
+  },
+  "vod_b1_export": {
+    "workorders": 206
+  },
+  "inputs": {
+    "transcripts_txt/BV1cmaa6VEPR_p1_42251649424.txt": "734e9ac5a773c0cdd4567258b0774e3ea0a3fa4cb4a6d338bd5c92538c731b30",
+    "transcripts_txt/BV1cmaa6VEPR_p2_42252239801.txt": "298e9123f3d7599dce245d6b4a8c341bf006307c3beabed7b44413400c4fade0"
+  },
+  "outputs_local_only": {
+    "knowledge_pilot/BV1cmaa6VEPR_p1_42251649424.atoms.enriched.jsonl": "a1a500b2ef31519967c713ed84e820eeae9f6763ec809a5d819a3f863613a60b",
+    "knowledge_pilot/BV1cmaa6VEPR_p1_42251649424.atoms.jsonl": "47ac360cc99aee85d32ee96ef9e9ebb2510a56c29f98ed1ebbd3e313570747ac",
+    "knowledge_pilot/BV1cmaa6VEPR_p1_42251649424.chapter_claims.jsonl": "4d585ab6c17ec034c3c60ffaac5a330e319426e09aa22631123ef5f9a1784868",
+    "knowledge_pilot/BV1cmaa6VEPR_p1_42251649424.chapters.json": "7a147f59dfbe006834c9570ea7cbb51a4d8191702e642cd53ab6fcbeb68be0f0",
+    "knowledge_pilot/BV1cmaa6VEPR_p1_42251649424.noise.jsonl": "486df566d583462d230eaeb11ae83cbbe776f1ab2b8300735ce2967f488d43e6",
+    "knowledge_pilot/BV1cmaa6VEPR_p2_42252239801.atoms.enriched.jsonl": "7c10aa25628d7dbb3d91dbb3341b0b14387c7fc58c257575e24bf6e01d7bacef",
+    "knowledge_pilot/BV1cmaa6VEPR_p2_42252239801.atoms.jsonl": "3013c17d29418e0c6998c816a4901012370248baf67a8de1c2f7188b0dba94c1",
+    "knowledge_pilot/BV1cmaa6VEPR_p2_42252239801.chapter_claims.jsonl": "3c71bfe05d4b74577dfdd882c2da6c2066ea54b72bbbf7d1957e785513d432b9",
+    "knowledge_pilot/BV1cmaa6VEPR_p2_42252239801.chapters.json": "02c5ab87f25616e436e58f22850b0c9454ff4c248650b0c55dcb9dcc32550f43",
+    "knowledge_pilot/BV1cmaa6VEPR_p2_42252239801.noise.jsonl": "4b10aebfef7ba4873b64cab116c3caf684e7ed59d54b1c72e60a5be2ba1765f0"
+  },
+  "note": "knowledge_pilot/ 为草稿层，按 .gitignore 不入库，这里只记 sha256；审读工单 workorders_vod_b1/ 与 tasks_vod_b1/ 入库。usage.jsonl 为逐次调用台账（无密钥）。"
+}
