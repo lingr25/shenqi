@@ -2,7 +2,8 @@
 """批次 07 复核裁定构建器：只输出 review_decisions_07.json，不改精选库。"""
 import json, os, sys, io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-ROOT = 'C:/Users/cheny/Downloads/shenqi/'
+from pathlib import Path
+ROOT = Path(__file__).resolve().parents[3].as_posix() + '/'  # 仓库根目录（相对定位）
 FC = ROOT + 'kb_trial/curation/faultcheck/'
 BATCH = 'kb_trial/curation/faultcheck/review_batch_07.json'
 OUT = FC + 'review_decisions_07.json'

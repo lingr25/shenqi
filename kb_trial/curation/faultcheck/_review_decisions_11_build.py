@@ -2,7 +2,8 @@
 """批次 11 复核裁定构建器：只输出 review_batch_11_decisions.json，不改精选库与任何源文件。"""
 import json, os, sys, io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-ROOT = 'C:/Users/cheny/Downloads/shenqi/'
+from pathlib import Path
+ROOT = Path(__file__).resolve().parents[3].as_posix() + '/'  # 仓库根目录（相对定位）
 FC = ROOT + 'kb_trial/curation/faultcheck/'
 BATCH = 'kb_trial/curation/faultcheck/review_batch_11.json'
 OUT = FC + 'review_batch_11_decisions.json'
