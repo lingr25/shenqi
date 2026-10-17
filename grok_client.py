@@ -15,6 +15,30 @@ LLM_BASE = os.environ.get("GROK_BASE", "https://aitreez.com/v1")
 LLM_KEY = os.environ.get("GROK_API_KEY", "").strip()
 MODEL = os.environ.get("GROK_MODEL", "grok-4.6")
 HTTP_TIMEOUT = int(os.environ.get("GROK_TIMEOUT", "180"))
+# 可选用量台账: 设置 GROK_USAGE_LOG=<path.jsonl> 后每次成功调用追加一行
+# (时间/模型/主机/token/耗时/调用脚本), 不含密钥与请求头。
+USAGE_LOG = os.environ.get("GROK_USAGE_LOG", "").strip()
+
+
+def _log_usage(usage, seconds):
+    if not USAGE_LOG:
+        return
+    import sys
+    import threading
+    from urllib.parse import urlparse
+    rec = {"ts": time.strftime("%Y-%m-%dT%H:%M:%S%z"), "model": MODEL,
+           "host": urlparse(LLM_BASE).netloc, "script": os.path.basename(sys.argv[0]),
+           "prompt_tokens": usage.get("prompt_tokens", 0),
+           "completion_tokens": usage.get("completion_tokens", 0),
+           "reasoning_tokens": (usage.get("completion_tokens_details") or {}).get("reasoning_tokens", 0),
+           "total_tokens": usage.get("total_tokens", 0), "seconds": round(seconds, 2)}
+    global _LOCK
+    try:
+        _LOCK
+    except NameError:
+        _LOCK = threading.Lock()
+    with _LOCK, open(USAGE_LOG, "a", encoding="utf-8") as f:
+        f.write(json.dumps(rec, ensure_ascii=False) + "\n")
 
 
 def _parse_sse(resp) -> tuple[str, dict]:
@@ -76,8 +100,10 @@ def call_llm(prompt: str, retries=6):
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0.1,
         "stream": True,
+        "stream_options": {"include_usage": True},
     }).encode()
     for attempt in range(retries):
+        t0 = time.monotonic()
         try:
             req = urllib.request.Request(
                 LLM_BASE + "/chat/completions", data=body,
@@ -88,7 +114,9 @@ def call_llm(prompt: str, retries=6):
             m = re.search(r"\{.*\}", content, re.S)
             if not m:
                 raise json.JSONDecodeError("no json object", content[:200], 0)
-            return json.loads(m.group(0)), usage
+            parsed = json.loads(m.group(0))
+            _log_usage(usage, time.monotonic() - t0)
+            return parsed, usage
         except urllib.error.HTTPError as e:
             detail = e.read().decode(errors="replace")[:300]
             if e.code in (429, 500, 502, 503, 504) and attempt < retries - 1:
