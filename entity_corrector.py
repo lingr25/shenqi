@@ -742,6 +742,10 @@ FILE_CONTEXT_RULES = {
         (r"ELLADY", "Ela的"),
         (r"小树真", "小数点"),
     ],
+    # BV1cmaa6VEPR 全期为出怪帧语境（一帧一出怪），ASR 偶把"一帧一"写成同音"亦真亦"
+    "BV1cmaa6VEPR": [
+        (r"亦真亦(?=出怪)", "一帧一"),
+    ],
 }
 
 def correct_text(text: str, file_tag: str = "") -> str:
