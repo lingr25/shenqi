@@ -306,7 +306,7 @@ def lookup_meta(cli, bvid, cache):
         cache.setdefault(v["bvid"], v)
     if bvid not in cache and not cache.get("__listed__"):
         cache["__listed__"] = True
-        for v in fetch_list(cli)[0]:
+        for v in fetch_list(cli, stop_at=existing_bvids(ROOT))[0]:
             cache.setdefault(v["bvid"], v)
     return cache.get(bvid)
 
