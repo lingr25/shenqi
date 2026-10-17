@@ -1,0 +1,187 @@
+{
+  "bvid": "BV1KtHX6nEZS",
+  "title": "【神祇读神奇】先看久留美，待会再看看vecd│20261008直播",
+  "batch": "vod_b2",
+  "stems": [
+    "BV1KtHX6nEZS_p1_42574483316",
+    "BV1KtHX6nEZS_p2_42575334226",
+    "BV1KtHX6nEZS_p3_42575594392"
+  ],
+  "pages_pending_asr": [],
+  "llm": {
+    "base_host": "lingr.aitreez.com",
+    "model": "lingr-free",
+    "fallback_models": [
+      "lingr-speed",
+      "lingr-pro"
+    ],
+    "temperature": 0.1
+  },
+  "prompts": {
+    "chapter_prompt_sha256": "0362183fd7fe",
+    "extract_prompt_sha256": "a3daf05e47cd",
+    "atomize_prompt_sha256": "690aae7c3ff9"
+  },
+  "parallel_parts": 3,
+  "usage_by_script": {
+    "chapter_extract_claims.py": {
+      "calls": 32,
+      "calls_lingr-free": 23,
+      "prompt_tokens": 69944,
+      "completion_tokens": 103972,
+      "reasoning_tokens": 74603,
+      "total_tokens": 173916,
+      "seconds": 768.3,
+      "calls_lingr-speed": 9
+    },
+    "atomize_claims.py": {
+      "calls": 80,
+      "calls_lingr-free": 74,
+      "prompt_tokens": 109118,
+      "completion_tokens": 163052,
+      "reasoning_tokens": 142786,
+      "total_tokens": 272170,
+      "seconds": 1361.8,
+      "calls_lingr-speed": 6
+    }
+  },
+  "usage_total": {
+    "calls": 112,
+    "prompt_tokens": 179062,
+    "completion_tokens": 267024,
+    "reasoning_tokens": 217389,
+    "total_tokens": 446086
+  },
+  "wall_seconds": [
+    {
+      "step": "BV1KtHX6nEZS_p1_42574483316 extract",
+      "seconds": 958
+    },
+    {
+      "step": "BV1KtHX6nEZS_p1_42574483316 atomize",
+      "seconds": 916
+    },
+    {
+      "step": "BV1KtHX6nEZS_p2_42575334226 extract",
+      "seconds": 439
+    },
+    {
+      "step": "BV1KtHX6nEZS_p2_42575334226 atomize",
+      "seconds": 344
+    },
+    {
+      "step": "BV1KtHX6nEZS_p3_42575594392 extract",
+      "seconds": 644
+    },
+    {
+      "step": "BV1KtHX6nEZS_p3_42575594392 atomize",
+      "seconds": 266
+    }
+  ],
+  "wall_seconds_total": 6525,
+  "counts": {
+    "BV1KtHX6nEZS_p1_42574483316": {
+      "chapters": 17,
+      "claims": 52,
+      "atoms": 82,
+      "noise": 6,
+      "extract_models": {
+        "lingr-free": 39,
+        "lingr-speed": 13
+      },
+      "atomize_models": {
+        "lingr-free": 78,
+        "lingr-speed": 4
+      },
+      "failed_windows": [],
+      "atomize_fail": [],
+      "extract_summary": {
+        "pass": 52,
+        "quote_mismatch": 0,
+        "overlap_dedup": 0
+      },
+      "atomize_summary": {
+        "pass": 82,
+        "unbound": 0,
+        "llm_drop": 6,
+        "fail": 0,
+        "noise": 0
+      }
+    },
+    "BV1KtHX6nEZS_p2_42575334226": {
+      "chapters": 5,
+      "claims": 22,
+      "atoms": 25,
+      "noise": 5,
+      "extract_models": {
+        "lingr-free": 22
+      },
+      "atomize_models": {
+        "lingr-free": 25
+      },
+      "failed_windows": [],
+      "atomize_fail": [],
+      "extract_summary": {
+        "pass": 22,
+        "quote_mismatch": 0,
+        "overlap_dedup": 0
+      },
+      "atomize_summary": {
+        "pass": 25,
+        "unbound": 0,
+        "llm_drop": 5,
+        "fail": 0,
+        "noise": 0
+      }
+    },
+    "BV1KtHX6nEZS_p3_42575594392": {
+      "chapters": 3,
+      "claims": 6,
+      "atoms": 7,
+      "noise": 2,
+      "extract_models": {
+        "lingr-free": 6
+      },
+      "atomize_models": {
+        "lingr-free": 7
+      },
+      "failed_windows": [],
+      "atomize_fail": [],
+      "extract_summary": {
+        "pass": 6,
+        "quote_mismatch": 0,
+        "overlap_dedup": 0
+      },
+      "atomize_summary": {
+        "pass": 7,
+        "unbound": 0,
+        "llm_drop": 2,
+        "fail": 0,
+        "noise": 0
+      }
+    }
+  },
+  "inputs": {
+    "transcripts_txt/BV1KtHX6nEZS_p1_42574483316.txt": "df8f989f931296988315ac049dcc205fdc89ba9ed2cb6f03e6e39478bd18e8d1",
+    "transcripts_txt/BV1KtHX6nEZS_p2_42575334226.txt": "3a356739684dda7716adabfd217e9b4fcef1b9f95dee13d7d9e77e0a19c7ca05",
+    "transcripts_txt/BV1KtHX6nEZS_p3_42575594392.txt": "cae4a12e74613eba07a9b0bf62a87e6cb7610bc9175e99d8478dfe4ac432f8b7"
+  },
+  "outputs_local_only": {
+    "knowledge_pilot/BV1KtHX6nEZS_p1_42574483316.atoms.enriched.jsonl": "9e6bef2657bb9fe2cabec585d34a96ed432ab44ed90645bfd83faa244addf8b4",
+    "knowledge_pilot/BV1KtHX6nEZS_p1_42574483316.atoms.jsonl": "bb12590c9f50e23d455d7ab77f40c2be28cca5184177a00b054ef8a3b5bad78a",
+    "knowledge_pilot/BV1KtHX6nEZS_p1_42574483316.chapter_claims.jsonl": "3a4e92465c00e14ff632b344b5fac8b1fd919d2d4861a8ce8c008c79c489a93f",
+    "knowledge_pilot/BV1KtHX6nEZS_p1_42574483316.chapters.json": "010f71a457e36102b7968a4f043a6233340be98eb76a7ec59812b930868655ee",
+    "knowledge_pilot/BV1KtHX6nEZS_p1_42574483316.noise.jsonl": "5ae2fdb247e567fc33476aacfc2b061710aa7b4e5425ee3c606e6d99240bc37d",
+    "knowledge_pilot/BV1KtHX6nEZS_p2_42575334226.atoms.enriched.jsonl": "b3bf3c0852e7298ccd38a83a39dcbc7f437b7d9fc9fead999cc62e94b005ef17",
+    "knowledge_pilot/BV1KtHX6nEZS_p2_42575334226.atoms.jsonl": "a089b9233321547aa175634bab5b425b61329b5f7323775cf6acdcb666ac9642",
+    "knowledge_pilot/BV1KtHX6nEZS_p2_42575334226.chapter_claims.jsonl": "4629d5981dd5a4296e5f018232ea548e58b7222864e39e8d2f2c9ce1a744d964",
+    "knowledge_pilot/BV1KtHX6nEZS_p2_42575334226.chapters.json": "608e1e7cad3940923ae459ea67ac89aaf4cad0cd81ef9615c7780c7c2c19c2ff",
+    "knowledge_pilot/BV1KtHX6nEZS_p2_42575334226.noise.jsonl": "acbf307683e565cfc0eb8d2b261957dd45077b7d4435d4b5abbb19dd17fe09de",
+    "knowledge_pilot/BV1KtHX6nEZS_p3_42575594392.atoms.enriched.jsonl": "5c8dd4ad50e79b274aa145179f716a3bee31cd1d4327f95985a63ed26305e15a",
+    "knowledge_pilot/BV1KtHX6nEZS_p3_42575594392.atoms.jsonl": "00ed526a95bbc3a8548a6c648ee47ba58752f7a6fc99187f126ff3cdac854b0d",
+    "knowledge_pilot/BV1KtHX6nEZS_p3_42575594392.chapter_claims.jsonl": "eaf05f9534fce6935031467986c2c1fac08299db38d0e1dfc4d91e93e558b575",
+    "knowledge_pilot/BV1KtHX6nEZS_p3_42575594392.chapters.json": "1fa3d3e670ef85489af1933094805ee72f07fae1e1f187af5252159322b8c8eb",
+    "knowledge_pilot/BV1KtHX6nEZS_p3_42575594392.noise.jsonl": "b3721b84a17cb950b7a561bf5cd29679d289bb5a7853dbc2b5f70942b2611886"
+  },
+  "note": "knowledge_pilot/ 草稿层不入库，只记 sha256。批量与其它视频并行（3 路），usage 按视频目录记账。"
+}
