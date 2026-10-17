@@ -51,7 +51,7 @@ evidence 文本 / `evidence_sha256`（否则 loader 拒收）。
 （`faultcheck/{chunk_17,chunk_22,faultcheck_b3,findings_17,findings_22,flags_09,flags_11,triage_09}`）、
 b4 上下文摘录 `qq_expansion/_b4ctx/c04.txt`、以及被它再生成的 `qq_expansion/audit_decisions_b3.json`。
 
-**脚本本体不留明文**：`_faultcheck_apply.py` 的替换表改为 base64 常量（`_decode_terms()`），
+**脚本本体不留明文**：`_faultcheck_apply.py` 的替换表不入库（早期版本用 base64 常量，可逆，已移除），改为从被忽略的本地文件 `_privacy_terms.local.json` 或环境变量 `SHENQI_PRIVACY_TERMS` 读取（`_decode_terms()`），
 故 `grep` 明文昵称在 `kb_trial/` 下为 0（`__pycache__` 里一份旧的编译产物已删）。
 
 **「自忍」保留并上报**：本批两处（`workorders_b4/qq_wo_b4_433` seq3「h8-4自忍」、seq75「之前看自忍」）

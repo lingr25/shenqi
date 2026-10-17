@@ -45,3 +45,10 @@ jobs:
           git status --porcelain
           git diff --exit-code
           test -z "$(git status --porcelain)"
+
+      - name: rag_pack 可复现（corpus.jsonl / corpus.json / MANIFEST 校验和）
+        run: |
+          python rag_pack/build_rag_pack.py > /dev/null
+          git status --porcelain
+          git diff --exit-code
+          test -z "$(git status --porcelain)"

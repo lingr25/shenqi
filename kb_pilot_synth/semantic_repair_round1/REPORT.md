@@ -596,7 +596,7 @@ API key 全程只经环境变量传入，**未落盘、未打印**；缓存只�
 ## 13. 复现命令
 
 ```bash
-cd C:/Users/cheny/Downloads/shenqi/kb_pilot_synth/semantic_repair_round1
+cd <repo>/kb_pilot_synth/semantic_repair_round1
 # 每条 Bash 需带 PYTHONIOENCODING=utf-8 (Windows + Git Bash)
 
 PYTHONIOENCODING=utf-8 python compute_scope.py      # → scope_intersection.json / scope_units.jsonl

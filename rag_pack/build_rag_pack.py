@@ -101,11 +101,11 @@ def main():
             },
         })
 
-    with open(os.path.join(OUT_DIR, "corpus.jsonl"), "w", encoding="utf-8") as f:
+    with open(os.path.join(OUT_DIR, "corpus.jsonl"), "w", encoding="utf-8", newline="\n") as f:
         for r in records:
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
 
-    with open(os.path.join(OUT_DIR, "corpus.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(OUT_DIR, "corpus.json"), "w", encoding="utf-8", newline="\n") as f:
         json.dump({"schema_version": "rag-corpus-1.0", "count": len(records),
                    "documents": records}, f, ensure_ascii=False, indent=1)
 
@@ -130,7 +130,7 @@ def main():
             "MANIFEST.json": "本文件，含计数与 sha256",
         },
     }
-    with open(os.path.join(OUT_DIR, "MANIFEST.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(OUT_DIR, "MANIFEST.json"), "w", encoding="utf-8", newline="\n") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=1)
 
     print(json.dumps({"documents": len(records), "corpus_sha256": corpus_sha,

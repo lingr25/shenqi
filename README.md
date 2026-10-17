@@ -11,7 +11,7 @@ Lapis\_\_\_，UID `592610`）的全部机制讲堂录播做系统归档：抓取
 
 | 文件/目录 | 说明 |
 |---|---|
-| `curated_high_quality.json` | **甄选知识库（<!-- stat:card_count -->1388<!-- /stat --> 条）**，每条含 `claim`/`subject`/`condition`/`category`/引文证据（逐字稿文件 + 秒数 / 已脱敏 QQ 窗口）/审核结论，可直接灌入向量库做 RAG。根目录这份与 `kb_trial/curated_high_quality.json` 逐字节相同（CI 校验） |
+| `curated_high_quality.json` | **甄选知识库（<!-- stat:card_count -->1388<!-- /stat --> 条）**，每条含 `claim`/`subject`/`condition`/`category`/引文证据（逐字稿文件 + 秒数 / 已脱敏 QQ 窗口）/审核结论，可直接灌入向量库做 RAG。根目录这份是对外发布副本，规范源（所有构建/检索/校验脚本读写的）是 `kb_trial/curated_high_quality.json`，两者逐字节相同（`tools/validate_release.py` 在 CI 中校验） |
 | `transcripts_txt/` | 带 `[HH:MM:SS]` 时间戳的逐字稿（官方 AI 字幕消歧清洗版） |
 | `cleaned_subtitles/` | 消歧后的结构化字幕 JSON（保留毫秒时间戳） |
 | `glossary.json` | **黑话/实体消歧清单（<!-- stat:glossary_count -->2100<!-- /stat --> 条）**：正词 → 社区别名 + 英文别名 + ASR 讹写变体，<!-- stat:glossary_mechanic_def -->50<!-- /stat --> 条核心机制词带机制定义；由 `build_glossary.py` 从实体索引+词表+消歧规则确定性合成，RAG 同义词扩展直用 |
@@ -98,6 +98,17 @@ B站官方AI字幕 ──entity_corrector.py──► cleaned_subtitles/ ──�
                                         ▼
                           curated_high_quality.json
 ```
+
+### 历史脚本说明（审计留痕，非可重放）
+
+`kb_pilot_synth/` 与 `kb_trial/curation/**/_*.py`（faultcheck、qq_expansion 的 `_b3_*`/`_b4_*`/`_phase2_*` 等）是从本地找回的历史轮次脚本、提示词与报告，用于**审计留痕**，在新克隆上**大多无法重放**：它们依赖仍被 `.gitignore` 排除的本地缓存与中间产物，主要包括
+
+- `kb_pilot_synth/**/cache_items/`、`cache_semantic/`、`build1/`、`build2/`、`_raw/`、`_repro/` 及多 MB 的合成 jsonl
+- `kb_trial/docs.jsonl`、`kb_trial/archive.jsonl`、`kb_trial/curation/evidence_packets/`
+- `kb_trial/curation/faultcheck/flags_*.json`、`review_baseline.json`
+- `kb_trial/curation/qq_expansion/workorders*/`、`reviews*/`、`final_reviews/`、`mapping_*.json` 与原始群聊记录
+
+新克隆可直接运行的是上方"检索试用与自检"中的命令及 CI 中的检查。
 
 检索试用与自检（新克隆即可运行，纯标准库）：
 
