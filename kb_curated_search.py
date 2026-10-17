@@ -141,10 +141,18 @@ def self_test():
             assert hits and all(layer in h['source_layers'] for h in hits), layer
         else:
             assert not hits, ('layer filter %r returned hits but no entry carries it' % layer)
-    # No fallback to the wider trial layers.
-    wider = json.loads((ROOT / 'kb_trial/docs.jsonl').read_text(encoding='utf-8').splitlines()[0])
-    assert wider['id'] not in idx.by_id, 'curated index leaked wider trial docs'
-    print(json.dumps({'status': 'passed', 'source': idx.stats(), 'directed': results},
+    # No fallback to the wider trial layers. kb_trial/docs.jsonl is a local, gitignored
+    # build artefact (kb_build_trial.py); on a fresh clone it is absent, and the index is
+    # built from curated_high_quality.json alone, so there is nothing wider to leak.
+    wider_path = ROOT / 'kb_trial/docs.jsonl'
+    if wider_path.exists():
+        wider = json.loads(wider_path.read_text(encoding='utf-8').splitlines()[0])
+        assert wider['id'] not in idx.by_id, 'curated index leaked wider trial docs'
+        wider_check = 'passed'
+    else:
+        wider_check = 'skipped: kb_trial/docs.jsonl not present (local-only build artefact)'
+    print(json.dumps({'status': 'passed', 'source': idx.stats(), 'directed': results,
+                      'wider_layer_leak_check': wider_check},
                      ensure_ascii=False, indent=2))
     return 0
 
