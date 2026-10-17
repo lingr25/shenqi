@@ -149,10 +149,10 @@ def main():
         print(f"Pass1 章节切分: {args.stem} [{args.source}] {len(items)} 行", flush=True)
         chapters, problems, u1 = pass1_chapters(args.stem, items)
         for c in chapters:
-            c["extract_model"] = EXTRACT_MODEL
+            c["extract_model"] = (u1 or {}).get("_model", EXTRACT_MODEL)
             c["extract_prompt_sha256"] = CHAPTER_PROMPT_SHA256
         doc = {"stem": args.stem, "source": args.source, "timeline": timeline,
-               "model": EXTRACT_MODEL, "extract_model": EXTRACT_MODEL,
+               "model": EXTRACT_MODEL, "extract_model": (u1 or {}).get("_model", EXTRACT_MODEL),
                "extract_prompt_sha256": CHAPTER_PROMPT_SHA256,
                "problems": problems, "chapters": chapters}
         ch_path.write_text(json.dumps(doc, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -200,7 +200,7 @@ def main():
             card["timeline"] = timeline
             card["status"] = "draft"
             card["quote_check"] = "pass" if base.validate(card, text) else "quote_mismatch"
-            card["extract_model"] = EXTRACT_MODEL
+            card["extract_model"] = (usage or {}).get("_model", EXTRACT_MODEL)
             card["extract_prompt_sha256"] = EXTRACT_PROMPT_SHA256
             cards.append(card)
         return job, cards, result

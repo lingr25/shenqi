@@ -274,7 +274,8 @@ def main():
                         "chapter": card.get("chapter"),
                         "window": card.get("window"),
                         "status": "draft",
-                        "atomize_model": ATOMIZE_MODEL,
+                        "atomize_model": (extra or {}).get("_model", ATOMIZE_MODEL)
+                        if isinstance(extra, dict) else ATOMIZE_MODEL,
                         "atomize_prompt_sha256": ATOMIZE_PROMPT_SHA256,
                     }
                     fa.write(json.dumps(atom, ensure_ascii=False) + "\n")
