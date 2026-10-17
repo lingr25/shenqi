@@ -31,13 +31,18 @@ OVERLAY = os.path.join(ROOT, "kb_trial", "curation", "qq_claim_overlay.json")
 EVIDENCE_VERDICTS = os.path.join(ROOT, "kb_trial", "curation", "evidence_verdicts.jsonl")
 
 # ----------------------------------------------------------------- 隐私
-# 两个群聊昵称残留（见下方 _decode_terms，明文不落盘）统一替换为「某人」。
+# 群聊昵称残留统一替换为「某人」。替换表不入库（base64 也可逆，等同明文）：
+# 从本地文件 _privacy_terms.local.json（被 faultcheck/_* 规则忽略）或环境变量
+# SHENQI_PRIVACY_TERMS 指向的 JSON（{"昵称": "某人", ...}）读取；缺失时替换表为空。
 # 自忍 只在对人时替换；本批两处（qq_wo_b4_433 seq3「h8-4自忍」、seq75「之前看自忍」）
 # 均指「自忍」这一自限玩法/观赏对象，且都不在任何已发布条目内，故保留并上报父判断。
 def _decode_terms():
-    import base64
-    return {base64.b64decode(k).decode("utf-8"): v
-            for k, v in (("5bCPQQ==", "某人"), ("THljb3Jpcy4=", "某人"))}
+    path = os.environ.get("SHENQI_PRIVACY_TERMS") or os.path.join(HERE, "_privacy_terms.local.json")
+    if not os.path.exists(path):
+        print(f"[warn] 未找到隐私替换表 {path}，昵称替换将跳过", file=sys.stderr)
+        return {}
+    with open(path, encoding="utf-8") as f:
+        return dict(json.load(f))
 
 
 PRIVACY_TERMS = _decode_terms()
