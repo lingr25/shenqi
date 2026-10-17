@@ -1,0 +1,189 @@
+{
+  "bvid": "BV1GVeb6dEVw",
+  "title": "【神祇读神奇】上课回,失衡下的进墙，穿墙等│20260919直播",
+  "batch": "vod_b2",
+  "stems": [
+    "BV1GVeb6dEVw_p2_42032367721",
+    "BV1GVeb6dEVw_p3_42033611369",
+    "BV1GVeb6dEVw_p1_42029417572"
+  ],
+  "pages_pending_asr": [],
+  "llm": {
+    "base_host": "lingr.aitreez.com",
+    "model": "lingr-free",
+    "fallback_models": [
+      "lingr-speed",
+      "lingr-pro"
+    ],
+    "temperature": 0.1
+  },
+  "prompts": {
+    "chapter_prompt_sha256": "0362183fd7fe",
+    "extract_prompt_sha256": "a3daf05e47cd",
+    "atomize_prompt_sha256": "690aae7c3ff9"
+  },
+  "parallel_parts": 3,
+  "usage_by_script": {
+    "chapter_extract_claims.py": {
+      "calls": 36,
+      "calls_lingr-free": 24,
+      "prompt_tokens": 93937,
+      "completion_tokens": 214298,
+      "reasoning_tokens": 158955,
+      "total_tokens": 308235,
+      "seconds": 1102.0,
+      "calls_lingr-speed": 12
+    },
+    "atomize_claims.py": {
+      "calls": 117,
+      "calls_lingr-free": 110,
+      "prompt_tokens": 174854,
+      "completion_tokens": 295856,
+      "reasoning_tokens": 251408,
+      "total_tokens": 470710,
+      "seconds": 1964.7,
+      "calls_lingr-speed": 7
+    }
+  },
+  "usage_total": {
+    "calls": 153,
+    "prompt_tokens": 268791,
+    "completion_tokens": 510154,
+    "reasoning_tokens": 410363,
+    "total_tokens": 778945
+  },
+  "wall_seconds": [
+    {
+      "step": "BV1GVeb6dEVw_p2_42032367721 extract",
+      "seconds": 853
+    },
+    {
+      "step": "BV1GVeb6dEVw_p2_42032367721 atomize",
+      "seconds": 1039
+    },
+    {
+      "step": "BV1GVeb6dEVw_p3_42033611369 extract",
+      "seconds": 902
+    },
+    {
+      "step": "BV1GVeb6dEVw_p3_42033611369 atomize",
+      "seconds": 384
+    },
+    {
+      "step": "BV1GVeb6dEVw_p1_42029417572 extract",
+      "seconds": 126
+    },
+    {
+      "step": "BV1GVeb6dEVw_p1_42029417572 atomize",
+      "seconds": 35
+    }
+  ],
+  "wall_seconds_total": 8298,
+  "counts": {
+    "BV1GVeb6dEVw_p2_42032367721": {
+      "chapters": 18,
+      "claims": 76,
+      "atoms": 141,
+      "noise": 0,
+      "extract_models": {
+        "lingr-speed": 12,
+        "lingr-free": 64
+      },
+      "atomize_models": {
+        "lingr-speed": 10,
+        "lingr-free": 131
+      },
+      "failed_windows": [],
+      "atomize_fail": [],
+      "extract_summary": {
+        "pass": 75,
+        "quote_mismatch": 1,
+        "overlap_dedup": 0
+      },
+      "atomize_summary": {
+        "pass": 141,
+        "unbound": 0,
+        "llm_drop": 0,
+        "fail": 0,
+        "noise": 0
+      }
+    },
+    "BV1GVeb6dEVw_p3_42033611369": {
+      "chapters": 5,
+      "claims": 32,
+      "atoms": 62,
+      "noise": 0,
+      "extract_models": {
+        "lingr-free": 16,
+        "lingr-speed": 16
+      },
+      "atomize_models": {
+        "lingr-free": 61,
+        "lingr-speed": 1
+      },
+      "failed_windows": [],
+      "atomize_fail": [],
+      "extract_summary": {
+        "pass": 31,
+        "quote_mismatch": 1,
+        "overlap_dedup": 0
+      },
+      "atomize_summary": {
+        "pass": 62,
+        "unbound": 0,
+        "llm_drop": 0,
+        "fail": 0,
+        "noise": 0
+      }
+    },
+    "BV1GVeb6dEVw_p1_42029417572": {
+      "chapters": 3,
+      "claims": 9,
+      "atoms": 13,
+      "noise": 0,
+      "extract_models": {
+        "lingr-free": 9
+      },
+      "atomize_models": {
+        "lingr-free": 13
+      },
+      "failed_windows": [],
+      "atomize_fail": [],
+      "extract_summary": {
+        "pass": 9,
+        "quote_mismatch": 0,
+        "overlap_dedup": 0
+      },
+      "atomize_summary": {
+        "pass": 13,
+        "unbound": 0,
+        "llm_drop": 0,
+        "fail": 0,
+        "noise": 0
+      }
+    }
+  },
+  "inputs": {
+    "transcripts_txt/BV1GVeb6dEVw_p2_42032367721.txt": "8a9a85a0f648a6268f5200dffdf912deb2ea7e306aef353d35d68cd325d2f36c",
+    "transcripts_txt/BV1GVeb6dEVw_p3_42033611369.txt": "4c11a8e05076e9c3d7c7a362ba50457e82cd05229857df1b0f1b584cc2d008bf",
+    "transcripts_txt/BV1GVeb6dEVw_p1_42029417572.txt": "307007c91c84a7a542f363db94b247bd2ef667da34b4345924b4d7644201d81b"
+  },
+  "outputs_local_only": {
+    "knowledge_pilot/BV1GVeb6dEVw_p2_42032367721.atoms.enriched.jsonl": "8cf7e5d10ad583dc79b9db0a4db8c8ba0b8ee769087616fdceb6f4503d7b0658",
+    "knowledge_pilot/BV1GVeb6dEVw_p2_42032367721.atoms.jsonl": "8db47688397b2c2f6192f0649760786ee532578b50c0409c37a6052eec1a9bab",
+    "knowledge_pilot/BV1GVeb6dEVw_p2_42032367721.chapter_claims.jsonl": "d6e0b42c410057c8fd41ef2a32bc9f5d4a61036319a6b6f9d629a979fa733e74",
+    "knowledge_pilot/BV1GVeb6dEVw_p2_42032367721.chapters.json": "dcd1be71e57afb7bc5b6328c502c88defcbf0231e8f2c10f03a9f36cecd1438f",
+    "knowledge_pilot/BV1GVeb6dEVw_p2_42032367721.noise.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "knowledge_pilot/BV1GVeb6dEVw_p3_42033611369.atoms.enriched.jsonl": "9a65826b011a00efe14dd4731cbfb44a3076f7b12280338fe1b5a29a3badb63e",
+    "knowledge_pilot/BV1GVeb6dEVw_p3_42033611369.atoms.jsonl": "54205577b5f923084d7e7adf0fc301d72ce3b479d65160ef53b42037e4299100",
+    "knowledge_pilot/BV1GVeb6dEVw_p3_42033611369.chapter_claims.jsonl": "82b412175d4d1a72e6083a97c7ef89fa95758d2a05e192ae26fd8af594808e0b",
+    "knowledge_pilot/BV1GVeb6dEVw_p3_42033611369.chapters.json": "687bf878816b5436ddf38a9b3ef84ea805a6a073400f5a1eeea9c6d6a4a09151",
+    "knowledge_pilot/BV1GVeb6dEVw_p3_42033611369.noise.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "knowledge_pilot/BV1GVeb6dEVw_p1_42029417572.atoms.enriched.jsonl": "b3220569130e374cdd93cdb50cd30ee95728498ce97ae52058cb8a82c000e4ff",
+    "knowledge_pilot/BV1GVeb6dEVw_p1_42029417572.atoms.jsonl": "05faded66dfc5c13cac4239bb24d5269d491c2064a0a02e7b6da9e010cba453e",
+    "knowledge_pilot/BV1GVeb6dEVw_p1_42029417572.chapter_claims.jsonl": "6fd7afae6e83993a7abc11596fae8f60d3d9689c4164723ae2adf33a81ea6604",
+    "knowledge_pilot/BV1GVeb6dEVw_p1_42029417572.chapters.json": "0bfbe1c3bb8d090707a1d7fda24fba2188aa575a570117c1ce166c5bd48cd26a",
+    "knowledge_pilot/BV1GVeb6dEVw_p1_42029417572.noise.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "note": "knowledge_pilot/ 草稿层不入库，只记 sha256。批量与其它视频并行（3 路），usage 按视频目录记账。"
+}
