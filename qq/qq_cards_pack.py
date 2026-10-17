@@ -35,7 +35,7 @@ from qq_cards_export import (
     window_payload,
 )
 
-ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 仓库根目录（本脚本位于 qq/）
 TRANSCRIPTS_DIR = os.path.join(ROOT_DIR, "transcripts_txt")
 CARDS_PATH = os.path.join(ROOT_DIR, "qq_cards", "cards.jsonl")
 
@@ -158,7 +158,7 @@ def cmd_ignore(args: argparse.Namespace) -> int:
         f"""ignore 档误杀复核
 输入：batch_XXX.jsonl（每行一窗）
 输出：cards_batch_XXX.jsonl（每行一 JSON，window_id 对齐）
-验收：python -X utf8 qq_cards_validate.py --mode ignore --cards-dir {out_dir}
+验收：python -X utf8 qq/qq_cards_validate.py --mode ignore --cards-dir {out_dir}
 窗数={len(rows)} 批次数={n_batches} truncated={n_trunc}
 """,
     )
@@ -389,7 +389,7 @@ def cmd_novelty(args: argparse.Namespace) -> int:
         f"""novelty 标注包
 输入：batch_XXX.jsonl（每行一卡载荷，含 vod_excerpts）
 输出：cards_novelty_batch_XXX.jsonl
-验收：python -X utf8 qq_cards_validate.py --mode novelty --cards-dir {args.out_dir} --transcripts transcripts_txt
+验收：python -X utf8 qq/qq_cards_validate.py --mode novelty --cards-dir {args.out_dir} --transcripts transcripts_txt
 卡数={len(rows)} 批次数={n_batches} 无逐字稿命中={n_empty}
 """,
     )
@@ -537,7 +537,7 @@ def cmd_merge(args: argparse.Namespace) -> int:
 输入：batch_XXX.jsonl（每行一簇，含 cards[]）
 输出：cards_merge_batch_XXX.jsonl
 簇清单：clusters.json
-验收：python -X utf8 qq_cards_validate.py --mode merge --cards-dir {args.out_dir}
+验收：python -X utf8 qq/qq_cards_validate.py --mode merge --cards-dir {args.out_dir}
 簇数={len(rows)} 批次数={n_batches} 每批最多 {args.batch_size} 簇
 """,
     )

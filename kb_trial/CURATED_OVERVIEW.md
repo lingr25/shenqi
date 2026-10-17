@@ -6,7 +6,7 @@
 **状态**：本地甄选草稿层（`schema_version: curated-1.0`，`status: draft_curated`）。
 **未部署、未发布、未提交**；本文件不构成发布许可判断，是否对外发布由项目负责人决定。
 
-**一句话**：1462 条机制规则（含 846 条 QQ 群聊轨），每条都带可定位引文（字幕文件+秒 / 已脱敏 QQ 窗口片段），
+**一句话**：<!-- stat:card_count -->1388<!-- /stat --> 条机制规则（含 <!-- stat:card_qq -->797<!-- /stat --> 条 QQ 群聊轨），每条都带可定位引文（字幕文件+秒 / 已脱敏 QQ 窗口片段），
 **可直接接 RAG 检索使用**；但每条的置信上限是**「有文本出处支持这句表述」**，
 **不是「游戏内真值已验证」**——本层没有做过原片音画核听。
 
@@ -62,7 +62,7 @@
 
 | 文件 | 内容 |
 | --- | --- |
-| `kb_trial/curated_high_quality.json` | **主产物**。单个 JSON 对象，`entries` 数组即 1462 条规则 |
+| `kb_trial/curated_high_quality.json` | **主产物**。单个 JSON 对象，`entries` 数组即 <!-- stat:card_count -->1388<!-- /stat --> 条规则 |
 | `kb_trial/curation/qq_claim_overlay.json` | 8 条 QQ 条目 claim 的重写记录（原值→新值+理由，逐条可 diff） |
 | `kb_trial/curation/qq_claim_held_out.json` | 3 条 QQ 窗口的隔离记录（span 无法确定主张，不进交付集） |
 | `kb_trial/curation/curated_staging.json` | **6 条**被隔离条目（**3 条 QQ + 3 条 VOD**），含保留理由 |
@@ -76,9 +76,35 @@
 | `kb_trial/curation/qq_expansion/audit_decisions_b3.json` | 阶段三 b3 批 386 条候选的逐条裁定（含 `faultcheck` 段） |
 | `kb_trial/curation/qq_expansion/review_impact_manifest_b3.json` | b3 批 260 工单的读源影响清单（含交付文本逐 seq 复核） |
 
-**最终 sha256**：`9e5a44652bc80941b014c96dd051b56029bd8566a119d9cf93632cd12912f35d`
+**最终 sha256**（LF 口径）：<!-- stat:curated_sha256 -->6e321a5e7922f3710c4ab14dbee24467debdb21c094fcb034a5dbc87da412908<!-- /stat -->（2026-09-23 时点为 `9e5a44652bc80941b014c96dd051b56029bd8566a119d9cf93632cd12912f35d`）
 
 ### 数字（全部由最终 JSON 直接统计得出）
+
+**当前实测**（自动生成）：
+
+<!-- stats:start -->
+> 本区块由 `python tools/stats.py --write` 生成，请勿手改；CI 以 `--check` 校验。
+> 区块外正文中带日期的数字是当时时点的记录，以本区块为准。
+
+| 维度 | 实测值 |
+| --- | --- |
+| 甄选知识卡条数（`entries`） | **1388**（`entry_count` 字段 1388） |
+| 来源层 `source_layer` | QQ群聊 797、官方AI字幕 546、云端ASR重转写(无官方字幕分P) 28、官方AI字幕+云端ASR重转写 17 |
+| 来源轨 `track` | qq_chat 789、vod_official 546、vod_cloud 28、mixed_or_unknown 17、qq 8 |
+| QQ 轨按批次（`origin.card_section`） | QQ扩展(阶段四b4批) 458、QQ扩展(阶段三b3批) 302、QQ扩展(阶段二试批) 29、早期QQ窗口卡(window:*) 8 |
+| `review.status` | agent_verified 1371、user_verified 17 |
+| `evidence_review.status` | supported 1348、inherited_verified 40 |
+| `scope` | universal 590、general_mechanism 590、entity_mechanism 199、instance 8、未标注 1 |
+| 类别 `category` | 204 种（其中 129 种仅 1 条）；前 10：寻路 262、索敌 173、位移 161、帧时序 124、伤害结算 108、帧时序与计时器 77、状态效果 43、干员机制 39、拆包数据 29、其他 28 |
+| 含 `derived_text_repairs` 的条目 | 75 |
+| 隔离（`curation/curated_staging.json`） | 6 |
+| 黑话词表 `glossary.json` | 2100 条（`short_def` 76、`mechanic_def` 50） |
+| 逐字稿 / 清洗字幕 / 原始字幕 | 45 / 45 / 45 个分P文件 |
+| `curated_high_quality.json` sha256（LF） | `6e321a5e7922f3710c4ab14dbee24467debdb21c094fcb034a5dbc87da412908` |
+| 同上（CRLF 工作区口径） | `2a95320b7bd0c8aa10bf2b421b570ba7fdf1af094e1da07c120225e471b83ec9` |
+<!-- stats:end -->
+
+**2026-09-23 时点记录**（保留原样，供对照）：
 
 | 维度 | 值 |
 | --- | --- |
@@ -135,8 +161,8 @@
 
 | 状态 | 条数 | 含义 |
 | --- | --- | --- |
-| `agent_verified` | 1445 | 代理逐条读源（文本层）后确认该句有出处支持。**不等于已证实** |
-| `user_verified` | 17 | 用户明确说过「优秀」的整卡，继承到其未被改写的规则句 |
+| `agent_verified` | <!-- stat:agent_verified -->1371<!-- /stat --> | 代理逐条读源（文本层）后确认该句有出处支持。**不等于已证实** |
+| `user_verified` | <!-- stat:user_verified -->17<!-- /stat --> | 用户明确说过「优秀」的整卡，继承到其未被改写的规则句 |
 | `auto_screened` | 0 | 本版交付集内为空；未过审的条目全部隔离在 `curated_staging.json` |
 
 `inherited_verified` 是 `evidence_review.status` 的取值，表示**本条本轮未被重读**：

@@ -20,7 +20,7 @@ from pathlib import Path
 
 import transcribe_cloud as tc
 
-ROOT = Path(__file__).parent
+ROOT = Path(__file__).resolve().parent.parent  # 仓库根目录（本脚本位于 asr/）
 FFMPEG = Path(tc.FFMPEG) if hasattr(tc, "FFMPEG") else None
 FFMPEG = str(Path.home() / "AppData/Local/Microsoft/WinGet/Packages"
              / "Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe"

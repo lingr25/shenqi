@@ -85,6 +85,15 @@ class Index:
         return hits
 
 
+def missing_local_inputs(self_test=False):
+    """Local-only (gitignored) inputs this CLI needs; empty list when all are present."""
+    need = [TRIAL / 'docs.jsonl', TRIAL / 'archive.jsonl', TRIAL / 'evidence.jsonl']
+    if self_test:
+        # kb_trial_verify rebuilds the trial layer from kb_pilot_synth/ (kb_build_trial.SOURCES)
+        need.append(ROOT / 'kb_pilot_synth')
+    return [str(p.relative_to(ROOT)) for p in need if not p.exists()]
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('query', nargs='?')
@@ -98,6 +107,17 @@ def main(argv=None):
     p.add_argument('--evidence', help='exact citation id; original quote, not a corrected conclusion')
     p.add_argument('--self-test', action='store_true')
     args = p.parse_args(argv)
+    missing = missing_local_inputs(self_test=args.self_test)
+    if missing:
+        msg = ('kb_trial 试验层的本地构建产物不在仓库里（被 .gitignore 忽略），新克隆无法使用本 CLI：\n  '
+               + '\n  '.join(missing)
+               + '\n它们由 kb_build_trial.py 从本地私有的 kb_pilot_synth/ 生成。'
+               '公开仓库请改用甄选层检索：python kb_curated_search.py "<关键词>"')
+        if args.self_test:
+            print('SKIPPED kb_trial_search self-test.\n' + msg)
+            return 0
+        print(msg, file=sys.stderr)
+        return 2
     if args.self_test:
         from kb_trial_verify import verify
         verify()

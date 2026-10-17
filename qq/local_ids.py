@@ -17,7 +17,7 @@
 import json
 import os
 
-_IDS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+_IDS_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),  # 仓库根目录（本文件位于 qq/）
                          'qq_info', 'identities.json')
 
 

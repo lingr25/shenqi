@@ -9,7 +9,7 @@ from funasr import AutoModel
 
 sys.stdout.reconfigure(encoding='utf-8')
 
-ROOT_DIR = r"c:\Users\cheny\Downloads\shenqi"
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 仓库根目录（本脚本位于 asr/）
 AUDIO_DIR = os.path.join(ROOT_DIR, "audios")
 OUT_DIR = os.path.join(ROOT_DIR, "vad_results")
 os.makedirs(OUT_DIR, exist_ok=True)
@@ -195,9 +195,9 @@ high_value = [x for x in results if x.get('speech_ratio', 0) >= 15.0 or x.get('s
 medium_value = [x for x in results if 5.0 <= x.get('speech_ratio', 0) < 15.0 and x.get('speech_sec', 0) < 600]
 low_value = [x for x in results if x.get('speech_ratio', 0) < 5.0]
 
-md.append(f"- 🔥 **第一梯队·高价值核心录播**（人声占比 $\\ge 15\%$ 或 说话时长 $> 10$ 分钟）：共 **{len(high_value)}** 个分P，包含真正密集的讲课、机制解析与互动，**必须重点进行 ASR 转写**。")
-md.append(f"- 🟡 **第二梯队·中等活跃录播**（人声占比 $5\% \\sim 15\%$）：共 **{len(medium_value)}** 个分P，包含少量解说与测试，建议按区间切片转写。")
-md.append(f"- ❄️ **第三梯队·低活跃/纯挂机录播**（人声占比 $< 5\%$）：共 **{len(low_value)}** 个分P，主播几乎全程静音刷图/放歌/挂机，无需转写，节省海量算力。\n")
+md.append(f"- 🔥 **第一梯队·高价值核心录播**（人声占比 $\\ge 15\\%$ 或 说话时长 $> 10$ 分钟）：共 **{len(high_value)}** 个分P，包含真正密集的讲课、机制解析与互动，**必须重点进行 ASR 转写**。")
+md.append(f"- 🟡 **第二梯队·中等活跃录播**（人声占比 $5\\% \\sim 15\\%$）：共 **{len(medium_value)}** 个分P，包含少量解说与测试，建议按区间切片转写。")
+md.append(f"- ❄️ **第三梯队·低活跃/纯挂机录播**（人声占比 $< 5\\%$）：共 **{len(low_value)}** 个分P，主播几乎全程静音刷图/放歌/挂机，无需转写，节省海量算力。\n")
 
 md.append("## 2. 全量 39 个分P人声活跃度排行榜（从高到低）\n")
 md.append("| 排名 | 梯队 | BV号 | 视频标题 | 分P | 总时长 | 有效人声时长 | 人声占比 | 语音片段数 | 建议动作 |")

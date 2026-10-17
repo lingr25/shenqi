@@ -1,0 +1,47 @@
+name: ci
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PYTHONUTF8: "1"
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # 全部检查只用标准库，不安装任何依赖
+      - name: JSON / JSONL 解析
+        run: python tools/check_json.py
+
+      - name: 甄选层结构与引文校验
+        run: python tools/validate_release.py
+
+      - name: 文档数字一致性
+        run: python tools/stats.py --check
+
+      - name: py_compile（SyntaxWarning 视为错误）
+        run: git ls-files -z '*.py' | xargs -0 python -W error -m py_compile
+
+      - name: 甄选层检索自检
+        run: python kb_curated_search.py --self-test > /dev/null
+
+      - name: 清洗与词表可复现
+        run: |
+          python clean_transcripts.py > /dev/null
+          python build_glossary.py > /dev/null
+          git status --porcelain
+          git diff --exit-code
+          test -z "$(git status --porcelain)"

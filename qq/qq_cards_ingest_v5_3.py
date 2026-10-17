@@ -40,7 +40,7 @@ from qq_cards_rag_ready import (
     link_glossary,
 )
 
-ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 仓库根目录（本脚本位于 qq/）
 TOPIC_GLOB = os.path.join(ROOT_DIR, "qq_info", "subagent_canonical", "out_topic_*.json")
 REPORT_PATH = os.path.join(ROOT_DIR, "qq_cards", "ingest_v5_3_report.md")
 REQUIRED = (

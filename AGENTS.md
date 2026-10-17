@@ -33,7 +33,7 @@ shenqi/
 ├── kb_build_trial.py       # [本地试验] 幂等构建，不调用 API、不覆盖 kb/；按精确来源应用用户审核，保留原始引文；内含 trial_user_aliases 人工别名表（用户裁定的 ASR 讹写→正确词，按 scope 限定条目生效，如 血屋→血霭遮月、鼠传送→黍传送）
 ├── kb_trial_search.py      # [本地试验] 稳定 CLI，默认 mechanism；experiment/pending/all/archive 须显式选择，--self-test 验证
 ├── kb_trial_verify.py      # [本地试验] 本地重建、引用/边界与新旧检索对照；结果 kb_trial/validation.json
-├── kb_trial/curated_high_quality.json # [甄选子层/draft] 单个 JSON 对象的甄选高质量规则层(schema curated-1.0)，当前1473条(官方字幕576/云ASR28/混合17/QQ852=既有QQ8+阶段二试批30+阶段三b3批312+阶段四b4批502；b3批含材料修复后重审追加的2条，另有4条已发布条目的引文占位经父裁定批准按源复原、见 curation/qq_expansion/audit_decisions_b3.json 的 quote_fidelity_repair，已发布层占位残留0；2026-09-22 对抗性挑刺落地：撤58条(改前1520)、按二审建议改写305条claim/subject/condition，引文未动，见 curation/faultcheck/REMEDIATION_REPORT.md；2026-09-23 校准复核落地：175条 needs_human_confirmation 分9批校准(补引~74/回退~77/恢复6条QQ误撤+5条录播误拒/维持撤下8/用户裁定4条)，净+11条，见 curation/faultcheck/calibration_decisions_01..09.json)，可直接作RAG语料；非权威、未部署未发布；审核状态 user_verified/agent_verified(本版无 auto_screened，未过审者隔离不入集)；仅用户明确"优秀"的整卡可继承 user_verified，"修改后可用"须降为 agent_verified；证据形态含 VOD原子/VOD内联/QQ span 三轨
+├── kb_trial/curated_high_quality.json # [甄选子层/draft] 单个 JSON 对象的甄选高质量规则层(schema curated-1.0)，当前条数与来源分布以 §6.1「当前实测统计」区块为准（tools/stats.py 生成，CI 校验）；以下为 2026-09-23 时点记录：1473条(官方字幕576/云ASR28/混合17/QQ852=既有QQ8+阶段二试批30+阶段三b3批312+阶段四b4批502；b3批含材料修复后重审追加的2条，另有4条已发布条目的引文占位经父裁定批准按源复原、见 curation/qq_expansion/audit_decisions_b3.json 的 quote_fidelity_repair，已发布层占位残留0；2026-09-22 对抗性挑刺落地：撤58条(改前1520)、按二审建议改写305条claim/subject/condition，引文未动，见 curation/faultcheck/REMEDIATION_REPORT.md；2026-09-23 校准复核落地：175条 needs_human_confirmation 分9批校准(补引~74/回退~77/恢复6条QQ误撤+5条录播误拒/维持撤下8/用户裁定4条)，净+11条，见 curation/faultcheck/calibration_decisions_01..09.json)，可直接作RAG语料；非权威、未部署未发布；审核状态 user_verified/agent_verified(本版无 auto_screened，未过审者隔离不入集)；仅用户明确"优秀"的整卡可继承 user_verified，"修改后可用"须降为 agent_verified；证据形态含 VOD原子/VOD内联/QQ span 三轨
 ├── kb_trial/curation/      # [甄选子层/draft] 甄选过程证据: candidates/decisions/agent_verifications/qq_worklist/evidence_verdicts(620)/curated_staging(隔离5条)/qq_claim_overlay/curated_validation/qq_expansion(阶段二试批: approved_manifest 30条已并入 + audit_decisions 147条裁定 + trial_candidate + REVIEW_REPORT_80/user_sample_round2；阶段三b3批: approved_manifest_b3 319条已并入 + audit_decisions_b3 386条裁定 + review_impact_manifest_b3 + README_B3/user_sample_round3；阶段四b4批: approved_manifest_b4 502条已并入 + audit_decisions_b4 572条裁定(keep502/reject40/pending30) + README_B4/user_sample_round4)，全程本地 0 外部 API
 ├── kb_curation_qq_expansion*.py # [甄选子层] QQ 精选扩展专用: 候选生成/loader 增量并入(支持 --batch phase2|b3|b4)/逐条裁定生成/b3 读源影响清单，仅经 kb_curation_build.py 追加进 curated_high_quality.json
 ├── kb_curation_qq_expansion_loader.py # [甄选子层] 唯一可把 approved_manifest(_b3/_b4).json 变成 curated 条目的加载器；BATCHES 登记批次的工单/回执/裁定/清单路径，只追加绝不改写既有条目，逐条复验 source_sha256/裁定 verdict=keep/引文逐字
@@ -53,8 +53,8 @@ shenqi/
 ├── vad_results/            # [实验性/独立层] FSMN-VAD 人声端点检测时间戳与 vad_report.md 人声活跃度大盘
 ├── asr_drafts/             # [实验性/独立层] SenseVoiceSmall 本地粗识别转写草稿，完全独立于 transcripts_txt/
 ├── cloud_clips/            # [实验性/独立层] 云端ASR切片产物：manifest.json 裁剪清单 + 按VAD/草稿过滤后的音频切片（文件名含原音频绝对时间轴），被.gitignore忽略
-├── plan_cloud_clips.py     # [实验性/独立层] 云端切片清单生成器：VAD段×草稿文本打分过滤→合并→pad→硬切
-├── cut_cloud_clips.py      # [实验性/独立层] 按 manifest 用 ffmpeg 流拷贝切片
+├── asr/plan_cloud_clips.py # [实验性/独立层] 云端切片清单生成器：VAD段×草稿文本打分过滤→合并→pad→硬切
+├── asr/cut_cloud_clips.py  # [实验性/独立层] 按 manifest 用 ffmpeg 流拷贝切片
 ├── knowledge_pilot/        # [实验性/独立层] 机制知识卡抽取试点：章节大纲、draft父卡、原子命题(*.atoms.jsonl)、噪声卡(*.noise.jsonl)，被.gitignore忽略，人工审核前不得升入权威层或公开发布
 ├── chapter_extract_claims.py # [实验性/独立层] 方案2章节优先知识卡抽取管线
 ├── atomize_claims.py       # [实验性/独立层] 父卡→原子命题拆分、证据重绑、类型分权（不合成「正确卡」）
@@ -64,15 +64,19 @@ shenqi/
 ├── rag_eval.py             # [实验性/独立层] RAG检索评测(纯本地BM25), 当前基线10/10
 ├── KNOWLEDGE_PIPELINE.md   # [实验性/独立层] 知识库生产管线文档, 新视频入库按此操作
 ├── pilot_extract_claims.py # [实验性/独立层] 方案1固定窗口知识卡抽取试点脚本（对照组）
-├── audit_timeline.py       # [实验性/独立层] VAD采样时间轴 vs 原媒体时间轴审计，产出 cloud_clips/timeline_audit.json
-├── xp_rank.py              # [娱乐向/本地私有] 群友 XP 榜单挖掘：干员提及/示爱/官宣单推统计，产物 xp_report.md/xp_data.json 只写入 qq_info/（gitignore 保护，仅昵称不含 QQ 号）
-├── xp_page.py              # [娱乐向/本地私有] 把 xp_data.json 渲染成自包含 HTML 看板 xp_report.html（无外部依赖，仅昵称）
+├── asr/audit_timeline.py   # [实验性/独立层] VAD采样时间轴 vs 原媒体时间轴审计，产出 cloud_clips/timeline_audit.json
+├── qq/xp_rank.py           # [娱乐向/本地私有] 群友 XP 榜单挖掘：干员提及/示爱/官宣单推统计，产物 xp_report.md/xp_data.json 只写入 qq_info/（gitignore 保护，仅昵称不含 QQ 号）
+├── qq/xp_page.py           # [娱乐向/本地私有] 把 xp_data.json 渲染成自包含 HTML 看板 xp_report.html（无外部依赖，仅昵称）
 ├── build_workbench.py      # [产品化/draft] 由甄选层 curated_high_quality.json 生成单文件交互式机制工作台（纯本地，不调用 API；QQ 引文原样引用已脱敏产物）
 ├── workbench/              # [产品化/draft] 工作台前端模板与逻辑（template.html + app.js），产物输出至 dist/mechanics-workbench/index.html（dist/ 已被 .gitignore 忽略）
+├── asr/                    # [实验性/独立层] 本地/云端 ASR 脚本集中目录（2026-10 由根目录迁入）：local_asr_pipeline / batch_vad_analysis / batch_asr_transcribe / benchmark_ground_truth（需 funasr/numpy/av）、plan_cloud_clips / cut_cloud_clips / transcribe_cloud / retry_failed_clips / audit_timeline；一律从仓库根目录运行，如 `python asr/plan_cloud_clips.py`
+├── qq/                     # [补充语料] QQ 群聊管线脚本集中目录（2026-10 由根目录迁入）：qq_clean_pipeline、qq_cards_*（export/pack/validate/repair/merge/ingest_* 等）、qq_drop_xiaoxiao、local_ids、xp_rank/xp_page；输入均在 qq_info/（gitignore），从仓库根目录运行，如 `python qq/qq_cards_validate.py`
+├── tools/                  # [发布校验] stats.py（统一统计并刷新文档数字，--check 校验）、validate_release.py（只用已提交文件的结构+引文校验）、check_json.py（全库 JSON/JSONL 解析）
+├── .github/workflows/ci.yml # [CI] 推送/PR 时跑上述校验 + py_compile + 清洗/词表可复现性
 ├── LICENSE                 # 代码许可：MIT
 ├── LICENSE-CONTENT         # 内容许可（知识库/逐字稿/词表/报告）：CC BY-NC-SA 4.0
 ├── README.md               # 开源说明：产物、双协议分区、隐私边界、管线速览
-├── local_ids.py            # 本地身份注入：从 qq_info/identities.json（gitignore）读真实QQ号，脚本不得硬编码号码
+├── qq/local_ids.py         # 本地身份注入：从 qq_info/identities.json（gitignore）读真实QQ号，脚本不得硬编码号码
 ├── scripts/privacy_gate.py # [发布闸门] 全库隐私扫描：密钥/手机号/真实QQ+UID/花名，发布前必须通过；白名单 scripts/privacy_allowlist.txt 仅收人工核实的非身份误报
 ├── glossary.json           # [黑话清单/RAG直用] 正词→别名+英文+ASR讹写变体消歧清单，由 build_glossary.py 从实体索引+glossary+消歧规则确定性合成，禁止手改产物
 ├── build_glossary.py       # 黑话清单重跑入口(纯本地,无API)
@@ -127,6 +131,30 @@ shenqi/
 
 ## 6.1 甄选层（`kb_trial/curated_high_quality.json`）使用纪律
 
+**当前实测统计**（`python tools/stats.py --write` 刷新；本节其余带日期的数字为当时时点记录）：
+
+<!-- stats:start -->
+> 本区块由 `python tools/stats.py --write` 生成，请勿手改；CI 以 `--check` 校验。
+> 区块外正文中带日期的数字是当时时点的记录，以本区块为准。
+
+| 维度 | 实测值 |
+| --- | --- |
+| 甄选知识卡条数（`entries`） | **1388**（`entry_count` 字段 1388） |
+| 来源层 `source_layer` | QQ群聊 797、官方AI字幕 546、云端ASR重转写(无官方字幕分P) 28、官方AI字幕+云端ASR重转写 17 |
+| 来源轨 `track` | qq_chat 789、vod_official 546、vod_cloud 28、mixed_or_unknown 17、qq 8 |
+| QQ 轨按批次（`origin.card_section`） | QQ扩展(阶段四b4批) 458、QQ扩展(阶段三b3批) 302、QQ扩展(阶段二试批) 29、早期QQ窗口卡(window:*) 8 |
+| `review.status` | agent_verified 1371、user_verified 17 |
+| `evidence_review.status` | supported 1348、inherited_verified 40 |
+| `scope` | universal 590、general_mechanism 590、entity_mechanism 199、instance 8、未标注 1 |
+| 类别 `category` | 204 种（其中 129 种仅 1 条）；前 10：寻路 262、索敌 173、位移 161、帧时序 124、伤害结算 108、帧时序与计时器 77、状态效果 43、干员机制 39、拆包数据 29、其他 28 |
+| 含 `derived_text_repairs` 的条目 | 75 |
+| 隔离（`curation/curated_staging.json`） | 6 |
+| 黑话词表 `glossary.json` | 2100 条（`short_def` 76、`mechanic_def` 50） |
+| 逐字稿 / 清洗字幕 / 原始字幕 | 45 / 45 / 45 个分P文件 |
+| `curated_high_quality.json` sha256（LF） | `6e321a5e7922f3710c4ab14dbee24467debdb21c094fcb034a5dbc87da412908` |
+| 同上（CRLF 工作区口径） | `2a95320b7bd0c8aa10bf2b421b570ba7fdf1af094e1da07c120225e471b83ec9` |
+<!-- stats:end -->
+
 甄选层是当前可直接接 RAG 的规则层，使用时必须遵守以下口径，**不得复述为权威或已验证**：
 
 1. **置信上限是 `text-source-supported`**：全部判定基于**转写文本**（官方 AI 字幕或云端 ASR）与 QQ 窗口片段逐条比对，**未核听原片音画、未做游戏内实测**。
@@ -134,9 +162,9 @@ shenqi/
 3. **审核状态如实区分**：`user_verified` 仅限用户明确说「优秀」的整卡；「修改后可用」须降为 `agent_verified`。本版 `auto_screened` 为 0，未过审条目**隔离**在 `curation/curated_staging.json`，不静默丢弃也不入库。
 4. **`inherited_verified` 不等于核听**：它表示本条本轮未被重读，判定继承自上一轮的用户反馈与代理文本审核。
 5. **`--layer qq` 等过滤是硬过滤**，不回退到更宽的 `kb_trial` 层；QQ 引文已脱敏，不含群号、QQ 号与昵称。发布前必须跑 `scripts/privacy_gate.py`（密钥/手机号/真实 QQ+UID/花名残留全库扫描，0 命中才允许推送公开远端）；`kb_curation_qq_expansion_loader.py` 内的 `PUBLISH_REDACTIONS` 表保存发布期身份词映射，新增泄漏词只加映射并重跑 loader 链路，不直接手改产物。
-6. **数字与 sha256 以实测为准**：改动甄选链路后必须重跑 `kb_curation_evidence_close.py` → `kb_curation_build.py` → `kb_curation_validate.py` → `kb_curated_search.py --self-test`，并同步更新 `CURATED_OVERVIEW.md` 与本节条数。**禁止**用旧版数字或旧层回归成绩背书本层。
+6. **数字与 sha256 以实测为准**：改动甄选链路后必须重跑 `kb_curation_evidence_close.py` → `kb_curation_build.py` → `kb_curation_validate.py` → `kb_curated_search.py --self-test`，再运行 `python tools/stats.py --write` 刷新 README / 本文件 / `CURATED_OVERVIEW.md` 的受管数字，并以 `python tools/validate_release.py` 复核。**禁止**用旧版数字或旧层回归成绩背书本层。
 
-**已知短板**：QQ 轨目前 852 条入选（既有 8 条 + 阶段二试批 30 条 + 阶段三 b3 批 312 条 + 阶段四 b4 批 502 条，四批均已 `approved_merged` 并入；b3 的 312 含材料修复后重审追加的 2 条、并已扣掉 2026-09-22 对抗性挑刺撤下的 7 条；b4 的 502 = 508 keep − 6 挑刺撤下，含 2026-09-23 校准恢复的 6 条误撤），仍有大量候选待逐条读源，本层不代表完整知识库。
+**已知短板**：QQ 轨当前 <!-- stat:card_qq -->797<!-- /stat --> 条入选（2026-09-26 QQ 语义内审后；以下为 2026-09-23 时点的 852 条构成：既有 8 条 + 阶段二试批 30 条 + 阶段三 b3 批 312 条 + 阶段四 b4 批 502 条，四批均已 `approved_merged` 并入；b3 的 312 含材料修复后重审追加的 2 条、并已扣掉 2026-09-22 对抗性挑刺撤下的 7 条；b4 的 502 = 508 keep − 6 挑刺撤下，含 2026-09-23 校准恢复的 6 条误撤），仍有大量候选待逐条读源，本层不代表完整知识库。
 b3 批实测产出率约 1.23 条/窗（260 窗 → keep 319，含材料修复后重审追加的 2 条），被裁定为非 keep 的 67 条（reject 59 + pending 8）全部留在
 `curation/qq_expansion/audit_decisions_b3.json` 的 `decisions` 里，连同理由码可逐条复核，不删除。
 b4 批实测产出率约 1.14 条/窗（441 窗 → keep 502 = 508 − 12 挑刺撤下 + 6 校准恢复），非 keep 的 70 条（reject 40 + pending 30）同样留在

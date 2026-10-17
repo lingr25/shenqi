@@ -16,7 +16,7 @@ if hasattr(sys.stdout, "reconfigure"):
     except Exception:
         pass
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 仓库根目录（本脚本位于 qq/）
 CARDS = os.path.join(ROOT, "qq_cards", "cards.jsonl")
 OUT_DIR = os.path.join(ROOT, "qq_info", "subagent_canonical")
 CRED_RANK = {"authoritative": 0, "expert": 1, "lead": 2}
