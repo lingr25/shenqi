@@ -44,8 +44,19 @@ CHAPTER_CONTRACT = """你是直播录播的内容结构分析器。输入是主�
 5. 只输出 JSON, 不要输出其他文字:
 {"chapters": [{"title": "...", "start": 秒, "end": 秒, "kind": "...", "summary": "..."}]}"""
 
+# 在 pilot_extract_claims.CONTRACT 之上追加的章节抽取约束(不改 pilot 自身契约)
+EXTRACT_ADDENDUM = """
+补充约束(章节抽取):
+7. 玩笑、调侃、吐槽、设计评价、攻略哲学、闲聊、跑题内容不报卡; 主播用调侃语气说的话(如「哎…对吧」「超级大幻神」)不得写成机制结论。
+8. 每张卡加字段 scope: universal(主播明确说是通用规则) / entity_mechanism(特定干员/敌人/技能/地块) / instance(特定关卡或单次实测)。拿不准时选更窄的一档, applies_to 写具体对象。
+9. 论断要能脱离上下文理解: 把「这里/这个/它/该」换成具体对象(关卡、干员、敌人、地块、机制名); 无法确定指代的不报。
+10. evidence.quote 至少覆盖一个完整的原句, 不要只截几个字。
+11. 宁少勿滥: 同一机制的多个碎片合并成一张卡; 同一窗口一般不超过 6 张卡。
+12. 转写来自语音识别, 可能有同音错字; 拿不准的专有名词照抄原文, 不要据此推出新机制。"""
+EXTRACT_CONTRACT = base.CONTRACT + EXTRACT_ADDENDUM
+
 CHAPTER_PROMPT_SHA256 = hashlib.sha256(CHAPTER_CONTRACT.encode("utf-8")).hexdigest()[:12]
-EXTRACT_PROMPT_SHA256 = hashlib.sha256(base.CONTRACT.encode("utf-8")).hexdigest()[:12]
+EXTRACT_PROMPT_SHA256 = hashlib.sha256(EXTRACT_CONTRACT.encode("utf-8")).hexdigest()[:12]
 EXTRACT_MODEL = os.environ.get("GROK_MODEL") or getattr(base, "MODEL", "grok-4.6")
 
 
@@ -186,7 +197,7 @@ def main():
     def process(job):
         ch, ws, we, ctx, text = job
         try:
-            result, usage = base.call_llm(base.CONTRACT + "\n\n" + ctx +
+            result, usage = base.call_llm(EXTRACT_CONTRACT + "\n\n" + ctx +
                                           "=== 转写文本 ===\n" + text)
         except Exception as e:
             return job, None, {"error": str(e)[:150]}
