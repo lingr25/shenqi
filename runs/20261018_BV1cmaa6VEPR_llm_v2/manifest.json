@@ -1,0 +1,130 @@
+{
+  "supersedes": "runs/20261017_BV1cmaa6VEPR_llm (v1, 旧契约)",
+  "changes": [
+    "atomize 契约收紧(宁少勿碎/禁止未消解指代/引文至少一整句/不收玩笑)",
+    "章节抽取追加约束(过滤玩笑闲聊/scope/指代/整句引文)",
+    "entity_corrector: BV1cmaa6VEPR 亦真亦→一帧一",
+    "空响应退避+单次调用备选模型 lingr-speed,lingr-pro"
+  ],
+  "bvid": "BV1cmaa6VEPR",
+  "stems": [
+    "BV1cmaa6VEPR_p1_42251649424",
+    "BV1cmaa6VEPR_p2_42252239801"
+  ],
+  "chapters_reused_from_v1": true,
+  "llm": {
+    "base_host": "lingr.aitreez.com",
+    "model": "lingr-free",
+    "fallback_models": [
+      "lingr-speed",
+      "lingr-pro"
+    ],
+    "temperature": 0.1
+  },
+  "prompts": {
+    "chapter_prompt_sha256": "0362183fd7fe",
+    "extract_prompt_sha256": "a3daf05e47cd",
+    "atomize_prompt_sha256": "690aae7c3ff9"
+  },
+  "usage_by_script": {
+    "chapter_extract_claims.py": {
+      "calls": 45,
+      "calls_lingr-free": 44,
+      "prompt_tokens": 73450,
+      "completion_tokens": 180273,
+      "reasoning_tokens": 124510,
+      "total_tokens": 253723,
+      "seconds": 917.9,
+      "calls_lingr-speed": 1
+    },
+    "atomize_claims.py": {
+      "calls": 158,
+      "calls_lingr-free": 155,
+      "prompt_tokens": 225877,
+      "completion_tokens": 297727,
+      "reasoning_tokens": 253835,
+      "total_tokens": 523604,
+      "seconds": 2507.2,
+      "calls_lingr-speed": 3
+    }
+  },
+  "usage_total": {
+    "calls": 203,
+    "prompt_tokens": 299327,
+    "completion_tokens": 478000,
+    "reasoning_tokens": 378345,
+    "total_tokens": 777327
+  },
+  "wall_seconds": [
+    {
+      "step": "BV1cmaa6VEPR_p2_42252239801 extract",
+      "seconds": 113
+    },
+    {
+      "step": "BV1cmaa6VEPR_p2_42252239801 atomize",
+      "seconds": 173
+    },
+    {
+      "step": "BV1cmaa6VEPR_p1_42251649424 extract",
+      "seconds": 466
+    },
+    {
+      "step": "BV1cmaa6VEPR_p1_42251649424 atomize",
+      "seconds": 1385
+    },
+    {
+      "step": "enrich",
+      "seconds": 0
+    }
+  ],
+  "wall_seconds_total": 2137,
+  "counts": {
+    "BV1cmaa6VEPR_p1_42251649424": {
+      "chapters": 37,
+      "claims": 136,
+      "atoms": 228,
+      "extract_models": {
+        "lingr-free": 133,
+        "lingr-speed": 3
+      },
+      "atomize_models": {
+        "lingr-free": 224,
+        "lingr-speed": 4
+      },
+      "failed_windows": []
+    },
+    "BV1cmaa6VEPR_p2_42252239801": {
+      "chapters": 8,
+      "claims": 24,
+      "atoms": 35,
+      "extract_models": {
+        "lingr-free": 24
+      },
+      "atomize_models": {
+        "lingr-free": 35
+      },
+      "failed_windows": []
+    }
+  },
+  "vod_b1_export": {
+    "workorders": 134,
+    "replaced_previous": 206
+  },
+  "inputs": {
+    "transcripts_txt/BV1cmaa6VEPR_p1_42251649424.txt": "b8022045ed0892e04ca9964f5e20fae8fa9f6cade6e2622acf027deb3ea6ee02",
+    "transcripts_txt/BV1cmaa6VEPR_p2_42252239801.txt": "298e9123f3d7599dce245d6b4a8c341bf006307c3beabed7b44413400c4fade0"
+  },
+  "outputs_local_only": {
+    "knowledge_pilot/BV1cmaa6VEPR_p1_42251649424.atoms.enriched.jsonl": "e3a62fdcde2f4554e8bb46a7a481a8d2641b0a681c0d838c860e06ac8d7e17dd",
+    "knowledge_pilot/BV1cmaa6VEPR_p1_42251649424.atoms.jsonl": "aef65e923ab0d9f8e84d1c167ae7dd9b4a7a8d747f579dd18a08bb4c32b40e13",
+    "knowledge_pilot/BV1cmaa6VEPR_p1_42251649424.chapter_claims.jsonl": "2f49422cfa8c08fe1029cb70a504a2242fb6bce2933c6446c59d9573f8f50b18",
+    "knowledge_pilot/BV1cmaa6VEPR_p1_42251649424.chapters.json": "7a147f59dfbe006834c9570ea7cbb51a4d8191702e642cd53ab6fcbeb68be0f0",
+    "knowledge_pilot/BV1cmaa6VEPR_p1_42251649424.noise.jsonl": "8e082303f5265d01288b080773939834a3eabcaca297592880849e96d9b4f498",
+    "knowledge_pilot/BV1cmaa6VEPR_p2_42252239801.atoms.enriched.jsonl": "8e8cd7a0cd8d0c5d2c5e8321923b374e71fdf63a8d27147dc29af4938ae04600",
+    "knowledge_pilot/BV1cmaa6VEPR_p2_42252239801.atoms.jsonl": "af0225be7c66be78cf454b50b341bf310dff916192d20e2640ca0c1c40374076",
+    "knowledge_pilot/BV1cmaa6VEPR_p2_42252239801.chapter_claims.jsonl": "165cf61a3c7c48e46e55df9bf64b6d68ec6206828b7d90a58ee797603387728b",
+    "knowledge_pilot/BV1cmaa6VEPR_p2_42252239801.chapters.json": "02c5ab87f25616e436e58f22850b0c9454ff4c248650b0c55dcb9dcc32550f43",
+    "knowledge_pilot/BV1cmaa6VEPR_p2_42252239801.noise.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "note": "knowledge_pilot/ 草稿层不入库(v1 产物本地保存在 knowledge_pilot/_v1/)。"
+}
