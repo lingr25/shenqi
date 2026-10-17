@@ -1,0 +1,166 @@
+{
+  "date": "2026-10-17",
+  "note": "subtitles 两次运行写入临时目录（--out <external>）验证后，按 cid/bvid/page/条数校验原样复制进仓库，未重复请求 B 站（当时 IP 被 412 限流）。",
+  "runs": [
+    {
+      "tool": "pipeline/fetch_bili.py",
+      "command": "list",
+      "started_at": "2026-10-17T23:43:22+09:00",
+      "finished_at": "2026-10-17T23:43:27+09:00",
+      "args": {
+        "out": ".",
+        "dry_run": false,
+        "sleep": 3.0,
+        "cmd": "list",
+        "full": false,
+        "write": true
+      },
+      "logged_in": true,
+      "endpoints": [
+        "https://api.bilibili.com/x/space/wbi/arc/search",
+        "https://api.bilibili.com/x/web-interface/nav"
+      ],
+      "requests": 2,
+      "result": {
+        "source": "arc_search",
+        "covered": 61,
+        "new": [
+          "BV17rp16HECP",
+          "BV18BpG6LEtq",
+          "BV1gpp46QEwe",
+          "BV1KtHX6nEZS",
+          "BV1BCpw6cENH",
+          "BV1cmaa6VEPR",
+          "BV1xRho6DEAQ",
+          "BV1L4ez6oEcc",
+          "BV1GVeb6dEVw",
+          "BV1PJeF6FETX"
+        ]
+      },
+      "outputs": {
+        "all_search_videos.json": "714ba7f97f49167f6c556fa55df20c046042918300ed8b6ef3626dbed32234bb"
+      }
+    },
+    {
+      "tool": "pipeline/fetch_bili.py",
+      "command": "subtitles",
+      "started_at": "2026-10-17T23:30:19+09:00",
+      "finished_at": "2026-10-17T23:34:09+09:00",
+      "args": {
+        "out": "<external>",
+        "dry_run": false,
+        "sleep": 2.5,
+        "cmd": "subtitles",
+        "bvids": [],
+        "new": true
+      },
+      "logged_in": true,
+      "endpoints": [
+        "aisubtitle.hdslb.com (subtitle_url)",
+        "https://api.bilibili.com/x/player/pagelist",
+        "https://api.bilibili.com/x/player/wbi/v2",
+        "https://api.bilibili.com/x/space/wbi/arc/search",
+        "https://api.bilibili.com/x/v2/medialist/resource/list",
+        "https://api.bilibili.com/x/web-interface/nav",
+        "https://api.bilibili.com/x/web-interface/view"
+      ],
+      "requests": 66,
+      "result": {
+        "bvids": [
+          "BV17rp16HECP",
+          "BV18BpG6LEtq",
+          "BV1gpp46QEwe",
+          "BV1KtHX6nEZS",
+          "BV1BCpw6cENH",
+          "BV1cmaa6VEPR",
+          "BV1xRho6DEAQ"
+        ]
+      }
+    },
+    {
+      "tool": "pipeline/fetch_bili.py",
+      "command": "subtitles",
+      "started_at": "2026-10-17T23:37:00+09:00",
+      "finished_at": "2026-10-17T23:38:59+09:00",
+      "args": {
+        "out": "<external>",
+        "dry_run": false,
+        "sleep": 2.5,
+        "cmd": "subtitles",
+        "bvids": [
+          "BV1L4ez6oEcc",
+          "BV1GVeb6dEVw",
+          "BV1PJeF6FETX"
+        ],
+        "new": false
+      },
+      "logged_in": true,
+      "endpoints": [
+        "aisubtitle.hdslb.com (subtitle_url)",
+        "https://api.bilibili.com/x/player/pagelist",
+        "https://api.bilibili.com/x/player/wbi/v2",
+        "https://api.bilibili.com/x/space/wbi/arc/search",
+        "https://api.bilibili.com/x/v2/medialist/resource/list",
+        "https://api.bilibili.com/x/web-interface/nav",
+        "https://api.bilibili.com/x/web-interface/view"
+      ],
+      "requests": 47,
+      "result": {
+        "bvids": [
+          "BV1L4ez6oEcc",
+          "BV1GVeb6dEVw",
+          "BV1PJeF6FETX"
+        ]
+      }
+    }
+  ],
+  "ingested": {
+    "bvids": [
+      "BV17rp16HECP",
+      "BV18BpG6LEtq",
+      "BV1gpp46QEwe",
+      "BV1KtHX6nEZS",
+      "BV1BCpw6cENH",
+      "BV1cmaa6VEPR",
+      "BV1xRho6DEAQ",
+      "BV1L4ez6oEcc",
+      "BV1GVeb6dEVw",
+      "BV1PJeF6FETX"
+    ],
+    "pages_total": 27,
+    "pages_with_subtitle": 26,
+    "pages_pending_asr": [
+      "BV17rp16HECP_p4_42741596279"
+    ]
+  },
+  "outputs": {
+    "subtitles/BV17rp16HECP_p1_42738714003.json": "bd4cbe3144f4fc3d80435bfc238169ef07d33c407bb1b6163548c07557f89af3",
+    "subtitles/BV17rp16HECP_p2_42738844910.json": "3824785548336e1d94fbb6e3c6f49de14e598fde80aa5b8e9d8905e5cf122459",
+    "subtitles/BV17rp16HECP_p3_42739106781.json": "4f7acd67e3f8396651507ca438b40cbdec80209c6a4188aaeac9833a67b27ce3",
+    "subtitles/BV18BpG6LEtq_p1_42630319587.json": "1ecc9ece8174dd7404ef7015849d39ca1ad1a4b970d896d47727a5deeeadd8ed",
+    "subtitles/BV18BpG6LEtq_p2_42631758665.json": "3eebc85e66e367f2444c3bad88a42404a91d5e77f653b15b6a1e84cd320a40ab",
+    "subtitles/BV1BCpw6cENH_p1_42510257112.json": "e40a2431c2cac59ba4369f3aa561f2b9068cdf7dd37b41f28a92f8e4b567a733",
+    "subtitles/BV1BCpw6cENH_p2_42513075262.json": "f0f0b8bb18eb5d90b697fa093da8dec3ce0f418b6accf7839ab40176af96a818",
+    "subtitles/BV1BCpw6cENH_p3_42516023078.json": "155ef2b6d505460d3835de7e909283e9f134001195ba4cd493b1a18867e84b9b",
+    "subtitles/BV1BCpw6cENH_p4_42517005027.json": "7a6db799f7f8255f03e3b15cce8988250f1d6259d083b80efd0b11c03e88e784",
+    "subtitles/BV1GVeb6dEVw_p1_42029417572.json": "81176381a5ace3e736c6d340c8a84c69cc9465cb5b01751e242c18d3e0ff6973",
+    "subtitles/BV1GVeb6dEVw_p2_42032367721.json": "5c75a7ae022fb686ae752a17519645fd2b678392986fec1acdaf8c8f81349a31",
+    "subtitles/BV1GVeb6dEVw_p3_42033611369.json": "6192c85269c0a3c48cb0713b34999088b9fdc5aa6c798d75bec8e39eb5bd77fc",
+    "subtitles/BV1KtHX6nEZS_p1_42574483316.json": "6235f2f07b3086cb1dc5e090d4be43f7281c7c29c5e0c447d233255698cb58ae",
+    "subtitles/BV1KtHX6nEZS_p2_42575334226.json": "e3e2b9f609b1f50f1e1a2adc512236082e75c30f652fd025372ceb2ccf23b9d7",
+    "subtitles/BV1KtHX6nEZS_p3_42575594392.json": "483869c18faf9957adc4ebc20dcd52dabb86082077b1b694022b4b35cf8b9447",
+    "subtitles/BV1L4ez6oEcc_p1_42058057471.json": "19c70435552a132db2b5e303653e609e9669aa04e3000963ebc61c52352c8819",
+    "subtitles/BV1L4ez6oEcc_p2_42060876088.json": "8f3a93b8ccba28d88508059b45a06d263f6e2260499e859f26af8e352afc39e2",
+    "subtitles/BV1L4ez6oEcc_p3_42061792207.json": "51847d597cee7c88c419785ce8c5eb7e224f50a92bf6e7cf199e7f41e8069241",
+    "subtitles/BV1PJeF6FETX_p1_41936683336.json": "540a951efbaa16ed66cc6399d641a00ec4777e112c81d504ec1f81c1625565b5",
+    "subtitles/BV1cmaa6VEPR_p1_42251649424.json": "d4afde729c94e4070071b63b26b8277e6314fbacfe1a6459fad4ccee98223841",
+    "subtitles/BV1cmaa6VEPR_p2_42252239801.json": "0f9611b820628cb2a7768fec255b843b08989ac48096cc44e45e3b97ed700326",
+    "subtitles/BV1gpp46QEwe_p1_42591784930.json": "c7915d183904f3ea2f4e4db98dc0ea08986e885cdd599410901d3b0d3ac7b6a8",
+    "subtitles/BV1gpp46QEwe_p2_42593356669.json": "5f7b9609cc288275bd9fa26d27f44c22bdac474dfdb5191c9faefd23cb9f51ad",
+    "subtitles/BV1xRho6DEAQ_p1_42224124252.json": "caa2b6785be3e0358a0cb0665bc515b8784deb1eed53a18e22b28ec6f1c1eba4",
+    "subtitles/BV1xRho6DEAQ_p2_42226486217.json": "b2b002d43b7e50e9c3ff48a512c78af29efd77af26b13066773ae52cd301146e",
+    "subtitles/BV1xRho6DEAQ_p3_42227206884.json": "a65dfe2557af82eacde3ac934d776f3548ba7534b5a907ec87d8c803ec79b473",
+    "all_search_videos.json": "714ba7f97f49167f6c556fa55df20c046042918300ed8b6ef3626dbed32234bb",
+    "subtitle_inventory.json": "e78780c2ddcf7d7f03a59fa88982308716ba1c489ee3261e2dd8a84fe12347f8"
+  }
+}

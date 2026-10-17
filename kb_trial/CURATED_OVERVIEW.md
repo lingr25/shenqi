@@ -99,7 +99,7 @@
 | 含 `derived_text_repairs` 的条目 | 75 |
 | 隔离（`curation/curated_staging.json`） | 6 |
 | 黑话词表 `glossary.json` | 2100 条（`short_def` 76、`mechanic_def` 50） |
-| 逐字稿 / 清洗字幕 / 原始字幕 | 45 / 45 / 45 个分P文件 |
+| 逐字稿 / 清洗字幕 / 原始字幕 | 71 / 71 / 71 个分P文件 |
 | `curated_high_quality.json` sha256（LF） | `a50105a2c3ba3beb61db45fdc5df80b25e4b115b408154328f17306de00310bc` |
 | 同上（CRLF 工作区口径） | `dab7078c3daa0f0dd22a57fc84c6f68c1e2b46dbabf91248c1bfbc151609a8f9` |
 <!-- stats:end -->
