@@ -43,6 +43,7 @@ EP_ARC = "https://api.bilibili.com/x/space/wbi/arc/search"
 EP_MEDIALIST = "https://api.bilibili.com/x/v2/medialist/resource/list"
 EP_VIEW = "https://api.bilibili.com/x/web-interface/view"
 EP_PLAYER = "https://api.bilibili.com/x/player/wbi/v2"
+EP_PAGELIST = "https://api.bilibili.com/x/player/pagelist"
 
 MIXIN_TAB = [46, 47, 18, 2, 53, 8, 23, 32, 15, 50, 10, 31, 58, 3, 45, 35, 27, 43, 5, 49,
              33, 9, 42, 19, 29, 28, 14, 39, 12, 38, 41, 13, 37, 48, 7, 16, 24, 55, 40,
@@ -176,9 +177,13 @@ def existing_bvids(out):
 
 
 # ---------------------------------------------------------------- list
+STOP_AFTER_SEEN = 8  # 连续遇到这么多已覆盖 BV 才停（接口顺序与发布时间并非严格单调）
+
+
 def fetch_list(cli, stop_at=None):
-    """返回投稿记录（arc/search 原始字段，接口顺序）。stop_at: 碰到已覆盖 BV 即停（增量）。"""
-    out, pn = [], 1
+    """返回投稿记录（arc/search 原始字段，接口顺序）。
+    stop_at: 已覆盖 BV 集合；连续 STOP_AFTER_SEEN 个已覆盖即停（增量），已覆盖条目不返回。"""
+    out, pn, run = [], 1, 0
     try:
         while True:
             d = cli.get_json(EP_ARC, {"mid": MID, "ps": 50, "pn": pn, "keyword": KEYWORD,
@@ -187,7 +192,11 @@ def fetch_list(cli, stop_at=None):
             vl = (d.get("list") or {}).get("vlist") or []
             for v in vl:
                 if stop_at and v["bvid"] in stop_at:
-                    return out, "arc_search"
+                    run += 1
+                    if run >= STOP_AFTER_SEEN:
+                        return out, "arc_search"
+                    continue
+                run = 0
                 out.append(v)
             total = (d.get("page") or {}).get("count", 0)
             if not vl or pn * 50 >= total:
@@ -199,7 +208,7 @@ def fetch_list(cli, stop_at=None):
 
 
 def fetch_list_medialist(cli, stop_at=None, max_pages=10):
-    out, oid = [], ""
+    out, oid, run = [], "", 0
     for _ in range(max_pages):
         d = cli.get_json(EP_MEDIALIST, {"type": 1, "biz_id": MID, "ps": 20, "oid": oid,
                                         "otype": 2, "direction": "false", "desc": "true",
@@ -207,7 +216,11 @@ def fetch_list_medialist(cli, stop_at=None, max_pages=10):
         items = d.get("media_list") or []
         for m in items:
             if stop_at and m["bv_id"] in stop_at:
-                return out
+                run += 1
+                if run >= STOP_AFTER_SEEN:
+                    return out
+                continue
+            run = 0
             if not SERIES_RE.search(m.get("title", "")) and KEYWORD not in m.get("title", ""):
                 continue
             # 字段名对齐 arc/search 的常用子集
@@ -244,12 +257,26 @@ def cmd_list(cli, args):
 
 
 # ---------------------------------------------------------------- subtitles
-def fetch_video(cli, bvid):
-    d = cli.get_json(EP_VIEW, {"bvid": bvid})
-    return {"bvid": d["bvid"], "title": d["title"], "total_duration": d["duration"],
-            "pubdate": d["pubdate"],
-            "pages": [{"page": p["page"], "cid": p["cid"], "part": p["part"],
-                       "duration": p["duration"]} for p in d["pages"]]}
+def fetch_video(cli, bvid, meta=None):
+    """view 取标题/发布时间/分P；view 被 412 拦截时退回 pagelist + 列表元数据。"""
+    try:
+        d = cli.get_json(EP_VIEW, {"bvid": bvid})
+        return {"bvid": d["bvid"], "title": d["title"], "total_duration": d["duration"],
+                "pubdate": d["pubdate"],
+                "pages": [{"page": p["page"], "cid": p["cid"], "part": p["part"],
+                           "duration": p["duration"]} for p in d["pages"]]}
+    except RiskControl as e:
+        if callable(meta):
+            meta = meta()
+        if not meta:
+            raise
+        print(f"[warn] view 被拦截（{e}），改用 pagelist + 列表元数据", file=sys.stderr)
+    pl = cli.get_json(EP_PAGELIST, {"bvid": bvid}) or []
+    pages = [{"page": p["page"], "cid": p["cid"], "part": p["part"],
+              "duration": p["duration"]} for p in pl]
+    return {"bvid": bvid, "title": meta["title"],
+            "total_duration": sum(p["duration"] for p in pages),
+            "pubdate": meta["created"], "pages": pages}
 
 
 def fetch_page_subtitle(cli, bvid, cid):
@@ -267,21 +294,33 @@ def fetch_page_subtitle(cli, bvid, cid):
     return pick["lan"], body
 
 
+def lookup_meta(cli, bvid, cache):
+    """view 不可用时补标题/发布时间：先查已有清单，再翻一次完整投稿列表（结果缓存）。"""
+    for v in load_json(paths(ROOT)["search"], {}).get("videos", []):
+        cache.setdefault(v["bvid"], v)
+    if bvid not in cache and not cache.get("__listed__"):
+        cache["__listed__"] = True
+        for v in fetch_list(cli)[0]:
+            cache.setdefault(v["bvid"], v)
+    return cache.get(bvid)
+
+
 def cmd_subtitles(cli, args):
     if not cli.sessdata:
         print("[warn] 未设置 BILI_SESSDATA：ai-zh 字幕通常需要登录，结果可能全为无字幕", file=sys.stderr)
-    bvids = list(args.bvids)
+    bvids, meta = list(args.bvids), {}
     if args.new:
         res, _ = cmd_list(cli, argparse.Namespace(out=args.out, full=False, write=False,
                                                   dry_run=True))
         bvids += [b for b in res["new"] if b not in bvids]
+        meta = {v["bvid"]: v for v in res["videos"]}
     p = paths(args.out)
     inv = load_json(p["inventory"], None)
     if inv is None:
         inv = load_json(paths(ROOT)["inventory"], []) if args.out == ROOT else []
     written, entries = {}, []
     for bvid in bvids:
-        v = fetch_video(cli, bvid)
+        v = fetch_video(cli, bvid, meta.get(bvid) or (lambda b=bvid: lookup_meta(cli, b, meta)))
         for pg in v["pages"]:
             lan, body = fetch_page_subtitle(cli, bvid, pg["cid"])
             if body:
@@ -307,12 +346,19 @@ def cmd_subtitles(cli, args):
 
 
 # ---------------------------------------------------------------- main
+def _rel_out(path):
+    """仓库内写相对路径；仓库外只记 <external>，避免把本机路径写进记录。"""
+    rel = os.path.relpath(path, ROOT)
+    return "<external>" if rel.startswith("..") else rel.replace(os.sep, "/")
+
+
 def write_manifest(args, cli, result, written, started):
     now = _dt.datetime.now().astimezone()
     rec = {"tool": "pipeline/fetch_bili.py", "command": args.cmd,
            "started_at": started.isoformat(timespec="seconds"),
            "finished_at": now.isoformat(timespec="seconds"),
-           "args": {k: v for k, v in vars(args).items() if k not in ("func",)},
+           "args": {k: (_rel_out(v) if k == "out" else v)
+                    for k, v in vars(args).items()},
            "logged_in": bool(cli.sessdata), "endpoints": sorted(cli.endpoints),
            "requests": cli.requests,
            "result": {k: v for k, v in result.items() if k != "videos"},
