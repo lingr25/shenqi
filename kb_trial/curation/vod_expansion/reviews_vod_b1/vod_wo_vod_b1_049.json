@@ -1,0 +1,86 @@
+{
+  "workorder_id": "vod_wo_vod_b1_049",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:27:42+0900",
+  "source_sha256": "e31595913558eb81892be53a90171e426ff9d0f60fdc9bc3836527c662777888",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "黑影帧（第1帧）表现为怪物贴图加载出来的一坨黑。",
+      "subject": "黑影帧（第1帧）",
+      "condition": "敌人处于第1帧时",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "就是怪物的贴图加载出来了一坨黑",
+          "t_start": 3661,
+          "t_end": 3669
+        },
+        {
+          "text": "简单来讲就是0120是影子帧 一是黑影帧 二是索敌帧 也是移动帧",
+          "t_start": 3696,
+          "t_end": 3707
+        }
+      ],
+      "reason": "逐字稿将第1帧称为黑影帧，并说明其表现为怪物贴图加载出来的一坨黑；该定义可自包含地用于帧时序识别。",
+      "limitations": [
+        "该命题描述的是视觉显示状态，本身不直接给出战斗数值或索敌规则。",
+        "极少数具有出生状态机的单位是否完全一致未在本窗口展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "处于黑影帧（第1帧）的敌人尚未开始移动，也不能进行索敌（目标选取）。",
+      "subject": "处于黑影帧的敌人",
+      "condition": "敌人处于第1帧（黑影帧）时",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "这一帧敌人还没有开始移动 也不能够索敌",
+          "t_start": 3669,
+          "t_end": 3683
+        },
+        {
+          "text": "简单来讲就是0120是影子帧 一是黑影帧 二是索敌帧 也是移动帧",
+          "t_start": 3696,
+          "t_end": 3707
+        }
+      ],
+      "reason": "逐字稿在说明黑影帧时指出敌人还未开始移动且不能索敌，并在后续总结中将1对应为黑影帧、2对应为索敌帧/移动帧，支撑黑影帧不移动且不索敌的结论。",
+      "limitations": [
+        "此处“索敌”按上下文指敌方主动进行目标选取，不等同于“可以被玩家索敌”。",
+        "近战单位本身不会有索敌帧；极少数具有出生状态机的单位可能例外。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均围绕黑影帧的定义与行为展开，逐字稿有明确支撑且可改写为自包含机制陈述，无未闭合猜测或反问；c02上游evidence的t_end非下一行时间戳，回执中已按逐字稿行校正为3669-3683。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

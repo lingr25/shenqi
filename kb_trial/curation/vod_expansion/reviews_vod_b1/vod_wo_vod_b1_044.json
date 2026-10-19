@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b1_044",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:25:05+0900",
+  "source_sha256": "8d868757eb9ddfe2eec993307260330bc43a95f5b0e9369389096dc90eec59f6",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "敌人数据中的字段 is harmful and always count as killed 用于控制击杀计数与标记。",
+      "subject": "敌人数据中的字段 is harmful and always count as killed",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "击杀计数/状态效果",
+      "evidence": [
+        {
+          "text": "这些是用来控制 是用来tag方便做标记的 然后is harmful and always count as killed",
+          "t_start": 3302,
+          "t_end": 3314
+        },
+        {
+          "text": "这个是击杀技术",
+          "t_start": 3314,
+          "t_end": 3317
+        }
+      ],
+      "reason": "主播在讲解敌人数据字段时明确将该字段与tag标记及击杀计数关联；'击杀技术'为ASR误差，结合上下文'不计数'可还原为'击杀计数'。",
+      "limitations": [
+        "逐字稿未展示字段的完整拼写、取值与配置结构；'击杀技术'需人工确认为'击杀计数'。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 对敌人数据字段 is harmful and always count as killed 的作用给出明确可复用陈述，证据逐字对齐，未受画面依赖或未定论猜测影响，予以 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

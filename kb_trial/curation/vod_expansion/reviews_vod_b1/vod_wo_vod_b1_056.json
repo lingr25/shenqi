@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b1_056",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:28:41+0900",
+  "source_sha256": "8131a4b6a4a80b09a305d50787eafdd4c2c184883be5733da04972a630b3adce",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "处于出生状态机期间的敌方单位没有干员落地时那样的落地隐身与部署保护，因此可在出生状态机期间被索敌能力锁定。",
+      "subject": "处于出生状态机期间的敌方单位",
+      "condition": "敌方单位处于出生状态机期间",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "是没有和干员一样的落地隐的 没有部署保护 我们可以在他出生状态机的时候",
+          "t_start": 3891,
+          "t_end": 3904
+        },
+        {
+          "text": "用一些索敌能力去锁到他 但是的话在这段时间脚底下可以放雷 我不知道为什么",
+          "t_start": 3904,
+          "t_end": 3915
+        }
+      ],
+      "reason": "逐字稿明确把出生状态机单位与干员落地隐身/部署保护作对比，并直接说明可在其出生状态机期间用索敌能力锁定。上下文后续也以敌人可被索敌来讨论，支撑该机制为通用敌方出生状态规则。",
+      "limitations": [
+        "逐字稿未解释该现象底层原因；引文中的“落地隐”为原始转写，规范表述应为“落地隐身”。",
+        "本条只讨论出生状态机期间的索敌，不囊括同一段提到的脚底放雷现象。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选 c01 的逐字引文可在时间戳行中字符级匹配，主体/条件/范围可补全为通用敌方出生状态索敌规则，且不属于未闭合猜测；保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

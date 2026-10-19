@@ -1,0 +1,69 @@
+{
+  "workorder_id": "vod_wo_vod_b1_060",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T00:03:39+0900",
+  "source_sha256": "b85c7a3c4499cdb4431a0e28080352ff6c474966a8a96cb9891436b90d261b9e",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "干员召唤物重构体没有 start 动画；其部署后出现两帧不可选中，原因是路标形态与通常形态之间的实体类型切换，而非 start 动画。因此重构体是 start 动画规则的特例。",
+      "subject": "干员召唤物重构体（路标形态/通常形态）",
+      "condition": "部署后开始阶段（start/落地阶段）",
+      "scope": "entity_mechanism",
+      "category": "状态机/实体类型",
+      "evidence": [
+        {
+          "text": "不过在这里边有一个特例啊 干员的召唤物的特例",
+          "t_start": 4329,
+          "t_end": 4347
+        },
+        {
+          "text": "重构体应该是没有start动画的",
+          "t_start": 4347,
+          "t_end": 4352
+        },
+        {
+          "text": "但是重构体没有那个落地 重构体没有落地 但是的话他那个落地之后会有两帧都不可选中 那两帧不可选中 是那个类型 实体类型切换的问题",
+          "t_start": 4366,
+          "t_end": 4383
+        },
+        {
+          "text": "就是它有一个路标状态 然后有一个通常形态 但是实际上这个路标形态才是通常形态 这个通常形态才是一个需要被切过来的形态",
+          "t_start": 4383,
+          "t_end": 4397
+        },
+        {
+          "text": "证据就是说这个通常形态啊 是那个就是部署后两帧才会切过来的状态 给大家演示一下",
+          "t_start": 4397,
+          "t_end": 4427
+        }
+      ],
+      "reason": "上下文在讨论重生造物初生状态机/start 动画后，主播明确指出干员召唤物中存在特例，并具体指向重构体没有 start 动画；随后解释其部署后两帧不可选中来自路标状态与通常形态的实体类型切换。因此可规范为一条实体机制命题。",
+      "limitations": [
+        "主播对“没有 start 动画”使用了“应该”措辞，且窗口内未完成最终逐帧实机演示；具体帧数来源仍需实机复核。",
+        "命题范围限定为重构体，不能直接推广到所有干员召唤物。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 具备机制价值，但上游命题过于笼统，且证据时间戳与逐字稿实际行不一致。回执按 transcript_window 中实际行重新标注证据，并将主体限定为干员召唤物重构体，保留其“无 start 动画、部署后两帧不可选中源于形态/实体类型切换”的核心结论。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,110 @@
+{
+  "workorder_id": "vod_wo_vod_b1_050",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:27:14+0900",
+  "source_sha256": "4c1d0a3e8a69f0180cb6e97db90481336dc3106bf6ac48d0d27de79dc28f57e0",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "远程单位在第2帧开始移动，且第2帧是远程单位的第一个索敌帧。",
+      "subject": "远程单位的移动/索敌状态机",
+      "condition": "按影子帧0、黑影帧1、索敌/移动帧2的帧序计数；单位为远程单位",
+      "scope": "universal",
+      "category": "帧时序/索敌",
+      "evidence": [
+        {
+          "text": "这一帧 敌人开始移动 也是敌人的第一个索敌帧",
+          "t_start": 3669,
+          "t_end": 3683
+        },
+        {
+          "text": "如果是一个远程单位 这一帧的话 他就会索敌",
+          "t_start": 3683,
+          "t_end": 3696
+        },
+        {
+          "text": "二是索敌帧 也是移动帧",
+          "t_start": 3696,
+          "t_end": 3707
+        }
+      ],
+      "reason": "主播先说明该帧敌人开始移动，又说明若为远程单位该帧会索敌，并在总结中以“二是索敌帧 也是移动帧”确认第2帧；因此该命题有逐字稿支撑。",
+      "limitations": [
+        "第2帧的计数口径来自主播口述总结“0120是影子帧 一是黑影帧 二是索敌帧”，逐字稿该处存在ASR缺逗号问题。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "近战单位不会有索敌帧。",
+      "subject": "近战单位",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "帧时序/索敌",
+      "evidence": [
+        {
+          "text": "当然这是一个近战单位 他不会有索敌帧",
+          "t_start": 3669,
+          "t_end": 3683
+        }
+      ],
+      "reason": "主播明确说明当前近战单位不会有索敌帧；该结论用于区分近战与远程单位的索敌帧行为。",
+      "limitations": [
+        "逐字稿未穷举所有近战单位或出生状态机例外。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c03",
+      "claim": "索敌与移动状态机相绑定，因此远程单位的第一个移动帧就是第一个索敌帧。",
+      "subject": "远程单位的索敌与移动状态机",
+      "condition": "远程单位",
+      "scope": "universal",
+      "category": "帧时序/索敌",
+      "evidence": [
+        {
+          "text": "索敌和移动状态机相绑定 所以的话第一个移动帧就是第一个索敌帧",
+          "t_start": 3683,
+          "t_end": 3696
+        }
+      ],
+      "reason": "主播明确给出状态机绑定关系，并据此推出远程单位首个移动帧即首个索敌帧。",
+      "limitations": [
+        "未展开移动状态机内部帧级实现细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "三候选均通过四闸门。c01 与 c03 信息互补：c01 给出远程单位第2帧的具体帧序号结论，c03 给出索敌与移动状态机绑定的通用规则；c02 明确近战单位无索敌帧。所有引文均能在逐字稿窗口对应行中找到连续子串。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

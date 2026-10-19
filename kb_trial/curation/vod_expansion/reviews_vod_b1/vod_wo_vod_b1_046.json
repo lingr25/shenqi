@@ -1,0 +1,66 @@
+{
+  "workorder_id": "vod_wo_vod_b1_046",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:26:18+0900",
+  "source_sha256": "e6bf889319955e73d14286967d09380922154ec7c0d4d47c89aa88a5bb3b259a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "若已知我方攻击流程、敌方攻击流程、费用、攻击间隔与伤害结算规则，就可以计算双方之间的攻防交互。",
+      "subject": "攻防交互计算",
+      "condition": "已知我方攻击流程、敌方攻击流程、费用、攻击间隔与伤害结算规则",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "我方的攻击一指导我敌方的攻击流程 指导费用 制导间隔知道 然后的话就可以算他们之间的攻防交互 然后在知道伤害之间的结算",
+          "t_start": 3446,
+          "t_end": 3459
+        }
+      ],
+      "reason": "主播在讨论出怪帧时序后，明确总结计算攻防交互需知道双方攻击流程、费用、间隔及伤害结算；这是不依赖具体关卡画面的通用计算要素陈述。",
+      "limitations": [
+        "逐字稿中的“制导间隔”疑为 ASR 误写，回执按上下文规范为攻击间隔，具体术语仍需人工确认。",
+        "主播未逐项展开各要素定义，也未证明该列表穷尽所有攻防交互要素。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "仇恨结算确定到达时间与同帧多敌人目标选择，除此之外无其他内容",
+      "verdict": "pending",
+      "reason": "讨论具有机制价值，但“什么时间到哪”依赖前文或画面，“DV人”疑为 ASR 错误，无法从逐字稿确定具体主体与条件；需人工听审或实机验证后才能形成可复用命题。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "c01 为通用攻防交互计算要素总结，逐字稿可直接支撑，按规范术语改写后采纳；c02 涉及仇恨结算但关键参数和术语转写缺失，未达到自包含可复用标准，暂列 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

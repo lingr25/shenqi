@@ -1,0 +1,126 @@
+{
+  "workorder_id": "vod_wo_vod_b1_028",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:22:53+0900",
+  "source_sha256": "4bcfa9e1d363245719a032a449231790283906545f8bf123e872dc92ce6ad814",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "在维亚兵团五只同帧出生、初始编号顺序为 01234 的示例中，经 Mono 快排一次迭代会交换同值项，使编号顺序先变为 43210；随后左组 43 内部同值交换为 34，右组 10 内部同值交换为 01。",
+      "subject": "维亚兵团五只同帧出生怪的编号序列",
+      "condition": "五只怪全部同帧出生且初始编号顺序为 01234",
+      "scope": "instance",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "这一步排序的话用的是mono的快排",
+          "t_start": 2169,
+          "t_end": 2176
+        },
+        {
+          "text": "这个兵团里头只有五个怪 都是同时间的 都是同事间的 最开始的话他们的顺序是01234",
+          "t_start": 2242,
+          "t_end": 2271
+        },
+        {
+          "text": "三四这是完全没有经过排序的 然后经过一次排序的话 它会分成两边 并且会把同质项交换 它变成了什么呢 它变成了43210",
+          "t_start": 2277,
+          "t_end": 2296
+        },
+        {
+          "text": "其中的话四三还是一个未排序的量 一零也是一个未排序的量 四三被分成了左边一组 一零被分成了右边一组",
+          "t_start": 2296,
+          "t_end": 2307
+        },
+        {
+          "text": "这个四三又因为同值相交换变成三四",
+          "t_start": 2307,
+          "t_end": 2319
+        },
+        {
+          "text": "然后的话这个又因为同值相交换变成零一 最后他的排序结果就是340134201",
+          "t_start": 2319,
+          "t_end": 2332
+        }
+      ],
+      "reason": "上下文明确以该五元素同帧兵团实例说明 Mono 快排会交换同值项，逐字稿直接给出一次迭代后为 43210，以及左组 43、右组 10 的内部交换结果。",
+      "limitations": [
+        "逐字稿最后口述的完整序列 340134201 与五元素排列长度不符，疑为 ASR/口述合并错误，未作为规范结论纳入。",
+        "Mono 快排的具体枢轴选择与完整分区实现未在逐字稿中展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "在 Mono 快排的同帧排序示例中，若维亚兵团一开始只有 0123 四个同帧出生怪，则经历的顺序为先排成 3210，再排成 2301。",
+      "subject": "维亚兵团四只同帧出生怪的编号序列",
+      "condition": "初始只有 0123 四个同帧怪",
+      "scope": "instance",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "这一步排序的话用的是mono的快排",
+          "t_start": 2169,
+          "t_end": 2176
+        },
+        {
+          "text": "同样的道理 如果一开始只有0123的话 他经历的顺序就是先排成3210",
+          "t_start": 2332,
+          "t_end": 2342
+        },
+        {
+          "text": "然后再排成2301",
+          "t_start": 2342,
+          "t_end": 2348
+        }
+      ],
+      "reason": "主播以同一逻辑给出四元素同帧示例的两次排序结果，逐字稿直接支持 3210 与 2301。",
+      "limitations": [
+        "未交代中间迭代的枢轴与完整 Mono 快排参数；仅适用于该四元素同帧示例。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "维亚兵团五只同帧怪初始编号 01234 的实例状态",
+      "verdict": "reject",
+      "reason": "仅为实例初始状态观察，不是独立可复用机制陈述；其内容已被 c02 的 condition 吸收，保留会造成重复。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1"
+      ]
+    }
+  ],
+  "review_note": "工单为 Mono 快排交换同值项导致同帧乱序的讲义片段。c02、c03 有逐字稿直接支持且可复现为实例推演，保留为 instance；c01 仅为 c02 条件中的初始状态观察，非独立机制命题，排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b1_041",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:23:57+0900",
+  "source_sha256": "b4859bbc020fd74f2f936c76aa92d4364fdddea4da2976fb46ab781e625765ff",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在关卡配置数据中，参数 weight 表示的是概率权重（权重），而不是物理意义上的「重量」；涉及概率判定的玩法（如肉鸽）会用到权重这一字段。",
+      "subject": "关卡配置中的 weight 参数",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "术语/概率权重",
+      "evidence": [
+        {
+          "text": "然后的话这个是权重 这个weight不是重量 是权重 权重的话 像肉鸽里面就会有这个概率问题",
+          "t_start": 3110,
+          "t_end": 3140
+        }
+      ],
+      "reason": "主播在本段明确否定了「weight 即重量」的错误理解，直接给出正确结论「这个weight不是重量 是权重」，属于勘误性定论（Gate 4 允许 keep 的 correction 类型）；结论不依赖画面指涉，主语为具体字段名 weight，可复用为配置术语语义，故四项闸门均通过。",
+      "limitations": [
+        "本窗口仅口述字段语义，未展示 weight 所在的具体配置文件层级与取值方式（上游 value_norm 亦为空）。",
+        "「肉鸽里面就会有这个概率问题」的举例在本段未展开，主播随后转为查找肉鸽地图（3140s「哎我没复制成功吗」），未给出具体概率实例。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅有一个候选 c01，为术语勘误类定论（weight=权重而非重量），逐字引文与 3110s 行完全一致，可 keep；因主播随后未展开肉鸽实例，已将「肉鸽概率举例」降级写入 limitations。另需说明：本章节标题所指的弹幕问答「传送门消失是否释放下一波」（3082s「进传送门消失 好像会释放下一波 这个对吗 我没有测试过 不太确定这个有机会我测试一下吧」）属主播自述未测试的开放猜想，按 Gate 4 不应 keep，但上游未将其抽为候选，故不列入 excluded，仅在此备案，若后续要入库应判 pending 等待实机验证。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

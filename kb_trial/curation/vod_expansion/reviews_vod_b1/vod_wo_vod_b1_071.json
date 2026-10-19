@@ -1,0 +1,84 @@
+{
+  "workorder_id": "vod_wo_vod_b1_071",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T00:06:54+0900",
+  "source_sha256": "46a3fb55ea633a5a63d978ac58ed255544893609062d018371b9f2a05670d8ec",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "未许之地中被热气球整体浮空的低地地块飞起来后仍判定为低地。",
+      "subject": "未许之地中被热气球整体浮空并飞起的低地地块",
+      "condition": "地块被热气球整体浮空并飞起来",
+      "scope": "instance",
+      "category": "地块判定",
+      "evidence": [
+        {
+          "text": "即使他们那个被热气球给给给整浮空了 飞起来了也是dd嗯也是低地",
+          "t_start": 5048,
+          "t_end": 5061
+        },
+        {
+          "text": "这些和这些无论是否飞起来都是滴滴",
+          "t_start": 5110,
+          "t_end": 5125
+        }
+      ],
+      "reason": "逐字稿先在未许之地区分可部署地面为低地，随后明确即使被热气球整体浮空、飞起来也仍是低地；后文再次说这些无论是否飞起来都是低地。可支撑该地图实例中浮空不改变低地判定。",
+      "limitations": [
+        "仅覆盖未许之地中该类低地地块的实例表现，未证明所有地图、所有高低地地块浮空后的通用规则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在未许之地中，低地在视觉上比高地高两个头，也就是视觉上较矮的地块是高地、较高的地块是低地。",
+      "subject": "未许之地的低地与高地地块",
+      "condition": "在未许之地地图中",
+      "scope": "instance",
+      "category": "地块判定",
+      "evidence": [
+        {
+          "text": "这些低地比这些高地高两个头",
+          "t_start": 5149,
+          "t_end": 5162
+        },
+        {
+          "text": "高的是低地",
+          "t_start": 5077,
+          "t_end": 5082
+        }
+      ],
+      "reason": "逐字稿在未许之地讨论中先纠正高低地视觉辨识，随后明确“低地比这些高地高两个头”，并说“高的是低地”，可支撑该地图中低地视觉更高、高地视觉更矮的反直觉分布。",
+      "limitations": [
+        "“两个头”是主播的视觉描述，不是规范化高度数值；仅适用于未许之地地图的视觉/判定表现。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均来自同一场高低地机制讲解，引文可在逐字稿中字符级对齐；c01可规范为未许之地浮空地块的实例判定，c02为未许之地反直觉高低地视觉分布的勘误结论。均按 instance 收录，不扩展为全域通用规则。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

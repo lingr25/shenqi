@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b1_026",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:20:29+0900",
+  "source_sha256": "9e0c33e6797e63d80d00d66195c7e79927e40ce1f7d4a2abb574629ba2257f6c",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "鹰角在处理出怪时间排序时使用的是 Mono 的快速排序算法。",
+      "subject": "明日方舟的出怪时间排序系统",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "那个他的这个其中一个东西就是快速排序 鹰角对这个出怪这一部分的同 这部分的时间排序",
+          "t_start": 2142,
+          "t_end": 2157
+        },
+        {
+          "text": "这一步排序的话用的是mono的快排 然后的话mono的快排有一个问题",
+          "t_start": 2169,
+          "t_end": 2176
+        }
+      ],
+      "reason": "上下文在讨论出怪同帧顺序错乱后，明确总结出怪时间排序需要经过排序，并指出这一步使用的是 Mono 的快排；该命题为自包含机制陈述，不依赖画面指涉。",
+      "limitations": [
+        "逐字稿未展示具体源码或版本，具体实现细节需以源码验证；主播也提示更复杂情形需进一步查源码。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 给出了关于出怪时间排序底层算法的明确陈述，引文可在逐字稿中原样定位；按 lecture 语境保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,81 @@
+{
+  "workorder_id": "vod_wo_vod_b1_067",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T00:05:49+0900",
+  "source_sha256": "bda0c5c789e62e718decd0dd4a101b961307252307520a221d504895eebc459a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "日常图中实际能碰见的通行设置只有 all 和 fly only 两种取值。",
+      "subject": "日常图地块的通行设置",
+      "condition": "限日常图",
+      "scope": "universal",
+      "category": "地块属性",
+      "evidence": [
+        {
+          "text": "只说日堂长途可以碰见的只有两种 日长途可以碰见的只有all和fly only",
+          "t_start": 4777,
+          "t_end": 4788
+        }
+      ],
+      "reason": "主播在讲解地块通行设置时明确总结日常图只会出现 all 与 fly only 两种通行取值；上下文同时给出不可通行与可通行地块的对应关系，支撑该取值分布结论。",
+      "limitations": [
+        "仅覆盖主播口头限定的日常图，不覆盖合约、肉鸽或特殊活动等可能引入 walk only、全部不可等取值的场景。",
+        "逐字稿中『日堂长途』『日长途』应为 ASR 误写，回执按上下文规范为『日常图』。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "日常图中被标为不可通行的地块，其通行设置都是 fly only，飞机或飞行单位仍能飞进去；日常图中的可通行地块，其通行设置都是 all。",
+      "subject": "日常图地块的通行设置与可通行/不可通行语义",
+      "condition": "限日常图",
+      "scope": "universal",
+      "category": "地块属性",
+      "evidence": [
+        {
+          "text": "日常图所说的不可通行都是fly only",
+          "t_start": 4777,
+          "t_end": 4788
+        },
+        {
+          "text": "飞机能飞进去 日常图的可通行地块都是奥",
+          "t_start": 4788,
+          "t_end": 4802
+        }
+      ],
+      "reason": "主播逐条说明日常图的通行设置语义：不可通行对应 fly only，飞机可进入；可通行对应 all。逐字稿中的『奥』是 all 的 ASR 误写，claim 按其上下文规范。",
+      "limitations": [
+        "仅适用于主播限定的日常图。",
+        "『飞机能飞进去』在 claim 中规范为飞机或飞行单位可进入，未引入额外机制参数。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均能在逐字稿中找到连续原文支撑，主播明确给出日常图通行设置的取值分布及可通行/不可通行映射，未出现未闭合猜测或反问，故均裁定 keep。c01 与 c02 并非完全重复：c01 陈述取值集合，c02 陈述具体语义映射。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

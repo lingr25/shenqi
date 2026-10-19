@@ -1,0 +1,65 @@
+{
+  "workorder_id": "vod_wo_vod_b1_022",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:19:13+0900",
+  "source_sha256": "ec6e854ce468e7d4811c98182a7d601065149f7296b59034e7ad8eeb0b56d453",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "若某兵团前方没有任何路线演示和牌子预演，则该兵团不会产生由路线演示和牌子预演引入的额外出生延迟。",
+      "subject": "兵团出生时序",
+      "condition": "该兵团前方没有任何路线演示和牌子预演",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "这里这一个兵团前面没有任何的 就是路线演示和牌子 所以的话没有任何的延迟",
+          "t_start": 1824,
+          "t_end": 1840
+        }
+      ],
+      "reason": "上下文正在讨论路线演示和牌子对出兵延迟的影响；该句明确说明当前兵团前方没有路线演示和牌子，因此没有相应延迟。后文称该例典型，可佐证这是可复用的帧时序规则。",
+      "limitations": [
+        "此处“没有任何的延迟”应理解为没有由路线演示和牌子预演引入的额外延迟，不排除跨兵团转换本身仍存在基础帧差。",
+        "逐字稿未给出具体帧数参数。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "跨兵团时延迟分为兵团间三秒、兵团内部一秒",
+      "verdict": "reject",
+      "reason": "引文虽可逐字匹配，但“延三秒/内部延一秒”与同窗口后文“兵团之间的转换多一帧”矛盾；且整段上下文在按帧讨论出生时序，“秒”很可能为ASR或单位误写。不能作为“延迟三秒/一秒”的机制定论采纳，属于错误推导或关键参数不可信。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c02 在逐字稿中可自包含复述，且与“路线演示和牌子导致额外延迟”的上下文一致，采纳时将其限定为由路线/牌子引入的额外延迟。c01 的“三秒/一秒”参数与后文“多一帧”的帧级结论冲突，且单位存疑，不予采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

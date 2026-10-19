@@ -1,0 +1,65 @@
+{
+  "workorder_id": "vod_wo_vod_b1_057",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T00:03:01+0900",
+  "source_sha256": "8b6575abd861f5e397dc6bda960d5968e0adb6b22c40f2a644ded39fcb97a6ff",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "敌方单位在出生状态机期间尚未完成出生且没有部署保护，因此可被部分索敌能力锁定；若不能索敌，则龙门外环飞行兵无法在坠落前被浮空救下。",
+      "subject": "敌方单位",
+      "condition": "处于出生状态机期间，尚未完成出生且无部署保护",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "在出生状态机期间 他的出生状态机是没有 是没有和干员一样的落地隐的 没有部署保护 我们可以在他出生状态机的时候",
+          "t_start": 3891,
+          "t_end": 3904
+        },
+        {
+          "text": "用一些索敌能力去锁到他 但是的话在这段时间脚底下可以放雷 我不知道为什么",
+          "t_start": 3904,
+          "t_end": 3915
+        },
+        {
+          "text": "对敌人的是可以被索敌的 你想啊 如果敌人不能被索敌的话 我们怎么去浮空 那个就是龙门外环的那个飞行兵呢",
+          "t_start": 3970,
+          "t_end": 3983
+        },
+        {
+          "text": "他如果出生状态机不能索敌 过了出生状态机就要坠落 那我们怎么救他 是不是",
+          "t_start": 3983,
+          "t_end": 4033
+        }
+      ],
+      "reason": "主播明确说明敌方单位在出生状态机期间没有像干员一样的部署保护，并可使用索敌能力锁到；随后以龙门外环飞行兵若不能被索敌则无法被浮空救下作为反证。该说法有直接逐字稿支撑，属于可复用的索敌机制结论。",
+      "limitations": [
+        "逐字稿只说明可用“一些索敌能力”锁定，未穷举哪些索敌能力有效。",
+        "主播对出生状态机期间脚底可放雷的原因表示不清楚，该部分未纳入本命题。",
+        "后续提到 PTS 是否写明相关内容时存在不确定表述，但未直接否定本索敌结论。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅有一个候选 c01。逐字稿直接支持敌方单位在出生状态机期间可被部分索敌能力锁定，并以龙门外环飞行兵浮空救下作反证，满足自包含、逐字引文、三元约束与排除未定论假说四项闸门，裁定为 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b1_021",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:20:15+0900",
+  "source_sha256": "081159b3c3d9ee3aaa7a77576371e5a45485741dbd323ea98fd08de2426bd202",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在拔山望财波次中，鱼形敌人的出生帧为：首只在第3帧出生，之后每25帧出一只，末只在第103帧出；该末只鱼是该波次鱼序列的最后一个。",
+      "subject": "拔山望财波次中的鱼形敌人出生序列",
+      "condition": "在拔山望财波次中",
+      "scope": "instance",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "是这个就是三出生 然后二十五一只 然后103出 最后一个这个鱼是这一波刺的",
+          "t_start": 1797,
+          "t_end": 1811
+        },
+        {
+          "text": "这个鱼是这个鱼 是这一条这一个兵团的最后一个",
+          "t_start": 1811,
+          "t_end": 1824
+        }
+      ],
+      "reason": "引文逐字匹配。上下文正在核对拔山望财波次的出生帧，因此将口播“三出生/二十五一只/103出”规范为帧时序；末只鱼的定位由“最后一个这个鱼”及下一行“这一个兵团的最后一个”支撑。",
+      "limitations": [
+        "逐字稿在本句中未重复念出“帧”，单位“帧”是依据章节“帧数核对”及上下文帧讨论补全。",
+        "“鱼”为口播代称，具体敌人名称未在逐字稿中给出。",
+        "原候选的“该波最晚出生对象”强表述在上下文中有修正讨论，本条收敛为逐字稿可确认的“鱼序列末位在103帧出”。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 的出生序列有逐字稿支撑，按帧时序实例保留；对“最晚出生对象”的强断言作收敛处理，并保留单位与对象称谓限制说明。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

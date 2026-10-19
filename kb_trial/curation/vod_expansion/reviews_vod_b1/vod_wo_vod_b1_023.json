@@ -1,0 +1,76 @@
+{
+  "workorder_id": "vod_wo_vod_b1_023",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:19:03+0900",
+  "source_sha256": "c37aa19cc35259d95309b8f7138d35f5dc5d3e250021ed185c08d2e2980b4349",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "当出怪流程从一个兵团切换到下一个兵团时，兵团之间的转换会额外多出一帧。",
+      "subject": "出怪流程中兵团之间的转换",
+      "condition": "从一个兵团切换到下一个兵团时",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "这一个是比较典型的 可以证明说兵团之间的转换多一帧的",
+          "t_start": 1840,
+          "t_end": 1853
+        }
+      ],
+      "reason": "主播在跨兵团讨论段落中直接以典型案例证明“兵团之间的转换多一帧”，上下文也先说明鱼到下一个拔山之间开始跨兵团，故该命题有逐字稿直接支撑。",
+      "limitations": [
+        "未在本窗口展开额外帧与路线、牌子、延三秒/内部延一秒等延迟之间的精确定量关系。",
+        "未穷举所有兵团切换边界。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "敌方出怪的宏观顺序表现为“一帧一出怪”，并在此基础上叠加间隔制的计时规则。",
+      "subject": "出怪系统的宏观出怪顺序",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "然后的话就是这是宏观的顺序 宏观的顺序一帧一出怪 然后再加上那个就是间隔制的这个技术规则 计时规则",
+          "t_start": 1853,
+          "t_end": 1867
+        }
+      ],
+      "reason": "主播在总结出怪模型时明确给出宏观顺序为“一帧一出怪”，并补充还要叠加间隔制的计时规则；这是教学段落中的结论式陈述，而非猜测或反问。",
+      "limitations": [
+        "间隔制计时规则的具体参数未在本窗口给出。",
+        "上下文随后指出同时间多只怪如何排序仍未解决，本命题只覆盖宏观串行出怪与间隔计时叠加，不覆盖同时间排序规则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均为逐字稿直接支撑的帧时序结论。c01有“兵团之间的转换多一帧”的明确证词；c02有“宏观的顺序一帧一出怪”并叠加间隔制计时规则的总结。c02虽随后提到同时间排序仍未解决，但候选本身未宣称解决该问题，故保留并限制其边界。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

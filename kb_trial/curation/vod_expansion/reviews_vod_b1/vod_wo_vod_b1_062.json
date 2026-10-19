@@ -1,0 +1,84 @@
+{
+  "workorder_id": "vod_wo_vod_b1_062",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T00:04:17+0900",
+  "source_sha256": "af17bf5f0dd92f794ffde5fcb75eb007a3d5925ef6bbbfd126dd66dea572c873",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "单位刚部署时无法被选中，部署后经过两帧才可以被选中。",
+      "subject": "刚部署的单位",
+      "condition": "部署后的前两帧期间；两帧之后",
+      "scope": "universal",
+      "category": "帧时序/可选性",
+      "evidence": [
+        {
+          "text": "那这是没有办法选中的",
+          "t_start": 4481,
+          "t_end": 4485
+        },
+        {
+          "text": "到这里的话哎过了两帧他才可以选中 他在前两帧的状态是等同于什么呢",
+          "t_start": 4485,
+          "t_end": 4501
+        }
+      ],
+      "reason": "4481 行明确说该状态没有办法选中；4485 行紧接着说过了两帧才可以选中，并点出前两帧状态问题，可支撑部署后前两帧不可选中、两帧后可选中的帧时序结论。",
+      "limitations": [
+        "逐字稿未说明不同部署类型或召唤物是否完全一致，也未给出逻辑帧率下更细的边界定义。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "单位在部署后的前两帧处于路标形态，两帧之后切换成手动部署的通常形态。",
+      "subject": "刚部署的单位",
+      "condition": "部署后的前两帧期间；两帧之后",
+      "scope": "universal",
+      "category": "帧时序/形态切换",
+      "evidence": [
+        {
+          "text": "证据就是说这个通常形态啊 是那个就是部署后两帧才会切过来的状态 给大家演示一下",
+          "t_start": 4397,
+          "t_end": 4427
+        },
+        {
+          "text": "所以这个路标形态才是它那个最正常的形态 然后的话部署后两帧后 切换成这个手动部署的通常形态",
+          "t_start": 4514,
+          "t_end": 4527
+        }
+      ],
+      "reason": "4397 行先指出通常形态是部署后两帧才会切过来的状态；4514 行进一步给出路标形态与部署后两帧后切换成手动部署通常形态的对应关系，支撑形态切换结论。",
+      "limitations": [
+        "逐字稿未解释“路标形态”的完整判定细节，也未说明是否所有部署单位共享同一表现。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选分别描述部署后前两帧的可选性与形态切换，属于同一部署帧时序机制的两个互补侧面，非重复；逐字稿均有明确帧数与状态表述，故均采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,106 @@
+{
+  "workorder_id": "vod_wo_vod_b1_061",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T00:03:32+0900",
+  "source_sha256": "ad74f921883c1f0f5688ed9ea35a9a9e4ee705dcd61004cb9dc14271415561a3",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "重构体没有落地动画；在部署落地后，重构体会有一段持续两帧的不可选中状态。",
+      "subject": "重构体",
+      "condition": "重构体部署落地之后",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "但是重构体没有那个落地 重构体没有落地 但是的话他那个落地之后会有两帧都不可选中",
+          "t_start": 4366,
+          "t_end": 4383
+        }
+      ],
+      "reason": "逐字稿中主播明确说明重构体没有落地，并指出其落地之后会有两帧不可选中；该陈述具备主体、条件和可量化帧数，属于特定召唤物或单位的固有机制分支。",
+      "limitations": [
+        "未说明两帧不可选中与部署保护、状态机互斥之间的底层判定关系。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "重构体部署后的两帧不可选中由实体类型切换造成；实体类型切换到通常形态需要到部署后两帧才完成。",
+      "subject": "重构体",
+      "condition": "重构体部署后",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "那两帧不可选中 是那个类型 实体类型切换的问题",
+          "t_start": 4366,
+          "t_end": 4383
+        },
+        {
+          "text": "证据就是说这个通常形态啊 是那个就是部署后两帧才会切过来的状态",
+          "t_start": 4397,
+          "t_end": 4427
+        }
+      ],
+      "reason": "主播先指出两帧不可选中来自实体类型切换，随后把“部署后两帧才会切过来的状态”作为证据，说明切换到通常形态的耗时与不可选中帧数对应。",
+      "limitations": [
+        "未展开实体类型切换导致不可选中的具体判定顺序或代码字段。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "重构体存在“路标状态”与“通常形态”；实际上路标形态才是通常形态，而名为“通常形态”的形态是需要被切换过来的形态。",
+      "subject": "重构体",
+      "condition": "重构体存在时",
+      "scope": "entity_mechanism",
+      "category": "状态机/形态切换",
+      "evidence": [
+        {
+          "text": "就是它有一个路标状态 然后有一个通常形态 但是实际上这个路标形态才是通常形态 这个通常形态才是一个需要被切过来的形态",
+          "t_start": 4383,
+          "t_end": 4397
+        }
+      ],
+      "reason": "逐字稿直接描述重构体内部两个形态的命名与切换关系，属于特定单位的机制状态说明，非纯闲聊或开放疑问。",
+      "limitations": [
+        "该结论依赖主播对内部状态命名的口头描述，未给出字段名或源码级证据。",
+        "“路标状态/路标形态”的术语可能受 ASR 影响，需结合后续人工听审或实机验证。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "三个候选均围绕重构体的落地、形态切换与不可选中帧展开。逐字稿中相关明确表述实际位于 4366s、4383s、4397s 附近，而非上游标注的 766-797s；引文本身可在该段逐字稿中逐字匹配。三条命题均具备明确主体、条件与机制价值，未命中未定论猜测或纯实战观察排除条件，故全部 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

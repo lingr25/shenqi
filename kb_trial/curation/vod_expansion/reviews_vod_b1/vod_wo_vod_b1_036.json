@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b1_036",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:23:11+0900",
+  "source_sha256": "5e2c1dba1d98dafa1795cefec72da92bfcc2540f618e4cd9e612756181688556",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "兵团中出怪时间最大的最后一个小队若因危机合约 tag 点选而被隐藏，会提前结束该兵团，从而导致下一个兵团提前出怪。",
+      "subject": "兵团中出怪时间最大的最后一个小队",
+      "condition": "该小队因危机合约 tag 点选而被隐藏",
+      "scope": "universal",
+      "category": "出怪排程",
+      "evidence": [
+        {
+          "text": "一个兵团中的最后一最后一个小队 一个兵团中的最后一个小队 如果因为tag点选被隐藏了",
+          "t_start": 2808,
+          "t_end": 2823
+        },
+        {
+          "text": "那会让下一个兵团提前出 会提前结束这一个兵团 提前让下一个兵团出 如果在合约中的话 就是测出怪时间 哪怕你是粗测 也尽可能点全怪",
+          "t_start": 2826,
+          "t_end": 2843
+        }
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false,
+      "reason": "逐字稿中主播先提出该问题，随后给出明确结论：最后一个/时间最大的小队因 tag 被隐藏会提前结束当前兵团，并让下一个兵团提前出怪。该结论属于出怪排程的通用机制陈述，有连续逐字稿证据支撑，且不是未闭合猜测。",
+      "limitations": [
+        "未给出具体 tag 名称、地图或可复现实例参数。",
+        "逐字稿未展开底层排序与占位实现细节。"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅有一个候选命题 c01。该命题可自包含表达兵团出怪排程机制，引文与逐字稿字符级匹配，主体、条件、作用域明确，且主播已给出结论而非停留在开放疑问，故裁定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

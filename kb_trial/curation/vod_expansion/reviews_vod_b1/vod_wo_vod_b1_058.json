@@ -1,0 +1,67 @@
+{
+  "workorder_id": "vod_wo_vod_b1_058",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T00:04:40+0900",
+  "source_sha256": "6857a37ec1a9ed7e326dc2fe1a924c63ac816ff84d3ba8fc8816f1bc22ff4845",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "影子出现时即已进入可索敌状态，可以被锁定为攻击目标并被击杀。",
+      "subject": "影子",
+      "condition": "影子出现时",
+      "scope": "entity_mechanism",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "啊这你看他们是可以锁刀 可以杀的 他这开的太晚 就是影子出现的时候就已经可以开了",
+          "t_start": 4052,
+          "t_end": 4078
+        }
+      ],
+      "reason": "逐字稿中主播在演示时指出相关单位“可以锁刀 可以杀的”，并紧接着提到“影子出现的时候”，可支撑影子出现时已可被索敌并击杀的机制结论。",
+      "limitations": [
+        "单次实测演示，未重复验证",
+        "“锁刀”为ASR文本，按语义理解为锁定/索敌",
+        "未在逐字稿中交代影子所属关卡或完整实体名称"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "影子出现时技能就已经可以开启；演示中技能开启太晚，并非影子不可索敌或不可开技能。",
+      "verdict": "pending",
+      "reason": "逐字稿有“他这开的太晚 就是影子出现的时候就已经可以开了”的表述，具备机制价值；但“技能”的持有者/开启主体在转写中未明确，无法确认是影子自身技能还是其他干员技能，需人工听审或实机验证后再定为自包含命题。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "c01 在逐字稿中有直接演示与明确表述支撑，可保留为影子实体机制的索敌结论，但受单次演示限制；c02 涉及技能开启时点，因技能主体在文本中不明确，判 pending，不纳入 claims。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

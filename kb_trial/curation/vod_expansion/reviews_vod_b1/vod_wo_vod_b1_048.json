@@ -1,0 +1,108 @@
+{
+  "workorder_id": "vod_wo_vod_b1_048",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:26:47+0900",
+  "source_sha256": "b0c12bb62a52cd2d9c416e5265ec429fb2e74d22e6c28e5204d004a0af383f8a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "处于影子帧（出生第0帧）的敌方单位，其贴图尚未加载，但影子已经出现。",
+      "subject": "处于影子帧（出生第0帧）的敌方单位",
+      "condition": "敌方单位出生后的第0帧",
+      "scope": "universal",
+      "category": "帧时序/状态效果",
+      "evidence": [
+        {
+          "text": "这帧是影子帧 贴图没有加载出来 影子出来了",
+          "t_start": 3629,
+          "t_end": 3646
+        }
+      ],
+      "reason": "主播明确将出生第0帧命名为影子帧，并描述该帧贴图未加载而影子已出现，是对出生帧渲染状态的可复用机制陈述。",
+      "limitations": [
+        "贴图与影子属客户端渲染表现，不同设备或延迟下是否一致未说明",
+        "未说明影子帧的精确持续时间与跨帧边界"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "处于影子帧（出生第0帧）的敌方单位可被索敌。",
+      "subject": "处于影子帧（出生第0帧）的敌方单位",
+      "condition": "敌方单位出生后的第0帧",
+      "scope": "universal",
+      "category": "帧时序/索敌系统",
+      "evidence": [
+        {
+          "text": "这一帧敌人可以被索敌",
+          "t_start": 3629,
+          "t_end": 3646
+        }
+      ],
+      "reason": "同一段逐字稿在说明影子帧时明确说该帧敌人可以被索敌，并与后续黑影帧、索敌帧相区分。",
+      "limitations": [
+        "逐字稿未明确“可被索敌”是仅指我方索敌系统选中，还是包含其他索敌判定",
+        "未展开近战与远程单位在该帧的索敌差异"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "处于影子帧（出生第0帧）的敌方单位不存在近地悬浮等部分Buff，因此可以用攻击地面的攻击能力打中。",
+      "subject": "处于影子帧（出生第0帧）的敌方单位",
+      "condition": "敌方单位出生后的第0帧，且其具有近地悬浮等依赖该帧挂载的Buff",
+      "scope": "universal",
+      "category": "帧时序/状态效果",
+      "evidence": [
+        {
+          "text": "同时的话也有部分Buff是不存在的 比如说近地悬浮",
+          "t_start": 3629,
+          "t_end": 3646
+        },
+        {
+          "text": "在这一帧是不会有近地悬浮的 你可以去用攻击地面的攻击能力去打到他",
+          "t_start": 3646,
+          "t_end": 3661
+        }
+      ],
+      "reason": "主播先说明影子帧下部分Buff不存在并举例近地悬浮，随后明确该帧不会近地悬浮且可用攻击地面的攻击能力命中，构成可复用帧时序结论。",
+      "limitations": [
+        "仅举例近地悬浮，其他缺失Buff未穷举",
+        "未说明是否所有攻击地面的手段均适用，还是仅限特定命中判定"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "三条候选均能在逐字稿窗口中找到连续逐字引文，属于出生帧时序机制；未发现未闭合猜想或反问。c01描述影子帧渲染特征，c02说明影子帧可被索敌，c03说明影子帧缺失近地悬浮等Buff并导致地面攻击可命中。三者互不重复，均予采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

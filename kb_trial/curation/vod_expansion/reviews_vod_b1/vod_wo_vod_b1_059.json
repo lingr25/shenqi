@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b1_059",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:29:49+0900",
+  "source_sha256": "1dec7cfa38c5493cf1f88eacfb3048a45e613323b63e43d517fef302f844463c",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "敌人出生状态机结束后不会进入 default 状态，正常情况下会立刻切入 move 状态。",
+      "subject": "敌人出生状态机",
+      "condition": "敌人出生状态机结束后，且处于正常流程中",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "不是结束后怎么会进入default状态呢 结束后就应该自动进入这个move状态了",
+          "t_start": 4164,
+          "t_end": 4173
+        },
+        {
+          "text": "哦正常情况下会立刻切入move 那没事了",
+          "t_start": 4173,
+          "t_end": 4189
+        }
+      ],
+      "reason": "上下文正在讨论敌人出生状态机与不可选中的 PRTS 勘误。主播先质疑“结束后进入 default 状态”的说法，随后以“正常情况下会立刻切入move”确认状态切换结论；该肯定陈述可支撑敌人出生状态机结束后正常切入 move，而非进入 default。",
+      "limitations": [
+        "逐字稿未给出 default/move 状态的具体状态机参数或 PRTS 原文。",
+        "主播后文仍提到不同敌人是否存在差异不确定，本命题仅覆盖其明确说出的正常情况下状态切换。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 对敌人出生状态机结束后的状态切换给出明确修正结论，证据引文可在逐字稿中逐字匹配；最终支撑句为肯定陈述，未仅依赖反问或未闭合猜测，故保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

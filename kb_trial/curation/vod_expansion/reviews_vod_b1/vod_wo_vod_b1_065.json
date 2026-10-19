@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b1_065",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T00:04:52+0900",
+  "source_sha256": "6f0f44e11f50f32fbf04792521dfc94b2bd0036f35bdab01f632c63ba8113e8a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "forbidden 地块不可通行、不可部署，并且属于高地。",
+      "subject": "forbidden 地块",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "地块属性",
+      "evidence": [
+        {
+          "text": "forbidden是最典型的什么东西都没有的地块 就是他不可通行",
+          "t_start": 4752,
+          "t_end": 4762
+        },
+        {
+          "text": "不可部署 属于高地这样的东西",
+          "t_start": 4762,
+          "t_end": 4777
+        }
+      ],
+      "reason": "主播在地块分类与解包属性讲解中明确陈述 forbidden 地块不可通行，并紧接着说明其不可部署、属于高地。该内容不是猜测、反问或纯实况描述，具备可复用机制结论价值。",
+      "limitations": [
+        "该结论针对解包地块属性中的 forbidden 类型；未讨论具体地图中与其他通行/部署设置组合时的例外。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 的机制结论有逐字稿明确陈述支撑；上游 evidence 的时间戳标注有误，但引文文本可在对应讲解行中字符级匹配，回执已修正为 4752/4762 与 4762/4777。无其他候选需要排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}
