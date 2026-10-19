@@ -1,0 +1,65 @@
+{
+  "workorder_id": "vod_wo_vod_b1_085",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:51:35+0900",
+  "source_sha256": "38c6ac41bb6e5fa636bdda7637d57c28d05c754ce6f91cf02d557b89cd7d9bc7",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "帕拉斯开启技能后，站在远程位地块上的苇草获得帕拉斯提供的增益，阻挡数变为二。",
+      "subject": "帕拉斯技能对苇草施加的增益",
+      "condition": "帕拉斯开启技能后；苇草位于远程位地块上",
+      "scope": "entity_mechanism",
+      "category": "实测观察/技能特例",
+      "evidence": [
+        {
+          "text": "苇草是一个远程干员 然后苇草这个地面说的是什么 是dd",
+          "t_start": 5528,
+          "t_end": 5536
+        },
+        {
+          "text": "我开了帕拉斯的技能之后 要给尾草加怪",
+          "t_start": 5580,
+          "t_end": 5591
+        },
+        {
+          "text": "苇草的阻挡变成二 这是帕拉斯的拐",
+          "t_start": 5591,
+          "t_end": 5607
+        },
+        {
+          "text": "也是一个只能部署远程位的地块 对吧 帕拉斯能判定到 他 就证明了 帕拉斯是在判定这个地块是否是高低地",
+          "t_start": 5607,
+          "t_end": 5621
+        }
+      ],
+      "reason": "逐字稿中主播明确演示：开启帕拉斯技能后给苇草加拐，并观察到苇草阻挡变为二；同段还说明相关地块为只能部署远程位的地块，且帕拉斯能判定到该目标。因此该实例支持帕拉斯技能可对远程位地块上的苇草提供增益并影响其阻挡数。",
+      "limitations": [
+        "未说明帕拉斯具体技能名与增益完整属性",
+        "仅演示苇草阻挡数变为 2，未给出基础阻挡数或是否固定增加 1",
+        "逐字稿中 ASR 将苇草识别为尾草，已按上下文修正"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "仅一个候选 c01。该候选有逐字稿直接演示、明确作用对象与可复现条件，四个硬性闸门均通过，保留为 entity_mechanism；未发现重复项。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

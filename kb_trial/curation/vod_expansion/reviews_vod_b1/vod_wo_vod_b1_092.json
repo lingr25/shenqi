@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b1_092",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:51:43+0900",
+  "source_sha256": "6fbec1e5f3a8ab8d5a581c4df00b04b3e45a24bf460999e5cab19ff789629c43",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "处于恐惧状态的单位在移动选点时，只能选择距离五格以内的地块作为移动目标。",
+      "subject": "受恐惧效果影响的单位",
+      "condition": "单位处于恐惧状态并进入移动选点流程时",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "问题是他只能选择五格以内的距离去走",
+          "t_start": 5807,
+          "t_end": 5820
+        },
+        {
+          "text": "这是恐惧的规则 恐惧只能选择五格以内的去走",
+          "t_start": 5820,
+          "t_end": 5830
+        }
+      ],
+      "reason": "上下文正在讨论恐惧机制的选点规则，主播明确以“这是恐惧的规则”给出恐惧只能选择五格以内距离的结论，并非猜测或反问；该陈述可作为恐惧寻路机制的通用规则。",
+      "limitations": [
+        "逐字稿未说明五格距离的精确起算点、边界是否包含第五格，以及是否仅针对目标格选择。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 为机制性结论，逐字稿有明确规则表述与距离参数支撑，且可改写为自包含命题；未发现未定论假说或画面依赖问题，故裁定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

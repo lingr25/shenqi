@@ -1,0 +1,74 @@
+{
+  "workorder_id": "vod_wo_vod_b1_081",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:49:27+0900",
+  "source_sha256": "44ed0dfcba394ca5aac9d88b34c52dc53883bb67a983b99075f58632b3eaf0f5",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "坑地块在通用习惯写法下一般默认可通行。",
+      "subject": "坑地块",
+      "condition": "通用习惯写法/非特例地图设置下",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "所以坑一般来讲都是可通行的",
+          "t_start": 5420,
+          "t_end": 5428
+        }
+      ],
+      "reason": "主播明确给出一般论：坑通常是可通行地块，并前文用穿刺手能主动进坑、坑属于高距离可通行地块等说明支撑；因此可作为通用默认规则采纳。",
+      "limitations": [
+        "命题含“一般来讲”，存在地图文件单独改写属性的特例；未穷举所有例外。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "3-3 关卡的坑是不可通行地块。",
+      "subject": "3-3 关卡的坑地块",
+      "condition": "在 3-3 关卡地图中",
+      "scope": "instance",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "虽然三杠三的坑是不可通行的",
+          "t_start": 5420,
+          "t_end": 5428
+        }
+      ],
+      "reason": "主播在同一段中明确将 3-3 的坑作为一般规则的反例说明，属于特定关卡地块属性实例，可保留为关卡级例外。",
+      "limitations": [
+        "仅确认 3-3 关卡中的坑为不可通行；未解释该例外成因，也未说明其他关卡是否存在同类例外。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均有逐字稿直接支撑。c01 为坑地块默认可通行的通用结论；c02 为 3-3 关卡的地图级例外，scope 记为 instance。无重复，无未闭合猜想。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

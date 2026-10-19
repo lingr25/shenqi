@@ -1,0 +1,75 @@
+{
+  "workorder_id": "vod_wo_vod_b1_078",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:48:55+0900",
+  "source_sha256": "bb0871fae0cce39480ff056859a239a0c8471aac740243113ca688643c898c50",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "坑地块通常需设置为可通行，被阻挡/被拦住的穿刺手才能自行往坑里走；若坑被设为不可通行地块，穿刺手只能待在原地不动。",
+      "subject": "坑地块的可通行属性",
+      "condition": "穿刺手被阻挡/被拦住并试图自行进入坑时",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "就是拦住敌我的时候 强行往额拦住那个蓝门 红门的时候强行能往里走的",
+          "t_start": 5375,
+          "t_end": 5390
+        },
+        {
+          "text": "坑必须是可通行地块 穿刺手才能自己往坑里走 坑如果是不可通行地块的话 穿刺手只能待在原地不动",
+          "t_start": 5394,
+          "t_end": 5404
+        },
+        {
+          "text": "所以坑一般来讲都是可通行的 虽然三杠三的坑是不可通行的",
+          "t_start": 5420,
+          "t_end": 5428
+        }
+      ],
+      "reason": "上下文在介绍可通行设置时，明确以穿刺手进坑为例说明坑必须是可通行地块，敌人才能自行往坑里走；若坑不可通行，穿刺手只能原地不动。后文补充坑一般为可通行，并指出三杠三存在例外。",
+      "limitations": [
+        "这是一般设计规则/习惯，不是所有关卡的绝对约束：逐字稿后文指出三杠三的坑不可通行，且地块属性可由地图文件单独改写。",
+        "逐字稿以穿刺手为例，是否完全推广到所有地面敌人需另行验证。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "生于黑夜关卡中有三个会自行进入坑的穿刺手。",
+      "verdict": "reject",
+      "reason": "属于具体关卡实例观察，仅说明某图有三名会进坑的穿刺手；可作为 c01 的例证，但无独立可复用机制价值，未过 Gate 4。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01 是可通行设置讲解中的明确寻路结论，逐字稿有直接支撑，保留并补充一般规则与例外限制。c02 只是具体关卡内的实例观察，机制价值依附于 c01，不单独入库。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

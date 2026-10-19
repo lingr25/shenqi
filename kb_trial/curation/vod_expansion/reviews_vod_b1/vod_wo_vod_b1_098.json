@@ -1,0 +1,71 @@
+{
+  "workorder_id": "vod_wo_vod_b1_098",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free",
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:54:30+0900",
+  "source_sha256": "55eac7f04143d6bcd3a1580f71aae80d15adbafaf44b9daf1fae0d9974d85c4b",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "PRTS map 关卡页的 JSON 文件中记录了大量关卡数据，查看该文件可据此判断大部分图内设置。",
+      "subject": "PRTS map 关卡页的 JSON 文件",
+      "condition": "查看 PRTS map 关卡页的 JSON 文件时",
+      "scope": "universal",
+      "category": "数据来源/工具方法",
+      "evidence": [
+        {
+          "text": "反正在这些那个JSON文件里头记录的 这些数据是有很多",
+          "t_start": 6070,
+          "t_end": 6084
+        },
+        {
+          "text": "大部分的图内的一些设置了",
+          "t_start": 6084,
+          "t_end": 6093
+        }
+      ],
+      "reason": "逐字稿明确说明 PRTS map 相关 JSON 文件里记录的数据很多，且可据此知道大部分图内设置；属于可复用的数据来源/工具方法。",
+      "limitations": [
+        "仅概括 JSON 数据丰富，未列出具体字段名或完整解析步骤。",
+        "该结论针对 PRTS map 外部工具，不直接等同于游戏底层帧时序机制。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "在PRTS map的关卡页按F键，即可直接查看该关卡的JSON文件，无需自己解包。",
+      "verdict": "pending",
+      "reason": "逐字稿仅出现“按F我不会解包”及“用那个map直接去扒文件”，按键可能为 ASR 误识别（疑似 F12 等），且未闭合“按该键后直接呈现 JSON 文件”的操作结果；关键操作参数与验证链缺失，需人工听审或实机复核。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "c02 有逐字稿直接支撑，保留为 PRTS map JSON 数据来源的工具方法；c01 因关键按键/操作结果未在转写中闭合，判 pending，不做 keep。",
+  "repair_rounds": 1,
+  "unresolved_problems_auto_demoted": []
+}

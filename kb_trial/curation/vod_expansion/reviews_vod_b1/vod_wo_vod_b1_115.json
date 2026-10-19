@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b1_115",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:56:50+0900",
+  "source_sha256": "aab58d02552e98d737533094b8fc49a0e6bf36eb7a8a97def0add70a04e6e56a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在《明日方舟》的地图边界判定中，地图外只能定义为无地块的地方；即使对于大地图，有地块的区域也不能判定为地图外。",
+      "subject": "地图边界判定中的地图外定义",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "地图边界判定",
+      "evidence": [
+        {
+          "text": "不是即使是对于大地图的话 也地地块地图外也只能定义为地图外 也只能定义为无地块的地方 就是那种有地块的地图外",
+          "t_start": 7144,
+          "t_end": 7158
+        },
+        {
+          "text": "有地块的地图外不能定义为地图外",
+          "t_start": 7158,
+          "t_end": 7171
+        }
+      ],
+      "reason": "主播在讨论地图边界判定时明确给出结论：大地图同样以是否存在地块来界定地图外，有地块的区域不能被归为地图外；后一句再次确认。该结论属于对常见直觉判断的纠正，可作为地图边界判定规则。",
+      "limitations": [
+        "逐字稿只给出结论，未展开地图数据或碰撞检测层面的实现细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "仅一条候选，证据在上下文窗口内可逐字对齐；命题为对地图外定义的明确纠正性结论，未依赖画面指涉，保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

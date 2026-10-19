@@ -1,0 +1,89 @@
+{
+  "workorder_id": "vod_wo_vod_b1_104",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:55:09+0900",
+  "source_sha256": "a846f248cdc27a7fa91a944ecb0f8366cb021755606fe58c4ff54620693c0921",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "对于领主职业，攻击被判定为「视为远程攻击」时，攻击力降低至80%。",
+      "subject": "领主职业干员的远程攻击",
+      "condition": "攻击被判定为「视为远程攻击」",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "那这个视为远程攻击的话 攻击力就要降低至80%",
+          "t_start": 6386,
+          "t_end": 6417
+        },
+        {
+          "text": "然后领主来了一个那么远的范围 哎呀那这么远当然得有点代价啦 这个攻击力就降低一下对吧",
+          "t_start": 6441,
+          "t_end": 6455
+        }
+      ],
+      "reason": "逐字稿直接给出「视为远程攻击的话 攻击力就要降低至80%」，后文又以领主职业的超远范围说明这种攻击力降低是领主模板的代价，因此可改写为限定在领主职业范围内的自包含机制命题。",
+      "limitations": [
+        "未在逐字稿中给出所有适用干员名单或精确触发边界；80%倍率来自领主特性描述，需以游戏内特性文本为准。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "对于领主职业，技能或攻击带有「视为近战攻击」或「视为近距离攻击」描述时，该攻击不承受远程攻击的80%攻击力倍率，攻击力不降低。",
+      "subject": "领主职业中带有「视为近战攻击」/「视为近距离攻击」描述的技能或攻击",
+      "condition": "技能或攻击被描述为「视为近战攻击」或「视为近距离攻击」",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "说法就是不吃那80%的倍率啊 他就是给你一个比较好理解的呃 不吃那80倍率的理由",
+          "t_start": 6357,
+          "t_end": 6386
+        },
+        {
+          "text": "他说视为近战攻击的话 就告诉你啊 我这个不减不减那个攻击力",
+          "t_start": 6386,
+          "t_end": 6417
+        },
+        {
+          "text": "然后领主来了一个那么远的范围 哎呀那这么远当然得有点代价啦 这个攻击力就降低一下对吧",
+          "t_start": 6441,
+          "t_end": 6455
+        }
+      ],
+      "reason": "逐字稿明确把「视为近距离攻击」解释为不吃80%倍率，并把「视为近战攻击」解释为攻击力不减；结合后文领主超远范围需付出攻击力代价的语境，可将命题限定在领主职业内作为可复用机制。",
+      "limitations": [
+        "未在逐字稿中穷举所有带该描述的技能，也未说明「近战攻击」与「近距离攻击」是否存在实现差异；主播关于「给玩家理由」的说法属设计意图解释，未纳入核心机制命题。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选共同描述领主职业的远程攻击80%攻击力惩罚与「视为近战/近距离攻击」免罚关系；均可改写为自包含机制命题。c01补入领主职业条件，c02剔除设计意图部分并补入领主语境。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

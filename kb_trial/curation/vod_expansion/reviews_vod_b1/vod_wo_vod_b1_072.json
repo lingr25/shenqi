@@ -1,0 +1,98 @@
+{
+  "workorder_id": "vod_wo_vod_b1_072",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T00:07:35+0900",
+  "source_sha256": "24020a3b8ec761b8523d8ebcd7abae8d2d4528ffce8b3b716f25528a47b0a178",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "早期版本中，部署在高地/高台上的单位会失去阻挡能力，即使自身拥有阻挡数也不能阻挡地面单位；该规则仅适用于早期版本。",
+      "subject": "早期版本中部署在高地/高台上的单位",
+      "condition": "处于早期版本且单位部署于高地/高台",
+      "scope": "universal",
+      "category": "阻挡/高低地",
+      "evidence": [
+        {
+          "text": "部署在高地上的单位会失去阻挡能力 即使有阻挡数 他也会失去阻挡能力 但是这个也只能在早期成立",
+          "t_start": 5209,
+          "t_end": 5219
+        },
+        {
+          "text": "因为早期的话我们说的是那个高台上的干员 不能阻挡地面上的单位",
+          "t_start": 5219,
+          "t_end": 5235
+        }
+      ],
+      "reason": "主播明确说明早期版本中高地单位即使有阻挡数也会失去阻挡能力，并补充早期高台干员不能阻挡地面单位；随后用“只能在早期成立”限定版本边界，构成可复用的历史机制定论。",
+      "limitations": [
+        "未给出具体版本号或版本区间",
+        "“高地/高台”的精确判定边界在本段未展开"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "当前版本中，处于起飞状态的单位即使位于高地上，也不受高地单位失去阻挡能力规则的限制。",
+      "subject": "处于起飞状态的单位",
+      "condition": "当前版本且单位处于起飞状态",
+      "scope": "universal",
+      "category": "阻挡/高低地",
+      "evidence": [
+        {
+          "text": "现在的话又有那个起飞 起飞的话 他即使在高地上也不管那个破事",
+          "t_start": 5219,
+          "t_end": 5235
+        }
+      ],
+      "reason": "主播指出当前存在“起飞”机制，单位起飞后即使在高地上也不会受前述高地失去阻挡能力规则影响，可视为该历史规则的现行例外。",
+      "limitations": [
+        "“起飞”状态的完整定义与触发条件未在本段展开",
+        "是否适用于所有起飞来源未交代"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c03",
+      "topic": "早期地图设置会采用dd，使高地上的单位可以阻挡其他单位",
+      "verdict": "pending",
+      "reason": "引文出现未解释的“dd”，无法确认其是低地、地图参数还是ASR残片；关键参数缺失导致命题无法形成稳定的自包含机制陈述，需人工听审或后续实机/地图数据验证后再定。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "c01 与 c02 均有逐字稿直接支撑，且可分别表述为早期历史规则与现行起飞例外，故 keep。c03 引文完整但“dd”含义不明，作为地图设置参数无法规范化，暂判 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

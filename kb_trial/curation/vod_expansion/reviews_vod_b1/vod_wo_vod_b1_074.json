@@ -1,0 +1,81 @@
+{
+  "workorder_id": "vod_wo_vod_b1_074",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T00:08:08+0900",
+  "source_sha256": "da059d48fb4e03e0dd01e17373db447c48657887f6fb5136ee1bbfcf50f9f180",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "生息演算和生路中的假高台通过双重手段阻止干员阻挡：一方面将地块设置为高地，另一方面在阻挡数与阻挡能力上施加强制规定和改写。",
+      "subject": "生息演算、生路中的假高台",
+      "condition": "地块为生息演算或生路中的假高台时",
+      "scope": "instance",
+      "category": "阻挡/高低地",
+      "evidence": [
+        {
+          "text": "其实给那个阻挡加了很多重保险 一方面他设置了高地 另一方面的话 他实际上在阻挡数也有一个强制的",
+          "t_start": 5294,
+          "t_end": 5302
+        },
+        {
+          "text": "就是阻挡能力上也有强制的规定和改写 即使他不设置为高地的话 他其实也可以让干员不能阻挡 总之他这里就是一个N重保险",
+          "t_start": 5302,
+          "t_end": 5314
+        }
+      ],
+      "reason": "逐字稿明确说假高台给阻挡加了很多重保险，并列举两环：设置高地，以及在阻挡数/阻挡能力上强制规定和改写。该结论属于对特定地形机制的解释，不依赖画面指涉。",
+      "limitations": [
+        "未给出阻挡数或阻挡能力改写的具体实现字段、数值或判定时序。",
+        "未说明除生息演算和生路外其他模式或地形是否同样适用。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "即使生息演算和生路中的假高台不被设置为高地，假高台仍能使干员无法阻挡。",
+      "subject": "生息演算、生路中的假高台",
+      "condition": "假高台未设置为高地",
+      "scope": "instance",
+      "category": "阻挡/高低地",
+      "evidence": [
+        {
+          "text": "就是阻挡能力上也有强制的规定和改写 即使他不设置为高地的话 他其实也可以让干员不能阻挡 总之他这里就是一个N重保险",
+          "t_start": 5302,
+          "t_end": 5314
+        }
+      ],
+      "reason": "逐字稿给出明确反事实表述：即使不设置为高地，假高台也可以通过阻挡能力上的强制规定和改写使干员不能阻挡。该命题是c01所提‘多重保险’中可独立成立的阻挡抑制分支。",
+      "limitations": [
+        "未说明具体改写的是阻挡数、阻挡能力还是二者共同作用。",
+        "未说明该效果是否对所有干员、召唤物或特殊单位均一致适用。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "逐字稿窗口集中说明生息演算和生路假高台的阻挡多重保险：既涉及地块高地设置，也涉及阻挡数/阻挡能力的强制规定和改写。c01为总述性结论，c02为其中‘不设高地仍不可阻挡’的独立分支结论；两条均有连续逐字引文支撑，未发现未闭合猜测或纯画面依赖残句。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

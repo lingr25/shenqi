@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b1_086",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:50:16+0900",
+  "source_sha256": "285b7bfde1b66b06753cc5c1cf8811c9fba61b979f91a99eba61267469e11fc9",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "一个属性是否算作“部署属性”，取决于该属性本身是否属于部署类，而与干员条件描述中是否出现“部署”字样无关。",
+      "subject": "部署属性的分类判定",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "部署设置",
+      "evidence": [
+        {
+          "text": "是否是部署属性 并不由这个干员的条件是否包含着部署而决定",
+          "t_start": 5634,
+          "t_end": 5645
+        },
+        {
+          "text": "只由这个东西是否是部署决定",
+          "t_start": 5645,
+          "t_end": 5653
+        }
+      ],
+      "reason": "上下文在讨论帕拉斯、迷迭香等干员的条件描述中出现“近战位”“部署”等字样时，主播明确区分了“属性本身是否属于部署”和“干员条件描述中是否包含部署”，并给出判定部署属性应看属性本身、而非看文案字样的结论。",
+      "limitations": [
+        "本片段未逐一列举哪些具体属性属于“部署属性”，该术语的完整外延仍需依赖知识库既有分类体系。",
+        "逐字稿存在 ASR 错字与断句噪声，已按上下文补全为自包含陈述。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 属于对“部署属性”判定标准的一般性机制陈述，非猜测或开放疑问；逐字稿可拆分为两条连续证据支撑。已修正上游跨行拼接引文为逐行原样引文，并将命题改写为自包含表述后保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

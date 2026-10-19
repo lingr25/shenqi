@@ -1,0 +1,84 @@
+{
+  "workorder_id": "vod_wo_vod_b1_093",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:52:09+0900",
+  "source_sha256": "73a86dd822ae6347e9b95995554a46eebe181978d7c071bc0a0e1979d2ed06b7",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在空想花庭中，地块名为 TALLI 的地块不被恐惧机制识别为坑，因此受恐惧影响的敌人可以进入该地块并掉入其中。",
+      "subject": "空想花庭中地块名为 TALLI 的地块",
+      "condition": "该地块 tile key 为 TALLI，且未被恐惧目标格筛选识别为坑",
+      "scope": "instance",
+      "category": "地块类型",
+      "evidence": [
+        {
+          "text": "他是这个地块名是这个TALLI 它不被识别为后 所以就可以进去",
+          "t_start": 5851,
+          "t_end": 5860
+        },
+        {
+          "text": "地块它不叫坑 它叫临时布道 恐惧不会开除的 所以恐惧是可以让敌人掉进去的",
+          "t_start": 5860,
+          "t_end": 5869
+        }
+      ],
+      "reason": "上下文先说明恐惧目标格会排除坑，随后指出空想花庭该地块名为 TALLI、不被识别为坑，并补充它不叫坑而叫临时布道，故恐惧可使敌人进入或掉入。",
+      "limitations": [
+        "TALLI 与“临时布道”的对应关系依赖 ASR 转写，需人工核对；未给出该关卡全部地块类型表。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "恐惧机制在选择目标格时会排除类型为坑的地块，以避免恐惧将单位带入坑。",
+      "subject": "恐惧机制的目标格选择",
+      "condition": "候选目标地块类型为坑",
+      "scope": "universal",
+      "category": "地块类型",
+      "evidence": [
+        {
+          "text": "而为了避免恐惧入坑 自然也有必要将坑从恐惧的目标格中排除",
+          "t_start": 5830,
+          "t_end": 5837
+        },
+        {
+          "text": "终点空格会排除类型为坑与蓝门的地块",
+          "t_start": 5700,
+          "t_end": 5709
+        }
+      ],
+      "reason": "逐字稿明确称终点格会排除类型为坑与蓝门的地块，后文再次总结为避免恐惧入坑需把坑从恐惧目标格排除，属于恐惧机制的目标格筛选规则。",
+      "limitations": [
+        "本条只讨论坑的排除；蓝门排除及高距离反例未在本条展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均有逐字稿直接支撑：c01 为空想花庭 TALLI 地块不被识别为坑的实例例外，c02 为恐惧目标格排除坑的通用规则；二者互补，非重复，均通过四闸门。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

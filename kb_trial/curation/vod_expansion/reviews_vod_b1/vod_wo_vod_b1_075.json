@@ -1,0 +1,74 @@
+{
+  "workorder_id": "vod_wo_vod_b1_075",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:49:17+0900",
+  "source_sha256": "dc1ed5cad3dfbf21a10f6ed2a3e7fad4dce059abf24fbfed34346cf99210f5d5",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "娜斯提的高台和假高台都能将所在格的地块属性改写为高地。",
+      "subject": "娜斯提的高台、假高台",
+      "condition": "当某格由娜斯提的高台或生息演算/生路中的假高台占据时",
+      "scope": "entity_mechanism",
+      "category": "高低地/电流反弹",
+      "evidence": [
+        {
+          "text": "能够将这块属性改写为高地 娜斯提高台和这种假高台都是一样的",
+          "t_start": 5314,
+          "t_end": 5325
+        }
+      ],
+      "reason": "逐字稿明确将娜斯提高台与假高台并列，并说明其能够把所在格属性改写为高地，属于特定实体/地块机制的定论。",
+      "limitations": [
+        "假高台在逐字稿中特指生息演算和生路中的该类地块；不同假高台实现细节未展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "电流在高台上会反弹。",
+      "subject": "电流",
+      "condition": "电流作用于高台地块时",
+      "scope": "universal",
+      "category": "高低地/电流反弹",
+      "evidence": [
+        {
+          "text": "电流也会在高台上反弹",
+          "t_start": 5314,
+          "t_end": 5325
+        }
+      ],
+      "reason": "逐字稿直接陈述电流在高台上反弹，并与后文电流在地图边缘反弹并列，属于可复用的反弹规则陈述。",
+      "limitations": [
+        "逐字稿未明确该电流的来源/技能归属，也未说明反弹方向、距离及判定细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均有逐字稿直引支撑：c01 说明娜斯提高台/假高台改写地块为高地；c02 说明电流在高台反弹。未发现未定论假说、开放疑问或画面依赖残句，均判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

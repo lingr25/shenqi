@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b1_095",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:52:43+0900",
+  "source_sha256": "fb07de56b6179803e1bd34d0d9450c62d2fd14b167f41a178bba80af95dd5157",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "恐惧状态造成的位移判定不会排除敌人当前所在的本格，因此恐惧产生的位移可以让敌人掉进坑里。",
+      "subject": "恐惧状态造成的位移判定",
+      "condition": "目标地块为坑时",
+      "scope": "universal",
+      "category": "位移/状态效果",
+      "evidence": [
+        {
+          "text": "恐惧不会开除的 所以恐惧是可以让敌人掉进去的",
+          "t_start": 5860,
+          "t_end": 5869
+        },
+        {
+          "text": "悟道恐惧不会排除的 所以恐惧是可以让敌人掉进去的",
+          "t_start": 5929,
+          "t_end": 5935
+        },
+        {
+          "text": "诱导能拉出来 也是因为他把本格的路径给排除了",
+          "t_start": 5916,
+          "t_end": 5929
+        }
+      ],
+      "reason": "逐字稿中主播先说明诱导会排除本格路径，随后明确对比并给出结论：恐惧不会排除该格，因此恐惧可以使敌人掉进去。该候选属于当场给出的机制定论，而非猜测或开放性疑问。",
+      "limitations": [
+        "逐字稿未给出恐惧位移判定的完整公式、权重与阈值。",
+        "是否适用于所有被系统标记为坑或不可通行的地块，仍需结合具体地块属性验证。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 有逐字稿中的直接结论支撑，且引文均可在对应行内字符级匹配。该命题讨论恐惧位移是否排除本格，并由此推出恐惧可以让敌人掉进坑里，具备机制知识价值，保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

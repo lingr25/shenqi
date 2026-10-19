@@ -1,0 +1,74 @@
+{
+  "workorder_id": "vod_wo_vod_b1_109",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:55:39+0900",
+  "source_sha256": "4edf77b468375ee0caa514860966f009c276e51220a923ce1b9f50830387a255",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "红门右侧这一列地块是正经地块，而非地图外/废除地图；其地块类型为dd。",
+      "subject": "红门右侧一列地块",
+      "condition": "在讨论的特定关卡地图中，该列地块位于红门右侧",
+      "scope": "instance",
+      "category": "地块属性",
+      "evidence": [
+        {
+          "text": "右边这一列是正经的地块啊 红门右边这一列 这不是废除地图 它是正经的地块 而且是dd",
+          "t_start": 6770,
+          "t_end": 6783
+        }
+      ],
+      "reason": "逐字稿中主播明确纠正了“右边这一列不是地块”的误解，并给出结论：红门右边这一列是正经地块，不是废除地图，且地块类型为dd。该结论具有机制辨析价值，且不依赖未验证猜测。",
+      "limitations": [
+        "未说明所涉具体关卡名称与红门坐标；dd 为逐字稿原始术语，未在逐字稿中展开其引擎定义。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "红门右侧这一串地块没有碰撞箱。",
+      "subject": "红门右侧一列/一串地块",
+      "condition": "在讨论的特定关卡地图中，该串地块位于红门右侧",
+      "scope": "instance",
+      "category": "地块属性",
+      "evidence": [
+        {
+          "text": "而且这一串还没有碰撞箱呢",
+          "t_start": 6783,
+          "t_end": 6797
+        }
+      ],
+      "reason": "逐字稿中主播紧接前文地块属性讨论，明确陈述红门右侧这一串地块没有碰撞箱。该句为明确结论，可作为地块碰撞属性的候选机制命题。",
+      "limitations": [
+        "未说明“碰撞箱”的具体判定对象与引擎定义；未说明该结论是否适用于其他红门或类似地块。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均来自同一段地图外概念辨析，逐字稿中有明确结论且引文可字符级对齐。c01 说明红门右侧一列为正经dd地块而非地图外；c02 补充该串地块无碰撞箱。两者均依赖具体地图布局，因此 scope 定为 instance。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

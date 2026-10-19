@@ -1,0 +1,64 @@
+{
+  "workorder_id": "vod_wo_vod_b1_084",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:50:00+0900",
+  "source_sha256": "b4752fcd70a23bc6fc15537d0bf28b39c2c87ad607f9d435a3fd9c16a73deb16",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "帕拉斯技能文案中的「近战位」判定的是身前一格地块是否为dd（高低地）且该格是否有我方干员部署，而不是判定干员本身是否为近战干员，也不是判定该地块能否部署高台干员或干员能否部署在高台上。",
+      "subject": "帕拉斯技能文案中的「近战位」判定",
+      "condition": "帕拉斯技能生效且对其身前一格进行判定时",
+      "scope": "entity_mechanism",
+      "category": "技能特例/部署设置",
+      "evidence": [
+        {
+          "text": "我们直观和习惯的是不属属性 而类似帕拉斯和尾草将 这里的话就是我要提到的帕拉斯 帕拉斯这个技能的正确描述是身前一格 如果为dd",
+          "t_start": 5471,
+          "t_end": 5484
+        },
+        {
+          "text": "这个近站位应该翻译为dd 并部署我方干员时 使其获得以下增益",
+          "t_start": 5484,
+          "t_end": 5494
+        },
+        {
+          "text": "也不不是地块 能不能部署高台干员 也不是这个干员是否能部署在高台上 而是身前一格 是否是是否是滴滴 且是否有人部署",
+          "t_start": 5550,
+          "t_end": 5566
+        },
+        {
+          "text": "帕拉斯能判定到 他 就证明了 帕拉斯是在判定这个地块是否是高低地",
+          "t_start": 5607,
+          "t_end": 5621
+        }
+      ],
+      "reason": "逐字稿中主播明确把帕拉斯技能里的「近战位」解释/更正为 dd（高低地），并说明条件是身前一格是否为 dd 且是否有人部署；同时排除「干员自身是否近战」「地块能否部署高台干员」「干员能否部署在高台上」几种误读，故构成可复用机制定论。",
+      "limitations": [
+        "仅依据直播口述与演示，未展示游戏数据表/代码字段名；dd 与「高低地」的正式字段名需以数据表为准。",
+        "未验证其他使用「近战位」文案的技能是否遵循同一翻译/判定逻辑。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅一个候选 c01，四个硬性闸门均通过：命题已改写为自包含陈述，引文与逐字稿窗口字符级一致，主体/条件/范围明确，且基于主播给出的明确结论而非未闭合猜测。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

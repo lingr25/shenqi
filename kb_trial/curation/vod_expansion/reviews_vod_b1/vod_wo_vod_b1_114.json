@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b1_114",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:57:06+0900",
+  "source_sha256": "b369911a585ddb358f1e96a06d3d87fa74b12711a643a7176afd1cfbfe0887af",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在火蓝之心地图中，干员可以部署在地图边界格上。",
+      "subject": "干员部署判定",
+      "condition": "在火蓝之心地图中，目标地块为地图边界格",
+      "scope": "instance",
+      "category": "地图边界判定/地块布局",
+      "evidence": [
+        {
+          "text": "你像火蓝之心的话 你可以部署在这个边界",
+          "t_start": 7082,
+          "t_end": 7094
+        }
+      ],
+      "reason": "主播在讨论地图边界与地图外概念时，明确以火蓝之心为例说明可以部署在边界，支撑该特定地图存在边界可部署格的结论。",
+      "limitations": [
+        "未指明火蓝之心的具体关卡代号或边界格坐标，不能推广为所有火蓝之心地图或所有地图的通用规则。",
+        "“这个边界”的精确所指依赖当时讨论，结合上下文理解为地图边界/外圈。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅 c01 一个候选。引文可在逐字稿 [7082s] 行中字符级匹配；主播以火蓝之心为例说明地图边界格可部署，属于特定地图实例，保留为 instance，并注明未具体到关卡坐标与边界定义的限制。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

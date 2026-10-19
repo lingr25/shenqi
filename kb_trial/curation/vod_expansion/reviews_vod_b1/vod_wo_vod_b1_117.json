@@ -1,0 +1,71 @@
+{
+  "workorder_id": "vod_wo_vod_b1_117",
+  "stem": "BV1cmaa6VEPR_p2_42252239801",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:56:56+0900",
+  "source_sha256": "68629bcd2d2e87f2e105b17022d049f9ec7de59ba0a3f929177c46e4b5420cc8",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "明日方舟的地块只有地面和高台两种类型。",
+      "subject": "明日方舟的地块类型系统",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "地块类型",
+      "evidence": [
+        {
+          "text": "那明日方舟就两种",
+          "t_start": 19,
+          "t_end": 33
+        },
+        {
+          "text": "地面和高台两种类型的地块嘛",
+          "t_start": 19,
+          "t_end": 33
+        }
+      ],
+      "reason": "该段为讲师对“地图边缘视为高台”误读的澄清，并明确归纳明日方舟地块类型为地面和高台两类；后续逐字稿还补充坑、不可部署地块仍算地面，装饰性高台仍算高台，支撑本分类结论。",
+      "limitations": [
+        "本命题针对地图内可讨论的地块分类；地图外空洞或边界外无地块区域不等同于一种地块类型。",
+        "未展开讨论所有特殊关卡机制是否引入额外判定分支。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "明日方舟中，一个地块若不是地面类型，则只能是高台类型。",
+      "verdict": "reject",
+      "reason": "该候选与 c01 表达同一地块分类结论，属于 c01 的等价推导；按细则保留表述更完整的 c01，判 DUP。另其上游引文“那就不是地面 那就只能是高哎”跨 [19s] 与 [33s] 两行拼接，不满足 G2 字符级连续子串要求。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "DUP",
+        "G2"
+      ]
+    }
+  ],
+  "review_note": "c01 为讲师明确给出的地块类型总括结论，逐字稿内有直接且连续的原句支撑，判 keep。c02 与 c01 重复且其引文跨行拼接不合格，判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

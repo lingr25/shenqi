@@ -1,0 +1,81 @@
+{
+  "workorder_id": "vod_wo_vod_b1_083",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:50:11+0900",
+  "source_sha256": "5bd13db8d7ab50af09ee2925367113f6f5d10d1a27bc9964cfed6f05be2d60f5",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "地块存在近战位、远程位、全部位、不可部署四种部署类型；干员存在近战位、远程位、全部位三种部署类型；全部位类型可以同时通过近战判定和远程判定；干员部署类型与地块部署类型匹配时即可部署。",
+      "subject": "部署设置中的地块部署类型与干员部署类型匹配判定",
+      "condition": "干员部署类型与地块部署类型匹配",
+      "scope": "universal",
+      "category": "部署设置",
+      "evidence": [
+        {
+          "text": "部署设置这个属性涉及到与干员的交互 因此相对复杂 地块有近战位 远程类",
+          "t_start": 5453,
+          "t_end": 5459
+        },
+        {
+          "text": "全部位不可部署四种类型 而干员有近战位 远程位全部为三种类型 全部位 这种类型可以同时通过近战和远程的判定 干员和地块类型匹配",
+          "t_start": 5459,
+          "t_end": 5465
+        }
+      ],
+      "reason": "上下文在讲解部署设置属性时明确列出地块四种部署类型与干员三种部署类型，并说明全部位可同时通过近战和远程判定，干员与地块类型匹配即可部署；属于可复用的底层部署规则。",
+      "limitations": [
+        "逐字稿中“远程类”“全部为”等为转写误差，claim按语义规范化为“远程位”“全部位”。",
+        "未展开四类地块与三类干员两两匹配的完整真值表。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "假高台的做法是将地块的近战位改写成远程位，从而可在该地块上部署干员。",
+      "subject": "假高台的部署设置改写",
+      "condition": "将该地块的近战位改写成远程位",
+      "scope": "universal",
+      "category": "部署设置",
+      "evidence": [
+        {
+          "text": "而甲高台就是把近战位改写成远程位 来部署干员 这里容易引起混乱的一个原因在于 它容易和高低地属性混淆",
+          "t_start": 5465,
+          "t_end": 5471
+        }
+      ],
+      "reason": "同一段在说明部署类型匹配后，直接给出假高台的做法：将近战位改写成远程位以部署干员，并提醒其容易与高低地属性混淆；可作为部署设置中的地图改写规则。",
+      "limitations": [
+        "逐字稿作“甲高台”，按语境应为“假高台”。",
+        "未说明具体地图文件字段或改写操作细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均围绕部署设置属性，有明确逐字稿支撑。c01为地块/干员部署类型匹配的总规则，c02为假高台改写方式；均通过自包含、逐字引文、三元约束与排除未定论假说四闸门，且不存在重复候选。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

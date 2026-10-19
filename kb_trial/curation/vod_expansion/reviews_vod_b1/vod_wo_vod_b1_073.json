@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b1_073",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T00:07:37+0900",
+  "source_sha256": "0706509a0907bd86e73461828eb7862cdd89161d4f06d86bbe2ffcbb2a7c550a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "部署在娜斯提高台上的干员无法阻挡到任何单位；即使阻挡半径理论上相同，无论是否卡三帧阻挡，都不会改变这一结果。",
+      "subject": "部署在娜斯提高台上的干员",
+      "condition": "干员放置在娜斯提高台上；无论是否尝试卡三帧阻挡且阻挡半径理论上相同",
+      "scope": "instance",
+      "category": "阻挡/帧时序",
+      "evidence": [
+        {
+          "text": "无论你是否卡三帧阻挡",
+          "t_start": 5253,
+          "t_end": 5264
+        },
+        {
+          "text": "放在娜斯提高台上的干员 都不可能去阻挡到 都不可能去比高台更早阻挡 阻挡到一个单位 哪怕他们的阻挡半径理论上来讲是相同的对吧",
+          "t_start": 5264,
+          "t_end": 5278
+        }
+      ],
+      "reason": "上下文正在说明高台与阻挡判定，主播在5264行明确称放在娜斯提高台上的干员不可能阻挡到单位，并在前一行补充无论是否卡三帧阻挡；因此该机制结论有逐字稿直接支撑。",
+      "limitations": [
+        "逐字稿未展开空中单位或特殊可通行设置是否例外。",
+        "‘比高台更早阻挡’表述较含糊，回执保留核心结论为娜斯提高台干员无法阻挡。",
+        "未给出实机帧表或更多参数细节，仅为主播讲授结论。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅一个候选 c01。逐字稿直接给出娜斯提高台上的干员无法阻挡单位，并说明卡三帧阻挡与阻挡半径相同均不改变结果；未依赖画面，也未属于未闭合猜想，四闸通过，予以保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b1_122",
+  "stem": "BV1cmaa6VEPR_p2_42252239801",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:11:58+0900",
+  "source_sha256": "d332a6bd5e6b9ee7307c5d69adcb7b57b869fa5a0a404d6a8f9e46f9264519e3",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "地面可通行属性与高低地属性是两套彼此独立的属性，不能混为一谈。",
+      "subject": "地面可通行属性与高低地属性",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "地块分类",
+      "evidence": [
+        {
+          "text": "地面可通型和高低地是两种东西",
+          "t_start": 92,
+          "t_end": 98
+        },
+        {
+          "text": "隐形敌刺擦的是地面可通行属性",
+          "t_start": 68,
+          "t_end": 85
+        },
+        {
+          "text": "而不是高台和地面",
+          "t_start": 85,
+          "t_end": 92
+        }
+      ],
+      "reason": "主播在勘误语境中明确指出，擦地类判定依据的是地面可通行属性而非高台/地面分类，并总结为‘地面可通型和高低地是两种东西’，可作为可复用机制结论采纳。",
+      "limitations": [
+        "直播未给出正式属性字段名；‘可通型’为转写表述，按语义规范为‘可通行属性’。",
+        "未讨论版本变动或所有擦地类机制的完整适用边界。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅一条候选，命题在逐字稿中有明确原文支撑，属于对错误理解的勘误结论；主谓宾完整且不依赖画面，判为 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

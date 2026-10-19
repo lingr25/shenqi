@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b1_119",
+  "stem": "BV1cmaa6VEPR_p2_42252239801",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:57:38+0900",
+  "source_sha256": "f92969726a2fe3ae2fe6cef5132f15a5efeddaff70a9519d8156ca439c0ef84f",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "不可部署地块和坑在地形分类上都属于地面。",
+      "subject": "不可部署地块与坑",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "地块分类",
+      "evidence": [
+        {
+          "text": "不可部署地块也是地面 坑也是地面",
+          "t_start": 55,
+          "t_end": 68
+        }
+      ],
+      "reason": "主播在讲解地块分类时明确断言不可部署地块与坑均属于地面；该句为直接结论陈述，并非猜测、反问或纯实战现象，可支撑一条通用地形分类命题。",
+      "limitations": [
+        "逐字稿未展开不可部署地块的完整枚举与例外边界。",
+        "同段后续讨论区分了地形高低与可通行属性；本条仅记录地形分类归属，不涵盖隐形敌刺擦地的判定维度。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅有一条候选 c01。逐字稿原句明确支持「不可部署地块也是地面 坑也是地面」，引文可字符级对齐，主体、条件与适用范围可判定，且不涉及未定论假说。后续关于可通行属性的讨论并不否定该分类命题，而是说明其与隐形敌刺擦地判定不是同一维度，因此保留该命题。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

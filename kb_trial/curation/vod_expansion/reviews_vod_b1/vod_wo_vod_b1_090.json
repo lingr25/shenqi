@@ -1,0 +1,84 @@
+{
+  "workorder_id": "vod_wo_vod_b1_090",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:51:22+0900",
+  "source_sha256": "32677c8d73d4305400f1d818f1283e560a309c4f1accce9f1e48f53f84fa23b3",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在恐惧机制选择移动目标格时，「不能进门」指单位不能以蓝门地块作为寻路终点，而不是不能经过蓝门进入门内。",
+      "subject": "恐惧机制的目标格排除规则",
+      "condition": "单位受恐惧影响并选择移动目标格时",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "恐惧识别的就是那个暗的地块 而不是路径 终点空格会排除类型为坑与蓝门的地块 排除蓝门是为了防止八个方向随机移动进门",
+          "t_start": 5700,
+          "t_end": 5709
+        },
+        {
+          "text": "这里说的不能进门 说的不是不能进去 而是不能以蓝门作为终点",
+          "t_start": 5709,
+          "t_end": 5723
+        }
+      ],
+      "reason": "上下文在讲解恐惧目标格排除坑与蓝门；引句明确勘误「不能进门」：不是不能进入或路过，而是不能以蓝门作为寻路终点。",
+      "limitations": [
+        "未给出具体实机参数或所有寻路例外情况。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "高距离恐惧能把单位赶进门，是因为蓝门对面存在可被标记的格子时，单位可以前往该格并路过蓝门进门；并非因为蓝门本身可作为寻路终点。",
+      "subject": "高距离恐惧作用下的单位寻路",
+      "condition": "蓝门对面存在可被标记的格子，且恐惧作用距离足够高",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "那高距离的可恐惧可以把人赶进门里 不是因为那个能进门 是因为可以标记",
+          "t_start": 5709,
+          "t_end": 5723
+        },
+        {
+          "text": "但是实际上 如果蓝门对面是有有可以被标记的格子的话 那么他就可以去往那个格子走 从而路过蓝门 然后进门",
+          "t_start": 5723,
+          "t_end": 5734
+        }
+      ],
+      "reason": "逐字稿先否定蓝门可作终点的解释，并指出若门后有可标记格子，单位会以该格为目标、路径经过蓝门，从而出现被赶入门内的现象。",
+      "limitations": [
+        "「高距离」未在引文中给出精确阈值；后续距离计算细节未在本条展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均通过四闸门：c01 为对「不能进门」的勘误，c02 给出高距离恐惧路过蓝门的机制解释；逐字引文均可在对应转写行中字符级匹配。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

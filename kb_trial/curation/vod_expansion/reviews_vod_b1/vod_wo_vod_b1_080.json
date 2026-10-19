@@ -1,0 +1,50 @@
+{
+  "workorder_id": "vod_wo_vod_b1_080",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:49:26+0900",
+  "source_sha256": "5266841080570931e86157c1928069ec956c0a88db277772957c4d144576794b",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "酒神的诱导（于二）的可达判定与民夫的恐惧都包含「寻路距离不能太大」的判定；因此酒神的诱导（于二）与民夫的恐惧不能穿过障碍物和坑。",
+      "subject": "酒神的诱导（于二）与民夫的恐惧的可达判定",
+      "condition": "目标路径需要穿过障碍物或坑（高距离地块）时",
+      "scope": "entity_mechanism",
+      "category": "寻路机制",
+      "evidence": [
+        {
+          "text": "酒神的诱导于二的可达判定 民夫的恐惧都包含着寻路距离不能太大的判定 因此他们不能穿过障碍物和坑部署设置",
+          "t_start": 5414,
+          "t_end": 5420
+        }
+      ],
+      "reason": "逐字稿明确说明酒神的诱导（于二）的可达判定与民夫的恐惧都包含「寻路距离不能太大」的判定，并由此得出二者不能穿过障碍物和坑；这是可复用的寻路/可达机制结论，无未闭合猜想。",
+      "limitations": [
+        "未给出寻路距离上限的具体数值。",
+        "未展开障碍物距离上限与坑的百万格代价之间的具体关系。",
+        "「酒神的诱导（于二）」的名称按转写保留，可能存在 ASR 偏差，建议后续人工核对实际技能名。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅一个候选命题。该命题有逐字稿连续原文支撑，主体、条件与范围可明确到特定干员技能/敌方状态机制，且不是猜测或反问，因此裁定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

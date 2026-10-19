@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b1_112",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:56:11+0900",
+  "source_sha256": "c0b0e5b13bbeace60ed6bd7fb13998a6d7a72b09a9932cb67c1ca2c69ae7d8dd",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "攻击范围必须与地块碰撞箱发生碰撞才会显示，因此能显示攻击范围的区域属于地图内。",
+      "subject": "攻击范围显示判定",
+      "condition": "攻击范围与地块碰撞箱发生碰撞",
+      "scope": "universal",
+      "category": "地图边界判定/碰撞",
+      "evidence": [
+        {
+          "text": "还有一个办法就是用攻击范围看 攻击范围要和地块碰撞箱进行碰撞 才来能才能够显示 所以能显示的就是地图内",
+          "t_start": 7022,
+          "t_end": 7042
+        }
+      ],
+      "reason": "逐字稿在 7022s 处直接给出该地图边界判断方法：攻击范围要与地块碰撞箱进行碰撞才能显示，能显示即属于地图内。该陈述不依赖画面指涉，也不是未定论猜测，可作为攻击范围与地块碰撞箱关系的地图边界判定规则保留。",
+      "limitations": [
+        "逐字稿未展开地块碰撞箱的具体判定细节，也未说明是否覆盖所有攻击范围形状或特殊地块例外。",
+        "该命题只说明“能显示攻击范围”可作为判断地图内的依据，未声称所有地图内区域都必然可显示攻击范围。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 的逐字引文可在 7022s 行中字符级完全匹配，内容为可复用的地图边界判断方法，且给出了明确主体、条件与适用范围；无未闭合猜想或反问，故保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

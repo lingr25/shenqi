@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b1_076",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:48:47+0900",
+  "source_sha256": "5905f56b7dcf204a2f56b6f78d7843af2d19439fa75c1907e10d2259221b926f",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "电流在反弹判定中，除会在高台反弹外，也会在地图边缘反弹。",
+      "subject": "电流（具有反弹判定的电流效果）",
+      "condition": "电流路径触及高台或地图边缘并进行反弹判定时",
+      "scope": "universal",
+      "category": "电流反弹",
+      "evidence": [
+        {
+          "text": "电流也会在高台上反弹",
+          "t_start": 5314,
+          "t_end": 5325
+        },
+        {
+          "text": "电流也会在地图边缘反弹",
+          "t_start": 5325,
+          "t_end": 5336
+        }
+      ],
+      "reason": "主播在讲解高台判定与假高台时，先明确电流会在高台反弹，随后紧接着补充电流也会在地图边缘反弹；该句为陈述性结论，非猜测或开放疑问，可作为电流反弹机制的原子命题。",
+      "limitations": [
+        "逐字稿未列出所有产生该电流的技能/单位，也未说明边缘反弹后的具体路径参数。",
+        "引文前后 ASR 文本较凌乱，但关键结论句字符清晰。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 的核心结论在逐字稿中有明确、连续的原文支撑；高台反弹与地图边缘反弹两句均可字符级对齐。虽上游命题未给条件，但可补为反弹判定条件，未引入额外参数，故保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

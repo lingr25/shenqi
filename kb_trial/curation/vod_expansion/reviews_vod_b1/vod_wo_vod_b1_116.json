@@ -1,0 +1,69 @@
+{
+  "workorder_id": "vod_wo_vod_b1_116",
+  "stem": "BV1cmaa6VEPR_p2_42252239801",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:57:04+0900",
+  "source_sha256": "3286108ac2d371eaabfd91337d1935a553db02e5443a5c13a56bdd03a23cca2a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "「地图边缘视为高台」不是机制：被误认为地图边缘的位置本身就是真高台，并非地图边缘。",
+      "subject": "被误认为地图边缘的位置 / 地图边缘地块类型判定",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "地块类型",
+      "evidence": [
+        {
+          "text": "地图边缘视为高台 不是机制",
+          "t_start": 1,
+          "t_end": 11
+        },
+        {
+          "text": "根本就不是地图的边缘 是真的高台",
+          "t_start": 11,
+          "t_end": 15
+        }
+      ],
+      "reason": "上下文先否定“地图边缘视为高台是机制”的说法，随后指出被认为边缘的位置其实是真高台；该候选是对误解的纠正，属于可复用的地块判定结论。",
+      "limitations": [
+        "逐字稿未完整展开地图边缘空地块的后续判定；本命题仅否定“边缘视为高台”是独立机制。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "地图边缘可以是真的空，什么也没有，不属于地面或高台任何一类地块。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ],
+      "reason": "引文虽能在 [19s] 行中找到，但候选截断到“那就不是地面”后推出“不属于地面或高台任何一类”；紧接着 [33s] 主播说“那就只能是高哎”，表明实际结论是若不为地面则只能算高台。该候选与当场结论冲突，属错误推导，不能作为机制定论。"
+    }
+  ],
+  "review_note": "c01 是对“地图边缘视为高台”误读的纠正，逐字稿明确支撑，保留；c02 的结论被后文“那就只能是高哎”否定，拒绝。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}
