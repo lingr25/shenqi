@@ -1,0 +1,89 @@
+{
+  "workorder_id": "vod_wo_vod_b1_004",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T21:13:38+0900",
+  "source_sha256": "d94e04527c2bfb75c68a33982129ed65669956091c3ab9eecef12be7faf24a0e",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "出怪机制中，一帧一出怪导致的“实际出怪间隔至少为理论间隔再加 1 帧”并非只出现在理论间隔较短的出怪中；对理论间隔为 9 秒的出怪，实际出怪间隔至少为 9 秒又 1 帧，即至少为理论间隔再加 1 帧。",
+      "subject": "出怪系统的实际出怪间隔",
+      "condition": "理论出怪间隔为 9 秒时（上下文亦举出理论间隔为 5 秒、9 秒的出怪）",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "就可以发现一帧一出怪行为不只是在理论 同时间会发生在这个 就是理论上间隔为五秒九秒的这些怪",
+          "t_start": 701,
+          "t_end": 715
+        },
+        {
+          "text": "他也至少是九秒又一帧 至少是理论时间 理论间隔再加一帧",
+          "t_start": 715,
+          "t_end": 731
+        }
+      ],
+      "reason": "讲者在统计出怪帧时明确指出，理论间隔为九秒的出怪也至少是九秒又一帧，并概括为理论间隔再加一帧；前文还指出该现象涉及理论间隔为五秒、九秒的出怪，故可保留为出怪帧时序的通用结论。",
+      "limitations": [
+        "逐字稿只明确给出 9 秒理论间隔的逐字例证，普遍性仍需更多间隔样本核对。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "出怪的实际间隔并非固定只比理论间隔多 1 帧；在理论间隔为 5 秒的出怪中，出怪帧 0 秒 2 帧与 5 秒 5 帧之间实际多出 3 帧，另有案例多出 6 帧。",
+      "subject": "出怪系统的实际出怪间隔",
+      "condition": "理论出怪间隔为 5 秒时（实际出怪帧例为 0 秒 2 帧与 5 秒 5 帧）",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "就是理论上间隔为五秒九秒的这些怪",
+          "t_start": 701,
+          "t_end": 715
+        },
+        {
+          "text": "比如说这里的话零秒二帧和五秒五帧",
+          "t_start": 715,
+          "t_end": 731
+        },
+        {
+          "text": "中间就多了三 多就多了三帧 然后的话这里也是一个案例 这里的话多了六帧",
+          "t_start": 731,
+          "t_end": 744
+        }
+      ],
+      "reason": "讲者先说明理论间隔包括五秒、九秒，随后举出 0 秒 2 帧与 5 秒 5 帧之间多出 3 帧，并补充另一案例多出 6 帧，支持“实际间隔并非固定只比理论间隔多 1 帧”的可变时序结论。",
+      "limitations": [
+        "逐字稿未交代导致多出 3 帧或 6 帧的具体触发条件，案例仍依赖画面/数据表核对。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01、c02 均有逐字稿直接支撑：c01 确认实际出怪间隔至少为理论间隔加 1 帧；c02 确认实际出怪间隔可多出超过 1 帧。c02 虽为案例观察，但参数与帧位明确并服务于可变性结论，故保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

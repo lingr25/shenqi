@@ -1,0 +1,340 @@
+# -*- coding: utf-8 -*-
+"""Resumable LLM reviewer driver for vod_expansion work orders (lives outside repo)."""
+import argparse, hashlib, json, os, re, subprocess, sys, threading, time, traceback
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
+
+REPO = Path("/workspace/shenqi")
+EXP = REPO / "kb_trial/curation/vod_expansion"
+RUN = REPO / "runs/20261019_vod_review"
+LOG = Path("/workspace/review_driver.log")
+os.environ.setdefault("GROK_BASE", "https://lingr.aitreez.com/v1")
+os.environ.setdefault("GROK_MODEL", "lingr-free")
+os.environ.setdefault("GROK_FALLBACK_MODELS", "lingr-speed,lingr-pro")
+os.environ.setdefault("GROK_USAGE_LOG", str(RUN / "usage.jsonl"))
+os.environ.setdefault("GROK_TIMEOUT", "300")
+sys.path.insert(0, str(REPO))
+import grok_client  # noqa: E402
+
+DRIVER_VERSION = "vod-review-driver-1.0"
+PROMPT_TEXT = (EXP / "PROMPT.md").read_text(encoding="utf-8")
+PROMPT_SHA = hashlib.sha256((EXP / "PROMPT.md").read_bytes()).hexdigest()
+NORM_RE = r"[\s，。、；：()（）,.;:！？、]"
+SCOPES = {"universal", "entity_mechanism", "instance"}
+GATES = {"G1", "G2", "G3", "G4", "DUP"}
+_log_lock = threading.Lock()
+_raw_cache = {}
+
+
+def log(msg):
+    line = time.strftime("%Y-%m-%d %H:%M:%S ") + msg
+    with _log_lock, open(LOG, "a", encoding="utf-8") as f:
+        f.write(line + "\n")
+
+
+def raw_norm(stem):
+    if stem not in _raw_cache:
+        p = REPO / "transcripts_txt" / f"{stem}.txt"
+        _raw_cache[stem] = re.sub(NORM_RE, "", p.read_text(encoding="utf-8"))
+    return _raw_cache[stem]
+
+
+SUPPLEMENT = """
+---
+## 执行细则（本次批量审读的输出约定，不改变上面四大闸门）
+
+1. 必须对工单中**每一个**候选 local_id 恰好给出一个裁定：`keep` 的放进 `claims`（local_id 与候选一致），`reject`/`pending` 的放进 `excluded`（必须带 local_id）。
+2. `claims[].evidence[].text` 必须从下方逐字稿某**一行**（时间戳后面的正文）中**原样复制**一段连续子串（建议 ≥10 字，取能支撑结论的整句），不得改字、不得纠正错别字/ASR 错误、不得增删空格、不得跨行拼接；需要多段证据就写多条 evidence。`t_start` 填该行时间戳秒数，`t_end` 填下一行的时间戳秒数。
+3. `claim` 是给知识库用的自包含陈述：可以把 ASR 错字/口语改写成规范术语（如干员名、技能名），补全代词指代；但不得引入逐字稿中没有的新参数或结论。若关键参数只在画面中、逐字稿听不出，判 `pending`。
+4. `scope` 只能是 universal / entity_mechanism / instance；`condition` 全域生效写 "universal"。
+5. 同一工单内若两个候选说的是同一件事，保留表述最好的一个，其余判 reject 并在 failed_gates 写 ["DUP"]，reason 注明与哪个 local_id 重复。
+6. 严格把关：玩笑、闲聊、纯操作指导/打法建议（无规则价值）、对局实况叙述、只靠画面才能理解的句子、主播的猜测与开放疑问都不能 keep。宁缺毋滥，但确有机制价值且有逐字稿支撑的结论应当 keep，不要因 ASR 有个别错字就拒绝。
+7. 每条 claims 与 excluded 都要带 `gate_checks`: {"G1":"pass|fail","G2":"pass|fail","G3":"pass|fail","G4":"pass|fail"}；excluded 另需 `failed_gates`（如 ["G4"]）。claims 另加 `rewritten`: true/false（claim 是否相对上游命题做了改写/修正）。
+8. 顶层 `verdict`：有任一 keep 则 "keep"，否则全部 reject 则 "reject"，否则 "pending"。
+9. 只输出一个 JSON 对象（结构见上方「回执输出 JSON 结构」，加上述附加字段），不要输出其它文字。workorder_id / stem / source_sha256 / reviewer_model 可省略，由程序填写。
+"""
+
+
+def build_prompt(wo):
+    cands = []
+    for c in wo["candidates"]:
+        cands.append({k: c.get(k) for k in ("local_id", "proposition", "claim_type", "category",
+                                            "conditions", "applies_to", "parameters", "evidence")})
+    lines = "\n".join(f"[{l['t']}s {l['time']}] {l['text']}" for l in wo["transcript_window"])
+    ch = wo.get("chapter") or {}
+    return (PROMPT_TEXT + SUPPLEMENT + "\n---\n## 待审工单\n"
+            f"- workorder_id: {wo['workorder_id']}\n- stem: {wo['stem']}\n"
+            f"- 章节: {ch.get('title')}（{ch.get('kind')}）\n- 上游议题: {wo.get('parent_topic')}\n\n"
+            "### 候选命题（上游抽取，JSON）\n```json\n"
+            + json.dumps(cands, ensure_ascii=False, indent=1)
+            + "\n```\n\n### 逐字稿上下文窗口（格式: [秒数s 时:分] 正文）\n```text\n" + lines + "\n```\n")
+
+
+def find_quote(text, wl):
+    """Return (exact_text, t_start, t_end) or None. Exact substring of one line; whitespace-insensitive fallback
+    recovers the original verbatim span."""
+    text = (text or "").strip()
+    if len(text) < 2:
+        return None
+    for i, l in enumerate(wl):
+        nxt = wl[i + 1]["t"] if i + 1 < len(wl) else l["t"]
+        if text in l["text"]:
+            return text, l["t"], nxt
+    q = re.sub(r"\s+", "", text)
+    for i, l in enumerate(wl):
+        src = l["text"]
+        idx = [j for j, ch in enumerate(src) if not ch.isspace()]
+        stripped = "".join(src[j] for j in idx)
+        k = stripped.find(q)
+        if k >= 0 and q:
+            nxt = wl[i + 1]["t"] if i + 1 < len(wl) else l["t"]
+            return src[idx[k]: idx[k + len(q) - 1] + 1], l["t"], nxt
+    return None
+
+
+def check(wo, out):
+    """Normalize LLM output in-place; return list of problems."""
+    probs = []
+    ids = [c["local_id"] for c in wo["candidates"]]
+    claims = out.get("claims") or []
+    excl = out.get("excluded") or []
+    if not isinstance(claims, list) or not isinstance(excl, list):
+        return ["claims/excluded 必须是数组"]
+    seen = {}
+    for c in claims:
+        lid = c.get("local_id")
+        seen.setdefault(lid, []).append("claims")
+        for f in ("claim", "subject", "condition"):
+            if not str(c.get(f) or "").strip():
+                probs.append(f"claims[{lid}].{f} 为空")
+        if c.get("scope") not in SCOPES:
+            probs.append(f"claims[{lid}].scope 非法: {c.get('scope')}")
+        evs = c.get("evidence") or []
+        if not evs:
+            probs.append(f"claims[{lid}] 缺少 evidence")
+        for ev in evs:
+            r = find_quote(ev.get("text"), wo["transcript_window"])
+            if not r:
+                probs.append(f"claims[{lid}] 引文不是逐字稿某一行的原样连续子串: {str(ev.get('text'))[:60]}")
+                continue
+            ev["text"], ev["t_start"], ev["t_end"] = r
+            if re.sub(NORM_RE, "", ev["text"]) not in raw_norm(wo["stem"]):
+                probs.append(f"claims[{lid}] 引文未在原始逐字稿中核验: {ev['text'][:40]}")
+    for e in excl:
+        lid = e.get("local_id")
+        seen.setdefault(lid, []).append("excluded")
+        if e.get("verdict") not in ("reject", "pending"):
+            probs.append(f"excluded[{lid}].verdict 必须是 reject 或 pending")
+        fg = e.get("failed_gates")
+        if not isinstance(fg, list) or not fg or not set(fg) <= GATES:
+            probs.append(f"excluded[{lid}].failed_gates 必须是 G1..G4/DUP 组成的非空数组")
+    for lid in ids:
+        if lid not in seen:
+            probs.append(f"候选 {lid} 没有给出裁定")
+        elif len(seen[lid]) > 1:
+            probs.append(f"候选 {lid} 出现了 {len(seen[lid])} 次（每个候选恰好一个裁定）")
+    for lid in seen:
+        if lid not in ids:
+            probs.append(f"未知 local_id: {lid}")
+    return probs
+
+
+def demote(wo, out, probs):
+    """After repairs exhausted: move invalid claims to pending; add missing candidates as pending."""
+    bad = set()
+    for p in probs:
+        m = re.match(r"claims\[(\w+)\]", p)
+        if m:
+            bad.add(m.group(1))
+    keep, excl = [], list(out.get("excluded") or [])
+    for c in out.get("claims") or []:
+        if c.get("local_id") in bad:
+            excl.append({"local_id": c.get("local_id"), "topic": c.get("claim"), "verdict": "pending",
+                         "failed_gates": ["G2"], "auto_demoted": True,
+                         "reason": "驱动程序自动降级：修复轮后引文/字段仍未通过本地逐字核验；需人工听审。原裁定为 keep。",
+                         "gate_checks": {"G1": "pass", "G2": "fail", "G3": "pass", "G4": "pass"}})
+        else:
+            keep.append(c)
+    seen = {c.get("local_id") for c in keep} | {e.get("local_id") for e in excl}
+    for c in wo["candidates"]:
+        if c["local_id"] not in seen:
+            excl.append({"local_id": c["local_id"], "topic": c.get("proposition"), "verdict": "pending",
+                         "failed_gates": ["G2"], "auto_demoted": True,
+                         "reason": "审读模型未对该候选给出有效裁定，留待人工审读。",
+                         "gate_checks": {}})
+    # dedupe excluded by local_id (first wins), drop unknown ids
+    ids = {c["local_id"] for c in wo["candidates"]}
+    d, seen2 = [], set()
+    for e in excl:
+        lid = e.get("local_id")
+        if lid in ids and lid not in seen2 and lid not in {c.get("local_id") for c in keep}:
+            d.append(e); seen2.add(lid)
+    for e in d:
+        if e.get("verdict") not in ("reject", "pending"):
+            e["verdict"] = "pending"
+        if not isinstance(e.get("failed_gates"), list) or not e["failed_gates"]:
+            e["failed_gates"] = ["G2"]
+    out["claims"], out["excluded"] = keep, d
+
+
+def review_path(wo):
+    return EXP / f"reviews_{wo['batch']}" / f"{wo['workorder_id']}.json"
+
+
+def existing_valid(wo):
+    p = review_path(wo)
+    if not p.exists():
+        return False
+    try:
+        rv = json.loads(p.read_text(encoding="utf-8"))
+    except Exception:
+        return False
+    if rv.get("source_sha256") != wo["source_sha256"] or rv.get("prompt_sha256") != PROMPT_SHA:
+        return False
+    return not check(wo, json.loads(json.dumps(rv)))
+
+
+_cool = {"until": 0.0}
+_cool_lock = threading.Lock()
+
+
+def llm(prompt):
+    """Outer retry for gateway overload (503 system_cpu_overloaded etc.); shared cooldown so threads don't hammer."""
+    for i in range(80):
+        while True:
+            with _cool_lock:
+                wait = _cool["until"] - time.time()
+            if wait <= 0:
+                break
+            time.sleep(min(wait, 30))
+        try:
+            return grok_client.call_llm(prompt)
+        except RuntimeError as e:
+            msg = str(e)
+            if any(k in msg for k in ("503", "502", "504", "429", "overloaded", "timed out", "Connection", "reset")) and i < 59:
+                cd = min(120 * (1 + i // 3), 600)
+                with _cool_lock:
+                    _cool["until"] = max(_cool["until"], time.time() + cd)
+                log(f"RETRY-OUTER {i+1} cooldown={cd}s: {msg[:100]}")
+                continue
+            raise
+
+
+def review_one(wo, max_repairs=2):
+    base = build_prompt(wo)
+    out, usage = llm(base)
+    models = [usage.get("_model")]
+    probs = check(wo, out)
+    rounds = 0
+    while probs and rounds < max_repairs:
+        rounds += 1
+        fix = (base + "\n---\n## 你上一次的输出\n```json\n" + json.dumps(out, ensure_ascii=False)
+               + "\n```\n\n## 程序校验发现的问题（请逐条修正后重新输出完整 JSON；引文必须从逐字稿某一行原样复制，"
+               "若找不到能支撑的原样引文，就把该候选改判 pending/reject）\n- " + "\n- ".join(probs[:30]) + "\n")
+        out2, u2 = llm(fix)
+        models.append(u2.get("_model"))
+        p2 = check(wo, out2)
+        if len(p2) <= len(probs):
+            out, probs = out2, p2
+    if probs:
+        demote(wo, out, probs)
+        assert not check(wo, out), check(wo, out)
+    claims = out.get("claims") or []
+    excl = out.get("excluded") or []
+    verdict = "keep" if claims else ("reject" if excl and all(e["verdict"] == "reject" for e in excl) else "pending")
+    final_model = models[-1]
+    rv = {
+        "workorder_id": wo["workorder_id"],
+        "stem": wo["stem"],
+        "batch": wo["batch"],
+        "reviewer_model": final_model,
+        "reviewer_models_calls": models,
+        "reviewer_gateway": "lingr.aitreez.com",
+        "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+        "prompt_sha256": PROMPT_SHA,
+        "driver_version": DRIVER_VERSION,
+        "reviewed_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+        "source_sha256": wo["source_sha256"],
+        "verdict": verdict,
+        "claims": claims,
+        "excluded": excl,
+        "review_note": out.get("review_note", ""),
+        "repair_rounds": rounds,
+        "unresolved_problems_auto_demoted": probs,
+    }
+    p = review_path(wo)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    tmp = p.with_suffix(".json.tmp")
+    tmp.write_text(json.dumps(rv, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    tmp.replace(p)
+    return rv
+
+
+GIT_ENV = dict(os.environ, GIT_AUTHOR_NAME="lingr25", GIT_AUTHOR_EMAIL="173592808+lingr25@users.noreply.github.com",
+               GIT_COMMITTER_NAME="lingr25", GIT_COMMITTER_EMAIL="173592808+lingr25@users.noreply.github.com")
+
+
+def git_checkpoint(msg, push):
+    try:
+        paths = [str(p.relative_to(REPO)) for p in EXP.glob("reviews_*")] + [str(RUN.relative_to(REPO))]
+        subprocess.run(["git", "add", "--"] + paths, cwd=REPO, env=GIT_ENV, check=True, capture_output=True)
+        subprocess.run([sys.executable, "/workspace/build_run_manifest.py"], cwd=REPO, capture_output=True)
+        subprocess.run(["git", "add", "--"] + paths, cwd=REPO, env=GIT_ENV, check=True, capture_output=True)
+        r = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=REPO)
+        if r.returncode == 0:
+            return
+        subprocess.run(["git", "commit", "-q", "-m", msg], cwd=REPO, env=GIT_ENV, check=True, capture_output=True)
+        if push:
+            r = subprocess.run(["git", "push", "-q", "origin", "HEAD"], cwd=REPO, env=GIT_ENV, capture_output=True, text=True)
+            log(f"GIT push rc={r.returncode} {r.stderr.strip()[:200]}")
+        log(f"GIT commit: {msg}")
+    except subprocess.CalledProcessError as e:
+        log(f"GIT error: {e} {getattr(e, 'stderr', b'')[:300]}")
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--batches", default="vod_b1,vod_b2")
+    ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--commit-every", type=int, default=100)
+    ap.add_argument("--push", action="store_true")
+    ap.add_argument("--git", action="store_true")
+    a = ap.parse_args()
+    todo = []
+    for b in a.batches.split(","):
+        for f in sorted((EXP / f"workorders_{b}").glob("vod_wo_*.json")):
+            todo.append(f)
+    if a.limit:
+        todo = todo[: a.limit]
+    pending = []
+    for f in todo:
+        wo = json.loads(f.read_text(encoding="utf-8"))
+        if not existing_valid(wo):
+            pending.append(wo)
+    log(f"START {DRIVER_VERSION} prompt_sha={PROMPT_SHA[:12]} selected={len(todo)} todo={len(pending)} workers={a.workers}")
+    done = fail = since = 0
+    cur_stem = None
+    with ThreadPoolExecutor(a.workers) as ex:
+        futs = {ex.submit(review_one, wo): wo for wo in pending}
+        for fu in as_completed(futs):
+            wo = futs[fu]
+            try:
+                rv = fu.result()
+                done += 1; since += 1
+                log(f"OK {wo['workorder_id']} model={rv['reviewer_model']} keep={len(rv['claims'])} "
+                    f"excl={len(rv['excluded'])} repairs={rv['repair_rounds']} demoted={len(rv['unresolved_problems_auto_demoted'])} "
+                    f"[{done}/{len(pending)} fail={fail}]")
+            except Exception as e:
+                fail += 1
+                log(f"FAIL {wo['workorder_id']} {type(e).__name__}: {str(e)[:200]}")
+            if a.git and since >= a.commit_every:
+                since = 0
+                git_checkpoint(f"data(curation): vod 审读回执进度 {done}/{len(pending)}（LLM 审读，自动检查点）", a.push)
+    if a.git:
+        git_checkpoint(f"data(curation): vod 审读回执 本轮完成 {done}，失败 {fail}", a.push)
+    log(f"END done={done} fail={fail}")
+
+
+if __name__ == "__main__":
+    main()

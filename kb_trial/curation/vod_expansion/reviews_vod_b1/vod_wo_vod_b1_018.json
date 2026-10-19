@@ -1,0 +1,69 @@
+{
+  "workorder_id": "vod_wo_vod_b1_018",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T21:20:56+0900",
+  "source_sha256": "440c0958fdecff8d6f9171f3b4cbbb71c873ecf850bd6de265819b6579589a80",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在同一波次内，因路线与牌子造成额外延迟时，相比另一组，多出两条路线的一组会晚四帧；先前「只多三帧」的说法经核对不成立，实际不止三帧。",
+      "subject": "同一波次内因路线与牌子产生额外延迟的两组怪出生时序",
+      "condition": "同一波次内；两组怪因路线和牌子产生额外延迟，其中一组多出两条路线",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "看一下这一波186是",
+          "t_start": 1710,
+          "t_end": 1718
+        },
+        {
+          "text": "这俩前面的话是那个只多三帧诶 这不止三帧",
+          "t_start": 1718,
+          "t_end": 1733
+        },
+        {
+          "text": "哦不对不对",
+          "t_start": 1738,
+          "t_end": 1740
+        },
+        {
+          "text": "搞错了",
+          "t_start": 1740,
+          "t_end": 1743
+        },
+        {
+          "text": "这个才是80 这个才是80 这是多两条路线 然后是多四帧",
+          "t_start": 1743,
+          "t_end": 1756
+        }
+      ],
+      "reason": "主播先称两组前面只多三帧，随即表示「这不止三帧」，随后明确说「哦不对不对」「搞错了」，并把正确对象说为「多两条路线」后「多四帧」，构成对先前只多三帧说法的当场勘误，并给出两条额外路线对应四帧差的结论。",
+      "limitations": [
+        "逐字稿未完整给出四帧差的逐帧推导，且「两组怪」的具体指代依赖当场画面与上下文。",
+        "未说明路线条数与帧差在其他条件下是否始终按此关系成立。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 为当场勘误型命题：先前的「只多三帧」被主播明确否定，并改判为多两条路线时相差四帧。其主体、条件与帧数参数在逐字稿中有连续引文支撑，未发现未闭合猜测或纯画面依赖残句，故保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

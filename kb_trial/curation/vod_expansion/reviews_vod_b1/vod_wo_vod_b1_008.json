@@ -1,0 +1,80 @@
+{
+  "workorder_id": "vod_wo_vod_b1_008",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T21:14:15+0900",
+  "source_sha256": "c2842c69aa15a612683f9592cc0d8c2ca2d82ba67809bcfaf31ad7f03e8e376f",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在明日方舟的出怪计时中，出怪间隔等于理论间隔加一帧。",
+      "subject": "出怪间隔",
+      "condition": "计算相邻出怪间隔时",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "然后根据一帧一出怪逻辑 所以每两个出怪之间都是他的理论值 理论间隔值加一帧",
+          "t_start": 1123,
+          "t_end": 1139
+        },
+        {
+          "text": "这里的所有的出怪间呃 出呃出怪的间隔都是理论的间隔加一帧",
+          "t_start": 1144,
+          "t_end": 1157
+        }
+      ],
+      "reason": "逐字稿明确说明每两个出怪之间按理论间隔值加一帧，并称所有出怪间隔都是理论间隔加一帧；该陈述是通用出怪计时规则，不依赖画面指涉。",
+      "limitations": [
+        "未在本段展开说明“理论间隔”的取值来源。",
+        "转写文本存在口吃和 ASR 噪声，但语义可辨。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "关卡出怪计时规定的是敌人相对上一波次的出怪时间，例如上一波次之后9秒，而非绝对时间，例如第23秒。",
+      "subject": "关卡出怪计时规则",
+      "condition": "解析关卡出怪波次参数时",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "它不是规定了他在23秒出 而是规定了他在上一波次之后的九秒钟出",
+          "t_start": 1144,
+          "t_end": 1157
+        }
+      ],
+      "reason": "逐字稿明确否定“规定绝对秒数”的理解，并指出实际规定的是相对上一波次之后的时间；属于对出怪计时规则的更正性说明。",
+      "limitations": [
+        "仅以9秒与23秒作为例子，未穷举所有波次参数形式。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均围绕出怪计时规则：一条陈述理论间隔加一帧，另一条陈述波次参数按相对上一波次计时而非绝对时间。逐字稿提供了直接断言或更正性说明，且可改写为自包含机制命题，故均保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

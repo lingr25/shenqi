@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b1_015",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T21:18:26+0900",
+  "source_sha256": "3c946568f3ce983b0f68cc6c13a1f619ed0102862df1e9fd8c84ab759eb4e445",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "本例中牌子的归属：该波 RODEX 编号20 归属于牌子下方那条鱼",
+      "verdict": "reject",
+      "reason": "引文可逐字匹配，但命题依赖画面指涉与指示代词（“画面里出现的牌子”“底下这个鱼”），逐字稿未给出可独立识别的鱼名、坐标或其他可自包含标识，无法改写为不依赖画面的机制陈述；且该条仅为一次性实例归属观察，缺少可复现条件与可复用规则价值。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本单仅一条候选 c01。其引文与 1505s 行逐字一致，但为画面依赖的一次性归属观察，主体无法从逐字稿中补全为自包含对象，且不构成可复用机制定论，故整单裁为 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

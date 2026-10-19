@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b1_014",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T21:18:28+0900",
+  "source_sha256": "dda8e0ba7ee4707538ec1bae58c0054dfe29095021d2e4a83729950dc8db29c9",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "在第二个兵团刚开始的这一波中，认真的阿咬与第一条浪里悬调出生前有两条路线和一个牌子；两条路线各占两帧、牌子占一帧，合计五帧；再加上第一兵团转换到第二兵团额外多出的一帧，因此两者出生间隔共额外多出六帧。",
+      "subject": "认真的阿咬与第一条浪里悬调之间的出生/刷怪间隔",
+      "condition": "第二个兵团刚开始的这一波；两只怪出生前存在两条路线和一个牌子；由第一兵团转换到第二兵团",
+      "scope": "instance",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "认真的阿咬和浪里悬调 然后和到第二条浪里悬调之间 这是额外多了六帧 这俩之间多了一帧 这俩之间多了五帧",
+          "t_start": 1437,
+          "t_end": 1451
+        },
+        {
+          "text": "第二个兵团刚开始的这一波是呃 这俩 这俩他们出之前是有两条路线和一个牌子的",
+          "t_start": 1465,
+          "t_end": 1479
+        },
+        {
+          "text": "一共是这个占两帧 这个占两帧 这个占一帧加起来是占五帧 然后的话波次不是兵团之间的转换 从一兵团到二兵团之间还要额外多一帧",
+          "t_start": 1479,
+          "t_end": 1495
+        },
+        {
+          "text": "这一点在后面的话 我们也会再用下一个兵团去重新强调一遍 所以这里一共多了六帧 但是值得注意的是啊",
+          "t_start": 1495,
+          "t_end": 1505
+        }
+      ],
+      "reason": "逐字稿明确给出第二个兵团波次开始时两只怪出生前有两条路线和一个牌子，随后说明两项路线各占两帧、牌子占一帧合计五帧，并说明跨兵团转换额外一帧，故六帧构成成立。",
+      "limitations": [
+        "具体路线与牌子在画面中的实例对应关系依赖当时演示；逐字稿中存在“这个”等指代，但结合上下文可还原。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "认真的阿咬与浪里悬调之间额外多出六帧，其中相邻两段分别多一帧、多五帧。",
+      "verdict": "reject",
+      "reason": "与 c02 重复：c02 已完整给出相同的额外六帧，并进一步说明其中五帧与一帧的构成；按去重规则保留信息更完整的 c02，c01 作为独立命题冗余。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "DUP"
+      ]
+    }
+  ],
+  "review_note": "c02 通过四闸并保留：逐字稿支持额外六帧由路线/牌子五帧与跨兵团一帧构成。c01 与 c02 重复，仅保留 c02。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

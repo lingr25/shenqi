@@ -1,0 +1,111 @@
+{
+  "workorder_id": "vod_wo_vod_b1_005",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T21:14:08+0900",
+  "source_sha256": "bc568ac42dae4a4093947da861a742f16af1d453bde3e851d5495a8af8ca7912",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "关卡JSON中，waves是波次，一个波次包含多个fragments（兵团），一个兵团包含多个actions（小队）。",
+      "subject": "关卡JSON出怪层级",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "关卡出怪",
+      "evidence": [
+        {
+          "text": "JOHNSON文件 实际上它记录的数据是这样的格式 就是首先呢waves这个里面是管出怪 values里面可以记录记录多条数据",
+          "t_start": 750,
+          "t_end": 762
+        },
+        {
+          "text": "这里面是只有一条数据 所以才是这种格式 实际上它也可以有多条格式 waves4代表的是波次 然后的话这里面的数据",
+          "t_start": 762,
+          "t_end": 772
+        },
+        {
+          "text": "波茨兵团小队按这个命名来 这一个vs里头会有多个fragments 每个fragments就是一个兵啊 一个兵团",
+          "t_start": 816,
+          "t_end": 829
+        },
+        {
+          "text": "然后这一个兵团的话就由这么一堆actions 就由这一堆小队组成 然后的话波次之间是上一个波次出完 除下一个波次啊",
+          "t_start": 829,
+          "t_end": 844
+        }
+      ],
+      "reason": "上下文先说明waves管出怪并代表波次，随后通过PRTS wiki确认波次、兵团、小队命名：一个waves中可有多个fragments，每个fragment为兵团，兵团由多个actions即小队组成。",
+      "limitations": [
+        "fragments、actions为JSON字段名，逐字稿ASR有 vs、waves4 等转写噪声。",
+        "卡顿等特殊处理未在本次展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "关卡出怪按串行推进：前一个兵团的全部小队出完后才算该兵团完成，再经过preDelay延迟进入下一个兵团的开始时间；波次之间也是上一个波次出完才出下一个波次。",
+      "subject": "关卡JSON出怪执行流程",
+      "condition": "前一个兵团的全部小队出完后；波次间条件为上一个波次出完后",
+      "scope": "universal",
+      "category": "关卡出怪",
+      "evidence": [
+        {
+          "text": "然后这一个兵团就代表呃就会出这11个小队 这11个小队全出完了之后 是第一个兵团的完成时间 第一个兵团的完成时间",
+          "t_start": 895,
+          "t_end": 907
+        },
+        {
+          "text": "再过五秒钟就是第二个兵团的开始时间 然后第二个兵团开始之后 就会开始执行这16个小队 然后的话再进入下一个",
+          "t_start": 907,
+          "t_end": 919
+        },
+        {
+          "text": "然后这一个兵团的话就由这么一堆actions 就由这一堆小队组成 然后的话波次之间是上一个波次出完 除下一个波次啊",
+          "t_start": 829,
+          "t_end": 844
+        },
+        {
+          "text": "不过这里可能还有一些卡的东西 我们以后再讲 然后的话这个PDELAY是延迟 意味着如果上一个次上一个波次出完",
+          "t_start": 844,
+          "t_end": 855
+        },
+        {
+          "text": "而不是在安排出怪的时间 他是规定了上一波执行完之后五秒钟出下一波 而是不是规定了这一波就应该在一个时间 比如说105秒出",
+          "t_start": 1069,
+          "t_end": 1081
+        }
+      ],
+      "reason": "上下文明确给出示例：第一个兵团的11个小队全出完即为该兵团完成，再过5秒进入第二个兵团；同时说明波次之间是上一个波次出完后进入下一个波次。PDELAY在该段被说明为延迟字段。",
+      "limitations": [
+        "5秒来自当前示例，preDelay/PDELAY字段的具体层级与默认值未逐项展开。",
+        "主播提到可能存在卡顿等边界情况，留待后续说明。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01与c02均通过四闸门。上游证据存在跨行拼接与时间戳不一致，本回执已按逐字稿逐行拆分为多条证据并修正起止秒；命题本身可由上下文闭合，保留。c02中preDelay字段与5秒为示例，主播提到卡顿等边界未展开，作为limitations记录。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

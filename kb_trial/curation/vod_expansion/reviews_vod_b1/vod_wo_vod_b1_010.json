@@ -1,0 +1,91 @@
+{
+  "workorder_id": "vod_wo_vod_b1_010",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T21:16:38+0900",
+  "source_sha256": "a5c5881d8a90e19d22abc531ab70852233a62de7b8eae386152cb9dd6c3ef519",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "路线预演由两条独立路线组成，分别安排在出怪前的理论时间 3 秒与 2.7 秒触发。",
+      "subject": "路线预演（auto preview root 控制的路线预演）",
+      "condition": "以某次出怪的理论时间为基准，在该出怪前布置路线预演",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "然后这个路线预演是什么设置呢 是在他出怪前的理论时间的三秒钟",
+          "t_start": 1250,
+          "t_end": 1268
+        },
+        {
+          "text": "你看见没有这个这个东西 其实你看着它像是一个虚线 实际上不是虚线 只是它是两段拼接出来的东西 这个和这个是两条路线预演",
+          "t_start": 1307,
+          "t_end": 1321
+        },
+        {
+          "text": "他通过这种方式做出了一个虚线效果 实际上这是两个东西啊 第一个是出怪前的三秒钟 第二个是出怪前的2.7秒钟",
+          "t_start": 1321,
+          "t_end": 1333
+        }
+      ],
+      "reason": "逐字稿先给出路线预演在出怪前理论时间 3 秒与 2.7 秒，随后明确说画面中看似虚线的效果“实际上是两个东西”且“这个和这个是两条路线预演”。上游命题中“一个路线预演对应两个触发时刻”易被误解，故改写为两条独立路线分别触发。",
+      "limitations": [
+        "逐字稿以本实例说明，未证明所有路线预演均固定采用 3 秒与 2.7 秒；若为关卡或敌人配置项，需要缩小 scope。",
+        "未展开两条路线拼接成虚线效果的具体渲染细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "路线预演的两个触发点在出怪轴上分别被记为理论时间 2 与理论时间 2.3 的出怪事件。",
+      "subject": "路线预演的两个触发点",
+      "condition": "按出怪理论时间轴换算预演提前量；该实例中预演提前量为 3 秒与 2.7 秒",
+      "scope": "instance",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "五时间出的这个 阿耀上 然后的话安排了一个路线预演 然后这个路线预演是什么设置呢 是在他出怪前的理论时间的三秒钟",
+          "t_start": 1250,
+          "t_end": 1268
+        },
+        {
+          "text": "和2.7秒之前出怪 也就是说 这里会安排一个理论时间 二和一个理论时间2.3的一个出怪 那么理所当然的",
+          "t_start": 1268,
+          "t_end": 1280
+        }
+      ],
+      "reason": "逐字稿明确把出怪前 3 秒与 2.7 秒的预演换算为该出怪轴上的理论时间 2 和 2.3 的出怪事件，说明路线预演触发点会占用出怪事件位置，进而解释额外帧。",
+      "limitations": [
+        "理论时间 2 与 2.3 依赖该实例的基准出怪理论时间；其他基准时间下需重新换算。",
+        "额外帧数的完整推导散落在后续片段，本条只保留触发点在出怪轴上的记录位置。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均通过四闸门。c01 修正了上游“一个路线预演对应两个触发时刻”的易误解表述，按逐字稿明确为两条独立路线预演分别位于出怪前 3 秒与 2.7 秒；c02 保留为该实例中将提前量换算为出怪轴理论时间 2 与 2.3 的推导。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

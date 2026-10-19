@@ -1,0 +1,84 @@
+{
+  "workorder_id": "vod_wo_vod_b1_009",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T21:15:36+0900",
+  "source_sha256": "924fcadc66f849aef1747a43946caea5e8e6d332f0bba18a35cd78dea6a6dcf5",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "参数 auto preview root 代表路线的预演。",
+      "subject": "auto preview root 参数",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "关卡配置参数",
+      "evidence": [
+        {
+          "text": "一个是auto preview root 另一个是auto display诶",
+          "t_start": 1176,
+          "t_end": 1186
+        },
+        {
+          "text": "这个root代表的是路线的预演 先的路线",
+          "t_start": 1186,
+          "t_end": 1205
+        }
+      ],
+      "reason": "主播在列举两个参数后，明确说明 auto preview root（即「这个root」）代表路线的预演；结合上文「一个是auto preview root」与「这个root代表的是路线的预演」可建立指代。",
+      "limitations": [
+        "参数完整英文名与作用域需结合关卡编辑器核实；逐字稿中 auto preview root 与 auto display enemy info 相邻，指代需靠语序推断。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "参数 auto display enemy info 代表敌人的牌子。",
+      "subject": "auto display enemy info 参数",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "关卡配置参数",
+      "evidence": [
+        {
+          "text": "一个是auto preview root 另一个是auto display诶",
+          "t_start": 1176,
+          "t_end": 1186
+        },
+        {
+          "text": "这个代表的是牌子 敌人的牌子",
+          "t_start": 1186,
+          "t_end": 1205
+        }
+      ],
+      "reason": "主播在列举两个参数后说「这个代表的是牌子 敌人的牌子」，与前一参数 auto preview root 的路线预演相对，指向另一参数 auto display enemy info；该参数名由 1176s 的 auto display 与 1186s 行首的 Enemy info 拼合规范化得到。",
+      "limitations": [
+        "auto display enemy info 的完整英文名跨两行转写，需人工核实；「牌子」为口语，具体指敌人信息标记，未在逐字稿中展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单两个候选均为主播对关卡配置参数含义的明确陈述，非猜测或开放疑问。逐字稿中 auto preview root 与 auto display enemy info 因 ASR 拆行而相邻出现，但结合上下文可区分指代：前者对应路线预演，后者对应敌人牌子。引文均逐字对齐 1176s、1186s 行原文，未跨行拼接；命题已按自包含要求补全参数名指代，四个硬性闸门均通过，予以 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

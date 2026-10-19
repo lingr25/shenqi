@@ -1,0 +1,86 @@
+{
+  "workorder_id": "vod_wo_vod_b1_016",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T21:22:48+0900",
+  "source_sha256": "97f77259f7310e666921c26b522ff7e2f4e7c671d30d01c97a8cd3b447d3395b",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在本例录播演示关卡的第二兵团起始波次中，RODEX 编号20 对应的鱼怪先出生，其牌子在下一帧出生，二者出生间隔为 1 帧。",
+      "subject": "RODEX 编号20 对应的鱼怪与其牌子",
+      "condition": "本例第二兵团起始波次中",
+      "scope": "instance",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "这里的这个牌子是这一波的这个RODEX 编号20 然后的话是底下这个鱼的 是底下这个鱼",
+          "t_start": 1505,
+          "t_end": 1521
+        },
+        {
+          "text": "这里这个怪出生了",
+          "t_start": 1572,
+          "t_end": 1582
+        },
+        {
+          "text": "下一帧这个牌子出生了",
+          "t_start": 1582,
+          "t_end": 1599
+        }
+      ],
+      "reason": "上下文先确认该牌子对应 RODEX 编号20 及底下鱼怪，随后明确出现怪出生、下一帧牌子出生的顺序，因此该实例的 1 帧出生间隔成立。",
+      "limitations": [
+        "仅针对该演示关卡该波次的实例，不能直接推广为所有牌子与敌人的通用先后规则。",
+        "逐字稿未给出完整关卡名与编号。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在明日方舟关卡排序中，通常路线牌子会比其对应的敌人更早出生；若敌人先于牌子出生，则属于反常时序。",
+      "subject": "关卡路线牌子与对应敌人的出生排序",
+      "condition": "通常/正常排序情况下",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "在正常来讲的话 牌子都会比怪早出生 但是这里的话出现了一个怪 比牌子早出生的情况",
+          "t_start": 1582,
+          "t_end": 1599
+        }
+      ],
+      "reason": "主播明确给出一般排序规律，并以本处怪先于牌子作为反常对照，可作为判断异常时序的规则性结论。",
+      "limitations": [
+        "逐字稿未说明所有边界条件。",
+        "同段后文又提到牌子和鱼的具体先后之后另说，通用规则适用范围需以后续实证界定。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 为有逐字稿支撑的特定实例，保留为 instance；c02 为主播明确给出的一般排序规律，保留为 universal。两者不是重复命题，但 c02 的边界需注意后文“之后另说”的限定。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

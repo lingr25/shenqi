@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b1_002",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T21:11:41+0900",
+  "source_sha256": "d02278ca494c7f958598b9fbc9fff3e56ae58e4f5ff6e3d8486757376e2c760d",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在 map 定义中出生帧均为 0 的敌人，其实际真实出怪时间仍然是一帧一出。",
+      "subject": "map 定义中出生帧均为 0 的敌人",
+      "condition": "敌人的 map 定义出生帧为 0",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "即使在map定义里面都是零出生的怪",
+          "t_start": 657,
+          "t_end": 672
+        },
+        {
+          "text": "但是实际上他们的真实时间也是要一帧一出的",
+          "t_start": 672,
+          "t_end": 686
+        }
+      ],
+      "reason": "主播在讲解出怪帧时指出，即使 map 定义里都是零出生的怪，实际真实时间仍要一帧一出；上下文将出影子/出怪帧与 map 定义联系起来，构成可复用的出怪时序结论。",
+      "limitations": [
+        "逐字稿未列出具体 map/JSON 字段名，也未展开所有波次和地图的完整统计数据。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本单仅有一个候选 c01。该候选有逐字稿连续原文支撑，主语、条件、范围可补齐，且为讲授中的机制结论而非未定论猜测，故裁定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}
