@@ -1,0 +1,48 @@
+{
+  "workorder_id": "vod_wo_vod_b2_361",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:54:56+0900",
+  "source_sha256": "eb7f9561c0354ee208cdea31b4f3bc622a1d3df74fa736ec87f0dea45dd0a119",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "关卡地图出怪配置序列中的空位（空项）表示当前波次或点位不出怪。",
+      "subject": "地图出怪配置序列",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "出怪流程",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "注意这是他地图的出怪配置啊 然后在这个配置中 在这一串东西之中啊 他也会有空的东西 这个空代表着不出怪",
+          "t_start": 1732,
+          "t_end": 1748
+        }
+      ],
+      "reason": "主播在拆解并讲解关卡底层出怪数据结构时，明确指出了配置序列中空位所代表的具体机制含义（代表不出怪），属于通用的底层生成规则定论。",
+      "limitations": [
+        "口述未展开具体数据结构字段名称（如具体是null还是空ID）"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单候选命题 c01 陈述清晰，属于关卡出怪底层序列结构的机制定论，符合四大闸门要求，做轻微规范化改写后予以保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

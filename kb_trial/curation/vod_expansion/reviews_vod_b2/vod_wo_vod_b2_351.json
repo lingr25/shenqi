@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_351",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:51:34+0900",
+  "source_sha256": "5a6eb39ce3a7346a3d493abd41d5d73a15fdc04006452ebe1328dd0029939385",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "弹道类攻击在命中结算攻击力加成时，默认实时调用发射来源当前的攻击力；只有在被游戏机制显式设定了缓存（或干员死亡保底触发）的情况下，才会直接读取发射时快照的攻击力。",
+      "subject": "弹道类攻击伤害结算（攻击力调用机制）",
+      "condition": "弹道在飞行期间攻击来源攻击力发生变化且弹道未被显式配置攻击力缓存",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "因为这个东西攻击力加成 我想一下攻击力加成会实时调用来源的攻击力 除非已经明令缓存了 明令缓存的一般是什么 像这种家伙",
+          "t_start": 1016,
+          "t_end": 1030
+        },
+        {
+          "text": "缓存攻击力不是一个很普遍的机制啊 不是一个很普遍的机制 但是的话每个有弹道的干员发出去的弹道 都是存在着缓存的 只是日常不调用",
+          "t_start": 1151,
+          "t_end": 1164
+        }
+      ],
+      "reason": "主播明确解释了底层弹道伤害结算机制：弹道本身存储倍率，但攻击力加成默认实时调用来源面板，除非个别特殊干员被专门配置了攻击力缓存修正，或在死亡保底机制下调用缓存。",
+      "limitations": [
+        "具体哪些干员被配置了攻击力缓存属于逐个特例修正（如极慢速弹道或特定BUG修复干员）",
+        "攻击力缓存有时会伴随暴击红字显示判定的BUG"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "命题反映了底层通用弹道结算机制与缓存修正逻辑，逐字稿中讨论充分且有确凿陈述，通过四大闸门审查。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

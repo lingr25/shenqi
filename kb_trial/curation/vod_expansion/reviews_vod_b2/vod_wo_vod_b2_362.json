@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b2_362",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:54:54+0900",
+  "source_sha256": "c88dbc1748b82bbf5d3b1982fd3600c8f4cc0545c38fa0bd69ccf8c7efe0f5e6",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在关卡出怪配置中被列为出怪项的箱子类装置，会像真实出怪单位一样占用一帧出怪时序，因此表现为占一帧出怪。",
+      "subject": "出怪配置中列为出怪项的箱子类装置",
+      "condition": "该箱子被写入关卡出怪波次/出怪配置中作为出怪项",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "代表着三种箱子 箱子之所以占一 真是因为他真的是一个出怪箱子 真的战一帧是因为他是真一个真的出怪",
+          "t_start": 1748,
+          "t_end": 1766
+        },
+        {
+          "text": "总之这些装置能站 真是因为他们一开始就在出怪波次设计里面 如果完全不在出怪波次设计里面 不会出现这种一帧一出怪的现象",
+          "t_start": 1811,
+          "t_end": 1824
+        }
+      ],
+      "reason": "逐字稿在 1748s 直接说明三种箱子占一帧的原因是其本身就是真实出怪箱子；1811s 进一步说明这些装置能占/出现在一帧出怪，是因为一开始就在出怪波次设计里。该结论属于出怪配置与出怪流程的机制陈述，不依赖画面指涉。",
+      "limitations": [
+        "逐字稿未列出“三种箱子”的具体名称。",
+        "原逐字稿存在 ASR 错字，如“战一帧”按上下文应为“占一帧”，审查时仅作术语规范化，未改变机制含义。",
+        "未给出代码级或逐帧录播证据，仅依据主播口头说明。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选 c01 具备明确机制价值：箱子被写入出怪波次配置后会像真实出怪项一样占用一帧出怪流程。引文可在逐字稿中字符级对齐，且主播以结论口吻陈述，非未定论猜想。已对“三种箱子”作自包含化改写，保留原意并规范化 ASR 错字。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,70 @@
+{
+  "workorder_id": "vod_wo_vod_b2_356",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:53:36+0900",
+  "source_sha256": "53e5f3609a0fa18ab60e3a8085fd28bc5aba88a9c7f38acecb9cf95220ff8755",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "在常规伤害结算逻辑中，弹道中缓存的攻击力仅在弹道发射来源死亡后作为保底机制调用，或作为针对特定干员机制的专门修正，存活状态下的干员弹道伤害结算默认不调用该攻击力缓存。",
+      "subject": "弹道攻击力缓存调用逻辑",
+      "condition": "弹道伤害结算时",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "在鹰角的这个自然的伤害逻辑中 自然调用的是死了之后才会调用 那是一个保底机制 缓存攻击力对于鹰角来讲 是一个死亡之后的保底机制",
+          "t_start": 1164,
+          "t_end": 1181
+        },
+        {
+          "text": "或者是一些对这种干员的修正机制 但是的话他不给正常干员用",
+          "t_start": 1181,
+          "t_end": 1194
+        }
+      ],
+      "reason": "上下文完整阐释了弹道存在缓存攻击力但日常不调用的机制前提，指明了其调用的具体触发条件（来源死亡保底或个例干员修正），符合可复用的底层机制定论。",
+      "limitations": [
+        "针对特定干员修正的具体名单需按干员实机个案判定",
+        "部分特殊弹道或非干员单位可能存在例外实现"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "每个有弹道的干员发出的弹道都存在攻击力缓存但日常不调用",
+      "verdict": "reject",
+      "reason": "与c02讨论同一机制点，c02完整包含了日常不调用以及何时触发调用的充要条件；c01作为前置铺垫表述，判重并入c02。",
+      "failed_gates": [
+        "DUP"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      }
+    }
+  ],
+  "review_note": "本工单主要阐述《明日方舟》弹道机制中攻击力缓存的底层调用逻辑（来源死亡保底与个别干员修正）。候选c01与c02属于递进与重复关系，保留综合信息更全、成立条件更明确的c02，将c01按重复（DUP）处理。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

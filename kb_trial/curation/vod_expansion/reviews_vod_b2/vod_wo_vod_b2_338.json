@@ -1,0 +1,80 @@
+{
+  "workorder_id": "vod_wo_vod_b2_338",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed",
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:49:27+0900",
+  "source_sha256": "5c14826dbb419bd700ce096b904a97fd6b51c6f6cc364ac146538f5feaa2370d",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "生命流失机制能够跳过伤害判定环节，对处于无敌状态的目标造成伤害。",
+      "subject": "生命流失",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "生命流失/状态效果",
+      "evidence": [
+        {
+          "text": "生命流失最主要的意义就是可以打无敌的单位 比如说喉舌",
+          "t_start": 5779,
+          "t_end": 5794
+        },
+        {
+          "text": "生命流失 生命流失的无敌之处就在于它可以达无敌 但是反过来说的话 生命流失就是没有办法吃什么脆弱的 你像那个呃就是喉舌",
+          "t_start": 6879,
+          "t_end": 6893
+        }
+      ],
+      "reason": "主播详细讲解了伤害判定流程中，生命流失跳过伤判（免伤）环节的特性，能对处于无敌状态的单位造成扣血，表述明确具有底层规则价值。",
+      "limitations": [
+        "生命流失跳过伤判环节并不等于跳过抗性结算环节，其伤害仍按物理/法术/真实等类型取决于前置抗性流程。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "生命流失因跳过伤害判定环节，无法受到脆弱等处于伤判环节的增伤效果加成。",
+      "subject": "生命流失",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "生命流失/状态效果",
+      "evidence": [
+        {
+          "text": "生命流失 生命流失的无敌之处就在于它可以达无敌 但是反过来说的话 生命流失就是没有办法吃什么脆弱的 你像那个呃就是喉舌",
+          "t_start": 6879,
+          "t_end": 6893
+        }
+      ],
+      "reason": "主播明确解释了脆弱属于第三阶段伤判流程的增伤，而生命流失跳过伤判，因此无法受到脆弱的伤害放大效果，逻辑闭合且定论清晰。",
+      "limitations": [
+        "仅针对处于伤判增伤区间的效果（如脆弱），若在前置倍率或攻击结算环节则不属于此范畴。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选命题均属于《明日方舟》伤害计算底层逻辑中关于生命流失特性的定论讲解。修正了 claims[c01] 的 evidence，直接采用逐字稿行内的完整连续子串，严格保证字符级匹配与单行连续性。",
+  "repair_rounds": 1,
+  "unresolved_problems_auto_demoted": []
+}

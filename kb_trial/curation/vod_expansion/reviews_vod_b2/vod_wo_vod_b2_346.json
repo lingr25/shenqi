@@ -1,0 +1,117 @@
+{
+  "workorder_id": "vod_wo_vod_b2_346",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:50:18+0900",
+  "source_sha256": "c566bbad5a575c40dee83832074e38fe88fc7b8d6628adba83260b9f76851b68",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "局内最终乘算属于Buff；死亡事件会清除单位身上的所有局内Buff，因此风滚草吐出弹道后自杀会丢掉全部局内加成。",
+      "subject": "风滚草（吐出弹道后自杀的单位）",
+      "condition": "死亡事件触发并进入死亡状态机，弹道命中时调用来源攻击力",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "局内的这个最终成是一个Buff 是一堆Buff 而Buff在局内是可以消掉的 其中有一部分就是死亡",
+          "t_start": 596,
+          "t_end": 605
+        },
+        {
+          "text": "死亡这个事件是可以消掉Buff的 风乌滚风滚草 他是吐出一个弹道 然后自杀 自杀之后就会把身上的Buff都清了",
+          "t_start": 605,
+          "t_end": 621
+        },
+        {
+          "text": "所以风滚物风滚草在他的结算机制下 就注定不能吃到所有局内的加成 只能吃到局外的加成 只是恰好肉鸽的这些东西又都是局内的加成",
+          "t_start": 670,
+          "t_end": 683
+        }
+      ],
+      "reason": "逐字稿先说明局内最终乘算属于Buff且死亡可清Buff，再指出风滚草吐弹道后自杀会清空身上Buff，并总结其吃不到所有局内加成；上下文闭合，支撑该结论。",
+      "limitations": [
+        "逐字稿未逐项列出所有局内Buff类型。",
+        "该结论针对风滚草及其弹道结算，未展开死亡状态机超过1秒后的边界情况。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "紧急tag等局外加成不属于局内Buff，死亡时不会被清除。",
+      "subject": "紧急tag等局外加成",
+      "condition": "死亡事件触发时",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "什么东西不是局内加成 再强调一遍 紧急入紧急tag 紧急tag 那些东西不是局内加成 是不会被清的",
+          "t_start": 683,
+          "t_end": 696
+        }
+      ],
+      "reason": "逐字稿明确将紧急tag归为非局内加成，并强调它们不会被死亡清除，支持局外加成与局内Buff的清除规则不同。",
+      "limitations": [
+        "逐字稿未列出所有局外加成类型，仅以紧急tag为例。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c03",
+      "claim": "死亡状态机一般是30帧（1秒）的动画，特效表现为单位变成灰；在这段状态期间敌人依然存在，但其身上所有Buff已被清空。",
+      "subject": "死亡状态机中的单位/敌人",
+      "condition": "单位死亡进入死亡状态机动画期间",
+      "scope": "universal",
+      "category": "状态机/帧时序",
+      "evidence": [
+        {
+          "text": "死亡状态机一般来讲也是一个30帧 一秒的一个动画 一个and的动画就是大概的特效就是变成灰 大概的特效就是变成灰那一段",
+          "t_start": 636,
+          "t_end": 651
+        },
+        {
+          "text": "在这个状态期间 实际上敌人还是存在的 但是敌人已经清掉了自己身上的所有Buff 导致他丢掉了所有的局内加成 然后的话结算",
+          "t_start": 651,
+          "t_end": 670
+        }
+      ],
+      "reason": "逐字稿给出死亡状态机常见时长30帧/1秒及变灰表现，并说明该状态期间敌人仍存在但Buff已清空，属于可复用的状态机机制描述。",
+      "limitations": [
+        "主播用“一般来讲”描述，可能存在单位类型或版本特例。",
+        "未展开“敌人”是否覆盖所有单位类型以及精确帧级触发点。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "三个候选均能在逐字稿窗口中找到连续原文支撑，且已形成自包含机制陈述：c01、c03描述死亡状态机清Buff及风滚草局内加成丢失，c02区分局外加成不被清除。未发现未定论猜测、反问或纯画依赖残句，故全部 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

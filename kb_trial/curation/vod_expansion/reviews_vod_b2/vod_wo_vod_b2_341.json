@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_341",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:48:27+0900",
+  "source_sha256": "246239a830951a4a3831d4affcd69ca5e611b0dbaf0b888b620bc2305ec84944",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "不死类Buff（如赫默、史尔特尔等锁血机制）的应用节点属于血量结算流程，而非伤害结算流程。",
+      "subject": "不死类Buff（锁血机制）",
+      "condition": "受到致死或扣血结算时",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "这两个Buff不是在伤害结算流程应用的boss boss是在血量结算环节应用的",
+          "t_start": 7046,
+          "t_end": 7058
+        }
+      ],
+      "reason": "主播明确勘误并界定了不死类Buff的作用环节属于血量结算环节而非伤害结算流程，具备通用规则机制价值。",
+      "limitations": [
+        "ASR转写存在口误/错词（'boss boss'），但核心语义明确指代前文提到的不死类Buff"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "不死机制的底层实现逻辑是在单位重设血量时将结算值限制为不低于1，而非在Buff生效期间全程持续锚定干员血量最低为1。",
+      "subject": "不死机制（锁血）",
+      "condition": "进行血量重设结算时",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "这个就是不死不死的规定 就是在重设血量环节不能低于一",
+          "t_start": 7098,
+          "t_end": 7116
+        },
+        {
+          "text": "不死不是让自己生效期间内血量最低为一 是在重设血量的时候最低为一 这两者的区别 就是 大家其实应该是见过 打一下之后血变多的龟杀啊",
+          "t_start": 7135,
+          "t_end": 7148
+        }
+      ],
+      "reason": "主播详细阐明了不死效果的具体实现细节（重设血量时做下限截断为1，而非持续性全局数值锁死），有明确逻辑定义和逐字稿支撑。",
+      "limitations": [
+        "需要配合血量结算事件触发，非血量结算阶段的数值可能存在其他交互表现"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选命题分别从生效流程节点与具体底层实现逻辑两个角度阐释了不死（锁血）机制，论述完整闭合，逐字引文完全匹配，均判定为 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

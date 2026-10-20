@@ -1,0 +1,76 @@
+{
+  "workorder_id": "vod_wo_vod_b2_342",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:47:26+0900",
+  "source_sha256": "8eba2a3b632157864e5435c462cada70041396ea90a2a97c7d06199291681deb",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "持有不死状态时，单位血量可以低于1，前提是进入不死状态前其血量已低于1。",
+      "subject": "持有不死状态的单位",
+      "condition": "进入不死状态前血量已低于1",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "即使持有不死的时候 血量也是可以低于一的 只要最开始低于一就行了",
+          "t_start": 7,
+          "t_end": 52
+        }
+      ],
+      "reason": "逐字稿明确陈述‘即使持有不死的时候 血量也是可以低于一的 只要最开始低于一就行了’，给出了状态与前提，属于可复用机制结论。",
+      "limitations": [
+        "未说明不死状态的具体来源、持续时间和血量下限。",
+        "未涉及与其他锁血或免死机制的交互。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "当单位持有不死状态且当前血量低于1时，受到伤害后单位血量会增加。",
+      "subject": "持有不死状态且血量低于1的单位",
+      "condition": "受到伤害",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "但是的话在这种状态下 一旦受到伤害 血量反而会增加",
+          "t_start": 7,
+          "t_end": 52
+        }
+      ],
+      "reason": "逐字稿明确陈述‘但是的话在这种状态下 一旦受到伤害 血量反而会增加’，条件为不死状态且血量低于1，结果为受击加血；后续同窗口‘那加血了’也作为实战结果呼应。",
+      "limitations": [
+        "未说明加血量的具体数值公式与受伤害类型范围。",
+        "该观察发生在毒物图真伤环境中，是否为该环境特例尚未在逐字稿中展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01、c02 均为同一行逐字稿直接陈述的机制结论，且可改写为不依赖画面的自包含命题；无猜测或反问，证据引文与原文完全对齐，故均 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

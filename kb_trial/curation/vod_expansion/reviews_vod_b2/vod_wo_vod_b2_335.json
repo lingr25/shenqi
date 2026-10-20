@@ -1,0 +1,112 @@
+{
+  "workorder_id": "vod_wo_vod_b2_335",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:46:11+0900",
+  "source_sha256": "d3ecae52c7e2ad1d75216210cf66e94d930c9d477dba473e5d1cbb10cabc8d9d",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "伤害与减伤都在第三阶段（伤判环节）进行结算，所有减伤效果均属于伤判阶段的处理范畴。",
+      "subject": "伤害结算与减伤机制",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "伤害结算",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "对伤害只能在第三阶段算伤害 一概是伤判算减伤也是这个环节 减伤都是伤判",
+          "t_start": 6657,
+          "t_end": 6669
+        }
+      ],
+      "reason": "主播明确阐明了伤害结算流程中的阶段划分：减伤与伤害的计算均处于第三阶段（伤判流程）。",
+      "limitations": []
+    },
+    {
+      "local_id": "c02",
+      "claim": "真实伤害仅跳过抗性结算流程，并不会跳过伤判流程；因此全类型减伤与脆弱等伤判效果均可对真实伤害生效。",
+      "subject": "真实伤害",
+      "condition": "减伤或增伤属于伤判阶段的生效效果（非仅针对物法抗性）",
+      "scope": "universal",
+      "category": "伤害结算",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "大家可以注意到我这里的一些描述问题 我们说真伤只会跳过抗性结算流程 而并不会跳过商判流程 正是因为他不跳过伤判流程",
+          "t_start": 6685,
+          "t_end": 6697
+        }
+      ],
+      "reason": "澄清了关于真实伤害的常见误区，指明其底层机制为只跳过抗性结算而不跳过伤判流程，从而解释了为何真伤能受减伤和脆弱影响。",
+      "limitations": [
+        "若减伤效果限定了物理或法术伤害类型（如普通庇护），则无法对真实伤害生效。"
+      ]
+    },
+    {
+      "local_id": "c04",
+      "claim": "克丽斯腾（总辖）激活的六个球提供全类型减伤，不仅能降低物理和法术伤害，同样可以减免真实伤害和元素伤害。",
+      "subject": "克丽斯腾（总辖）的球体减伤",
+      "condition": "克丽斯腾拥有环绕球体（全类型减伤状态）",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "比如说总辖总辖六个球 他属于全类型减伤 所以也可以减真伤 同理元素也是",
+          "t_start": 6697,
+          "t_end": 6712
+        }
+      ],
+      "reason": "给出了全类型减伤可作用于真实伤害与元素伤害的具体敌人机制案例，逻辑自洽且证据完整。",
+      "limitations": []
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c03",
+      "topic": "真实伤害可以吃铃兰的脆弱效果",
+      "verdict": "reject",
+      "failed_gates": [
+        "DUP"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "reason": "与 c02 核心机制（真实伤害不跳过伤判流程，可受伤判增减伤影响）重复，铃兰脆弱仅为其中一个举例，合并至 c02 中阐述即可。"
+    }
+  ],
+  "review_note": "本工单主要探讨伤害结算流程的第三阶段（伤判流程），厘清了真实伤害跳过抗性但不跳过伤判的核心底层逻辑。c01、c02、c04均具有明确的机制总结价值且逐字稿完全支持；c03属于c02机制的个例阐述，依细则判重排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

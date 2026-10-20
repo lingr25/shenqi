@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_366",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:55:53+0900",
+  "source_sha256": "f4543e72d54d364912c98ac9f4c7cd41475f69861669a08fd2154474f85720de",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "装置出怪调用 root index0 或 root index1",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "口语表述高度依赖屏幕代码/数据结构指涉（'比如说这个就是装置的出怪'、'或者是一些莫名其妙的东西的除外'），且'调用这种root index0或者root index1'为未解释其确切机制语义的随口叙述，缺乏完整的前提条件与规则定义，属于未定论的现象观察与模糊指涉，不满足自包含和规则价值要求。"
+    }
+  ],
+  "review_note": "工单候选命题 c01 涉及主播对照底层数据配置表讲解时的口头闲谈与代词指涉，无法提炼出自包含、具有通用机制规则价值的定论陈述，按规则予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

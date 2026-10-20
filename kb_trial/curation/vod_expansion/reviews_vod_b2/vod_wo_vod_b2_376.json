@@ -1,0 +1,84 @@
+{
+  "workorder_id": "vod_wo_vod_b2_376",
+  "stem": "BV1xRho6DEAQ_p3_42227206884",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:00:20+0900",
+  "source_sha256": "29a76b9feadec3e86a84acea5ba0e33916be59a9e06aeeba94b3c0093002ade0",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "本源铁卫与巫役等专职积累元素损伤的干员，其元素损伤附着量主要基于自身攻击力结算，而非基于敌人实际受到的最终伤害数值结算。",
+      "subject": "本源铁卫与巫役职业附带的元素损伤附着机制",
+      "condition": "universal",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "重点是这种本源的爆条兽是一个什么 指什么 功能定位是一个基于攻击力爆条 而不是基于伤害爆条",
+          "t_start": 1405,
+          "t_end": 1419
+        },
+        {
+          "text": "就是我们可以分成三个定位 一个是打打损伤的 就是本源盾和那个巫医这个种职业 另一个是基于损伤打输出的",
+          "t_start": 1419,
+          "t_end": 1432
+        }
+      ],
+      "reason": "主播明确对比了元素损伤附着的两种机制逻辑，指明本源铁卫（本源盾）与巫役类干员定位为专职爆条，其损伤积累量是基于攻击力计算而非折算最终伤害。",
+      "limitations": [
+        "未细化具体技能或攻击的固定损伤百分比倍率"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "claim": "黑键与逻各斯等非本源术士模组附带的凋亡损伤机制，其附着量基于造成的法术伤害按比例折算；在敌人处于爆条无法积累损伤期间，模组直接追加造成对应比例的元素伤害，机制本质为基于造成伤害折算的元素增伤。",
+      "subject": "黑键与逻各斯附加凋亡损伤的模组机制",
+      "condition": "佩戴附带凋亡损伤特性的模组进行攻击时",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "按照伤害去结算那个损伤 按照损伤兑换伤害 然后在那个不能出损伤的暴条期间 他干什么的 他直接给你打元素来填平这个东西",
+          "t_start": 1468,
+          "t_end": 1481
+        },
+        {
+          "text": "它本质上来讲就是根据你当前打的伤害多少 然后去折一定比例的东西 换算成一部分增伤",
+          "t_start": 1481,
+          "t_end": 1496
+        }
+      ],
+      "reason": "主播详细解析了术士模组附带凋亡损伤的底层结算逻辑：未爆条时按实际伤害折算损伤，爆条期间直接将折算量补为元素伤害，机制本质上构成伤害比例增益。",
+      "limitations": [
+        "未列出不同干员模组的具体折算百分比参数"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "本切片主播系统性阐述了元素体系的三种定位：专职爆条（基于攻击力附着）、基于损伤打输出（本源术士真言/妮芙）、基于伤害折算损伤与增伤（黑键/逻各斯模组）。c01 与 c02 机制阐述严密完整，且逐字稿中有连续原句支持，符合四大硬性闸门要求，均予以收录。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,70 @@
+{
+  "workorder_id": "vod_wo_vod_b2_352",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:54:00+0900",
+  "source_sha256": "f1bf122aa0c0fde7da22f483e7147c580b2f9c0af1d07b7ab40762ef3b6ea945",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "弹道飞行速度较快的攻击通常不会主动启用攻击力缓存机制；攻击力加成默认实时调用干员面板，若弹道命中时技能已结束，则无法享受技能期间的攻击力加成。",
+      "subject": "弹道类攻击的攻击力缓存机制",
+      "condition": "弹道飞行速度较快且命中时技能已结束",
+      "scope": "universal",
+      "category": "帧时序",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "但是这些弹道飞得比较快的家伙 就不太会缓存了 虽然他们也会出现一些缓存不缓存的问题 但是的话鹰角优先不考虑他们",
+          "t_start": 1039,
+          "t_end": 1053
+        },
+        {
+          "text": "因为这个东西攻击力加成 我想一下攻击力加成会实时调用来源的攻击力 除非已经明令缓存了 明令缓存的一般是什么 像这种家伙",
+          "t_start": 1016,
+          "t_end": 1030
+        }
+      ],
+      "reason": "主播详细解释了快弹道默认不启用缓存机制，弹道命中时攻击力加成实时调用面板的底层通用结算逻辑。",
+      "limitations": [
+        "慢速弹道干员（如塑心）或特定干员有特殊缓存修正机制，不在快弹道通用规则内"
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "快弹道攻击卡极限未吃到技能加成在鹰角定义中属于自然表现",
+      "verdict": "reject",
+      "failed_gates": [
+        "DUP",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "reason": "与 c01 讨论的是同一种机制现象，且包含对开发商设计意图的主观猜测/拟人化修辞（「鹰角的定义中」「属于自然表现」），不构成独立的客观机制命题。"
+    }
+  ],
+  "review_note": "本片段讨论了快弹道干员攻击力加成是否随弹道缓存的通用结算机制。c01 整合了快弹道不主动缓存、攻击力加成默认实时调用面板的底层规则，予以 keep；c02 与其内容重复且包含设计倾向解读，予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

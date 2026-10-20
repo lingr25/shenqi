@@ -1,0 +1,40 @@
+{
+  "workorder_id": "vod_wo_vod_b2_390",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:03:09+0900",
+  "source_sha256": "65a598d739971cc9d6f6dcf237fd27823fb2bdf6d268fc8fdc28022d4a54442b",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "防御力500目标上出现1391与1365两种伤害数字的观察",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3",
+        "G4"
+      ],
+      "reason": "G1：命题主语指向不明且非自包含机制陈述——「声明引痕引痕者」系上游对[1012s]敌人名的转录（该行实为「声明引痕引痕者的话 防御力是500 攻击力是800」，描述的是被击目标属性），而1391/1365是攻击方打出的伤害数字，命题未交代伤害归属主体与技能来源，只是画面中的两个数值。G2：引文「13911391和我刚才这个数1365哎 等一下啊」跨越[1030s]「13911391和我刚才这个数」与[1044s]「1365哎 等一下啊」两行拼接，并对原文做了删改，非单行字符级连续子串，且标注的 t_start=1030 / t_end=1066 也不对应引文起止行。G3：condition 仅给出「目标防御力为500」，未交代触发主体、攻击方技能状态与天赋是否触发，主体/条件/范围三元不完整（范围亦未界定为 universal / entity_mechanism / instance）。G4：主播当场提出的是未闭合的疑惑与误差猜测（[1069s]「哎好抽象啊 我什么时候给他莫名其妙的扣了 扣了30」、[1088s]「有点不确定这是否是误差」），属开放式未定论假说；且该候选本质为一次性实战数值观察，缺乏明确参数与可复现条件，不具规则价值。"
+    }
+  ],
+  "review_note": "本工单仅一个候选 c01，为「防御力500目标上出现1391与1365两个伤害数字」的实战数值观察。该命题既非自包含机制陈述（伤害归属主体未闭合，所谓「声明引痕引痕者」实为对敌方单位名的转录），其引文亦为跨行拼接且起止秒数标注失准，同时主播本人明确表示不确定是否为误差、并未给出可复现条件与参数解释。四大闸门全部不通过，判 reject，本工单无任何可入库机制定论，顶层 verdict 为 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

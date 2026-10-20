@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_373",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:58:47+0900",
+  "source_sha256": "eafa169fe1c823a4ce64a5384a791657ef6793f4d3466fdd6e3c17cc074ce28d",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "关卡出怪波次的间隔机制为相对时间逻辑：以「上一波怪生成完毕」为起点计算等待时长，再生成下一波怪；而非在关卡绝对时间轴的固定时间点生成怪。",
+      "subject": "关卡刷怪机制（出怪间隔）",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "帧时序",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "鹰角的设计其实是间隔 其实是间隔 是上一波怪出完之后多久出下一波怪 而不是什么时间出什么怪",
+          "t_start": 2439,
+          "t_end": 2454
+        },
+        {
+          "text": "为什么要这么强调 是因为上一波怪什么时间出 是不是可以被卡住的 可以被一帧一出怪卡住",
+          "t_start": 2454,
+          "t_end": 2467
+        }
+      ],
+      "reason": "主播在讲授底层刷怪机制时，明确对比了「绝对时间点刷怪」与「相对波次间隔刷怪」的设计区别，指出了怪生成时间以波次出完为起算基准，且会因单帧刷怪拥堵（一帧一出怪）等因素导致后序时间轴整体后移。属于经得起推敲的底层机制定论。",
+      "limitations": [
+        "部分关卡可能存在多条并行的出怪路线或受特殊机制（如倒计时、特定事件触发）控制的独立波次，此定论适用于常规波次依赖链条。"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单候选命题 c01 准确提炼了主播对于关卡生成怪物的间隔逻辑（相对波次间隔而非绝对时间轴排期），逐字稿证据充足且表述自包含，通过全部四大闸门，予以采纳并规范化表述。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

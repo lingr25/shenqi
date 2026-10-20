@@ -1,0 +1,89 @@
+{
+  "workorder_id": "vod_wo_vod_b2_371",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:58:50+0900",
+  "source_sha256": "d236e8c086fe9027fd9f8792b056095ff06bd5a5f1a6a890b48450ee134b3371",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "明日方舟的鹰角出怪配置不规定绝对出怪时间，只规定相对上一波次结束的出怪间隔；例如上一波次结束后 0 秒、40 秒、55 秒出对应波次。",
+      "subject": "明日方舟出怪配置（Map 波次配置）",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "帧时序/出怪时序",
+      "evidence": [
+        {
+          "text": "鹰角从来不规定出怪的时间 只规定出怪的间隔 只规定出怪的间隔 你看他的写法 他的写法是上一个波次结束之后 零秒出这一波次",
+          "t_start": 2293,
+          "t_end": 2308
+        },
+        {
+          "text": "上一波次之后零秒40秒出这一波次 上一波次结束后55秒出这一波次 这一波次开始后的第三秒出这个怪 第六秒出这个怪 第三秒出这个怪",
+          "t_start": 2308,
+          "t_end": 2322
+        },
+        {
+          "text": "鹰角的设计其实是间隔 其实是间隔 是上一波怪出完之后多久出下一波怪 而不是什么时间出什么怪",
+          "t_start": 2439,
+          "t_end": 2454
+        }
+      ],
+      "reason": "逐字稿明确指出鹰角不规定出怪时间，只规定出怪间隔，并给出以上一波次结束为基准的波次出怪示例；后文再次总结为上一波怪出完后多久出下一波怪。",
+      "limitations": [
+        "示例中的 0/40/55 秒为讲解用配置片段，未给出来源字段名。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "明日方舟波次内部的出怪时间位以本波次开始为计时基准；例如本波次开始后第 3 秒、第 6 秒、第 9 秒可以设置出怪，具体时间位由波内配置决定。",
+      "subject": "明日方舟波次内部出怪配置",
+      "condition": "该波次已开始",
+      "scope": "universal",
+      "category": "帧时序/出怪时序",
+      "evidence": [
+        {
+          "text": "上一波次之后零秒40秒出这一波次 上一波次结束后55秒出这一波次 这一波次开始后的第三秒出这个怪 第六秒出这个怪 第三秒出这个怪",
+          "t_start": 2308,
+          "t_end": 2322
+        },
+        {
+          "text": "还有就是第三第九秒出怪 然后假设说我是出三个 然后的话我的间隔是多少 然后会出这些怪",
+          "t_start": 2327,
+          "t_end": 2339
+        }
+      ],
+      "reason": "逐字稿以“这一波次开始后的第三秒/第六秒”和“第三第九秒出怪”说明波内出怪时间位以波次开始为基准，具体秒位由波内配置指定。",
+      "limitations": [
+        "第 3/6/9 秒只是讲解中的示例，不代表全部可能的时间位；未给出配置字段名。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均来自讲解出怪配置机制的同一段论述：c01 归纳波次间只规定相对间隔，c02 归纳波次内时间位以波次开始为基准；逐字稿支撑充分，未涉及未定论猜想，均判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

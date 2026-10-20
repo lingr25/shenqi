@@ -1,0 +1,106 @@
+{
+  "workorder_id": "vod_wo_vod_b2_343",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:49:02+0900",
+  "source_sha256": "19cad790086fbd9f74cb507b00873683108c3e6dac7c4d51016895030cd72888",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "M3在血量切换并按比例缩放血量时，会因比例缩放导致血量变为低于1血的0血状态。",
+      "subject": "M3",
+      "condition": "M3发生血量切换并按比例缩放时",
+      "scope": "entity_mechanism",
+      "category": "血量结算",
+      "evidence": [
+        {
+          "text": "注意啊 这个时候他的血量是零 为什么血量是零 因为在底下的时候不死是一 然后他有7235的血",
+          "t_start": 210,
+          "t_end": 223
+        },
+        {
+          "text": "然后按照比例回来的时候 他就因为比例的缩放 然后到零了",
+          "t_start": 223,
+          "t_end": 234
+        },
+        {
+          "text": "M3因其血量切换 所以会有一个低于一血的零血的时候",
+          "t_start": 245,
+          "t_end": 259
+        }
+      ],
+      "reason": "逐字稿先指出该单位此时血量为零，并解释其按比例回到场上时因比例缩放变为零；随后明确M3因血量切换会出现低于1血的0血状态。该结论不依赖画面，可由转写直接支撑。",
+      "limitations": [
+        "未给出M3血量切换的具体来源与比例缩放公式。",
+        "“低于1血的0血状态”为转写表述，未展开具体数值计算。"
+      ],
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      }
+    },
+    {
+      "local_id": "c02",
+      "claim": "处于0血状态的M3在该毒雾图中受到每0.5秒一次的真实伤害时，会触发不死并将血量变为1血；不死结束后再受到毒雾真实伤害则会死亡。",
+      "subject": "处于0血状态的M3",
+      "condition": "M3处于0血状态并受到毒雾真实伤害",
+      "scope": "instance",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "注意啊 这个时候他的血量是零 为什么血量是零 因为在底下的时候不死是一 然后他有7235的血",
+          "t_start": 210,
+          "t_end": 223
+        },
+        {
+          "text": "但是的话这个图是毒物图啊 每0.5秒一次真伤",
+          "t_start": 223,
+          "t_end": 234
+        },
+        {
+          "text": "所以的话他回来的时候会在一秒之内受到真伤",
+          "t_start": 234,
+          "t_end": 240
+        },
+        {
+          "text": "M3因其血量切换 所以会有一个低于一血的零血的时候",
+          "t_start": 245,
+          "t_end": 259
+        },
+        {
+          "text": "所以这里的话当他受了一下伤害的时候 然后他就触发了不死 把自己变成一血了 然后等到不死结束之后 他就死了 被烫的",
+          "t_start": 259,
+          "t_end": 278
+        }
+      ],
+      "reason": "上下文交代M3回到场上时血量为0，且该图为毒雾图、每0.5秒造成一次真实伤害；随后明确其受到一次伤害后触发不死变为1血，不死结束后被灼烧死亡。该命题是带明确触发条件的实例结论。",
+      "limitations": [
+        "仅据该毒雾图与0血M3案例，不应外推为任意伤害或任意单位。",
+        "未给出毒雾单次真实伤害数值与不死持续时间。"
+      ],
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      }
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均有逐字稿直接支撑。c01改写为自包含的M3血量比例缩放导致0血结论；c02保留为毒雾图实例下的不死触发与死亡顺序，避免过度外推。未发现重复候选。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

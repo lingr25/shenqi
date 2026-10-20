@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_349",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:50:32+0900",
+  "source_sha256": "4c0f2d2fb51fc20dbf706c0ae1076d1308c30c511c997c30183a842300061091",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "结城理的最后一次治疗具有16帧前摇并会发射弹道，因而可以卡到离弦。",
+      "subject": "结城理的最后一次治疗",
+      "condition": "仅限结城理治疗动作的最后一次治疗；该次弹道存在离弦判定窗口",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "奶很少有利血 不过也有吧 那个最后一下奶 他是有16帧的 前摇发射一个弹道 他的奶是可以卡到离弦的",
+          "t_start": 842,
+          "t_end": 861
+        }
+      ],
+      "reason": "上下文由上一句“结城理最后一下奶是离弦吗”引出，主播随后明确断言最后一下奶有16帧前摇、会发射弹道且奶可以卡到离弦，属于具体干员机制的结论性陈述，非单纯猜测或反问。",
+      "limitations": [
+        "逐字稿未说明具体技能名称与技能等级，仅以“最后一下奶”指代。",
+        "未在窗口内展开该离弦的完整实机验证步骤。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅 c01 一条候选。其引文可在 842s 行逐字稿中字符级匹配，时间戳可对齐到下一行 861s；主体已由上下文补全为结城理的最后一次治疗，条件与 scope 明确，且主播给出的是机制断言而非未闭合猜测，故 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

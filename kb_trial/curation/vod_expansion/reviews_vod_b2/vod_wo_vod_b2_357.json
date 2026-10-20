@@ -1,0 +1,71 @@
+{
+  "workorder_id": "vod_wo_vod_b2_357",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:52:38+0900",
+  "source_sha256": "aa55b0415ae66585178b3ac73c63c2bacff7b2bd7ebc40aa8edd5cb2872983f4",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "「失误机会」不在出怪流程之中，因此不会影响出怪。",
+      "subject": "失误机会（弹幕所问机制，逐字稿仅以该名词指称）",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "出怪机制",
+      "evidence": [
+        {
+          "text": "失误机会影响出怪吗",
+          "t_start": 1443,
+          "t_end": 1447
+        },
+        {
+          "text": "不会不会他不在出怪流程之中 会影响出怪的东西 只有那些在出怪的路线设计之中的东西",
+          "t_start": 1447,
+          "t_end": 1483
+        }
+      ],
+      "reason": "弹幕就「失误机会是否影响出怪」提问后，主播给出肯定性否定回答「不会不会他不在出怪流程之中」，并补充只有出怪路线设计内的要素才会影响出怪。该句是明确结论而非口头猜测，未依赖画面指涉，可作为出怪机制的否定性判据采纳。",
+      "limitations": [
+        "逐字稿未说明「失误机会」具体对应哪一机制/系统，其判定归属未展开。",
+        "片段开头主播声明「出怪真这里的话还在进行研究之中 没有办法讲的很全」，本结论以该次口播为限，未附带实测或波形数据。",
+        "未交代失误机会与波次（waves）配置的交互细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "只有位于出怪路线设计中的东西会影响出怪。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G3"
+      ],
+      "reason": "主语为泛指的「会影响出怪的东西」，未指明具体机制、可核查要素与参数，条件与边界（哪一层级的路线/波次设计）均缺失，无法构成可复用的三元约束；其实质是同一句话后半句的口语化泛化复述，具体结论已由 c01 以更明确的形式采纳。此外主播开篇声明出怪机制「还在进行研究之中」，该全域断言缺乏展开支撑。"
+    }
+  ],
+  "review_note": "本单为 QA 片段：弹幕问「失误机会影响出怪吗」，主播答「不会不会他不在出怪流程之中」，并顺带说明影响出怪者限于出怪路线设计内的要素。据此采纳 c01（失误机会不属出怪流程，故不影响出怪，判 keep，已补全代词「他」并改写为自包含句）；c02 因主体泛指、三元约束不成立判 reject。需注意主播同段落自述出怪机制研究尚不完整，本结论仅覆盖「失误机会」这一否定性判据，map 站拥堵部分属网络/站点运营闲聊，无机制价值，未纳入。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

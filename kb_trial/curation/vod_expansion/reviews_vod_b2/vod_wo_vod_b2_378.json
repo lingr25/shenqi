@@ -1,0 +1,70 @@
+{
+  "workorder_id": "vod_wo_vod_b2_378",
+  "stem": "BV1xRho6DEAQ_p3_42227206884",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:01:28+0900",
+  "source_sha256": "9209f51b0c5360d848dfcdb5d2e81a16e699d1b7943fc2ca7bb07d49ad689fae",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "珊比的位移控制机制不同于束缚和眩晕，能够使敌人先走过一段距离后再被拉回，从而减少敌人的输出。",
+      "subject": "珊比的位移控制机制",
+      "condition": "敌方单位受到珊比的位移控制效果影响时",
+      "scope": "entity_mechanism",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "弹死量不同于束缚和眩晕等效果 能够让敌人走过一段路再被拉一好",
+          "t_start": 1555,
+          "t_end": 1566
+        },
+        {
+          "text": "可以看到能减少敌人输出",
+          "t_start": 1577,
+          "t_end": 1589
+        }
+      ],
+      "reason": "上下文明确将珊比/3B的位移控制与束缚、眩晕对比，并说明敌人会先走一段再被拉回，随后可减少输出；虽然逐字稿存在 ASR 错字，但语义可还原为自包含机制陈述。",
+      "limitations": [
+        "逐字稿未给出位移距离、拉回时机、触发技能名称与具体数值",
+        "“减少敌人输出”的具体机制与量化效果未在逐字稿中展开"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "珊比在实战前的元素阻断长轴优势区间为7秒到8.55秒。",
+      "verdict": "pending",
+      "reason": "候选包含 7 秒到 8.55 秒的机制数值，具备潜在机制价值；但逐字稿中“实战前的元素阻断长轴”“每零点支付增15”等关键术语严重受 ASR 干扰，无法确认优势区间所指机制与成立条件，需人工听审或后续实机验证。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "c01 可还原为一条自包含的珊比位移控制机制命题，逐字稿有直接对比与效果陈述支撑，予以保留；c02 虽含具体数值，但关键术语与条件受转写质量影响未闭合，暂判 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

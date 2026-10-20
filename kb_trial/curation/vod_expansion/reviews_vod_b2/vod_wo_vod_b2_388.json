@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_388",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:02:38+0900",
+  "source_sha256": "c56d56963343ac3b3b2f67fc6543a79d6b1aa6e519e2e8e792f30b58256ccd51",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "重装防御者的防御力为800",
+      "verdict": "reject",
+      "failed_gates": [
+        "G2",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "reason": "上游给出的引文跨越了多行拼接（'是这个图重装防御者' 与 '800甲' 分布在 617s 和 624s），违反 Gate 2；此外主播在 789s-809s 表示'我现在没说是不是紧急呀'、'也没说是不是紧急 先按这个算吧'，属于关卡特定敌人的未定论推导假设，不具备通用机制规则价值，违反 Gate 4。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "根据重装防御者800防御条件下打出的伤害数值推算，攻击力倍率为1.3倍",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "reason": "主播口中的'1.3倍率'是基于实战录像/演示现场口算的即时推测，主语和技能/天赋对应关系在逐字稿中残缺不全；且后续在 1044s-1088s 发现数值对不上（'哎 等一下啊'、'好抽象啊'、'有点不确定这是否是误差'），属于典型未闭合的推测假说，违反 Gate 1、Gate 3 及 Gate 4。"
+    }
+  ],
+  "review_note": "本片段为主播对照实战演示计算佩佩/克莱门沙第一天赋与攻击力倍率的现场推演过程。主播在推算过程中对敌人具体属性（是否为紧急关卡数值）及最终伤害数值存在疑问与误差修正，讨论未闭合且为粗略推测，无确凿通用的机制定论，全部予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

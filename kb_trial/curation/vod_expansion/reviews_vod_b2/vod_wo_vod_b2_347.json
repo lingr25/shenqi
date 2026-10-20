@@ -1,0 +1,105 @@
+{
+  "workorder_id": "vod_wo_vod_b2_347",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:50:42+0900",
+  "source_sha256": "f2615cd715ec3bbcb5d58c977001e8cd2b396e7c276e89959765fc9ddc7db0a6",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "弹道在命中进行伤害结算时，会实时调用发射来源当前的攻击力。",
+      "subject": "弹道伤害结算",
+      "condition": "弹道命中目标且来源仍可被调用时",
+      "scope": "universal",
+      "category": "伤害结算",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "弹道在命中的时候会调用来源的攻击力 然后的话就会 然后来源这个时候是死亡状态机 大家查PRTS是可以查到的",
+          "t_start": 621,
+          "t_end": 636
+        }
+      ],
+      "reason": "主播明确解释了底层弹道伤害结算机制：弹道命中时默认动态调用来源当时的攻击力数值。",
+      "limitations": [
+        "若来源已彻底销毁（死亡状态机结束），则会触发后备的数据包记录值结算逻辑。"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "claim": "当发射来源的死亡状态机结束（持续超过约1秒/30帧）且实体完全消失后，弹道命中时若检测到来源已不存在，则会回退使用弹道自身生成时数据包所记录的攻击力。",
+      "subject": "弹道伤害结算",
+      "condition": "弹道来源进入死亡状态机超过1秒（实体完全注销消失）",
+      "scope": "universal",
+      "category": "伤害结算",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "实际上是会记录下自己 这些有攻击力加成的数值的 然后只是没有应用而已 但是如果死亡状态机已经过去了超过一秒了",
+          "t_start": 709,
+          "t_end": 723
+        },
+        {
+          "text": "那么弹道发现自己的来源已经没了 那他就会记录自己弹道的攻击力 弹道是一个数据包啊 弹道是一个数据包 这是花佬的说法 我沿用他的说法",
+          "t_start": 723,
+          "t_end": 738
+        }
+      ],
+      "reason": "上下文完整阐明了弹道来源彻底消失后（死亡动画结束实体注销），伤害结算回退到弹道包自身保存攻击力的机制。",
+      "limitations": [
+        "具体死亡状态机时长在文中提到‘一般来讲也是一个30帧一秒的一个动画’，不同敌人死亡动画帧数可能存在微小差异。"
+      ]
+    },
+    {
+      "local_id": "c03",
+      "claim": "弹道在底层机制上属于一个独立数据包，发射时会记录来源、攻击力、攻击力倍率和技能效果等属性，使干员撤退或离场后弹道命中仍能保留部分初始附带效果。",
+      "subject": "弹道数据包结构",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "伤害结算",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "这个数据包里头会记录着来源 会记录着攻击力 会记录着攻击力倍率 技能效果等很多很多东西 所以的话导致干员撤了之后",
+          "t_start": 738,
+          "t_end": 752
+        }
+      ],
+      "reason": "明确归纳了解释‘离弦’现象的核心概念——弹道数据包所包含的字段属性及跨撤退保留效果的原理。",
+      "limitations": [
+        "未穷举数据包内包含的所有完整底层参数。"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单涉及明日方舟弹道机制与离弦箭核心原理解析，详细阐述了弹道命中时获取来源属性的动态机制、来源彻底死亡后的回退判定机制以及弹道数据包本身包含的属性信息，三条命题相互支撑、逻辑闭合，均符合四项硬性闸门。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

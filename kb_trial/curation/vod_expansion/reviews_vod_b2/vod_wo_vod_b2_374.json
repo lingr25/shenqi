@@ -1,0 +1,58 @@
+{
+  "workorder_id": "vod_wo_vod_b2_374",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:59:36+0900",
+  "source_sha256": "ce5a0de0df669969aa1da6cdcb698fc959b5645ccc5150c202df49ef2dffabab",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "关卡出怪机制基于波次间隔判定（上一波怪出完之后多久出下一波怪），因此上一波怪的实际出怪时间若被延迟（如因一帧只出一怪等原因卡住），会导致后续怪物的刷新时序整体向后迁移。",
+      "subject": "关卡出怪与波次刷新机制",
+      "condition": "上一波出怪时间因帧出怪上限或其他因素发生延迟",
+      "scope": "universal",
+      "category": "帧时序",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "鹰角的设计其实是间隔 其实是间隔 是上一波怪出完之后多久出下一波怪 而不是什么时间出什么怪",
+          "t_start": 2439,
+          "t_end": 2454
+        },
+        {
+          "text": "为什么要这么强调 是因为上一波怪什么时间出 是不是可以被卡住的 可以被一帧一出怪卡住",
+          "t_start": 2454,
+          "t_end": 2467
+        },
+        {
+          "text": "可以因为各种理由卡住 从而导致整体迁移 对啊接缘有大脚的设置 像这种大脚这种怪的话 就是一个选择不出的问题",
+          "t_start": 2467,
+          "t_end": 2480
+        }
+      ],
+      "reason": "主播详细解释了底层关卡出怪逻辑并非绝对时间戳触发，而是相对上一波怪出完后的时间间隔。因此当上一波怪因单帧出怪限制等原因产生延迟时，后续出怪时间点会发生整体偏移，属于明确的通用底层机制定论。",
+      "limitations": [
+        "口述中提及的「一帧一出怪」具体判定与同帧出怪挤出优先级的具体规则留待后续展开讲解"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "命题探讨了鹰角关卡出怪机制中基于相对时间间隔而非绝对时间戳的核心设计，原逐字稿逻辑闭合且有完整的因果链条支持，予以收录并规范化表述。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,69 @@
+{
+  "workorder_id": "vod_wo_vod_b2_375",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:01:14+0900",
+  "source_sha256": "08e8db807737bb78cf9a4b325dc9a8f345795aca236eab63dbb5092092c95d25",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "关卡出怪配置中，被标识为 hidden group 的路线隐藏波次，可以通过对应的 key 值批量、统一地控制该隐藏路线怪物的生成与不生成。",
+      "subject": "关卡出怪系统中的 hidden group（隐藏路线波次配置）",
+      "condition": "关卡配置中使用 hidden group 及其对应 key 标识隐藏路线",
+      "scope": "universal",
+      "category": "路线控制",
+      "evidence": [
+        {
+          "text": "这里这是属于一个路线隐藏 那像这种被标识为head的group的 他就可以通过这个key值 然后去去很方便的去调控这个图出不出",
+          "t_start": 2480,
+          "t_end": 2499
+        },
+        {
+          "text": "通过这种方法的话 他可以批量的统一的控制一些隐藏路线 出和不出",
+          "t_start": 2512,
+          "t_end": 2524
+        }
+      ],
+      "reason": "上下文明确解释了底层关卡配置中 hidden group 利用 key 进行隐藏路线批量调控的机制，原话口误/ASR为 'head的group'，结合后文'所有hidden group'修正为 hidden group 机制描述，逻辑完备可复用。",
+      "limitations": [
+        "具体 key 值的命名规范及游戏内触发该 key 变更的外部条件未在当前片段展开"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "大脚路线通过 hidden group 标识控制出与不出",
+      "verdict": "reject",
+      "reason": "与 c01 机制本质相同，c02 仅为主播以“大脚”为例的具体举例说明，判为同义重复 (DUP)，保留概括更为准确通用的 c01。",
+      "failed_gates": [
+        "DUP"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      }
+    }
+  ],
+  "review_note": "本片段讲解了明日方舟关卡生成逻辑中关于隐藏波次（hidden group）的设计原理：通过 key 批量控制特定隐藏路线是否刷怪（举例大脚）。保留通用底层机制 c01，排重特定实例举例 c02。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

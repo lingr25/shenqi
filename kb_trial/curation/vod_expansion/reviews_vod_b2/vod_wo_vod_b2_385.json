@@ -1,0 +1,89 @@
+{
+  "workorder_id": "vod_wo_vod_b2_385",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:02:18+0900",
+  "source_sha256": "fbfdb459e1b8f183e3342e91f107f919549f76cda025cb80d6eed11a0b981632",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙开启二技能「风暴潮」后，自身普通攻击造成物理溅射伤害，并向前释放浮游放逐舱携带周围地面敌人向前传送；浮游放逐舱在移动数格或遇到不可移动障碍后消失并留下漩涡，该漩涡可影响包括空中敌人在内的所有敌人。",
+      "subject": "克莱门沙二技能「风暴潮」",
+      "condition": "开启二技能「风暴潮」期间",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false,
+      "evidence": [
+        {
+          "text": "技能二风暴潮开启技能后 克莱门沙会向前释放一艘浮游放逐舱 浮游放逐仓会携带周围数名地面敌人 并将其不断传送至前方",
+          "t_start": 198,
+          "t_end": 214
+        },
+        {
+          "text": "在移动数格或遇到不可移动的障碍后才会消失 放逐舱消失后留下漩涡 处于漩涡的所有敌人 包括空中敌人 都会受到漩涡的效果影响",
+          "t_start": 214,
+          "t_end": 228
+        },
+        {
+          "text": "开启技能后 克莱门沙的攻击会造成物理溅射伤害",
+          "t_start": 228,
+          "t_end": 241
+        }
+      ],
+      "reason": "逐字稿详尽记录了干员技能官方介绍文本，完整阐述了二技能放逐舱位移机制、消失条件及漩涡作用目标类型（包含空中敌人）。",
+      "limitations": [
+        "具体移动格数上限及放逐舱移动速度未给出明确数值"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "claim": "克莱门沙二技能「风暴潮」产生的漩涡会持续造成侵蚀损伤与物理伤害，且漩涡造成的物理伤害可触发克莱门沙第一天赋的效果。",
+      "subject": "克莱门沙二技能「风暴潮」漩涡",
+      "condition": "敌人处于二技能「风暴潮」生成的漩涡范围内",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false,
+      "evidence": [
+        {
+          "text": "漩涡也会持续造成侵蚀损伤与物理伤害",
+          "t_start": 228,
+          "t_end": 241
+        },
+        {
+          "text": "漩涡造成的物理伤害也会受到第一天赋的影响",
+          "t_start": 241,
+          "t_end": 256
+        }
+      ],
+      "reason": "逐字稿明确陈述了二技能漩涡的伤害类型（持续物理伤害与侵蚀损伤）及其与第一天赋的联动触发判定，属于明确的技能机制定论。",
+      "limitations": [
+        "未说明漩涡持续时间与伤害判定的具体跳费/跳伤频率"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单两项候选命题均源自官方技能演示说明的逐字阅读与分析，主体明确、引文精确对齐，属于规范的干员特定技能机制结论，均予以通过。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}
