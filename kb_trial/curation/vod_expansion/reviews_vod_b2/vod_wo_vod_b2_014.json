@@ -1,0 +1,71 @@
+{
+  "workorder_id": "vod_wo_vod_b2_014",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:17:59+0900",
+  "source_sha256": "59541161d3c986abd3120890b91494a16b279acc2a6c4b8fb857b3b5c1f2551c",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "狭路相逢的中档奖励有概率获得行动力和叠层自然物；即使抽到白魔鸟或白魔狗，也相当于一件占用背包格子的藏品。",
+      "subject": "狭路相逢的中档奖励",
+      "condition": "选择狭路相逢的中档奖励",
+      "scope": "instance",
+      "category": "奖励机制",
+      "evidence": [
+        {
+          "text": "中档有概率获得行动力和叠层自然物 就算是出了白魔鸟和白魔狗",
+          "t_start": 3416,
+          "t_end": 3430
+        },
+        {
+          "text": "也相当于一个占用背包格子的藏品",
+          "t_start": 3430,
+          "t_end": 3442
+        }
+      ],
+      "reason": "逐字稿明确说明狭路相逢中档有概率获得行动力和叠层自然物，并称即使出了白魔鸟和白魔狗也相当于占用背包格子的藏品，构成该节点中档奖励的可复用结论。",
+      "limitations": [
+        "未给出中档奖励中行动力、叠层自然物、白魔鸟/白魔狗的具体概率与权重",
+        "未说明“叠层自然物”具体包含哪些物品"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "对比最右档的稳定一层收益，狭路相逢的中档在绝大多数情况下收益最高。",
+      "verdict": "reject",
+      "reason": "该候选属于收益比较与打法建议，不是可复用的机制定论；且“绝大多数情况”缺少可复现条件。候选 evidence 引文将 3416 行与 3430 行跨非连续行拼接，违反逐字引文对齐闸门。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G2",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01 通过四门，保留为狭路相逢节点中档奖励机制结论；c02 为收益评价/策略建议且引文跨行拼接，予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

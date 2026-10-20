@@ -1,0 +1,86 @@
+{
+  "workorder_id": "vod_wo_vod_b2_034",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:22:55+0900",
+  "source_sha256": "4fa5c59c411b06d1099c1d03737c0e01267c628bc53525aad3c3d7aca8a57fe1",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "黑流树海地图除第1层外，每一层的构造数量固定；第6层只有1种构造，2~6木子的构造只有10种。",
+      "subject": "黑流树海地图",
+      "condition": "除第1层外",
+      "scope": "instance",
+      "category": "地图生成/构造",
+      "evidence": [
+        {
+          "text": "但除了一层之外 其实每一层和构造数量都是固定的 六层只有一种构造 2~6木子的构造只有十种",
+          "t_start": 5758,
+          "t_end": 5770
+        }
+      ],
+      "reason": "逐字稿在讨论黑流树海地图是否固定时明确给出层数构造数量结论：除一层外每层构造数量固定，六层只有一种构造，且2~6木子相关构造只有十种。",
+      "limitations": [
+        "「2~6木子」为转写原文，疑指第2至第6层或类似层数范围，具体所指需人工听审确认。",
+        "未说明“构造”的精确定义与统计口径。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在黑流树海地图中，「剩余的信息前的镜头」只会出现在第1、2、4层；第1层有1到2个，第2层固定为2个，第4层为3个。",
+      "subject": "剩余的信息前的镜头",
+      "condition": "在黑流树海地图中",
+      "scope": "instance",
+      "category": "地图生成/构造",
+      "evidence": [
+        {
+          "text": "剩余的信息前的镜头只会在124层出现",
+          "t_start": 5803,
+          "t_end": 5807
+        },
+        {
+          "text": "一层有一到两个 二层固定为两个",
+          "t_start": 5807,
+          "t_end": 5817
+        },
+        {
+          "text": "二层是两个 四层是三个",
+          "t_start": 5807,
+          "t_end": 5817
+        }
+      ],
+      "reason": "逐字稿先说明该镜头只会在1、2、4层出现，随后在同一行给出第1层1到2个、第2层固定2个、第4层3个的数量结论。上游第二条引文有拼接，已改为同一行内的连续子串作为证据。",
+      "limitations": [
+        "「剩余的信息前的镜头」为转写原文，具体标准术语需人工复核。",
+        "未说明数量是否随构造变化而改变。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均有逐字稿支撑，属于黑流树海地图生成/构造的固定性结论；已按转写原文保留关键术语，并修正上游 c02 第二条引文的跨段拼接问题。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

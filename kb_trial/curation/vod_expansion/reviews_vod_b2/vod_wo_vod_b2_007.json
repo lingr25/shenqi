@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_007",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:15:55+0900",
+  "source_sha256": "1dc0cbeff4e39ae92919b11ce51d261519e0d68c717afeb752e92444b7fb2867",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "第二轮实战关卡中，携带安杰三时不能站在门口。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ],
+      "reason": "逐字引文可与转写窗口两行字符级对齐（G2 通过），但该候选本质为纯实战现象观察：主播仅口头断言『安杰三不能站门口』，随即被自身失误（双金树损坏）打断并转入其他话题，全程未交代触发原因、作用范围或可复现条件，也不构成可复用机制定论，命中 Gate 4 对无参数观察的排除条款。同时主体指代不明——转写中同一对象在『安杰三』（2652s）与『安吉三』（2673s）之间摇摆，无任何信息可还原为具体干员/技能名称，scope 只能落到一次性关卡实例，不满足 Gate 3 对明确主体的要求。故判 reject。"
+    }
+  ],
+  "review_note": "本单仅一条候选 c01，讨论『安杰三不能站门口』。引文层面可字符级对齐（G2 通过），但该句为主播在第二轮实战中的一次性现象陈述，既无参数化描述也无复现条件，且被其后『双金树坏了』的失误打断，未形成闭合结论；主体『安杰三/安吉三』因 ASR 抖动无法确认，不具备进入知识库的自包含机制价值。按宁缺毋滥原则整单判 reject，无 keep，故顶层 verdict 为 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

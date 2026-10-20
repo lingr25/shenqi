@@ -1,0 +1,86 @@
+{
+  "workorder_id": "vod_wo_vod_b2_041",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:24:26+0900",
+  "source_sha256": "94e657a6ae60d406524493d4fc88a3565b906fb891a5e9dd6b1133990c094f3b",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "流窜居民的一次移动对应玩家的一次移动；玩家进行一次移动消耗200行动力。",
+      "subject": "流窜居民的移动与玩家移动",
+      "condition": "流窜居民移动结算时",
+      "scope": "entity_mechanism",
+      "category": "寻路/位移",
+      "evidence": [
+        {
+          "text": "比如流窜居民的移动对应玩家的一次移动 玩家一次消耗200行动力",
+          "t_start": 6098,
+          "t_end": 6105
+        }
+      ],
+      "reason": "逐字稿明确将流窜居民移动与玩家一次移动对应，并给出玩家一次消耗200行动力；可作为流窜居民移动与玩家行动力结算关联的机制。",
+      "limitations": [
+        "逐字稿未说明200行动力消耗是否受其他事件、藏品或难度修正影响。",
+        "原文为“玩家一次消耗200行动力”，本回执按上下文补足为“玩家进行一次移动消耗200行动力”。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "两个流窜居民相撞时，系统在玩家移动前预确定周围可达节点；玩家行动后，流窜居民从预确定节点中的可达节点随机移动。因此不会出现居民A走到B且居民B走到C的情况，只会出现居民B走到C而居民A因无可达地点原地踏步；流窜居民也不会在玩家行动后突然撞到玩家。",
+      "subject": "两个相撞的流窜居民",
+      "condition": "两个流窜居民相撞；周围可达节点在玩家移动前预确定",
+      "scope": "entity_mechanism",
+      "category": "寻路/位移",
+      "evidence": [
+        {
+          "text": "比如两个居民撞在一起时 会在玩家移动前 并确定周围可达节点",
+          "t_start": 6047,
+          "t_end": 6054
+        },
+        {
+          "text": "将预确定节点中的可达节点随机移动 所以不会出现A走到BB走到C这种情况 只会出现B走到C 而A因为玩家在行",
+          "t_start": 6085,
+          "t_end": 6093
+        },
+        {
+          "text": "目前没有可达地点原地踏步 居民也不会在玩家行动后突然撞到玩家",
+          "t_start": 6093,
+          "t_end": 6098
+        }
+      ],
+      "reason": "逐字稿描述了相撞居民在玩家移动前预确定节点、玩家行动后从可达节点随机移动，并说明不会发生A到B且B到C或玩家行动后突然相撞；可归纳为可复现的寻路/位移机制。",
+      "limitations": [
+        "逐字稿中“并确定”等为ASR表述，结合上下文理解为“预确定”。",
+        "未交代预确定节点的具体算法、随机权重，以及哪些节点被排除的完整规则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均有逐字稿直接支撑，且可整理为自包含的流窜居民移动/寻路机制。c01涉及居民移动与玩家移动及行动力消耗的对应；c02涉及相撞时玩家移动前预确定节点、玩家行动后随机移动及由此产生的行为限制。未见未定论假说或画面依赖残句，故均 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

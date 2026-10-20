@@ -1,0 +1,81 @@
+{
+  "workorder_id": "vod_wo_vod_b2_036",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:21:44+0900",
+  "source_sha256": "89a0c08ecfb17f3d3f235016ae197d4ad9c047f3771e55482f5b53ab3ed5d69a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在黑流树海第1层，诡异行商节点基本每条路线都会出现一个，且出现在固定位置。",
+      "subject": "黑流树海第1层的诡异行商节点",
+      "condition": "第1层",
+      "scope": "universal",
+      "category": "地图生成",
+      "evidence": [
+        {
+          "text": "一层的诡异形上 基本每条路都有一个 且出现在固定的位置",
+          "t_start": 5851,
+          "t_end": 5857
+        }
+      ],
+      "reason": "视频在讲解地图固定节点时明确称一层诡异行商基本每条路都有一个且位置固定；逐字稿中的“诡异形上”按游戏节点名规范为“诡异行商”。属于可复用的层数-节点生成规则。",
+      "limitations": [
+        "“基本”表示常规/高概率而非绝对每路线必出。",
+        "逐字稿未给出第1层具体固定坐标，只能确认分布规律。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在黑流树海第6层，显露恶地节点上下左右四个相邻位置固定，分别为不期而遇、作战、命运所指和诡异行商。",
+      "subject": "黑流树海第6层的显露恶地节点上下左右相邻位置",
+      "condition": "第6层",
+      "scope": "universal",
+      "category": "地图生成",
+      "evidence": [
+        {
+          "text": "在六层显露额鼻的上下左右也是固定的",
+          "t_start": 5851,
+          "t_end": 5857
+        },
+        {
+          "text": "分别为不期而遇 作战地域所止和诡异行商",
+          "t_start": 5857,
+          "t_end": 5867
+        }
+      ],
+      "reason": "同段逐字稿明确第6层显露恶地上下左右固定，下一行列出四个相邻节点；其中“显露额鼻”“地域所止”按同窗口出现的“显露恶地”“命运所指”及语境规范。属于层数相关的固定节点生成规则。",
+      "limitations": [
+        "逐字稿未说明四个方位与四个节点的逐一对应顺序。",
+        "节点名来自 ASR 规范，具体方位仍需以实机或地图工具核对。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均来自李雪视频对黑流树海固定节点分布的陈述；实际支撑逐字稿在 5851s/5857s 行。已按上下文修正 ASR 节点名，并拆分跨行引文为多条单行证据。四条硬性闸门均通过，保留为可复用地图生成规则。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,65 @@
+{
+  "workorder_id": "vod_wo_vod_b2_027",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T10:08:02+0900",
+  "source_sha256": "2a2efebe81b44128ab5164ed76bf45404a61a6000d4400637e9ec61f8ed00616",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "黑流树海的每个普通作战和紧急作战都有四个宝箱格。",
+      "subject": "黑流树海的普通作战与紧急作战",
+      "condition": "黑流树海模式中",
+      "scope": "universal",
+      "category": "概率/宝箱",
+      "evidence": [
+        {
+          "text": "有没有发现这次的宝箱多了很多 那是因为每个普通作战和紧急作战 都有四个格子",
+          "t_start": 4998,
+          "t_end": 5008
+        }
+      ],
+      "reason": "上下文在黑流树海月报中明确称每个普通作战和紧急作战都有四个格子，并以此解释本次宝箱变多。该陈述不依赖画面指涉，具备可复用机制价值。",
+      "limitations": [
+        "逐字稿称其为“格子”，未逐一列出四个格子的具体名称。",
+        "主播同时提到数据总量不明，未展示四个格子的原始统计来源。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "宝箱格按概率随机出现三种宝箱，出现概率分别为10.1%、3.37%、1.44%",
+      "verdict": "reject",
+      "reason": "候选仅引用图表数字，但紧随其后的上下文为主播连续质疑“真是这个数吗”“为什么我看起来像是10% 3.3%和1.5%”，并提到路线权重可能为1.5%、3.5%、11.5%，讨论未闭合，属于未验证假说与开放疑问，违反 Gate 4。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01 为黑流树海宝箱格数量的明确模式机制陈述，可通过四闸门；c02 涉及三种宝箱概率数字，但当场被主播质疑且与后续权重读数冲突，未形成定论，应予排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

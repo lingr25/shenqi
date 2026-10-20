@@ -1,0 +1,66 @@
+{
+  "workorder_id": "vod_wo_vod_b1_133",
+  "stem": "BV1cmaa6VEPR_p2_42252239801",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:14:56+0900",
+  "source_sha256": "12d0a9b952e647a39bb4c822a14a7f0b384ab07b2eebee381eae94621f8c1aa7",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在鸭速公路关卡中，放置1个箱子与放置2个箱子会使敌人路线完全不同。",
+      "subject": "鸭速公路关卡中放置箱子的数量",
+      "condition": "在鸭速公路中对比放置1个箱子与放置2个箱子",
+      "scope": "instance",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "有一个箱子还是有两个箱子 是完全不一样的",
+          "t_start": 669,
+          "t_end": 704
+        }
+      ],
+      "reason": "逐字稿以鸭速公路为例，直接说明箱子数量为1个或2个时结果完全不同；结合上下文讨论箱子改路径与箱图设计，可还原为敌方路线不同。该命题自包含，且参数明确为关卡与箱子数量，属于关卡实例中的寻路现象。",
+      "limitations": [
+        "未交代1个箱子与2个箱子的具体放置坐标。",
+        "“完全不同”是口语描述，未给出精确路径点或路径变化细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "在鸭速公路用2个箱子堵住两个位置，可以把下方四个位置全部堵住，敌人往上走后会直接全部下去。",
+      "verdict": "pending",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ],
+      "reason": "引文可定位且描述具有机制价值，但“这俩位置”“四个全都下面”等关键位置参数依赖当时画面，逐字稿无法还原具体坐标与可复现条件，命题尚不能自包含，需人工听审或实机验证。"
+    }
+  ],
+  "review_note": "c01为鸭速公路箱子数量影响路线的实例命题，逐字稿有直接支撑，保留；c02涉及具体堵位路线，关键位置仅靠画面指涉，转写无法自包含，暂列pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,58 @@
+{
+  "workorder_id": "vod_wo_vod_b2_005",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:16:07+0900",
+  "source_sha256": "b5c67f90a9f2811d56202d464150cbea44c4d2de450057c9dab34b666435d556",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "重岳携带三技能时不阻挡敌人。",
+      "subject": "重岳的三技能",
+      "condition": "重岳编队携带三技能时",
+      "scope": "entity_mechanism",
+      "category": "阻挡机制/技能特例",
+      "evidence": [
+        {
+          "text": "也还是带三吧",
+          "t_start": 2470,
+          "t_end": 2478
+        },
+        {
+          "text": "啊他是不阻挡的 哎呀我忘了",
+          "t_start": 2551,
+          "t_end": 2559
+        },
+        {
+          "text": "他是不阻挡",
+          "t_start": 2551,
+          "t_end": 2559
+        }
+      ],
+      "reason": "前置上下文已讨论该关卡选择三技能，随后主播在实战中发现角色不阻挡并修正站位；结合本章节围绕重岳的上下文，可还原「他」为重岳。该陈述是明确的干员技能特例，具备复用机制价值。",
+      "limitations": [
+        "逐字稿未直接说明阻挡数数值或技能被动/主动时点的完整边界，仅能确认携带三技能时不阻挡敌人这一实战结论。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 为可复用的干员阻挡机制特例。逐字稿中有技能选择与不阻挡的直接陈述，结合章节上下文可确认主体为重岳；未发现未定论假说或反问，故 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

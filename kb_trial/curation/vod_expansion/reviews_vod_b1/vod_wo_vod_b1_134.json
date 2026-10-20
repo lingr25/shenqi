@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b1_134",
+  "stem": "BV1cmaa6VEPR_p2_42252239801",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:14:38+0900",
+  "source_sha256": "7adff6781c69e2f7c8c442cc9575e90130ca7ba3359c384d4f0d1b616a2b7e4b",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "涤墨的可部署地面会生成高台装置，高台装置全场最多存在一个。",
+      "subject": "涤墨关卡中由可部署地面生成的高台装置",
+      "condition": "在涤墨关卡中，可部署地面生成高台装置时",
+      "scope": "instance",
+      "category": "装置限制",
+      "evidence": [
+        {
+          "text": "还有什么图涤墨也是吧",
+          "t_start": 776,
+          "t_end": 787
+        },
+        {
+          "text": "可部署地面生成高台装置 高台装置全场最多存在一个",
+          "t_start": 787,
+          "t_end": 802
+        }
+      ],
+      "reason": "上下文在讨论涤墨地图时，主播明确陈述可部署地面会生成高台装置，且高台装置全场最多存在一个；该句为陈述性机制描述，不是猜测或追问。",
+      "limitations": [
+        "逐字稿未说明可部署地面具体类型、高台装置生成触发时机，以及“全场最多存在一个”是同时存在上限还是累计生成上限。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 为涤墨关卡特有的地图装置限制：可部署地面生成高台装置，且该装置全场最多一个。逐字稿有直接陈述与前后文地图指称，满足自包含、逐字对齐、三元约束与排除猜想四门，予以 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

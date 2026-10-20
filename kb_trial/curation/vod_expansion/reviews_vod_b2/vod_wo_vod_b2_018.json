@@ -1,0 +1,91 @@
+{
+  "workorder_id": "vod_wo_vod_b2_018",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:19:17+0900",
+  "source_sha256": "33957a20bdfb6b1e21b1e6f43833255a7796579879c69cddc703243d9911f774",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "藏品「迷藏」在每次进入新区域时标记一个节点，探索被标记的节点后获得一个较为稀有的随机自然物；该随机自然物池只包含板藤、链家果、光彩松露三种。",
+      "subject": "藏品「迷藏」",
+      "condition": "每次进入新区域时触发标记，并探索被标记的节点",
+      "scope": "entity_mechanism",
+      "category": "藏品机制/掉落机制",
+      "evidence": [
+        {
+          "text": "迷藏 这个藏品品的效果是每次进入新区域时 标记一个节点 探索该节点后",
+          "t_start": 3582,
+          "t_end": 3595
+        },
+        {
+          "text": "获得一个较为稀稀有的随机自然物",
+          "t_start": 3595,
+          "t_end": 3600
+        },
+        {
+          "text": "探索该节点后 获得一个较为稀有的随机自然物 而这个较为稀有的随机自然物只包含板藤 链家果 光彩松露 这三个",
+          "t_start": 3600,
+          "t_end": 3611
+        }
+      ],
+      "reason": "逐字稿在机制讲解段明确说明迷藏标记节点、探索后获得随机自然物，并限定随机自然物池为板藤、链家果、光彩松露三种，属于可复用的藏品机制结论。",
+      "limitations": [
+        "“较为稀有”的具体概率与稀有度分档未在逐字稿中量化。",
+        "随机自然物池是否还有未列出的例外物品未能从本段逐字稿确认。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "当藏品「迷藏」的标记落在曲折密道时，获得加工品的效果会触发两次。",
+      "subject": "藏品「迷藏」的标记",
+      "condition": "迷藏标记落在曲折密道",
+      "scope": "entity_mechanism",
+      "category": "藏品机制/节点交互",
+      "evidence": [
+        {
+          "text": "迷藏的标记 如果在曲折密道的话",
+          "t_start": 3611,
+          "t_end": 3621
+        },
+        {
+          "text": "获得加工品的效果还会触发两次",
+          "t_start": 3621,
+          "t_end": 3632
+        }
+      ],
+      "reason": "逐字稿明确给出迷藏标记与曲折密道的交互结果：标记落在曲折密道时，获得加工品的效果触发两次。条件具体，非实战猜测。",
+      "limitations": [
+        "“获得加工品的效果”具体指曲折密道的哪一段结算未在逐字稿中展开。",
+        "触发两次与迷藏标记自身结算顺序的关系未说明。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均满足四大闸门：c01给出迷藏标记与随机自然物池的机制结论，c02给出迷藏标记在曲折密道的特殊触发次数。上游引文存在跨行拼接，本回执已按逐字稿单行拆分为可核验证据。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

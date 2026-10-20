@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_035",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:20:06+0900",
+  "source_sha256": "ac65e477d04d60b91502d669cc8327b14fe39a788ea16a1a1e2733fe09e597a0",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在萨卡兹肉鸽（黑流树海）地图生成中，显露尽头节点只会出现在第1、2、4层；其中第1层有1到2个，第2层固定为2个，第4层为3个。",
+      "subject": "显露尽头节点",
+      "condition": "萨卡兹肉鸽（黑流树海）地图生成",
+      "scope": "universal",
+      "category": "地图生成",
+      "evidence": [
+        {
+          "text": "剩余的信息前的镜头只会在124层出现",
+          "t_start": 5803,
+          "t_end": 5807
+        },
+        {
+          "text": "一层有一到两个 二层固定为两个 自从布垫没三个 在这里评论中我们也放 二层是两个 四层是三个",
+          "t_start": 5807,
+          "t_end": 5817
+        }
+      ],
+      "reason": "逐字稿视频讲解明确给出显露尽头仅在124层出现，并分别说明一层有一到两个、二层固定为两个、四层是三个；上游引文跨行且时间戳有误，回执中已按逐字稿行拆分证据。ASR的“镜头”按上下文及议题对应“显露尽头”。",
+      "limitations": [
+        "逐字稿中第4层仅表述为“四层是三个”，固定性由地图构造固定的上下文推断。",
+        "逐字稿存在ASR噪声（如“镜头”“布垫”），未在证据文本中改写。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01通过四大闸门：命题自包含，引文已修正为逐行连续子串并标注正确秒数，主体/条件/范围明确，且属于视频讲解的机制结论而非猜测。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

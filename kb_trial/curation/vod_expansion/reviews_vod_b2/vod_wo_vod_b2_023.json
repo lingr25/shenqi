@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_023",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:20:38+0900",
+  "source_sha256": "e9d368b63a72285470543605fa32b23670b7ac46f850da02d16e078f5ecc10a4",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在截至视频制作时收集的600余条浪花估值样本中，若某尾部结果的出率为0.66%，则按该出率估算，600条样本对应的方差约为3.96、标准差约为2，期望观察到的数据量约为4条；因此600余条样本对该尾部区间的覆盖偏少。",
+      "subject": "浪花估值样本（截至视频制作时的600余条）",
+      "condition": "以0.66%作为单个尾部结果出率进行估算",
+      "scope": "instance",
+      "category": "数据统计/置信度",
+      "evidence": [
+        {
+          "text": "600条还是少了点吧 600条还是少了点吧 像零0.66%这样的数据 600条的话方差大概有600×0.66",
+          "t_start": 3883,
+          "t_end": 3902
+        },
+        {
+          "text": "3.96标准差为二",
+          "t_start": 3902,
+          "t_end": 3913
+        },
+        {
+          "text": "这个区间内就四条数据 连这五个样本都覆盖不全啊",
+          "t_start": 3960,
+          "t_end": 3974
+        }
+      ],
+      "reason": "上下文先给出600余条样本与0.66%出率，主播据此计算600×0.66%得3.96、标准差为2，并称该区间内只有四条数据，支撑候选统计推断。",
+      "limitations": [
+        "0.66%对应的具体尾部结果在逐字稿中未明确列名，原始数据表未给出，无法独立复核。",
+        "该结论是对样本置信度的统计评估，不是浪花随机区间的机制规则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选 c01 为对600余条浪花样本的统计置信度推导，逐字稿证据连续且参数明确，未涉及未闭合猜测，故采纳；因未提供原始数据表，结论仅作为样本量评估。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

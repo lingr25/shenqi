@@ -1,0 +1,168 @@
+{
+  "workorder_id": "vod_wo_vod_b2_033",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:23:09+0900",
+  "source_sha256": "17013f1dcd309ac044e15c84999ff6458569af667f826daa69c019b50cf96131",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "黑流树海中，节点的点亮主要依靠三类机制——固定点亮、视野点亮与视野节点（逐字稿作「与看点」）；玩家刚进入新的一层时会有部分节点被固定点亮。",
+      "subject": "黑流树海的节点点亮机制",
+      "condition": "进入新的一层时触发固定点亮；三类机制为该地图常驻规则",
+      "scope": "instance",
+      "category": "视野/节点点亮",
+      "evidence": [
+        {
+          "text": "节点的点亮主要依靠三个机制固定点亮视野 点亮和与看点",
+          "t_start": 5645,
+          "t_end": 5651
+        },
+        {
+          "text": "在我们刚进入新的一层时 就会固定点亮",
+          "t_start": 5645,
+          "t_end": 5651
+        }
+      ],
+      "reason": "主播在介绍黑流树海地图时明确归纳节点点亮的三类机制，并说明进入新一层时固定点亮部分节点，属可复用机制定论。",
+      "limitations": [
+        "第三类机制名称逐字稿作「与看点」，疑似 ASR 误写，规范名称需实机确认。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "黑流树海中，所有当前坐标能直接抵达、或经林间空地能够到达的节点都会被直接点亮（视野点亮），因此可以隔着密道看到下下个节点的信息。",
+      "subject": "黑流树海的视野点亮范围",
+      "condition": "目标节点与当前坐标之间可直接抵达，或经林间空地连通",
+      "scope": "instance",
+      "category": "视野/节点点亮",
+      "evidence": [
+        {
+          "text": "所有当前坐标能直接抵达 或者经过林间空地能够到达的节点 都会直接点亮",
+          "t_start": 5651,
+          "t_end": 5656
+        },
+        {
+          "text": "所以我们能隔着密道看到下下个几点的信息",
+          "t_start": 5656,
+          "t_end": 5662
+        }
+      ],
+      "reason": "主播明确说明视野点亮覆盖当前坐标可直接抵达或经林间空地可到达的节点，并据此说明可隔着密道看到下下个节点信息。",
+      "limitations": [
+        "「林间空地」「密道」的判定边界（是否含事件传送路径）未在逐字稿中展开。",
+        "逐字稿「下下个几点」应为「下下个节点」的 ASR 误写。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "黑流树海中，玩家经事件被传送到新位置后，无法点亮原位置周围的节点，只能点亮传送后位置周围的节点。",
+      "subject": "黑流树海的视野点亮（传送事件后重置）",
+      "condition": "玩家因事件被传送到新位置后",
+      "scope": "instance",
+      "category": "视野/节点点亮",
+      "evidence": [
+        {
+          "text": "所以无法点亮原先补齐周围的节点 只能点亮 传送后周围的节点",
+          "t_start": 5662,
+          "t_end": 5671
+        }
+      ],
+      "reason": "主播说明经事件传送后视野以传送后位置重算，无法回照原位置周围节点，结论闭合且条件明确。",
+      "limitations": [
+        "逐字稿「原先补齐」为 ASR 残字（应为「原先所处」一类表达）。",
+        "触发传送的事件类型未穷举。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c04",
+      "claim": "黑流树海中，名为「预测点」的视野节点能够照亮所有曼哈顿距离为 1~2 的节点。",
+      "subject": "预测点（黑流树海视野节点）",
+      "condition": "universal",
+      "scope": "entity_mechanism",
+      "category": "视野/节点点亮",
+      "evidence": [
+        {
+          "text": "预测点能够照亮 所有漫画的距离为1~2的近眼",
+          "t_start": 5662,
+          "t_end": 5671
+        }
+      ],
+      "reason": "主播给出该视野节点以曼哈顿距离 1~2 照亮周围节点的明确数值参数，具备规则价值。",
+      "limitations": [
+        "节点名称「预测点」疑似 ASR 误写，规范名称需实机确认。",
+        "「漫画」「近眼」应为「曼哈顿」「节点」的 ASR 误写。",
+        "与 c05 所述「与泰快点/语看点」是否为同一节点的不同状态，逐字稿未明确。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c05",
+      "claim": "黑流树海中，当玩家进入名为「与泰快点」（又称语看点）的视野节点后，其照亮范围变为所有曼哈顿距离为 1~3 的节点，即「火山范围」。",
+      "subject": "与泰快点/语看点（黑流树海视野节点）",
+      "condition": "玩家进入该视野节点后",
+      "scope": "entity_mechanism",
+      "category": "视野/节点点亮",
+      "evidence": [
+        {
+          "text": "当我们进入语看点时 与泰快点变为照亮所有曼哈顿 距离为1~3的节点 也就是火山范围",
+          "t_start": 5671,
+          "t_end": 5678
+        }
+      ],
+      "reason": "主播说明进入该视野节点后照亮范围扩大为曼哈顿距离 1~3，并以火山范围作类比，参数明确、结论闭合。",
+      "limitations": [
+        "节点名称在逐字稿中作「语看点/与泰快点/宇康点」，ASR 混乱，规范名称需实机确认。",
+        "「火山范围」为类比表述，其确切范围形状未展开。",
+        "与 c04 是否指向同一节点未明确。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单 5 条候选均出自主播对黑流树海地图机制的讲解。逐字引文均可在对应时间戳行（5645/5651/5656/5662/5671）中找到字符级完全一致的连续子串，起止秒数标注正确；命题主谓宾完整、条件与范围可界定，且均为陈述性定论而非猜测或反问，四大闸门全部通过，故全部 keep（顶层 verdict 为 keep）。主要风险在于节点名称存在 ASR 混乱（「与看点」「预测点」「语看点/与泰快点/宇康点」），c04 与 c05 可能指向同一视野节点的不同状态，已分别在 limitations 中标注，规范命名待实机核对。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

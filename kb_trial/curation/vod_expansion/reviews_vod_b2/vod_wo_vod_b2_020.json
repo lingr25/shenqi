@@ -1,0 +1,74 @@
+{
+  "workorder_id": "vod_wo_vod_b2_020",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:19:07+0900",
+  "source_sha256": "cd1edf4c2368a23b5a1251d7763c08066f716bce4fb5aceaffb985357c3f73e1",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "浪花藏品在每次移动后，其估值会发生随机变化。",
+      "subject": "浪花藏品",
+      "condition": "浪花藏品发生一次移动后",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "浪花每次移动后 股价会随机变化",
+          "t_start": 3748,
+          "t_end": 3762
+        }
+      ],
+      "reason": "逐字稿在介绍浪花机制时明确陈述每步移动后估值会随机变化，后续还补充其随机变化落在减八到加十一区间，说明这是该藏品的固有机制而非单纯实况叙述。",
+      "limitations": [
+        "逐字稿此处用“股价”称呼，按上下文规范为“估值”；未在本条内展开随机区间与概率权重。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "浪花藏品的移动判定仅包含地图中的移动；进入新的层数不会触发浪花藏品的估值变化。",
+      "subject": "浪花藏品",
+      "condition": "进入新的层数时",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "移动仅包含地图中的移动 进入新的层数 不会让浪花变化",
+          "t_start": 3748,
+          "t_end": 3762
+        }
+      ],
+      "reason": "逐字稿将“移动仅包含地图中的移动，进入新的层数不会让浪花变化”列为浪花三个机制的第一条，直接限定移动触发范围。",
+      "limitations": [
+        "逐字稿未进一步说明“地图中的移动”边界，例如节点间移动、层内传送、特殊路径等是否均计入。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单两个候选均出自同一段机制列举，命题自包含、引文可在逐字稿单行中逐字定位，且分别描述浪花估值变化的触发时机与移动范围，未落入未定论猜测或纯实战观察，故均予 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

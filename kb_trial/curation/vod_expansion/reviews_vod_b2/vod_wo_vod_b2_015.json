@@ -1,0 +1,80 @@
+{
+  "workorder_id": "vod_wo_vod_b2_015",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:18:29+0900",
+  "source_sha256": "dc927056cad36c397b715da6b61f5245319a511525d3f681eb78f5f020f427b5",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "《黑流树海》增加零件容量的途径包括：开局用6块兑换2格、招募机械师获得2格、验尸获得2格、多边贸易自带4格。",
+      "subject": "黑流树海的零件容量获取机制",
+      "condition": "在黑流树海模式内",
+      "scope": "universal",
+      "category": "资源机制",
+      "evidence": [
+        {
+          "text": "黑流树海有很多种增加零件容量的方式 开局六块换二格子 招募机械 开局六块算二格子 招募机械师获得二格子 验尸获得二格子",
+          "t_start": 3442,
+          "t_end": 3458
+        },
+        {
+          "text": "多边贸易自带四格子 安全屋也有概率加一格子",
+          "t_start": 3458,
+          "t_end": 3469
+        }
+      ],
+      "reason": "逐字稿明确列举黑流树海增加零件容量的多种途径及数值：『开局六块换二格子』『招募机械师获得二格子』『验尸获得二格子』『多边贸易自带四格子』。上游『固定来源有四种』系归纳性表述，此处按原意改写为已列举的途径，数值参数不变。",
+      "limitations": [
+        "上游称『固定来源有四种』及『固定』分类为归纳，逐字稿仅以『有很多种增加零件容量的方式』带出列举，未明说固定性与总数",
+        "口播中『开局六块换二格子』与『开局六块算二格子』重复出现，是否为同一条目或另有他意未能辨明"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "《黑流树海》中，安全屋节点有概率增加1格零件容量。",
+      "subject": "安全屋（黑流树海节点）",
+      "condition": "触发安全屋的加格子事件时",
+      "scope": "entity_mechanism",
+      "category": "关卡机制",
+      "evidence": [
+        {
+          "text": "安全屋也有概率加一格子",
+          "t_start": 3458,
+          "t_end": 3469
+        }
+      ],
+      "reason": "逐字稿直接陈述『安全屋也有概率加一格子』，与上游命题一致，属于安全屋这一节点的固有概率机制，可复用。",
+      "limitations": [
+        "未给出具体触发概率数值"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均来自同一段讲课逐字稿并分别命中不同条途径，无重复：c01 归纳黑流树海增加零件容量的多条途径（开局6块换2格、招募机械师+2格、验尸+2格、多边贸易自带4格），c02 单列安全屋的概率+1格。两条命题在逐字稿中均有原句支撑，主体/条件明确，非猜测或反问，故均判 keep。对 c01 仅做去归纳化改写：把上游『固定来源有四种』收敛为『已知途径包括』，以免把逐字稿未明说的『固定性/总数』当作既定结论；c01 原始 evidence 跨行拼接，本回执已拆为两条同行连续子串证据。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

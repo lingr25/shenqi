@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b1_125",
+  "stem": "BV1cmaa6VEPR_p2_42252239801",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:12:44+0900",
+  "source_sha256": "8ac81fd4c4fd2e5b39c10be1f5833e0d8604dc46c7b00a1bc0a4118b98f710f7",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "从PV推断娜斯提能否改路径的方法论",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3"
+      ],
+      "reason": "该候选是主播关于「不应以鹰角不可能出改路径机制为前提，而应看PV表现」的推理方法论，不是可复用的游戏机制陈述，G1不通过；其证据引文实际位于[212s]行内，下一行时间戳为[224s]，候选标注t_end=236与逐字稿行边界不符，G2不通过；同时缺少明确机制主体/触发条件/作用域，G3不通过。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "对机制了解越多越能推测实现可能性与隐患",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ],
+      "reason": "该候选只是泛化的认知/学习方法论结论，不构成《明日方舟》具体机制规则，G1不通过；主体为「对机制了解得越多」这一泛化表述，未给出明确游戏机制主体、成立条件与可判定作用域，G3不通过。"
+    }
+  ],
+  "review_note": "两条候选均属于关于如何从PV推断机制边界的方法论/元认知讨论，而非可沉淀为知识库规则的原子机制命题；本次工单无keep，全部裁定为reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

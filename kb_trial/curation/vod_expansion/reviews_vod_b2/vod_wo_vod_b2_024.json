@@ -1,0 +1,70 @@
+{
+  "workorder_id": "vod_wo_vod_b2_024",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:17:09+0900",
+  "source_sha256": "4a7c7b8338aa97ef26dbd09ce1f127c51c99a3adae912334ab44f89aee13b7e5",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在假设浪花每步估值变化主要取 -6 到 +8 且各值均匀分布、一局移动约40步的模型下，其收益真正落在期望值附近的概率只有约15%，收益达到三位数的概率仅约1%。",
+      "subject": "浪花的40步收益分布",
+      "condition": "采用每步 -6 到 +8 均匀分布（忽略极端小概率）且一局约走40步，并按每十块区间统计",
+      "scope": "entity_mechanism",
+      "category": "收益期望/概率分布",
+      "evidence": [
+        {
+          "text": "可以认为 减六到加八之间的",
+          "t_start": 3834,
+          "t_end": 3846
+        },
+        {
+          "text": "每个数值的出现概率都是均匀分布的",
+          "t_start": 3846,
+          "t_end": 3859
+        },
+        {
+          "text": "浪花假设一整把走大约40步",
+          "t_start": 4108,
+          "t_end": 4120
+        },
+        {
+          "text": "但真正在期望附近的概率只有15% 我们每十块进行一次概率计算 会发现0~89块的这九个区间 出率到15%左右",
+          "t_start": 4291,
+          "t_end": 4304
+        },
+        {
+          "text": "上三位数的概率仅有1% 所以浪花真的是一个不稳定的自然物",
+          "t_start": 4318,
+          "t_end": 4328
+        }
+      ],
+      "reason": "上下文先给出每步变化近似均匀分布与约40步的模型，随后明确给出期望附近概率约15%和收益上三位数概率约1%的统计结论；这些是可复用的收益分布描述。",
+      "limitations": [
+        "逐字稿中‘0~89块的这九个区间 出率到15%左右’含义不清，未采纳为每个区间均为15%；",
+        "数值依赖视频内609条样本及均匀分布/约40步假设，未提供原始数据与置信区间；",
+        "‘上三位数’按收益达到100以上理解。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 的核心结论有逐字稿明确支撑，且已改写为自包含的收益分布命题；其中关于0~89块九个区间出率的表述存在歧义，未纳入。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

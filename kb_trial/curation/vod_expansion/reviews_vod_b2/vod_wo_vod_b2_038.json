@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_038",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:24:10+0900",
+  "source_sha256": "aad8a3d090c8855e674beb9f93fefa6f85be1c40b527f9f7675123d91430da76",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "石托邦的中心节点（理想源）基本都是紧急作战。",
+      "subject": "石托邦的中心节点（理想源）",
+      "condition": "在石托邦节点生成时",
+      "scope": "instance",
+      "category": "机制类别/地图生成",
+      "evidence": [
+        {
+          "text": "那就是石托邦的中心 也就是理想源 基本都是紧急作战",
+          "t_start": 5880,
+          "t_end": 5886
+        }
+      ],
+      "reason": "视频讲解透视节点机制时明确指出石托邦中心即理想源，且基本都是紧急作战，属于可复用的地图生成规律。",
+      "limitations": [
+        "主播表述为“基本”，未给出绝对概率或例外清单；可能存在非紧急作战的中心节点。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在N12以下难度，石托邦中心理想源影响曼哈顿距离0~2格内的节点（剑雨范围）；在N12及以上难度，影响范围变为0~3格（火山范围）。",
+      "subject": "石托邦中心理想源的影响范围",
+      "condition": "N12以下难度；N12及以上难度",
+      "scope": "instance",
+      "category": "机制类别/地图生成",
+      "evidence": [
+        {
+          "text": "在N12以下的难度 史托邦的范围为理想元0~2格",
+          "t_start": 5880,
+          "t_end": 5886
+        },
+        {
+          "text": "曼哈顿距离的节点 也就是剑雨范围在N12级以上 变为0~3格 也就是火山范围",
+          "t_start": 5886,
+          "t_end": 5892
+        }
+      ],
+      "reason": "视频连续说明石托邦中心理想源按难度分档影响曼哈顿距离范围：N12以下为0~2格，N12及以上为0~3格，并分别类比剑雨与火山范围，参数明确。",
+      "limitations": [
+        "未给出地图生成权重或例外条件；“级以上”按N12及以上理解。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均有逐字稿支撑。上游给出的180/186秒时间戳有误，实际对应内容位于5880/5886行；c02原始引文跨行，已按逐字稿拆分为两条独立证据。claim中对ASR错字与口语进行了规范化，但evidence文本保留原始逐字稿字符。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

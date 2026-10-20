@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_001",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:14:18+0900",
+  "source_sha256": "afa2ee0de08513c91d2defa2292dc0b9b28193d11d4713defc1143d8c7051833",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "剩余血量估算值约为3万7800",
+      "verdict": "reject",
+      "reason": "该候选只是当前对局中剩余血量的实战估算值，属于一次性实例观察，缺少可复现的机制条件与通用规则价值；候选也未明确给出可复用机制所需的 subject、condition、scope，触发 Gate3 与 Gate4，不应作为原子机制命题保留。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单仅有一条候选 c01。其引文可在逐字稿 [414s] 行中找到连续子串“剩余血量的话 3万7800”，逐字引文对齐通过；但该句表达的是当前局内剩余血量估算，不是可复用机制规则，且缺少明确条件与适用范围，按 Gate3/Gate4 排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

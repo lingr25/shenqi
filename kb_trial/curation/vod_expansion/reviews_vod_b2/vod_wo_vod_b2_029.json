@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_029",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T10:09:19+0900",
+  "source_sha256": "2882ed28281daabda0b8f82a27d75acaab3a41048e856603818116e00fe2c03a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在《明日方舟》集成战略/黑流树海的地图配置中，每条地图路线对应唯一一个宝箱格子的出货；调整该路线权重（如15%、30%）即指定该格子按对应概率档位出货，这属于概率分支。",
+      "subject": "地图路线配置与宝箱格子出货判定",
+      "condition": "为地图路线设置出货权重时",
+      "scope": "universal",
+      "category": "地图/出货判定",
+      "evidence": [
+        {
+          "text": "不是啊 就是每个格子分别出的 这个是地图啊 这个是地图的路线 设置一个路线对应着唯一一个格子的那个出货 像这样的话 代表这个格子",
+          "t_start": 5213,
+          "t_end": 5227
+        },
+        {
+          "text": "代表这个格子出那个15%的 把它调成这样的话 就代表这个格子出这个出这个30的",
+          "t_start": 5227,
+          "t_end": 5240
+        },
+        {
+          "text": "这是概率分支",
+          "t_start": 5240,
+          "t_end": 5247
+        }
+      ],
+      "reason": "逐字稿中主播明确解释该地图的路线配置：每个格子分别出货，设置一条路线对应唯一一个格子的出货，并用15%/30%权重示例说明路线权重决定该格子的概率档位，随后称其为概率分支。该陈述不依赖画面指涉，可作为地图出货配置机制。",
+      "limitations": [
+        "主播后续对权重求和是否超过100%仍有困惑，未完全解释权重与最终概率的换算细节。",
+        "逐字稿未说明该对应关系是否适用于所有集成战略地图，或仅限黑流树海/当前地图。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 的核心机制结论有逐字稿直接支撑。原候选第二条 evidence 跨 5227 与 5240 两行拼接，本次按单行拆分为多条合法引文；命题本身保留为自包含陈述。后续未闭合的权重总和疑问不否定该路线—格子对应结论，仅列为限制。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

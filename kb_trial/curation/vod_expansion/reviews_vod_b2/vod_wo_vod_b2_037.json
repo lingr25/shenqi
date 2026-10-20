@@ -1,0 +1,80 @@
+{
+  "workorder_id": "vod_wo_vod_b2_037",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:23:13+0900",
+  "source_sha256": "55cc9cc37225d591c9c7c888e97b11ac7f22f08f7246e95b73817f14acd28996",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在树洞中，巨人摇篮、迪斯科狂热、异知浩劫、孤立异石林这四种石托邦只会在四种地图构型中随机生成，这四种构型分别是一字形、中字形、三角形和田字形。",
+      "subject": "巨人摇篮、迪斯科狂热、异知浩劫、孤立异石林（四种石托邦）",
+      "condition": "位于树洞内",
+      "scope": "entity_mechanism",
+      "category": "机制类别/地图生成",
+      "evidence": [
+        {
+          "text": "在树洞里 巨人摇篮 迪斯科狂热 已知浩劫 孤立异石林 这四种乌托邦只会在四种地图中随机",
+          "t_start": 5857,
+          "t_end": 5867
+        },
+        {
+          "text": "分别是一字形 中字形 三角形和田字形",
+          "t_start": 5867,
+          "t_end": 5871
+        }
+      ],
+      "reason": "逐字稿在树洞语境下明确列出四种石托邦，并说明其只会在四种地图构型中随机生成，且随后列出四种构型名称；属于可复用的地图生成机制结论。",
+      "limitations": [
+        "逐字稿将“异知浩劫”转写为“已知浩劫”，本回执按规范名回写。",
+        "逐字稿未说明四种石托邦与四种地图构型之间是否存在固定一一配对，仅说明会在这四种构型中随机生成。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在树洞中，除巨人摇篮、迪斯科狂热、异知浩劫、孤立异石林之外的其他树洞，如变化洞、强漏洞等，拥有各自专属的地图构型。",
+      "subject": "变化洞、强漏洞等其他特定树洞",
+      "condition": "位于树洞内",
+      "scope": "entity_mechanism",
+      "category": "机制类别/地图生成",
+      "evidence": [
+        {
+          "text": "其他的树洞 像是变化洞 强漏洞坠得动 都有专属的地图构型",
+          "t_start": 5871,
+          "t_end": 5880
+        }
+      ],
+      "reason": "逐字稿在说明前四种石托邦的随机构型后，紧接着指出其他树洞例如变化洞、强漏洞等都有专属地图构型，形成可复用的对照性机制陈述。",
+      "limitations": [
+        "逐字稿中洞名存在 ASR 噪声（如“强漏洞坠得动”），具体树洞名称及各自对应构型未在逐字稿中展开，需人工核对术语。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均来自李雪视频中关于树洞石托邦与地图构型的机制讲解段落，有逐字稿支撑。c01 原引文跨两行，已拆为两条逐行 evidence，并按实际时间戳修正。c02 的核心结论“其他树洞有专属地图构型”明确，但具体洞名受 ASR 噪声影响，已在 limitations 中标注。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

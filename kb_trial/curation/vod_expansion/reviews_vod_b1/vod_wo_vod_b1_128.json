@@ -1,0 +1,64 @@
+{
+  "workorder_id": "vod_wo_vod_b1_128",
+  "stem": "BV1cmaa6VEPR_p2_42252239801",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:14:10+0900",
+  "source_sha256": "3b5c9a9eb71f57031c58eff4e23e2cfc5913732d8ddf465cd05450c9883f59ce",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "火陈的龙在13帧出生、14帧首次移动，且起点接近零位置时，于19帧撞墙、20帧转头，能正确判断地图边界，没有异常。",
+      "subject": "火陈的龙",
+      "condition": "火陈的龙出生于13帧、14帧首次移动，且起点接近零位置",
+      "scope": "entity_mechanism",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "火陈的龙是在13帧出生的",
+          "t_start": 376,
+          "t_end": 380
+        },
+        {
+          "text": "这一帧出生 然后的话在14帧第一次移动 一般来讲是5~6帧 第一次撞墙 这边的话是一个比较接近零的位置 所以的话实际上他应该是呃",
+          "t_start": 380,
+          "t_end": 397
+        },
+        {
+          "text": "应该是六帧撞墙 也就是19帧",
+          "t_start": 397,
+          "t_end": 407
+        },
+        {
+          "text": "嗯他在19帧撞墙 20帧转头说明他正确的判断地图边界了 没有任何问题 没有任何问题 那就没有什么异常 没有任何异常",
+          "t_start": 407,
+          "t_end": 424
+        }
+      ],
+      "reason": "上下文先由13帧出生、14帧首次移动和起点接近零推算19帧撞墙，随后实测确认19帧撞墙、20帧转头，并断言正确判断地图边界、没有异常。该结论有逐字稿直接支撑，可作为火陈召唤物寻路边界判定的机制结论。",
+      "limitations": [
+        "19/20帧依赖该实测的起点接近零位置，换起点或关卡后帧数可能变化。",
+        "逐字稿未给出具体关卡/地图名称与精确坐标，复现条件不完整。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选c01为火陈的龙撞墙帧实测结论，引文与逐字稿逐字一致；关键条件可由相邻上下文补全，且非未定论猜测，故保留。无其他候选需要排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

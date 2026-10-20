@@ -1,0 +1,48 @@
+{
+  "workorder_id": "vod_wo_vod_b2_006",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:15:39+0900",
+  "source_sha256": "ea1e1b445ce4ff1e750bdcf07604995bd321a01536015e70eb5395264b9c70ce",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "游戏寻路系统在存在多个可选方向时，方向优先顺序为上、右、下、左。",
+      "subject": "游戏寻路系统",
+      "condition": "存在多个可选方向时",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "上右下左寻路优先往这边",
+          "t_start": 2609,
+          "t_end": 2619
+        }
+      ],
+      "reason": "该行逐字稿中主播明确陈述寻路方向优先级为上、右、下、左；去掉画面指涉“往这边”后仍能形成自包含的通用寻路规则。",
+      "limitations": [
+        "未交代该优先级是否仅在多条最短路径并列时生效，也未说明所有地图/敌人是否完全一致。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选命题有逐字稿逐字支撑，给出可复用的寻路方向优先级参数；虽原句带画面指涉，但核心优先级顺序可自包含化，故保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

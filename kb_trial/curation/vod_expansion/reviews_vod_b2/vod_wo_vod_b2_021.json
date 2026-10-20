@@ -1,0 +1,76 @@
+{
+  "workorder_id": "vod_wo_vod_b2_021",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T10:10:03+0900",
+  "source_sha256": "d42495865b2315c7902d9aede6aa6a405b9f9fd5f8e186468d7763d74ba46956",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "浪花的估价单步随机变化不是从零直接跳到50，而是每一步在 −8 到 +11 的区间内随机取一个数值作为结果。",
+      "subject": "浪花的估价（价格）",
+      "condition": "浪花每次（地图内）移动后触发价格结算时",
+      "scope": "entity_mechanism",
+      "category": "数值随机",
+      "evidence": [
+        {
+          "text": "估价的随机变化并不是从零直接变成50 而是每步都在减八到加11中 随机选择一个数字作为结果",
+          "t_start": 3762,
+          "t_end": 3773
+        }
+      ],
+      "reason": "该句在转写中被明确列为浪花的『三个机制』之二，属于陈述性机制结论而非疑问或猜测；主语可由上下文补全为『浪花的估价』，满足自包含；引文为逐字稿 3762s 行内的连续子串，秒级区间与行时间戳对齐。",
+      "limitations": [
+        "同一视频后段（约 4227s 起）主播以样本量过少为由，怀疑真实区间并非 −8~+11，主张主要分布更接近 −6~+8、超出部分为小概率彩蛋，故本命题的具体上下界属该视频内被质疑的参数。",
+        "『每次移动』的精确判定（仅地图内移动、进入新层不触发）来自机制一，本引文段未复述，需结合 3748s 段落。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "浪花的价格有保底机制：显示估价不会低于零，跌到零后的估值会从零开始重新增加。",
+      "subject": "浪花的估价（价格）",
+      "condition": "估价降至零（保底触发）时",
+      "scope": "entity_mechanism",
+      "category": "数值随机",
+      "evidence": [
+        {
+          "text": "估价不能低于零 跌到零后的估值也会从零开始增加",
+          "t_start": 3773,
+          "t_end": 3784
+        }
+      ],
+      "reason": "该句在转写中被明确列为浪花的『三个机制』之三（保底机制），为陈述性机制结论；引文为逐字稿 3773s 行内连续子串，秒级区间精确。",
+      "limitations": [
+        "同一视频约 4342s 处主播提出内部数值可能为负、仅显示层保底在零，与『不能低于零』的表述在解释上存在张力，本命题只锁定显示层保底这一层结论。",
+        "『从零开始增加』的具体步进依赖单步随机区间（见 c01），未在本段独立给出。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单两候选均对应视频在 3748–3783s 明确列举的浪花『三个机制』之二、之三，属陈述性机制结论，非反问或未闭合猜测。两条引文均可在逐字稿单行内做字符级完全匹配，且已精确标注起止秒数，G1–G4 全部通过，故判 keep。需注意本视频为『机制质疑＋数据统计分析』性质：c01 的具体区间 −8~+11 在后段（约 4227–4254s）被主播以样本过少为由质疑并倾向 −6~+8，c02 的『不能低于零』在约 4342s 处被主播解释为显示层保底、内部可能为负；这些张力已写入各 claims 的 limitations，供后续实机验证时校准，不改变当场作为机制陈述的裁定。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

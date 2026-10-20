@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b1_130",
+  "stem": "BV1cmaa6VEPR_p2_42252239801",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:13:12+0900",
+  "source_sha256": "8b1331bca1fc866db6b152548920b6322904d6db7ce318cf188310531f407a19",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在地块判定中，视觉表现是极度不可靠的判断依据，但实际游玩时又常常依赖视觉来判断地块。",
+      "subject": "地块判定中的视觉表现",
+      "condition": "在需要判断地块属性（如高地/低地、可部署性）时",
+      "scope": "universal",
+      "category": "地块判定",
+      "evidence": [
+        {
+          "text": "视觉是极度不可靠的 但是很多时候又会依赖它",
+          "t_start": 447,
+          "t_end": 461
+        }
+      ],
+      "reason": "主播在本段讲座中明确给出关于地块判定的结论：视觉表现不可靠，但玩家在实际游玩中仍常依赖视觉；上下文以海面高低、可下棋等例子佐证，属于可复用的底层提醒。",
+      "limitations": [
+        "未给出哪些具体视觉要素（贴图、遮挡、颜色、装饰）在何种情况下会与地块属性不一致的完整清单。",
+        "未量化“不可靠”的边界，实际判定仍应以游戏内地块数据与判定结果为准。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅有一个候选 c01。该候选有逐字稿连续原文支撑，且主播在讲座中明确将视觉表现不可靠作为地块判定层面的结论提出，并常被实际游玩依赖。未发现未闭合猜想、反问或纯画面指涉，故采纳为 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

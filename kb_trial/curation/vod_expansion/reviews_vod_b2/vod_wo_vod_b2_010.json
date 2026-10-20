@@ -1,0 +1,76 @@
+{
+  "workorder_id": "vod_wo_vod_b2_010",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:16:44+0900",
+  "source_sha256": "13cb7b8f0acbb2cc18b86d49f9be979c82d5e6297f9eb0e663c55ff579deafd5",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在黑流树海的临界掉落中，普通作战节点为概率掉落零件，紧急事件作战与50费宝箱稳定掉落零件。",
+      "subject": "黑流树海临界掉落中的普通作战节点、紧急事件作战与50费宝箱",
+      "condition": "黑流树海的临界掉落",
+      "scope": "universal",
+      "category": "掉落机制",
+      "evidence": [
+        {
+          "text": "都是普通作战概率掉落 而紧急事件作战 50费宝箱都能稳定掉落",
+          "t_start": 3212,
+          "t_end": 3222
+        }
+      ],
+      "reason": "逐字稿在 3212 秒处直接给出黑流树海临界掉落中普通作战与紧急事件作战、50费宝箱的掉落稳定性关系；该陈述不依赖画面，且给出可复用的节点—掉落规则。",
+      "limitations": [
+        "未给出概率掉落的具体数值或权重。",
+        "上游 evidence 将时间误标为 212s/222s，本回执按逐字稿实际行更正为 3212s/3222s。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "在黑流树海的临界掉落中，普通作战与普通不期而遇节点仅能掉落N和R稀有度零件；紧急作战、紧急不期而遇、居民据点与50费宝箱可掉落N、R、SR三种稀有度零件。",
+      "subject": "黑流树海临界掉落中的普通作战、普通不期而遇、紧急作战、紧急不期而遇、居民据点与50费宝箱",
+      "condition": "黑流树海的临界掉落",
+      "scope": "universal",
+      "category": "掉落机制",
+      "evidence": [
+        {
+          "text": "普通和普通步漆仅能掉落N和R稀有度的零件 紧急紧急不期居民据点50费宝箱 三种稀有度的零件都能获取",
+          "t_start": 3222,
+          "t_end": 3233
+        }
+      ],
+      "reason": "该行按节点类型总结了黑流树海临界掉落的稀有度池：普通类节点只出N/R，紧急类节点、居民据点与50费宝箱可出N/R/SR。它与前一条稳定性结论互补，构成可复用掉落分类。",
+      "limitations": [
+        "各稀有度的具体掉率未在逐字稿中给出，且视频作者自述样本不足可能错判。",
+        "逐字稿中的‘普通步漆’按上下文理解为‘普通不期而遇’，evidence 保留 ASR 原文。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均对应 3212-3222 秒对李雪视频的逐字机制总结；引文可在逐字稿原始行中字符级匹配。上游时间戳明显少了 3000 秒，本回执按实际行 3212/3222 秒校正。候选项与主播后文对普通作战概率掉落、其他事件百分百掉落的重复确认方向一致，未发现未闭合假说或画面依赖残句，故均保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

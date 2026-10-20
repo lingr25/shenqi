@@ -1,0 +1,75 @@
+{
+  "workorder_id": "vod_wo_vod_b2_030",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:22:47+0900",
+  "source_sha256": "5e4c4e7685572eebde2eb02a618c1a74d462d83245bfdcc27621e6c9db4c687d",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在点击「误入其境」节点、决定是否前往时，节点左下角显示的雾气颜色与核心理念可暗示树洞类型：红色雾气对应战斗，绿色雾气对应刁民，橙色雾气对应狭路相逢，紫色雾气对应换新连结，金色雾气对应原石之城；核心理念中，灵活调整对应刷新，舍生忘死对应狭路，追溯本源对应失与得。",
+      "subject": "误入其境节点左下角显示的雾气颜色与核心理念",
+      "condition": "点击误入其境节点、决定是否前往时观察左下角标识",
+      "scope": "universal",
+      "category": "树洞机制/颜色标识",
+      "evidence": [
+        {
+          "text": "左下角往往会告诉你 这个黑檀的雾气颜色和核心理念 这其实就暗示了这个树洞是什么类型 趋利避害 只会出现红色的 红色的是战斗",
+          "t_start": 5405,
+          "t_end": 5424
+        },
+        {
+          "text": "蓝色的是刷新 蓝色的是雾气 是全职者盲区 绿色的是刁民",
+          "t_start": 5424,
+          "t_end": 5437
+        },
+        {
+          "text": "金色的是原石之城",
+          "t_start": 5443,
+          "t_end": 5448
+        },
+        {
+          "text": "金色是缘指使之成 橙色的是狭路相逢",
+          "t_start": 5448,
+          "t_end": 5456
+        },
+        {
+          "text": "紫色的是换新连结 现四种战斗相关的乌托邦灵活调整 是每次移动都会刷新节点的刷新动 全民皆兵对应的是居民的恶意熔炼",
+          "t_start": 5456,
+          "t_end": 5469
+        },
+        {
+          "text": "记得蓝的 记得红的 舍生忘死是狭路 追溯本源是失与得",
+          "t_start": 5501,
+          "t_end": 5512
+        }
+      ],
+      "reason": "上下文是黑流树海/误入其境节点讲解，逐字稿明确给出左下角雾气颜色与核心理念对树洞类型的对应关系，并给出红、绿、橙、紫、金及部分理念对应；属于可复用机制说明，非纯猜测或反问。",
+      "limitations": [
+        "逐字稿存在 ASR 疑误：『换新连结』可能为『焕新连结』，『原石之城』可能为『源石之城』；本回执按逐字稿原词保留。",
+        "该结论来自讲解视频，未提供游戏内校验截图；颜色与理念映射可能随模式版本变化。",
+        "候选未穷尽蓝色雾气等全部映射，本回执未新增候选外映射。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 的核心机制陈述可由逐字稿直接支撑；上游 evidence 中有一处跨行拼接，但本回执已改为逐行引文，故不因此否决该命题。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}
