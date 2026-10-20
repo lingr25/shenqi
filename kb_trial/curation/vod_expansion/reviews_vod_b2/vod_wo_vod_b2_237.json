@@ -1,0 +1,90 @@
+{
+  "workorder_id": "vod_wo_vod_b2_237",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:18:57+0900",
+  "source_sha256": "932434abc5c4b61c9723b1ef6fda10d32712a4a7ce32f18b5e4cccef01c09083",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在多利活动（引航者试炼/吹云团游乐场玩法）中，关卡机制单位“烛影先锋”可提前部署并率先攻击场上的云团。",
+      "subject": "多利活动关卡机制单位「烛影先锋」",
+      "condition": "多利活动吹云团游乐场玩法关卡中",
+      "scope": "instance",
+      "category": "索敌",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "烛影先锋 可提前部署 率先攻击场上的云团",
+          "t_start": 5817,
+          "t_end": 5845
+        }
+      ],
+      "reason": "主播逐字念出活动关卡机制说明文本，明确指明了烛影先锋的提前部署及索敌云团的特性，具备确切的活动机制规则价值。",
+      "limitations": [
+        "仅适用于特定活动关卡机制，属于一次性/活动限定玩法规则"
+      ]
+    },
+    {
+      "local_id": "c03",
+      "claim": "在多利活动吹云团关卡中，场上的云团/罐子默认处于不可被选中的状态，需玩家手动点击后才可被我方干员索敌和攻击。",
+      "subject": "多利活动「云团/罐子」交互机制",
+      "condition": "多利活动吹云团关卡中，未手动点击云团/罐子时",
+      "scope": "instance",
+      "category": "索敌",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "点一下才能打 没点的时候是不可选",
+          "t_start": 6264,
+          "t_end": 6277
+        }
+      ],
+      "reason": "明确总结了该活动玩法的核心交互逻辑：未点击时不可选、无法被干员锁定攻击，点击后方可被攻击。",
+      "limitations": [
+        "属于活动特定玩法机制；主播后续提到特定召唤物/装置（如火飞机）可能存在特例索敌行为"
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "烛影先锋部署后率先攻击场上的云团",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "DUP"
+      ],
+      "reason": "与 c01 出自同一句机制说明文本「烛影先锋 可提前部署 率先攻击场上的云团」，且已在 c01 中完整合并表述，判定为重复命题。"
+    }
+  ],
+  "review_note": "本工单主要涉及多利活动特色关卡机制说明及交互规则。c01与c02提取自同一句关卡说明，合并保留至c01中，c02作DUP剔除；c03明确指出了云团/罐子未激活不可选的索敌交互机制，予以保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

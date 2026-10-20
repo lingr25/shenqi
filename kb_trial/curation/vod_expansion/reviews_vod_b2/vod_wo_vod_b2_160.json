@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_160",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:13:02+0900",
+  "source_sha256": "6f2616d6eaac749df126ca72de8adcfbcb4e3ddde631d201b7f0b317d7f8f01b",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "近战单位具备攻击并优先攻击自身所阻挡敌人的索敌特性。",
+      "subject": "近战单位",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "近战单位可以攻击 且优先攻击到自己阻挡的敌人",
+          "t_start": 2489,
+          "t_end": 2502
+        }
+      ],
+      "reason": "逐字稿中明确阐述了近战单位在底层索敌逻辑上具备优先攻击自身阻挡目标的机制特性，表述确定且属于通用规则。",
+      "limitations": [
+        "若存在更高优先级的特殊索敌（如特定特性或技能强制索敌），可能覆盖该默认阻挡索敌逻辑"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "远程干员不具备优先攻击自身所阻挡敌人的特性；若被其阻挡的敌人处于自身攻击范围之外，该远程干员不会对其发起攻击。",
+      "subject": "远程干员",
+      "condition": "被自身阻挡的敌人处于自身攻击范围外（或按常规索敌规则进行目标判定时）",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "但远程干员由于没有这个特性 不会优先攻击被自己阻挡的目标 甚至当这个目标被自身阻挡 在自身攻击范围之外时",
+          "t_start": 2502,
+          "t_end": 2512
+        },
+        {
+          "text": "该干员也不会攻击这个敌人 这种情况一般见于干员布置 不受近远程限制的地图中",
+          "t_start": 2512,
+          "t_end": 2526
+        }
+      ],
+      "reason": "明确指出了远程干员与近战干员在阻挡索敌上的底层差异：远程干员没有阻挡优先攻击特性，且无法攻击自身攻击范围外的被阻挡目标，常见于近远位无限制部署场景。",
+      "limitations": [
+        "多见于近远位无限制部署地图或特殊机制下近身阻挡敌人但敌人中心不在攻击范围内的情况"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选命题均属于明日方舟索敌与阻挡的核心底层通用机制，主播复看机制视频讲解明确，引文能与转写文本逐字对齐，四闸门全部通过。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

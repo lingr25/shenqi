@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_217",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:58:40+0900",
+  "source_sha256": "fadef143b4a9681ae5bc1cd3953783cc166feead13626efc3e9c2d87415ee6ec",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "索敌判定流程中存在嘲讽过滤器，嘲讽过滤器在二次过滤器筛选完成之后执行。",
+      "subject": "索敌系统中的嘲讽过滤器",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "对矿工 然后的话嘲讽过滤器是有的 像你说的 为什么不直接让嘲讽高于仇恨值 有鹰角 有这东西 有一个嘲讽过滤器 在二次过滤器筛完之后",
+          "t_start": 3988,
+          "t_end": 4003
+        }
+      ],
+      "reason": "主播明确解释了底层索敌过滤器的时序流程，指出嘲讽过滤器位于二次过滤器筛选之后执行，属于通用机制规则。",
+      "limitations": [
+        "未展开不同类型嘲讽过滤器的具体分支细节"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "索敌中的嘲讽过滤器开启时，会无条件按嘲讽等级进行重排序，仅依据嘲讽等级将高嘲讽单位排在前面，不参考其他任何条件。",
+      "subject": "索敌系统中的嘲讽过滤器",
+      "condition": "嘲讽过滤器启用时",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "还会再还有一种嘲讽过滤器 如果开启的话 他就会无条件地再进行一次排序 这次排序不看其他任何东西 只看嘲讽",
+          "t_start": 4003,
+          "t_end": 4014
+        },
+        {
+          "text": "会把嘲讽高的单位直接按照嘲呃 直直接按照嘲讽等级 把嘲讽高的单位排序到前面去 仇恨过滤器和嘲讽过滤器的排序都是非常逻辑自然的",
+          "t_start": 4014,
+          "t_end": 4028
+        }
+      ],
+      "reason": "主播详细论述了嘲讽过滤器的排序规则，明确其不看其他任何属性，直接无条件依据嘲讽等级高低重排，表述肯定闭合且具有通用机制指导价值。",
+      "limitations": [
+        "存在相同嘲讽等级时内部如何保持或重置相对顺序未在本段展开"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选命题均属于明日方舟底层索敌机制的通用规则讲解，逻辑完整且自包含，原逐字稿有直接连续的单行引文支撑，全部判定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,98 @@
+{
+  "workorder_id": "vod_wo_vod_b2_195",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:55:17+0900",
+  "source_sha256": "339440be726b238ee8fdaeef39401adc0955a25b11ba5af9802e772a730f1763",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "敌人索敌/寻路仇恨计算中，前进方向定义为从敌人当前所在格格心指向下一个寻路目标节点（Next Node）格心的向量方向。",
+      "subject": "敌人寻路前进方向",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "索敌",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "前进方向 指的就是Next Node 从自己本格革新到自己Next Node的革新",
+          "t_start": 2165,
+          "t_end": 2176
+        }
+      ],
+      "reason": "主播明确给出了前进方向的底层规则定义（格心到格心，而非敌人自身坐标到目标点）。",
+      "limitations": [
+        "ASR转写中“格心”被识别为“革新”"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "claim": "敌人寻路仇恨距离计算的小数部分，为敌人具体坐标到当前地块中心的向量在前进方向上的投影值，该投影值可为负数。",
+      "subject": "敌人寻路仇恨距离小数部分",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "索敌",
+      "rewritten": false,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "然后这一部分的话是小数部分自身所在 具体坐标到当前地块中心向量V 然后取该前进方向上这个V的投影值可负",
+          "t_start": 2134,
+          "t_end": 2149
+        }
+      ],
+      "reason": "上下文完整阐释了小数部分算法为坐标与地块中心差向量向前进方向的投影，且符号可负。",
+      "limitations": []
+    },
+    {
+      "local_id": "c03",
+      "claim": "敌人的寻路仇恨距离计算为两格心间的曼哈顿寻路距离，减去敌人自身到本格格心在两格心连线前进方向上的投影长度。",
+      "subject": "敌人寻路仇恨距离计算",
+      "condition": "敌人沿寻路节点行进计算到目标格仇恨时",
+      "scope": "universal",
+      "category": "索敌",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "然后要减去自己到自己革新的在这个连线方向上的投影 从而要减去这个长度 要减去这个长度 从而得到这个长度",
+          "t_start": 2347,
+          "t_end": 2361
+        }
+      ],
+      "reason": "主播在画白板推导时明确给出了仇恨距离等于节点间寻路距离减去对应投影长度的结论。",
+      "limitations": [
+        "ASR转写中“格心”被识别为“革新”，“寻路距离”被识别为“寻路记里”"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "本切片为主播讲解敌人寻路仇恨距离中“格心到格心前进方向定义”与“坐标投影小数修正”的核心底层算法。3条命题均有明确的逐字稿对应整句支撑，修正了ASR错别字后形成了严谨自包含的机制陈述，均予通过。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

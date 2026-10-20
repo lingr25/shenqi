@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_223",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:14:58+0900",
+  "source_sha256": "d0165c8f6b45144a631fc64289c87182dab1fbfa994ff8d5d3a466bec860768e",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在矿工案例中，最开始的仇恨排序阶段、尚未经过二次过滤器与嘲讽过滤器调整时，拉狗的仇恨顺位高于刁民，刁民的仇恨顺位高于矿工。",
+      "subject": "矿工案例中拉狗、刁民、矿工三者的初始仇恨顺位",
+      "condition": "最开始的仇恨排序阶段、尚未经过二次过滤器与嘲讽过滤器调整",
+      "scope": "instance",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "他是仇恨最高的 然后的话是拉狗",
+          "t_start": 4627,
+          "t_end": 4633
+        },
+        {
+          "text": "然后的话是刁民啊 矿工",
+          "t_start": 4633,
+          "t_end": 4638
+        }
+      ],
+      "reason": "逐字稿在讲解矿工案例开始时连续列出初始仇恨顺序：某单位最高，其后是拉狗，再后是刁民、矿工。因此可确认在这三者之间拉狗高于刁民、刁民高于矿工。",
+      "limitations": [
+        "仅给出定性相对顺位，未给出仇恨数值或完整排序；证据中最高顺位的“他”未在命题中指明。",
+        "该结论适用于矿工案例这一具体实例，不应直接外推为全域通用规则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 的两条引文均可在逐字稿中字符级匹配，且上下文为机制讲解而非猜测；候选仅陈述矿工案例初始仇恨排序中三者的相对顺位，按 instance 范围保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

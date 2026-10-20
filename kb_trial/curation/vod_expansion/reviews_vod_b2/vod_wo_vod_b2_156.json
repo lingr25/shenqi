@@ -1,0 +1,105 @@
+{
+  "workorder_id": "vod_wo_vod_b2_156",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:11:55+0900",
+  "source_sha256": "b06de6b1e75da6a1f92583c3c70e47c07b22cd3fbe61fb39a826181782e9077f",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "敌人被阻挡时，会无视距离将阻挡自身的目标判定为近战攻击对象，且该近战攻击行为的优先度高于远程普通攻击。",
+      "subject": "敌方单位",
+      "condition": "处于被阻挡状态且拥有近战/远程攻击行为",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "会无视距离判定为阻挡他的目标进行近战攻击 这个行为具有相当高的优先度 会优先于远程普通攻击进行阻挡机制和碰撞箱 物理优先于远程",
+          "t_start": 2016,
+          "t_end": 2031
+        }
+      ],
+      "reason": "转写原文明确定性了被阻挡时敌人无视距离判定阻挡目标进行近战攻击，且优先于远程普攻的底层机制。",
+      "limitations": [
+        "部分具备特殊技能/强制索敌机制的特殊敌人除外"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "近战攻击优先于普通远程攻击的实质原因在于近战攻击不会执行常规的敌方3帧索敌刷新流程。",
+      "subject": "近战攻击判定",
+      "condition": "发生近战攻击判定时",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "这里的所谓优先度 实际上就是因为近战不会走三帧索敌敌人啊 敌人敌人近战不会躲三帧 锁定机制和碰撞箱物理碰",
+          "t_start": 2031,
+          "t_end": 2043
+        }
+      ],
+      "reason": "主播明确解释了底层索敌优先级的本质是近战判定不走3帧索敌刷新逻辑。",
+      "limitations": [
+        "口语中提到'不会走三帧索敌'，具体底层是否为3帧固定周期索敌逻辑在转写中属机制解释"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "远程干员不具备近战单位优先攻击自身阻挡目标的特性；若被其阻挡的目标处于其攻击范围之外，远程干员不会对其发起攻击。",
+      "subject": "远程干员",
+      "condition": "目标被自身阻挡且处于干员自身攻击范围之外",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "但远程干员由于没有这个特性 不会优先攻击被自己阻挡的目标 甚至当这个目标被自身阻挡 在自身攻击范围之外时",
+          "t_start": 2502,
+          "t_end": 2512
+        },
+        {
+          "text": "该干员也不会攻击这个敌人 这种情况一般见于干员布置 不受近远程限制的地图中 比如前本四一杠五好了 本系列视哎呀",
+          "t_start": 2512,
+          "t_end": 2526
+        }
+      ],
+      "reason": "转写原文明确定性了远程干员不同于近战单位的阻挡索敌差异，明确说明攻击范围外被阻挡时不会进行攻击。",
+      "limitations": [
+        "常发生于高低台不受限或推拉/机制导致远程干员近身阻挡敌人但敌人中心不在其攻击范围的情况"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "三条候选命题均属于老奇机制视频讲解及主播附带点评的经典定论，分别阐述了近战敌人阻挡索敌优先级、底层不走3帧索敌刷新机理、以及远程干员不享受阻挡索敌保底的对比特性，证据链完整，全部通过四大闸门并予以收录。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

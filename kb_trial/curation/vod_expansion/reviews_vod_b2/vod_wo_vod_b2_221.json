@@ -1,0 +1,70 @@
+{
+  "workorder_id": "vod_wo_vod_b2_221",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:14:07+0900",
+  "source_sha256": "5f64891b0f337a8281952192a8c00d5b4c3a44c886f0cf264a9b835469d56f2e",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "矿工（乌萨斯平民/矿工等友方单位）由于具有负嘲讽（嘲讽等级-1），在仇恨过滤器中会计算得到极高的负值权重，从而导致其在仇恨排序中的优先级降低。",
+      "subject": "矿工单位的仇恨计算",
+      "condition": "受到具有仇恨/嘲讽过滤器的敌方远程索敌判定时",
+      "scope": "entity_mechanism",
+      "category": "索敌",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "哪呢嘲讽等级减一 矿工会因为有负嘲讽 然后从而又被排到后面去 在这个情况下的话 他就会乱掉仇恨 哎呀 但是有没有一些视频案例呢",
+          "t_start": 4246,
+          "t_end": 4287
+        },
+        {
+          "text": "矿工的话因为有负嘲讽 所以在仇恨过滤器中他会有那个很高的负值 所以的话会变低 这是仇恨过滤器",
+          "t_start": 4638,
+          "t_end": 4666
+        }
+      ],
+      "reason": "主播系统性分析了具有“远程攻击优先攻击乌萨斯平民/矿工”的敌方单位在嘲讽过滤器与二次过滤器共同作用下的排序规则，明确解释了负嘲讽在仇恨过滤器中赋予负权值并导致排序降低的底层机制，满足四大闸门。",
+      "limitations": [
+        "口述中‘很高的负值’为定性描述，未给出系统底层具体的权值系数算法数值。"
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "在开服队录像的这次战斗中，干员攻击范围内只有刁民、拉狗和猪猪，在最开始的仇恨排序中拉狗排在刁民之前",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "reason": "属于纯实况观察与特定录像画面指涉（‘这次战斗’、‘拉狗和猪猪’），依赖具体部署顺序与战况画面，属于一次性实战现象，缺乏自包含规则机制价值。"
+    }
+  ],
+  "review_note": "工单讨论了矿工索敌机制中的嘲讽过滤器与二次过滤器叠加。c01为依赖特定录播画面的个案观察，予以排除；c02阐明了负嘲讽在仇恨排序计算中排位降低的机制原理，通过自包含改写后予以保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

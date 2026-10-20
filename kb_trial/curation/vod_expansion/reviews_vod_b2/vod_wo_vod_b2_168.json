@@ -1,0 +1,74 @@
+{
+  "workorder_id": "vod_wo_vod_b2_168",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:18:12+0900",
+  "source_sha256": "6182e48f9f9466dbaded224cc56d840f88274f70a6fdb6c9096498a58832ec1f",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "为配合同帧部署并维持常规下『后部署仇恨更高』的结算直觉，游戏底层修改了仇恨算法，将嘲讽等级所占的仇恨加成权重进一步提高。",
+      "subject": "仇恨计算系统与嘲讽等级加成权重",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "帧时序/索敌",
+      "evidence": [
+        {
+          "text": "然后按照鹰角比较默认的这个后部署仇恨高这个规则进行结算 所以的话鹰角更改了一部分的机制 把嘲讽等级的仇恨加成提升的更高",
+          "t_start": 914,
+          "t_end": 927
+        }
+      ],
+      "reason": "主播详细回顾了早期仇恨算法（嘲讽等级×1000 + 创建时间）并明确指出引入同帧部署后为了保障后部署仇恨优先的规则，将嘲讽等级的加成权重改得更高，属于底层通用规则定论。",
+      "limitations": [
+        "逐字稿未给出修改后嘲讽等级仇恨加成的具体数值/乘数"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "为区分同帧部署时的仇恨高低，系统引入了『同帧部署数/序』机制，但该参数并不能在所有情况下绝对区分出仇恨先后。",
+      "subject": "同帧部署仇恨区分机制（同帧部署数/序）",
+      "condition": "多个干员同帧部署时",
+      "scope": "universal",
+      "category": "帧时序/索敌",
+      "evidence": [
+        {
+          "text": "然后的话加了一个同帧部署术 然后用于区分童同帧仇恨 不过这个区分能力并不是绝对的",
+          "t_start": 927,
+          "t_end": 939
+        }
+      ],
+      "reason": "明确指出了游戏为了同帧部署仇恨结算引入了专用同帧参数（转写为同帧部署术/数），并定论其区分能力并非绝对，具备底层机制机制定论价值。",
+      "limitations": [
+        "ASR转写为『同帧部署术』，实际机制术语应为同帧部署数或同帧部署序；未能给出在何种极端边界下区分能力失效的细节"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本片段为主播讲解《明日方舟》底层索敌与仇恨排序演进历史的教学内容。c01和c02均给出了确凿的底层机制改动与设计逻辑，引文在逐字稿中均能实现字符级完全匹配，符合全部四大闸门要求，予以收录。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

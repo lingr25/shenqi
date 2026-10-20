@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_147",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:07:57+0900",
+  "source_sha256": "9f788e0ececf82384cde51d734bee8c16a299d6e4cdfc7a231d4146841e2cf24",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "冷却计时器的判定精度数量级为10的5次方（10^5），该参数能够解释局内实战中10秒至11秒之间多出一帧的现象，并与解包数据相吻合。",
+      "subject": "冷却计时器判定精度",
+      "condition": "局内冷却计时与帧判定计算",
+      "scope": "universal",
+      "category": "帧时序",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "冷却计时器的这个十的五 这个判定精度问题是我硬推出来的",
+          "t_start": 1178,
+          "t_end": 1189
+        },
+        {
+          "text": "这里实际上是先算出来的 然后再去解包找到的",
+          "t_start": 1214,
+          "t_end": 1225
+        }
+      ],
+      "reason": "主播明确指出了冷却计时器的判定精度参数为10的5次方，并说明该参数由局内10~11秒多一帧的实操现象反推、且后续得到了解包数据的证实，属于已定论的底层时间计算机制。",
+      "limitations": [
+        "逐字稿未给出该参数在源码数据结构中的具体变量名称和定点/浮点精度声明细节。"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单候选 c01 涉及游戏底层冷却计时精度的具体参数（10^5），具有明确的机制规则价值，且逐字稿明确说明该参数已通过反推与解包双重印证，非未闭合猜测。通过全部四大闸门，予以保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

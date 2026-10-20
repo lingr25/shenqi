@@ -1,0 +1,115 @@
+{
+  "workorder_id": "vod_wo_vod_b2_169",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:18:38+0900",
+  "source_sha256": "023e77953108ff40d012b68157a8c713398b1fd21e59b92e570b056f6bebdde8",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "索敌系统在对目标单位进行排序时，最开始输入的初始序列是单位的创建序，后续所有排序逻辑均基于此原始序展开。",
+      "subject": "索敌排序系统",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "仇恨值的作用效果大概来讲是鹰角在索敌的时候进行呃 对敌人进行排序 最开始输入的原始序是单位的创建序 原始序是很重要的概念",
+          "t_start": 939,
+          "t_end": 956
+        },
+        {
+          "text": "所有的排序都是基于原始序在排的 然后的话在嗯在排序规则无法交换同值项的时候 会保留原始序",
+          "t_start": 956,
+          "t_end": 967
+        }
+      ],
+      "reason": "上下文明确指出了底层索敌机制输入序列的本质为单位创建序，后续排序算法均基于该初始序列执行。",
+      "limitations": [
+        "未细化具体排序算法实现（如稳定排序算法的具体类型）"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "索敌排序规则在无法交换同值项（键值相等）时会保留原始创建序，在常规仇恨排序中表现为同等判定权重的目标优先索敌先创建者（即同仇恨先创建）。",
+      "subject": "索敌排序规则",
+      "condition": "排序判定键值相等（无法交换同值项）时",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "所有的排序都是基于原始序在排的 然后的话在嗯在排序规则无法交换同值项的时候 会保留原始序",
+          "t_start": 956,
+          "t_end": 967
+        },
+        {
+          "text": "在仇恨这个排序中也就可以描述为同仇恨先创建 但是说是同仇恨不一定是这个仇恨 不一定是这个仇恨",
+          "t_start": 967,
+          "t_end": 978
+        }
+      ],
+      "reason": "明确指出排序算法具备稳定性特征（同值项保留原始序），在常规仇恨排序下表现为优先选取先创建单位。",
+      "limitations": [
+        "若过滤器前置规则已有区分度，则不会回退到原始序比较"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "“同仇恨先创建”中的比较键不仅限于狭义的仇恨值，而是泛指索敌过滤器中定义的所有排序规则；当过滤器链条中所有规则均无法区分目标时，最终按原始创建序结算。",
+      "subject": "仇恨过滤器（索敌规则链）",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "在仇恨这个排序中也就可以描述为同仇恨先创建 但是说是同仇恨不一定是这个仇恨 不一定是这个仇恨",
+          "t_start": 967,
+          "t_end": 978
+        },
+        {
+          "text": "可以是后面仇恨距离过滤器定义的所有规则 这些规则可以进行排序的东西有很多东西 比如说生命值啊 仇恨值 然后还有嘲讽值嗯",
+          "t_start": 978,
+          "t_end": 991
+        }
+      ],
+      "reason": "勘误并拓展了“同仇恨”概念的范畴，澄清仇恨过滤器包含生命值、距离、防御力等多元复合规则，同值项保留原始序对整个规则链生效。",
+      "limitations": [
+        "具体不同干员/敌人的过滤器规则组合各异"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单三个候选命题层次清晰：c01 确立了底层输入的原始序为单位创建序；c02 确立了同值项保留原始序（稳定排序规则）及在仇恨中的表现；c03 澄清了“同仇恨”实为仇恨过滤器规则链的泛称。三条均有严谨逐字稿支撑，符合四大闸门要求，改写为符合知识库规范的自包含表述后予以保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

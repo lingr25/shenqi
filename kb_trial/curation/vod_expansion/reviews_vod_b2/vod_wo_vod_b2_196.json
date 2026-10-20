@@ -1,0 +1,61 @@
+{
+  "workorder_id": "vod_wo_vod_b2_196",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-free",
+    "lingr-free",
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:55:36+0900",
+  "source_sha256": "426ecd885428d3288d71957c15effbacd200d365b6d171b3db4d976ba4e715b5",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "结合仇恨过滤器0.1格的精度，敌人的寻路仇恨沿纵向被切成间隔为0.1格的等仇恨带；同一0.1格切片区间内的所有点位到蓝门的仇恨距离判定完全相同。",
+      "subject": "敌人的寻路仇恨（到蓝门的仇恨距离判定）",
+      "condition": "仇恨过滤器精度为0.1格，且敌人进行寻路仇恨距离判定时",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "再结合我们之前说的仇恨过滤器0.1的精度 实际上的话仇恨是呃敌人的寻路仇恨是以这样0.1格 0.1格 再这样纵向切片切出来的",
+          "t_start": 2373,
+          "t_end": 2387
+        },
+        {
+          "text": "在这个范围内都是同仇恨的",
+          "t_start": 2387,
+          "t_end": 2398
+        },
+        {
+          "text": "那么最后就会得到这样一堆那个间隔为0.1的直线 然后的话在这一片之中 在这一片之中的所有点位到蓝门的仇恨距离都是相同的",
+          "t_start": 2434,
+          "t_end": 2451
+        }
+      ],
+      "reason": "逐字稿明确说明在仇恨过滤器0.1精度下，敌人的寻路仇恨以纵向0.1格切片，切片范围内同仇恨，并在间隔为0.1的直线切片区间内所有点位到蓝门的仇恨距离相同。",
+      "limitations": [
+        "结论基于底层机制公式与几何投影推导讲解，实战中未做现场实测演示。",
+        "未说明对跨传送门或多路径特殊拐弯处是否直接沿用此切片投影。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "修复了原引文跨行拼接的问题。引文现已全部调整为单行逐字完全匹配的连续子串；四闸门全部通过，维持 keep 裁定。",
+  "repair_rounds": 2,
+  "unresolved_problems_auto_demoted": []
+}

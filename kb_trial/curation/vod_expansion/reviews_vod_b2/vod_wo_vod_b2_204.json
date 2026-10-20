@@ -1,0 +1,72 @@
+{
+  "workorder_id": "vod_wo_vod_b2_204",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:57:37+0900",
+  "source_sha256": "22659e0274699d97d388291374dd5acb05f8ab7e2002aa3d1861fa6fbb38a08b",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "在酒神五档仇恨分区中，当1、2号均处于靠前档位时，3号必须使自身仇恨超过1、2号、到达0.2之外，才会被索敌系统选中。",
+      "subject": "3号（待索敌单位）",
+      "condition": "1、2号均处于靠前档位；3号需要被索敌系统选中",
+      "scope": "instance",
+      "category": "索敌/仇恨",
+      "evidence": [
+        {
+          "text": "就会导致3号至少要超过这个点才可以被12号优先呃",
+          "t_start": 3019,
+          "t_end": 3032
+        },
+        {
+          "text": "他必须要超过12号的仇恨 也就是到达这个0.2之外 在这个区间内我才可以去索敌3号",
+          "t_start": 3045,
+          "t_end": 3057
+        }
+      ],
+      "reason": "主播在酒神五档仇恨分区讲解中明确给出该索敌条件：1、2号靠前时，3号需超过其仇恨点，即到达0.2之外，才会被索敌。逐字稿中的「12号」结合上下文「一号2号三号」与「都」应理解为1、2号；参数0.2由逐字稿直接给出。",
+      "limitations": [
+        "0.2 的参考基准与仇恨分区边界需结合酒神0.2半径圆、具体关卡坐标理解。",
+        "未展开创建顺序、蓝门半格仇恨归零等其他精细条件。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "12号在阻挡刚结束时立刻被龙捆住，会在原地不动，3号需要往前走。",
+      "verdict": "reject",
+      "reason": "该候选主要是特定场景下的实况观察与操作叙述，只说明被龙捆后原地不动、3号须前移，未形成带可复用参数和条件的机制定论；且主体使用场景编号「12号/3号」，未补齐具体干员、技能或系统名称，不满足 Gate 1 与 Gate 4。",
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      }
+    }
+  ],
+  "review_note": "c02 有明确逐字稿支撑、参数0.2与索敌条件，保留为实例级索敌规则；c01 属于场景观察/操作叙述，规则价值不足且主体未自包含，剔除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_181",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:24:45+0900",
+  "source_sha256": "6e36cfcefe5e10fe886291d8b29a71dd22575de3cbc9498ea30a66a68f13061e",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在敌方或干员的仇恨公式中，路径距离定义为以单位所在地块坐标为起点，按顺序以最短路径串联所有路径点并到达终点的所有曼哈顿寻路距离之和。",
+      "subject": "路径距离",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "寻路",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "路径距离定义为从所在地块坐标为起点 以最短路径串联指终点的所有曼哈顿寻路距离之和 这句话是什么意思",
+          "t_start": 1527,
+          "t_end": 1540
+        },
+        {
+          "text": "就是说我要串联上所有的路径点 要按顺序 怪被封死了 为什么全部失效 这个是和肉鸽那个宝箱一样的 你们有记着肉鸽那个",
+          "t_start": 1540,
+          "t_end": 1559
+        }
+      ],
+      "reason": "主播在系统性讲解仇恨机制公式时，明确给出了「路径距离」的标准定义，并补充解释了必须按顺序串联所有路径点，属于底层通用的寻路与仇恨计算规则。",
+      "limitations": [
+        "逐字稿口语中有「串联指终点」等个别ASR偏差，但含义明确为串联至终点。"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单主要阐述了仇恨机制中的基础核心概念「路径距离」的严格定义。上游候选命题完全符合四大硬性闸门，微调润色后予以通过。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

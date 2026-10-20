@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_176",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed",
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:23:41+0900",
+  "source_sha256": "c7a4b0fe4fb55d39af03156596f5fc7f213df47699a5ba0880732fb2e92abe18",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "仇恨过滤器（如4号与76号）的仇恨排序存在0.1的数值精度（向下取整）；尽管同帧部署数额的仇恨增加强行规避了部署时间的0.1精度问题，但敌人类仇恨计算在0.1距离差以内仍会被视作同仇恨，遵循先创建优先判定的规则。",
+      "subject": "仇恨过滤器与索敌仇恨排序系统",
+      "condition": "仇恨差值处于0.1精度范围内（如敌人路径距离差距小于0.1）",
+      "scope": "universal",
+      "category": "索敌与仇恨机制",
+      "evidence": [
+        {
+          "text": "他们会是0.1的精度 0.1代表着那个在过去的古老的那个仇恨排序中代表着三帧 如今的话他以同帧部署数数额 同帧部署会多一",
+          "t_start": 1340,
+          "t_end": 1357
+        },
+        {
+          "text": "仇恨的话呃 就是把这个给把这个给搞没了 就是强行规避掉了这个0.1的仇恨精度 但是的话仇恨精度的问题仍然是存在的",
+          "t_start": 1357,
+          "t_end": 1372
+        },
+        {
+          "text": "它仍然会在0.1距离之内同仇恨打先创建的 这里的话以前我的视频有这种东西的体现",
+          "t_start": 1385,
+          "t_end": 1421
+        }
+      ],
+      "reason": "主播详细解析了仇恨过滤器0.1精度的底层机制，说明了同帧部署赋予不同仇恨数值虽然解决了干员部署时间的精度合并问题，但敌方路径距离计算在0.1范围内未做系数放大，导致小于0.1距离差的敌人仍会被判定为同仇恨并按先创建（实体生成顺序）索敌，结论明确严谨。",
+      "limitations": [
+        "具体仇恨过滤器编号（如4号、76号）对应底层配置表的具体过滤器逻辑，干员与敌人的具体仇恨计算公式需结合后续展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "修正了第一条 evidence 的逐字稿字符级对齐问题，确保每段引用均为逐字稿单行内的精确连续子串。该命题为底层通用索敌仇恨精度机制，四大硬性闸门均通过。",
+  "repair_rounds": 1,
+  "unresolved_problems_auto_demoted": []
+}

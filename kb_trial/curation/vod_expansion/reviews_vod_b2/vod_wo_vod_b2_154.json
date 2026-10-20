@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_154",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:14:34+0900",
+  "source_sha256": "0b2f98e82a19aa2baacf765f7b490e452a3d9718f82a1e936dae2a733cfad6a1",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在旧版本中，常规干员受击半径统一为0.25，而伊芙利特的受击半径为0.1，导致二阶段爱国者位于格子中心点时无法攻击到其周围四格内的伊芙利特（该Bug后续已修复）。",
+      "subject": "伊芙利特（旧版本受击半径）",
+      "condition": "旧版本未修复前，二阶段爱国者位于格子中心点且伊芙利特位于其周围四格",
+      "scope": "entity_mechanism",
+      "category": "受击判定",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "统一为0.25 而当时使伊芙利特的受击半径为0.1 这导致二阶段爱国者位于格子中心点时 无法攻机",
+          "t_start": 1991,
+          "t_end": 2004
+        },
+        {
+          "text": "周围四格的伊芙利特 不愧是官方指定的儿童 体积都比大人小一圈 不过该bug已于20N未被阻挡时的情况 我们接着聊",
+          "t_start": 2004,
+          "t_end": 2016
+        }
+      ],
+      "reason": "逐字稿中明确记载了机制视频/讲解中的历史机制Bug：干员通用受击半径为0.25，伊芙利特旧版本被配为0.1导致判定缺失。有确凿参数与现象因果关系，属于具备机制档案价值的已解决Bug事实。",
+      "limitations": [
+        "该机制问题在后续版本中已修复，属于历史版本机制特性"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单命题准确提炼了讲解中关于旧版本受击半径的历史Bug（通用0.25与伊芙利特0.1导致爱国者二阶段攻击判定失效）。逐字稿两行连续支撑参数与现象，符合四大闸门要求，予以保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

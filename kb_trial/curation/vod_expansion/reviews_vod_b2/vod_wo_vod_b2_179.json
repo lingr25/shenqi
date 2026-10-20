@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_179",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:28:47+0900",
+  "source_sha256": "7c0b67c6ddbad5e31ef39a4116e649cce6382168f050cff7f81764a24cd41206",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "敌方单位在路径点本格未实际踩到路径点判定时，其路径距离仇恨值会等同于该路径点的仇恨值。",
+      "subject": "敌方单位的路径距离仇恨值",
+      "condition": "敌方单位处于路径点所在格但尚未踩到路径点判定时",
+      "scope": "universal",
+      "category": "索敌/寻路",
+      "evidence": [
+        {
+          "text": "在那个路径点本格未踩到路径点的时候",
+          "t_start": 1479,
+          "t_end": 1492
+        },
+        {
+          "text": "仇恨值都会等同于路径点革新",
+          "t_start": 1492,
+          "t_end": 1497
+        }
+      ],
+      "reason": "主播在讲解敌方索敌与路径距离计算时，明确阐述了当敌人在路径点所在本格但未完成踩点时，仇恨计算直接等同于该路径点的机制，属于通用的寻路与仇恨判定规则。",
+      "limitations": [
+        "口语中带有口误/ASR杂音（如“革新”），其底层具体计算细节需结合敌方曼哈顿距离寻路公式进一步展开"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单讨论了敌方路径距离与索敌仇恨的计算细节，候选命题经自包含修正后符合四大闸门要求，裁定为 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

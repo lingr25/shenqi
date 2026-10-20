@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_175",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:23:03+0900",
+  "source_sha256": "ca88b9e0fd102f28a3dcf8ab10680852a0d79a91ddf29605b688fd7a13562bdd",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在旧版以仇恨值排序的机制中（如4号与76号过滤器），仇恨过滤器的0.1精度阈值在部署时序上等价于3帧。",
+      "subject": "仇恨过滤器（4号与76号仇恨排序过滤器）",
+      "condition": "旧版仇恨排序机制（同帧部署加成引入前）",
+      "scope": "universal",
+      "category": "帧时序/仇恨排序",
+      "evidence": [
+        {
+          "text": "以仇恨排序的这个4号和76号",
+          "t_start": 1322,
+          "t_end": 1340
+        },
+        {
+          "text": "他们会是0.1的精度 0.1代表着那个在过去的古老的那个仇恨排序中代表着三帧",
+          "t_start": 1340,
+          "t_end": 1357
+        }
+      ],
+      "reason": "主播明确解释了底层仇恨过滤器（4号和76号）的精度为0.1，在旧版本干员仇恨计算下，该0.1的精度数值换算到部署时序上等同于3帧，导致相差3帧以内的部署会被视为同仇恨。",
+      "limitations": [
+        "现行版本干员仇恨已引入同帧部署额外加成以规避该0.1精度导致的同仇恨，但0.1精度的底层判定依然存在于其他仇恨机制中（如敌人路径距离精度）"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "上游命题提炼准确，上下文提供了具体过滤器编号（4号与76号）及机制变更背景，补充至命题与证据中予以保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

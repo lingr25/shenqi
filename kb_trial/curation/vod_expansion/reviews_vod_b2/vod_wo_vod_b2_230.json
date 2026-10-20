@@ -1,0 +1,86 @@
+{
+  "workorder_id": "vod_wo_vod_b2_230",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:16:46+0900",
+  "source_sha256": "689c6d2722b815af73a7cf5ffa45adf155f38eee923bf66e1fb504c58d776924",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "银灰在场期间，部署区每发生一次费用变化，风雪之眼就会对部署区重新排序一次。",
+      "subject": "银灰在场期间的风雪之眼排序机制",
+      "condition": "银灰在场，且部署区费用发生变化",
+      "scope": "entity_mechanism",
+      "category": "触发条件/时序",
+      "evidence": [
+        {
+          "text": "而这个排序发生在银灰在场期间的每一次费用变化",
+          "t_start": 5202,
+          "t_end": 5217
+        },
+        {
+          "text": "我们进图是不会因为那个费用的增长 然后产生排序的 只有银灰在场才会产生排序",
+          "t_start": 5346,
+          "t_end": 5376
+        }
+      ],
+      "reason": "上下文明确说明该排序发生在银灰在场期间的每一次费用变化，并补充只有银灰在场才会产生排序，因此该触发条件成立。",
+      "limitations": [
+        "未说明费用变化是否包含自然回复、部署、撤退等全部来源。",
+        "未说明同值项在排序中的具体交换规则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "银灰不在场时，部署区卡片的位置和排序固定不变，费用的增长不会改变固定的原始序。",
+      "subject": "银灰不在场时的部署区卡片位置与排序",
+      "condition": "银灰不在场",
+      "scope": "entity_mechanism",
+      "category": "触发条件/时序",
+      "evidence": [
+        {
+          "text": "在正常情况下来讲 原始序是固定的 费用的增长不会导致序的改变",
+          "t_start": 5389,
+          "t_end": 5402
+        },
+        {
+          "text": "风雪之眼会对部署区进行排序 而银灰不在场时 敌人的位不是干员 卡片的位置和排序是固定不变的",
+          "t_start": 5532,
+          "t_end": 5548
+        }
+      ],
+      "reason": "主播先在一般情形下说明原始序固定、费用增长不会导致序改变，随后明确银灰不在场时卡片的位置和排序固定不变，两条证据共同支撑该结论。",
+      "limitations": [
+        "未列出除费用增长外可能影响原始序的其它因素。",
+        "逐字稿中“敌人的位不是干员”存在转写噪声，未作为核心结论依据。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选命题均围绕银灰风雪之眼的排序触发条件与未触发稳定性展开。逐字稿中主播明确给出：排序发生在银灰在场期间每一次费用变化；只有银灰在场才会产生排序；银灰不在场时卡片位置和排序固定不变，费用增长不改变原始序。两项均为可复用机制定论，未发现未闭合猜测或画面依赖残句，予以 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

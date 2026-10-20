@@ -1,0 +1,71 @@
+{
+  "workorder_id": "vod_wo_vod_b2_220",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:14:07+0900",
+  "source_sha256": "2a64a4b16e2f28f8d1e143b07b9f5d0afe4f3a044051072d8b4cf7f705ccf897",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "矿工具有-1嘲讽等级（负嘲讽），在仇恨过滤器排序中会因获得负值而降低仇恨优先级排至后方。",
+      "subject": "乌萨斯平民/矿工",
+      "condition": "敌方索敌进行仇恨过滤器（嘲讽过滤器）排序时",
+      "scope": "entity_mechanism",
+      "category": "索敌",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "哪呢嘲讽等级减一 矿工会因为有负嘲讽 然后从而又被排到后面去 在这个情况下的话 他就会乱掉仇恨 哎呀 但是有没有一些视频案例呢",
+          "t_start": 4246,
+          "t_end": 4287
+        },
+        {
+          "text": "矿工的话因为有负嘲讽 所以在仇恨过滤器中他会有那个很高的负值 所以的话会变低 这是仇恨过滤器",
+          "t_start": 4638,
+          "t_end": 4666
+        }
+      ],
+      "reason": "主播在讲课时明确读出文本并解释机制：矿工自身嘲讽等级减一（负嘲讽），导致其在仇恨/嘲讽过滤器中被赋予负值排到后面。",
+      "limitations": [
+        "矿工具体指第八章中的乌萨斯平民/矿工类保护目标"
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "矿工因负嘲讽与二次过滤器叠加导致仇恨乱掉",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4",
+        "DUP"
+      ],
+      "reason": "与c01核心讨论一致且表述较模糊；'乱掉仇恨'缺乏形式化的确定排序规则公式，且主播当时还在边找视频边推演，属于现象观察与粗略定性，不如c01明确指出负嘲讽数值机制。"
+    }
+  ],
+  "review_note": "工单讨论的是第八章矿工（负嘲讽单位）在索敌底层排序中的交互现象。c01准确提取了矿工具有-1负嘲讽并在仇恨过滤器中赋负值导致优先级降低的确定规则，予以keep；c02定性描述‘仇恨乱掉’未闭合具体算式，且与c01核心点重合，予以reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_229",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:16:25+0900",
+  "source_sha256": "bedf73aa21e8767c58b78f8301e3e002d43ef4d5c778d1b6888132c9a5c6074b",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "银灰在场时，风雪之眼对部署区卡牌按费用进行排序，且属于同值不交换的稳定排序：费用相同的干员在排序后保持其原始相对顺序不变。",
+      "subject": "银灰的天赋机制（风雪之眼）部署区排序",
+      "condition": "银灰在场且部署区进行费用排序时",
+      "scope": "entity_mechanism",
+      "category": "部署区排序",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "银灰的排序也是原始序和额和那个按值排序 同值不交换的一个典型例子",
+          "t_start": 5162,
+          "t_end": 5177
+        },
+        {
+          "text": "就是按照费用都排好 在原始序中 谁在谁前面 在排序之后就是谁在谁前面",
+          "t_start": 5192,
+          "t_end": 5202
+        }
+      ],
+      "reason": "主播明确指出风雪之眼的费用排序是同值不交换的稳定排序规则，若费用相同则保持原始相对顺序不变，逐字稿有明确表述支撑。",
+      "limitations": [
+        "排序触发的具体帧时机（部署时先加技力再排序、在场期间费用变化触发等）包含在更细化的时序规则中"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "命题探讨了银灰天赋中风雪之眼对部署区卡牌进行排序的具体算法特性（稳定排序/同值不交换），表述清晰且有逐字稿连续子串强力支撑，予以保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

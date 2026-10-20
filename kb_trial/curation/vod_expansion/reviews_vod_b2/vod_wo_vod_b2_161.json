@@ -1,0 +1,84 @@
+{
+  "workorder_id": "vod_wo_vod_b2_161",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:14:34+0900",
+  "source_sha256": "de795a3565b7f6f040e1a5f7c2f966506a73e05b66791c70ea748c19f534f8bd",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "当多波次敌方单位在同帧理论同时刷新时，不仅后续生成的单位可能逐帧顺延，理论同帧出生的单位内部也会因为排序逻辑产生出生顺序颠倒（乱序）。",
+      "subject": "同帧理论同时刷新的敌方单位出生顺序",
+      "condition": "多波次敌方单位在理论同帧同时刷新",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "对排序 这里的话经过研究发现就是多出怪 然后在理论同时的时候会出现一些乱序的现象",
+          "t_start": 2618,
+          "t_end": 2634
+        },
+        {
+          "text": "然后出怪出多了的话 就是多出一个碎角 就会变成024对 就是他不只是那个出往后出的怪 会晚出生一帧的问题 理论同时出生的怪",
+          "t_start": 2689,
+          "t_end": 2704
+        },
+        {
+          "text": "他的出生顺序也会开始产生颠倒的现象",
+          "t_start": 2704,
+          "t_end": 2716
+        }
+      ],
+      "reason": "主播根据研究成果明确阐述了多怪同帧理论刷新时的排序乱序现象，不仅是往后延帧，内部顺序也会发生颠倒。",
+      "limitations": [
+        "具体颠倒的顺序取决于底层数据源编号与排序规则，现场未展开逐个参数推导"
+      ],
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      }
+    },
+    {
+      "local_id": "c02",
+      "claim": "同帧理论同时出生的敌方单位发生出生顺序颠倒的底层原因是 Unity/Mono 运行时所采用的快速排序算法（非稳定排序）。",
+      "subject": "同帧出怪顺序排序算法",
+      "condition": "多单位理论同帧同时刷新判定排序时",
+      "scope": "universal",
+      "category": "底层框架机制",
+      "evidence": [
+        {
+          "text": "他的出生顺序也会开始产生颠倒的现象 对mono的快排 mono的快排",
+          "t_start": 2704,
+          "t_end": 2716
+        }
+      ],
+      "reason": "主播指出了同帧出怪乱序颠倒的具体底层技术成因（Mono运行时的快速排序快排），结论明确肯定，非开放疑问或纯实况观察。",
+      "limitations": [
+        "主播提及具体分析需要结合数据表中的原始排序顺序、编号、时间等参数自行逆向排查"
+      ],
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      }
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单两项候选命题分别描述了同帧出怪颠倒的机制现象及其底层原因（Mono快排）。逐字稿中主播对该结论陈述非常肯定，属于已验证的研究成果，引文完全匹配，故均予以保留并优化规范为自包含陈述。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

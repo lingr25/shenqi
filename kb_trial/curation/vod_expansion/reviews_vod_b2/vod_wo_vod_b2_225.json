@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_225",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:15:12+0900",
+  "source_sha256": "ec969ec651e4dce3af71166be422150c8663af5beccd7b021afc54a268c4fc47",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "索敌系统在进行二次过滤器排序时，会逐个检查候选目标是否为优先目标；若检测到优先目标，则将其与排序第一位的高仇恨目标进行位置互换。",
+      "subject": "索敌系统二次过滤器",
+      "condition": "索敌排序进行到二次过滤器阶段，且候选列表中存在干员的优先目标",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "二次过滤器排序 二次过滤器排序之后的话 他会把那个自己的优先目标 然后和那个高仇恨目标进行换位 比如说他会排成这个样子",
+          "t_start": 4690,
+          "t_end": 4705
+        },
+        {
+          "text": "这怎么不能移动呢 啊可以了 最开始的话他们是这样的顺序 然后二次过滤器呢会挨个检查谁是不是优先目标 优先的话就和第一个换",
+          "t_start": 4743,
+          "t_end": 4756
+        }
+      ],
+      "reason": "主播详细解析了底层索敌过滤器的分层运作机制，明确说明了二次过滤器处理优先目标时的具体算法行为（挨个检查优先目标并与首位高仇恨目标互换位置），逻辑闭合，可信度高。",
+      "limitations": [
+        "若存在多个优先目标时的遍历顺序及置换冲突规则，逐字稿中未进一步展开",
+        "依赖特定的过滤器分层架构（仇恨过滤器 -> 二次过滤器 -> 嘲讽过滤器）"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单候选 c01 准确概括了录播讲座中关于二次过滤器排序的具体换位算法。逐字稿中主播对该机制有明确的因果推演与步骤阐述（检查优先目标并与首位互换），引文与原文逐字完全匹配，四大闸门全部通过，予以收录。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

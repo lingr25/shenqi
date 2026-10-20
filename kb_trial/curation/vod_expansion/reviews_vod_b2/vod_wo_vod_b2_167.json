@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b2_167",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:17:50+0900",
+  "source_sha256": "84885cc06c34430a3eaa63bbf66f3520189fcf9baf33b287d350fa621b646d84",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在早期游戏机制中，角色的仇恨值由创建时间与嘲讽等级×1000相加得到，即仇恨值 = 创建时间 + 嘲讽等级×1000。",
+      "subject": "早期游戏机制中角色的仇恨值",
+      "condition": "同帧部署改动前的早期游戏机制",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "嗯角色类以时间为仇恨 在早期的这个嗯早期的游戏机制中中的话创建时间 然后的话嘲讽等级成1000 这个就是当初嘲讽等级乘1000",
+          "t_start": 884,
+          "t_end": 901
+        },
+        {
+          "text": "然后再加创建时间 这就是当初的算法",
+          "t_start": 901,
+          "t_end": 914
+        }
+      ],
+      "reason": "主播明确将早期机制概括为创建时间加嘲讽等级乘1000，并称这就是当初的算法；后续上下文说明同帧部署后机制被更改，因此该公式应限定为早期版本。",
+      "limitations": [
+        "创建时间在仇恨值中的具体数值单位与读取方式未在逐字稿中说明",
+        "该公式仅表述同帧部署改动前的旧机制，后续实现已发生变化",
+        "1000 是否仅指嘲讽等级系数、是否受其他修饰未进一步展开"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 为对早期仇恨算法的明确陈述，逐字证据连续可核，主体、条件、适用范围可补全，未落入猜测或反问，故 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

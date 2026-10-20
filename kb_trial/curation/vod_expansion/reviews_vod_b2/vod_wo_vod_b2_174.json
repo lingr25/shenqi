@@ -1,0 +1,58 @@
+{
+  "workorder_id": "vod_wo_vod_b2_174",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:22:56+0900",
+  "source_sha256": "4e7d42aedc23c5d13c36290556a5b236046c3de0074a351a589cbc16fc5ebb3b",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在索敌系统中，以仇恨值排序的4号过滤器与76号过滤器存在仇恨过滤器精度，其判定精度为0.1；当两个单位的仇恨值差值小于0.1时会被视为同仇恨，遵循先创建优先（打先创建）的规则。",
+      "subject": "以仇恨值排序的4号过滤器与76号过滤器",
+      "condition": "索敌判定按仇恨值排序时",
+      "scope": "universal",
+      "category": "索敌系统/仇恨排序",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "以仇恨排序的 以仇恨排序的这个4号和76号",
+          "t_start": 1322,
+          "t_end": 1340
+        },
+        {
+          "text": "他们会是0.1的精度",
+          "t_start": 1340,
+          "t_end": 1357
+        },
+        {
+          "text": "它仍然会在0.1距离之内同仇恨打先创建的",
+          "t_start": 1385,
+          "t_end": 1421
+        }
+      ],
+      "reason": "主播详细解析了底层索敌过滤器的精度机制，明确指出了4号和76号过滤器具有0.1的精度阈值，并解释了在0.1精度内仇恨值被视为相同而触发同仇恨打先创建的底层逻辑，属于明确的通用机制定论。",
+      "limitations": [
+        "现代版本中针对同帧部署干员增加了特定数额以规避0.1精度导致的同仇恨问题，但底层敌方索敌或路径距离仍受此精度影响。"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "命题c01机制清晰、定论明确，逐字稿中关于4号与76号过滤器及其0.1精度的描述完备且有精确原文匹配，判定通过。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

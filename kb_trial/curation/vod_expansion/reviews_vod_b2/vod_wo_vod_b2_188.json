@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_188",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:28:53+0900",
+  "source_sha256": "2955d75a5d58471c38d6f43fb2e63be74e4663d6328e59c97c81e77ac4e9fd9b",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "绕八圈的格数换算与进门距离的计数方式",
+      "verdict": "reject",
+      "reason": "该候选命题为主播在肉鸽关卡「灌水贤者」中临时口头假设的计算算例（'这个我也数不清他是几圈 我假设八圈吧'），绕八圈折算16格与进门9格仅为临时口算演示过程，不具备通用机制规则价值，且高度依赖画面具体路径点指引（Gate 1、Gate 4 不通过）。真正具备规则价值的是曼哈顿寻路按网格整数计算的底层原则，而非此特定假设算例。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "上游抽取的命题为讲师为了解释'曼哈顿寻路只看格子数'而随机构造的假想算例（主播明确说明'我假设八圈吧'、'具体我也数不清几圈'），属于教学演示过程中的推演算例而非确定机制事实。其数值（16格、9格）不具备独立知识库沉淀价值，故整单予以驳回。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

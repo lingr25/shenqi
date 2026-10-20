@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_152",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:10:50+0900",
+  "source_sha256": "7278aed47ecea88fbb22eb78d028efd8d77c760883d97af5dc74676b9107e774",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "我方干员的攻击范围与敌人的受击范围相切、重叠或略微相邻时，均进入我方干员的攻击判定。",
+      "subject": "我方干员攻击范围与敌人受击范围之间的相交判定",
+      "condition": "我方干员攻击范围与敌人受击范围相切、重叠或略微相邻",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "只要我方干员的攻击范围 与敌人的受击范围相切或重 时至今日的话 这个逻辑还要再加一个 就是略微相邻则进入我方干员的攻击判定啊",
+          "t_start": 1946,
+          "t_end": 1962
+        }
+      ],
+      "reason": "逐字稿明确给出攻击判定规则：我方攻击范围与敌方受击范围相切或重叠进入判定，并在后续补充“略微相邻”也进入判定；该陈述不依赖画面，具有可复用机制价值。",
+      "limitations": [
+        "“略微相邻”的精确量化阈值未在逐字稿中交代。",
+        "逐字稿前文提到巨型Boss等特殊受击范围例外，但例外细节未完整展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅有一个候选命题。其引文可在逐字稿第1946秒行中字符级对齐；命题已自包含，主体、条件与作用域明确，且为讲师给出的机制结论而非猜测或反问，故裁定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

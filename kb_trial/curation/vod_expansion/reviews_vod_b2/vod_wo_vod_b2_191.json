@@ -1,0 +1,85 @@
+{
+  "workorder_id": "vod_wo_vod_b2_191",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:51:34+0900",
+  "source_sha256": "9f00ee873ed079ff41795cf2d221f6ecc5991f79c7f54a08a818e560fe3841f1",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "单位索敌遵循自身配置的仇恨过滤器规则，各单位依据各自独立的仇恨过滤器逻辑进行索敌判定（是否优先血量取决于其过滤器的具体配置）。",
+      "subject": "单位索敌机制与仇恨过滤器",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "不是啊 我之前说的仇恨过滤器 你不要弄混 是某一个单位有某一套仇恨过滤器 他按照自己的仇恨过滤器进行索敌",
+          "t_start": 1986,
+          "t_end": 1998
+        },
+        {
+          "text": "如果他自己的仇恨过滤器是优先血量的话 那么就会看血量 如果他不优先血量 就不会看血量",
+          "t_start": 1998,
+          "t_end": 2009
+        }
+      ],
+      "reason": "主播针对弹幕误解进行机制澄清，确立了底层索敌架构原则：索敌是否看血量并不存在全局固定行为，而是由每个实体单位绑定的特定仇恨过滤器所决定的。",
+      "limitations": [
+        "逐字稿未展开全部过滤器的编号与具体参数权重（如后文提到的4号仇恨过滤器细节需另案处理）"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "如果单位的仇恨过滤器优先血量，那么索敌就会看血量；如果单位的仇恨过滤器不优先血量，那么索敌就不会看血量",
+      "verdict": "reject",
+      "failed_gates": [
+        "DUP"
+      ],
+      "reason": "与c01内容重复，属于对同一索敌过滤器规则逻辑的同义反复阐释，已合并进c01中。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      }
+    },
+    {
+      "local_id": "c03",
+      "topic": "奶的索敌要看血量",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "reason": "该句仅为主播在解释通用仇恨过滤器机制时随口列举的通俗例子，术语不严谨（使用口语代词'奶'），且表述泛化，缺乏具体医疗干员索敌逻辑的精确规则价值，属于举例说明而非独立机制定论。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      }
+    }
+  ],
+  "review_note": "本片段为主播纠正弹幕对仇恨公式中'血量'判定的混淆，澄清了索敌底层是基于各单位配置的仇恨过滤器运转。c01与c02合并为一条自包含的通用机制规则，c03为粗略口语化例证予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

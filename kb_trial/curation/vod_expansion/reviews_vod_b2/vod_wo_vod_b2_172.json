@@ -1,0 +1,75 @@
+{
+  "workorder_id": "vod_wo_vod_b2_172",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:21:06+0900",
+  "source_sha256": "24ca22c5f766dc22d0c0d6562063dcc767d6613ebbc4fdd2465c046c89e2c33a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "特殊索敌与仇恨之间不存在通用的固定优先级，谁更优先取决于具体仇恨过滤器内部的排序规定。",
+      "subject": "特殊索敌与仇恨的优先级关系",
+      "condition": "由具体仇恨过滤器进行索敌排序时",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "特殊索敌和仇恨之间其实没有谁更优先的原则 只是这些仇恨过滤器的规定 碰上一些并不看仇恨过额 并不看仇恨的仇恨过滤器",
+          "t_start": 1097,
+          "t_end": 1113
+        }
+      ],
+      "reason": "逐字稿直接给出该判断：特殊索敌与仇恨没有通用优先关系，而由过滤器规定决定；这是索敌机制的通用原则。",
+      "limitations": [
+        "原文未枚举所有过滤器内部规则，只给出“取决于具体过滤器”的通用结论。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "钩索师（逐字稿转写为“钩锁”）的“距离来源降序（拉最远）”索敌过滤器完全不参考仇恨值，即使同距离也不会选择仇恨更高的单位。",
+      "subject": "钩索师的“距离来源降序（拉最远）”索敌过滤器",
+      "condition": "钩索师使用“距离来源降序（拉最远）”过滤器进行索敌时",
+      "scope": "entity_mechanism",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "比如说这种钩锁失距离来源降序拉最远的 他是不看仇恨的 他并不会选择仇恨更高的单位 假设说同距离 然后还有这个推击手",
+          "t_start": 1113,
+          "t_end": 1127
+        }
+      ],
+      "reason": "逐字稿明确说明该距离来源降序拉最远的过滤器不看仇恨，且不会选择仇恨更高的单位，足以支持“存在完全不参考仇恨值的过滤器”这一机制结论。",
+      "limitations": [
+        "同句仅并列提到“推击手”，未展开其具体排序规则，故未把推击手列入已验证主张。",
+        "“钩锁失”为转写噪音，按上下文规范为“钩索师”。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 给出特殊索敌与仇恨优先级的通用原则；c02 的钩索师例子明确支持存在不看仇恨的过滤器。c02 中推击手仅被提及而未展开，故未纳入已验证细节。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

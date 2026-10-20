@@ -1,0 +1,74 @@
+{
+  "workorder_id": "vod_wo_vod_b2_232",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:18:32+0900",
+  "source_sha256": "c9580cb08205ea42e77971cc72fe8dc735f02b41c94a8c15ce54d5050a422d30",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "银灰部署时风雪之眼在排序前后均会向其左侧的干员赋予技力增益；当银灰不在场时，部署区卡片相对顺序保持不变，因此干员在银灰撤退后回手仍保留在风雪之眼左侧的相对顺序，再次部署银灰时依然能在排序前判定吃到技力增益。",
+      "subject": "银灰（风雪之眼机制）与部署区排序/技力加成",
+      "condition": "干员相对顺序位于风雪之眼左侧，且在银灰离场后重新回手并在银灰再部署时结算",
+      "scope": "entity_mechanism",
+      "category": "部署区排序/加技力",
+      "evidence": [
+        {
+          "text": "让风雪之眼这样排一下序之后嗯 他在排序前后都会去把自己左边的所有干员去给加一次祭礼",
+          "t_start": 5411,
+          "t_end": 5428
+        },
+        {
+          "text": "能天使在风雪之眼左边 然后的话即使我撤了银灰 这个时再撤能天使 这个时候的能天使仍然在风雪之间 左边序是没有改变的",
+          "t_start": 5428,
+          "t_end": 5442
+        },
+        {
+          "text": "排序前也会给Buff 并且排序前 并且只要那个银灰不在场 排序就不会交换",
+          "t_start": 5458,
+          "t_end": 5474
+        }
+      ],
+      "reason": "主播详细解析了风雪之眼在重新部署时先于排序判定左侧加技力、且不在场时不发生排序导致相对序保持的底层规则，命题自包含且有完整逐字证据支撑。",
+      "limitations": [
+        "仅适用于集成战略中带有风雪之眼相关机制/藏品的环境规则"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "先撤银灰再撤能天使后重下银灰的实战现象",
+      "verdict": "reject",
+      "failed_gates": [
+        "DUP"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "reason": "与c02机制重复，c01仅为特定干员操作的实战现象/示例，c02已完整提炼其底层排序与结算规则，故保留c02而排除c01。"
+    }
+  ],
+  "review_note": "本片段讨论了肉鸽中风雪之眼的结算时序与排序机制。c01与c02讨论同一套机制，合并并保留阐述更根本、更具规则通用性的c02，c01判定为重复实战实例排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

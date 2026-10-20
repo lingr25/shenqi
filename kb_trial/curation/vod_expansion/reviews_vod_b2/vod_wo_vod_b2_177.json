@@ -1,0 +1,56 @@
+{
+  "workorder_id": "vod_wo_vod_b2_177",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:23:41+0900",
+  "source_sha256": "de64dc23831f0ae420d0f29c9d422d6ddbfe77a4299e0ea1743aed817e7c0583",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "敌人类单位的仇恨值计算中，路径距离项没有乘数，只改动仇恨值的上下限；因此当敌人类单位在 0.1 仇恨值精度范围内对两个目标的仇恨值相同时，会优先攻击先创建的单位。",
+      "subject": "敌人类单位的仇恨值计算",
+      "condition": "路径距离项无乘数、仅修改上下限；且目标间仇恨值差不超过 0.1 的仇恨过滤器精度",
+      "scope": "universal",
+      "category": "索敌/仇恨值计算",
+      "evidence": [
+        {
+          "text": "比如说这里敌人类的仇恨值 它的路径距离里头没有一个乘什么的东西 他只是改了上下限 它没有成什么东西的话 就导致一个问题",
+          "t_start": 1372,
+          "t_end": 1385
+        },
+        {
+          "text": "它仍然会在0.1距离之内同仇恨打先创建的 这里的话以前我的视频有这种东西的体现",
+          "t_start": 1385,
+          "t_end": 1421
+        }
+      ],
+      "reason": "上下文明确说明敌人类仇恨值中的路径距离没有乘数、只改上下限，并给出后果：在 0.1 精度内同仇恨时会打先创建的单位。该结论属于可复用的仇恨/索敌机制规则。",
+      "limitations": [
+        "逐字稿未给出完整的敌我仇恨公式细节。",
+        "‘敌人类’的具体分类边界未在本窗口展开。",
+        "0.1 更准确应理解为仇恨过滤器精度，逐字稿用‘0.1距离’表述略含混。",
+        "本窗口内未给出实机复现实验，仅为主播讲解性推导。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅一个候选 c01。该候选的核心机制陈述在逐字稿中有连续原文支撑，已拆分为两条单行引文以符合引文对齐要求；上游将跨行引文合并，已在回执中修正。结论具备自包含主体、条件与适用范围，未发现未闭合猜测或反问，判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

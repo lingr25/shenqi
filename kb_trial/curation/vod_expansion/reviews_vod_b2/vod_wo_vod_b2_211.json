@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_211",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:57:55+0900",
+  "source_sha256": "50e9642cd61b34e8cf87c4b81a25ed07e8833b0bf37d126698dcd2eea1794805",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "除4号和7号仇恨过滤器外，其余仇恨过滤器（如按距离、血量、部署时间索敌）的排序精度默认均为0.001。",
+      "subject": "仇恨过滤器（4号与7号除外）",
+      "condition": "仇恨过滤器不为4号或7号",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "然后是仇恨过滤器 我们说除了那个4号和7号之外的 仇恨过滤器的排序精度都默认为0.010.001 比如说按照距离索敌",
+          "t_start": 3348,
+          "t_end": 3360
+        },
+        {
+          "text": "比如说按照血量索敌 比如说按照部署时间索敌 我们说那个",
+          "t_start": 3360,
+          "t_end": 3369
+        }
+      ],
+      "reason": "逐字稿中明确陈述除4号和7号之外的仇恨过滤器排序精度默认均为0.001（口误0.01后立即自我修正为0.001，后续上下文中多次强调“0.001的仇恨过滤器精度”），并列举了距离、血量、部署时间等例子，属于明确的底层通用索敌机制规则。",
+      "limitations": [
+        "逐字稿未进一步展开4号与7号仇恨过滤器具体指代哪些规则/参数精度"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单候选命题 c01 结论清晰且自包含，原逐字稿口语中的修正明确指向默认精度为 0.001，三元组与闸门条件均满足，予以收录。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

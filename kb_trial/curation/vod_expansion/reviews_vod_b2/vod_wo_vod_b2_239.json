@@ -1,0 +1,37 @@
+{
+  "workorder_id": "vod_wo_vod_b2_239",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:20:04+0900",
+  "source_sha256": "1de45784eccf6962a5892989aad7db0025c298284fe4aa161d4a624a7a96157b",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "吹云团关内无法调整技能",
+      "verdict": "pending",
+      "reason": "逐字稿中主播先以反问提出‘难道不能调技能吗 非得是一技能吗’，随后将其作为‘算不算bug/代码复用’的讨论，并以‘不修就不算吧’收束；虽然‘调不了技能’可直接支持现象观察，但讨论未闭合，且缺少受影响干员/技能、是否锁定为一技能、触发原因与稳定复现条件等关键参数，需实机验证或人工听审。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本单仅有一条候选。其引文‘调不了技能’可在逐字稿 6779s 行中字符级命中，但上下文处于主播对关卡技能调整限制是否属于 bug 的开放式讨论，结论未闭合，关键参数不足，故不给 keep，判 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

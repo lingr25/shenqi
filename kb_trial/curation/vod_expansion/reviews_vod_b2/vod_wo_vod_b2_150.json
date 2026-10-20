@@ -1,0 +1,64 @@
+{
+  "workorder_id": "vod_wo_vod_b2_150",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:10:14+0900",
+  "source_sha256": "3490fe4c09d42e72279ec049206217e390a5c48879667a74848a74c86f9e1fcb",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "《明日方舟》游戏摄像机的Z轴并不垂直于战斗场景，而是与场景的XY平面呈60度倾斜夹角。",
+      "subject": "游戏摄像机视角",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "底层渲染与视角",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "它实际上和长场景的XY平面 呈60度夹角的关系 场景并不是垂直于摄像机 而是一个倾斜的60度",
+          "t_start": 1704,
+          "t_end": 1714
+        }
+      ],
+      "reason": "逐字稿视频原声明确指出了游戏摄像机与场景平面的空间倾角为60度，属于底层通用的渲染视角机制参数，表述闭合且确定。",
+      "limitations": [
+        "仅说明了摄像机与场景平面的夹角，未涉及摄像机的具体世界坐标及透视投影的具体参数。"
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "由于摄像机倾斜导致肉眼难以判断相切重叠",
+      "verdict": "reject",
+      "failed_gates": [
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "reason": "该候选命题描述的是视觉观察上的主观视觉困难与现象，不构成具有复用价值的客观游戏底层判定规则（属于视觉表现/肉眼观察局限，而非判定机制本身）。"
+    }
+  ],
+  "review_note": "c01 提取了游戏内摄像机与地面呈现60度夹角这一底层渲染常数，证据清晰，予以保留；c02 属于肉眼观察困难的主观实战/读图现象，不具备规则命题价值，予以拒绝。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

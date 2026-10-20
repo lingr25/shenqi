@@ -1,0 +1,100 @@
+{
+  "workorder_id": "vod_wo_vod_b2_165",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:24:14+0900",
+  "source_sha256": "95191dd9ea70575929ee974967f5aeb1102165c0be3cb0e218d1b2b78bbda805",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "会跑的宝箱作为装置出生时，会占用后续出怪一帧。",
+      "subject": "会跑的宝箱",
+      "condition": "宝箱作为装置出生时",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "它作为装置出生的时候是要占后面的怪一帧的",
+          "t_start": 3055,
+          "t_end": 3069
+        }
+      ],
+      "reason": "逐字稿明确给出会跑宝箱作为装置出生会占用后续怪一帧，属于特定装置/敌人机制的帧时序结论。",
+      "limitations": [
+        "未说明该占帧是否适用于所有宝箱类装置及不同地图；‘一帧’的具体判定边界未展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "会跑的宝箱被打醒后，其召唤出的能跑动宝箱不会影响后续敌人的寻路。",
+      "subject": "会跑的宝箱被打醒后召唤出的能跑动宝箱",
+      "condition": "会跑的宝箱被打醒并召唤出能跑动宝箱时",
+      "scope": "entity_mechanism",
+      "category": "寻路机制",
+      "evidence": [
+        {
+          "text": "你把这个宝箱打醒 他召唤那个能跑到宝箱的时候 并不会影响后面的寻路",
+          "t_start": 3069,
+          "t_end": 3080
+        }
+      ],
+      "reason": "逐字稿明确区分宝箱作为装置出生占帧与被打醒后召唤不影响后续寻路，支持召唤物不影响敌对单位寻路的机制结论。",
+      "limitations": [
+        "未给出召唤后寻路判定的具体帧窗口；‘寻路’的准确技术含义需结合游戏代码或实机确认。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "涤墨中召唤出的鱼不会影响后续的出怪帧。",
+      "subject": "涤墨中召唤出的鱼",
+      "condition": "涤墨中召唤出鱼时",
+      "scope": "instance",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "涤墨的时候也是不影响那个就是召唤出来的鱼 也不想不影响后面的出怪阵",
+          "t_start": 3080,
+          "t_end": 3090
+        }
+      ],
+      "reason": "逐字稿将涤墨时召唤出的鱼与影响出怪帧的机制并列，说明该类召唤物不影响后续出怪帧；按上下文‘出怪阵’应理解为出怪帧。",
+      "limitations": [
+        "涤墨具体指哪张图或哪个测试场景未在窗口内完整交代；未给出帧数参数，仅是否定性结论。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "三条候选均通过四闸门：c01为会跑宝箱作为装置出生占后续出怪一帧的定论；c02为宝箱被击醒后召唤不影响寻路的定论；c03为涤墨场景中召唤鱼不影响出怪帧的实例结论。逐字稿引文均可字符级对齐，未发现需要排除的未定论假说。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

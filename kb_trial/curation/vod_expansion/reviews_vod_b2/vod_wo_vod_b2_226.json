@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_226",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:15:46+0900",
+  "source_sha256": "340cb0f17ef0469bb0ceeafcfd8136ed8d1d70ff301dcf7d4f6b9d85ab519a4f",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在敌方索敌流程中，嘲讽过滤器会以嘲讽值作为排序依据重新排序，将嘲讽值较低的单位排在排序结果的更后位置。",
+      "subject": "嘲讽过滤器",
+      "condition": "敌方索敌流程执行到嘲讽过滤器阶段时",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "嘲讽过滤器呢就会再去排一下序 他会认为呢现在我应该按嘲讽排下序 嘲讽排序的话 就是要把嘲讽低的放后头去",
+          "t_start": 4791,
+          "t_end": 4802
+        }
+      ],
+      "reason": "上下文先在第4776s引出嘲讽过滤器，随后第4791s明确说明该过滤器会再次排序、按嘲讽排序，并把嘲讽低的放到后面；后文又以矿工因负嘲讽被排到拉狗、猪猪之后作为实例推演，支撑该排序方向。",
+      "limitations": [
+        "未说明嘲讽值相同或仅正嘲讽单位之间的具体比较规则。",
+        "未完整给出二次过滤器与嘲讽过滤器叠加时的全流程排序算法。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅c01。逐字稿中主播以讲授口吻给出嘲讽过滤器的排序方向，并配有实例推演；引文与原始逐字稿字符级一致，主体、条件、范围明确，且非猜测或反问，故判keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

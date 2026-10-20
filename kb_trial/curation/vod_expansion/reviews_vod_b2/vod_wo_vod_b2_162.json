@@ -1,0 +1,70 @@
+{
+  "workorder_id": "vod_wo_vod_b2_162",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:14:44+0900",
+  "source_sha256": "23b262c8fc25bd82ecb937b4ada579fb95d5d2ffda4d8bd7a40a9b2690ab477e",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "关卡出怪底层逻辑中，路线演示按条数计算每条占1帧（如演示两条路线则占2帧），敌人提示牌（红框/牌子）占1帧，波次（wave）占1帧，这些因素会导致后续出怪时间向后顺延对应帧数。",
+      "subject": "关卡出怪与路线演示/提示牌系统",
+      "condition": "关卡中存在路线演示、敌人提示牌生成或波次处理",
+      "scope": "universal",
+      "category": "帧时序",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "这一周的话最主要的研究成果其实就是出怪 真路线 占两帧 牌子占一帧等等这种东西 然后波次占一帧 然后的话还有排序问题",
+          "t_start": 2564,
+          "t_end": 2579
+        },
+        {
+          "text": "这个东西是路线演示 路线演示会出两条 他们所以的话会占两帧 然后这个的话是牌子 牌子会占一帧",
+          "t_start": 2765,
+          "t_end": 2779
+        }
+      ],
+      "reason": "主播明确阐述了关卡底层机制中出怪时序的占帧规则：每条路线演示占用1帧、提示牌占用1帧、波次占用1帧，属于通用底层帧时序规则。",
+      "limitations": [
+        "具体同帧排序规则（Mono快排）受底层代码实现影响，本段未深入展开"
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "多次路线与波次累加占帧的具体实战计算示例",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "reason": "该命题为主播结合特定关卡（DEMOCRISIS5）出怪表的现场看图口算过程（'十四二十三'、'这个吧 这个五十四二十三对'），高度依赖画面，属于特定关卡实例的计算演练而非可独立复用的机制命题；其基础原理已被 c01 覆盖。"
+    }
+  ],
+  "review_note": "工单讨论了关卡出怪的帧时序累加机制（路线演示、提示牌、波次各自占用处理帧）。c01 为核心通用规则，予以规范化保留；c02 为特定实例看图推演，画面依赖强且逻辑已被 c01 包含，予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

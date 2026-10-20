@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_180",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:24:01+0900",
+  "source_sha256": "0e5311416edbcef758369dac80bbcb16f844408949760517ad2888fd709cbb9a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在索敌规则中，当多个目标具有相同仇恨值（或因仇恨过滤器精度向下取整导致视作同仇恨）时，索敌系统会优先选择先创建的单位作为目标。",
+      "subject": "索敌系统/仇恨排序系统",
+      "condition": "多个目标仇恨值相同（包括在仇恨过滤器0.1精度内因取整判为同仇恨）",
+      "scope": "universal",
+      "category": "索敌/仇恨排序",
+      "evidence": [
+        {
+          "text": "它仍然会在0.1距离之内同仇恨打先创建的 这里的话以前我的视频有这种东西的体现",
+          "t_start": 1385,
+          "t_end": 1421
+        },
+        {
+          "text": "这里的逻辑是为什么 到时候我们再讲 总之同仇恨打先创建仍然是一个十分普遍的事情 就是这个规则是需要被牢记的",
+          "t_start": 1497,
+          "t_end": 1512
+        }
+      ],
+      "reason": "主播系统性阐述了底层索敌排序中在仇恨值相同时按创建时间（先创建先受击/被锁）的决胜规则，以及仇恨过滤器精度（0.1）导致距离差在阈值内会被视为同仇恨的底层机制，属于通用的机制定论。",
+      "limitations": [
+        "不同实体类型（干员同帧部署 vs 敌人路径距离）在各版本中对0.1精度的规避实现可能有所调整，但同仇恨打先创建的决胜机制通用。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "命题探讨了索敌决胜机制中经典的「同仇恨打先创建」原则，并结合了仇恨过滤器0.1精度引发的同仇恨现象，具备极高知识库复用价值。对原命题进行了补充完善，使条件与主体更加严谨自包含。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

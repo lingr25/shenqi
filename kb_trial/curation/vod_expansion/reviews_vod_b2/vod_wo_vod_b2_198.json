@@ -1,0 +1,58 @@
+{
+  "workorder_id": "vod_wo_vod_b2_198",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:55:20+0900",
+  "source_sha256": "f87d8b443f7f3a4976254b707e9a478ea3153a209c2b85473b6ce82fcb29b390",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在敌方单位寻路目标点与自身所在格格心重合导致向量为零向量时，其路径投影修正值归零，仇恨距离只保留格心串联计算部分，此时敌人的仇恨距离等同于其所在格的格心仇恨距离。",
+      "subject": "敌方单位仇恨距离计算（零向量修正）",
+      "condition": "敌方单位寻路目标处于本格且尚未到达该目标点，导致方向向量为零向量（如处于路径点本格尚未踩到路径点，或处于蓝门本格）",
+      "scope": "universal",
+      "category": "索敌(仇恨)",
+      "evidence": [
+        {
+          "text": "那么在这种情况 它的革新是中间这个点 它的巡逻目标也是中间这个点 则会产生一个问题 这是一个零向量",
+          "t_start": 2504,
+          "t_end": 2517
+        },
+        {
+          "text": "在鹰角的算法中 这样子做会搞零 会归零 它在零向上 零向量上的投影是零 从而让修正值这一部分为零 则会得到一个什么结果 则会得到",
+          "t_start": 2517,
+          "t_end": 2533
+        },
+        {
+          "text": "在这种情况下 只保留上面这一部分 而上面这一部分是以革新串联的 那么也就是说 在这种情况下 敌人的仇恨等同于自身所在格的革新",
+          "t_start": 2533,
+          "t_end": 2548
+        }
+      ],
+      "reason": "主播详细解析了底层寻路及仇恨距离算法中投影修正机制的边界情况：当格心与巡逻目标重合导致零向量时，投影修正值为0，仇恨退化为仅以格心串联计算，具有明确的底层规则价值。",
+      "limitations": [
+        "一旦单位踩到路径点并切换向下一个路径点，该零向量条件即被打破，恢复正常向量修正计算。"
+      ],
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      }
+    }
+  ],
+  "excluded": [],
+  "review_note": "上游命题机制准确，修正了逐字稿中'革新'（格心）的ASR口语错别字，并精确提取了连续原句作为三段互为承接的证据。四大闸门全部通过。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

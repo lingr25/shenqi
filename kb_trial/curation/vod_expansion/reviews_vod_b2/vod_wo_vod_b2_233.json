@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_233",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:18:21+0900",
+  "source_sha256": "ca7f8a871c9b1fca2516443a790734024e26c2499c959efbd560fbbe378b7245",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "装置召唤类敌人（如集成战略中的借元钱箱等）在激活/生成路径时，会自动判定距离最近的目标保护目标（蓝门）并填充寻路路径。",
+      "subject": "装置召唤类敌人（如集成战略借元钱箱等）",
+      "condition": "装置激活并生成寻路路径时",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "就是这种装置召唤敌人的 就是呃借元钱箱这一类的 它要自动判定那个到蓝门的寻路自动填充路径",
+          "t_start": 5728,
+          "t_end": 5740
+        }
+      ],
+      "reason": "主播详细解释了集成战略钱箱等装置召唤怪的底层寻路逻辑，能够明确自包含表达其自动向最近蓝门判定并生成路径的规则。",
+      "limitations": [
+        "需要存在有效可达路径且满足寻路距离阈值"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "装置召唤类敌人（如借元钱箱等）在判定到保护目标（蓝门）的寻路时存在路径距离上限（1000），若因障碍物阻挡导致寻路距离超过1000则判定为不可达，装置不会激活且不会生成移动路径。",
+      "subject": "装置召唤类敌人的寻路判定系统",
+      "condition": "寻路路径距离超过1000（例如通过可移动障碍物延长或封死路径）",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "然后的话他的判定内容中其中有一项是那个路径距离不能超过1000 太容易 不是呃没开罐子也算是一个装置 怪他容易直接进门",
+          "t_start": 5740,
+          "t_end": 5756
+        },
+        {
+          "text": "并且他有距离1000的限制 但是问题是封了三个箱子之后 他的巡逻距离超过1000了 然后导致他到蓝门不可达",
+          "t_start": 5769,
+          "t_end": 5780
+        }
+      ],
+      "reason": "明确给出了寻路机制中的定量阈值（路径距离上限1000）以及不可达时的行为表现（不激活、不生成路径），具有高度规则价值。",
+      "limitations": [
+        "1000的具体单位对应游戏内部坐标距离，非直观的地块数（通常一格为一定内部单位倍数）"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单涉及《明日方舟》装置召唤类敌人（如肉鸽借元钱箱及部分活动装置）激活时的底层寻路规则，详细说明了自动索蓝门与1000内部距离上限的判定机制，逐字稿上下文充分，符合全部闸门规范。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

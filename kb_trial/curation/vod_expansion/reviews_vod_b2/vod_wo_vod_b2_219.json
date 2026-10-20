@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_219",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:19:55+0900",
+  "source_sha256": "ffdd994cf605a3dbbdf49caf22779317abedc365d48ad61573ad8b316922b90c",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在敌方或关卡机制的索敌规则中，「目标嘲讽等级相同时」前置条件对应索敌架构中的嘲讽过滤器层级。",
+      "subject": "索敌系统（嘲讽过滤器）",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "目标嘲讽等级相同时 远程攻击优先攻击乌萨斯平民斗士塔露拉矿工游击队 这句话说的是什么意思 目标嘲讽等级相同",
+          "t_start": 4214,
+          "t_end": 4231
+        },
+        {
+          "text": "是嘲讽过滤器 远程攻击优先攻击乌萨斯平民矿工游击队 这个是二次过滤器 他会把平民排到前面去 然后又因为嘲讽等级 这个矿工有副嘲讽",
+          "t_start": 4231,
+          "t_end": 4246
+        }
+      ],
+      "reason": "主播针对游戏索敌文本「目标嘲讽等级相同时……」进行了明确机制层级拆解，指出其判定逻辑直接对应底层仇恨/嘲讽过滤器的排序作用。",
+      "limitations": [
+        "文本主要结合第8章/矿工案例进行说明"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在索敌规则中，针对特定目标类型的优先索敌规则（如「远程攻击优先攻击乌萨斯平民/矿工等」）属于二次过滤器，其效果是将特定目标重排至索敌序列前列。",
+      "subject": "索敌系统（二次过滤器）",
+      "condition": "存在针对特定类型单位的优先索敌条件时",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "是嘲讽过滤器 远程攻击优先攻击乌萨斯平民矿工游击队 这个是二次过滤器 他会把平民排到前面去 然后又因为嘲讽等级 这个矿工有副嘲讽",
+          "t_start": 4231,
+          "t_end": 4246
+        }
+      ],
+      "reason": "明确指出「优先攻击特定群体」在底层架构中属于二次过滤器的作用范畴，具有通用机制规则价值。",
+      "limitations": [
+        "若单位自身带有负嘲讽等其他属性，后续仍可能受其他层级过滤器影响改变最终受击顺位"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单主要探讨索敌描述中各子句对应的索敌管线分层（嘲讽过滤器与二次过滤器）。主播对「目标嘲讽等级相同时优先攻击特定单位」的机制映射给出了清晰且确定的拆解，两项命题均满足四大硬性闸门要求，予以收录。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

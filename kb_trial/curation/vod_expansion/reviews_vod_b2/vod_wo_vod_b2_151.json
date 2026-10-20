@@ -1,0 +1,75 @@
+{
+  "workorder_id": "vod_wo_vod_b2_151",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed",
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:10:13+0900",
+  "source_sha256": "da8a95a7192345f87a37770c2d9f90fb2ef2450dabfb6373d19d29740489e6d5",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在深入分析底层机制时，受击碰撞箱（用于判定伤害/技能覆盖等）与物理碰撞箱（用于挤压、推拉阻挡等）是两套独立的判定体积概念，不可混为一谈。",
+      "subject": "单位碰撞体积体系（受击碰撞箱与物理碰撞箱）",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "碰撞与阻挡",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "需要去区分那个受击碰撞箱和物理碰撞箱攻击",
+          "t_start": 1674,
+          "t_end": 1687
+        }
+      ],
+      "reason": "主播在回顾讲解底层碰撞与推拉机制时明确指出，古老描述将碰撞箱混为一谈无法解释推拉与受击半径的差异，机制体系上必须拆分为受击碰撞箱与物理碰撞箱两个独立概念。",
+      "limitations": [
+        "逐字稿未进一步展开两者的具体几何形状与数值差异"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "claim": "在分析敌方移动与空间判定时，寻路坐标（逻辑节点路径计算依据）与实体坐标（单位当前实时的空间物理点）属于两套独立坐标，必须加以区分。",
+      "subject": "单位坐标体系（寻路坐标与实体坐标）",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "索敌与坐标",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "需要去区分寻路坐标和那个呃实体坐标",
+          "t_start": 1674,
+          "t_end": 1687
+        }
+      ],
+      "reason": "主播指出在深入解释位移、推拉与路径机制时，必须对寻路坐标和实体坐标进行精确的概念解耦与切分，是具有普适性的底层机制建模定论。",
+      "limitations": [
+        "未在此处给出两类坐标同步与插值的具体刷新时序"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "修正了c01引文中多出的一个字，严格按逐字稿行[1674s 27:54]原样连续字串进行对齐。本切片为主播对经典机制理论进行术语规范与概念解耦的讲授，c01与c02分别针对体积判定和坐标系统确立了正规的机制术语定义，均予keep。",
+  "repair_rounds": 1,
+  "unresolved_problems_auto_demoted": []
+}

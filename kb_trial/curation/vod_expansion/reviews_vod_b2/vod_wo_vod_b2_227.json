@@ -1,0 +1,90 @@
+{
+  "workorder_id": "vod_wo_vod_b2_227",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:17:02+0900",
+  "source_sha256": "7df48233688f9d14bfe2bf061338d34b917d028fe7d10d0bb7fe89ea70e57c80",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在嘲讽过滤器排序时，矿工因具有负嘲讽而被视为低排序目标，会被依次排到拉狗和猪猪之后。",
+      "subject": "矿工",
+      "condition": "嘲讽过滤器排序时，矿工与拉狗、猪猪同场且矿工具有负嘲讽",
+      "scope": "entity_mechanism",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "嘲讽排序的话 就是要把嘲讽低的放后头去 而矿工有负嘲讽",
+          "t_start": 4791,
+          "t_end": 4802
+        },
+        {
+          "text": "他说这个矿工比拉狗的仇恨低啊 那他应该排拉狗后面去",
+          "t_start": 4802,
+          "t_end": 4817
+        },
+        {
+          "text": "然后呢又发现矿工比猪猪的仇额仇恨低",
+          "t_start": 4817,
+          "t_end": 4824
+        }
+      ],
+      "reason": "上下文 4791s 明确说明嘲讽过滤器按嘲讽排序、矿工有负嘲讽；随后 4802s、4817s 逐字说明矿工分别因低于拉狗、猪猪而被排到其后。上游命题将过滤器误写为二次过滤器，依据上下文修正为嘲讽过滤器。",
+      "limitations": [
+        "逐字稿未给出具体仇恨/嘲讽数值，仅能确认该案例中的相对排序规则。",
+        "‘拉狗’‘猪猪’为转录昵称，未在逐字稿中给出规范干员名。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "嘲讽过滤器排序完成后拉狗被排到最前",
+      "verdict": "reject",
+      "reason": "该命题仅描述特定案例中嘲讽过滤器排序后的实战结果，缺乏可复现参数与原因说明，属于纯观察，按 Gate 4 排除。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c03",
+      "topic": "两过滤器排完后拉狗比猪猪高且矿工隐身",
+      "verdict": "reject",
+      "reason": "该命题是对特定对局结果的归因，且将‘矿工隐身’作为原因存在推导跳跃；逐字稿未给出可复现参数与完整因果链，按 Gate 4 排除。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本单仅保留 c01 的嘲讽过滤器相对排序机制；c02 与 c03 属于特定案例结果/归因，缺参数与可复现条件，按 Gate 4 排除。注意上游 c01 条件误写为二次过滤器，回执中已修正为嘲讽过滤器。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}
