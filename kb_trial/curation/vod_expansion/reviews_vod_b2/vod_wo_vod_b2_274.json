@@ -1,0 +1,90 @@
+{
+  "workorder_id": "vod_wo_vod_b2_274",
+  "stem": "BV1L4ez6oEcc_p3_42061792207",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:28:20+0900",
+  "source_sha256": "c7a2b8ced573cb4cc789e55e3726bd9a7c67bf5275b06263a1a7296756804929",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "特定弹射/填补打数机制的二次索敌是以主目标为中心的正方形范围（0.6半宽正方形，计入碰撞箱后等效1×1正方形）进行搜索判定，而非传统圆形半径。",
+      "subject": "多目标弹射/补充打数的二次索敌判定范围",
+      "condition": "主目标命中后向周围寻找次级目标填补不足打数",
+      "scope": "universal",
+      "category": "帧时序",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "被打的那个敌人会向周围做一个索敌",
+          "t_start": 1546,
+          "t_end": 1560
+        },
+        {
+          "text": "以主目标周围做一个索敌",
+          "t_start": 1560,
+          "t_end": 1565
+        },
+        {
+          "text": "来填补自己不足的打数",
+          "t_start": 1565,
+          "t_end": 1594
+        },
+        {
+          "text": "他这个看起来是以一个方形范围搜索第二目标",
+          "t_start": 1799,
+          "t_end": 1811
+        },
+        {
+          "text": "刚才是少一帧案例是打不到的 现在多一帧案例就是能打到",
+          "t_start": 2034,
+          "t_end": 2050
+        },
+        {
+          "text": "能达到是正方形",
+          "t_start": 2050,
+          "t_end": 2076
+        }
+      ],
+      "reason": "上下文通过测量横纵坐标移动差与帧时序（多一帧刚好进入正方形边界碰撞判定），闭环验证了二次索敌并非以半径圆判定，而是以正方形（半宽0.6/考虑碰撞箱）为判定区域。",
+      "limitations": [
+        "具体技能来源在当前逐字稿切片中未显式点出具体干员（属于通用机制中的二次索敌弹射类型），碰撞箱具体尺寸仍需结合不同敌方单位半径进一步界定。"
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "在少一帧的案例中攻击打不到，在多一帧的案例中同一攻击能打到；仅一帧之差就会改变命中结果",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "reason": "纯实战单次实验对照现象观察（observation），未提炼成通用的规则结论；缺乏具体机制主谓宾与自包含条件，其价值已被整合吸收至c02的实验结论中。"
+    }
+  ],
+  "review_note": "c01属于测试过程中的纯现象观察，未阐明帧差导致命中差异的几何机制本质。c02则结合前后文（包括纵横坐标位移计算与碰撞箱推演）形成了关于‘二次索敌采用正方形判定范围’的明确机制定论，通过补全自包含陈述予以收录。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

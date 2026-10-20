@@ -1,0 +1,37 @@
+{
+  "workorder_id": "vod_wo_vod_b2_242",
+  "stem": "BV1L4ez6oEcc_p2_42060876088",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:21:18+0900",
+  "source_sha256": "98b35fb96a9883b1878db900b05e06de35df8bfe44bf715ff137a899adc14928",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "进行阻挡的单位在阻挡期间获得庇护和回血，回血速度为十秒钟一管生命值。",
+      "verdict": "pending",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G3"
+      ],
+      "reason": "逐字稿仅出现“阻挡好歹有庇护和回血”“阻挡好歹有十秒钟一管血”的口语观察，未交代是哪个干员、装置、召唤物、模式或技能触发，无法唯一确定主体与适用范围；候选将其泛化为通用机制（applies_to general）不满足显式三元约束。引文文本可在 transcript_window 的 1894s/1899s 行找到，但候选 evidence 标注的 1954s/1959s 与原文行不符，需人工听审或实机验证。"
+    }
+  ],
+  "review_note": "唯一候选 c01 涉及阻挡时获得庇护与回血，但主体、模式与触发条件均未由逐字稿明确交代，且上游证据时间戳错误，不能作为可复用机制定论；具有机制价值，故判 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

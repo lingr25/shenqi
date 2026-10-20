@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b2_254",
+  "stem": "BV1L4ez6oEcc_p2_42060876088",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:24:42+0900",
+  "source_sha256": "e261355850ad54cae6a2157a8ac4a6141f30247fc4b5d4b737b8fb1016522286",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "幕落的打数正常为三个且非溅射",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G4"
+      ],
+      "reason": "上下文为主播面对特定关卡实战现象（幕落打羊）的现场排查推测，'也不是建设（溅射）'仅为口头随想，随后仍在探讨受击半径、群法溅射等猜想（如'这只是个猜想 还得确定'、'群法最远距离加溅射'），属于未定论的现场分析过程，缺乏闭环定论与自包含规则参数。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "幕落是群法，造成群体法术伤害",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "reason": "主播以疑问口吻讨论（'这是个群法吧'、'群体法术伤害'），结合下文反复推导溅射与受击半径，属于未定论猜测或已知干员基础设定的现场念读，不构成严谨增量机制规则。"
+    }
+  ],
+  "review_note": "本片段为主播在关卡实测中尝试推导'幕落'攻击命中异常的原因，全程充斥'猜想'、'可能'、疑问反问与推翻假说的过程（如受击半径2.0、溅射等讨论），未得出任何闭环确凿的底层机制定论，全部予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

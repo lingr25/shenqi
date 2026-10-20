@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_279",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:30:19+0900",
+  "source_sha256": "00ff111b5a4e49f6e3293315e44b21d2ebe5dd9de0c2e2b894cc17ab86cdac29",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "物理伤害的基础抗性结算公式为：最终伤害等于攻击力减去防御力（未考虑保底伤害等扩充流程前）。",
+      "subject": "物理伤害",
+      "condition": "基础抗性结算环节",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "嗯在这套攻击流程中 攻击减去防御 也就是物理抗性等于伤害 法术是攻击乘以百分比 抗性一减百分比 抗性等于伤害 而真伤是跳过这个环节的",
+          "t_start": 732,
+          "t_end": 747
+        }
+      ],
+      "reason": "主播在系统性讲解伤害计算流程时，明确陈述了物理伤害在抗性结算流程中的基础公式（攻击力减去防御力）。",
+      "limitations": [
+        "此公式为抗性结算流程的基础框架，未包含后续补充的5%保底伤害机制及其他伤害乘区增减结算。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "法术伤害与元素伤害的基础抗性结算公式相同，均为：攻击力乘以（1 - 百分比法术/元素抗性）等于伤害。",
+      "subject": "法术伤害与元素伤害",
+      "condition": "基础抗性结算环节",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "不过元素伤害都是和法术等同 这里我们就不额外写了 物理是什么呢 物理是攻击 减防御等于伤害",
+          "t_start": 650,
+          "t_end": 663
+        },
+        {
+          "text": "嗯在这套攻击流程中 攻击减去防御 也就是物理抗性等于伤害 法术是攻击乘以百分比 抗性一减百分比 抗性等于伤害 而真伤是跳过这个环节的",
+          "t_start": 732,
+          "t_end": 747
+        }
+      ],
+      "reason": "主播明确指出元素伤害在基础计算上与法术伤害等同，且法术伤害的基础抗性计算为攻击力乘以（1 - 百分比抗性）。逐字稿有完整支撑。",
+      "limitations": [
+        "仅针对基础抗性乘法结算，未计入保底伤害（5%攻击力）及后续伤害结算流程的乘算增减伤。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选命题均属于《明日方舟》底层的通用伤害计算公式讲解。逐字稿对应段落明确清晰，且有连续字串精确对应，符合四大硬性闸门要求，均予以保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

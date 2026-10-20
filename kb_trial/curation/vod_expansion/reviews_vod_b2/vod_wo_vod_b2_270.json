@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_270",
+  "stem": "BV1L4ez6oEcc_p3_42061792207",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:27:43+0900",
+  "source_sha256": "395aad020e70367960d59f181d222fbdbbd62d15c823f570a7ada001fb99a206",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "在三个目标同时被命中的情形下右上角目标的斜向距离大于0.7071仍能命中",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "reason": "G1/G4不通过：该推论依赖于特定画面的实况操作（'拉到这个位置三个都打到了'），缺少明确测试主体与受体，且主播本人在前后文中明确表示'这里的话有问题啊'、'恐怕需要更多的数据去不断探索...把图给画出来才行'，属于未定论的现场即兴测算与实战现象反推，不具备自包含机制定论价值。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "右上角目标横坐标约0.56纵坐标0.5时斜向能打到但横向直线打不到",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "reason": "G1/G4不通过：纯实战现象观察（主播口述'大概是横坐标0.56左右'），主体残缺（'右上角这个'、'能打到'缺少干员与技能），且为探讨异常现象过程中的估算片段，主播随后表示'这里肯定不是单纯的半径问题'，属于未收敛的假说与未复核观察，按Gate 4予以排除。"
+    }
+  ],
+  "review_note": "本片段为主播在实战测试中发现散射/索敌范围异常时进行的现场估算与讨论。主播多次提到参数为大概估算（'大概是横坐标0.56左右'）并明确表示需要更多数据才能探索清楚（'需要更多的数据去不断探索...把图给画出来才行'），两个候选命题均属于强依赖画面且未闭合的观察与推导过程，不符合自包含机制定论标准，全单驳回。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

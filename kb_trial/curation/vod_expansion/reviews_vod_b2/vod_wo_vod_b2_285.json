@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_285",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:31:04+0900",
+  "source_sha256": "7d165ea2462fc8887a6e3896370a8fc87b6962364a9c05a48346d3e2f0992180",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "属性结算的整体顺序为：先结算关卡局外加成，再结算藏品局外加成，随后进行取整，最后结算局内Buff（即先局外并取整，后局内）。",
+      "subject": "属性结算系统",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "属性结算",
+      "evidence": [
+        {
+          "text": "他们的计算顺序是按照关卡藏关卡局外 然后藏品局外 然后是取整",
+          "t_start": 1421,
+          "t_end": 1438
+        },
+        {
+          "text": "然后是局内的Buff这样的顺顺序进行计算的 然后关卡的局外是",
+          "t_start": 1438,
+          "t_end": 1447
+        }
+      ],
+      "reason": "主播明确修正了口误并给出了《明日方舟》数值属性结算的底层标准顺序：关卡局外 -> 藏品局外 -> 取整 -> 局内Buff，属于通用的机制定论。",
+      "limitations": [
+        "部分特定机制或藏品若在局内动态变化，则归入局内区间计算而非局外"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "该候选命题讨论的是明日方舟数值属性计算区间的核心底层规则（局外关卡 -> 局外藏品 -> 取整 -> 局内加成）。逐字稿中有明确的推导与纠正过程，且文字证据连续可查，判定保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_248",
+  "stem": "BV1L4ez6oEcc_p2_42060876088",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:24:19+0900",
+  "source_sha256": "9a7c2d89d9e04de121bf9fb1b0ff391e706b2bf2ebad96f265c4f03112d8d99a",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "多利大风暴关卡一个干员都不让带",
+      "verdict": "reject",
+      "reason": "该描述属于主播初进关卡时的口头实况感叹与浅层现象观察（observation），上游标注亦为 observation。逐字稿缺乏具体的关卡机制规则展开（如固定编队、装置操作关或特殊小游戏模式的具体规则与参数），不具备自包含的机制知识库收录价值，违反Gate 4。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "工单中的候选命题仅为主播进入活动特定关卡时的感叹性实况观察（'一个干员都不让带'），未包含深入的关卡机制或可复用规则，且上下文多为断断续续的实况反应，无定论机制产出，故全单予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

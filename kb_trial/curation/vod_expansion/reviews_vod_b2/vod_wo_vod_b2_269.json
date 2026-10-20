@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_269",
+  "stem": "BV1L4ez6oEcc_p3_42061792207",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:29:18+0900",
+  "source_sha256": "4fc077659505efc3220934127676cb4de5d218dac8c3959b5d29ff7f27d27925",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在发生内阻挡阻挡偏移时，单位的阻挡位置固定为0.5格位置，与单位自身的阻挡半径大小无关。",
+      "subject": "内阻挡阻挡偏移判定",
+      "condition": "发生内阻挡阻挡偏移",
+      "scope": "universal",
+      "category": "寻路与阻挡",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "只要是内阻挡阻挡偏移 就一定会阻挡到0.5位置",
+          "t_start": 1480,
+          "t_end": 1487
+        },
+        {
+          "text": "即使它阻挡半径只有0.1",
+          "t_start": 1487,
+          "t_end": 1494
+        }
+      ],
+      "reason": "主播在讨论机制时明确指出，在发生内阻挡阻挡偏移的前提下，阻挡位置必定为0.5，与阻挡半径（即使为0.1）无关，属于通用的底层机制定论，符合四大闸门要求。",
+      "limitations": [
+        "仅适用于发生内阻挡阻挡偏移的特定判定情形"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单提出的内阻挡阻挡偏移与阻挡半径解耦的机制结论明确，逐字稿提供了完整且确定性的陈述，引文与时间戳完全对齐，符合收录标准。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

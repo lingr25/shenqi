@@ -1,0 +1,95 @@
+{
+  "workorder_id": "vod_wo_vod_b2_275",
+  "stem": "BV1L4ez6oEcc_p3_42061792207",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:30:03+0900",
+  "source_sha256": "d7764a97b778981c828596904ba945191a72c608cdfda42a46042aa36ba42bd4",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "具有二次索敌补足打数能力的攻击技能，其二次索敌以主目标为中心、按半宽0.6的方形区域搜索第二目标；若第二目标超出该方形区域，则本次攻击只能命中一个目标。",
+      "subject": "具有二次索敌补足打数能力的攻击技能",
+      "condition": "第二目标超出以主目标为中心、半宽0.6的方形索敌区域",
+      "scope": "entity_mechanism",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "被打的那个敌人会向周围做一个索敌",
+          "t_start": 1546,
+          "t_end": 1560
+        },
+        {
+          "text": "以主目标周围做一个索敌",
+          "t_start": 1560,
+          "t_end": 1565
+        },
+        {
+          "text": "来填补自己不足的打数",
+          "t_start": 1565,
+          "t_end": 1594
+        },
+        {
+          "text": "这个是大于0.6的",
+          "t_start": 1774,
+          "t_end": 1782
+        },
+        {
+          "text": "就只能打一个",
+          "t_start": 1782,
+          "t_end": 1790
+        },
+        {
+          "text": "他这个看起来是以一个方形范围搜索第二目标",
+          "t_start": 1799,
+          "t_end": 1811
+        },
+        {
+          "text": "不是1×1正方形啊 是0.6半宽的正方形嗯 0.6半宽的正方形 那可能就是1×1的正方形 看碰撞箱好吧",
+          "t_start": 1958,
+          "t_end": 1973
+        },
+        {
+          "text": "也就是1×1的正方形 所以他是在自己的命中目标 然后再以自己的攻击范围再搜 再搜索一次是吧",
+          "t_start": 1982,
+          "t_end": 1997
+        },
+        {
+          "text": "刚才是少一帧案例是打不到的 现在多一帧案例就是能打到",
+          "t_start": 2034,
+          "t_end": 2050
+        },
+        {
+          "text": "能达到是正方形",
+          "t_start": 2050,
+          "t_end": 2076
+        }
+      ],
+      "reason": "上下文先指出索敌以被打敌人（主目标）为中心、用于补足打数；随后实验确认其范围不是单纯半径，而是方形范围，半宽0.6并涉及1×1碰撞箱，少一帧打不到、多一帧能打到。候选“距离大于0.6只命中一个目标”应改写为“超出以主目标为中心的0.6半宽方形区域则只命中一个目标”，避免把方形判定误作欧氏距离。",
+      "limitations": [
+        "逐字稿未给出具体干员/技能名称，主体暂以“具有二次索敌补足打数能力的攻击技能”表述",
+        "0.6为半宽；与1×1碰撞箱的精确换算及不同碰撞箱目标是否一致仍建议实机复核",
+        "该结论限定于该二次索敌机制，不应直接推广为全局索敌规则"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "仅一个候选。原命题将方形索敌边界简化为“距离大于0.6”，易与欧氏半径混淆；依据上下文可改写保留为以主目标为中心的0.6半宽方形区域边界结论。证据逐字对齐，故 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

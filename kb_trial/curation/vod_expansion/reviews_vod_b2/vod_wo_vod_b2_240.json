@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_240",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:20:34+0900",
+  "source_sha256": "eda788799d5329b3bf1f7f99be969d6ab01532ab3435665fb496c2a2398de2f8",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "八连发造成十秒眩晕，25秒",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "引文可在 [6948s] 行原样匹配，但命题仅为残缺观察：'25秒'未说明是冷却、间隔还是持续时间；'八连发'未明确所属关卡实体或攻击名称，缺少触发条件与可复现条件，无法构成自包含机制定论。"
+    }
+  ],
+  "review_note": "唯一候选 c01 不满足自包含与显式三元约束，且属于无明确参数/条件的实战观察，判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

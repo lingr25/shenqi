@@ -1,0 +1,48 @@
+{
+  "workorder_id": "vod_wo_vod_b2_250",
+  "stem": "BV1L4ez6oEcc_p2_42060876088",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:22:40+0900",
+  "source_sha256": "f0d0b2de641b399a25a981dd3bc27be101b477b3a9fe658ec980b62522e5187d",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "敌人「热情导游」（举旗羊）会标记自身距离最近的目标点（蓝门），并将场上所有敌人的目的地改为该目标点。",
+      "subject": "热情导游",
+      "condition": "universal",
+      "scope": "entity_mechanism",
+      "category": "寻路/索敌",
+      "evidence": [
+        {
+          "text": "标记距离最深自身最近的目标点 使所有敌人的目的地改为该目近 场上已有其他热情导游时",
+          "t_start": 5267,
+          "t_end": 5279
+        }
+      ],
+      "reason": "主播朗读了游戏内关于敌人「热情导游」的机制说明文本，明确指出了其标记距离自身最近目标点并改变全场敌人目的地的机制。改写修复了转写中的同音错字与口误，使其成为自包含且严谨的机制命题。",
+      "limitations": [
+        "转写中提及「场上已有其他热情导游时」后续文本中断，多个热情导游同场时的生效优先级未在后续完整说明"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "主播在 5267s 处朗读了官方敌人技能说明文本，属于明确的实体固有机制定论，符合全部四大闸门要求。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

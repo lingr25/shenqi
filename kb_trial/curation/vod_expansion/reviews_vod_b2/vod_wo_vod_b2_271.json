@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_271",
+  "stem": "BV1L4ez6oEcc_p3_42061792207",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:29:49+0900",
+  "source_sha256": "2469a033195ed3ed55979582aab31e9e74aa1451981cd7b1165de3397959740c",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "横向打不到而斜向能打到的现象，无法用单纯半径解释。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "该候选命题属于否定性推论与未闭合的实战现象探究（主播提到'恐怕需要更多的数据去不断探索'、'今天到这样了'），缺乏明确的主体（未指明具体干员、技能或机制机制系统）、触发条件及具体参数，属于不自包含且未定论的探索过程记录，不具备作为知识库规则条目的可复用价值。"
+    }
+  ],
+  "review_note": "整段逐字稿记录了主播在特定测试情境下对多目标/弹射/溅射索敌边界的实机探索过程。虽然提出了'不是单纯的半径问题'以及随后的假说'以主目标周围做一个索敌'，但讨论处于现场摸索阶段，参数模糊、边界条件未测完（明确表示'需要更多的数据把图给画出来'），且该候选命题本身仅是否定单纯半径假说，未形成完整的机制定论，触发 Gate 1、Gate 3 与 Gate 4 予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

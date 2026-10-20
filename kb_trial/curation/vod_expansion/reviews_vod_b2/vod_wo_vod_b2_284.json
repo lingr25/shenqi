@@ -1,0 +1,111 @@
+{
+  "workorder_id": "vod_wo_vod_b2_284",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:31:00+0900",
+  "source_sha256": "ec538005dbaf16b82883ed8cb3c72062a0266c4cebe75cdcdf2648acd63ee6c8",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "伤害计算中的抗性结算流程在获取攻防属性之后进行，物理伤害的基础计算规则为取「攻击减防御」与保底伤害「攻击乘0.05」中的较大值（max判定）。",
+      "subject": "抗性结算流程",
+      "condition": "已完成属性结算获得攻防数值后",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "他要过来取一个逗号max逗号 然后就是0.05乘以这一部分 攻击",
+          "t_start": 1066,
+          "t_end": 1093
+        },
+        {
+          "text": "当我已经获得了攻防属性之后 属性然后相减计算出来伤害这一部分",
+          "t_start": 1173,
+          "t_end": 1187
+        },
+        {
+          "text": "攻击减防御",
+          "t_start": 1201,
+          "t_end": 1205
+        },
+        {
+          "text": "然后攻击乘0.05",
+          "t_start": 1205,
+          "t_end": 1231
+        }
+      ],
+      "reason": "主播在黑板上梳理伤害计算流程时，明确阐述属性结算后进入抗性结算流程，以 max(攻击-防御, 攻击*0.05) 的形式计算物理抗性保底结算。",
+      "limitations": [
+        "口述简略概括，此处针对的是物理伤害（防御力结算）与保底伤害机制"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "具有「至少造成30%攻击力伤害」保底天赋的干员，其机制底层实现逻辑是在抗性结算环节中将默认的 0.05（5%）保底伤害乘数直接替换为 0.3（30%）。",
+      "subject": "保底伤害天赋（如至少造成30%攻击力伤害）",
+      "condition": "干员拥有攻击保底乘数修改类天赋",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "这种干员是如何实现这个如何实现这个攻击力 至少造成30%攻击力的伤害的效果",
+          "t_start": 1261,
+          "t_end": 1277
+        },
+        {
+          "text": "那么这个效果就是改这一步 改这个数值 把它改成0.3 这个天赋只需要改动一个数值 那么就可以实现它的效果",
+          "t_start": 1277,
+          "t_end": 1289
+        }
+      ],
+      "reason": "主播明确解释了保底伤害天赋在伤害结算流程中的程序实现机制，即修改抗性结算步骤中的保底系数变量。",
+      "limitations": [
+        "未列举所有具有该类天赋的具体干员名字，但原理解释完备"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c03",
+      "topic": "大部分干员、敌人或机制的效果，都是在整套伤害计算流程中改掉某一个变量来实现的。",
+      "verdict": "reject",
+      "reason": "属于抽象的编程设计哲学或宏观教学引导说明，缺乏具体参数、触发条件与可复现规则定义，不属于可验证的原子机制命题（违反 Gate 1 与 Gate 4）。",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      }
+    }
+  ],
+  "review_note": "本工单主要讲解伤害计算的阶段划分及保底机制实现。c01 描述了抗性结算中取 max(攻击-防御, 0.05*攻击) 的基础逻辑；c02 阐释了30%保底天赋本质是将 0.05 变量改写为 0.3；c03 纯属宽泛的方法论泛读，予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

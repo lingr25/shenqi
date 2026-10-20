@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_267",
+  "stem": "BV1L4ez6oEcc_p3_42061792207",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:27:25+0900",
+  "source_sha256": "e597429576b0fb4bac06b39d414d18aed5e44baae7b6ba472379d955283eeca7",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "用比例式0.5÷0.6与根号11（约3.3）对0.6建设半径假设进行验算",
+      "verdict": "reject",
+      "reason": "该候选只是把逐字稿中围绕‘怀疑有一个0.6的建设半径’的零散数字片段改写成验算方法，既未给出明确主体、成立条件与适用范围，也未形成闭合结论；0.6半径在当场仍属猜测，且转写关键换算关系不完整，无法支撑自包含的可复用机制定论。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单仅含 c01。其引文片段与逐字稿单行可对齐，但命题缺少明确主体、条件与 scope，且核心仍是对‘0.6建设半径’的未定论猜测与残缺验算，不应纳入机制知识库。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

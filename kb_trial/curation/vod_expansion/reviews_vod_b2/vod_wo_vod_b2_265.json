@@ -1,0 +1,56 @@
+{
+  "workorder_id": "vod_wo_vod_b2_265",
+  "stem": "BV1L4ez6oEcc_p3_42061792207",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:27:21+0900",
+  "source_sha256": "f2f5bc009eec75c5d91bcf5d1f7bcc80776db665202863caefcb7db97054e0cd",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "一秒钟为30帧，撤退基线为14帧；在同一基础上再多拉7帧，撤退帧即变为21帧。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "命题依赖未明说的‘同一基础’，未给出触发该撤退帧数值的具体条件与主体，不是自包含机制；且21帧为二分搜索中的候选测试点，当场未形成闭合结论。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "撤退帧的下一步二分测试应在12~21帧区间内进行。",
+      "verdict": "pending",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "该句主要是测试步骤而非最终机制命题；其蕴含的撤退帧候选区间12~21帧具有机制价值，但后续仍在测试16、19等，阈值未闭合，需后续实机验证。"
+    }
+  ],
+  "review_note": "本工单两条候选均来自撤退帧二分搜索过程。c01将14+7=21的中间计算当作结论，且未给出基线条件，应拒绝；c02反映了当前候选二分区间12~21帧，但讨论未闭合，故列为待定。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

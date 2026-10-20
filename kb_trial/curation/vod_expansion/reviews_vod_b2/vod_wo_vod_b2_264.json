@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_264",
+  "stem": "BV1L4ez6oEcc_p3_42061792207",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:26:20+0900",
+  "source_sha256": "884b31db5b0598add60886d7ae577878c1e6c8066af1279efcde5505a3839323",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "12帧撤退测试中的拉动时长与距离",
+      "verdict": "reject",
+      "reason": "该候选仅为一次具体测试的现象记录，未说明拉动机制的具体主体（是何干员、技能、敌方或系统效果）、目标对象及距离单位，条件与复现环境不完整，不能改写为自包含的可复用机制命题；按纯观察且缺乏可复现条件处理，不满足 Gate 1、Gate 3、Gate 4。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "逐字稿原文确实包含 440s 行的“这次是12帧撤的拉动了近一秒钟为0.8”，引文可字符级对齐，但该句只是测试中的观测数据，缺少具体机制主体、单位与可复现条件，不能作为知识库机制定论保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

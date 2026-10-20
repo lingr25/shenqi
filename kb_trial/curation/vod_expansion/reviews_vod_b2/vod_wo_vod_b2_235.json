@@ -1,0 +1,71 @@
+{
+  "workorder_id": "vod_wo_vod_b2_235",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:20:26+0900",
+  "source_sha256": "2c7bfb4efc67dee51a6ede80721c768de361e54dffb0067a17de951923173c59",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "特定通过装置召唤/激活敌人的关卡机制中，若障碍物（箱子）导致寻路至蓝门不可达（寻路距离超过限制如1000），装置内的敌人不会被激活或唤醒生成路径。",
+      "subject": "装置召唤类敌人生成与激活寻路机制",
+      "condition": "障碍物封死路径导致到蓝门的寻路距离超过阈值（如1000）使蓝门不可达",
+      "scope": "entity_mechanism",
+      "category": "寻路",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "就是这种装置召唤敌人的 就是呃借元钱箱这一类的 它要自动判定那个到蓝门的寻路自动填充路径",
+          "t_start": 5728,
+          "t_end": 5740
+        },
+        {
+          "text": "导致一旦箱子封死路径之后 那些怪就醒不了 顺带一提 在肉鸽中 如果他不召唤这个怪的话 就没有那十源石锭 这个箱子杀了只有一元石 定它",
+          "t_start": 5793,
+          "t_end": 5810
+        }
+      ],
+      "reason": "主播详细解释了解元钱箱及同款机制装置唤醒敌人的寻路判定规则：若箱子封死路径使到蓝门不可达（寻路距离超出上限），装置将不会激活怪物并生成路径。c02准确概括了该核心机制，经自包含补全后予以保留。",
+      "limitations": [
+        "1000的距离限制属于底层具体寻路权重/阈值参数，不同装置或模式可能存在数值差异",
+        "依赖具有自动寻路生成前置判定的特定装置类型"
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "本次活动使用与肉鸽钱箱相同的封路机制",
+      "verdict": "reject",
+      "reason": "与c02讨论的是同一机制原理，c01表述泛化且与c02重复；且c01包含时效性代词「本次活动」，缺乏完整机制条件描述。",
+      "failed_gates": [
+        "DUP",
+        "G1"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      }
+    }
+  ],
+  "review_note": "主播在答疑中系统阐述了解元钱箱及同类装置的封路不激活机制，指明其本质是装置在唤醒前需进行蓝门可达性与寻路距离判定，超过上限则不会唤醒。c01与c02重合，排除泛化的c01，保留并规范化c02。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

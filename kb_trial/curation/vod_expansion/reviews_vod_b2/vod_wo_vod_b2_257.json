@@ -1,0 +1,48 @@
+{
+  "workorder_id": "vod_wo_vod_b2_257",
+  "stem": "BV1L4ez6oEcc_p2_42060876088",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:25:49+0900",
+  "source_sha256": "0c234af7394ccfe4003e2f618880b7847f2a9f2a3d112fea674e17f559477bfd",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "游戏中常规单位的受击判定半径基准值为 0.1 格。",
+      "subject": "常规单位的受击判定半径",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "状态效果/判定体积",
+      "evidence": [
+        {
+          "text": "正常受击半径是0.1啊",
+          "t_start": 6759,
+          "t_end": 6764
+        }
+      ],
+      "reason": "主播在分析敌方单位（羊）异常判定距离时，明确提出了底层通用机制常数：常规单位的受击半径标准基准值是 0.1。该陈述属于不依赖单场对局画面的通用底层数值常识，且后文对异常受击半径的推导均以此通用数值作为参照底线。",
+      "limitations": [
+        "部分特殊体型敌人或Boss具有特定的非标准受击半径参数配置"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单中唯一候选命题 c01 陈述了游戏底层通用判定常数（正常受击半径 0.1）。该语句虽出现在实战推导讨论中，但主播指出的「正常受击半径是0.1」为既定的底层规则参数知识，而非未验证假说或局部现象观察，改写为规范术语后符合知识库标准，判定为 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

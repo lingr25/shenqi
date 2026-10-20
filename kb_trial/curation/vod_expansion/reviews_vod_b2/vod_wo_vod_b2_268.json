@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_268",
+  "stem": "BV1L4ez6oEcc_p3_42061792207",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:27:00+0900",
+  "source_sha256": "f2c1d4816a3635fea0ac81623b958a7d5e524a38e6f343c8daf73746ce0a37fb",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "横向0.7打不到但折线0.7能打到",
+      "verdict": "pending",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "该现象为主播在实战测试中的实测观察（claim_type 为 observation），主播明确指出‘这里的话有问题啊’、‘如果要实测稿的话 恐怕需要更多的数据去不断探索 不同纵坐标下的横坐标的边界条件 把图给画出来才行’，机制成因未定论闭合（疑似被打敌人二次索敌或判定形状非圆形），且主体干员/技能及具体判定形状未给出，不满足自包含定论要求，需留待后续实机验证。"
+    }
+  ],
+  "review_note": "工单讨论的是溅射/弹射类机制在特定坐标下的二次索敌边界异常（横向直线与折线距离判定不一致），主播现场正在推导与测试，明确提到数据不全需进一步探索画图，属于未定论的探索过程，故判定为 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

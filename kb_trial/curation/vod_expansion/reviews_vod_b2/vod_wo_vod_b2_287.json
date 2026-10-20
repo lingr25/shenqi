@@ -1,0 +1,84 @@
+{
+  "workorder_id": "vod_wo_vod_b2_287",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:31:21+0900",
+  "source_sha256": "4b8dc1889bbbdf4bc99cdf41744cf798d7d9213def38c7abac8704e635a4abce",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "局内属性结算的计算效果分为四类：直接加、直接乘、最终加、最终乘。",
+      "subject": "局内属性结算规则",
+      "condition": "局内数值计算",
+      "scope": "universal",
+      "category": "属性结算",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "局内的话是直接加直接乘",
+          "t_start": 1561,
+          "t_end": 1575
+        },
+        {
+          "text": "最终加最终成",
+          "t_start": 1575,
+          "t_end": 1582
+        }
+      ],
+      "reason": "主播明确梳理并阐明了局内属性计算的四个标准分类区间（直接加、直接乘、最终加、最终乘），属于可复用的底层属性结算机制。",
+      "limitations": [
+        "仅涵盖局内属性四大基本乘区分类，未展开各个区间的具体计算公式与先后级顺序"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "claim": "局外属性结算中，概念上的最终乘在机制底层属于同类叠乘，而直接乘属于同类叠加。",
+      "subject": "局外属性结算乘区",
+      "condition": "局外数值结算",
+      "scope": "universal",
+      "category": "属性结算",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "在局外的话 这个最终成才是同类城",
+          "t_start": 1582,
+          "t_end": 1589
+        },
+        {
+          "text": "而这个直接乘是同类家",
+          "t_start": 1589,
+          "t_end": 1596
+        }
+      ],
+      "reason": "主播辨析了局外与局内属性结算的计算方式差异，明确指出局外环境下直接乘与最终乘分别对应同类叠加与同类叠乘的计算逻辑。",
+      "limitations": [
+        "具体关卡词条与藏品效果可能存在特例合并处理（如肉鸽中部分同类叠加后再整体乘算）"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单涉及明日方舟属性计算的核心机制（局内四大乘区与局外计算逻辑的映射）。逐字稿中存在错别字（如'最终成'、'同类城'、'同类家'），已按照规则在保持字面严格引用的前提下将命题修正规范，两条均通过四大闸门。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

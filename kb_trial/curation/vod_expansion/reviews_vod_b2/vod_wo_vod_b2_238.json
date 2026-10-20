@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_238",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:22:26+0900",
+  "source_sha256": "1ae1b8f436df2c3ab509dfa739e4a95570e2b8548e7af45d640a289e32e3f119",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在多利活动（吹云团小游戏）的关卡简报机制中，『惊喜风暴·即去之源』的效果为：吹出最大风力，敌方/目标单位生命值提升且处于不可阻挡状态。",
+      "subject": "多利活动关卡机制「惊喜风暴·即去之源」",
+      "condition": "生效于惊喜风暴·即去之源环境/状态下",
+      "scope": "instance",
+      "category": "状态效果",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "哎这个惊喜风暴即去之源中吹出最大风命 生命值提升且不可阻挡",
+          "t_start": 6529,
+          "t_end": 6554
+        }
+      ],
+      "reason": "主播朗读并确认了活动关卡简报中对特殊机制/词条的具体数值与状态描述（生命值提升且不可阻挡），属于明确的关卡固有规则信息，具备录播机制记录价值。",
+      "limitations": [
+        "ASR转写的“最大风命”实为“最大风量/最大风力”的识别偏差",
+        "仅适用于该特定活动小游戏/关卡机制（instance）"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单候选命题提炼了主播阅读关卡简报时的机制描述，虽然是特定活动机制（instance级别），但参数与属性清晰（生命提升、不可阻挡），证据完全对齐，予以保留收录。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}
