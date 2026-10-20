@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_322",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:41:09+0900",
+  "source_sha256": "7ae36205a682d7c532225b419a40455e8191f8e73d00a5bdc078775e94a604a0",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在明日方舟伤害结算流程中，无敌（免伤）效果会强制将受到的伤害数值直接归零。",
+      "subject": "无敌（免伤效果）",
+      "condition": "伤害结算时处于无敌/免伤状态",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "无敌会强制把那个伤害归零",
+          "t_start": 5402,
+          "t_end": 5416
+        }
+      ],
+      "reason": "主播在系统拆解伤害结算流程时，明确区分了伤判增减与无敌免伤机制，指出了无敌效果具有强制使伤害数值归零的机制特性。",
+      "limitations": [
+        "未细化某些特殊机制（如生命流失）对无敌的绕过情况"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在伤害结算的伤判阶段，包含多种能将实际伤害归零的效果，典型包括闪避、格挡、护盾、屏障以及100%伤害减免。",
+      "subject": "伤判结算效果",
+      "condition": "伤害结算进行至伤判环节",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "然后的话伤判的话就有各种效果 其中也不乏伤害归零的 比如说闪避格挡护盾屏障",
+          "t_start": 5402,
+          "t_end": 5416
+        },
+        {
+          "text": "百分百的减伤",
+          "t_start": 5416,
+          "t_end": 5419
+        }
+      ],
+      "reason": "明确归纳了伤害结算中伤判环节的具体效果分类及能实现伤害归零的具体机制形式。",
+      "limitations": [
+        "护盾与屏障本质上可能是吸收伤害而非消除原始伤害数值，此处属于主播对广义「受到伤害归零」的归类口径"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单两条候选命题均属于伤害计算通用底层管线（第三阶段伤判及免伤）的机制定论，表述严谨明确，证据文本对齐良好，均予以保留收录。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

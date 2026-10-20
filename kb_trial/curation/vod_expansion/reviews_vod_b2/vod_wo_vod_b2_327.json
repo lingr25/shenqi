@@ -1,0 +1,71 @@
+{
+  "workorder_id": "vod_wo_vod_b2_327",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:41:54+0900",
+  "source_sha256": "d3e9d94b682104968408e32d522105f9308c2d7363a662400b2bb2c349a40de9",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在《明日方舟》原版红字判定中，干员与敌人各有一个取值为 0 或 1 的强制红字开关；只有这两个开关同时打开时，才会触发强制红字。",
+      "subject": "强制红字判定系统中的干员侧与敌人侧开关",
+      "condition": "干员和敌人的强制红字开关都打开（均为 1）",
+      "scope": "universal",
+      "category": "红字判定/状态效果",
+      "evidence": [
+        {
+          "text": "就是干员身上有一个开关啊 零一敌人身上有一个开关",
+          "t_start": 5634,
+          "t_end": 5648
+        },
+        {
+          "text": "只有干员和敌人的强制红字开关都打开的时候 才会强制红字",
+          "t_start": 5648,
+          "t_end": 5660
+        }
+      ],
+      "reason": "逐字稿明确说明干员侧和敌人侧各有一个强制红字开关，并说明只有两者都打开时才触发强制红字。该陈述已补全主语与开关取值，不依赖画面指涉。",
+      "limitations": [
+        "主播处于 PRTS 不可用状态，凭记忆讲述原版红字机制，未现场复核。",
+        "未说明各干员/敌人身上该开关具体由哪些效果或状态控制。",
+        "后续游戏版本可能已改版红字机制。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "干员强制红字开关未打开时不会触发强制红字，按正常流程处理",
+      "verdict": "reject",
+      "reason": "与 c01 属于同一强制红字双开关判定的重复表述；c01 已完整表述双开关同时打开才触发强制红字，c02 是其必要条件的冗余分支。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "DUP"
+      ]
+    }
+  ],
+  "review_note": "本工单候选集中于强制红字双开关判定。c01 有逐字稿明确支撑，可保留为原版红字机制定论；c02 是 c01 的冗余必要条件分支，按重复处理。引文均取自同一连续行，未拼接。注意主播处于 PRTS 不可用状态、凭记忆讲述原版机制，故保留项附版本与复核限制。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,65 @@
+{
+  "workorder_id": "vod_wo_vod_b2_326",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:43:11+0900",
+  "source_sha256": "affb1412aabeef385e133aa498e54b0d3233366717f778fb350c458ea3ad07c1",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "干员迷迭香（ASR转写为迷途）的法伤DOT在叠满10次伤害时属于强制红字机制，满足条件一定会弹出暴击红字提示。",
+      "subject": "迷迭香（ASR作迷途）的法伤DOT机制",
+      "condition": "法伤DOT叠满十次",
+      "scope": "entity_mechanism",
+      "category": "红字判定/技能特例",
+      "evidence": [
+        {
+          "text": "迷途迷途 无视攻击力倍率 他那个法伤dot叠满十次的时候一定会出红字",
+          "t_start": 5624,
+          "t_end": 5634
+        }
+      ],
+      "reason": "主播在系统性讲解红字判定规则时，明确举例强制红字的分支机制，并给出了具体判定条件（法伤DOT叠满十次必出红字），虽然干员名ASR误转为迷途，但机制定论明确且具有可复现的规则价值。",
+      "limitations": [
+        "ASR转写的干员名'迷途'应为迷迭香或其他具备类似法伤DOT机制干员的口误/误识别，且红字实际显示还受到后续提到的干员与敌人双端强制红字开关判定影响"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "迷途的法伤DOT无视攻击力倍率",
+      "verdict": "reject",
+      "reason": "上下文中的'无视攻击力倍率'是在阐述强制红字规则（即不按常规1.5倍攻击力倍率/基准伤害判定的红字算法）时的口语省略，并非该DOT本身的数值结算特性，脱离红字判定语境会导致对伤害结算公式的误解，不满足自包含准确机制陈述要求（Gate 1、Gate 4）。",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      }
+    }
+  ],
+  "review_note": "本片段讨论红字伤害判定的底层机制与特例。c01为口语残缺表述，主播实指'强制红字无视常规倍率判定'而非技能伤害不吃攻击力倍率；c02作为强制红字的具体成立特例予以收录。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b2_329",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:43:33+0900",
+  "source_sha256": "eb0450e6bdea913fc94f5ed1b2638a1aba27206f3f46781ca78077e68ad38195",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "单位因生命流失效果（例如华法林使受其增益的单位持续流失生命值）扣除自身生命值时，不经过伤判流程，因而不受伤害增减类伤判效果的影响。",
+      "subject": "生命流失效果（如华法林使受其增益的单位持续流失生命值）",
+      "condition": "单位因生命流失失去生命值，而非受到常规攻击伤害",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "比如说那个生命流失这个东西 那个华法林就有啊 华法林可以让那个加Buff的人生命流逝 但是这种东西本质上都属于自己流自己的血",
+          "t_start": 6060,
+          "t_end": 6075
+        },
+        {
+          "text": "他不走商判不会受到伤 判增加和减少",
+          "t_start": 6075,
+          "t_end": 6083
+        }
+      ],
+      "reason": "上下文在讲解伤判流程时明确把生命流失列为跳过伤判环节的效果，并举例华法林使受Buff者生命流逝，称其“不走商判”“不会受到伤判增加和减少”。因此可形成“生命流失不经过伤判、不受伤害增减伤判影响”的机制结论。",
+      "limitations": [
+        "逐字稿中“商判”按上下文规范为“伤判”。",
+        "该命题只覆盖跳过伤判/伤害增减环节；逐字稿后文另述物理/法术/真实生命流失在抗性结算环节仍有差异。",
+        "上游引文跨两行且秒数错误，终审回执已按上下文窗口拆分为两条连续行证据。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01有明确机制价值且被逐字稿支撑：生命流失不经过伤判流程，华法林使受Buff单位生命流逝的例子被主播明确描述为不走伤判、不受伤判增减影响。上游命题将主体写成“干员对自身造成的生命流失”略不贴合原例，已规范为“生命流失效果/受增益单位流失生命值”；上游引文跨两行且时间戳不符，已改用两条连续行证据。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

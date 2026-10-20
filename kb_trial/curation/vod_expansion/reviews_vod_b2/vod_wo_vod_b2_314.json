@@ -1,0 +1,76 @@
+{
+  "workorder_id": "vod_wo_vod_b2_314",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:37:38+0900",
+  "source_sha256": "bbc0537536dbd1f8d99839305b86e0d23ce4d8947ff0efceecc5a17d5ed7cc5e",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "技能中「攻击造成相当于X%攻击力的伤害/攻击力提升至X%」属于攻击力倍率效果，其在属性结算完成后进行乘法提升；与全域生效的攻击力属性Buff不同，攻击力倍率默认仅对自身绑定的特定攻击行为生效，不自动扩展至其他伤害乘区。",
+      "subject": "攻击力倍率",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "但是它们之间是有区别的 但是它们之间是有区别的 这种东西属于攻击力倍率效果",
+          "t_start": 4495,
+          "t_end": 4506
+        },
+        {
+          "text": "攻击力倍率是在攻击力属性结算完成之后 然后做的一个倍率提升 就是属性成倍率 然后去回归到这个回归到这一部分 也就是攻击数值的需求",
+          "t_start": 4506,
+          "t_end": 4534
+        },
+        {
+          "text": "但是攻击力倍率只应用于自己应用的内容 像EW这个样子 就是这个1.85不对 那个1.25生效 1.25不对",
+          "t_start": 4620,
+          "t_end": 4632
+        }
+      ],
+      "reason": "主播详细论述了解释了攻击力倍率与基础攻击力属性Buff的核心机制差异（结算时序在属性之后，且默认不作用于其他分支伤害乘区），具备通用底层规则价值。",
+      "limitations": [
+        "部分干员技能或天赋存在显式特殊说明时（如麒麟R夜刀二技能应用至第一天赋），可按文本特判生效"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "攻击力倍率不是属性面板属性",
+      "verdict": "reject",
+      "reason": "c01 仅为主播寻找课件属性表时的口误修正与自言自语（「我白吃了」），且核心结论（攻击力倍率独立于属性计算流程）已在 c02 中作为完整的机制体系阐述，故作为重复残片剔除。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "DUP",
+        "G1",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01 为口误自我修正残句，与 c02 机制范畴重叠；c02 提炼并改写为攻击力倍率与属性加成的结算顺序及生效范围差异，证据链完整，予以 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

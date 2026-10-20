@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_302",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:34:24+0900",
+  "source_sha256": "355b849f378d15794c93f6c5c774f285d33dd17d171dbf67a653e5a3570d6bc0",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在肉鸽藏品文案中，即使「所有友方和敌人攻击力加20%」写在同一句话内，两者的结算区间也不同：对友方单位的攻击力加成属于局外藏品/符文与科技树的同乘区加算；对敌人攻击力的加成则属于局内的乘算Buff。",
+      "subject": "集成战略藏品「所有友方和敌人攻击力增加」的双向增益结算区间",
+      "condition": "带有同时作用于友方与敌方攻防属性的藏品",
+      "scope": "universal",
+      "category": "属性结算/藏品区间",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "这个所有友方和敌人攻击力加20% 别看这个东西是写在一句话里面的 对友方单位的加20%是藏品 润和这个科技树啊",
+          "t_start": 2975,
+          "t_end": 2989
+        },
+        {
+          "text": "和大部分藏品是属于同一个城区 局外的这个藏品ruined的 红城区加算叠加的东西 而敌人攻击力加20% 那是局内最忠诚的",
+          "t_start": 2989,
+          "t_end": 3005
+        }
+      ],
+      "reason": "主播详细剖析了肉鸽藏品同文案下友方与敌方数值结算底层的机制差异（友方走局外加算，敌方走局内最终乘算），陈述清晰且具有规则指导价值。",
+      "limitations": [
+        "语音转写存在ASR错词（如将「同乘区」识别为「桐城区/红城区」，「符文/rune」识别为「润/ruined」），但机制原意和区间断言明确。"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单唯一候选命题 c01 审查通过。主播通过实例论证了集成战略中攻防属性双向变动藏品在底层结算时友方（局外加算）与敌方（局内乘算）分属不同乘区的底层机制，符合四大硬性闸门。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

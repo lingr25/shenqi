@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_309",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:36:21+0900",
+  "source_sha256": "45b50b283a8299010c14352156347c25d883cd9b2f0a72957c7a15305ac5953a",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "萨卡兹穿刺手的25层叠加方式是加算叠加，不是乘算叠加",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "reason": "上下文信息残缺且属于不确定推测：主播仅凭记忆提及穿刺手层数叠加方式（原句伴随『是不是和望一样来着』『这样看不能靠谱』），且完全未交代该25层具体生效的属性主体（是移速还是攻击力），违反Gate 1自包含性与Gate 4排除未定论推测的要求。"
+    }
+  ],
+  "review_note": "工单BV1xRho6DEAQ_p1_42224124252仅包含1条候选命题c01。该命题为直播过程中的随口记忆性推测，属性主体缺失且主播明确表示不够靠谱，不满足知识库沉淀标准，裁定reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

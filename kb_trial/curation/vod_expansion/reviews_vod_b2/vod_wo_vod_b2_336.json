@@ -1,0 +1,120 @@
+{
+  "workorder_id": "vod_wo_vod_b2_336",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:44:40+0900",
+  "source_sha256": "b468d91b1612d806875a97b5729fb4a513529b0311480e5ea690a4d16f8db5c1",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "干员的屏障机制通常可以吸收真实伤害（如斥罪、林雨霞的屏障）。",
+      "subject": "干员屏障机制",
+      "condition": "受到真实伤害时",
+      "scope": "universal",
+      "category": "伤害结算/状态效果",
+      "rewritten": false,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "我们说干员的屏障一般来讲都是真伤盾 真伤队在干员身上屡见不鲜 比如说这个斥罪啊",
+          "t_start": 6712,
+          "t_end": 6726
+        },
+        {
+          "text": "林雨霞呀 到处都是真伤盾 像这个他的屏障也是真伤的 然后这个格挡也是可以格挡真伤的",
+          "t_start": 6726,
+          "t_end": 6736
+        }
+      ],
+      "reason": "逐字稿明确指出干员屏障通常能够吸收真实伤害（“真伤盾”），并举例斥罪与林雨霞，属于确凿的机制定论。",
+      "limitations": [
+        "仅针对干员持有的屏障机制，部分特定敌人或特例屏障规则可能存在差异"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "claim": "格挡机制可以抵挡真实伤害，包括林雨霞天赋抵挡低于200点伤害的效果也能对真实伤害生效。",
+      "subject": "格挡机制（及林雨霞天赋伤害阈值格挡）",
+      "condition": "受到满足格挡条件的真实伤害时",
+      "scope": "universal",
+      "category": "伤害结算/状态效果",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "然后这个格挡也是可以格挡真伤的",
+          "t_start": 6726,
+          "t_end": 6736
+        },
+        {
+          "text": "林林这个200伤害也是可以挡真伤的",
+          "t_start": 6739,
+          "t_end": 6746
+        }
+      ],
+      "reason": "逐字稿明确陈述格挡可对真实伤害生效，并具体指出林雨霞低于200伤害格挡机制对真实伤害生效。",
+      "limitations": [
+        "仅适用于伤害型判定，不能格挡不通过伤判的生命流失效果"
+      ]
+    },
+    {
+      "local_id": "c03",
+      "claim": "真实伤害不跳过伤判流程，干员除仅限物理/法术的庇护类减伤外，若文本未限定伤害类型的全伤害减免效果可对真实伤害生效。",
+      "subject": "真实伤害减伤机制",
+      "condition": "减伤效果未限定物理/法术类型时",
+      "scope": "universal",
+      "category": "伤害结算/状态效果",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "我们说真伤只会跳过抗性结算流程 而并不会跳过商判流程 正是因为他不跳过伤判流程",
+          "t_start": 6685,
+          "t_end": 6697
+        },
+        {
+          "text": "对壁虎干员这里会有庇护 这种物理和法术的减伤 但是实际上干员也不止有这种减伤 干员其实也有真实减伤 比如说这个",
+          "t_start": 6761,
+          "t_end": 6776
+        },
+        {
+          "text": "他这里可没提到这个伤害降低25% 指的是物理法术伤害 带大家看一下",
+          "t_start": 6776,
+          "t_end": 6815
+        }
+      ],
+      "reason": "主播详细论证了真伤走伤判流程、全类型减伤（文本未限定物理法术的降低百分比伤害）同样可以对真伤生效的底层机制。",
+      "limitations": [
+        "常规庇护（注明物理与法术减伤）无法减免真实伤害"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单三个命题均属于伤害结算流程中的核心机制定论。逐字稿中主播对真实伤害参与伤判流程、受全伤害减伤影响、能被屏障吸收及格挡生效进行了明确的机理解释与实证演示，四大闸门全部通过。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

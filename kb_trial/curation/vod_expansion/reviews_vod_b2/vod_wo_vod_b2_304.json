@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_304",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:34:44+0900",
+  "source_sha256": "29cda38810ec3410a09f5a126b6fd1b62b7da39e3821f1317fa33644f8a5c763",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "单位属性的计算流程顺位为：局外关卡与藏品加成结算 → 进图取整 → 局内直接加算（第1顺位） → 局内直接乘算（第2顺位） → 局内最终加算（第3顺位） → 局内最终乘算（第4顺位）。",
+      "subject": "单位属性计算流程",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "属性计算",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "属性的计算环节之中的话分为局外额 局外的关卡 关卡藏品 然后的话进图取整 然后的话局内的直接加成 最终加最终成这个顺序流程",
+          "t_start": 3151,
+          "t_end": 3169
+        },
+        {
+          "text": "从直接乘是第二呃 局内第二顺位 最终成是局内第四顺位 中间还有一个最终加算",
+          "t_start": 3393,
+          "t_end": 3405
+        }
+      ],
+      "reason": "主播系统性总结了游戏底层属性计算的顺位流程，明确区分了局外计算、进图取整以及局内四个乘区顺位（直接加、直接乘、最终加、最终乘），具有普适规则价值。",
+      "limitations": [
+        "部分特殊干员模组或技能在PRTS上的具体归属乘区可能未标明，需实机验证；攻速、攻击间隔等特殊属性的计算公式具有独立特例，本流程主要针对攻击力、防御力、移速等常规属性。"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单候选命题 c01 为明日方舟底层通用的属性乘区计算顺位体系讲解，逐字稿上下文完整支撑该结论，予以通过并规范化表述。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

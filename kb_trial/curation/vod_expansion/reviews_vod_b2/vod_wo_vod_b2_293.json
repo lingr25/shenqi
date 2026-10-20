@@ -1,0 +1,64 @@
+{
+  "workorder_id": "vod_wo_vod_b2_293",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:32:25+0900",
+  "source_sha256": "2183c8e147980259d394c11230564fdca2509c1bfc0649e12893ab227858543b",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "在集成战略中，排异反应「血肉畸变」的属性加成并非局外乘区，而是作为局内最终乘算参与结算。",
+      "subject": "集成战略排异反应「血肉畸变」的属性结算乘区",
+      "condition": "universal",
+      "scope": "entity_mechanism",
+      "category": "属性结算",
+      "evidence": [
+        {
+          "text": "为了让它能传染 它不再可以是一个局外的加成 从而被改成了局内的最终成 所以血肉畸变这个东西 不符合这篇文章的这个介绍 除此之外的话",
+          "t_start": 2161,
+          "t_end": 2177
+        }
+      ],
+      "reason": "主播明确说明了血肉畸变在支持传染机制后的底层属性结算规则调整，明确指出其从局外加成修正为了局内最终乘算，具有明确的机制知识库价值。",
+      "limitations": [
+        "口语表述为「最终成」，对应底层属性结算流程中的局内最终乘算区间"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "血肉畸变在鹰角DFC更新、水月DLC更新之后变成可以被传染的机制",
+      "verdict": "reject",
+      "failed_gates": [
+        "DUP"
+      ],
+      "reason": "与 c02 重复，该句仅为引出属性结算乘区变化的背景说明，核心机制结论已完整由 c02 承载。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      }
+    }
+  ],
+  "review_note": "本工单讨论了集成战略中排异反应「血肉畸变」的乘区归属。主播指出其为实现局内传染而调整为局内最终乘算，通过保留 c02 记录该属性结算机制，c01 因信息被完全包含而作为重复项剔除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

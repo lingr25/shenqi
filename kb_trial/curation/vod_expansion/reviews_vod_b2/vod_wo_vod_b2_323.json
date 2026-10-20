@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_323",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:39:56+0900",
+  "source_sha256": "9846f79b9a91a82886d05c5555df669bd782404930b1b7d96637557d0c491bfc",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "伤害计算流程分为三个主要环节：第一环节计算攻击力倍率效果，第二环节结算物理穿透与法术穿透效果，第三环节结算伤害增减效果。",
+      "subject": "伤害计算系统",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "一环节 二环节 三环节在一环节之中有一个攻击力倍率效果 在二环节中有一个那个物穿法穿的结算效果",
+          "t_start": 5509,
+          "t_end": 5523
+        },
+        {
+          "text": "在三环节中有一堆伤害的增减效果",
+          "t_start": 5523,
+          "t_end": 5529
+        }
+      ],
+      "reason": "主播系统性阐述了明日方舟伤害计算的三个基础环节构成，逻辑清晰且与游戏底层伤害计算公式框架吻合，引文在逐字稿中完全对齐。",
+      "limitations": [
+        "仅概括了三个环节的核心计算内容，未展开各环节内部详细结算顺序及其他特殊乘区"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单候选命题清晰陈述了底层伤害计算三环节结构，属于通用的机制定论。逐字稿对应行匹配精确，四大闸门全部通过，予以保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

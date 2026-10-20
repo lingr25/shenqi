@@ -1,0 +1,84 @@
+{
+  "workorder_id": "vod_wo_vod_b2_300",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:34:02+0900",
+  "source_sha256": "32a76c54b6ed5a8fd1d96fbe6bc01b1bb4b1419fe4c30feb2d92e16313ce220a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "集成战略藏品「死仇」（效果为所有友方和敌人攻击力+20%）对友方单位的攻击力加成属于局外藏品/符文（Rune）区间，与科技树及大部分藏品处于同一乘区加算叠加。",
+      "subject": "集成战略藏品「死仇」对友方攻击力加成",
+      "condition": "持有藏品「死仇」计算友方攻击力时",
+      "scope": "entity_mechanism",
+      "category": "属性结算/藏品区间",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "这个所有友方和敌人攻击力加20% 别看这个东西是写在一句话里面的 对友方单位的加20%是藏品 润和这个科技树啊",
+          "t_start": 2975,
+          "t_end": 2989
+        },
+        {
+          "text": "和大部分藏品是属于同一个城区 局外的这个藏品ruined的 红城区加算叠加的东西 而敌人攻击力加20% 那是局内最忠诚的",
+          "t_start": 2989,
+          "t_end": 3005
+        }
+      ],
+      "reason": "逐字稿中明确解析了萨卡兹肉鸽藏品「死仇」（文案描述为所有友方和敌人攻击力加20%）的友方加成机制，指出其属于局外藏品/符文（Rune，ASR作润/ruined）区间，并与科技树同乘区加算叠加。",
+      "limitations": [
+        "仅适用于该藏品及遵循同类局外符文规则的常规干员加成"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "claim": "集成战略藏品「死仇」对敌人的20%攻击力加成属于局内最终乘算区间（最终乘），因此会直接乘算放大敌人的实际攻击力。",
+      "subject": "集成战略藏品「死仇」对敌方攻击力加成",
+      "condition": "持有藏品「死仇」计算敌方攻击力时",
+      "scope": "entity_mechanism",
+      "category": "属性结算/藏品区间",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "而敌人攻击力加20% 那是局内最忠诚的",
+          "t_start": 2989,
+          "t_end": 3005
+        },
+        {
+          "text": "所以它会导致攻击力特别高 这个东西大家经常查测 米米校验伤害的话 也会发现这个问题",
+          "t_start": 3005,
+          "t_end": 3015
+        }
+      ],
+      "reason": "逐字稿明确指出该藏品对敌人的攻击力加成属于局内最终乘算（ASR作最忠诚的），造成乘算放大效果，逻辑闭合且经实测检验，具有明确机制定论价值。",
+      "limitations": [
+        "若敌方受到基础数值削弱（如伊内斯攻击力偷取），需遵循最终乘算的先后时序结算"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单主要讲解集成战略中藏品「死仇」对友方和敌方双向加成时所处结算区间的差异。ASR中存在多处同音错别字（如将符文 Rune 转写为“润/ruined”、将“同乘区”转写为“同一个城区/红城区”、将“最终乘”转写为“最忠诚”），但结合上下文教学逻辑极其严密清晰。c01 与 c02 分别明确了友方局外加算与敌方局内最终乘算的差异，均通过四大闸门审查，予以保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

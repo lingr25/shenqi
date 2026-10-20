@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_317",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:38:56+0900",
+  "source_sha256": "9c10b6b06a87d565b14aaa80c29067c75aff70ba43e396b7ba71e95738682c17",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "5%（即 0.05）的伤害保底属于抗性结算流程的保底，而不是最终伤害保底；抗性结算流程所输出的结果为初始伤害。",
+      "subject": "伤害结算流程与保底机制",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "抗性结算",
+      "evidence": [
+        {
+          "text": "就是我们最常说的0.05保底 注意0.05保底是抗性结算流程的 而不是最终伤害的保底 他得到的这个是初始伤害",
+          "t_start": 4753,
+          "t_end": 4766
+        }
+      ],
+      "reason": "主播明确解释了伤害计算时序中 0.05 保底的结算层级（抗性结算阶段计算出的初始伤害），否定了其属于最终伤害保底的常见误解，属于普适通用伤害规则。",
+      "limitations": [
+        "未在此处细化不同伤害类型（物理/法术）的具体保底公式展开"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "抗性结算得出的初始伤害在后续流程中仍可受到伤害减免等效果进一步削弱，因此最终实际造成的伤害可能低于初始伤害保底的数值。",
+      "subject": "最终伤害削弱与减伤结算时序",
+      "condition": "存在后续减伤/伤害削弱机制生效",
+      "scope": "universal",
+      "category": "抗性结算",
+      "evidence": [
+        {
+          "text": "初始伤害后面还可以再进行削弱 比如说减伤个1%啊 减伤到1% 那么实际上干员去打敌人 也可以造成一个0.000",
+          "t_start": 4766,
+          "t_end": 4783
+        },
+        {
+          "text": "这么低的伤害 攻击力这么低的伤害 这是因为减伤是额外的 后续的部分 我们只要按顺序去计算 就不会有错 还是回归到这个部分",
+          "t_start": 4783,
+          "t_end": 4797
+        }
+      ],
+      "reason": "解释了减伤位于抗性结算之后的时序位置，阐明了初始伤害仍会被后续额外削弱的底层机制。",
+      "limitations": [
+        "文本中“减伤到1%”等为举例性质，实际具体减伤算法未展开完整乘区公式"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单主要阐述《明日方舟》伤害计算的时序分层：抗性结算流程产生「初始伤害」并带有 5% 保底，而最终减伤位于抗性结算之后生效。两条候选命题逻辑自洽、证据充分、表意清晰，均予以保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

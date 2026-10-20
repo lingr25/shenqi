@@ -1,0 +1,99 @@
+{
+  "workorder_id": "vod_wo_vod_b2_305",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-speed",
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:38:07+0900",
+  "source_sha256": "5681d6fd918de4ec492e6d2859e345c405f47847471ca13bf50c9f6e79555ec5",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "干员对敌方属性施加的减益效果，绝大部分属于局内最终乘算区间，即作用于敌方属性的最终乘。",
+      "subject": "干员对敌方属性的减益效果",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "干员之间大部分的那个对敌方的检疫 都是最终成对敌方属性的简易",
+          "t_start": 3239,
+          "t_end": 3256
+        }
+      ],
+      "reason": "主播明确指出干员施加给敌方的各项属性削减在局内乘区中绝大部分归属于最终乘区。",
+      "limitations": [
+        "存在极少数直接乘算特例，如W二技能。",
+        "逐字稿中“检疫”“简易”“最终成”为ASR错写，语义分别对应减益、减益、最终乘。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "在干员对敌人移动速度的影响中，W二技能是直接乘算移速减益的唯一特例；除此之外，所有干员对敌人移速的影响均为最终乘算。",
+      "subject": "W二技能及干员对敌移速减益机制",
+      "condition": "universal",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "比如说很经典的例子就是W的二技能 want的二技能是直接乘的 移速只此一例",
+          "t_start": 3272,
+          "t_end": 3284
+        },
+        {
+          "text": "在干员对敌人在移速上的影响上仅此一例 除除此之外 所有的干员对敌人的移速影响都是最忠诚的",
+          "t_start": 3284,
+          "t_end": 3301
+        }
+      ],
+      "reason": "主播点明W二技能是干员对敌移速影响中的直接乘算特例，并明确其余干员对敌移速影响均为最终乘算。",
+      "limitations": [
+        "仅针对干员对敌方移速的影响，不涵盖关卡机制或特殊装置等非干员来源。",
+        "逐字稿中“最忠诚的”为ASR错写，语义对应最终乘。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "如果将干员对敌方属性的减益改为直接乘，因百分比叠加特性会非常容易把敌方属性直接削没，所以直接乘只能作为特例。",
+      "verdict": "reject",
+      "failed_gates": [
+        "G4",
+        "G2"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "reason": "该内容属于主播对数值设计动机的推演与假说，并非可复现的机制运行定论；且上游引文跨越3256s与3272s两行拼接，不满足逐字引文对齐要求。"
+    }
+  ],
+  "review_note": "本工单讨论局内属性减益乘区归属。c01保留“干员对敌方属性减益大多属于最终乘”的通用结论；c03保留W二技能为移速直接乘唯一特例、其余干员移速影响均为最终乘的结论，并已修正引文为单行原样子串。c02属设计动机推演/未定论假说，且引文跨行，故排除。",
+  "repair_rounds": 1,
+  "unresolved_problems_auto_demoted": []
+}

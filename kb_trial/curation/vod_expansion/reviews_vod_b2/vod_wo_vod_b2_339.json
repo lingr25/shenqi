@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_339",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:46:01+0900",
+  "source_sha256": "c325f6a5d2e7c0cbc47d70c169a3351cb23f8a32a38b1324d07be4d4e0df79d7",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "肉鸽藏品「存续」会使真实伤害获得×2.5的增伤倍率。",
+      "subject": "肉鸽藏品「存续」",
+      "condition": "持有肉鸽藏品「存续」时，作用于真实伤害",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "唉真伤的加成有点太少了 再想加的话 只能搞那些什么东西了 那个肉鸽藏品 肉鸽藏品倒是可以加乘以2.5存续对",
+          "t_start": 6935,
+          "t_end": 6968
+        }
+      ],
+      "reason": "上下文正在讨论真实伤害的增伤手段；逐字稿明确说到真伤加成太少，补足手段时提到肉鸽藏品“存续”可以乘以2.5。上游“肉鸽藏品”泛称可据上下文收窄为具体藏品。",
+      "limitations": [
+        "逐字稿仅以“存续”简称指代，未展开全名与精确生效范围，需后续查表或实机确认。",
+        "未说明该×2.5具体作用于敌方受到真伤、我方造成真伤还是某类目标。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 的原始证据时间戳（455–470）与逐字稿不符；实际对应行在 6935s，已在 claims 中修正。该句不是猜测或反问，且可抽取为具体藏品机制结论，故保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

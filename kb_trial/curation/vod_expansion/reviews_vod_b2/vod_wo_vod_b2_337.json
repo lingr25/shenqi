@@ -1,0 +1,66 @@
+{
+  "workorder_id": "vod_wo_vod_b2_337",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:45:40+0900",
+  "source_sha256": "6648afa58bdf3d39af43f0efdecd45058f6b8c2fa687b79d9d913ce3dd40ecac",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "真实伤害不跳过伤害结算阶段的伤判流程，因此真实伤害会受增伤和减伤效果影响：增伤可提高真实伤害的最终结算，减伤可降低真实伤害的最终结算。",
+      "subject": "真实伤害",
+      "condition": "存在作用于伤害结算阶段的增伤或减伤效果时",
+      "scope": "universal",
+      "category": "伤害结算/伤判",
+      "evidence": [
+        {
+          "text": "真伤会吃伤 判好处就是可以增伤 坏处就是也可以减伤",
+          "t_start": 6872,
+          "t_end": 6879
+        }
+      ],
+      "reason": "主播在伤害结算课中明确总结：真伤会吃伤判，好处是能增伤，坏处是也能减伤；上下文同时以 500 点真实伤害受减伤后低于面板为例。该结论属于伤害结算的通用流程，不依赖画面指涉。",
+      "limitations": [
+        "逐字稿只给出定性结论，未展开具体增伤/减伤叠加、优先级、取整公式。",
+        "未讨论生命流失与真伤在跳过伤判环节上的区别细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "真实伤害的实际结算数值会低于面板数值，因为减伤效果可以对真实伤害生效，500点面板真实伤害打出的并不是500点。",
+      "verdict": "reject",
+      "reason": "与 c02 重复：c01 的具体 500 点减伤观察已被 c02 的“真实伤害吃伤判，增伤/减伤均可生效”通用结论覆盖，按去重规则保留 c02。另上游 evidence 时间戳 382-390 不对应 transcript_window，正确行为约 6850-6867。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "DUP",
+        "G2"
+      ]
+    }
+  ],
+  "review_note": "c02 通过四大闸门，主播在伤害结算讲解中明确给出真伤参与伤判、可被增伤/减伤影响的定论；c01 与 c02 同义且证据时间戳错误，按去重与引文对齐规则排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

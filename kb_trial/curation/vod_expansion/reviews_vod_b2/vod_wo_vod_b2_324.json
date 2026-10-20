@@ -1,0 +1,103 @@
+{
+  "workorder_id": "vod_wo_vod_b2_324",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:43:51+0900",
+  "source_sha256": "daa6517f0fff47b56f0f2a5c916fa40273d9c0d5a13bac8a9788098adf4b593d",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在伤害计算流程中会同时计算两个数值：一个是按正常完整流程结算出的实际伤害结果（非伤害类型中的真实伤害），另一个是专用于比对判定是否触发红字跳字的基准伤害数值。",
+      "subject": "伤害结算与红字判定系统",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "伤害结算/红字判定",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "在每次伤害计算的时候 都会计算两个数值 一个是是 一个是按照正常的计算流程计算的真实伤害 真实的伤害结果不是伤害类型啊",
+          "t_start": 5529,
+          "t_end": 5543
+        },
+        {
+          "text": "真实是这里说的真实伤害是真实的结果 不是真伤 然后还会计算一个用来判定是否出红字的伤害 这个判定流程会把123都给去掉",
+          "t_start": 5543,
+          "t_end": 5557
+        }
+      ],
+      "reason": "主播清晰阐释了红字判定机制的基础底层逻辑：并行计算实际伤害与基准伤害两个数值，逐字稿完全支持。",
+      "limitations": [
+        "红字判定在历史版本经历过改版，主播此处理论基础基于原版底层框架叙述"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "claim": "在红字判定的基准伤害计算流程中，会剔除第一环节中的攻击力倍率、第二环节中的穿透效果（物穿/法穿）以及第三环节中的伤害增减效果，不计入红字基准伤害。",
+      "subject": "红字判定基准伤害计算",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "伤害结算/红字判定",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "会把一环节中的这个倍率给去掉 把这个二环节中的这个穿透给去掉 把三环节中的这个伤害增减给去给去掉 不计算这三个环节中的三个部分",
+          "t_start": 5557,
+          "t_end": 5573
+        }
+      ],
+      "reason": "明确交代了基准伤害在三大计算环节中具体剔除的参数（一环节倍率、二环节穿透、三环节伤害增减），表述完整清晰。",
+      "limitations": []
+    },
+    {
+      "local_id": "c03",
+      "claim": "在常规红字判定中，当实际伤害达到剔除倍率、穿透与伤害增减后的基准伤害的1.5倍及以上时，伤害数字显示为红字；但存在例外情况（如缓存攻击力机制不出红字）。",
+      "subject": "红字判定触发阈值",
+      "condition": "常规伤害判定流程（排除强制红字、缓存攻击力等特例）",
+      "scope": "universal",
+      "category": "伤害结算/红字判定",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "伤害是这个假的伤害的1.5倍就会出红字 但是这里有很多例外啊 比如说那个缓存攻击力是不出红字的",
+          "t_start": 5599,
+          "t_end": 5610
+        }
+      ],
+      "reason": "明确给出了红字判定的倍率阈值（1.5倍）以及对应的判定双方（实际最终伤害 vs 剔除多项修正的基准伤害），并说明了例外边界。",
+      "limitations": [
+        "缓存攻击力干员（如锏、艾拉等）存在不触发红字的特殊表现，且技能强制红字遵循另一套布尔开关判定逻辑"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单的三条候选命题层次分明，逻辑链条完整闭合（机制前提、基准伤害算法、触发阈值比对），逐字稿证据精准对齐，全部符合四大硬性闸门予以保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_307",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:35:32+0900",
+  "source_sha256": "f40eec6aff8af07c808fa913dcb7c69aa27c235c95661165049b172dc1ff8d71",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "当敌方受到的攻击力百分比削弱（直接乘/乘算减益）使其攻击力降至38%，配合固定数值攻击力偷取（如合计偷取324点攻击力）时，根据计算（324÷0.38≈852），最高可将基础攻击力不超过852点的敌人削减至0攻击力，使其无法造成伤害。",
+      "subject": "敌方攻击力属性计算",
+      "condition": "敌方同时承受乘算减攻击（保留38%）与固定数值偷取/削减攻击力（合计324点）",
+      "scope": "universal",
+      "category": "状态效果",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "可以把敌人的攻击力减到38% 那么如果要偷成零的话 就是324÷0.38对852 最高可以把852点攻击力的敌人 直接偷成零",
+          "t_start": 3570,
+          "t_end": 3587
+        },
+        {
+          "text": "让他出不来任何伤害",
+          "t_start": 3587,
+          "t_end": 3599
+        }
+      ],
+      "reason": "主播在属性计算机制教学中，通过推导阐明了局内百分比直接乘削弱（苇草+慕斯降至38%）与数值偷取（掠夺/直接减算324）的先后生效与临界极值关系，属于明确的数值机制推导定论。",
+      "limitations": [
+        "算式假设减攻击百分比直接乘算先于固定数值偷减生效（即攻击力经直接乘缩减后再扣减偷取的固定值）；324数值来源于特定干员（如截云/焰尾等偷攻干员）的实操配队假定。"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单仅有一条关于属性计算公式叠加应用的推导命题。逐字稿中主播清晰阐述了直接乘区间与直接加减区间的计算先后顺序及数值极值推导（324÷0.38≈852），论证闭环，满足四大闸门要求，予以保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

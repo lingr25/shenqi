@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_321",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:39:35+0900",
+  "source_sha256": "bf3a4a673033cd7b9976589d1abb18a929325a083079dd4568f76a2b4f2a4bfa",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "伤害结算流程为攻击力与防御力分别结算后与攻击力×0.5相乘并取整",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "reason": "主播口语表达混乱且概念有误（口误说成'攻击力乘以0.5做取整'，实指伤害保底或特定环节，后文又称'只凭记忆会说漏很多东西'），未能形成逻辑自洽完整的伤害计算公式，违反G1自包含命题与G4定论要求。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "攻击力×0.5并取整的结算步骤完成后存在max下限不能小于零",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "reason": "上下文为主播凭记忆尝试复述PRTS伤害公式时的语焉不详表述（'这里其实也有个max 这里的下限的话 就是这一步结算完之后不能小于零'），且依附于c01混乱的推导过程，缺乏明确自包含的机制规则定义，属于未定论且易误导的碎片口述。"
+    }
+  ],
+  "review_note": "主播在PRTS网页无法打开的情况下凭记忆讲解伤害公式与各环节结算，语序凌乱、口误频出（如'攻击力乘以0.5做一个取整'），命题参数与逻辑关系严重失真，不符合经得起推敲的可复用知识库入库标准，全单判reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

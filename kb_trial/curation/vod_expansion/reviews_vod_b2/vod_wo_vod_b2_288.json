@@ -1,0 +1,85 @@
+{
+  "workorder_id": "vod_wo_vod_b2_288",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-speed",
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:33:44+0900",
+  "source_sha256": "d19f23860ab119c147b6bccb2f996edd4bd3547c43c34afb1dda5ffdafe2d195",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在《明日方舟》属性结算的局外区间中，关卡乘区间采用同类叠乘机制，即多个关卡乘算修正之间按相互乘算结算。",
+      "subject": "局外属性结算的关卡乘区间",
+      "condition": "存在多个关卡乘算修正",
+      "scope": "universal",
+      "category": "属性结算",
+      "evidence": [
+        {
+          "text": "关卡城是一个同类叠城",
+          "t_start": 1529,
+          "t_end": 1548
+        },
+        {
+          "text": "在天然的情况下 这些局外的属性计算就是关卡的词条的 这些属性计算是同类叠乘的",
+          "t_start": 1865,
+          "t_end": 1879
+        }
+      ],
+      "reason": "主播在梳理局外四个属性区间时明确指出关卡乘区间为同类叠乘，并在后文总结天然情况下关卡词条的局外属性计算是同类叠乘，足以支撑该机制结论。",
+      "limitations": [
+        "部分特殊关卡词条若底层先做统一数值加算合并、再作为乘数应用，可能表现为特化的同类叠加处理。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在属性结算的局外区间中，关卡乘区间的结算顺序早于藏品加区间和藏品乘区间；因此同类乘算并不一定排在属性结算的最后。",
+      "subject": "局外属性结算中的关卡乘区间",
+      "condition": "关卡乘区间与藏品加区间、藏品乘区间同时参与局外计算",
+      "scope": "universal",
+      "category": "属性结算",
+      "evidence": [
+        {
+          "text": "有些人会有一种同类成 一定在最后的这样一种想法 但是这是不对的 关卡成就是一种同类叠乘的计算方法",
+          "t_start": 1596,
+          "t_end": 1609
+        },
+        {
+          "text": "但是的话他会在藏品加和藏品城之前嗯",
+          "t_start": 1609,
+          "t_end": 1635
+        }
+      ],
+      "reason": "主播先否定“同类乘一定在最后”的理解，随后明确关卡乘会在藏品加与藏品乘之前结算，给出了局外区间排序的确定结论。",
+      "limitations": [
+        "仅覆盖局外属性结算区间的先后顺序，不涉及局内直接加、直接乘、最终加、最终乘的内部时序。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本次已修正 c02 引文，改为分别从逐字稿 [1596s] 与 [1609s] 两行原样复制连续子串，避免跨行拼接。两个候选均属于局外属性结算流程的通用机制定论：c01 确认关卡乘区间为同类叠乘，c02 确认关卡乘早于藏品加与藏品乘结算，并否定“同类乘必定最后”的误解。",
+  "repair_rounds": 1,
+  "unresolved_problems_auto_demoted": []
+}

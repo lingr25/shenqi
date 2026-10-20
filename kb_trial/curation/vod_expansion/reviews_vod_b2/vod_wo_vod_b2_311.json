@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_311",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:37:16+0900",
+  "source_sha256": "c267791c083040c7c87bd8327f5e1065500c061fd759e756f82c41c7e4756e78",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在属性计算框架中，萨卡兹肉鸽旧版「血肉畸变」的乘算效果位于局外藏品乘算结算之后、进图取整之前，以独立乘区形式进行×0.5结算。",
+      "subject": "血肉畸变（旧版）",
+      "condition": "包含血肉畸变等结算效果的局外属性计算时",
+      "scope": "entity_mechanism",
+      "category": "乘区框架/取整",
+      "evidence": [
+        {
+          "text": "血肉畸变在最开始的话是一个藏品成 结算完之后的额外乘0.5这样一个区间",
+          "t_start": 3884,
+          "t_end": 3898
+        },
+        {
+          "text": "他在局外藏品城之后 在额在额取进图取整之前",
+          "t_start": 3898,
+          "t_end": 3913
+        }
+      ],
+      "reason": "主播详细讲解了底层属性计算的特例乘区层级顺序，明确指出血肉畸变结算在局外藏品乘结算之后、进图取整之前，为确凿的底层机制案例与属性计算时序规则。",
+      "limitations": [
+        "该机制对应早期版本的血肉畸变，后续版本中血肉畸变已被移除或调整，但同类计算区间（如底层带final key的乘区）逻辑仍存。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "命题c01论述了集成战略中特殊乘区在完整属性计算流水线中的位置（局外藏品乘之后、进图取整之前），文本有清晰的定位和参数说明，四闸门全部通过。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

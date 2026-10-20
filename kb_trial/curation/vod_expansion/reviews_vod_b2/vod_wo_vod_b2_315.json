@@ -1,0 +1,85 @@
+{
+  "workorder_id": "vod_wo_vod_b2_315",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed",
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:39:47+0900",
+  "source_sha256": "60cd9c243949c70e0ad65b4807d0a2a5a625e18954f717fa39f1f2a6afa8afa9",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "攻击力倍率在攻击力属性结算完成之后生效，属于属性结算后的倍率提升阶段，先按属性结算再乘倍率以得出该次攻击的数值需求。",
+      "subject": "攻击力倍率",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "伤害结算",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "攻击力倍率是在攻击力属性结算完成之后 然后做的一个倍率提升 就是属性成倍率 然后去回归到这个回归到这一部分 也就是攻击数值的需求",
+          "t_start": 4506,
+          "t_end": 4534
+        }
+      ],
+      "reason": "主播明确解释了攻击力计算时序：面板/属性加成先进行四则运算结算，随后才乘上攻击力倍率，属于机制底层通用规则。",
+      "limitations": [
+        "仅界定了攻击力属性计算与攻击力倍率的先后时序，未展开抗性结算及后续最终伤害乘区"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "claim": "属性Buff提供的攻击力加成会直接应用到所有乘区，而攻击力倍率默认仅对自身绑定的主效果生效，在PRTS或技能描述未特殊强调时优先默认不应用到主效果以外的位置。",
+      "subject": "攻击力倍率与属性Buff的作用范围机制",
+      "condition": "技能或天赋无特殊文本注明扩展生效时",
+      "scope": "universal",
+      "category": "伤害结算",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "攻击力的提升会直接应用到所有东西的乘区",
+          "t_start": 4606,
+          "t_end": 4620
+        },
+        {
+          "text": "但是攻击力倍率只应用于自己应用的内容",
+          "t_start": 4620,
+          "t_end": 4632
+        },
+        {
+          "text": "在PRTS不强调的情况下 优先默认不应用到那个就是",
+          "t_start": 4656,
+          "t_end": 4665
+        }
+      ],
+      "reason": "主播详细对比了攻击力属性Buff与攻击力倍率的生效作用域差异，确立了攻击力倍率默认仅限特定技能动作/主效果生效的通用规则。",
+      "limitations": [
+        "部分干员技能会特殊注明该倍率同时应用至其他天赋或额外伤害（如麒麟R夜刀二技能），此时需以技能特殊文本为准"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单主要探讨攻击力属性计算与攻击力倍率的区别。c01阐述了时序（先属性四则运算结算，再乘以攻击力倍率），c02阐述了生效范围（属性加成全域通用，倍率默认局限于技能主效果）。两项命题均具有明确的底层规则价值，引文均已修正为单行连续字串，予以全部通过。",
+  "repair_rounds": 1,
+  "unresolved_problems_auto_demoted": []
+}
