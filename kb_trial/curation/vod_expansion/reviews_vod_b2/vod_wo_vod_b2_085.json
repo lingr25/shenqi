@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_085",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:45:23+0900",
+  "source_sha256": "105d08ba48051e9d7b2d939931d31337d61421223ef7bf737c0507f8ef27aae0",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "同一干员同时阻挡两个敌人时，较远敌人在阻挡偏移预计算中，若把更早被阻挡的较近敌人的预计落点判定为在自身预计落点的 0.1 以内，则会因此产生顺帧偏移。",
+      "subject": "同时被同一干员阻挡的两个敌人中的较远者",
+      "condition": "同一干员同时阻挡两个敌人，且较近者已被更早阻挡；较远者的预计算落点与较近者预计算落点相距在 0.1 以内",
+      "scope": "universal",
+      "category": "阻挡偏移",
+      "evidence": [
+        {
+          "text": "总之无论有或没有这个计算的预落点 这个预计算的决定的落点 然后的话这个落点的半径0.1之内 如果有更早阻挡的其他敌人",
+          "t_start": 2796,
+          "t_end": 2809
+        },
+        {
+          "text": "同时阻挡两个会判定说就是第一个肯定是更近 这个也就是下面这个第二个是更远 那个更远 那个会在预计算之中",
+          "t_start": 2851,
+          "t_end": 2861
+        },
+        {
+          "text": "认为自己更前面一个的预计落点是自己 0.1之内 然后从而产生一个顺帧偏移",
+          "t_start": 2861,
+          "t_end": 2883
+        }
+      ],
+      "reason": "上下文正在讲解阻挡偏移中“转”的预计算部分：先判断预计算落点 0.1 半径内是否有更早阻挡的敌人，再说明同时阻挡两个时更近者与更远者的判定顺序，并明确更远者会在预计算中认为前一个的预计落点在自己 0.1 之内，从而产生顺帧偏移。上游证据时间戳 160/161 秒有误，实际对应逐字稿的 2851/2861 秒，已在回执中按原文行校正。",
+      "limitations": [
+        "逐字稿未展开顺帧偏移的具体位移量或完整计算式。",
+        "“顺帧偏移”为逐字稿用语，具体帧时序细节未在本窗口内进一步说明。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅一个候选 c01。该命题属于阻挡偏移机制的可复用结论，逐字稿有明确支撑；上游给出的证据秒数不正确，但引文文本可在逐字稿第 2796、2851、2861 秒附近逐行精确匹配，故校正后保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

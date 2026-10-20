@@ -1,0 +1,64 @@
+{
+  "workorder_id": "vod_wo_vod_b2_071",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:40:39+0900",
+  "source_sha256": "c9a7a2b61a7d210eddc39d4ad96b4909603bd26ef67adfc069862f35d2a8fb8f",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "连续型敌人失衡后，如果其激活碰撞箱处于贴墙位置，就可以依靠位置判定进入墙体（穿墙），而不依赖速度过高撞入。",
+      "subject": "连续型敌人的失衡碰撞箱/连续型敌人",
+      "condition": "连续型敌人处于失衡状态，且激活碰撞箱位于贴墙位置",
+      "scope": "entity_mechanism",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "只要在这个位置的话 就是他失衡之后 同样也会即使他是连续性 他按理来讲不能靠速度过高进墙 但是的话他也可以靠像这样在靠位置进墙",
+          "t_start": 1645,
+          "t_end": 1662
+        },
+        {
+          "text": "呐进来了",
+          "t_start": 1662,
+          "t_end": 1674
+        },
+        {
+          "text": "这个就是穿墙",
+          "t_start": 1674,
+          "t_end": 1677
+        },
+        {
+          "text": "他刚才那个穿墙的原因是什么 他是激活碰撞箱的位置",
+          "t_start": 1677,
+          "t_end": 1696
+        }
+      ],
+      "reason": "逐字稿中主播在被审查窗口内明确演示并说明：连续型敌人失衡后在特定贴墙位置也可进墙，且将原因归结为激活碰撞箱的位置，与前文“不能靠速度过高进墙”形成对照。",
+      "limitations": [
+        "逐字稿未给出所有贴墙位置均适用的证明，结论应限缩为激活碰撞箱位于相应贴墙位置的情况。",
+        "未给出具体墙块/墙缝、碰撞箱尺寸、弹出方向参数，仍需实机验证边界。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 具备机制价值且有逐字稿逐字证据支撑；已将其从过宽的“只要贴墙”改写为“激活碰撞箱处于贴墙位置”的可复现条件，保留 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

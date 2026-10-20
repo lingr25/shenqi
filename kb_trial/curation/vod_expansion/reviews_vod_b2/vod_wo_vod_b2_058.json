@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_058",
+  "stem": "BV1GVeb6dEVw_p1_42029417572",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:36:14+0900",
+  "source_sha256": "87044d3002c4d06bc8d5daafadf981678f140a7718cfba10fafaf0248c2e7590",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "推拉位移的落点判定以路径终点周围0.05半径作为坐标匹配范围，用于判断落点是否落在某个坐标点范围内。",
+      "subject": "推拉位移的落点判定",
+      "condition": "需要判断落点是否落在某个坐标点范围内时",
+      "scope": "universal",
+      "category": "落点判定",
+      "evidence": [
+        {
+          "text": "在路径终点0.05半径之内就会飞过这个坑 这是这种判断落点究竟在不在某一个坐标嗯",
+          "t_start": 262,
+          "t_end": 289
+        },
+        {
+          "text": "这是判断这个 落在那个坐标点范围内的一种判定",
+          "t_start": 289,
+          "t_end": 297
+        }
+      ],
+      "reason": "逐字稿在逐帧推拉讲解中给出0.05半径，并明确将路径终点0.05半径与“判断落点究竟在不在某一个坐标”关联；随后又称其为判断落点是否落在坐标点范围内的判定。因此可保留为落点判定的坐标匹配范围规则。",
+      "limitations": [
+        "逐字稿未明确半径内/外的具体结果；候选原句“位于半径内会飞过坑”存在漏字或语义不清，未作为定论纳入。",
+        "0.05的单位与坐标系定义未在逐字稿中进一步说明。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本单仅一个候选。候选核心的0.05半径落点判定有逐字稿直接支撑，但原命题把“在半径内”与“飞过坑”强行绑定，转写文本语义可能漏字；回执保留可验证的“0.05半径用于判断落点是否在某坐标点范围内”部分，并将其余不确定处列入limitations。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

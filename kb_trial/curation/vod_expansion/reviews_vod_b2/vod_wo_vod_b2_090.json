@@ -1,0 +1,112 @@
+{
+  "workorder_id": "vod_wo_vod_b2_090",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:47:33+0900",
+  "source_sha256": "0637c9ee5cbd46b3cd821f8e7c99bda3e50cdd67fa5ce954be92630cabeaef11",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "多个敌人同时被阻挡时，在完成延长操作后若没有延长操作，预计算点保持原点不动；随后会判断0.1半径之内是否存在更早被阻挡的预计算点。",
+      "subject": "多敌人阻挡偏移中的预计算点",
+      "condition": "多个敌人同时被阻挡；无延长操作时",
+      "scope": "universal",
+      "category": "位移/阻挡偏移",
+      "evidence": [
+        {
+          "text": "然后阻挡多个敌人时 在完成延长操作后 如果没有延长操作 那就是原点不动这个预计算点 然后会去判断0.1半径之内",
+          "t_start": 3183,
+          "t_end": 3197
+        },
+        {
+          "text": "是否有更早的已经被阻挡的这个预计算点",
+          "t_start": 3197,
+          "t_end": 3211
+        }
+      ],
+      "reason": "上下文连续说明多敌人阻挡后预计算落点的处理，并明确要判断0.1半径内更早被阻挡的预计算点。",
+      "limitations": [
+        "“延长操作”的具体条件与几何中心未在逐字稿中展开。",
+        "0.1半径的圆心在口播中未显式命名，依上下文理解为该预计算点附近。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "多敌人阻挡偏移计算中，某个敌人最开始判定阻挡的位置记为A点；其被推挤到0.5边界或原地不动的预计算点记为B点；若A点在0.5半径之外，则A点就是B点。",
+      "subject": "多敌人阻挡偏移中的单个敌人预计算点（A点/B点）",
+      "condition": "发生推挤判定；A点在0.5半径之外",
+      "scope": "universal",
+      "category": "位移/阻挡偏移",
+      "evidence": [
+        {
+          "text": "说成A这个推挤到0.5边界 又或者是原地不动 说成是点B如果在0.5半径之外 A点就是B点",
+          "t_start": 3211,
+          "t_end": 3226
+        }
+      ],
+      "reason": "口播直接定义A点与B点，并给出A点在0.5半径之外时A点等于B点的边界处理。",
+      "limitations": [
+        "“如果在0.5半径之外”的主语在逐字稿中省略，依据上下文补为A点。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c03",
+      "claim": "在多敌人阻挡偏移计算中，比当前敌人更早被阻挡的敌人的最终落点记为C点，且该C点也是预计算得到的点。",
+      "subject": "更早被阻挡敌人的最终落点（C点）",
+      "condition": "多敌人阻挡偏移中当前敌人判断周围更早敌人的预计算点时",
+      "scope": "universal",
+      "category": "位移/阻挡偏移",
+      "evidence": [
+        {
+          "text": "不是B1B2呃 我这里搞错了 四一和C2 四一和C2 C是那个阻挡的最终落点 也是预计算出来的点",
+          "t_start": 3252,
+          "t_end": 3267
+        },
+        {
+          "text": "就是说比他更早的阻挡的敌人 将被阻挡的最终落点 他会判呃 他会在就是3号 敌人会在B3这个位置判断 所有比他早的敌人的C点",
+          "t_start": 3267,
+          "t_end": 3282
+        }
+      ],
+      "reason": "主播在口播中纠正命名，明确C是阻挡的最终落点且为预计算点，并说明当前敌人会判断所有更早敌人的C点。",
+      "limitations": [
+        "逐字稿中C1被ASR写作“四一”，本命题按上下文以C点概括，未复述具体编号。",
+        "该条主要价值是定义C点；口播误称过程不作为游戏机制本体。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单三条候选均来自同一段多敌人阻挡偏移机制讲解，逐字稿可支撑A/B/C预计算点及0.1/0.5半径判定。已按自包含要求补全主语与条件，未引入逐字稿外的新结论；c03仅保留C点定义，不复述口播误称。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

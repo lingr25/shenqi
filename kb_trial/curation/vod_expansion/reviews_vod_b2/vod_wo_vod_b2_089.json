@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_089",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:46:16+0900",
+  "source_sha256": "0a7b8683070578bf041b2ad48fa044d252423229d242411457bcda27f98facef",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "敌人被干员阻挡并发生阻挡偏移时，会被延长到0.5边界；当最终被挤到0.5边界后，即使该位置不在干员的阻挡半径内，已建立的阻挡也不会解除。",
+      "subject": "被干员阻挡并发生阻挡偏移的敌人",
+      "condition": "敌人被干员阻挡且发生阻挡偏移，最终被挤到0.5边界，且最终位置不在干员阻挡半径内",
+      "scope": "universal",
+      "category": "阻挡机制",
+      "evidence": [
+        {
+          "text": "然后发生阻挡的结果是什么 它会延长到0.5边界 把敌人从这里挤到这里去 让敌人最终被挤在这个位置",
+          "t_start": 3134,
+          "t_end": 3150
+        },
+        {
+          "text": "让敌人最终被挤在这个位置 注意这个位置不在阻挡半径之内 但是无所谓阻挡 没有说在阻挡半径之内就会呃 在阻挡半径之外就会解除阻挡",
+          "t_start": 3150,
+          "t_end": 3164
+        }
+      ],
+      "reason": "上下文明确说明发生阻挡后的结果是把敌人延长/挤到0.5边界，并特别强调该位置即使不在阻挡半径之内，也不会因此解除阻挡，属于对常见误解的纠正性机制结论。",
+      "limitations": [
+        "逐字稿未给出阻挡解除的完整条件枚举，例如死亡、不可阻挡等其它状态变化。",
+        "本条依赖讲解结论，未在本段转写中展示独立的逐帧实验验证。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 属于阻挡偏移机制中的明确结论，逐字稿两段引文均可字符级对齐，且已补齐自包含主体与条件。上游 evidence 时间戳与工单窗口不符，本回执已按 transcript_window 原始时间戳修正。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

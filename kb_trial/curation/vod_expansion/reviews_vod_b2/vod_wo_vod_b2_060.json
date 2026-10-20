@@ -1,0 +1,84 @@
+{
+  "workorder_id": "vod_wo_vod_b2_060",
+  "stem": "BV1GVeb6dEVw_p1_42029417572",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:36:06+0900",
+  "source_sha256": "dcc10c78e7965f8c66502af0daf0cbeb99d3794cdecdd2e8633f0a346d448b8f",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "物理碰撞箱的形状是胶囊型。",
+      "subject": "物理碰撞箱",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "碰撞判定",
+      "evidence": [
+        {
+          "text": "然后的话物理碰撞箱是是一个这样的",
+          "t_start": 332,
+          "t_end": 344
+        },
+        {
+          "text": "这样的胶囊型 它们之间有多少距离算碰撞",
+          "t_start": 350,
+          "t_end": 358
+        }
+      ],
+      "reason": "上下文在讲推拉失衡与斜磕墙碰撞时，明确称物理碰撞箱是这样的胶囊型，可提炼为形状定论。",
+      "limitations": [
+        "未交代不同实体或方向上的胶囊尺寸差异。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "两个胶囊碰撞箱之间的距离定义为 L，L 用于判断两个碰撞箱是否发生碰撞。",
+      "subject": "两个胶囊碰撞箱之间的距离 L",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "碰撞判定",
+      "evidence": [
+        {
+          "text": "这样的胶囊型 它们之间有多少距离算碰撞",
+          "t_start": 350,
+          "t_end": 358
+        },
+        {
+          "text": "这个距离我们定义为L吧",
+          "t_start": 358,
+          "t_end": 372
+        }
+      ],
+      "reason": "逐字稿先问两个碰撞箱之间有多少距离算碰撞，随后明确把该距离定义为 L，构成可复用的碰撞判定参数定义。",
+      "limitations": [
+        "具体阈值在转写中有 ASR 重复与噪声，本命题只采纳 L 的定义与用途，不采纳阈值。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单两条候选均来自推拉失衡与斜磕墙碰撞判定的白板讲解。逐字稿直接支持物理碰撞箱为胶囊型，并将两个碰撞箱间距定义为 L 用于碰撞判断；未见猜测、反问或纯画面指涉，故均判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

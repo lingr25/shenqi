@@ -1,0 +1,75 @@
+{
+  "workorder_id": "vod_wo_vod_b2_059",
+  "stem": "BV1GVeb6dEVw_p1_42029417572",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:36:11+0900",
+  "source_sha256": "d32c3bd03a78f816bed4f074bdb4ee851d29fb7ca05680e6a0bbc5ac1315c1dd",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "推拉失衡碰撞存在预处理：当两个碰撞箱重叠并深入一定距离时，先在两个碰撞箱的重叠位置判定碰撞，再磨损碰撞箱对应的速度并把碰撞箱挤出去。",
+      "subject": "推拉失衡中的碰撞判定",
+      "condition": "两个碰撞箱重叠并深入一定距离时",
+      "scope": "universal",
+      "category": "碰撞判定/帧时序",
+      "evidence": [
+        {
+          "text": "我们说它只在落点检测那个判定进坑啊 进门什么的 但是如果是失衡碰撞的话 他会有一个预处理的地方 就是这个这个边界",
+          "t_start": 393,
+          "t_end": 406
+        },
+        {
+          "text": "它会在那个两个碰撞箱重叠 深入这样的距离的时候 然后的话判定啊我在这个地方做一个碰撞 然后的话再然后去磨损对应的速度",
+          "t_start": 406,
+          "t_end": 420
+        },
+        {
+          "text": "然后把它挤出去 这个碰撞的话 如果是斜坡强",
+          "t_start": 420,
+          "t_end": 427
+        }
+      ],
+      "reason": "逐字稿连续给出：正常只在落点检测，但失衡碰撞有预处理；碰撞箱重叠深入到一定距离时先做碰撞判定，再磨损速度并挤出。该命题有明确主体、条件与机制顺序，属于可复用规则。",
+      "limitations": [
+        "“深入一定距离”的具体阈值未在命题中给出；前文口述的 0.01、0.005、-0.005 等参数转写疑似有 ASR 误差，需人工复核。",
+        "“磨损”为逐字稿原词，具体实现术语待确认。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "推拉失衡违背正常碰撞箱只在落点检测的逻辑。",
+      "verdict": "reject",
+      "reason": "与 c02 重复；c02 更完整地描述了同一推拉失衡碰撞预处理机制，按同工单去重规则保留 c02。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "DUP"
+      ]
+    }
+  ],
+  "review_note": "本工单中 c02 由逐字稿连续原文支撑，机制时序完整，判 keep；c01 为同一机制的较粗粒度概括，按重复排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

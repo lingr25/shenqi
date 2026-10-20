@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_042",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:25:46+0900",
+  "source_sha256": "26061cb791f0493cb1dfb1fffead8b18977dc52f484eeee997148cd5ca784a30",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在任何层地图中，与起点相连的节点都有特定的范围；在一层和二层地图中，与起点相连的节点一定是作战。",
+      "subject": "与起点相连的节点",
+      "condition": "地图为一层或二层（第一分句为全域通用）",
+      "scope": "universal",
+      "category": "地图生成/节点生成",
+      "evidence": [
+        {
+          "text": "那正是因为有这么一个机制 在任何层图中 与起点相连的节点都有特定的范围 例如在一层和二层与起点相连的一定是作战",
+          "t_start": 6143,
+          "t_end": 6149
+        }
+      ],
+      "reason": "上下文以“为什么一层出门一定有作战”引入，明确给出通用范围规则，并直接说明一层和二层与起点相连节点一定是作战，可支撑该结论。",
+      "limitations": [
+        "逐字稿只明确一层/二层的“一定是作战”，更一般的“特定范围”未在本命题中展开；主播提到样本规模较小并计划后续扩充数据。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "三层地图中与起点相连的节点只可能是作战、步骑驱除密道中产。",
+      "verdict": "pending",
+      "reason": "逐字稿中节点列表“作战 步骑驱除密道中产”缺少可靠分隔且疑似 ASR 错讹，无法确定三层候选节点的准确集合；机制有价值，需人工听审或后续数据核实。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1"
+      ]
+    },
+    {
+      "local_id": "c03",
+      "topic": "与起点相连的节点范围随层数加深而扩大：四层地图中气垫周围还可能出现林间空地，五层地图中该范围还会加入德常诡异、秘境和世德等节点。",
+      "verdict": "pending",
+      "reason": "“气垫”在上下文中应指“起点”但属 ASR 错字，且“德常诡异、秘境和世德”等五层节点名无法可靠辨认；关键参数缺失，不能形成可入库定论。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1"
+      ]
+    }
+  ],
+  "review_note": "本工单仅 c01 的一层/二层定点结论有明确逐字稿支撑，可 keep；c02、c03 涉及关键节点名称和层数范围，但转写严重乱码/错字，留待人工听审或后续数据验证。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

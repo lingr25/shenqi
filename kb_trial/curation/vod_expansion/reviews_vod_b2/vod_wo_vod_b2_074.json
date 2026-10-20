@@ -1,0 +1,65 @@
+{
+  "workorder_id": "vod_wo_vod_b2_074",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:41:08+0900",
+  "source_sha256": "41e368a47c3b08bcc7e686bbb0f0c11528f7dda293aa0ffc6547e48578666382",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "避障力属于寻路力体系。",
+      "subject": "避障力",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "避障力是寻路力 避障力是寻路力 寻路力啊",
+          "t_start": 1931,
+          "t_end": 1946
+        }
+      ],
+      "reason": "主播在该处明确将避障力归类为寻路力，并重复强调“避障力是寻路力”，属于可复用的机制分类结论。",
+      "limitations": [
+        "未进一步说明避障力在寻路力体系内的具体层级与子类。",
+        "未展开避障力与推拉力、碰撞箱、阻挡偏移等机制的交互细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "单位处于晕眩或失衡状态时无法触发避障力。",
+      "verdict": "reject",
+      "reason": "原文为反问句“他在晕着 怎么触发避障力”，属于主播的疑问/未闭合推断，不是已验证定论；且候选将“晕着”扩展为“晕眩或失衡”，其中“失衡”条件在引文中没有依据。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单中 c01 具有明确逐字稿支撑，主播将避障力归入寻路力体系，可作为通用分类结论保留。c02 来源于反问句与未闭合推断，且条件被过度扩展为“晕眩或失衡”，应排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,89 @@
+{
+  "workorder_id": "vod_wo_vod_b2_072",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:42:16+0900",
+  "source_sha256": "f390e0cb634b1922f4c6f6f271e81a221150f40a2059c19198fe2bea485e98aa",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "未合并的独立墙体会各自按距离最近的弹出方向进行挤压弹出判定；当两块独立墙体分别位于单位左右两侧时，它们只向单位提供左右方向的挤压，不会削减或阻挡单位在上下方向的速度。",
+      "subject": "未合并的独立墙体（左右两侧各一块）",
+      "condition": "墙体未合并为一块，且两块独立墙体分别位于单位左右两侧",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "在这个位置对于每一块墙 它要往最近的弹出方向弹出",
+          "t_start": 1696,
+          "t_end": 1711
+        },
+        {
+          "text": "他因为那个两块墙都只给他提供左右的挤",
+          "t_start": 1711,
+          "t_end": 1722
+        },
+        {
+          "text": "不会它磨损它上下的速度",
+          "t_start": 1722,
+          "t_end": 1726
+        }
+      ],
+      "reason": "主播明确说明每块独立墙按最近弹出方向结算，且左右两墙只提供左右挤压、不影响上下速度，属于可复用位移判定；后文修正针对水平停靠位置，不否定本句的方向分量结论。",
+      "limitations": [
+        "后续实机观察显示左右两墙的水平挤出结果不一定对称居中，右墙可能胜过左墙；本条只约束挤压方向与速度分量，不给出水平最终停靠点。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "卡在两块独立墙体之间的单位若未进入失衡状态会持续卡在墙间而不会向下移动；一旦受到任意来源的失衡状态，在失衡持续时间内单位会向下移动并穿墙，该效果与施加位移的力度大小无关。",
+      "subject": "卡在两块独立墙体之间的单位",
+      "condition": "单位卡在未合并的两块独立墙体之间；失衡分支要求单位处于失衡状态持续时间内",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "然后之后但是因为如果不失衡的话 他就是一直卡在这 然后受到一个失衡 就不管力度大小 你可以不是可以",
+          "t_start": 1749,
+          "t_end": 1756
+        },
+        {
+          "text": "不是问你可以任何一个东西给他一个失衡 然后之后他有失衡时间 它就往下走",
+          "t_start": 1756,
+          "t_end": 1768
+        }
+      ],
+      "reason": "主播明确说明未失衡会一直卡住，受到任意来源失衡后只要处于失衡时间就会往下走，且不受力度大小影响；原命题中“停在中间”被后文修正，故改写为“卡在墙间、不向下移动”以保留可复用失衡穿墙机制。",
+      "limitations": [
+        "未失衡时的具体横向停靠位置受两墙胜负影响，并非严格居中；逐字稿未穷举所有可施加失衡的来源。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两候选均有逐字稿明确支撑。c01保留独立墙左右挤压与上下速度不受影响的结论；c02保留失衡触发向下穿墙且与力度无关，但剔除后文已否定的“停在正中间”表述。后续偏左/右墙胜过左墙的未解释异常未作为机制命题纳入。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

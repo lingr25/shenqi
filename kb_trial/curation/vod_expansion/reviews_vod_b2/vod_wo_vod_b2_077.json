@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b2_077",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:42:13+0900",
+  "source_sha256": "fc999606dc90456314c7056a87a606e1c108cbb3dca52093d52ebeb0b77ed41c",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在敌方单位可被阻挡且干员阻挡数等条件允许的前提下，干员（角色类单位）对敌方单位进行阻挡判定时，使用的是双方实体坐标而非寻路光标；当干员与敌人的实体坐标之间的距离小于该干员的阻挡半径时，该敌人满足阻挡判定的距离条件。",
+      "subject": "干员（角色类单位）对敌人类单位的阻挡判定",
+      "condition": "使用实体坐标而非寻路光标；干员与敌人的实体坐标距离小于干员阻挡半径；并需满足敌人可被阻挡、干员阻挡数等其它阻挡前提。",
+      "scope": "universal",
+      "category": "阻挡判定",
+      "evidence": [
+        {
+          "text": "当角色的坐标和敌人的坐标 这个坐标指的是实体坐标 不是寻路光标 实体坐标 之间的距离小于角色阻挡半径时 敌人就可以判定为阻挡",
+          "t_start": 2321,
+          "t_end": 2335
+        },
+        {
+          "text": "所以很多东西都是角色类单位说了算 比如说能嗯能不能阻挡 这个看距离 也看敌我的这个阻挡数和可阻挡属性之类的 对吧",
+          "t_start": 2215,
+          "t_end": 2228
+        }
+      ],
+      "reason": "逐字稿明确给出阻挡判定的距离条件：角色与敌人实体坐标距离小于角色阻挡半径时判定为阻挡，并强调该坐标是实体坐标而非寻路光标。另一段同时说明能否阻挡还要看阻挡数和可阻挡属性，因此采纳时将上游过于绝对的原句改写为“距离条件”，并补全其它前提，使其成为自包含且可复用的底层阻挡规则。",
+      "limitations": [
+        "本命题只覆盖阻挡判定中的距离条件与坐标类型，未展开每三帧扫描、优先阻挡最近敌人等时序与选择逻辑。",
+        "不同干员阻挡半径可能变化（如起飞等特殊情形），本命题未枚举具体数值。",
+        "不可阻挡 Buff、钩索师/解放者等额外阻挡判定分支未在本命题中展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅有一个候选 c01，讨论的是阻挡判定中使用实体坐标且距离小于阻挡半径的距离条件。逐字稿中有直接陈述，并有相邻内容补充阻挡数、可阻挡属性等前提；因此裁定 keep，并将上游绝对化表述改写为更准确的“距离条件”，避免忽略其它阻挡前提。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,136 @@
+{
+  "workorder_id": "vod_wo_vod_b2_049",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:30:00+0900",
+  "source_sha256": "bf0c0d7c5af08a0e8536c9c2e59c366b552621d8177c308755826ad15337ca0d",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "居民据点节点掉落的第一个零件，其掉落范围与普通作战一致。",
+      "subject": "居民据点节点掉落的第一个零件",
+      "condition": "居民据点节点",
+      "scope": "entity_mechanism",
+      "category": "资源掉落/节点收益",
+      "evidence": [
+        {
+          "text": "居民据点的第一个零件掉落范围与普通一致",
+          "t_start": 6603,
+          "t_end": 6610
+        }
+      ],
+      "reason": "逐字稿明确称居民据点的第一个零件掉落范围与普通一致，属于该节点的掉落池规则。",
+      "limitations": [
+        "未给出普通作战与居民据点第一个零件的具体掉落范围参数或概率。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "居民据点会刷新丰饶树种，因此其零件池中概念体占比大幅下降、自然物种类更丰富，玉米、多重苔藓、双清树均能出现。",
+      "subject": "居民据点的零件池",
+      "condition": "居民据点节点刷新丰饶树种",
+      "scope": "entity_mechanism",
+      "category": "资源掉落/节点收益",
+      "evidence": [
+        {
+          "text": "但居民据点毕竟刷新的丰饶树种 实则却好得多 不仅概念体占比大幅下降 并且自然的种类也更丰富 玉米多重苔藓 双清树都能出现",
+          "t_start": 6623,
+          "t_end": 6629
+        }
+      ],
+      "reason": "逐字稿将居民据点刷新丰饶树种与其零件池中概念体占比下降、自然物种类增多直接关联，并列举玉米、多重苔藓、双清树。",
+      "limitations": [
+        "未给出各项自然物的具体概率或丰饶树种影响池子的精确权重。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "在居民据点的零件池中，只有浪花的出现概率最高，加工品、自然物、白毛概念体都以比较均匀的概率出现。",
+      "subject": "居民据点的零件池",
+      "condition": "居民据点节点",
+      "scope": "entity_mechanism",
+      "category": "资源掉落/节点收益",
+      "evidence": [
+        {
+          "text": "但在这个零件池里 只有浪花的出现概率最高",
+          "t_start": 6629,
+          "t_end": 6634
+        },
+        {
+          "text": "加工品自然物以及白毛概念体 都以比较均匀的概率出现",
+          "t_start": 6637,
+          "t_end": 6645
+        }
+      ],
+      "reason": "逐字稿明确区分浪花最高概率与其他类别较均匀概率，构成该节点零件池分布结论。",
+      "limitations": [
+        "未给出具体概率数值；‘浪花’等术语按逐字稿保留。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c04",
+      "claim": "居民据点节点可掉落两个零件，但其两个零件掉落池的质量远不如下路与秘境情商节点。",
+      "subject": "居民据点的零件掉落池",
+      "condition": "居民据点节点",
+      "scope": "entity_mechanism",
+      "category": "资源掉落/节点收益",
+      "evidence": [
+        {
+          "text": "这点很多时候被认为强 只是因为能掉落两个零件",
+          "t_start": 6637,
+          "t_end": 6645
+        },
+        {
+          "text": "但这两个零件的池子都远不如下路和秘境情商 如果想找玉米等自然物 还是得优先去这两个节点",
+          "t_start": 6645,
+          "t_end": 6649
+        }
+      ],
+      "reason": "逐字稿说明居民据点被认为强是因为能掉落两个零件，但两个零件池远不如下路和秘境情商节点；据此保留可复用节点收益结论，剔除‘应优先去’的攻略建议。",
+      "limitations": [
+        "未给出‘远不如’的具体概率或池组成参数；‘秘境情商’为逐字稿原词，疑为ASR或术语错误但未在审读中校正。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "四个候选均有逐字稿直接支撑，可整理为居民据点节点收益与零件池规则；其中 c04 的‘应优先去’属攻略建议，已剔除，仅保留可复用事实。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

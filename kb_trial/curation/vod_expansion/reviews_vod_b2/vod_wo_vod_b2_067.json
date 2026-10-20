@@ -1,0 +1,89 @@
+{
+  "workorder_id": "vod_wo_vod_b2_067",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:39:38+0900",
+  "source_sha256": "4e8758b0ef4dc1bc68f2ba65c2e91d4ef5b6a041e6abb7accf51b87a02d85eca",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在《明日方舟》中，Unity 的位移结算采用离散型落点；当敌人失衡的最终位移结果落在墙缝等离散位置时，可能导致敌人无法向外弹出墙，这是卡墙现象的成因之一。",
+      "subject": "Unity 位移结算与敌人失衡最终位移判定",
+      "condition": "敌人失衡位移的最终落点位于墙缝等离散位置时",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "然后则是他的失衡的最终位额 最终位移结果 然后的话导致他无法向外弹出墙 这是一这是两个问题 一个是unity的设置是离散型的问题",
+          "t_start": 755,
+          "t_end": 769
+        }
+      ],
+      "reason": "主播明确将卡墙归因于 Unity 设置离散型，并称最终位移结果导致无法向外弹出墙；结合前文墙缝落点讨论，可形成可复用成因命题。",
+      "limitations": [
+        "具体 Unity 离散结算的内部计算过程未在逐字稿中说明；‘离散格点/离散位置’为对‘离散型’的规范化表述。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "《明日方舟》的墙由多块独立碰撞体拼接，墙与墙之间存在墙缝；当敌人失衡的最终位移落点位于两块墙之间时，左右墙会给出相反方向的挤推并判定在权重平衡处，导致敌人无法向外弹出，这是卡墙问题的另一成因，并与 Unity 离散型落点问题叠加。",
+      "subject": "墙体碰撞体布局与失衡落点判定",
+      "condition": "敌人失衡最终位移落点位于两块独立墙体的墙缝/中间时",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "找一下图 我们知道墙是一块一块的 墙和墙之间实际上是有墙缝的 如果一个落点对于一颗墙 来一颗墙来讲 他应该往右挤",
+          "t_start": 508,
+          "t_end": 520
+        },
+        {
+          "text": "然后对于另一块墙来讲 他应该往左挤 也就是说如果这个落点在两块墙的中间 他会怎么样",
+          "t_start": 520,
+          "t_end": 533
+        },
+        {
+          "text": "然后的话他们经过有尼铁的计算 这个具体计算过程是什么 我也不清楚 总之就是会判定他在两个墙的这个 权重的平衡处 也就是中间位置",
+          "t_start": 743,
+          "t_end": 755
+        },
+        {
+          "text": "一个是unity那个呃 一个是离散型的问题 一个是鹰角没有把这个墙设置成一整块的问题",
+          "t_start": 769,
+          "t_end": 783
+        }
+      ],
+      "reason": "上下文说明墙是一块一块、墙间有缝，落点在两墙中间时左右墙分别往相反方向挤，并判定在权重平衡处；主播随后明确将‘鹰角没有把这个墙设置成一整块’列为另一成因。",
+      "limitations": [
+        "逐字稿未给出墙缝宽度与权重平衡计算的精确参数；‘权重平衡处’为主播对判定位置的总结。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选分别对应主播提出的卡墙两个成因：Unity 离散型位移结算与墙体未设置成一整块/存在墙缝。逐字引文均可在窗口内字符级匹配，上下文给出明确机制结论，故均 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

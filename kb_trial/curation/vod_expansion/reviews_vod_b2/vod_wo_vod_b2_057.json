@@ -1,0 +1,37 @@
+{
+  "workorder_id": "vod_wo_vod_b2_057",
+  "stem": "BV1GVeb6dEVw_p1_42029417572",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:35:00+0900",
+  "source_sha256": "dcd948de30fddc1e3b3cd240eb8697828102e28c7b11b10840b6e7d9a74eb63b",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "初雪推动赤金单位、阿消推动赤金单位时，赤金单位没有任何一帧落在蓝门上，因此飞过蓝门。",
+      "verdict": "reject",
+      "failed_gates": [
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "reason": "引文可在逐字稿 247s 行中字符级匹配，且命题可自包含理解为一次具体实例；但该候选只是对一次实战现象的复述，未交代初雪/阿消所用技能、等级、赤金单位速度、站位、推动方向与帧数等可复现参数，也未给出稳定触发条件。按 Gate 4，纯实战观察若无明确参数与可复现条件，不具备可复用规则价值，应予排除。"
+    }
+  ],
+  "review_note": "本工单仅有一个候选 c01。其逐字引文对齐通过，但内容是特定实例观察，不是可复现的机制定论；真正具有规则价值的是上下文中的通用逐帧无中间落点判定，而非本候选所抽取的具体现象，故判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,86 @@
+{
+  "workorder_id": "vod_wo_vod_b2_087",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:46:16+0900",
+  "source_sha256": "8cfd2284eb3d1702124643489f880d8d2c029e48f11cf89cdf0ba8fa73d1ece1",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "阻挡偏移的总持续时间为 0.2；当一次阻挡偏移同时包含挤与转时，挤与转的位移计算会合并为一次从挤的起点 A 直达转的落点 C 的直线偏移，A 到 C 用时六帧；计算上会经过中间点 B，但不会先移动到 B 再移动到 C，而是直接沿直线移动到 C。因此挤与转属于同一套逻辑。",
+      "subject": "阻挡偏移的挤与转合并计算",
+      "condition": "一次阻挡偏移同时包含挤与转的位移计算时",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "最典型的说他们不能分开的理由是什么 是因为阻挡偏移的总持续时间是0.2 挤的部分的计算和转的部分的计算会合并出来",
+          "t_start": 2929,
+          "t_end": 2943
+        },
+        {
+          "text": "中间点是点B然后转是点C 从A是直接偏移到C的 A虽然在计算上会经过B的步骤 但是A不会往B走一趟 再往C走 A会直接直线的往C走",
+          "t_start": 2957,
+          "t_end": 2975
+        },
+        {
+          "text": "A到C的时时间就是六帧 A到C的这个位移就是直线的 这是决定了说己和转是同一套逻辑的 最根本的原因 他们不是分开的",
+          "t_start": 2975,
+          "t_end": 2992
+        }
+      ],
+      "reason": "逐字稿明确将阻挡偏移总持续时间、挤转合并计算、A 直达 C 的直线偏移与六帧用时作为挤与转同属一套逻辑的理由，属于可复用机制结论。",
+      "limitations": [
+        "逐字稿未明确 0.2 的时间单位；六帧与 0.2 的换算关系未在该引文中直接展开。",
+        "未展开不同速度或不同阻挡数量下的具体计算细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "阻挡偏移中的“转”以“挤”的落点作为计算依据，但“转”的发生时间不是在“挤”已经到达落点之后，而是在计算完要挤到的落点之后就直接开始。",
+      "subject": "阻挡偏移的转部分",
+      "condition": "阻挡偏移中的转以挤的落点作为计算依据时",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "虽然转会以己的落点做计算 但是它的时 它的发生时间不会发生在已经挤到落点之后 而会发生在已经计算完要挤到那个落点之后",
+          "t_start": 2992,
+          "t_end": 3007
+        }
+      ],
+      "reason": "逐字稿直接说明转的计算依据与发生时间：转虽以挤的落点为依据，但其发生时间在预计算完成挤落点后即开始，而非实际到达挤落点后。该结论明确且可复用。",
+      "limitations": [
+        "逐字稿未给出转开始的具体帧号，只说明计时逻辑。",
+        "未展开转与挤同时发生时的完整预计算流程图。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均为阻挡偏移机制讲解中的明确结论，逐字稿文本可逐字对齐；上游 evidence 秒数标注与 transcript_window 实际行不一致，回执已按实际行修正。c01 与 c02 分别为总时长/合并路径与转的计时起点，互补且不判重复。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

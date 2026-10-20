@@ -1,0 +1,147 @@
+{
+  "workorder_id": "vod_wo_vod_b2_039",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:25:53+0900",
+  "source_sha256": "945bda622a41713016021b36449f5dfa527b22cfe9bd6763c7611b05b339b3fa",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "致命据点需要N4及以上难度，才会在第2、4、5层出现。",
+      "subject": "致命据点",
+      "condition": "难度为N4及以上",
+      "scope": "universal",
+      "category": "机制类别/寻路",
+      "evidence": [
+        {
+          "text": "致命据点需要N4及以上难度 才会在245层出现",
+          "t_start": 5886,
+          "t_end": 5892
+        }
+      ],
+      "reason": "逐字稿在讲解石托邦范围后直接给出致命据点的出现难度和层数限制；原文“245层”按上下文规范为第2、4、5层。",
+      "limitations": [
+        "原文写作“245层”，需依赖上下文理解为第2、4、5层。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "致命据点生成流窜居民的数量固定：在除追忆和树洞外的层中生成3个流窜居民，在居民树洞中生成6个流窜居民。",
+      "subject": "致命据点的流窜居民生成",
+      "condition": "所在层为非追忆且非树洞层时为3个；所在层为居民树洞时为6个",
+      "scope": "universal",
+      "category": "机制类别/寻路",
+      "evidence": [
+        {
+          "text": "在除了追忆和树洞层数中 致命据点会固定帮助三个流窜的居民",
+          "t_start": 5892,
+          "t_end": 5898
+        },
+        {
+          "text": "在居民数目中 流窜居民固定为六个 居民树洞中",
+          "t_start": 5955,
+          "t_end": 5964
+        }
+      ],
+      "reason": "逐字稿明确非追忆、非树洞层中致命据点固定产生三个流窜居民，并在居民树洞段落中说明流窜居民固定为六个。",
+      "limitations": [
+        "原文“帮助三个流窜的居民”为口语/ASR 表述，规范为生成三个。",
+        "“居民数目中”按上下文指居民树洞。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "流窜居民从致命据点出发，按地图实际路线进行最多5步移动，以寻找林间空地驻扎。",
+      "subject": "流窜居民",
+      "condition": "致命据点生成流窜居民后",
+      "scope": "universal",
+      "category": "机制类别/寻路",
+      "evidence": [
+        {
+          "text": "这三个独创的居民会从致命之点出发 从居民据点出发",
+          "t_start": 5917,
+          "t_end": 5929
+        },
+        {
+          "text": "按照地图实现的路线进行最多五步的移动 直到林间空地进行主战",
+          "t_start": 5929,
+          "t_end": 5935
+        }
+      ],
+      "reason": "逐字稿多次说明流窜居民从致命据点出发，沿地图实际路线最多移动五步寻找林间空地驻扎；这是致命据点生成后的寻路规则。",
+      "limitations": [
+        "原文有“独创/致命之点/实现/主战”等 ASR 混杂，按上下文规范为流窜居民、致命据点、实际路线、驻扎。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c04",
+      "claim": "流窜居民数量少于3个只有两个原因：致命据点周围没有满足条件的林间空地，或通过追忆再次进入第4层；追忆的第4层不会再次生成3个流窜居民。",
+      "subject": "流窜居民数量",
+      "condition": "常规层本应生成3个流窜居民",
+      "scope": "universal",
+      "category": "机制类别/寻路",
+      "evidence": [
+        {
+          "text": "而如果通过追忆又建了一次四层 这个时候的流窜居民并不会过意生成三个",
+          "t_start": 5935,
+          "t_end": 5941
+        },
+        {
+          "text": "只有两个原因 一个是军民军点周围没有合适的连接封闭 另一个则是进入了追忆的四层",
+          "t_start": 5941,
+          "t_end": 5948
+        },
+        {
+          "text": "如果居民居点周围没有满足条件的林间空地 则流窜居民数量会少于三个",
+          "t_start": 5955,
+          "t_end": 5964
+        }
+      ],
+      "reason": "逐字稿明确列出流窜居民少于三个的两个原因，并说明追忆第4层不会再次生成三个流窜居民。",
+      "limitations": [
+        "原文“军民军点/连接封闭/过意生成/居民居点”为 ASR 噪声，按上下文规范为致命据点周围无合适林间空地、追忆第4层不再次生成3个。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "四条候选均可在逐字稿后段李雪机制讲解（约5886-5970秒）找到机制依据。上游 evidence 的时间戳与部分引文存在错标/跨行拼接，本次终审已按 transcript_window 原行重新对齐，并把 ASR 错字规范为可读术语。c01-c04 均为可复用的节点/寻路规则，未发现未闭合猜测或反问，故全部 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

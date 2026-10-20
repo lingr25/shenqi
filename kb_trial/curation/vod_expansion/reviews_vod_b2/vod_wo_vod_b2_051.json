@@ -1,0 +1,122 @@
+{
+  "workorder_id": "vod_wo_vod_b2_051",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:33:59+0900",
+  "source_sha256": "18a1be6fbab3d8e203ad3ae53545a303b197aafa26a758826066702e835644d1",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在误入其境事件中，双人版本只会在第四层和第五层出现；第四层的搏杀和共斗各有50%的概率出现；单人版与多人版的出现占比在第四层为三比一，在第五层为一比三。",
+      "subject": "误入其境事件中的双人版本、搏杀/共斗及单人/多人版本分布",
+      "condition": "在误入其境事件池中，按出现层数为第四层或第五层判定",
+      "scope": "universal",
+      "category": "地图生成/节点构造",
+      "evidence": [
+        {
+          "text": "双人只会在四五层出现",
+          "t_start": 6696,
+          "t_end": 6703
+        },
+        {
+          "text": "搏杀和共斗 会以各50%的概率出现",
+          "t_start": 6696,
+          "t_end": 6703
+        },
+        {
+          "text": "单人与多人的出现占比为珊比一 五层则是一比三",
+          "t_start": 6703,
+          "t_end": 6708
+        }
+      ],
+      "reason": "逐字稿连续说明误入其境中双人只在四、五层出现，四层搏杀与共斗各50%，并给出四层三比一、五层一比三的单人/多人占比；证据均为逐字原句。",
+      "limitations": [
+        "逐字稿中「珊比一」疑为「三比一」的 ASR 误写；双人/单人/多人的具体版本名称未展开。",
+        "未说明这些概率是否受其他节点、分队或事件效果影响。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在误入其境事件中，诗意的洞只会在第三层出现，不会在第四层和第五层出现；原石之城和消耗螺旋只会在第四层出现。",
+      "subject": "误入其境事件中的事件类型出现层数（诗意的洞、原石之城、消耗螺旋）",
+      "condition": "在误入其境事件池中，按事件类型出现层数判定",
+      "scope": "universal",
+      "category": "地图生成/节点构造",
+      "evidence": [
+        {
+          "text": "诗意的动只会在三层出现 不会在四五层出现",
+          "t_start": 6708,
+          "t_end": 6713
+        },
+        {
+          "text": "原石之城和消耗螺旋 这两种类型的动只会在四层出现",
+          "t_start": 6708,
+          "t_end": 6713
+        }
+      ],
+      "reason": "逐字稿明确区分误入其境不同类型洞的出现层数：诗意的洞仅三层，原石之城和消耗螺旋仅四层。",
+      "limitations": [
+        "逐字稿将「洞」写作「动」，专名可能存在听写误差，需后续校准事件类型标准名。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "在误入其境的红色雾气战斗洞中，不同层出现的构造组合不同：第三层只能出现一字形和中字形，第四层只能出现中字形和三角形，第五层只能出现田字形和三角形；第三层和第四层都可能进入二胡洞或三国洞，第五层只能进入二胡的战斗洞。",
+      "subject": "误入其境的红色雾气战斗洞构造与可进入洞类型",
+      "condition": "按出现层数（第三层、第四层、第五层）判定",
+      "scope": "universal",
+      "category": "地图生成/节点构造",
+      "evidence": [
+        {
+          "text": "不同层出现的战斗动构造有不同的组合 比如三层只能出现一字形和中字形 四层只能出中字形和三角形 五层只能出现田字形和三角形",
+          "t_start": 6719,
+          "t_end": 6725
+        },
+        {
+          "text": "三四层都有可能进入二胡洞或者三国洞 但五层只能进入二胡的战斗洞",
+          "t_start": 6798,
+          "t_end": 6805
+        }
+      ],
+      "reason": "逐字稿明确给出红色雾气战斗洞按层数的构造组合及可进入洞类型，证据连续且未依赖画面。",
+      "limitations": [
+        "构造名与洞名来自逐字稿，可能存在 ASR 误差；未说明各组合的权重。",
+        "后续关于选择直线或周围八格的建议属于打法指导，未纳入机制命题。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "三条候选均在逐字稿中有直接、连续、字符级可定位的证据，并能改写为自包含机制命题；主要风险是 ASR 专名与数字误写（动/洞、珊比一），但不影响机制结论。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

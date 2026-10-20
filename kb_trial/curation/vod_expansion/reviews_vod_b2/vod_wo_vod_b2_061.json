@@ -1,0 +1,95 @@
+{
+  "workorder_id": "vod_wo_vod_b2_061",
+  "stem": "BV1GVeb6dEVw_p1_42029417572",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:36:29+0900",
+  "source_sha256": "0a5f4dc1c24d88a4ac192cb7c20dd070dc6c8866b84b0398e80d446fee4c8d75",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "两个物理碰撞箱之间的距离 L 小于 0.01 时，系统已经判定为碰撞。",
+      "subject": "物理碰撞箱之间的距离 L",
+      "condition": "两个物理碰撞箱之间的距离 L 小于 0.01",
+      "scope": "universal",
+      "category": "碰撞判定",
+      "evidence": [
+        {
+          "text": "L如果L如果小于0.01 0.01就已经是碰撞了",
+          "t_start": 358,
+          "t_end": 372
+        }
+      ],
+      "reason": "逐字稿明确给出距离 L 与 0.01 的碰撞阈值，属于底层碰撞判定规则，不依赖画面指涉。",
+      "limitations": [
+        "阈值单位未在逐字稿中说明；L 的具体定义由前文给出为碰撞箱之间距离。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "两个物理碰撞箱之间的距离 L 小于 -0.005 时，碰撞检测会进入射线检测的范围。",
+      "subject": "碰撞检测系统",
+      "condition": "两个物理碰撞箱之间的距离 L 小于 -0.005",
+      "scope": "universal",
+      "category": "碰撞判定",
+      "evidence": [
+        {
+          "text": "如果已经小于-0.005了",
+          "t_start": 372,
+          "t_end": 383
+        },
+        {
+          "text": "会到一个射线检测的范围 这是什么意思呢 我们正常来讲说一个碰撞箱从这个位置 然后移动到这个位置",
+          "t_start": 383,
+          "t_end": 393
+        }
+      ],
+      "reason": "逐字稿先给出 L 小于 -0.005 的条件，随后说明会进入射线检测范围，并用碰撞箱移动位置作解释；有明确阈值与对象，非纯猜测。",
+      "limitations": [
+        "射线检测的具体触发、退出边界和后续处理未在本窗口内完整展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "碰撞箱存在推挤处理：0.005 会被推挤到 0.005 边界。",
+      "verdict": "pending",
+      "reason": "逐字稿有『0.005就会被推挤到0.005边界』，但推挤触发的完整条件在转写中不闭合：上一行末尾为『如果小于0.05』，与 0.005 的数值层级不一致，无法从逐字稿确认是 L 小于 0.005 或其他条件；需人工听审或实机验证。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "c01、c03 通过四大闸门，可保留为底层碰撞判定规则；c02 的推挤阈值条件在逐字稿中显示为『如果小于0.05』与『0.005』不一致，关键条件未闭合，判 pending。所有 keep 证据均按单行逐字稿原样复制并标注区间。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

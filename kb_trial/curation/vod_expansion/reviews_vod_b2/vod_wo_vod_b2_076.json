@@ -1,0 +1,92 @@
+{
+  "workorder_id": "vod_wo_vod_b2_076",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:43:08+0900",
+  "source_sha256": "b27559845f3bc480f9d5e762b06805b61b4e8aab0ff9f99e97b2b0ae623f57c7",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "所有干员的基础阻挡半径均为0.7071；敌人自身没有阻挡半径，阻挡判定只发生在角色类单位对敌人类单位的一侧。",
+      "subject": "干员（角色类单位）的基础阻挡半径；敌人类单位的阻挡判定",
+      "condition": "基础状态，未受技能或装置阻挡半径修正",
+      "scope": "universal",
+      "category": "阻挡判定/数值",
+      "evidence": [
+        {
+          "text": "对敌人的判定没有在敌人身上的所谓阻挡半径",
+          "t_start": 2141,
+          "t_end": 2154
+        },
+        {
+          "text": "敌人是一个点 干员是一个圆阻挡",
+          "t_start": 2141,
+          "t_end": 2154
+        },
+        {
+          "text": "所有的干员和敌人都是0.7071的 阻挡半径",
+          "t_start": 2154,
+          "t_end": 2166
+        },
+        {
+          "text": "只可能是角色类单位阻挡敌人类单位",
+          "t_start": 2191,
+          "t_end": 2201
+        }
+      ],
+      "reason": "上下文明确阻挡判定在角色类单位一侧，敌人无阻挡半径且按点处理；0.7071 是干员的基础阻挡半径。上游命题把敌人也纳入 0.7071 基础半径，本条按上下文修正为干员基础值并保留单侧判定结论。",
+      "limitations": [
+        "原口播同句为“所有的干员和敌人都是0.7071的 阻挡半径”，与前文“敌人没有阻挡半径/敌人是一个点”冲突，本条按上下文修正，未采信敌人具有阻挡半径。",
+        "未列出所有特殊阻挡半径或修正倍率，仅后文提到部分干员与装置存在不同数值。",
+        "未展开 0.7071 与精确 sqrt(0.5) 浮点差异对实际判定的影响。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "鹰角代码中阻挡半径的基础参数写的是0.7071对应的浮点值，而不是二分之根号二对应的浮点值。",
+      "subject": "鹰角代码中阻挡半径的基础参数",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "阻挡判定/数值/代码实现",
+      "evidence": [
+        {
+          "text": "里面写的这个代码参数是0.7071 对应的浮点值 而不是二分之根号二对应的浮点值",
+          "t_start": 2176,
+          "t_end": 2191
+        }
+      ],
+      "reason": "主播明确陈述代码参数采用 0.7071 对应的浮点值，而非 sqrt(2)/2 对应的浮点值；这属于可复用的底层实现差异。主播表示不清楚原因，不影响该观察本身是否成立。",
+      "limitations": [
+        "未展示具体代码位置或反编译证据。",
+        "主播未解释该差异的成因，也未说明其对实际阻挡判定的影响。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 的口播原句包含“干员和敌人都是0.7071”，但同段上下文明确敌人没有阻挡半径、敌人按点处理，故把候选修正为干员基础阻挡半径与单侧判定结论后保留。c02 是主播对代码参数浮点值的明确观察，未见未闭合假说或反问，保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

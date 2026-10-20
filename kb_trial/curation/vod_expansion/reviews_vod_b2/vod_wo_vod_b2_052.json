@@ -1,0 +1,66 @@
+{
+  "workorder_id": "vod_wo_vod_b2_052",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:34:12+0900",
+  "source_sha256": "4a74da88868c07e48eca7ef15c017222006e47aa0d402e1b8e01113c77650804",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "战斗掉落的招募券中，有10%的概率出现临时干员。",
+      "subject": "战斗掉落的招募券（临时招募出现机制）",
+      "condition": "战斗掉落获得招募券时",
+      "scope": "universal",
+      "category": "招募/掉落",
+      "evidence": [
+        {
+          "text": "在战斗掉落的招募券中 有10%的概率出现临时干员",
+          "t_start": 6859,
+          "t_end": 6865
+        }
+      ],
+      "reason": "逐字稿明确给出战斗掉落招募券中临时干员出现概率为10%，属于可复用的概率规则；表述不依赖画面，未见未定论猜测。",
+      "limitations": [
+        "未说明该10%是否受分队、节点、难度或版本影响",
+        "未说明临时干员的具体生成与使用规则"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "战斗掉落的招募券中，临时干员出现概率为10%时，还会进行额外的一次判定",
+      "verdict": "pending",
+      "reason": "逐字稿仅出现“这10%还会进行额外的一次判定”，未说明额外判定的对象、结果或是否独立于10%概率本身；命题依赖前句指代且判定对象缺失，无法形成完整可复用的机制陈述，需后续实机或人工听审核实。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "c01 为明确概率结论，且逐字引文可精确对齐，保留；c02 虽含机制线索，但“额外判定”的对象与结果未闭合，暂判 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,134 @@
+{
+  "workorder_id": "vod_wo_vod_b2_045",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:27:42+0900",
+  "source_sha256": "468a8794541f2c860018b171f20a2f239399feede881163c75993a686461afd6",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "被歌颂的影子节点分为八轮，第1~2轮各消耗1点目标生命，第3~5轮各消耗2点目标生命，第6轮起消耗3点目标生命且不再上升。",
+      "subject": "被歌颂的影子事件节点",
+      "condition": "进入被歌颂的影子事件后，按对应轮次",
+      "scope": "entity_mechanism",
+      "category": "事件抽奖/轮次",
+      "evidence": [
+        {
+          "text": "实际上这个节点分为八轮",
+          "t_start": 6482,
+          "t_end": 6488
+        },
+        {
+          "text": "第一轮到第二轮均消耗一点目标生命 3~5 这三轮被消耗两点目标生命 第六轮开始就会变为三目标 生命不会继续上升",
+          "t_start": 6488,
+          "t_end": 6494
+        }
+      ],
+      "reason": "逐字稿明确说明该节点分为八轮，并逐段给出第1~2轮、第3~5轮、第6轮起的目标生命消耗；ASR将“三点目标生命”转写为“三目标 生命”，不改变结论。",
+      "limitations": [
+        "未交代目标生命不足时是否可继续或事件失败条件。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "被歌颂的影子每一轮可获得的奖励是固定的，前六轮中第1、2、3、5轮都有接近一半概率返还本轮消耗的目标生命，第三轮另有51%概率获得随机自然物。",
+      "subject": "被歌颂的影子事件奖励判定",
+      "condition": "前六轮中的第1、2、3、5轮；第三轮另有独立随机自然物判定",
+      "scope": "entity_mechanism",
+      "category": "事件抽奖/轮次",
+      "evidence": [
+        {
+          "text": "每一轮能给的奖励都是固定的 前面六轮中1235轮都有接近一半的概率 回顾消耗的目标生命 第三轮有51%的概率获得随机自然物",
+          "t_start": 6494,
+          "t_end": 6500
+        }
+      ],
+      "reason": "逐字稿明确给出每轮奖励固定、前六轮中第1/2/3/5轮返还目标生命以及第三轮随机自然物概率；ASR“回顾”按上下文校读为“返还”。",
+      "limitations": [
+        "“接近一半”未给出精确百分比。",
+        "随机自然物池未在本句完整列出。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c03",
+      "claim": "被歌颂的影子第七轮只会稳定产出3个收藏品，其池子与第一面一致。",
+      "subject": "被歌颂的影子第七轮奖励",
+      "condition": "第七轮",
+      "scope": "entity_mechanism",
+      "category": "事件抽奖/轮次",
+      "evidence": [
+        {
+          "text": "第七轮只会稳定出31收藏品 池子与第一面的得长一致",
+          "t_start": 6500,
+          "t_end": 6506
+        }
+      ],
+      "reason": "逐字稿说明第七轮稳定出收藏品且池子与第一面一致；原文“31收藏品”疑为“3个收藏品”的转写误差，“得长”疑为掉落或奖池相关词。",
+      "limitations": [
+        "逐字稿该处转写为“31收藏品”，本回执按上下文校读为“3个收藏品”，建议人工听审确认。",
+        "“第一面的得长一致”存在ASR残词，具体池子名称未逐字稿明确。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c04",
+      "claim": "被歌颂的影子从第八轮开始，获得犬之家和一行动力的概率基本各半；若抽到行动力可以再抽一次，抽到全职浆就不能继续抽。",
+      "subject": "被歌颂的影子第八轮及之后奖励判定",
+      "condition": "第八轮及之后；抽到行动力时继续抽",
+      "scope": "entity_mechanism",
+      "category": "事件抽奖/轮次",
+      "evidence": [
+        {
+          "text": "从第八轮开始 获得犬之家和一行动力的概率基本是一半一半 如果出的是行动力 就能再抽一次 抽到了全职浆就不能继续抽了",
+          "t_start": 6506,
+          "t_end": 6511
+        }
+      ],
+      "reason": "逐字稿明确说明第八轮开始犬之家与一行动力约各半，行动力可再抽，全职浆终止继续抽取。",
+      "limitations": [
+        "“全职浆”为逐字稿转写，具体物品名待校正。",
+        "“基本各半”未给出精确概率。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "四则候选均围绕“被歌颂的影子”的轮次消耗与奖励抽奖机制，逐字稿连续段落提供直接支撑，引文均可字符级对齐。ASR存在若干术语误差（回顾/返还、31收藏品、得长、全职浆），但未影响可复现机制结论，按契约在claim中规范改写并在limitations中标注。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

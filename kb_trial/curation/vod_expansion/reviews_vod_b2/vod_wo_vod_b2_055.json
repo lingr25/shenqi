@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_055",
+  "stem": "BV1GVeb6dEVw_p1_42029417572",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:33:47+0900",
+  "source_sha256": "9e830a925f263706053a2d7059ce36c84f9e27531a5f457f99028145479a2acb",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在推拉逐帧位移的入坑判定中，若单位速度超过30，且逐帧采样点均不落于坑内，则系统不会判定该单位进坑，而会让其直接飞过坑。",
+      "subject": "推拉逐帧位移中的单位与入坑判定系统",
+      "condition": "单位速度超过30，且逐帧采样点均不落于坑内",
+      "scope": "universal",
+      "category": "落点判定",
+      "evidence": [
+        {
+          "text": "推拉的计算本质上来讲都是一个逐帧运算 逐帧移动的过程",
+          "t_start": 190,
+          "t_end": 203
+        },
+        {
+          "text": "移动的两帧之间 虽然会存在着一个线性的计算磕墙 但是的话是其实是没有中间落点的 他是从一个点位瞬移到另一个点位的",
+          "t_start": 203,
+          "t_end": 217
+        },
+        {
+          "text": "所以像这种格判的入坑判定 他就不会判定成进坑 他会在那个速度超过30的时候 当任何一个点位不落于坑里的时候 直接飞过坑",
+          "t_start": 217,
+          "t_end": 234
+        }
+      ],
+      "reason": "上下文先说明推拉位移是逐帧运算，两帧之间没有中间落点而是点位瞬移；随后明确格判入坑判定在速度超过30且逐帧点位均不落于坑内时不会判进坑，而会直接飞过坑。该结论有逐字稿直接支撑，可作为落点判定规则。",
+      "limitations": [
+        "逐字稿未给出速度阈值30的精确单位，也未说明坑判定范围的具体半径。",
+        "后文提到推拉失衡会违背该逻辑，因此该规则在推拉失衡等特殊状态下的适用性需另论。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选命题有逐字稿直接支撑，且属于推拉逐帧位移中的通用落点判定规则；已补全主体与条件，保留速度超过30且逐帧点位均不落于坑内的核心结论。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

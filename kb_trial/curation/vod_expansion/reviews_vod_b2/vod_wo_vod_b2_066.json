@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_066",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:38:36+0900",
+  "source_sha256": "c70c98ab95c5b5bc26eb0a23ac06a31016a0d618d0f5eae8a4ee599b141305a3",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "当碰撞箱在某一帧直接移动进两块独立墙之间的缝隙时，左墙的碰撞判定会要求碰撞箱向右位移（例如向右 0.1），右墙也会作出同类的位移判定；两墙的位移解算权重平衡后，引擎会把该单位判定在两块墙的中间位置，导致其无法向外弹出墙缝。",
+      "subject": "离散型碰撞检测下的落点碰撞箱与两块独立墙之间的墙缝判定",
+      "condition": "碰撞箱在某一帧直接移动进两块独立墙之间的缝隙",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "正常来讲这样一个碰撞箱会在这里停下 但是呢当它如果某一帧直接移动到这里 直接移动到这里 左墙判断说他应该往右0.1 如果往上的话",
+          "t_start": 717,
+          "t_end": 731
+        },
+        {
+          "text": "需要更远的距离 往上需要这么长距离 往右只需要这么长距离 然后的话所以当然是往右更少 但是很不很不巧 左右墙也是这么想的",
+          "t_start": 731,
+          "t_end": 743
+        },
+        {
+          "text": "然后的话他们经过有尼铁的计算 这个具体计算过程是什么 我也不清楚 总之就是会判定他在两个墙的这个 权重的平衡处 也就是中间位置",
+          "t_start": 743,
+          "t_end": 755
+        }
+      ],
+      "reason": "主播在离散型落点讲解中明确描述：正常碰撞箱会停在墙外，但若某一帧直接进入墙缝，左墙判定其应向右位移，右墙也有同类判定，经引擎计算后落在两墙权重平衡处即中间位置，导致无法向外弹出。该描述属于可复用的碰撞机制结论。",
+      "limitations": [
+        "主播明确表示具体计算过程不清楚，逐字稿未给出 Unity 权重计算的完整公式或参数。",
+        "0.1 是讲解中的示例数值，不是已验证的普适常量；实际位移量应取决于碰撞箱尺寸、缝隙宽度和引擎判定。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅一个候选 c01。三条引文均可在逐字稿中字符级匹配；命题已补全主体与条件，属于离散型碰撞落点卡墙缝的机制性结论。虽然主播未交代 Unity 内部计算细节，且 0.1 只是示例，但核心结论有明确逐字稿支撑，故判 keep 并在 limitations 中标注边界。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}
