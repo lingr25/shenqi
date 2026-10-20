@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_420",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:13:30+0900",
+  "source_sha256": "99189ecd4af262196bf47b596208a6285148707410fc193dc9c91ecff0e5be83",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "三技能的数次物理伤害与元素伤害合计结算三下。",
+      "verdict": "pending",
+      "reason": "逐字稿窗口仅反复指称『三技能』，未出现具体干员或技能名；命题主体不自包含，无法独立写入知识库，命中 Gate 1/Gate 3。『三下』与逐下计数具有机制价值，但关键身份参数缺失，留待补充具体干员/技能名后复核。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "三技能的全场轰炸共进行三次，以每秒一次的频率持续造成物理伤害。",
+      "verdict": "pending",
+      "reason": "『全场轰炸三次』与『每秒轰炸一次』在逐字稿中有对应支撑，但同样未交代该『三技能』所属干员或技能名，主体不自包含，命中 Gate 1/Gate 3。机制讨论已具雏形，但关键身份参数缺失，需补全后终审。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "两个候选均围绕三技能的轰炸/次数机制，逐字稿中有可对应片段；但上下文窗口未交代具体干员身份，『三技能』仍是依赖视频上下文的指称，不能形成自包含机制命题。按 Gate 1/Gate 3 判 pending，待补充主体后终审。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

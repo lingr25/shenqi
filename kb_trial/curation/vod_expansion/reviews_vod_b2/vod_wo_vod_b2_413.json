@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_413",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:12:16+0900",
+  "source_sha256": "0ed22b1cb70595272403e33d956d4b7dbaa20c39f4983728aa61ad1d4daa0722",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "一技能侵蚀损伤若按攻击力计算需达到90%攻击力，若按伤害计算则900相对2487约为35%的伤害",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "reason": "该内容为主播在实战测试中对侵蚀损伤计算方式的开放性猜测与即席试算（'这是基于伤害还是基于攻击力啊'、'能有这个数吗'），讨论未得出闭环机制定论；且上下文中无干员名称，缺少明确主体，违反 Gate 1 与 Gate 4。"
+    }
+  ],
+  "review_note": "工单讨论内容属于主播对某未明干员一技能损伤机制的临时假设与试算推想，未形成定论性规则，判定为全单驳回。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_398",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:06:14+0900",
+  "source_sha256": "38062554c0e539cefda2d7190d0402f8533155a5027488eaa2fbd8c7d29c2738",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "敌人“名言具象”的防御力为700。",
+      "subject": "名言具象",
+      "condition": "universal",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "名言具象的话",
+          "t_start": 2933,
+          "t_end": 2938
+        },
+        {
+          "text": "是700防御力",
+          "t_start": 2938,
+          "t_end": 2942
+        }
+      ],
+      "reason": "主播在二技能实测片段中明确说出“名言具象的话”“是700防御力”，且后文以“一个700防御力 一个800防”作对照，支撑该敌人防御力为700。",
+      "limitations": [
+        "数值来自直播口述，未展示游戏内面板；名称“名言具象”为转写名称，可能存在 ASR 错字。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "敌人“践行者”的防御力为800。",
+      "subject": "践行者",
+      "condition": "universal",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "然后践行者的话是800防御力",
+          "t_start": 2942,
+          "t_end": 2959
+        }
+      ],
+      "reason": "主播在紧接的行中明确说出“然后践行者的话是800防御力”，并在下一行以“一个700防御力 一个800防”复述对照，支撑该敌人防御力为800。",
+      "limitations": [
+        "数值来自直播口述，未展示游戏内面板；名称“践行者”为转写名称，可能存在 ASR 错字。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均围绕二技能实测对象的防御力数值，逐字稿有明确口述与后文复述支撑；将引文拆分为单行连续子串后满足四闸门，予以保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

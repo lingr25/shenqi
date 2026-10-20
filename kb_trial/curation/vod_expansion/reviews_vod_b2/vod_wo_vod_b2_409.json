@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_409",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:09:11+0900",
+  "source_sha256": "afeed4bdfbc2fed31d582dcd5b9f255dca2d77279ce7d964f35378358d934bc9",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "侵蚀损伤量疑似基于造成的伤害计算，实测约为伤害的20%",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "reason": "主体不明确且属于未闭合推测：该推测为特定干员技能的实测口算，而非全域机制；且主播在后续测试中再次提出疑问（「这是基于伤害还是基于攻击力啊」「能有这个数吗」），表明机制结算公式（基于实际造成伤害还是基于攻击力倍率）现场并未得出确凿定论，违反 Gate 1、Gate 3 与 Gate 4。"
+    }
+  ],
+  "review_note": "本工单为新干员技能实机演示时的现场数值口算推导。主播在推算损伤结算时提出「伤害的20%」假设，但后续在一技能测试中推翻/动摇了该判断并产生开放式疑惑（「这是基于伤害还是基于攻击力啊」），讨论未闭合，不具备定论机制价值，予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

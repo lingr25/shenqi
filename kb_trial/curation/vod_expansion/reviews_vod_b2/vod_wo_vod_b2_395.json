@@ -1,0 +1,37 @@
+{
+  "workorder_id": "vod_wo_vod_b2_395",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:05:50+0900",
+  "source_sha256": "ce062a876ea3b48f0e62749b5851047d2e4eea1518cdebfe739cd5292efcc91e",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "珊比造成的损伤减防时点晚于伤害结算",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ],
+      "reason": "该候选引文本身可在 2216s 行逐字对齐，但后续上下文立即表明实测未成立：2247s「这个没爆条」、2254s「这歌没爆条」、2365s「不对 造成珊比攻击力15%」、2383s「我应该换一个伤害至少比较密的」。这说明主播当场否定了该次测试条件并准备重测，候选命题属于未验证/未闭合的推导，不满足 Gate 4。"
+    }
+  ],
+  "review_note": "仅审查候选 c01。其句子形式上可改写为自包含机制陈述，引文也能与 2216s 行逐字匹配；但同一实验随后被主播指出未爆条、参数与时序控制失败，并重新设计测试，未形成经得起推敲的可复用定论。因此不判 keep，按未验证推导排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

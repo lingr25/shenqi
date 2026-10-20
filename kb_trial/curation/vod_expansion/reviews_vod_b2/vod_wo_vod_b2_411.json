@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_411",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:10:08+0900",
+  "source_sha256": "8baf02307f88128b481a252903e3e75b7be3c1124a6d27328f84cf73a2bfd5ae",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "一技能的攻击力倍率为2.9倍。",
+      "verdict": "pending",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3"
+      ],
+      "reason": "逐字稿 [4782s] 仅能确认『一技能2.9倍』这一数值片段，但窗口内未出现具体干员名或技能全名，无法将『一技能』补全为自包含主体；候选引文 t_end=4785 也与下一行时间戳 4796 不符，未满足精确起止要求。该数值有机制价值，但需结合完整上下文或画面确认主体后方可入库。"
+    }
+  ],
+  "review_note": "本工单仅一个候选 c01。逐字稿确实出现『一技能2.9倍』，但缺少可自包含的干员/技能主体，且候选证据时间戳标注不准确；按严格闸门不作 keep，裁定 pending 待补全主体与精确引文。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

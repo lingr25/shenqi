@@ -1,0 +1,37 @@
+{
+  "workorder_id": "vod_wo_vod_b2_428",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T22:14:18+0900",
+  "source_sha256": "33a736c2468ac1337abd375b1e6c29f35af24100e6be218e7b66698d231541b7",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "二技能位移过程中每15帧移动一格，按每15帧一格换算即每秒2格的速度。",
+      "verdict": "pending",
+      "failed_gates": [
+        "G1"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "reason": "主体缺失且严重依赖画面。逐字稿中通篇仅使用代词及模糊指代（如'二技能'、'这个东西的飞行'、'动了30'），未提及具体干员名或技能具体实体（上游虽推断为放逐仓，但转写文本中无明确干员/机制主体定名），无法构成自包含机制陈述，需结合录播画面核对干员及技能主体。"
+    }
+  ],
+  "review_note": "转写中主播虽然通过逐帧数算验证了'每15帧一格，即两格每秒'的移速，但上下文完全缺少具体干员主体名称，仅有'二技能'、'这个东西的飞行'，违反G1自包含闸门，故置为pending待人工听审或结合画面补齐主体。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

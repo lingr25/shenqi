@@ -1,0 +1,105 @@
+{
+  "workorder_id": "vod_wo_vod_b2_436",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T23:13:42+0900",
+  "source_sha256": "355878f9260842c48b6ebf373c1c598e5c76ba2b66c698b8bd063041616d979e",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙三技能的每次轰炸会对目标敌人所在位置及其周围四格的所有地面敌人造成物理伤害和元素伤害。",
+      "subject": "克莱门沙三技能轰炸",
+      "condition": "敌人侵蚀损伤爆发并消耗弹药后，对该敌人所在位置发动轰炸时",
+      "scope": "entity_mechanism",
+      "category": "伤害结算/索敌",
+      "evidence": [
+        {
+          "text": "一旦全场有任何敌人侵蚀损伤爆发时 都会消耗一发弹药 对该敌人所在的位置进行数次轰炸",
+          "t_start": 2675,
+          "t_end": 2688
+        },
+        {
+          "text": "每次轰炸对该位置及其周围四格 所有地面敌人造成物理伤害和元素伤害",
+          "t_start": 2688,
+          "t_end": 2699
+        }
+      ],
+      "reason": "上下文为克莱门沙三技能说明，逐字稿明确轰炸目标为该敌人所在位置，并说明每次轰炸对该位置及其周围四格的所有地面敌人造成物理伤害和元素伤害。",
+      "limitations": [
+        "逐字稿仅说明周围四格与地面敌人，未展开四格的具体判定细节或是否影响空中单位。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "克莱门沙三技能轰炸造成的伤害会受到其第一天赋的影响。",
+      "subject": "克莱门沙三技能轰炸",
+      "condition": "轰炸造成伤害时",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "轰炸造成的伤害也会受到第一天赋的影响",
+          "t_start": 2688,
+          "t_end": 2699
+        }
+      ],
+      "reason": "逐字稿直接说明轰炸造成的伤害会受到第一天赋影响，属于该技能的伤害结算机制陈述。",
+      "limitations": [
+        "本窗口未交代第一天赋的具体效果、数值或触发细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "克莱门沙三技能不会同时对同一个位置发动轰炸。",
+      "subject": "克莱门沙三技能轰炸调度",
+      "condition": "同一时刻选择轰炸位置时",
+      "scope": "entity_mechanism",
+      "category": "索敌/时序",
+      "evidence": [
+        {
+          "text": "克莱门沙不会同时对同一个位置发动轰炸",
+          "t_start": 2699,
+          "t_end": 2718
+        }
+      ],
+      "reason": "逐字稿直接给出该限制，说明同一位置不会被同时并行轰炸，属于可复用的技能调度机制。",
+      "limitations": [
+        "未说明“同一位置”的判定精度以及并行轰炸判定的具体时间窗口。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "三条候选均能在逐字稿中找到连续原文支撑，且属于克莱门沙三技能机制说明；已将主体补全为自包含陈述，并保留逐字稿中的范围与伤害类型，均判 keep。未发现未定论猜想或反问。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

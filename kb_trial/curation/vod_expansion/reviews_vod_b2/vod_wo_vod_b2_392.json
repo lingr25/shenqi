@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_392",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:04:38+0900",
+  "source_sha256": "11fe88061caf67ade058fb497290b2748cb369961d2f0f099abbe6d6464870db",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "侵蚀损伤爆发（爆条）结算时，先结算当次伤害，再结算减防；因此爆条当次伤害不享受减防效果。",
+      "subject": "侵蚀损伤爆条结算流程（爆条当次伤害）",
+      "condition": "侵蚀损伤积累满并触发爆条时",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "先造成伤害再减防",
+          "t_start": 1677,
+          "t_end": 1682
+        },
+        {
+          "text": "侵蚀是先造成伤害再减防",
+          "t_start": 1699,
+          "t_end": 1711
+        },
+        {
+          "text": "4032的攻击力值对吧 然后减去500防的话 等于3532的伤害 他这里爆条了",
+          "t_start": 1740,
+          "t_end": 1750
+        }
+      ],
+      "reason": "主播先明确口述侵蚀为『先造成伤害再减防』，随后用4032攻击、500防御、3532伤害的实测计算说明爆条当次伤害按攻击减防御结算，减防未提前作用于该次伤害，支撑该机制命题。",
+      "limitations": [
+        "逐字稿未完整展示测试对象、技能与目标的全套参数，结论依赖主播口述与单次计算。",
+        "后续仍转而检查珊比等差异，未在窗口内做更多重复验证。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 的核心机制陈述有单行逐字稿直接支撑；上游前两条引文存在跨行拼接问题，本次回执改用单行有效证据，命题本身保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

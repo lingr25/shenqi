@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_399",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:06:36+0900",
+  "source_sha256": "9edf0ded071990411f9fc89cf3c8f0a9f5dfa12ba5669e5aa421a3f91a1b0ad1",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "克莱门沙二技能五次命中造成的伤害数值各不相同，但每次损伤条的增量都接近20%。",
+      "verdict": "reject",
+      "reason": "该候选为对实战损伤条增量的观察与推测，缺少可复现的明确机制参数；其依据原文包含“很有可能是攻击力20%”等未闭合假说，属于 Gate 4 排除范围。同时，候选 evidence 的引文由两行逐字稿拼接而成，且 t_start/t_end 与原文时间戳不匹配，违反 Gate 2。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G2",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单仅一个候选 c01。其内容虽涉及二技能损伤表现，但证据引文跨行拼接且时间戳错误，无法完成逐字对齐；命题本身也停留在对损伤条增量的观察和未验证推测上，未形成可复用机制定论。故整体裁定为 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

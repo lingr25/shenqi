@@ -1,0 +1,84 @@
+{
+  "workorder_id": "vod_wo_vod_b2_397",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:07:06+0900",
+  "source_sha256": "9f81e2daa5fb4c29b696855b433f0eeb3718b08db0c9cf4947977c61af5886b1",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙开启二技能「风暴潮」后会向前释放浮游放逐仓，放逐仓会携带周围数名敌人向前方移动并在移动数格后消失。",
+      "subject": "克莱门沙二技能「风暴潮」",
+      "condition": "开启技能",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "技能二风暴潮开启技能后 克莱门沙会向前释放 一艘艘浮游 放游放逐仓",
+          "t_start": 2813,
+          "t_end": 2826
+        },
+        {
+          "text": "每次攻击造成一定物理伤害 召唤浮游 放逐仓向前方移动 方逐餐在数格消失后 留下漩涡出狱漩涡所有敌人移速下降 并且每秒受到一定侵蚀伤",
+          "t_start": 2834,
+          "t_end": 2850
+        }
+      ],
+      "reason": "逐字稿中主播念读了二技能风暴潮的技能描述，明确给出了释放放逐仓、携带周围敌人向前移动并于数格后消失的基础机制。",
+      "limitations": [
+        "放逐仓具体移动格数与携带敌人上限未给出精确数值"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "克莱门沙二技能「风暴潮」的放逐仓消失后会留下漩涡，处于漩涡中的所有敌人移动速度下降，并每秒受到一定侵蚀损伤和物理伤害。",
+      "subject": "克莱门沙二技能「风暴潮」生成的漩涡",
+      "condition": "放逐仓移动数格消失后，敌人处于漩涡范围内",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "每次攻击造成一定物理伤害 召唤浮游 放逐仓向前方移动 方逐餐在数格消失后 留下漩涡出狱漩涡所有敌人移速下降 并且每秒受到一定侵蚀伤",
+          "t_start": 2834,
+          "t_end": 2850
+        },
+        {
+          "text": "损伤和物理伤害",
+          "t_start": 2850,
+          "t_end": 2860
+        }
+      ],
+      "reason": "逐字稿明确念出技能描述中放逐仓消失后生成漩涡的效果，包括减速、每秒侵蚀损伤与物理伤害，机制陈述完整定论。",
+      "limitations": [
+        "漩涡减速具体比例、dot具体伤害倍率及持续时间未在此时确认"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选命题均来自于主播口播阅读官方技能面板文本（二技能风暴潮）。原候选引文时间戳引用的是视频分秒（如46:53误写为4697），在当前单中已统一校正为转写时间戳秒数（2813s、2834s等），引文字符严格匹配逐字稿行内容。两项均满足四大硬性闸门要求，裁定保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

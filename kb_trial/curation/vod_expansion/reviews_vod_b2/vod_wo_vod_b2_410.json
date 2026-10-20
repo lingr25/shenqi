@@ -1,0 +1,74 @@
+{
+  "workorder_id": "vod_wo_vod_b2_410",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:10:05+0900",
+  "source_sha256": "dd124d906d29b5c270b0973300f3ce6a08935320becd2fa96d94abceb1fddbb2",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "乌尔比安（与海为敌）三技能消耗弹药触发轰炸时，每次轰炸造成的物理伤害倍率为300%（3倍）。",
+      "subject": "乌尔比安三技能（与海为敌）轰炸",
+      "condition": "全场敌人侵蚀损伤爆发消耗弹药触发轰炸时",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "轰炸三倍物理",
+          "t_start": 4673,
+          "t_end": 4677
+        }
+      ],
+      "reason": "主播根据实战伤害跳字推导出轰炸的物理伤害倍率为3倍，结论明确且闭合。",
+      "limitations": [
+        "该倍率基于演示关卡实测推导，通常对应技能特定等级（如专三）。"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "claim": "乌尔比安（与海为敌）三技能消耗弹药触发轰炸时，造成的元素伤害倍率为250%（2.5倍）。",
+      "subject": "乌尔比安三技能（与海为敌）轰炸",
+      "condition": "全场敌人侵蚀损伤爆发消耗弹药触发轰炸时",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "2.5倍元素",
+          "t_start": 4720,
+          "t_end": 4737
+        }
+      ],
+      "reason": "主播根据跳字2575测算出元素伤害倍率为2.5倍，结论明确。",
+      "limitations": [
+        "对应测试时的技能等级（推测为专三），具体受干员面板与敌方元素抗性影响。"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选命题均来自主播对乌尔比安三技能轰炸伤害跳字的数值逆向计算，逐字稿中存在明确的定论陈述（'轰炸三倍物理'与'2.5倍元素'），四大闸门均通过，予以保留并规范化表述。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

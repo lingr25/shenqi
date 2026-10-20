@@ -1,0 +1,86 @@
+{
+  "workorder_id": "vod_wo_vod_b2_400",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:07:44+0900",
+  "source_sha256": "ae53af86eb56041dfa07091147ce03d989b9fb7583d6c0dd7b0e66fa32c430df",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙二技能的单次攻击伤害计算中包含1.35倍的加成乘区",
+      "subject": "克莱门沙的二技能单次攻击伤害",
+      "condition": "克莱门沙开启二技能后，单次攻击造成伤害并结算时",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "2776也不像加了1.35倍的样子",
+          "t_start": 3357,
+          "t_end": 3367
+        },
+        {
+          "text": "好吧 他是有过1.35的 这是一个2.5攻击力倍率的伤害",
+          "t_start": 3385,
+          "t_end": 3404
+        }
+      ],
+      "reason": "上下文正在用2776伤害与防御力数值反推二技能伤害构成；主播先怀疑是否含1.35倍，随后修正确认‘他是有过1.35的’，可支撑二技能单次攻击伤害结算中存在1.35倍加成乘区。",
+      "limitations": [
+        "逐字稿未说明1.35倍乘区的具体来源，例如天赋、模组、技能描述或目标状态影响。",
+        "该结论主要由伤害数值反推得到，未给出完整伤害公式与攻击力面板。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "克莱门沙二技能的单次攻击伤害为2.5倍攻击力倍率",
+      "subject": "克莱门沙二技能的单次攻击伤害",
+      "condition": "克莱门沙开启二技能后，单次攻击命中并结算伤害时",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "好吧 他是有过1.35的 这是一个2.5攻击力倍率的伤害",
+          "t_start": 3385,
+          "t_end": 3404
+        },
+        {
+          "text": "二技能的话攻击力是2.5倍",
+          "t_start": 3434,
+          "t_end": 3457
+        }
+      ],
+      "reason": "逐字稿先称该伤害为2.5攻击力倍率，随后又明确说二技能攻击力是2.5倍；两处证据相互印证，可保留为克莱门沙二技能的攻击力倍率结论。",
+      "limitations": [
+        "逐字稿未给出完整面板与结算公式，仅口头确认2.5倍攻击力。",
+        "后续转录中出现2.35等数值，可能指向其他技能或不同条件，需与二技能区分。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单两个候选均来自二技能倍率推导片段。逐字稿明确给出2.5倍攻击力，并在防御力比对后修正确认1.35倍加成；二者不是重复命题，分别记录攻击力倍率与额外乘区，故均判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,70 @@
+{
+  "workorder_id": "vod_wo_vod_b2_431",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T23:11:55+0900",
+  "source_sha256": "f6fe63a0de8d0583ce308ad0e91d333f857a1bae75d8536f805f5c7fe16715f3",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙的一技能是消耗2SP的强力击。",
+      "subject": "克莱门沙的一技能",
+      "condition": "universal",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "一技能是2SP强力击",
+          "t_start": 2187,
+          "t_end": 2201
+        },
+        {
+          "text": "克莱门沙下次攻击的攻击力提升 并造成一定侵蚀损伤",
+          "t_start": 2271,
+          "t_end": 2288
+        }
+      ],
+      "reason": "逐字稿直接说明第一个技能是一技能且为2SP强力击；后文以克莱门沙描述该技能下一次攻击提升并造成侵蚀损伤，可补足主体指代。",
+      "limitations": [
+        "逐字稿未给出技能正式名称，干员名按转写「克莱门沙」保留，可能为音译/ASR变体。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "一技能的技能时间为16秒",
+      "verdict": "pending",
+      "reason": "『这一个技能是16秒』中的『这个技能』在逐字稿中未明确指向一技能；紧邻后文描述的是开启技能后造成物理溅射、召唤浮游放逐仓并产生漩涡的另一技能，无法仅凭逐字稿确认16秒属于一技能，需画面或实机验证。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "c01有直接逐字稿支撑且可按上下文补全主体，判keep；c02的16秒指代不明，且与2SP强力击的瞬时性质存在张力，留待画面/实机确认，判pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

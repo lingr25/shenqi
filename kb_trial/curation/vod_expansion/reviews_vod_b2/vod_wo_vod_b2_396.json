@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_396",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:05:19+0900",
+  "source_sha256": "a54a73bee4bf215f253237b44e79a7a2f35fe30a3562f613e183aa59e6117e38",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "暴桥的攻击吃不到减防，与珊比在是否吃到减防上的结算表现一致",
+      "verdict": "pending",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ],
+      "reason": "转写文本存在严重 ASR 错音（'暴桥'疑似'爆条'或技能'风暴潮'，'珊比'指代不明），且'这一下'严重依赖当期实机画面的特定伤害判定点，缺乏明确的伤害类型、结算时点与测试主体参数，无法独立构成自包含规则，需人工听审原视频以确认真实测算对象。"
+    }
+  ],
+  "review_note": "工单讨论涉及元素损伤/技能触发与减防生效的结算时点，具备机制研究价值；但因 ASR 严重畸变且强依赖画面指示代词（'暴桥'、'这一下'、'珊比'），导致关键机制主体与生效条件缺失，故裁定为 pending 留待人工听审核验。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_419",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:12:26+0900",
+  "source_sha256": "2a78c9351209c8b55d8eb6bce78b1c09b89bcef4fb05adab97af7a562c5a13af",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在放逐舱关卡中，石头人继续上行的位置存在一个隐藏路径点；石头人继续上行是由该隐藏路径点导致的，并非路径表现异常。",
+      "subject": "石头人（放逐舱关卡中的上行单位）",
+      "condition": "在放逐舱关卡中，石头人移动到继续上行段并经过该隐藏路径点",
+      "scope": "instance",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "等一下这个石头人什么路径点",
+          "t_start": 935,
+          "t_end": 961
+        },
+        {
+          "text": "我靠怪不得再往上走 这里他还有个路径点",
+          "t_start": 961,
+          "t_end": 977
+        },
+        {
+          "text": "那就没问题了",
+          "t_start": 977,
+          "t_end": 994
+        }
+      ],
+      "reason": "主播先疑惑石头人的路径点，随后发现再往上走处还有一个路径点，并说“那就没问题了”，表明该上行现象由隐藏路径点解释，而非路径表现异常。",
+      "limitations": [
+        "隐藏路径点的具体坐标/位置与关卡编号未在逐字稿文本中明确，仅能定位为放逐舱相关实测。",
+        "该结论为特定关卡实例，不外推为通用寻路规则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01有逐字稿中主播发现隐藏路径点并确认问题消解的直接证据；属特定关卡寻路实例，非通用规则，但满足四闸门，故 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,103 @@
+{
+  "workorder_id": "vod_wo_vod_b2_433",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T23:12:36+0900",
+  "source_sha256": "67acc1d0519b00a2a8d155de4dcc1400a1cc25535a626ff90c0aa49a7dc4b846",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙开启二技能后，其攻击会造成物理溅射伤害。",
+      "subject": "克莱门沙的攻击（二技能期间）",
+      "condition": "克莱门沙开启二技能后",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "开启技能后 克莱门沙的攻击会造成物理溅射伤害 召唤的浮游放逐仓可以推走敌人并产生漩涡",
+          "t_start": 2346,
+          "t_end": 2358
+        }
+      ],
+      "reason": "逐字稿明确说明开启技能后克莱门沙的攻击造成物理溅射伤害；结合章节上下文，该技能为二技能。上游“普通攻击”限定未被逐字稿单独说明，故在保持机制原意下改写为更保守的“其攻击”。",
+      "limitations": [
+        "逐字稿只称“攻击”，未单独限定为“普通攻击”；未给出溅射范围与伤害倍率。",
+        "二技能归属由章节标题与上下文确定，引文本身未重复“二技能”字样。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "克莱门沙开启二技能后，召唤的浮游放逐仓可以推走敌人并产生漩涡。",
+      "subject": "克莱门沙二技能召唤的浮游放逐仓",
+      "condition": "克莱门沙开启二技能后召唤出浮游放逐仓",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "开启技能后 克莱门沙的攻击会造成物理溅射伤害 召唤的浮游放逐仓可以推走敌人并产生漩涡",
+          "t_start": 2346,
+          "t_end": 2358
+        }
+      ],
+      "reason": "逐字稿将“推走敌人”与“产生漩涡”作为浮游放逐仓的效果并列陈述。上游“在推走敌人时产生漩涡”的因果限定未被逐字稿明确支持，故改写为并列效果。",
+      "limitations": [
+        "逐字稿未细分漩涡产生是否必须由推走敌人触发；未给出推力与漩涡范围、持续时间。",
+        "二技能归属由章节标题与上下文确定，引文本身未重复“二技能”字样。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "克莱门沙二技能产生的漩涡会持续造成侵蚀损伤与物理伤害。",
+      "subject": "克莱门沙二技能产生的漩涡",
+      "condition": "浮游放逐仓已产生漩涡",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "漩涡也会持续造成侵蚀损伤与物理伤害",
+          "t_start": 2358,
+          "t_end": 2397
+        }
+      ],
+      "reason": "逐字稿紧接前文“产生漩涡”后说明漩涡会持续造成侵蚀损伤与物理伤害，机制表述明确。",
+      "limitations": [
+        "未给出侵蚀损伤与物理伤害的数值、频率和持续时间。",
+        "二技能归属由前文与章节上下文确定，该条引文未重复“二技能”字样。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "三条候选均能在逐字稿中找到字符级连续的原始引文，且均属于克莱门沙二技能的可复用机制描述。c01 将“普通攻击”改为更保守的“攻击”，c02 去除上游对“推走时”因果限定的过度具体化；c03 直接保留持续伤害结论。未发现未定论假说或反问。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

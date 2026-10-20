@@ -1,0 +1,48 @@
+{
+  "workorder_id": "vod_wo_vod_b2_438",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T23:14:02+0900",
+  "source_sha256": "370c63e93cf1b5dba18090b9711ff82189b0e65bff62e7bed81a99aab98ef853",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "当敌人处于减防状态时，克莱门莎天赋的触发概率会额外提升。",
+      "subject": "克莱门莎的天赋",
+      "condition": "敌人处于减防状态",
+      "scope": "entity_mechanism",
+      "category": "天赋概率",
+      "evidence": [
+        {
+          "text": "对减防的敌人概率额外提升 那这一下没有提升概率 那就是六下",
+          "t_start": 3096,
+          "t_end": 3105
+        }
+      ],
+      "reason": "逐字稿明确说出“对减防的敌人概率额外提升”，并以“没有提升概率”对应“没有吃到减防”，可支撑减防状态使该天赋触发概率额外提升的机制结论。",
+      "limitations": [
+        "逐字稿存在 ASR 误识，克莱门沙/克莱门莎名称按规范术语修正；未给出具体提升数值或减防类型。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选有逐字稿直接支撑，自包含后属可复用实体机制，四闸门均通过，保留为 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

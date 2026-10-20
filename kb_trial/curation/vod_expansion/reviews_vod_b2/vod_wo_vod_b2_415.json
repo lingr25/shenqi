@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_415",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:10:43+0900",
+  "source_sha256": "a56c0d49e6c2564ab0517fbffc8e0aacf88c6ff55e27c42606693f19b12181a6",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "莱塔尼亚轻语者的移速为0.85，换算后实际移动速度为0.425格每秒。",
+      "subject": "莱塔尼亚轻语者",
+      "condition": "universal",
+      "scope": "entity_mechanism",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "0.85的移速 0.425格每秒",
+          "t_start": 6050,
+          "t_end": 6074
+        }
+      ],
+      "reason": "逐字稿明确提到莱塔尼亚轻语者的移速并从0.85换算为0.425格每秒，命题主体明确且为可复用的敌人固有位移参数。",
+      "limitations": [
+        "逐字稿未给出0.85移速的原始数据来源及换算公式",
+        "未说明减速、加速或其他状态对该数值的修正关系"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅一个候选命题。该命题主体、参数与换算结果在逐字稿中有直接口头陈述，且引文可在原始转写行中字符级对齐；未出现未定论假说或反问，故裁定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

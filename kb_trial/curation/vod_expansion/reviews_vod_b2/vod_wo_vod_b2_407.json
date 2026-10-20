@@ -1,0 +1,104 @@
+{
+  "workorder_id": "vod_wo_vod_b2_407",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:09:48+0900",
+  "source_sha256": "08470879de7282fba58a0bbb6dcc0570f3994eb0f30107dc678239ef8c666d33",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "法伤和元素损伤的结算规则相同，都是数值乘以0.01再乘以(100减对应抗性)。",
+      "subject": "法伤与元素损伤的结算规则",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "法师元素损伤和法伤是一样的 他有一个元素抗性 他的结算规则是这样的 就是无论是法伤还是元素啊 他是乘以0.01",
+          "t_start": 4013,
+          "t_end": 4028
+        },
+        {
+          "text": "比如说如果是200的话 它是200×0.01 然后乘以",
+          "t_start": 4028,
+          "t_end": 4041
+        },
+        {
+          "text": "乘100减抗性 虽然看起来这个公式也是200 但是这个部分有一个什么问题呢",
+          "t_start": 4041,
+          "t_end": 4057
+        }
+      ],
+      "reason": "上下文明确陈述法伤与元素损伤按同一形式结算：先乘0.01，再乘(100减对应抗性)，并给出200点数值的示例。可整理为自包含机制命题。",
+      "limitations": [
+        "逐字稿未展开元素损伤与法伤在抗性类别、计算顺序上的差异，仅说明乘数与抗性项形式相同。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "方舟采用定点数逻辑，0.01以定点数表达时，32位后0.96×2的-32次方部分被舍掉，实际值为42949672；因此结算时再乘以100不能完全还原，导致实际伤害减少。",
+      "subject": "《明日方舟》伤害结算中的0.01定点数表示",
+      "condition": "0.01以32位定点数表达并参与结算",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "方舟现在采用定点数逻辑 就是那个这个0.01以定点数表达的话 后面浮点数32位 这后面这个0.96×2的-32次方 是舍掉的",
+          "t_start": 4080,
+          "t_end": 4093
+        },
+        {
+          "text": "他实际上得到的值是42949672",
+          "t_start": 4093,
+          "t_end": 4107
+        },
+        {
+          "text": "这是这个0.01的真值",
+          "t_start": 4107,
+          "t_end": 4110
+        },
+        {
+          "text": "这个0.01的真值 如果再乘以100",
+          "t_start": 4110,
+          "t_end": 4116
+        },
+        {
+          "text": "并不是并不是并不是是会少伤害的 是会少伤害的 如果按1000算的话 就会少这么多",
+          "t_start": 4116,
+          "t_end": 4135
+        }
+      ],
+      "reason": "主播明确说明0.01在定点数表达中舍去0.96×2的-32次方，得到42949672；并指出该真值再乘100不能完全还原，实际会少伤害。属于可复用的底层结算细节。",
+      "limitations": [
+        "未给出完整伤害损失示例与具体精度误差数值；42949672为定点标度下的表示值，主播口述为0.01真值。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均有逐字稿中的明确陈述支撑，且可整理为自包含机制命题；证据已按单行连续子串拆分，未跨行拼接。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

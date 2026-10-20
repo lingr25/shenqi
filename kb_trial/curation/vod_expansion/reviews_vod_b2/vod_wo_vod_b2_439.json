@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_439",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T23:14:17+0900",
+  "source_sha256": "c0026ee78c223f2f25ea4327c873f96e90e0269e0170ece9df4c75c5e218be20",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙的天赋触发概率在攻击未处于减防状态的目标时，不会获得“对减防敌人概率额外提升”的分支效果；本次实测因此按普通六下统计。",
+      "subject": "克莱门沙的天赋触发概率",
+      "condition": "目标未处于减防状态（未吃到减防）",
+      "scope": "entity_mechanism",
+      "category": "天赋概率/实测统计",
+      "evidence": [
+        {
+          "text": "对减防的敌人概率额外提升 那这一下没有提升概率 那就是六下",
+          "t_start": 3096,
+          "t_end": 3105
+        },
+        {
+          "text": "因为他没有吃到减防",
+          "t_start": 3105,
+          "t_end": 3111
+        }
+      ],
+      "reason": "前文说明天赋对减防敌人有概率额外提升；随后主播明确该次“没有提升概率”，原因是目标“没有吃到减防”，因此可推出未处于减防状态时不走额外概率分支。六下为当场实测计数，核心结论是减防条件未满足时按普通概率分支统计。",
+      "limitations": [
+        "逐字稿未给出具体概率数值与完整统计方法。",
+        "“六下”为当场计数，未展开样本量、暴击判定等细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 的引文可在对应逐字稿行中字符级对齐，且上下文明确给出“未吃到减防”导致本次不触发额外概率提升的条件分支；虽有当场计数细节，但核心机制结论成立，予以保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

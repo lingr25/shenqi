@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_418",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:11:53+0900",
+  "source_sha256": "a14d5320f7d31e38c36def345044a6c253315e5f0df9d7263b474993bd84780f",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "放逐舱的位移偏差换算中，140比上300对应0.46格",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "上下文表明这是主播在实测过程中的临时口算推演片段（140/300≈0.466），随后立即出现'哦靠我说哪里搞错了'、'等一下这个石头人什么路径点'，证实此前的计算存在偏差（实际是由于遗漏了隐藏路径点导致），属于未定论且被推翻的过程计算，缺乏完整的自包含机制陈述与明确三元约束。"
+    }
+  ],
+  "review_note": "工单中的命题为测试过程中的中间计算数据（140比300算得0.46格），后续主播发现测试现象异常是因为石头人存在隐藏路径点所致，该片段为被修正的过程假说，不构成可复用的独立机制结论，全单予以驳回。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

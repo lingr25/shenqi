@@ -1,0 +1,37 @@
+{
+  "workorder_id": "vod_wo_vod_b2_404",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:08:46+0900",
+  "source_sha256": "c58bb187ff525e21873ef1ecaacc5132da280a2be24910da70fcb8c4982495d5",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "漩涡不会给刚结束控制的敌人挂上DoT，也不会在漩涡生成的第一时间对被推的敌人挂上DoT。",
+      "verdict": "pending",
+      "reason": "逐字稿只记录了单次实况中的DoT未挂载现象，未给出挂载延迟、触发范围等可复现参数；主播随后以“有可能/应该是有一种不可选中效果”猜测原因，讨论未闭合。按Gate4，该观察暂不具备可复用规则定论，留待实机验证或人工听审。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单仅一个候选，引文可在3927s行逐字匹配。命题有潜在机制价值，但当前仅为未参数化的实况观察且原因讨论未闭合，不满足Gate4的可复用定论要求，判pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

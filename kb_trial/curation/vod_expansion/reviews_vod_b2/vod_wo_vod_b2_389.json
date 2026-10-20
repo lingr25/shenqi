@@ -1,0 +1,76 @@
+{
+  "workorder_id": "vod_wo_vod_b2_389",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:03:28+0900",
+  "source_sha256": "6b397f41eb33275088558053f7ecfeb3d299e95521ae5eb20874fca583d5c053",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "潮汐作战不朽厅堂中声明引痕引痕者的防御力是500",
+      "subject": "声明引痕引痕者",
+      "condition": "位于潮汐作战不朽厅堂关卡中",
+      "scope": "instance",
+      "category": "敌人面板",
+      "evidence": [
+        {
+          "text": "声明引痕引痕者的话 防御力是500 攻击力是800",
+          "t_start": 1012,
+          "t_end": 1025
+        }
+      ],
+      "reason": "逐字稿在潮汐作战不朽厅堂语境下直接给出该敌人的防御力数值500，参数明确且可复现条件为对应关卡与敌人，未出现猜测或未闭合讨论。",
+      "limitations": [
+        "该数值来源未在逐字稿中详细说明，未提及难度、词缀或是否紧急。",
+        "敌人名称按逐字稿保留为“声明引痕引痕者”，规范名称待核。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "潮汐作战不朽厅堂中声明引痕引痕者的攻击力是800",
+      "subject": "声明引痕引痕者",
+      "condition": "位于潮汐作战不朽厅堂关卡中",
+      "scope": "instance",
+      "category": "敌人面板",
+      "evidence": [
+        {
+          "text": "声明引痕引痕者的话 防御力是500 攻击力是800",
+          "t_start": 1012,
+          "t_end": 1025
+        }
+      ],
+      "reason": "逐字稿在潮汐作战不朽厅堂语境下直接给出该敌人的攻击力数值800，参数明确且可复现条件为对应关卡与敌人，未出现猜测或未闭合讨论。",
+      "limitations": [
+        "该数值来源未在逐字稿中详细说明，未提及难度、词缀或是否紧急。",
+        "敌人名称按逐字稿保留为“声明引痕引痕者”，规范名称待核。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选分别陈述潮汐作战不朽厅堂中同一敌人的防御力与攻击力面板，逐字稿给出明确数值，条件指向特定关卡与敌人，按 instance 收录；未发现猜测、反问或画面依赖残句。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}
