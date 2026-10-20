@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_115",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T13:13:34+0900",
+  "source_sha256": "cb3018552fcb3312f592e2f9c5983c05765acb24bfa419e09fdc7573b7fe9ea3",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "阻挡偏移向量在归一化之后再乘0.2，以将阻挡偏移限制在半径0.2的范围内。",
+      "subject": "阻挡偏移向量",
+      "condition": "阻挡偏移向量完成归一化后",
+      "scope": "universal",
+      "category": "位移/阻挡偏移",
+      "evidence": [
+        {
+          "text": "是归一化之后乘0.2",
+          "t_start": 5095,
+          "t_end": 5104
+        },
+        {
+          "text": "因为鹰角希望阻挡偏移在半径0.2之内",
+          "t_start": 5104,
+          "t_end": 5118
+        }
+      ],
+      "reason": "逐字稿明确说明流程为归一化后乘0.2，并在追问原因时给出参数性结论：这样是为了让阻挡偏移限制在半径0.2内。该陈述带有明确主体、前提与参数，可作为阻挡偏移计算的通用规则表达。",
+      "limitations": [
+        "逐字稿未展示实际代码或完整公式，0.2半径的几何意义与单位未进一步展开。",
+        "未说明该0.2上限是否在所有阻挡偏移场景中无例外适用。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选命题具有明确主体、条件与参数，且逐字稿对该流程及原因有直接陈述；未发现未闭合猜测或画面依赖，故保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

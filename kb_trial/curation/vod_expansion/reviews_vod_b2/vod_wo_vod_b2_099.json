@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_099",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:49:32+0900",
+  "source_sha256": "c74e7e38b93e99db57d6b6bdbb55e9a6dd998f2d8baab230a2aefab7d6a1bbde",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "黍的传送可与阻挡偏移的强制位移同时结算；若黍的传送发生在阻挡偏移生效之前，传送发生后，被传送单位仍会被仍在进行中的阻挡偏移强制拽回。",
+      "subject": "黍的传送（及其作用的单位）",
+      "condition": "阻挡偏移持续期间，且黍的传送先于阻挡偏移生效",
+      "scope": "entity_mechanism",
+      "category": "位移/技能特例",
+      "evidence": [
+        {
+          "text": "然后被阻挡偏移拉回来的 甚至也包括黍的传送 黍的传送可以发生在阻挡偏移之前 发生之后被阻挡偏移强制拽回",
+          "t_start": 3723,
+          "t_end": 3734
+        }
+      ],
+      "reason": "讲师在阻挡偏移段落中明确说明阻挡偏移持续过程中敌人仍可寻路并被拉回，并进一步指出黍的传送也可与阻挡偏移交互：传送可发生在阻挡偏移之前，发生之后会被阻挡偏移强制拽回。该结论具备主体、条件与作用机制，属于可复用交互规则。",
+      "limitations": [
+        "逐字稿未交代“拽回”的具体落点、位移距离或结算帧细节。",
+        "未明确被拽回单位在黍传送前后的坐标记录方式。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "仅一个候选 c01。其引文可在 3723s 行内找到字符级连续子串，命题经改写后自包含，主体、条件与作用域明确；内容为讲师对黍传送与阻挡偏移交互的确定性机制说明，非猜测或反问，故 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_142",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T17:07:53+0900",
+  "source_sha256": "b67927b078fca1271aa0b929f31c3b57e2317f575c081cf5d0f0ea3448772606",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "珊比的传送以格判为基础；当珊比处于所属格内时，其传送的单帧位移量为 0.8÷30，约 0.026 格。",
+      "subject": "珊比的传送",
+      "condition": "珊比处于所属格内时",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "珊比的传送是以格判为基础的 在这个所属格的时候 一帧可以位移0.08格 不退什么0.08格 0.8÷30 也就是0.026格",
+          "t_start": 602,
+          "t_end": 617
+        },
+        {
+          "text": "0.0呃 零点对0.026个 珊比黍和鱼这三种不同的传送",
+          "t_start": 617,
+          "t_end": 628
+        }
+      ],
+      "reason": "逐字稿明确以珊比传送为对象，说明其以格判为基础，并在所属格内给出单帧位移的算式 0.8÷30 与结果 0.026 格；下一行继续以 0.026 个作为三种传送对比参数，支撑该数值为可复用机制参数。",
+      "limitations": [
+        "同一句先出现“0.08格”，随后给出“0.8÷30 也就是0.026格”，前者疑似 ASR/口误；本回执按后文算式采纳 0.026 格，建议实机复核。",
+        "逐字稿未交代该位移量是否受加速、惯性或状态异常影响。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选 c01 有逐字稿直接支撑，主体、条件与数值参数均明确，属珊比传送的实体机制；虽同句存在 0.08/0.8 的转写歧义，但后文明确给出 0.8÷30≈0.026 格，故采纳并将歧义列入 limitations。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

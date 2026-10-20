@@ -1,0 +1,64 @@
+{
+  "workorder_id": "vod_wo_vod_b2_110",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T13:12:30+0900",
+  "source_sha256": "34235508388e44b67ed807d5c9b9c9e833357965a49e492088c0912b14053ba9",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在双敌人权重归一化计算中，当权重约为10:1、两敌人间连线模长为0.2且夹角较小时，取两敌人间连线中点估算落点偏移，结果约为0.02，且误差不大。",
+      "subject": "双敌人权重归一化计算中的落点偏移估算方法",
+      "condition": "权重约为10:1、两敌人间连线模长为0.2、夹角较小",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "距离是0.2 然后的话计算的规则是0.4 减去敌人到敌人之间的模长",
+          "t_start": 4420,
+          "t_end": 4430
+        },
+        {
+          "text": "十和一这边是十 这边是一 然后的话模长是0.2 然后的话按照勾股定理",
+          "t_start": 4476,
+          "t_end": 4490
+        },
+        {
+          "text": "向下的这个距离大约就是0.02 也就是winter scar算的结果 然后再进行连线 再进行连线",
+          "t_start": 4490,
+          "t_end": 4501
+        },
+        {
+          "text": "然后取中间点估值也差不多就是0.02 因为这个夹角是比较小的 它这个误差并不大",
+          "t_start": 4501,
+          "t_end": 4512
+        }
+      ],
+      "reason": "逐字稿先给出敌人到敌人之间的模长0.2，并修正为两侧权重10和1、模长0.2；随后以勾股/几何近似得到向下距离约0.02，并明确说明连线取中间点估值也约为0.02，且因夹角小误差不大。该计算步骤在双敌人权重归一化语境下具有可复用估算价值。",
+      "limitations": [
+        "0.02是权重10:1、模长0.2、小夹角条件下的近似值，并非所有双敌人情形的固定值。",
+        "未给出误差的定量上界，仅说明夹角小则误差不大。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选 c01 通过四闸门，保留为双敌人权重归一化计算中的近似估算结论；已补全主体与条件，并限制其适用范围，避免将0.02误读为普适常数。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

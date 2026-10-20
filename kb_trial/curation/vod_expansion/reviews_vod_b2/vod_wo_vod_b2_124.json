@@ -1,0 +1,93 @@
+{
+  "workorder_id": "vod_wo_vod_b2_124",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T17:02:06+0900",
+  "source_sha256": "0425e53bd67f238225f7465797f7c2512478e09ddfd6be27c204c103051c1a15",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在阻挡偏移的权重计算中，总权重向量归一化后乘以 0.2，方向保持不变，模长收缩到 0.2 距离。",
+      "subject": "阻挡偏移的总权重向量",
+      "condition": "阻挡偏移权重计算阶段，需计算总权重向量时",
+      "scope": "universal",
+      "category": "位移/阻挡偏移",
+      "evidence": [
+        {
+          "text": "总权重向量归一化之后乘0.2 长达12.5的那个向量变成一再乘0.2 保持方向不变 收缩到0.2距离",
+          "t_start": 6243,
+          "t_end": 6260
+        }
+      ],
+      "reason": "主播明确给出阻挡偏移总权重向量的归一化处理：归一化后乘 0.2，方向不变，模长收缩到 0.2；上下文为机制讲解而非猜测。",
+      "limitations": [
+        "未说明总权重向量的构成与阻挡偏移触发条件",
+        "未说明 0.2 是否在所有场景下均为固定常数"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在阻挡偏移的落点计算中，向量加权并归一化后，敌方坐标加上该权重向量得到落点；该落点相对敌我连线方向发生模长收缩。",
+      "subject": "阻挡偏移的落点计算",
+      "condition": "向量加权并归一化后，计算敌方落点时",
+      "scope": "universal",
+      "category": "位移/阻挡偏移",
+      "evidence": [
+        {
+          "text": "再强调一遍 向量加权之后归一化成0.2 敌方坐标加上这个权重向量得到落点 敌我连线在模长收缩",
+          "t_start": 6308,
+          "t_end": 6323
+        }
+      ],
+      "reason": "主播再次强调阻挡偏移落点算法：加权归一化后的权重向量加到敌方坐标上得到落点，并说明该落点在敌我连线方向发生模长收缩。",
+      "limitations": [
+        "未展开权重向量方向与坐标系的精确定义",
+        "未说明归一化乘数 0.2 与落点距离之间的完整关系"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c03",
+      "topic": "由两边之和大于第三边否定 0.5 与 0.2 合成仍为 0.2 的具体计算",
+      "verdict": "reject",
+      "reason": "该候选后半“因此对方那串计算全错”依赖具体对话对象和窗口外对方计算，非自包含；整体只是针对特定例题错误算法的数学反驳，未形成《明日方舟》可复用机制定论。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "c01、c02 对阻挡偏移的权重归一化与落点计算给出了逐字稿明确支撑的规则，保留为通用机制命题；c03 是例题中对某一错误算法的否定，依赖具体对话与未展示计算，不作为机制知识入库。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

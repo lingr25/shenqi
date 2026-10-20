@@ -1,0 +1,72 @@
+{
+  "workorder_id": "vod_wo_vod_b2_111",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T13:12:31+0900",
+  "source_sha256": "9f8de4ae272e2acc078a012faaa56b7c63c623533737e2a57a5d2d305127479a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "当一名被对象A阻挡的敌人与另一名同样被A阻挡的敌人距离小于0.1时，该敌人的阻挡偏移向量为绕A点顺时针旋转90度、长度为一的向量。",
+      "subject": "被对象A阻挡的敌方单位",
+      "condition": "同被对象A阻挡的另一名敌方单位与其距离小于0.1（等于0.1不考虑）",
+      "scope": "universal",
+      "category": "阻挡偏移/向量生成",
+      "evidence": [
+        {
+          "text": "后0.1范围内存在其他一位A阻挡的敌人 这就0.1啊 这就0.1",
+          "t_start": 4699,
+          "t_end": 4715
+        },
+        {
+          "text": "那就是小于0.1 小于0.1的话 会绕A点顺帧旋转90度 长度为一后",
+          "t_start": 4840,
+          "t_end": 4858
+        }
+      ],
+      "reason": "逐字稿中教师明确给出小于0.1时的阻挡偏移向量生成规则：绕A点顺时针旋转90度、长度为一；A在上下文中为阻挡/参考点。将ASR的“顺帧”规范为“顺时针”，并补全为自包含机制陈述。",
+      "limitations": [
+        "等于0.1的情况被当场明确排除讨论。",
+        "“长度为一后”存在ASR断句噪声，长度参数按上下文理解为1。",
+        "A的具体实体类型未在该窗口内展开说明。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "2号敌人被A阻挡且处于A的0.1范围内时，绕A点顺时针旋转90度、长度为一得到的偏移向量方向向下。",
+      "verdict": "reject",
+      "reason": "“方向向下”依赖图中2号敌人与A的相对站位；逐字稿仅有“就是会有一个向下的力”，无法从文本独立复现该方向，属于画面依赖的实例推导，不满足自包含命题与显式条件要求。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "c01 保留了可复用的阻挡偏移向量生成规则，逐字引文可在转写行中逐字定位，故 keep。c02 是依赖图示站位的具体方向推导，缺少文本可复现条件，故 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

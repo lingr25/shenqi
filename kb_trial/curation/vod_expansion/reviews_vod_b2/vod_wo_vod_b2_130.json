@@ -1,0 +1,37 @@
+{
+  "workorder_id": "vod_wo_vod_b2_130",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T17:03:16+0900",
+  "source_sha256": "637725635c8c50a6e08ffefac20d108845a7e6e7e626c41ac5f5326ae0bb85a1",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "当2号敌人与3号敌人处于对称位置时，二者对4号敌人的影响相互抵消，4号敌人只受1号敌人影响；横距0.03、纵距0.3。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ],
+      "reason": "候选命题把6953/6963处的中间性断言（『只受1影响』『二和三抵消』）当作最终机制，但同一上下文随后6968起继续反问，并在7012-7077重算：竖直方向可以抵消，斜向不能抵消且还会加成，最终给出向外向量。故该命题属于后被修正/未闭合的推导，不是可复用定论；违反Gate 4。"
+    }
+  ],
+  "review_note": "本工单仅c01一个候选。其引文可在转写中逐字匹配，主体与条件也基本明确，但核心结论『2号与3号影响相互抵消』在后续讨论中被修正，故不采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

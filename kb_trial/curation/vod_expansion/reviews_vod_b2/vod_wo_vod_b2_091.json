@@ -1,0 +1,64 @@
+{
+  "workorder_id": "vod_wo_vod_b2_091",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:47:36+0900",
+  "source_sha256": "2c0670362f938dd10fd62e31ca12e5bca135f2cf8a91e839eddf3e676d718c55",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在《明日方舟》多敌人阻挡偏移计算中，若某个更早被阻挡敌人的最终落点位于干员中心0.1格半径内，则它会为后阻挡敌人提供一个权重向量：该向量取从干员中心指向该更早敌人落点的向量，顺时针旋转90度后得到的长度为1的单位向量。",
+      "subject": "多敌人阻挡偏移中位于干员中心0.1半径内且更早被阻挡的敌人落点",
+      "condition": "多敌人阻挡偏移的旋转分支被触发；该更早被阻挡敌人的最终落点位于干员中心0.1格半径内",
+      "scope": "universal",
+      "category": "位移/阻挡偏移",
+      "evidence": [
+        {
+          "text": "就是说比他更早的阻挡的敌人 将被阻挡的最终落点 他会判呃 他会在就是3号 敌人会在B3这个位置判断 所有比他早的敌人的C点",
+          "t_start": 3267,
+          "t_end": 3282
+        },
+        {
+          "text": "0.1半径之内的敌人的话要提供 比如说如果是四一和C2 他们要提供干员中心到四一 垂直于干员中心到四一这个向量",
+          "t_start": 3308,
+          "t_end": 3321
+        },
+        {
+          "text": "然后顺帧90度方向的这样 一个长为一的向量",
+          "t_start": 3321,
+          "t_end": 3332
+        },
+        {
+          "text": "我假设0.1半径之内有这些单位 然后的话我们可以发现啊 这个四一是在这个0.1半径之内的 然后的话这个就是原点呃 干员中心到四一",
+          "t_start": 3353,
+          "t_end": 3368
+        }
+      ],
+      "reason": "逐字稿明确说明0.1半径内更早阻挡敌人的最终落点需要提供从干员中心指向该落点的垂直/顺时针90度、长度为1的向量；上下文属于多敌人阻挡偏移权重计算，是可复用机制结论。",
+      "limitations": [
+        "该命题仅覆盖0.1半径内更早敌人提供的权重向量，不包含0.4半径权重、最终位移插值等完整算法。",
+        "逐字稿中‘顺帧’应为ASR写法，按上下文理解为‘顺时针’；如需最严谨仍建议结合原专栏或实机复核。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01为多敌人阻挡偏移中0.1半径内更早敌人落点提供权重向量的机制结论；逐字稿证据连续且明确，未触及未定论假说，判keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

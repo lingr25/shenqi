@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_113",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T13:12:36+0900",
+  "source_sha256": "8b74a5861ce9e3ee029b1a6161f8a588fd63905c9def5fd1865f2717a1ed4e4b",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在多单位阻挡偏移权重计算中，所有旧单位的权重计算完成后，阻挡偏移向量需先按模长归一化（向量除以自身模长），再乘0.2。",
+      "subject": "阻挡偏移向量",
+      "condition": "所有旧单位的权重计算完成后",
+      "scope": "universal",
+      "category": "阻挡偏移/权重计算",
+      "evidence": [
+        {
+          "text": "是归一化之后乘0.2",
+          "t_start": 5095,
+          "t_end": 5104
+        },
+        {
+          "text": "归一是模长归一 这是个向量",
+          "t_start": 5122,
+          "t_end": 5131
+        },
+        {
+          "text": "唯一不就是除以模吗 模不就是一吗",
+          "t_start": 5144,
+          "t_end": 5162
+        }
+      ],
+      "reason": "逐字稿先问“所有旧单位的权重计算之后是什么流程”，随后明确回答“是归一化之后乘0.2”；并进一步说明“归一是模长归一 这是个向量”，以及最终可归结为“除以模”。因此该后处理顺序有逐字稿支撑，属于可复用机制步骤。",
+      "limitations": [
+        "逐字稿未在本窗口展开旧单位权重向量的具体计算细节。",
+        "0.2 半径边界与不同阻挡状态下的完整适用范围未进一步说明。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅一个候选 c01。逐字稿明确承接“所有旧单位的权重计算之后是什么流程”的回答，给出“归一化之后乘0.2”，并说明归一为模长归一，属于可复用机制步骤，予以 keep；回执中已按逐字稿行更正并补全证据时间戳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

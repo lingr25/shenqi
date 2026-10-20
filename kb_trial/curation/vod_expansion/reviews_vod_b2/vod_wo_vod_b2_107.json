@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_107",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T13:10:31+0900",
+  "source_sha256": "783e83ec3f09fe23c8a453455908b997aeda5436680afc845a3b5c03f868ba60",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在双敌人权重计算中，权重等于 0.4 减去两个敌人之间的模长后再乘以 50；当两敌人间模长为 0.2 时，权重为 (0.4-0.2)×50=10。",
+      "subject": "双敌人权重计算",
+      "condition": "计算两个敌人之间的权重，且已知二者间模长/距离",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "距离是0.2 然后的话计算的规则是0.4 减去敌人到敌人之间的模长",
+          "t_start": 4420,
+          "t_end": 4430
+        },
+        {
+          "text": "乘50 因为这个距离是0.2 所以的话最终结果就是0.2 乘50是十",
+          "t_start": 4430,
+          "t_end": 4442
+        }
+      ],
+      "reason": "逐字稿中讲师先给出规则「0.4 减去敌人到敌人之间的模长」，紧接着说明「乘50」，并以距离 0.2 为例算出「0.2 乘50是十」，支撑双敌人权重的公式与示例计算。",
+      "limitations": [
+        "片段仅展示模长为 0.2 时的示例计算；模长大于 0.4 时是否出现负权重、以及该权重适用的完整边界未在窗口中展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 为讲师在白板计算课中明确给出的双敌人权重公式，并以 0.2 模长举例验证，非猜测或开放疑问；证据已按连续逐字稿行拆分引用，满足自包含与显式条件要求。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

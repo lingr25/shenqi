@@ -1,0 +1,86 @@
+{
+  "workorder_id": "vod_wo_vod_b2_122",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T15:33:42+0900",
+  "source_sha256": "374b47f81ebf704d057a3f8eee2b99bf5ac7fbc7689655b9046141b573433aa1",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "阻挡偏移权重向量的构成规则为：在计算阻挡偏移权重向量时，对于正U方向的垂直阻挡分量，系统提供竖直向下且模长为1的权重向量；另一个反向阻挡分量提供反向向量，其模长公式为 (0.4 - L) × 50，其中 L 为两阻挡点间距。",
+      "subject": "阻挡偏移权重向量的构成规则",
+      "condition": "计算阻挡偏移权重向量，且涉及正U方向的垂直阻挡分量与另一反向阻挡分量时",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "首先提供一个垂直于它的方向的 因为这个是正U 所以提供的话就是竖向下长为一的向量哎 但是我稍微放小一点啊",
+          "t_start": 5743,
+          "t_end": 5755
+        },
+        {
+          "text": "然后提供一个它反向于他的 向量长度是多少 是0.4减L乘50",
+          "t_start": 5755,
+          "t_end": 5770
+        },
+        {
+          "text": "假设说这个距离是0.15吧 那么最后得到的结果就是 这个向量模长是0.25×50 最后得到12.5 假设这个是 这是0.15啊",
+          "t_start": 5770,
+          "t_end": 5786
+        }
+      ],
+      "reason": "主播在讲解阻挡偏移权重向量的构成，先说明正U方向垂直分量提供竖直向下、模长为1的向量，再给出反向分量的长度公式；随后以 L=0.15 代入 0.4-L 并乘 50 得到 12.5，支撑该公式。",
+      "limitations": [
+        "L 的严格定义由后续例题中的 0.15 距离推得，逐字稿未用独立定义句完整写明两阻挡点间距。",
+        "公式中的 50 与坐标/格距换算关系未在本窗口展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在阻挡偏移计算中，合成得到总权重向量后，系统会将总权重向量归一化并乘以0.2，即保持合成方向不变，把最终偏移长度收缩到0.2。",
+      "subject": "阻挡偏移总权重向量的归一化规则",
+      "condition": "合成得到阻挡偏移总权重向量后",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "垂直阻挡偏移的这个权重向量 总权重向量归一化之后乘0.2 长达12.5的那个向量变成一再乘0.2 保持方向不变 收缩到0.2距离",
+          "t_start": 6243,
+          "t_end": 6260
+        }
+      ],
+      "reason": "主播明确说明总权重向量归一化后乘0.2，12.5 长度变为 1 后再乘 0.2，并保持方向不变、收缩到 0.2 距离；这是对阻挡偏移落点计算的一般机制结论。",
+      "limitations": [
+        "逐字稿未说明总权重向量模长为 0 或特殊方向时是否存在例外。",
+        "未在本窗口展开多源权重向量的具体合成与加权规则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均通过四大闸门。c01 是阻挡偏移权重向量构成的公式化陈述，c02 是总权重向量归一化后乘 0.2 的落点规则；逐字稿中有明确讲解与代入例证，且引文可在对应时间戳行内字符级匹配。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

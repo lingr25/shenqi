@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_121",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T15:32:48+0900",
+  "source_sha256": "91e71a50b6f7f29c107fbccda30a5bdc6a24b5b2021c6aecbf8cc3ac3ee55c0a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在阻挡偏移的多单位权重叠加中，两个长度均为一的权重向量方向分别为10°和11°时，其合成向量方向为10.5°（等价于取两者角度的中线）。",
+      "subject": "阻挡偏移的多单位合成权重向量",
+      "condition": "两个权重向量长度均为一，方向分别偏10°和11°，相加后模长缩放到0.2以内",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "然后长为一的向量",
+          "t_start": 5505,
+          "t_end": 5508
+        },
+        {
+          "text": "这两个向量加起来是这样的 然后的话加起来是这样一个向量 再然后的话进行模长放缩 缩到0.2之内",
+          "t_start": 5508,
+          "t_end": 5536
+        },
+        {
+          "text": "假设说这个东西有十度角 然后这个二的话有11度角 那么这个垂直向量向下的偏移就是十度角 这个2号就是偏11度角 对吧嗯 他们加权",
+          "t_start": 5561,
+          "t_end": 5578
+        },
+        {
+          "text": "然后再取中线连线 最后得到的就是多少度角",
+          "t_start": 5578,
+          "t_end": 5586
+        },
+        {
+          "text": "得到的就是一个11.5度角的这么一个向量 这个3号",
+          "t_start": 5586,
+          "t_end": 5598
+        },
+        {
+          "text": "10.5等一下 我刚才是十哦 我刚才是十和11 10.5对 10.5 10.5",
+          "t_start": 5663,
+          "t_end": 5673
+        },
+        {
+          "text": "3号就是这样决定的",
+          "t_start": 5679,
+          "t_end": 5690
+        }
+      ],
+      "reason": "上下文演示3号受一号与二号权重向量作用；两个权重向量均取长度一后相加并缩放到0.2。主播先口误为11.5°，随后在5663s明确纠正为10.5°，因此该合成角度可判为已闭合的勘误结论。",
+      "limitations": [
+        "具体10°、11°为例题参数；若权重向量长度不等或存在更多权重向量，方向应按实际向量和计算，不能简单取角度中线。",
+        "逐字稿只给出示例讲解，未展开完整数学证明。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选c01的逐字引文均可在窗口内字符级匹配；主播先口误11.5°后明确纠正为10.5°，属于勘误定论。命题改写为更规范的阻挡偏移多权重合成规则，保留10°/11°→10.5°示例。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

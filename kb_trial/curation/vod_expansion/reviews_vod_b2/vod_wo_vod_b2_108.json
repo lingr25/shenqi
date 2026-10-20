@@ -1,0 +1,70 @@
+{
+  "workorder_id": "vod_wo_vod_b2_108",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T13:11:47+0900",
+  "source_sha256": "ed1e9c264b1f745c182c2ccaffca346e83c5afab4ade9d2ff555b4a1fd63b997",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "在本次白板计算的双敌人两方向权重示例中，两方向权重应为 10 与 1，其比为十比一；先前所说的五比一（对应权重 2 与 10）是口误。",
+      "subject": "双敌人两方向权重",
+      "condition": "本次白板计算的双敌人两方向权重示例（简化计算）",
+      "scope": "instance",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "提供了一个这个方向的十的权重 最后的提供的就是一个五比一的这样一个权重 这边是五 这边是一 然后的话长为0.2 模长是0.2",
+          "t_start": 4455,
+          "t_end": 4468
+        },
+        {
+          "text": "十和一这边是十 这边是一 然后的话模长是0.2 然后的话按照勾股定理",
+          "t_start": 4476,
+          "t_end": 4490
+        }
+      ],
+      "reason": "主播先给出五比一/权重2与10，随后在 4476s 明确改口为「十和一 这边是十 这边是一」，因此保留更正后的 10 与 1（十比一）结论。",
+      "limitations": [
+        "逐字稿未交代该示例中两方向权重的完整几何条件，不能把 10:1 外推为所有双敌人索敌的通用比例。",
+        "ASR 将「十和一」转写为「十和一/十合一」等，按上下文理解为权重 10 与 1。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "简化计算双敌人两方向索敌权重时取权重 2 与 10，按原说法五比一，模长 0.2",
+      "verdict": "reject",
+      "reason": "该命题中的五比一/权重2与10被主播在 4476s 明确更正为十和一（10与1），属被当场推翻的错误推导，不能作为终审定论。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c02 是有效勘误：主播先给出五比一/2与10，随后在 4476s 明确改口为十和一（10与1），故保留更正结论，排除被更正的原命题 c01。该结论限于本次白板计算实例，不宜外推为所有双敌人索敌的通用比例。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

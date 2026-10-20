@@ -1,0 +1,84 @@
+{
+  "workorder_id": "vod_wo_vod_b2_114",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T15:31:00+0900",
+  "source_sha256": "e6de59092e2915110c89a43c16d7b2bdeb2b7726b4a709d64e876eeab968aa69",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "向量归一化就是除以模长。",
+      "subject": "向量归一化操作",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "向量运算",
+      "evidence": [
+        {
+          "text": "归一是模长归一 这是个向量",
+          "t_start": 5122,
+          "t_end": 5131
+        },
+        {
+          "text": "因为他没有别的再去影响哎 唯一不就是除以模吗 模不就是一吗",
+          "t_start": 5144,
+          "t_end": 5162
+        }
+      ],
+      "reason": "上下文将归一化解释为模长归一，并进一步以“除以模”说明操作，属于可复用的向量运算规则。",
+      "limitations": [
+        "逐字稿未讨论零向量等不能归一化的特殊情形。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "向量 (0,-1) 的模长为 1，归一化即除以模长，所以向量 (0,-1) 归一化后仍为 (0,-1)。",
+      "subject": "向量 (0,-1) 的归一化",
+      "condition": "该向量模长为 1，且讨论的是归一化步骤本身，不含后续乘 0.2",
+      "scope": "instance",
+      "category": "向量运算",
+      "evidence": [
+        {
+          "text": "他归一是啥 他归一就是零负一",
+          "t_start": 5131,
+          "t_end": 5144
+        },
+        {
+          "text": "因为他没有别的再去影响哎 唯一不就是除以模吗 模不就是一吗",
+          "t_start": 5144,
+          "t_end": 5162
+        }
+      ],
+      "reason": "逐字稿先给出待归一化向量为“零负一”，随后说明其模长为一且没有其他因素影响，因此按归一化定义除以模长后结果不变。",
+      "limitations": [
+        "该结论只针对本例中模长为 1 的向量 (0,-1)；后续还需乘 0.2 才得到阻挡偏移量。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均围绕同一计算课中的向量归一化。c01 给出通用归一化定义，c02 给出本例向量 (0,-1) 的归一化结果；二者粒度不同，均通过四项硬性闸门。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

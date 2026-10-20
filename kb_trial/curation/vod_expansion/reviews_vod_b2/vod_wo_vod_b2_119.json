@@ -1,0 +1,65 @@
+{
+  "workorder_id": "vod_wo_vod_b2_119",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T17:03:15+0900",
+  "source_sha256": "5232d6f5fed4195b975f2e92200db03f1551d7b90ed066fc2fc44febd54303cc",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "阻挡偏移落点的求法为：取「干员到2号敌人的连线」并加上长度为0.2的权重向量得到中间值，再对该中间值做旋转式偏移（保持模长不变），所得即为最终落点。",
+      "subject": "阻挡偏移落点（干员到2号敌人连线与0.2权重向量的叠加）",
+      "condition": "2号单位在0.1判定半径内存在旧阻挡单位、触发阻挡偏移时",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "在他和他连线之后 用干员到2号敌人的连线 加上这个0.2长度的向量 得到这个值 再然后的话发生一个旋转式偏移 注意要保证模长不变",
+          "t_start": 5358,
+          "t_end": 5387
+        }
+      ],
+      "reason": "主播在同段逐步演示阻挡偏移落点算法：先把干员到2号敌人的连线与长度为0.2的权重向量相加得到中间值，再做保证模长不变的旋转式偏移，最终得到落点。引文与原始逐字稿字符级一致，落在连续单行内；命题可改写为自包含机制陈述，主体/条件/作用域齐备。",
+      "limitations": [
+        "旋转式偏移的具体旋转量/角度与旋转中心在本条逐字稿中未量化，仅说明模长不变",
+        "0.1判定半径与0.2权重向量本身的推导位于同段前半（约5301-5336），本命题只覆盖叠加与旋转步骤"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "阻挡偏移持续六帧，每一帧落点均由「干员到2号敌人连线加0.2向量后再旋转式偏移」确定，整体表现为从起点直接移动到落点",
+      "verdict": "pending",
+      "reason": "「六帧阻挡偏移」(5635)与「直接从这里移动到这里」(5392)两点有逐字稿支撑，但「每一帧落点如何决定」系主播自提问句（5635「每一帧落点是怎么决定的」）后仅以「这样决定的」（5655）含糊作答，未给出逐帧落点的具体算法与参数，讨论未闭合；且起点/落点引文依赖画面指涉（「这里…这里」）。该候选具有机制价值但当场关键参数缺失，留待人工听审/实机验证，判 pending。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本单来自阻挡偏移机制讲授课，含「单阻挡单位权重叠加→旋转式偏移求落点」与「六帧偏移过程」两条候选。c01 完整给出落点向量算法且引文逐字对齐，改写后自包含、条件与作用域齐备，判 keep。c02 中「六帧」与「起点直连落点」有支撑，但逐帧落点的确定方式仅由主播自问自答作出含糊断言、未交代具体参数与算法，属讨论未闭合，判 pending。全单有 c01 过闸，故顶层 verdict 为 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,60 @@
+{
+  "workorder_id": "vod_wo_vod_b2_094",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:48:30+0900",
+  "source_sha256": "96054e9ee9bccf10a46f6fda86eff29ef6ce6c6fd768164b308d51b9cd5246ca",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在多敌人连续阻挡的阻挡偏移计算中，第2个被阻挡的敌人会顺帧偏转0.2以避免与已有落点边界重合，第3个被阻挡的敌人会逆帧偏转。",
+      "subject": "多敌人连续阻挡中的第2、第3个被阻挡敌人",
+      "condition": "多敌人连续阻挡；第2个敌人需避免与更早落点边界重合；第3个敌人受到第2个敌人落点提供的反向权重作用",
+      "scope": "universal",
+      "category": "位移/阻挡偏移",
+      "evidence": [
+        {
+          "text": "如果我挤到0.5边界 然后的话重合了不行 我不能重合 我要让阻挡的第二个敌人顺帧的转个0.2 顺帧转一下",
+          "t_start": 3497,
+          "t_end": 3510
+        },
+        {
+          "text": "呃不能再让第二个也是第三个也顺帧转了 要让第三个逆帧转 他要去判定第二个在0.2到0.4之间 提供一个相当大的反向",
+          "t_start": 3523,
+          "t_end": 3532
+        },
+        {
+          "text": "就是他大体上要满足的就是2号顺帧转 3号逆帧转 至于后面是什么样的 他其实不是很在乎这个算法 自己处理去就得了",
+          "t_start": 3549,
+          "t_end": 3561
+        }
+      ],
+      "reason": "逐字稿明确说明多敌人连续阻挡偏移中，第2个敌人为避免与0.5边界重合会顺帧转0.2，第3个敌人则逆帧转；后文又总结为2号顺帧转、3号逆帧转。该说法是对阻挡偏移算法表现机制的归纳，不依赖画面指涉，也未处于未闭合猜测或反问中。",
+      "limitations": [
+        "逐字稿未明确0.2的物理单位或坐标系定义。",
+        "仅概括第2、第3个敌人的核心表现，第4个及以后敌人的处理未展开。",
+        "0.1/0.4半径权重、50倍权重等计算细节未在本条claim中展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 的引文均可在逐字稿窗口内找到字符级连续子串，且时间戳与行对应。候选内容提炼了多敌人连续阻挡偏移算法中2号顺帧偏转0.2、3号逆帧偏转的核心表现，属于可复用机制定论，四大闸门均通过，予以保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

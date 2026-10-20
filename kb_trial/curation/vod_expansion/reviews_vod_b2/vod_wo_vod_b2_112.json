@@ -1,0 +1,58 @@
+{
+  "workorder_id": "vod_wo_vod_b2_112",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T13:12:56+0900",
+  "source_sha256": "b809d58bd1c743f6edc4412bba514068accc174d3a81e4025234940ef1f0ec01",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在阻挡偏移的0.1距离条件判定中，两阻挡单位间距恰好等于0.1的边界情况不纳入计算；只有间距小于0.1时才按对应规则处理。",
+      "subject": "阻挡偏移的0.1距离条件判定",
+      "condition": "两阻挡单位间距恰好等于0.1",
+      "scope": "universal",
+      "category": "边界条件",
+      "evidence": [
+        {
+          "text": "等于0.1的时候 不管我们这里没有",
+          "t_start": 4823,
+          "t_end": 4831
+        },
+        {
+          "text": "我们不考虑等于0.1",
+          "t_start": 4831,
+          "t_end": 4840
+        },
+        {
+          "text": "那就是小于0.1 小于0.1的话 会绕A点顺帧旋转90度 长度为一后",
+          "t_start": 4840,
+          "t_end": 4858
+        }
+      ],
+      "reason": "上下文为主播在计算课中讲解阻挡偏移的0.1距离边界：先明确等于0.1不考虑，随后说明落在0.1范围内即小于0.1时才进行绕A点旋转等处理。结合前文“0.1范围内存在其他阻挡敌人”可确认该边界条件属于阻挡偏移判定，而非单纯关卡现象。",
+      "limitations": [
+        "逐字稿未明确该边界条件在引擎中的精确浮点比较实现；‘顺帧’为逐字稿原文，疑为 ASR 对‘顺时针’的转写误差，本回执未据此改写引文。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 通过四闸：命题已改写为自包含的阻挡偏移边界条件，引文可在逐字稿中逐字匹配，且上下文为明确教学结论而非猜测。整单仅此一条候选，无重复或需排除项。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

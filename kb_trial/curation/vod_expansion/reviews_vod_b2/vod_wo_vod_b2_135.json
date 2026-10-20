@@ -1,0 +1,71 @@
+{
+  "workorder_id": "vod_wo_vod_b2_135",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T17:05:17+0900",
+  "source_sha256": "4e5380c1b09df84d5ff5f274cd1446987d068b8c5c5f12daeb2bcfaff606fafa",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在位移向量计算中，按向量方式思考时，对特定权重比可将其简化认定为十比一（即直接除以十）；这种简化带来的误差可以控制，并可保证并不大。",
+      "subject": "位移向量计算中的权重比简化",
+      "condition": "按向量方式思考，且针对该讲课中的特定权重计算案例",
+      "scope": "instance",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "我们中间确实有一些简化 比如说我这里的话直接认定是十比一 直接除以十",
+          "t_start": 60,
+          "t_end": 68
+        },
+        {
+          "text": "但是这些地方的误差我们都是可以控制的 都是可以保证并不大的",
+          "t_start": 79,
+          "t_end": 90
+        }
+      ],
+      "reason": "上下文明确讨论位移向量计算中权重比的处理：讲者说明可按向量方式思考，并在具体案例中将权重比直接认定为十比一或除以十；随后指出这类简化的误差可以控制且保证不大。属于有逐字稿支撑的计算简化结论。",
+      "limitations": [
+        "未给出该简化适用的通用误差上界和所有前置参数；十比一仅对应本讲课中的特定近似案例，不应泛化为所有位移向量计算。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "向右的力正常比一小。",
+      "verdict": "reject",
+      "reason": "该候选是特定向量计算中的局部观察，主体“向右的力”未指明计算系统、作用条件与可复现参数；讲者随后也称“这里不是重点”，不具备可复用机制规则价值，分别违反G1、G3、G4。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01保留为位移向量计算中特定权重比简化与误差可控的局部结论；c02为未参数化的局部观察且非讨论重点，予以拒绝。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

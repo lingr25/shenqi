@@ -1,0 +1,85 @@
+{
+  "workorder_id": "vod_wo_vod_b2_096",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:49:33+0900",
+  "source_sha256": "12bb966aea519a95b34b90e4b16f59cbcdc77843db3d6fa544cd2859c6e90033",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "对于一次阻挡偏移计算，总位移与总时长是固定的，因此逐帧落点也随之确定。",
+      "subject": "阻挡偏移",
+      "condition": "发生阻挡偏移且起终点确定后",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "这个计算过程是总位移和总位移是固定的 总时间是固定的 或者说他的落点是固定的 然后他每一帧的落点是剩余时间的平方",
+          "t_start": 3576,
+          "t_end": 3592
+        }
+      ],
+      "reason": "逐字稿明确说阻挡偏移计算过程中总位移、总时间或落点固定，且下一句给出逐帧落点规则，支撑逐帧落点确定的结论。",
+      "limitations": [
+        "未在该候选内给出固定总时长的具体数值；前文提到敌人会在0.2s内强制移动到落点。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "阻挡偏移逐帧结算时，每帧结算后的剩余距离与结算后剩余时间的平方成正比；剩余时间只剩一半时，剩余距离为总距离的1/4。以总距离为36份为例，第一帧移动11份后剩余距离变为25/36。",
+      "subject": "阻挡偏移",
+      "condition": "阻挡偏移逐帧结算，且总距离与总时长已确定",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "每一帧的落点是与剩余时间的平方成正比 比如说如果说总距离是36分 那么如果过了一帧 第一帧就会移动11份",
+          "t_start": 3592,
+          "t_end": 3604
+        },
+        {
+          "text": "让剩余距离变成25/36",
+          "t_start": 3604,
+          "t_end": 3618
+        },
+        {
+          "text": "剩余一半的时间的时候 剩余距离就是总距离的1/4 是一个与平方成正比的关系",
+          "t_start": 3673,
+          "t_end": 3688
+        }
+      ],
+      "reason": "逐字稿直接给出“每一帧的落点与剩余时间平方成正比”，并以总距离36份、第一帧11份、剩余25/36以及剩余一半时间对应1/4总距离为例验证该平方关系。",
+      "limitations": [
+        "逐字稿中“落点”一词与后文“剩余距离”混用；本条按示例将其规范为剩余距离/逐帧位移关系。",
+        "36份、11份、25/36示例依赖总时长被离散为六等分的上下文，具体帧数需结合完整课程确认。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均来自同一段阻挡偏移位移规律讲授。c01保留总位移/总时长固定、逐帧落点确定的结论；c02保留并规范化剩余距离与剩余时间平方成正比及示例参数。未发现未定论假说或画面依赖残句。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

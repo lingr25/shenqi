@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_133",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T17:03:50+0900",
+  "source_sha256": "e750844beaeeec38d9f882990f7f5bff3d7bd27617f37101119f10a15b9e177c",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在对称双权重布局的例题中，4号敌人的偏移方向为向外；原因是2号与3号敌人对4号提供的推力方向均为敌敌方向向外推，即敌敌方向反向于救敌人方向。",
+      "subject": "对称双权重布局例题中的4号敌人",
+      "condition": "在对称双权重布局的例题场景中，2号与3号敌人对称布置并均向4号提供向外的推力时",
+      "scope": "instance",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "为什么是向外移 因为是向外推啊 敌敌方向向外推 2号给4号提供的是这个方向的",
+          "t_start": 7151,
+          "t_end": 7162
+        },
+        {
+          "text": "不是把4号往顺帧方向推吗 是敌敌方向反向于救敌人啊",
+          "t_start": 7175,
+          "t_end": 7185
+        },
+        {
+          "text": "所以是向外的呀",
+          "t_start": 7185,
+          "t_end": 7188
+        }
+      ],
+      "reason": "该候选是课堂对称双权重例题中对4号敌人偏移方向的闭合解释。逐字稿明确说明4号向外移，因为2号、3号对4号提供的是敌敌方向向外的推力，并最终以“所以是向外的呀”收束。证据可在原始逐字稿中字符级对齐，属于实例级机制结论。",
+      "limitations": [
+        "该结论来自本节对称布局例题，未在逐字稿中推广为一般公式。",
+        "“敌敌方向”“救敌人方向”等术语依赖本节上下文，未在本窗口内给出完整定义。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "仅一个候选 c01，为对称双权重例题中4号敌人向外偏移方向的闭合解释，四条硬性闸门均通过；虽为实例级结论，但条件与主体明确，故保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

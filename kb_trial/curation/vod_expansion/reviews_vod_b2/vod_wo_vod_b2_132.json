@@ -1,0 +1,60 @@
+{
+  "workorder_id": "vod_wo_vod_b2_132",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T17:04:25+0900",
+  "source_sha256": "02040ae6d0c76bef18eca581d4a69e2086c2d202cb8b6028c2b1db4ab25e40f7",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在2号、3号敌人分别位于1号敌人两侧对称位置（横距0.03、纵距0.3），4号敌人位于阻挡位置的例题中，4号敌人的顺帧偏移距离应比一半小；先前“差不多一半”的粗略估算需修正为略小于一半。",
+      "subject": "4号敌人的顺帧偏移距离",
+      "condition": "2号与3号敌人关于1号敌人对称，横距0.03、纵距0.3，4号敌人位于阻挡位置；该结论为粗略估算",
+      "scope": "instance",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "这分别是2号敌人和3号敌人 在两个对称的位置 然后的话横距是0.03",
+          "t_start": 6906,
+          "t_end": 6917
+        },
+        {
+          "text": "纵距是0.3",
+          "t_start": 6917,
+          "t_end": 6930
+        },
+        {
+          "text": "应该是一半差不多一半吧 对差不多一半差不多一半差不多一半 应该是要一比一半稍微大一点 错了比一半小",
+          "t_start": 7141,
+          "t_end": 7151
+        }
+      ],
+      "reason": "上下文给出了2号、3号对称位置及4号位于阻挡位置的例题参数；主播先给出约一半的粗估，随后在7141行明确修正为“比一半小”。该结论是例题内的位移粗估，可自包含为实例命题。",
+      "limitations": [
+        "主播明说为粗略估算，不是精确公式",
+        "“一半”的参照量未在逐字稿中数值化",
+        "仅适用于该对称位置例题，不宜上升为通用规则"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 是例题内的位移粗估修正，有逐字稿引文和上下文参数支撑；保留为 instance 级命题，并标注其粗略性与参照量未数值化的边界。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

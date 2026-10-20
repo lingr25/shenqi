@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_123",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T15:33:33+0900",
+  "source_sha256": "a78a15e0224c6485464c9de1003657bed5b5d47414a288be72182565bb9f5f0c",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "两个长度分别为0.5格与0.2格的向量相加，合成向量长度不可能为0.2格；在二者不共线时，由三角形不等式，合成向量长度小于0.5+0.2=0.7格。",
+      "subject": "长度分别为0.5格与0.2格的两个向量的合成向量",
+      "condition": "两向量长度分别为0.5格与0.2格；严格小于0.7适用于二者不共线的情形",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "它加上它它的长度是0.2 它还能是0.2吗 不可能啊",
+          "t_start": 6267,
+          "t_end": 6280
+        },
+        {
+          "text": "两边之和大于第三边 这是0.5 这是0.2 这边怎么也是小于0.7的 这边小于0.7",
+          "t_start": 6280,
+          "t_end": 6303
+        }
+      ],
+      "reason": "主播在勘误语境中明确否定合成向量仍为0.2的错误理解，并用两边之和大于第三边给出合成长度上界判断，属于可复用的向量位移数学约束。",
+      "limitations": [
+        "逐字稿使用“两边之和大于第三边”，严格数学表述为不共线时小于两边之和；同向共线时合成长度等于0.7。",
+        "逐字稿未显式讨论反向共线时合成长度下界，但0.2的合成长度仍不可能成立。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选 c01 为勘误型数学约束，逐字引文连续且可定位；已补全不共线条件以保持严格性，判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}
