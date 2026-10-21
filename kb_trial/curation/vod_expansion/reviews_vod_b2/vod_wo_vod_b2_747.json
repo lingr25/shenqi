@@ -1,0 +1,76 @@
+{
+  "workorder_id": "vod_wo_vod_b2_747",
+  "stem": "BV18BpG6LEtq_p2_42631758665",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:11:27+0900",
+  "source_sha256": "4744a63d8fc14853dd02226c1ab628f32df4831cf97009266d0e6bc71cd3a4eb",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "采用连续型碰撞检测时，检测会沿一个落点到另一个落点之间的射线进行，以判断是否撞到墙。",
+      "subject": "连续型碰撞检测",
+      "condition": "采用连续型碰撞检测时",
+      "scope": "universal",
+      "category": "位移/碰撞检测",
+      "evidence": [
+        {
+          "text": "可以在那个一个落点到另一个落点的之间 的射线上 然后进行检测碰撞有没有撞到墙",
+          "t_start": 2099,
+          "t_end": 2112
+        }
+      ],
+      "reason": "逐字稿明确说明连续型检测是在一个落点到另一个落点之间的射线上进行碰撞检测，属于可复用的机制性结论；后续还补充射线检测理论上更优、更完备。",
+      "limitations": [
+        "未交代落点的定义、检测频率及具体引擎实现细节。",
+        "属于机制层描述，未给出可量化参数。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "采用离散型碰撞检测时，只能在每个落点上检测是否碰到墙。",
+      "subject": "离散型碰撞检测",
+      "condition": "采用离散型碰撞检测时",
+      "scope": "universal",
+      "category": "位移/碰撞检测",
+      "evidence": [
+        {
+          "text": "离散 就是说只能在每个落点上检测有没有碰到墙",
+          "t_start": 2099,
+          "t_end": 2112
+        }
+      ],
+      "reason": "逐字稿直接对比离散型检测与连续型检测，明确离散型只能在每个落点上检测是否碰到墙，结论闭合且具机制价值。",
+      "limitations": [
+        "未说明落点采样间隔以及穿墙风险的具体边界条件。",
+        "属于机制层描述，未给出可量化参数。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单候选 c01 与 c02 均来自同一段明确对比连续型与离散型碰撞检测的逐字稿。两条命题分别描述两种检测方式的核心差异，证据文本可在 2099s 行内逐字匹配，且不依赖画面、不是未闭合猜测，故均予采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,48 @@
+{
+  "workorder_id": "vod_wo_vod_b2_757",
+  "stem": "BV18BpG6LEtq_p2_42631758665",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:12:45+0900",
+  "source_sha256": "50a365fcee177fc2a4d24e56645de7136fac91fbcf068917eee475ee7d5c406a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在离散型碰撞机制中，单位在某一帧发生碰撞时，该帧的位置保持不变，位移要到下一帧才会出现。",
+      "subject": "离散型碰撞机制",
+      "condition": "单位在某一帧发生碰撞",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "即使这种离散型碰撞在某一帧碰撞 那一帧实际上位置是不变的 到下一帧才会出来",
+          "t_start": 3113,
+          "t_end": 3126
+        }
+      ],
+      "reason": "逐字稿中主播以明确陈述句说明离散型碰撞发生时碰撞帧位置不变、位移在下一帧才出现，并紧接成功/失败案例解释碰撞时序；该句不依赖画面指涉，属于可复用的帧时序机制结论，非猜测或反问。",
+      "limitations": [
+        "主播未在逐字稿中给出具体引擎帧率、碰撞检测算法细节或所有位移类型是否均适用的逐帧参数。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选 c01 的引文可在 3113s 行中字符级匹配，主体、条件、作用域可补全为通用离散碰撞时序规则，且主播为明确机制说明而非未定论假说，故裁定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

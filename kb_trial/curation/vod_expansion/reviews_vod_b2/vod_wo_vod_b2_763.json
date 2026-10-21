@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_763",
+  "stem": "BV17rp16HECP_p3_42739106781",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:13:29+0900",
+  "source_sha256": "4f94e3950bbe2022546fe1f4535d98a7194f772768e575b06cda40bb23c9c561",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "费用尺在可露希尔更新之后、可露希尔打合约的条件下崩坏",
+      "verdict": "reject",
+      "reason": "Gate 4 不通过：该候选是对版本更新后费用尺异常的实战现象观察，未给出可复现参数、具体机制链路或闭合结论；同时 Gate 3 不通过：scope 使用 general，未落入 universal/entity_mechanism/instance，机制边界不清。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01 的引文可在 73s 行内逐字对齐，但命题本质是更新后费用尺崩坏的模糊现象描述，缺少可复现参数与明确机制范围，按硬性闸门排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,7 +1,7 @@
 {
   "run": "20261019_vod_review",
   "task": "vod_expansion 工单 LLM 审读（PROMPT.md 四闸门）→ reviews_{batch}/ → converge（proposed，待用户抽查）",
-  "generated_at": "2026-10-21T18:10:14+0900",
+  "generated_at": "2026-10-21T18:14:09+0900",
   "driver": {
     "script": "/workspace/review_driver.py (repo 外驱动, 幂等可续跑)",
     "version": "vod-review-driver-1.0",
@@ -26,12 +26,12 @@
   },
   "usage_by_model": {
     "lingr-free": {
-      "calls": 690,
-      "prompt_tokens": 2479093,
-      "completion_tokens": 4837215,
-      "reasoning_tokens": 4405323,
-      "total_tokens": 7316308,
-      "seconds": 41098.2
+      "calls": 717,
+      "prompt_tokens": 2550986,
+      "completion_tokens": 4976339,
+      "reasoning_tokens": 4529660,
+      "total_tokens": 7527325,
+      "seconds": 42033.8
     },
     "lingr-speed": {
       "calls": 178,
@@ -74,13 +74,12 @@
       "counts": {
         "workorders": 764,
         "candidates": 1227,
-        "workorders_reviewed": 737,
-        "keep": 784,
+        "workorders_reviewed": 764,
+        "keep": 807,
         "repair_rounds": 19,
-        "claims_rewritten": 597,
-        "reject": 310,
-        "pending": 96,
-        "workorders_unreviewed": 27
+        "claims_rewritten": 620,
+        "reject": 324,
+        "pending": 96
       },
       "excluded_by_gate": {
         "pending:G1": 51,
@@ -88,17 +87,17 @@
         "pending:G3": 65,
         "pending:G4": 39,
         "reject:DUP": 31,
-        "reject:G1": 170,
-        "reject:G2": 53,
-        "reject:G3": 171,
-        "reject:G4": 257
+        "reject:G1": 177,
+        "reject:G2": 55,
+        "reject:G3": 184,
+        "reject:G4": 268
       },
       "final_reviewer_model_by_workorder": {
-        "lingr-free": 558,
+        "lingr-free": 585,
         "lingr-speed": 179
       },
       "llm_calls_by_model": {
-        "lingr-free": 562,
+        "lingr-free": 589,
         "lingr-speed": 194
       }
     }

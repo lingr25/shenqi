@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_748",
+  "stem": "BV18BpG6LEtq_p2_42631758665",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:11:41+0900",
+  "source_sha256": "c62312157fd942cf48007d7fadfe6ab73ccee7401ebe642e7402e197b7a12958",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在位移碰撞检测中，沿相邻落点之间的射线上检测是否撞到墙或障碍（连续型检测），相比只在每个离散落点检测，理论上更优且检测更完备。",
+      "subject": "位移碰撞检测中的连续型射线检测",
+      "condition": "当位移以多个落点表示，且需要判断相邻落点之间是否撞到墙或障碍时",
+      "scope": "universal",
+      "category": "位移/碰撞检测",
+      "evidence": [
+        {
+          "text": "可以在那个一个落点到另一个落点的之间 的射线上 然后进行检测碰撞有没有撞到墙 离散 就是说只能在每个落点上检测有没有碰到墙",
+          "t_start": 2099,
+          "t_end": 2112
+        },
+        {
+          "text": "就理所当然的 他做一个射线检测的话 他的这个理论上是更优的 就是检测的会更加的完备",
+          "t_start": 2112,
+          "t_end": 2135
+        }
+      ],
+      "reason": "上下文先区分连续型与离散型：连续型在落点到落点之间的射线上检测墙体碰撞，离散型只在每个落点检测；随后明确判断连续射线检测理论上更优、更完备。该结论自包含、可复用，非纯实战叙述。",
+      "limitations": [
+        "仅讨论一般位移碰撞检测的完备性，未给出具体游戏内实体、位移速度或检测精度参数。",
+        "上下文另提到墙缝等特殊场景需另当别论，连续检测并非对所有穿墙情形都无条件成立。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "单候选 c01 通过四大闸门，保留为通用位移碰撞检测规则；其余上下文为实战叙述、闲聊或未形成候选，不另立命题。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

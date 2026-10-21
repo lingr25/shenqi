@@ -1,0 +1,86 @@
+{
+  "workorder_id": "vod_wo_vod_b2_745",
+  "stem": "BV18BpG6LEtq_p2_42631758665",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:11:23+0900",
+  "source_sha256": "8cb52eeefb49c49c5f0ee56b9e381cd17559db4d8dd383b94667d57247d85288",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在连续型碰撞检测下，单位若要借助墙缝穿墙，必须在进入失衡状态时已经位于墙缝内，并在墙缝内左右来回移动。",
+      "subject": "连续型碰撞检测下的单位",
+      "condition": "碰撞检测为连续型；单位进入失衡状态时已经位于墙缝内",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "是的就是连续型 要碰墙的话 必须要依赖墙缝 你必须让他那个就是",
+          "t_start": 1966,
+          "t_end": 1976
+        },
+        {
+          "text": "必须得直接在失衡的时候 就在墙缝里面 让他左往右 右往左",
+          "t_start": 1976,
+          "t_end": 1988
+        }
+      ],
+      "reason": "逐字稿明确说明连续型碰撞要碰墙必须依赖墙缝，并要求在失衡时已经位于墙缝内、在墙缝中左右移动，属于可复用的连续型碰撞穿墙条件结论。",
+      "limitations": [
+        "逐字稿未给出墙缝宽度、移动幅度、速度阈值等量化参数。",
+        "“失衡”状态的具体判定与持续时间未在逐字稿中展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在连续型碰撞检测下，单位若从墙缝外侧向内撞击，会触发射线检测并提前停驻，因此不能穿入墙内。",
+      "subject": "连续型碰撞检测下的单位",
+      "condition": "碰撞检测为连续型；单位从墙缝外侧向内撞击",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "而不是在这么撞过去 因为你从外头往里撞的话 肯定是会触发这个射线检测",
+          "t_start": 1976,
+          "t_end": 1988
+        },
+        {
+          "text": "然后提前停驻的",
+          "t_start": 1988,
+          "t_end": 1990
+        }
+      ],
+      "reason": "逐字稿明确说明从外向内撞击会触发射线检测并提前停驻，且与前文“而不是在这么撞过去”共同支持其无法借该路径穿入墙内。",
+      "limitations": [
+        "逐字稿只称“射线检测”，未明确说明其属于寻路射线。",
+        "检测频率、停驻距离与具体判定细节未在逐字稿中展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 与 c02 均为连续型碰撞穿墙机制的可复用结论，逐字引文可在对应转写行中字符级匹配。c02 将上游表述中的“寻路射线检测”收敛为逐字稿实际出现的“射线检测”，避免引入未明说的判定类型。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

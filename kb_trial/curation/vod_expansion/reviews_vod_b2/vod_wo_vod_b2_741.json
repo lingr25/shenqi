@@ -1,0 +1,76 @@
+{
+  "workorder_id": "vod_wo_vod_b2_741",
+  "stem": "BV18BpG6LEtq_p2_42631758665",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:11:26+0900",
+  "source_sha256": "3a1dfb5da9ead090f1ba7027e5a61efc7f46744aa83a71ba89e69200116ce7e8",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "杏仁的拉拽力度随最终距离与初始距离之比的四次方放大；当初始距离为0.2格且目标被向外传送使距离增大时，拉力可增大到数百牛（逐字稿以40牛作为示例基准）。",
+      "subject": "杏仁的拉拽力度",
+      "condition": "目标被杏仁拉拽，并因向外传送使最终距离大于初始距离；示例初始距离为0.2格",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "然后那个我在那个谁这个杏仁的脸上拉这个怪 然后的话并且挂上了传送 杏仁一直在往里拉 然后初始距离是0.2 他一直在往外传送",
+          "t_start": 1298,
+          "t_end": 1312
+        },
+        {
+          "text": "初始不是最终距离比初始距离 然后括号的四次方决定它的力度 所以最开始只有0.2格的话 它往外传送的时候 他这个力度能上好几百",
+          "t_start": 1317,
+          "t_end": 1330
+        },
+        {
+          "text": "你想最开始只有40牛",
+          "t_start": 1330,
+          "t_end": 1343
+        }
+      ],
+      "reason": "上下文先说明在杏仁处拉怪、挂上传送、初始距离为0.2格且持续向外传送，随后明确给出力度由距离比值的四次方决定，并称该情形下力度能上好几百，另以40牛作为示例基准。",
+      "limitations": [
+        "逐字稿中“初始不是最终距离比初始距离”存在ASR含混，公式表述需以技能描述或实机复核。",
+        "主播对5×5×5×5=125倍及5000牛的口算存在不一致，本回执不将5000牛作为确定上限。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "杏仁拉拽以传送前落点判定力度，实际未达5000牛但速度超过30直接穿墙飞出",
+      "verdict": "reject",
+      "reason": "候选引文由多行拼接，不满足逐字连续对齐（Gate 2）；且“以传送前落点判定力度”来自“我想一下啊 他应该是”的未验证推测，未闭合（Gate 4）；超过30速度飞出墙属于单次实战现象，不足以构成可复现规则。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G2",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01保留杏仁拉拽力度按距离比四次方放大的机制，并标注ASR含混与5000牛口算不一致的限制；c02因引文跨行拼接及核心机制为未验证推测、单次实战观察而排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

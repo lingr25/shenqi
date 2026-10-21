@@ -1,0 +1,60 @@
+{
+  "workorder_id": "vod_wo_vod_b2_761",
+  "stem": "BV18BpG6LEtq_p2_42631758665",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:13:27+0900",
+  "source_sha256": "b055f18b34a29bdfddb2323e5e43e00ef79e7105d6a3f4408144ab0777510dad",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在离散碰撞逐帧判定下，敌方单位穿墙时，首次位移量需过半格，之后每次位移量需过一格，才能让每一个途经格子都出去并一直飞出地图。",
+      "subject": "受逐帧离散碰撞判定作用的穿墙敌方单位",
+      "condition": "发生穿墙位移，且位移方向每帧持续远离墙体（逐字稿示例中为每帧位于墙右侧）",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "所以这里的条件是要过半格 后边的话每次要过一格才能每一个格子都出去 然后的话一直飞出去",
+          "t_start": 3199,
+          "t_end": 3213
+        },
+        {
+          "text": "即使这种离散型碰撞在某一帧碰撞 那一帧实际上位置是不变的 到下一帧才会出来",
+          "t_start": 3113,
+          "t_end": 3126
+        },
+        {
+          "text": "看见了吗 我每一帧都在墙的右侧 这导致什么 它每一块墙在判定碰撞的时候都是在往右挤 因为我的速度是远离墙的",
+          "t_start": 3154,
+          "t_end": 3164
+        }
+      ],
+      "reason": "该段是主播在解释离散碰撞穿墙后的条件总结，明确给出首次需过半格、后续每次需过一格的位移阈值；前文说明该机制依赖逐帧离散碰撞判定，并强调每帧处于墙右侧、速度远离墙体的成功条件，故可整理为可复用位移机制命题。",
+      "limitations": [
+        "逐字稿未给出半格/一格对应的具体像素或判定轴。",
+        "未明确该阈值是否适用于所有位移来源及所有敌人尺寸。",
+        "“一直飞出去”是否指离开地图边界未在逐字稿中进一步定义。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 的位移阈值结论有逐字稿直接支撑，且可由上下文补全为自包含机制命题；未发现未定论猜测或反问，故保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

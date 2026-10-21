@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_754",
+  "stem": "BV18BpG6LEtq_p2_42631758665",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:12:23+0900",
+  "source_sha256": "a0af2d1a8494fb3e3507cc58ed3d910590e9afa14fd4693551bee2cd2b2971d0",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "第一次拉的初始距离应从0.5格缩短到0.2格。",
+      "verdict": "reject",
+      "reason": "该候选是特定演示/操作调参建议，'第一次拉'未指明具体干员、技能、装置或系统，脱离画面无法确定主体；它仅描述主播要把某次拉拽的初始距离从0.5格改到0.2格，属于实例操作指导而非可复用机制定论。未通过 Gate 1（自包含）与 Gate 3（显式三元约束），且按执行细则第6条纯操作指导不应 keep。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "候选虽然引文可在逐字稿中逐字对齐，并出现0.5格/0.2格参数，但命题缺少明确主体与适用系统，只是对某次拉力演示的调参意图，不能作为独立机制命题采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

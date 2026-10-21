@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_740",
+  "stem": "BV18BpG6LEtq_p2_42631758665",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:10:57+0900",
+  "source_sha256": "98012d7d4e370c7f3458977d58c15707455f6a9862199c95edb9863817aed13d",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "怪物获得约30的速度后，通过物理公式估算，怪物飞出地图的位移约为183格。",
+      "verdict": "reject",
+      "reason": "Gate 2 不通过：上游引文将 1177s、1188s、1203s、1206s 等多个非连续逐字稿行拼接为单条引文，无法在任一行内找到字符级完全一致的连续子串，违反逐字引文对齐硬闸门。且该命题依赖外部物理公式进行估算，逐字稿中公式、加速度等关键参数存在 ASR 残缺，结论未完全闭合，不能作为可复用机制定论。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G2",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "唯一候选 c01 涉及怪飞出地图的位移讨论，但上游引文跨行拼接，直接违反 Gate 2；同时其主体、条件与范围未明确到可复用机制层级，且属于未完全闭合的公式估算，故整单裁定为 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b2_743",
+  "stem": "BV18BpG6LEtq_p2_42631758665",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:10:56+0900",
+  "source_sha256": "d18bd77b6a446ae5380b01edd91a0dcc801fe16e6f818d49a0e93534ae7553f8",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "第二下的间隔为12帧或13帧",
+      "verdict": "reject",
+      "reason": "Gate 1/Gate 3 不通过：命题中的“第二下”是依赖上下文的指代，未说明具体干员、技能、装置或机制主体；触发条件与适用范围亦不明确，无法改写为自包含机制陈述。逐字稿引文虽可对齐，但不足以确定该帧间隔规则。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "第二下间隔的波动是前摇造成的",
+      "verdict": "reject",
+      "reason": "Gate 1/Gate 3/Gate 4 不通过：未明确“第二下”和前摇所属的具体主体，属于依赖语境的指代；因果结论缺少可复现条件与验证过程，仅为主播当场解释/未闭合推导。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "两个候选均围绕“第二下”的帧间隔与波动原因，但逐字稿上下文只用代词和省略表达，无法确定具体机制主体、触发条件及适用范围。G2 引文可逐字对齐，但不足以支撑可复用机制定论，故全部拒绝。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

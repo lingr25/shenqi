@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_759",
+  "stem": "BV18BpG6LEtq_p2_42631758665",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:13:21+0900",
+  "source_sha256": "61f4f80189092ef84d2f50bf59c5acad28126a09f1d9882ec99e7b1c7d6c4969",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在离散碰撞中，若穿墙成功的单位每一帧都位于墙体右侧，且相对格子中心偏右而非偏左、速度方向远离墙体，则墙体的碰撞判定会将该单位向右推挤。",
+      "subject": "离散碰撞中位于墙体右侧且速度方向远离墙体的穿墙单位",
+      "condition": "单位每一帧位于墙体右侧，相对格子中心偏右，且速度方向远离墙体",
+      "scope": "universal",
+      "category": "位移/碰撞判定",
+      "evidence": [
+        {
+          "text": "我每一帧都在墙的右侧 这导致什么 它每一块墙在判定碰撞的时候都是在往右挤 因为我的速度是远离墙的",
+          "t_start": 3154,
+          "t_end": 3164
+        },
+        {
+          "text": "就是他不是在格子中心往左 他是在格子中心往右",
+          "t_start": 3063,
+          "t_end": 3076
+        }
+      ],
+      "reason": "主播在对比失败与成功穿墙时明确指出：成功案例中单位每一帧位于墙的右侧，相对格子中心偏右，且速度方向远离墙体，因此墙体碰撞判定会向右推挤。该表述给出了可复用的位置与速度方向条件，不依赖画面细节，属于对离散碰撞机制的闭合解释。",
+      "limitations": [
+        "逐字稿只覆盖该成功穿墙案例，未给出墙厚、速度数值、逐帧坐标等完整参数。",
+        "该规则主要解释此方向条件下的推挤结果，复杂墙体组合仍需实机验证。"
+      ],
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      }
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 的引文可在逐字稿中逐字匹配，命题可改写为自包含的离散碰撞方向性规则；主体、条件、范围明确，且属于主播对成功穿墙机制的闭合解释，不是未验证猜测。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b2_750",
+  "stem": "BV18BpG6LEtq_p2_42631758665",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:11:59+0900",
+  "source_sha256": "a8147a0c7521370cd585d64525c65a505f46db5cb8ca8c0acbba7321d06cea76",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "《明日方舟》中位移或推动类技能的路径检测为离散型检测而非连续型检测；离散型检测仅检测起点与终点，不检测全程。",
+      "subject": "位移或推动类技能的路径检测",
+      "condition": "位移或推动类技能进行路径检测时",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "对检测全程还是检测起点终点的区别 离散型不是连续型 只能这么推 只能这么推 非常不方便 但是相应的话 因为这种机制",
+          "t_start": 2332,
+          "t_end": 2344
+        },
+        {
+          "text": "在这种情况下 你在横着推他的话 实际上就会被卡住 就会显得莫名其妙",
+          "t_start": 2357,
+          "t_end": 2364
+        }
+      ],
+      "reason": "主播在讨论位移/推拉被墙缝卡住的异常时，明确把差异归结为“检测全程”与“检测起点终点”的区别，并指出这是离散型检测而非连续型检测；随后“横着推会被卡住”的实例进一步支撑离散型路径检测只采样起点/终点的机制结论。",
+      "limitations": [
+        "具体采样点数量、检测频率与代码级实现未在逐字稿中给出。",
+        "“只能这么推”表明该结论来自行为反推，缺少官方或拆包级直接验证。",
+        "是否适用于所有位移/推动技能仍需更广实测。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "仅一个候选 c01。逐字稿中主播以离散型/连续型区分解释推拉卡墙现象，机制陈述明确；虽为行为反推且具体参数不足，但不属于未闭合猜想，四闸门通过，保留并标注局限。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

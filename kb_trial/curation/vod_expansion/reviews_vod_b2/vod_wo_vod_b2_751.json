@@ -1,0 +1,60 @@
+{
+  "workorder_id": "vod_wo_vod_b2_751",
+  "stem": "BV18BpG6LEtq_p2_42631758665",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:12:00+0900",
+  "source_sha256": "6ecadc17d9e80979ae928702000056c5f4717728b0af90db190497486ff18cdc",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "当敌人被拉入相邻墙块之间的缝隙位置后，横向推动该敌人会被卡住；该现象与敌人碰撞箱不对称、下侧边缘特别长有关。",
+      "subject": "位于两个墙缝之间位置并受到横向推动的敌人",
+      "condition": "敌人被拉入两个墙缝之间的缝隙位置，且受到横向推力",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "比如说鱼鱼是有概率把敌人拉进这种位置的 拉在这种挥一下可以磕到就是两个墙缝的位置",
+          "t_start": 2344,
+          "t_end": 2357
+        },
+        {
+          "text": "在这种情况下 你在横着推他的话 实际上就会被卡住",
+          "t_start": 2357,
+          "t_end": 2364
+        },
+        {
+          "text": "本质是因为碰撞箱的不对称 下侧边缘特别长 在这个位置就不行",
+          "t_start": 2364,
+          "t_end": 2378
+        }
+      ],
+      "reason": "逐字稿直接描述了敌人被拉入两个墙缝位置后横推会被卡住，并在后文给出碰撞箱不对称、下侧边缘特别长的原因，具备可复用机制价值；已在上游观察句基础上改写为自包含陈述。",
+      "limitations": [
+        "逐字稿未给出具体敌人、墙块尺寸、推力速度或力度等量化参数。",
+        "“鱼鱼”为转写写法，具体干员名需人工核对。",
+        "结论可能受墙体是否由独立1×1墙块拼接形成影响。"
+      ],
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      }
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 的核心现象有逐字稿直接支撑，后文也补充了碰撞箱不对称的原因，因此改写为自包含机制命题后保留；缺少具体敌人、墙块尺寸与推力参数，已列入限制。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

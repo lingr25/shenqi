@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_736",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:10:14+0900",
+  "source_sha256": "e525ff952567752eccba05533230724d80302c136233c8edf4feaa454c5459bd",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "被推的怪即使推击速度足够，在坐标不合适时仍会被弹出，无法卡进墙缝；因此怪能否进墙缝不只看推击速度，还取决于坐标。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ],
+      "reason": "逐字稿仅记录主播在当前尝试中的口语观察：“速度够了 但是还是被弹出来了”“坐标不太好的时候”，未给出具体关卡、墙缝坐标、推击速度阈值或可复现的坐标参数；命题把一次失败现象概括为通用机制，条件“坐标不合适”过于笼统，且“无法卡进墙缝”并非该引文直接陈述，需依赖画面/上下文补全。按 Gate 3 条件与范围不显式、Gate 4 纯实战观察无明确参数与可复现条件，判 reject。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "被推的怪进入墙缝所在格后，如果弹射方向是往左而不是往下，就无法卡在墙缝里。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ],
+      "reason": "引文可逐字对齐，但“这里”表明这是当前墙缝处的一次具体尝试；把“往左弹而不是往下弹”直接升格为通用规则，缺少该墙缝的关卡、坐标、朝向和推击参数。不同地形下“左/下”并非通用充分条件，故不满足 Gate 3 的显式范围要求，也属于 Gate 4 的单次实战观察，判 reject。"
+    }
+  ],
+  "review_note": "本单两个候选均能与逐字稿原文对齐，但均为当前墙缝弹射尝试中的单次失败观察，缺少关卡、坐标、速度阈值、地形朝向等可复现参数，无法升格为可复用机制定论；全单无 keep，故 verdict=reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

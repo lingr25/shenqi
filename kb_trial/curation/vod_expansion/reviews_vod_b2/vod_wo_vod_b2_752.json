@@ -1,0 +1,86 @@
+{
+  "workorder_id": "vod_wo_vod_b2_752",
+  "stem": "BV18BpG6LEtq_p2_42631758665",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:12:51+0900",
+  "source_sha256": "e0656a3dfc38f898d11a632f685bd31c39b39028ae186d2776761dde99806888",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "当敌方单位的碰撞箱存在下侧边缘较长的不对称时，将其横向推动至两个墙块的拼接缝处会被卡住、无法通过。",
+      "subject": "敌方单位的碰撞箱",
+      "condition": "碰撞箱下侧边缘较长且不对称；敌方单位被横向推动至两个墙块拼接缝处",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "在这种情况下 你在横着推他的话 实际上就会被卡住 就会显得莫名其妙",
+          "t_start": 2357,
+          "t_end": 2364
+        },
+        {
+          "text": "本质是因为碰撞箱的不对称 下侧边缘特别长 在这个位置就不行",
+          "t_start": 2364,
+          "t_end": 2378
+        }
+      ],
+      "reason": "前文说明横推敌人会被卡住，后文明确归因为碰撞箱不对称、下侧边缘特别长；可作为墙缝处横推受阻的碰撞箱机制结论。",
+      "limitations": [
+        "逐字稿未给出该不对称碰撞箱对应的具体敌方单位或数值。",
+        "未说明所有敌方单位是否均具有相同碰撞箱形态。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "当前讨论的关卡墙体由 1×1 墙块逐块拼接而成，接缝处会形成多个缝，而不是一整块连续墙体。",
+      "subject": "当前讨论的关卡墙体",
+      "condition": "当前讨论关卡中的墙体采用离散墙块生成",
+      "scope": "instance",
+      "category": "地形碰撞",
+      "evidence": [
+        {
+          "text": "这个连成这么一整块 别在这个1×1了就行 这到底干啥呢 是非得一块一块的",
+          "t_start": 2378,
+          "t_end": 2392
+        },
+        {
+          "text": "中间多个缝",
+          "t_start": 2392,
+          "t_end": 2396
+        }
+      ],
+      "reason": "逐字稿中主播把卡墙问题归因于墙体被做成 1×1 一块一块，并提到中间多个缝；可作为当前讨论地形构造的实例事实。",
+      "limitations": [
+        "逐字稿未证明所有地图墙体均按 1×1 拼接，只能确认当前讨论场景。",
+        "1×1 的具体单位（格或碰撞块）未被严格定义。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 有明确归因，可保留为碰撞箱与墙缝交互规则；c02 作为当前讨论墙体的实例构造事实保留，泛化到所有墙体需谨慎。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

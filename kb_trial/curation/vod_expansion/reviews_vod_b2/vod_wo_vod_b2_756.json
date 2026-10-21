@@ -1,0 +1,73 @@
+{
+  "workorder_id": "vod_wo_vod_b2_756",
+  "stem": "BV18BpG6LEtq_p2_42631758665",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:12:44+0900",
+  "source_sha256": "4c224ddec06278547a4a57d9827940d09a4404a7dc24f234090e1f7aaea9e54a",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "判定点的高度只比0.2格高一点，因此判定点速度只有30。",
+      "verdict": "reject",
+      "reason": "引文可在逐字稿中字符级对齐，但命题中的“判定点”“0.2”依赖录像画面或前文指涉，未明确是哪个系统/对象的判定点；且“高度只比0.2高一点”“速度只有30”属于模糊实战观察，缺少可复现的完整参数与机制边界，不构成可复用机制定论。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "初始距离拉远很多之后，飞行速度仍然只有一秒一格。",
+      "verdict": "reject",
+      "reason": "引文可对齐，但“他”指代不明，飞行主体只能靠画面理解；该句是单次回放中的速度观察，且“仍然只有”带有额外推断，未给出可复现机制条件，不具备规则价值。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c03",
+      "topic": "判定点速度只有30时，仍然需要进一步缩短初始距离。",
+      "verdict": "reject",
+      "reason": "引文可对齐，但原句“对他是还要缩短初始距离”缺少明确主体/对象，依赖前文“判定点速度只有30”的实例结论；其内容更接近复盘中的操作建议，而非可复用机制规则。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单候选均来自回放素材复盘，逐字引文均可对齐，但命题主体多依赖画面或前文指代，且内容为实例观察或操作建议，未给出可复用的机制参数与适用边界，故全部判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}
