@@ -1,0 +1,52 @@
+{
+  "workorder_id": "vod_wo_vod_b2_440",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T23:14:33+0900",
+  "source_sha256": "6645d0496a22df7e6d669db418fddeb0cd5312fc578a14d9624168e0c78017af",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "克莱门沙的六下攻击并非全部未暴击，六下攻击中实际有一次暴击；因此「六下全未暴击」的说法不准确。",
+      "verdict": "reject",
+      "reason": "引文可逐字对齐，但该结论只是对单次实战六连击暴击结果的观察/勘误，未给出可复现条件或稳定概率/机制参数，属于纯实战现象观察，不具备可复用机制价值，违反Gate4。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "克莱门沙六下攻击中唯一的那次暴击发生在六下的最后一次攻击上。",
+      "verdict": "reject",
+      "reason": "引文仅能证明该次序列最后一次出现暴击，且“唯一”依赖同一单次实战的计数；该命题仍是对单次实战暴击位置的观察，无可复现条件或稳定机制参数，违反Gate4。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "两候选均能在转写中找到逐字证据，但都只是对单次实战六连击暴击次数/位置的观察或勘误，不是可复用的底层机制或实体机制定论；按Gate4排除，整单无keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

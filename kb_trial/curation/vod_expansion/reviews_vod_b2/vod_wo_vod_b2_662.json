@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_662",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:07:49+0900",
+  "source_sha256": "8d36bddebeafa8b4bf1d7c64825822e92181202e5bc687e7e5b0f4664eeb9c4d",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "挂Buff最短需要1帧，最长10帧即可完成。",
+      "verdict": "pending",
+      "reason": "逐字稿中虽有「挂Buff最短一帧就够了」「最多十帧也够了」的直接表述，但未明确该机制属于哪个干员、技能或具体Buff状态，也未交代可复现条件；上下文仍在试验是否需要先造成伤害，结论未完全闭合，需人工听审或后续实机验证。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "一次伤害结算占用30帧。",
+      "verdict": "pending",
+      "reason": "逐字稿中有「一次伤害的话是30帧」的直接陈述，但未说明该30帧是指伤害结算占时、伤害判定间隔，还是特定技能或状态下的伤害节拍；主体限定与可复现条件缺失，不能直接升格为通用规则。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "两条候选均来自同一段试验性讨论，逐字稿可定位「挂Buff」「30帧」等帧时序线索，但关键主体、条件与适用范围不明确，讨论也未完全闭合，故均判 pending，留待后续验证。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

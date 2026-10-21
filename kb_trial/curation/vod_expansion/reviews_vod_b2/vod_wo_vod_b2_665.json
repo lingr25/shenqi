@@ -1,0 +1,76 @@
+{
+  "workorder_id": "vod_wo_vod_b2_665",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:08:01+0900",
+  "source_sha256": "dea31449c0aee2ea833cae3ae2cad33de885895f9eca63caede67c4b02aeb71c",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "当造成损伤与元素伤害的Buff已成功施加于目标后，该Buff约在1秒后才结算损伤和元素伤害。",
+      "subject": "造成损伤与元素伤害的Buff的后续结算",
+      "condition": "该Buff已成功施加于目标",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "Buff是挂上之后一秒钟出损伤和元素啊",
+          "t_start": 660,
+          "t_end": 678
+        }
+      ],
+      "reason": "逐字稿明确说明Buff挂上后一秒钟出损伤和元素，支撑“施加成功后约1秒才结算该Buff损伤/元素伤害”的机制结论。",
+      "limitations": [
+        "逐字稿未交代该Buff的具体来源、技能名或精确帧数；“一秒钟”为口述约数。",
+        "未说明不同帧率、部署时机或网络条件是否影响该延迟。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "目标已成功挂上造成损伤与元素伤害的Buff后，即使之后恢复隐匿，也不影响该Buff后续损伤与元素伤害的结算出伤。",
+      "subject": "已挂上Buff的后续损伤与元素伤害结算",
+      "condition": "目标已成功挂上该Buff；之后恢复隐匿",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "挂上只只要确保挂上了 恢复隐匿就是无所谓的事",
+          "t_start": 660,
+          "t_end": 678
+        }
+      ],
+      "reason": "逐字稿明确说只要确保挂上Buff，恢复隐匿就是无所谓的事，表明隐匿恢复不取消已挂Buff的后续损伤/元素伤害结算。",
+      "limitations": [
+        "逐字稿未给出恢复隐匿后出伤的精确帧数，且未说明该Buff的具体来源。",
+        "结论限于已成功挂上的Buff，不涵盖未挂上即恢复隐匿的情形。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01与c02均能从同一段逐字稿中获得直接支撑，分别对应Buff施加后的出伤延迟与恢复隐匿不影响已挂Buff后续结算；已对表述做自包含规范化，保留为机制结论。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

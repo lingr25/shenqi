@@ -1,0 +1,71 @@
+{
+  "workorder_id": "vod_wo_vod_b2_709",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T16:00:42+0900",
+  "source_sha256": "a8e94a04924d1d622156182bafd0780420d8a9a3f1c5acd13b6a3c6d36dffbf2",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "明日方舟的移动能力可分为传送、阻挡偏移、失衡、寻路四类。",
+      "subject": "明日方舟的移动能力分类体系",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "移动能力分为四种 传送阻挡偏移 然后失衡和那个约定失衡和这个我想下担心 从此传送阻挡偏移 尸横寻路",
+          "t_start": 1342,
+          "t_end": 1362
+        },
+        {
+          "text": "OK我想一下啊 传送失衡 阻挡偏移",
+          "t_start": 1407,
+          "t_end": 1416
+        }
+      ],
+      "reason": "主播在讲解位移复合机制时明确给出移动能力的四类枚举；后文再次复述传送、失衡、阻挡偏移，支撑该分类陈述。ASR中的“约定”“尸横”等噪声按上下文归一为“失衡”“寻路”。",
+      "limitations": [
+        "逐字稿未展开四类之间的边界、互斥关系及覆盖范围。",
+        "第四类名称受ASR噪声影响，按上下文归一为“寻路”。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "解除阻挡的效果理论上可以打断所有阻挡偏移类的移动",
+      "verdict": "reject",
+      "reason": "候选引文“解除阻挡的效果 理论上也可以打断所有阻挡偏移类的”不是逐字稿中的连续子串，原文在前后两个“解除阻挡的效果”之间还有“这个”，且“理论上”属于未闭合的推测性表述，未在当场验证。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G2",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01为明确的位移能力分类结论，经自包含改写后通过四闸门，予以保留；c02引文不满足逐字连续对齐，且结论以“理论上”提出、未闭合，按硬性闸门排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

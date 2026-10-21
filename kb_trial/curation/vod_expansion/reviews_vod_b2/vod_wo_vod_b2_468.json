@@ -1,0 +1,76 @@
+{
+  "workorder_id": "vod_wo_vod_b2_468",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:29:40+0900",
+  "source_sha256": "17e3b06836c36a5feac35a4bfc8b87b7ae1216774336b69c4ce22b55d7a0a8a2",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "在本次对局中，石头人的伤害数值高于2500时可判断为暴击，低于2500时可判断为非暴击。",
+      "subject": "石头人的伤害数值（本次对局）",
+      "condition": "伤害数值高于2500或低于2500",
+      "scope": "instance",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "看比2500高还是比2500低 就可以看是不是暴击了",
+          "t_start": 6759,
+          "t_end": 6769
+        },
+        {
+          "text": "石头人的话是1875和239",
+          "t_start": 6734,
+          "t_end": 6752
+        },
+        {
+          "text": "18752390",
+          "t_start": 6752,
+          "t_end": 6759
+        }
+      ],
+      "reason": "上下文先给出石头人相关伤害数值，随后主播明确以2500为界判断是否暴击；该结论有逐字稿原句支撑，可作为本次对局内的伤害核对判据。",
+      "limitations": [
+        "2500是本次对局的经验阈值，未说明伤害恰好等于2500时如何判定。",
+        "该判据依赖当时的输出、增益、防御与关卡条件，不能直接外推为通用暴击规则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "石头人的伤害数值为1875和2390。",
+      "verdict": "reject",
+      "reason": "仅为一次战斗中的伤害数字罗列，未给出攻击类型、目标状态、增益/防御等成立条件，属于纯实战观察，不具备可复现的机制规则价值；三元约束不完整。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c02 作为本次对局内的经验判据保留为 instance，并改写为“可判断”以避免误表述为通用游戏规则；c01 为纯数值观察，剔除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

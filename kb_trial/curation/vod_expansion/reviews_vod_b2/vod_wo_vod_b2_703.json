@@ -1,0 +1,37 @@
+{
+  "workorder_id": "vod_wo_vod_b2_703",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T15:59:51+0900",
+  "source_sha256": "714153db3985c9cecbf1e9ad0febe5eec1934d917fe9f86873f890aac0044692",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "阻挡几何坐标按勾股定理计算，斜边距离收缩到0.7071。",
+      "verdict": "pending",
+      "reason": "逐字稿中确有“这个斜边的距离要收缩到0.7071”的表述，字符级可在 09:39 行匹配；但该结论依赖前文图示与未明说的阻挡方向、初始坐标及模长缩放对象。0.7071 具体对应何种阻挡偏移几何、缩放前参数是什么、是否适用于全部阻挡场景均未闭合，缺少明确条件与适用范围，不能直接作为可复用机制定论。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "候选引文文本可字符级对齐到 09:39 行，但命题属于课堂推导中的中间计算，0.7071 的几何模长缩放关系缺少明确对象、条件与可复现参数，且上下文讨论尚未完全闭合。按 pending 留待人工听审或后续实机验证。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

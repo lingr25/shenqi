@@ -1,0 +1,76 @@
+{
+  "workorder_id": "vod_wo_vod_b2_624",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:00:39+0900",
+  "source_sha256": "1914a35a426d8f2e04c479a9d2143fb77666216b0e55d03db427cf5bece50694",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "炮台的第一A无法命中处于无敌状态的小兵，且该现象与是否锁定面板无关。",
+      "subject": "炮台的第一A",
+      "condition": "小兵处于无敌状态；炮台第一A进行首次索敌",
+      "scope": "entity_mechanism",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "不是锁不锁面板的事 DA打不到",
+          "t_start": 2929,
+          "t_end": 2935
+        },
+        {
+          "text": "这个干员没有什么锁不锁面板一说呀 他技能期间又没有任何攻击力加成",
+          "t_start": 2959,
+          "t_end": 2992
+        },
+        {
+          "text": "这个有无敌 而且DA是锁不到的 有无敌 而且第一而且无呃 在他第一次索敌的时候 他这个无敌还没结束 导致他索敌他的时候还锁不到他",
+          "t_start": 3044,
+          "t_end": 3060
+        }
+      ],
+      "reason": "上下文先明确否定“锁面板”解释，说明该干员技能期间没有攻击力加成；随后在实机演示中指出小兵处于无敌状态，且首次索敌时无敌尚未结束，导致第一A锁不到。可归纳为该类未命中现象与是否锁定面板无关。",
+      "limitations": [
+        "ASR将“第一A”记为“DA”，具体指代需人工听审确认。",
+        "首次索敌与无敌结束的精确帧时序未在逐字稿中给出。",
+        "关于光环碰撞箱生成的解释仍属上游假说，未纳入本条结论。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "炮台第一A未命中处于无敌状态的小兵，小兵完完全全没有受伤",
+      "verdict": "reject",
+      "reason": "属于单次实战现象观察，未给出可复现参数或可复用机制结论；按 Gate 4，纯实战观察无规则价值，应予排除。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c02 是对“锁面板”错误解释的勘误，并有逐字稿支撑，保留；c01 仅为单次实战观察，缺少可复现参数与机制结论，排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

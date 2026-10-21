@@ -1,0 +1,65 @@
+{
+  "workorder_id": "vod_wo_vod_b2_688",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T15:56:55+0900",
+  "source_sha256": "077cdbdcb578572dadab8cc3492edf727c7dfe10bda83f9162f157ec1bf2601e",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "银灰的反隐效果对尚未生成且处于无敌状态的漩涡目标不生效。",
+      "subject": "银灰的反隐效果",
+      "condition": "漩涡尚未生成且目标处于无敌状态",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "那应该已经照到反应 哦不对 这是这是无敌呢 这是无敌呢 他照个屁呢 这是无敌呢 漩涡还没生成呢",
+          "t_start": 2526,
+          "t_end": 2542
+        }
+      ],
+      "reason": "主播先误判为「应该已经照到反应」，随后立即纠正为「无敌」且「漩涡还没生成」，明确给出未照出反隐的实际原因。该段属于当场勘误而非开放猜想，具备机制价值。",
+      "limitations": [
+        "仅说明该次银灰照漩涡未生效的原因，未给出无敌与未生成状态的具体判定帧数。",
+        "未展开反隐效果与无敌状态之间的通用优先级规则，结论应限定在该实体机制分支内。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "银灰按九帧部署、约19~20帧撤退的时序操作未能在漩涡位置照出反隐效果",
+      "verdict": "reject",
+      "reason": "属于特定实战现象观察，未形成可复用机制结论；且该现象的真实原因已由 c02 修正为漩涡未生成、目标无敌，单看部署与撤退帧数不能支撑机制命题。对应 Gate 4 不通过。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c02 是主播当场纠正先前误判，明确未照出反隐是因为目标无敌且漩涡尚未生成，符合勘误保留条件；c01 为被修正的实战现象观察，不能独立作为机制定论。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

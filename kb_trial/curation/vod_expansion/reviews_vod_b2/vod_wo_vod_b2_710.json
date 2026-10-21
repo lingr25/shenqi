@@ -1,0 +1,60 @@
+{
+  "workorder_id": "vod_wo_vod_b2_710",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:04:46+0900",
+  "source_sha256": "5616759644b4b501f510da82905bebccf9a450380962b0e279137aee6d082e89",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在《明日方舟》中，传送免疫标签按传送干员的推出顺序向下继承：较早推出干员的免疫标签会覆盖其后推出的传送干员（免疫黍传作用于黍、余与克莱门沙；免疫余传作用于余与克莱门沙；免疫克莱传仅作用于克莱门沙自身），因此越早推出的传送干员所受的既有免疫标签限制越少。",
+      "subject": "敌方单位携带的传送免疫标签",
+      "condition": "按传送干员推出顺序继承；敌方单位具有较早干员的对应免疫标签时",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "黍出来的时候有免疫黍传对黍有用 鱼出来的时候就有免疫余传 然后呢鱼也吃免疫黍 穿中心一点就是黍对黍鱼都有用",
+          "t_start": 1829,
+          "t_end": 1842
+        },
+        {
+          "text": "鱼对鱼有用 然后呢再到克莱出来了 免他出来个免疫克莱传免疫 克莱传呢只对克莱有用 但是克莱呢受到免疫属于克莱所有人的影响",
+          "t_start": 1842,
+          "t_end": 1858
+        },
+        {
+          "text": "所以结果就是越往前出的限制越少 但是说是这么说 根本就没区别",
+          "t_start": 1858,
+          "t_end": 1868
+        }
+      ],
+      "reason": "逐字稿中主播以黍、余（转写为‘鱼’）、克莱门沙为例说明免疫标签随版本/推出顺序继承，并用‘越往前出的限制越少’总结；该结论不是反问或未定论猜测。",
+      "limitations": [
+        "逐字稿未给出内部代码字段名或全部敌人实例。",
+        "‘鱼’为转写，按上下文应为‘余’，claim 已按规范名改写。",
+        "主播补充三种标签在实战中‘根本就没区别’。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 的核心机制陈述可由 1829–1858 秒逐字稿支撑；其上游 evidence 把跨行内容拼成一条引文，不符合 Gate 2，但审查时已用单行原文逐条替换。上游把转写‘鱼’误写成‘乌尔比安’，按上下文应为‘余’，已在 claim 中改写。整体判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

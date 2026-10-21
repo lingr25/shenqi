@@ -1,0 +1,69 @@
+{
+  "workorder_id": "vod_wo_vod_b2_630",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:02:00+0900",
+  "source_sha256": "2ee1f294b9fb0c932dc2fa13d87f38f2dc169d0649d021bea8693a1577e895dd",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "炮台原本在66帧抬手；若在65帧撤退炮台，炮台抬手会晚3帧，实测抬手出现在69帧。",
+      "subject": "炮台",
+      "condition": "炮台原定在66帧抬手，且在65帧将其撤退",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "这里我们证明一下三帧索敌啊 这里的话我们知道他是66帧抬的手 然后我在65帧把它撤掉 这样的话他就会晚三帧抬手",
+          "t_start": 3560,
+          "t_end": 3578
+        },
+        {
+          "text": "69帧抬手",
+          "t_start": 3712,
+          "t_end": 3719
+        }
+      ],
+      "reason": "逐字稿明确给出原66帧抬手、65帧撤退以及晚3帧的表述，后又出现69帧抬手的实测记录，二者共同支撑该帧时序结论。",
+      "limitations": [
+        "主播随后仍对索敌帧位置及抬手动画可见性存疑，未完全解释成因；本结论仅确认该次实验中的帧时序表现。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "实测在65帧撤退炮台时，炮台抬手出现在69帧",
+      "verdict": "reject",
+      "reason": "与 c01 重复：c01 已完整表述原66帧抬手、65帧撤退后晚3帧并实测至69帧的同一时序结论；按重复候选规则保留表述更完整的 c01。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "DUP"
+      ]
+    }
+  ],
+  "review_note": "c01 通过四闸：逐字稿有炮台原66帧抬手、65帧撤退和晚3帧的明确表述，并有69帧抬手作为实测佐证。c02 与该时序结果重复，保留 c01 并排除 c02。主播对索敌帧及动画可见性的疑问仅作为限制保留，不影响已记录的帧时序结论。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

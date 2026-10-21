@@ -1,0 +1,71 @@
+{
+  "workorder_id": "vod_wo_vod_b2_595",
+  "stem": "BV1KtHX6nEZS_p2_42575334226",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:15:08+0900",
+  "source_sha256": "cdd0c5184ff04858d1d25876ffc3b17fe94c963728790622e1847ea8e9f24e9a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在778轴中，火陈的龙撞七下就已经足够打出达标伤害",
+      "subject": "火陈的龙（撞击伤害）",
+      "condition": "778轴",
+      "scope": "instance",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "677778验证 通过火陈的龙撞七下就已经足够了",
+          "t_start": 1648,
+          "t_end": 1659
+        },
+        {
+          "text": "我沉的龙只需要撞七下 然后的话",
+          "t_start": 1679,
+          "t_end": 1685
+        }
+      ],
+      "reason": "主播在778轴验证后明确表示火陈的龙撞七下已经足够，并在后文再次强调只需撞七下，故可保留为778轴下的伤害达标结论。",
+      "limitations": [
+        "仅适用于778轴及该演示的阵容与练度，不是泛用伤害结论。",
+        "逐字稿未给出火陈面板、龙单次伤害、敌方防御/抗性等完整参数。",
+        "“达标”按该轴伤害验证通过理解，未给出具体伤害阈值。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "在778轴中，星熊只要能够打到目标就已经足够",
+      "verdict": "pending",
+      "reason": "逐字稿原句为“星熊只要能够打到”，未出现“目标”和“就已经足够”的完整结论；后文还以假设方式讨论火陈只撞六下时星熊能否补足，当前讨论未闭合，需人工听审或后续验证。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01为778轴伤害验证后的明确结论，可保留为实例级机制定论；c02的星熊部分转写残缺且结论未闭合，暂判pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_633",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:02:15+0900",
+  "source_sha256": "c0b967855156b81e0d418a6fcbb54742a62919df5eb845858ba223058d5a1670",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "32帧撤退炮台实验中抬手晚三帧",
+      "verdict": "pending",
+      "reason": "引文可在[4355s]行逐字对齐；但候选仅以泛称“干员”作主体，未交代具体干员/技能/索敌系统，也缺少“预期抬手”的基线帧，无法形成自包含且可复用的机制命题。该段仍属继续实验中的单次观察，留待人工听审或后续实机验证补全主体与基线。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "32帧与33帧撤退均未锁定成功且69帧开始抬手",
+      "verdict": "pending",
+      "reason": "两段引文均出自[4445s]同一行，可逐字对齐；但命题主体仍为泛称“干员/锁定”，未点明具体干员、技能或索敌系统，且上下文明确还有下一实验、尚未闭环，不能作为定论keep。关键主体与实验基线缺失，判pending。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "两候选均通过逐字引文对齐，但都依赖未具名干员/技能，且处于索敌帧继续实验的未闭合阶段；无足够自包含定论，均判pending，本单无keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

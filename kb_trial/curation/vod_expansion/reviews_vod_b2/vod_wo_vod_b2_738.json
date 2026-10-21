@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_738",
+  "stem": "BV18BpG6LEtq_p2_42631758665",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:10:13+0900",
+  "source_sha256": "b63451ada02b9b9e8bff955f19f4cf589186a771a0eeb54b7be7607b62ff1666",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "单位在地图外会以当前移速走回来。",
+      "subject": "处于地图外的单位（含因离散型碰撞箱无视地图边界而飞出地图外的单位）",
+      "condition": "单位处于地图外",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "离散型碰撞箱还可以无视这个墙体边界 还可以无视地图边界飞出去",
+          "t_start": 995,
+          "t_end": 1005
+        },
+        {
+          "text": "对我知道他在地图外会以当前移速走回来",
+          "t_start": 1005,
+          "t_end": 1020
+        }
+      ],
+      "reason": "逐字稿先说明离散型碰撞箱可以无视墙体边界与地图边界飞出，随后主播明确确认单位在地图外会以当前移速走回来；该表述为可复用的位移机制陈述，且不依赖画面指涉。",
+      "limitations": [
+        "逐字稿未给出返回路径、返回判定点、移速快照的具体取值，以及是否受阻挡或其他位移效果影响。",
+        "未明确是否所有单位类型均完全一致，离散型碰撞箱的具体适用对象仍需结合游戏机制进一步确认。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 与逐字稿 1005s 的明确陈述一致，995s 提供了碰撞箱无视地图边界飞出的前置机制；未发现未定论猜想、开放疑问或纯画面依赖问题。按 keep 处理。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b2_597",
+  "stem": "BV1KtHX6nEZS_p2_42575334226",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:15:33+0900",
+  "source_sha256": "24301123e9613e814258d96373d6dc36b94962f3749d95d17f03d696cb2f08f2",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "火陈需要极限早开技能，让召唤物龙只能撞到六次（六判），并且严格要求打7+2。",
+      "verdict": "reject",
+      "reason": "引文可与逐字稿对齐，但该句是实战流程中的操作目标/打法要求，不是可复用机制定论；“打7+2”未在逐字稿中定义，命题依赖当时语境，且后续转火异常未闭合，无法形成自包含机制陈述。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "结城理需要打17刀。",
+      "verdict": "reject",
+      "reason": "该句只是特定流程中的操作指令；候选所补条件（火陈极限早开、龙只撞六次）来自上下文推断而非本句显式给出，且未说明机制原理或可复现条件，属于实战打法细节而非机制定论。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "两条候选均为特定实战流程中的操作参数/打法要求，未形成可复用机制命题。c01引文精确但“打7+2”语义未闭合且依赖上下文；c02条件来自推断。结合后续转火异常仍在排查，均不采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

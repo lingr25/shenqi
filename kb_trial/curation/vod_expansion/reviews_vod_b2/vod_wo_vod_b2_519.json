@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_519",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:55:55+0900",
+  "source_sha256": "48d9804d02140c71c246f9069b3355afb51338149ab2f98ae9e4b34c4e60a0bb",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "珊比的十次轰炸中必定发生的伤害为20万",
+      "subject": "珊比的十次轰炸",
+      "condition": "十次轰炸全部发生时",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "珊比那个对克的帮助是挺大的 主要是提升DPS啊 总伤是会降低的 但是DPS会迅速上涨很多",
+          "t_start": 730,
+          "t_end": 748
+        },
+        {
+          "text": "这20万才是那十次轰炸必定有的伤害",
+          "t_start": 748,
+          "t_end": 753
+        }
+      ],
+      "reason": "上下文在730s明确讨论对象为珊比，748s直接给出“这20万才是那十次轰炸必定有的伤害”的定论，可将20万视为十次轰炸情形下的保底伤害结论。",
+      "limitations": [
+        "逐字稿未说明20万的计算口径，包括技能等级、攻击力加成、敌方防御/抗性、伤害类型及是否为合计伤害。",
+        "后文提到实际持续时间可能不足以报满十次、需要分相邻格各爆五次，因此该20万应理解为“十次轰炸全部发生”的条件性结论，实际可达性需另行确认。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅一条候选。引文与逐字稿字符级一致，主体由上下文补全为珊比，十次轰炸保底20万在逐字稿中有明确陈述；关于计算口径与实际十次可达性的未交代部分列入 limitations，不影响本条作为条件性机制结论采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

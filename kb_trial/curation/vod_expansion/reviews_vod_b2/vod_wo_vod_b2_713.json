@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_713",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:09:19+0900",
+  "source_sha256": "a78d21ffb19498dd38eddaf9ff996ca61226ee7ae1c395cafe812694da8ce6e6",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "克莱门沙的传送位移不会出现往回传送的回退表现",
+      "verdict": "reject",
+      "reason": "该命题来自对单次演示的即时观察（“这个样子是不会往回传送的”），依赖当时画面指涉与具体演示设置，未给出可复现的关卡、传送方向参数或触发条件；作为纯实战现象观察不具备可复用规则价值，违反 Gate 4，且条件仅为演示场景不足以支撑机制命题，Gate 3 亦不足。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "克莱门沙的传送位移表现为向右移动",
+      "verdict": "reject",
+      "reason": "证据原句“这把就很明显右移了”明确限定于“这一把”的实战演示，属即时现象观察而非经得起复用的机制定论；未给出可复现条件或参数，违反 Gate 4，且条件仅为单次演示场景，不足以支撑机制命题，Gate 3 亦不足。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "两条候选均抽取自具体演示中的方向性观察，逐字引文可在原稿对应行中精确匹配（Gate 2 通过），但均未闭合为带明确触发条件、可复现参数和适用范围的可复用机制结论；其中 c02 的“这把”尤其表明为单局实例。按宁缺毋滥原则全部 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

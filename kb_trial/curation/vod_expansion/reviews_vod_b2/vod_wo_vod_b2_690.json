@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_690",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T15:56:16+0900",
+  "source_sha256": "482222f91bc13c103f9ff9a8b713a349bf5711e71422bfb278327f09b1a66245",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "隐匿敌人被阻挡后，其阻挡显影状态持续3秒。",
+      "subject": "被阻挡的隐匿敌人",
+      "condition": "隐匿敌人受到阻挡",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "他阻挡一下反野三秒 你看啊 我们再看一遍啊 仔细看啊",
+          "t_start": 2664,
+          "t_end": 2675
+        },
+        {
+          "text": "显影三秒啊 闲影三秒阻挡显影三秒行 他反应过来了 对就是阻挡嫌疑三秒哎 晕了晕了",
+          "t_start": 2708,
+          "t_end": 2720
+        }
+      ],
+      "reason": "主播在实机观察后明确表示“阻挡一下反隐三秒”，并在随后连续强调“阻挡显影三秒”，同时纠正了关于“阻挡显影一秒”的错误说法。该结论属于可复用的隐匿/阻挡显影机制定论。",
+      "limitations": [
+        "逐字稿中未给出精确到帧的持续时间测量，3秒为口头结论。",
+        "未交代该显影状态的刷新、叠加及与其它反隐效果交互的细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选c01有逐字稿中连续、明确的口头定论支撑，且主播前后文有纠正误解的语境；可将ASR中的“反野/嫌疑/闲影”规范理解为“反隐/显影”，最终保留为阻挡显影持续3秒的通用机制命题。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

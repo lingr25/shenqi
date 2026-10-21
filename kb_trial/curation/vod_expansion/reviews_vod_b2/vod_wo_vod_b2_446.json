@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_446",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:25:51+0900",
+  "source_sha256": "4b8ac4434645f063f7c24d4cf1ca2ae3e64902f1d938e3dfe905c55904c31035",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "本次实测中，风暴潮产生的额外伤害段被判定为DOT伤害。",
+      "verdict": "pending",
+      "reason": "逐字稿中有「这些是dot」，但「这些」为画面指涉，未明确具体伤害段数、时间间隔、伤害数值与可复现触发条件；后续又出现「什么也看不清了」，说明实测受特效遮挡，关键参数缺失。该讨论有机制价值但未闭合，暂判 pending，待实机或人工听审核验。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "风暴潮的DOT伤害段数无法逐段数清，因为技能特效遮挡了伤害数字。",
+      "verdict": "reject",
+      "reason": "该候选只是描述本次实测中视觉被特效遮挡、无法数清伤害段，属于纯实战观察，不具备可复用机制价值；且「技能特效遮挡伤害数字」的因果在逐字稿中并未明确给出，违反 Gate 4。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01 有 DOT 相关机制线索，但逐字稿仅给出指涉性短句且实测被特效遮挡，缺少段数、时序、数值等关键参数，保留为 pending。c02 纯属看不清、数不清的实况描述，无可复用规则价值，判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

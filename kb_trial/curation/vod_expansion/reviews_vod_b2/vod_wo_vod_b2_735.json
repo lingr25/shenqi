@@ -1,0 +1,80 @@
+{
+  "workorder_id": "vod_wo_vod_b2_735",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:09:44+0900",
+  "source_sha256": "8ae072e1fe68b25cafb83c1480be8322e6abbe7d7d5e0d7cf5bd30fed73148ae",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "拉力位移距离的计算基准是拉力弹道的出发点。",
+      "subject": "拉力位移距离",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "位移/弹道",
+      "evidence": [
+        {
+          "text": "距离你要算到弹道的出发点的距离",
+          "t_start": 6562,
+          "t_end": 6574
+        }
+      ],
+      "reason": "主播在解释距离天然小于0.001时明确给出计算基准：距离要算到弹道的出发点；这是对拉力位移计算的机制性说明，不依赖画面。",
+      "limitations": [
+        "逐字稿没有逐字展开说明与干员本体位置的关系，故终稿只保留有直接逐字支撑的起算点结论。"
+      ],
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      }
+    },
+    {
+      "local_id": "c02",
+      "claim": "拉力的弹道出发点位于施力干员身前0.5格处。",
+      "subject": "拉力弹道出发点",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "位移/弹道",
+      "evidence": [
+        {
+          "text": "它拉力的弹道出发点是身前0.5",
+          "t_start": 6574,
+          "t_end": 6584
+        },
+        {
+          "text": "这些怪你推一下几下都是0.5",
+          "t_start": 6584,
+          "t_end": 6593
+        }
+      ],
+      "reason": "逐字稿明确给出拉力弹道出发点在身前0.5，并以推怪后距离约为0.5作旁证；参数明确且属于可复用的拉力弹道规则。",
+      "limitations": [
+        "逐字稿以“身前0.5”表述，未在同一句补出“格”字；结合上下文按0.5格记录。",
+        "“身前”所指由上下文理解为施力干员身前。"
+      ],
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      }
+    }
+  ],
+  "excluded": [],
+  "review_note": "两候选均围绕拉力弹道出发点的距离计算，逐字稿在6562s与6574s给出明确说明。c01按逐字支撑将命题收敛为“以弹道出发点为计算基准”，c02保留0.5身前参数并补齐主体；未发现未定论猜测或画面依赖，故均采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

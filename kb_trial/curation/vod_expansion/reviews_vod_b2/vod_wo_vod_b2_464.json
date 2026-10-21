@@ -1,0 +1,70 @@
+{
+  "workorder_id": "vod_wo_vod_b2_464",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free",
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:29:17+0900",
+  "source_sha256": "50b21addd9cbf7edba0aa8cc7d5350c9f8b79fbea9340f7037eb859e184a5a0f",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "浮游放逐仓的爆炸计数为「四爆一」：累计命中 4 次触发一次爆炸，第 5 次命中不计入触发计数。",
+      "subject": "浮游放逐仓的爆炸计数",
+      "condition": "浮游放逐仓累计受到命中时",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "这个是四爆一 第五下不能算",
+          "t_start": 6518,
+          "t_end": 6532
+        },
+        {
+          "text": "这里的话四下爆了一下 上面这个四下爆了一下 下面这个三下都没有爆",
+          "t_start": 6560,
+          "t_end": 6586
+        }
+      ],
+      "reason": "主播直接口述「四爆一 第五下不能算」，随后以「四下爆了一下」「三下都没有爆」的对照演示支持 4 次命中触发一次爆炸的计数规律。",
+      "limitations": [
+        "未说明爆炸后计数如何重置，以及「第五下不能算」是否在所有浮游放逐仓或所有命中类型下完全一致。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "第一个浮游放逐仓会携带周围数名地面单位",
+      "verdict": "pending",
+      "reason": "逐字稿有「第一个浮游放逐仓会携带周围数名地面」的直接表述，但「数名」不是明确数量，携带单位的具体数量与可复现边界未闭合，需人工听审或实机确认。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c02 的四爆一计数有直接口述和后续四下/三下对照支撑，保留；c01 虽指向具体机制，但关键数量参数未在逐字稿中明确，暂判 pending。",
+  "repair_rounds": 1,
+  "unresolved_problems_auto_demoted": []
+}

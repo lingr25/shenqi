@@ -1,0 +1,60 @@
+{
+  "workorder_id": "vod_wo_vod_b2_486",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:50:21+0900",
+  "source_sha256": "938456ab23766a278b6b96e381642f751c4731e343b867e7a15d4127a9c2cd67",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门莎三技能第一次弹药消耗与第二次弹药消耗之间的间隔为2.4秒；内置冷却假说不能解释部分侵蚀损伤爆发未触发弹药轰炸的现象。",
+      "subject": "克莱门莎三技能",
+      "condition": "在连续出现侵蚀损伤爆发并判定弹药消耗时",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "内置冷却不是很解释得通",
+          "t_start": 4204,
+          "t_end": 4215
+        },
+        {
+          "text": "因为第一次弹药消耗到第二次弹药消耗的间隔 只有2A只有2.4秒",
+          "t_start": 4215,
+          "t_end": 4230
+        },
+        {
+          "text": "就是一二之间的2A间隔有两次是没有触发的 然后有一次是触发的了 是第一次到第二次之间",
+          "t_start": 4301,
+          "t_end": 4314
+        }
+      ],
+      "reason": "逐字稿明确给出第一次到第二次弹药消耗间隔为2.4秒，并多次指出内置冷却解释不通；同时描述了一二之间两次未触发、一次触发的计数现象，支撑内置冷却不能解释部分爆条未触发轰炸的结论。",
+      "limitations": [
+        "转写中的『2A』为 ASR 噪声，依据同句『2.4秒』及上下文归一为2.4秒。",
+        "逐字稿未逐一列出所有爆条点位，具体同格限制仍需结合画面复盘。",
+        "本命题仅保留排除内置冷却的修正结论，未展开后文讨论的同格限制机制。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 具备明确主体、间隔参数和排除内置冷却的修正结论；引文均可在对应转写行中逐字定位，故保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_561",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:09:10+0900",
+  "source_sha256": "2e8c9b9e5e89fd48faf1b2ecd9faeff39db9df3bdd6cd99b48a7e8976e969936",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "结城理的单段伤害为 893×2。",
+      "verdict": "reject",
+      "reason": "该句只是一次伤害核算中的数值确认，且将“893×2”表述为“单段伤害”并不准确；逐字稿未给出技能、敌人、增益等成立条件，属于纯实战核算观察，不满足 Gate 3 的显式条件/范围要求，也不满足 Gate 4 对可复用机制结论的要求。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "结城理的伤害构成中还有一段此前漏算的 893×4.5 倍率段。",
+      "verdict": "pending",
+      "reason": "逐字稿支持主播指出结城理伤害“还少一个”并随后给出“893×4.5”，具备伤害段数拆分的机制价值；但未交代 893 的物理含义、对应技能/攻击段数、增益与目标防御等关键参数，无法形成可复核的机制定论，需人工听审或后续实机验证。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "本工单为伤害公式核算片段，候选多为具体数值拆分。c01 仅为一次核算中的数值观察且“单段伤害”表述不准确，缺乏可复用条件，判 reject；c02 有修正漏算段的机制价值，但逐字稿未交代 893 含义、对应技能/增益/敌人等关键参数，判 pending。无 keep，故顶层 verdict 为 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

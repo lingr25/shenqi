@@ -1,0 +1,76 @@
+{
+  "workorder_id": "vod_wo_vod_b2_518",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:55:53+0900",
+  "source_sha256": "5150f81ce62f766d1c2b7a7d5f10945eba0fae50d90445fb249a61cd3814f37f",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "珊比与克同队配合时，珊比的主要作用是提升克的DPS，使克的DPS迅速上涨很多。",
+      "subject": "珊比与克的配合",
+      "condition": "珊比与克同队配合",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "珊比那个对克的帮助是挺大的 主要是提升DPS啊 总伤是会降低的 但是DPS会迅速上涨很多",
+          "t_start": 730,
+          "t_end": 748
+        }
+      ],
+      "reason": "逐字稿明确表述珊比对克帮助很大、主要提升DPS，且DPS会迅速上涨很多；该结论限定在特定配合下，属于实体机制层面的定性结论。",
+      "limitations": [
+        "未给出具体数值、技能等级、装备与触发时序",
+        "仅描述DPS变化方向，不含可量化阈值"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "珊比与克同队配合时，会使克的总伤降低。",
+      "subject": "珊比与克的配合",
+      "condition": "珊比与克同队配合",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "珊比那个对克的帮助是挺大的 主要是提升DPS啊 总伤是会降低的 但是DPS会迅速上涨很多",
+          "t_start": 730,
+          "t_end": 748
+        }
+      ],
+      "reason": "逐字稿在同一语境中明确给出“总伤是会降低的”，与“提升DPS”并列，构成对特定配合下总伤变化方向的结论。",
+      "limitations": [
+        "未给出具体数值、技能等级、装备与触发时序",
+        "仅描述总伤变化方向，不含可量化阈值"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均围绕珊比与克配合时的伤害构成变化，逐字引文可在同一转写行中连续对齐，且为明确结论而非开放猜想或反问；保留为特定配合的实体机制。两条均为定性结论，未包含数值参数。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

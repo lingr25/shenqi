@@ -1,0 +1,80 @@
+{
+  "workorder_id": "vod_wo_vod_b2_729",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:08:35+0900",
+  "source_sha256": "02923f7ba7b90cd6c35b5677e93f078b605048184b9a78fc59a52b0743ce69a1",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "采用连续型物理碰撞检测的敌人在受到位移作用时会被墙体阻挡，停在墙外。",
+      "subject": "采用连续型（continuous）物理碰撞检测的敌人",
+      "condition": "受到位移作用且位移路径会经过墙体",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "反正就是连续性啊 continue continue型的物理检测的话是可以停在这个墙外的",
+          "t_start": 5167,
+          "t_end": 5175
+        }
+      ],
+      "reason": "上下文在讨论一般敌人被推入墙缝时，主播以 Unity 连续型物理检测解释其会被挡在墙外；该句直接给出连续型检测可停在墙外的机制结论。",
+      "limitations": [
+        "逐字稿未说明高速位移、特殊墙体形状或版本差异下是否存在例外。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "第九章中有三种被设置为离散型碰撞检测的敌人，其位移仅在落点检测碰撞，因此当位移落点落在墙体内部时，这些敌人可以进入墙体。",
+      "subject": "第九章中被设置为离散型碰撞检测的三种敌人",
+      "condition": "敌人属于第九章中被设置为离散型碰撞检测的三种敌人之一，且位移落点位于墙体内部",
+      "scope": "entity_mechanism",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "但是九章这些怪的话 他有个问题 他设置的是离散型 只在落点检测那个碰撞 就导致他如果落点在墙里边的话 是可以进去的",
+          "t_start": 5175,
+          "t_end": 5189
+        },
+        {
+          "text": "为什么你九章有三种怪设置离散型 一个是这个怪 然后另一个是那个 另两个是那啥",
+          "t_start": 5236,
+          "t_end": 5251
+        }
+      ],
+      "reason": "第一条引文直接说明第九章这些怪采用离散型碰撞检测、只在落点检测碰撞，落点在墙内时可以进入墙体；第二条引文补充第九章存在三种此类怪。该结论属于特定敌人固有机制分支。",
+      "limitations": [
+        "逐字稿未列出这三种敌人的具体名称。",
+        "逐字稿未给出位移速度阈值、落点判定细节或适用版本范围。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01、c02 均有逐字稿直接支撑，并可改写为不依赖画面的自包含机制陈述。c02 的第二条引文虽带反问语气，但核心是主播对第九章三种怪被设置为离散型的事实性断言，并非未闭合猜测，故不因反问语气排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

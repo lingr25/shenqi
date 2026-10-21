@@ -1,0 +1,67 @@
+{
+  "workorder_id": "vod_wo_vod_b2_613",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T13:58:49+0900",
+  "source_sha256": "a4aaeef0b122762d0651983efba35e9ff3e24323839b4b6f90620cf6a8ac9b13",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "损伤值刚好等于爆条阈值时，损伤条也会爆条。",
+      "subject": "损伤条",
+      "condition": "损伤值刚好等于爆条阈值时",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "损伤值刚好的时候也会暴跳",
+          "t_start": 1473,
+          "t_end": 1480
+        }
+      ],
+      "reason": "上下文先陈述旧认知：损伤与法伤元素一样要吃0.01系数，导致同值不能爆条；随后用「结果后来看他们说不是这样的」与「损伤值刚好的时候也会暴跳」完成勘误，可支撑同值/刚好等于阈值也会爆条的结论。",
+      "limitations": [
+        "主播明确称该结论来自他人说法，自己未实机验证，属知识盲区",
+        "未给出具体爆条阈值数值、适用的损伤类型及0.01系数是否仍适用",
+        "逐字稿中「爆条」被ASR写作「暴跳」"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "损伤条与法伤元素一样需乘以0.01系数、损伤值同值时不能爆条（主播原持有认知）",
+      "verdict": "reject",
+      "reason": "该候选陈述的是被后续勘误推翻的旧认知，本身不是可复用机制定论；且未在同一命题中给出正确结论。不满足 Gate 1（非独立机制陈述）与 Gate 4（被推翻的错误理解/未闭合勘误）。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c02 是勘误后的机制结论，具备逐字稿支撑，可保留；但其依据为他人说法且缺少阈值细节，已在 limitations 标明。c01 为被推翻的旧认知，不具机制定论价值，应排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

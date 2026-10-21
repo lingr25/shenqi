@@ -1,0 +1,83 @@
+{
+  "workorder_id": "vod_wo_vod_b2_553",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:07:54+0900",
+  "source_sha256": "65f72470f076ac651e9ce02deae37495f888fd4c087098a12100b768db880985",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在该关卡中，龙沿既定路线共转向八次，且每个拐角转向两次。",
+      "subject": "该关卡中的龙",
+      "condition": "该关卡中龙沿既定路线经过拐角时",
+      "scope": "instance",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "这个龙要转八次 每个拐角要转两次",
+          "t_start": 1909,
+          "t_end": 1916
+        }
+      ],
+      "reason": "逐字稿在拆解该图流程时明确给出该龙的转向总次数与每个拐角的转向次数，数字清楚，可作为该关卡的路径/位移参数保留。",
+      "limitations": [
+        "仅适用于该关卡中的该龙及其既定路线，不构成通用位移规则。",
+        "逐字稿窗口未给出关卡名与龙的具体实体名，需结合章节名或画面进一步确认实体。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "龙转到七八次后血量较低，需要开两次技能才能打死",
+      "verdict": "reject",
+      "reason": "该命题依赖本局队伍、伤害累积与未指明的技能施放者，属于具体打法/伤害阈值结论，不是可复用的机制定论；且‘开两次技能’未说明是谁的技能、何时开，缺少可复现参数。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c03",
+      "topic": "龙未被击杀时没有阻挡；龙出生后会加移速，加了移速就会跑出去",
+      "verdict": "pending",
+      "reason": "该讨论涉及‘未击杀后获得移速并跑出阻挡’的机制价值，但‘出生’等关键触发在逐字稿中不清晰，且上游引文跨越 1937s 与 1951s 两行拼接，需人工听审或实机验证后再定。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G2"
+      ]
+    }
+  ],
+  "review_note": "c01 有单行逐字稿直接支撑且数字明确，按该关卡实例路径规则保留。c02 属于本局伤害阈值与打法建议，主体和技能参数不完整，排除。c03 具备机制价值，但关键触发词与引文对齐存在 ASR/跨行问题，暂列 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

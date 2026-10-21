@@ -1,0 +1,102 @@
+{
+  "workorder_id": "vod_wo_vod_b2_489",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:51:01+0900",
+  "source_sha256": "86726508881da9140c433543536022729909176ee86461247a5fc2db9669f745",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门莎三技能两次爆条位置不同时，两次轰炸均会触发。",
+      "subject": "克莱门莎三技能",
+      "condition": "同一次三技能期间，两次爆条位置不在同一格",
+      "scope": "entity_mechanism",
+      "category": "索敌/位置判定",
+      "evidence": [
+        {
+          "text": "不会同时对同一个位置发动轰炸",
+          "t_start": 4370,
+          "t_end": 4384
+        },
+        {
+          "text": "因为这俩位置不同",
+          "t_start": 4370,
+          "t_end": 4384
+        },
+        {
+          "text": "但是这个不在同一格",
+          "t_start": 4384,
+          "t_end": 4398
+        },
+        {
+          "text": "他没有问题",
+          "t_start": 4398,
+          "t_end": 4409
+        }
+      ],
+      "reason": "逐字稿先读出‘不会同时对同一个位置发动轰炸’的限制，随后以‘因为这俩位置不同’和‘但是这个不在同一格’说明两次爆条位置不同，并给出‘他没有问题’的实测判断，可支持位置不同时两次轰炸均可触发。",
+      "limitations": [
+        "逐字稿未说明‘位置不同’的具体判定口径（格中心、格坐标或碰撞盒等）。",
+        "仅覆盖本次口头实测所涉及的两处爆条位置。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "克莱门莎三技能两次爆条落在同一格，且第一次到第二次弹药消耗间隔约2.4秒时，后一次不触发轰炸。",
+      "subject": "克莱门莎三技能",
+      "condition": "两次爆条落在同一格，且第一次到第二次弹药消耗间隔约2.4秒",
+      "scope": "entity_mechanism",
+      "category": "位置判定/时序",
+      "evidence": [
+        {
+          "text": "不会同时对同一个位置发动轰炸",
+          "t_start": 4370,
+          "t_end": 4384
+        },
+        {
+          "text": "这俩后续都在一格了 2A就不行",
+          "t_start": 4384,
+          "t_end": 4398
+        },
+        {
+          "text": "因为第一次弹药消耗到第二次弹药消耗的间隔 只有2A只有2.4秒",
+          "t_start": 4215,
+          "t_end": 4230
+        }
+      ],
+      "reason": "逐字稿明确读出同一位置不重复轰炸的限制，并在实测中指出‘这俩后续都在一格了 2A就不行’；前文又交代第一次到第二次弹药消耗间隔为2.4秒，因此可支持同格且约2.4秒间隔时后一次不触发轰炸。",
+      "limitations": [
+        "‘2A’为逐字稿中的口语/ASR形式，回执按同句给出的‘2.4秒’规范化。",
+        "未验证其他间隔值或同一格在不同时间窗下是否同样受限。",
+        "未给出帧级时间或具体格坐标。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均围绕克莱门莎三技能的同一位置轰炸限制：c01说明两次爆条位置不同可分别触发，c02说明同格且约2.4秒间隔后一次不触发。逐字稿中既有技能描述句，也有对应实测口述；上游c01的第二条引文存在跨行拼接问题，回执已改为单行原文证据。其余关于内置冷却的未闭合猜测未作为机制定论纳入。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

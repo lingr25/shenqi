@@ -1,0 +1,81 @@
+{
+  "workorder_id": "vod_wo_vod_b2_642",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:04:09+0900",
+  "source_sha256": "2a7b27f70a55d49d2eb516ba3994120ba6b775fadc946000f95138d48674e5a4",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在湖光地图的十字路口，敌人波次为40秒和50秒一波，M3的主要输出需要对齐该波次。",
+      "subject": "湖光地图十字路口的敌人波次与M3的主要输出",
+      "condition": "湖光地图十字路口",
+      "scope": "instance",
+      "category": "关卡适配/波次时序",
+      "evidence": [
+        {
+          "text": "那个M3最主要的输出能力 就是打那个就是打那个十字路口要对齐波次 那个十字路口是40秒和50秒的一波",
+          "t_start": 5579,
+          "t_end": 5591
+        }
+      ],
+      "reason": "逐字稿明确说明湖光十字路口为40秒和50秒一波，且M3最主要输出需要对齐该波次；属于特定地图与位置的实例级结论。",
+      "limitations": [
+        "逐字稿未给出完整出怪轴，40秒和50秒是刷新间隔还是具体时间点存在口语歧义。",
+        "“对齐波次”属于特定关卡适配建议，不能外推为通用规则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "M3用于湖光地图十字路口主要输出的回转速度快于该处40秒和50秒的波次节奏。",
+      "subject": "M3用于湖光地图十字路口主要输出的回转",
+      "condition": "湖光地图十字路口波次为40秒和50秒",
+      "scope": "instance",
+      "category": "关卡适配/回转时序",
+      "evidence": [
+        {
+          "text": "那个M3最主要的输出能力 就是打那个就是打那个十字路口要对齐波次 那个十字路口是40秒和50秒的一波",
+          "t_start": 5579,
+          "t_end": 5591
+        },
+        {
+          "text": "他这个回转的话要比那个更快",
+          "t_start": 5591,
+          "t_end": 5602
+        }
+      ],
+      "reason": "紧接上一句以“他这个回转”指代M3，且“比那个更快”承接十字路口波次；可推出M3主要输出回转快于该波次节奏。",
+      "limitations": [
+        "逐字稿未给出M3具体技能、回转秒数或SP数值，也未区分不同技能。",
+        "该结论为湖光特定位置的相对判断，不能外推为通用回转规则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01与c02均有逐字稿直接支撑，属于湖光特定地图的实例级结论。保留时已补全代词指代并标注波次参数歧义；未发现需排除的候选。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

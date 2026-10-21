@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_697",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T15:57:40+0900",
+  "source_sha256": "bc579b54dc42664edffffb9c6d02ad4a9c5c15aa986664ac627480070f537dfe",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "温蒂技能与克莱技能命中怪后，怪进入“免疫”状态，同时血条离右侧只剩很少一截。",
+      "verdict": "reject",
+      "reason": "该候选属于纯实战现象观察：仅描述某次测试中怪物进入免疫/无敌表现时血条剩余量很少，未形成可复用的机制因果。‘免疫/无敌’与‘血条很少一截’的相关性缺少明确参数、可复现条件和机制结论；且候选未明确 scope（instance/entity_mechanism/universal）。不满足 Gate 3 与 Gate 4。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "唯一候选 c01 的引文可在 3145s 行中字符级连续匹配，但命题本身只是对一次测试画面的低血条与免疫/无敌表现作观察记录，缺少可复现条件、明确参数和机制因果，不能作为可复用机制命题保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

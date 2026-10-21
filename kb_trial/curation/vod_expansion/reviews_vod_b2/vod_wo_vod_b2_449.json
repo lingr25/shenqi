@@ -1,0 +1,58 @@
+{
+  "workorder_id": "vod_wo_vod_b2_449",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:26:52+0900",
+  "source_sha256": "6c3296f71e6965485f984f21601b489247b879a2e5fc95a53c9f5d05a1cdb17e",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "受测对象的普通攻击间隔为18帧",
+      "verdict": "reject",
+      "reason": "命题主语为『受测对象』，未给出具体干员、敌人或装置名称，依赖视频画面指涉，不满足自包含与显式三元约束；且属于单场实战观察，缺少可复现条件。引文文本虽可在3916行找到，但t_end应为3936而非3926。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "受测对象的DOT每1秒跳一次",
+      "verdict": "reject",
+      "reason": "命题主语和DOT来源未明确，无法判断是通用DOT规则还是特定技能或敌人的DOT，泛化为每1秒跳一次缺乏逐字稿依据；属于单场观察。引文实际位于3916行，候选t_start 3926不准确。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "两条候选均为测试过程中的定量观察，且均以『受测对象』指代未具名主体，无法直接沉淀为可复用机制定论；同时证据时间戳与逐字稿行不完全对齐。按硬性闸门均不通过，故整单裁定为reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

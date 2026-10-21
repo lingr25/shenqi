@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_510",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:54:05+0900",
+  "source_sha256": "3cc3d3ce0c865e793326795fa42fafda2e502d99c1c862ed05ea035da939be93",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "把弹药全部消耗光需要爆条五次，弹药总量按 5000×5 计算",
+      "verdict": "pending",
+      "reason": "候选命题缺少明确主体：逐字稿窗口未点名是哪一个干员、技能、系统或敌方机制，无法将「弹药」「爆条」与「5000×5」绑定成自包含机制陈述；同时「5000×5」只是孤立算式，其含义是否为弹药总量未被文本闭合。G2 所附两条引文均可在逐字稿中原样定位，G4 未见猜测或反问，但 G1/G3 不通过，需留待人工听审或后续实机验证补全主体与参数。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "本工单仅一个候选 c01。核心说法有潜在机制价值，但当前逐字稿窗口无法确定主体、作用对象及「5000×5」的准确语义，不能作为自包含可复用定论保留；整单无 keep，判 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

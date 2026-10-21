@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b2_714",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:04:52+0900",
+  "source_sha256": "e332022113d3e336bc414c193ee577407fdaedfa39d8df9576b0af4b8d2abe56",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "开启技能到放逐仓出生的极限时间是20帧",
+      "verdict": "pending",
+      "reason": "第3046秒逐字稿确实出现“开技能到那个放逐仓出生的极限时间是20帧”，但“开技能”未明确到具体干员或技能，且同句后紧接“哦不对”“再晚一点”的自我修正，主体与成立条件不足以形成自包含可复用命题，需人工听审或实机验证。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "梦奇物对放逐仓出生流程的打断只能发生一次，到22帧时开始不再打断",
+      "verdict": "pending",
+      "reason": "第3091秒引文可字符级匹配，但该句主语为“你”，未在同一引文中明确“梦奇物”；前文又出现“会无限打断”与后文“只能断一次”的张力，主播以“好像有点问题”探索，讨论未闭合，需人工听审确认指代、作用对象与22帧边界。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "两个候选均涉及有机制价值的帧时序边界，但当前逐字稿窗口内关键主体/技能名缺失，且上下文存在自我修正与未闭合讨论，无法达到 keep 标准；按 pending 留待人工听审或实机验证。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

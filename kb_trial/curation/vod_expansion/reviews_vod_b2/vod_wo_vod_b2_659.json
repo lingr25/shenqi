@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_659",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:06:38+0900",
+  "source_sha256": "dc75c4080d1229ecd8a391d1bff569bb9cddebf63a6627b42d44682847d6b403",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "祥子参与DPS对比时没有把目标定到最远距离以触发满天赋，也没有计入潜能，因此祥子的对比数据偏低。",
+      "verdict": "reject",
+      "reason": "不满足 Gate 1 与 Gate 4：该候选是对外部DPS对比表格缺口的观察与推断，并非可复用的游戏机制定论；逐字稿中还伴随“应该是底下的表格还没改”等未验证猜测，且关键参数（天赋触发距离、潜能影响量、表格版本）未闭合，属于纯观察/未定论推测，不能作为机制命题 keep。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单仅有一个候选 c01。引文可在 6870s 行中逐字匹配，但该句核心是主播对DPS对比表格未更新/低估原因的现场推断，含“应该是底下的表格还没改”等未闭合猜测，且缺乏可复现参数，不具备原子机制命题价值，故整单 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

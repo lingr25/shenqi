@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_461",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:27:56+0900",
+  "source_sha256": "1b4a82e91eec17b171eda40fb67e79be9ddc2065d121794d4f4d78b4b010b8d5",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "石头人战斗中2390点伤害与损伤同时出现",
+      "verdict": "reject",
+      "reason": "仅为一次实战中的数值现象观察：未说明伤害来源、损伤类型、触发条件与可复现判定方式，无法构成可复用机制命题。逐字引文「和损伤一起出的2390」可在[6360s]行中找到，但该候选不满足显式条件约束，且属于无明确参数与可复现条件的纯观察，违反 Gate 3 与 Gate 4。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单唯一候选 c01 是对石头人战斗中 2390 伤害与损伤同帧/同时出现的实况观察，逐字稿可对齐引文，但缺少明确的主体机制状态、触发条件与可复现参数，不能作为知识库机制定论保留，裁定 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

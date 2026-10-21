@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_725",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:07:21+0900",
+  "source_sha256": "bcf37f2773f6e0967a496ba26341df3120a38bea7258f3b0ca1ef844a9a8936e",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "杏仁拉取具有向上历史速度的单位时，向杏仁方向的拉力只作用一帧，而该单位向上方向仍保留历史继承速度，因此其纵向速度显著高于横向速度，合成位移方向向上偏而不是朝向杏仁。",
+      "subject": "杏仁的拉取机制",
+      "condition": "被拉取单位此前已具备向上的历史速度",
+      "scope": "entity_mechanism",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "纵向的速度要比横向高很多 所以你看到这里的话 他就不再是往杏仁的方向偏 而是往上偏了 因为它往杏仁方向上抵 只提供了一帧的拉力",
+          "t_start": 4372,
+          "t_end": 4383
+        },
+        {
+          "text": "而向上的话还有着历史继承下来的素食",
+          "t_start": 4383,
+          "t_end": 4394
+        }
+      ],
+      "reason": "逐字稿明确说明纵向速度高于横向速度、位移不再朝杏仁方向偏而是向上偏，并给出原因：向杏仁方向的拉力只提供一帧，而向上方向仍带有历史继承速度。第二段引文中的“素食”为转写误识，结合上下文应理解为“速度”，不影响机制结论。",
+      "limitations": [
+        "逐字稿未给出历史继承速度的具体数值、拉力与速度的帧序边界，也未说明该现象在其他拉力干员或不同墙体条件下是否完全同理。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选命题具备明确机制结论：杏仁拉力仅一帧、历史向上速度保留导致位移方向向上偏。引文已按单行逐字稿拆分对齐，ASR 误识“素食”在理由中说明，未引入逐字稿之外的参数或结论，故保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

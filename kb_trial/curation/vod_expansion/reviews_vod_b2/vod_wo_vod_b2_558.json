@@ -1,0 +1,91 @@
+{
+  "workorder_id": "vod_wo_vod_b2_558",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:08:31+0900",
+  "source_sha256": "72cad9cbf4fa09bf93e3eb37d826b03a069fe831f1306b1f89a0ebccc4a10a21",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "干员部署帧由逻辑帧控制；攻击前摇的浮动由动画帧影响，但并非所有前摇都会出现浮动。",
+      "subject": "干员部署帧与攻击前摇浮动",
+      "condition": "攻击前摇采用动画制/受动画帧通知时；冷却制前摇另算",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "部署帧是逻辑帧控制的 前摇浮动是动画帧影响的 而动画帧是一个受到电脑性能的 当时呃此时的运算压力啊影响的东西",
+          "t_start": 2714,
+          "t_end": 2729
+        },
+        {
+          "text": "所以不是所有的前摇都会受到前摇波动的影响",
+          "t_start": 2638,
+          "t_end": 2650
+        }
+      ],
+      "reason": "逐字稿明确将部署帧归为逻辑帧控制、前摇浮动归为动画帧影响，并补充并非所有前摇都会浮动；可提炼为帧时序机制定论。",
+      "limitations": [
+        "未展开具体帧数、动画帧率与浮动分布。",
+        "冷却制/动画制前摇的差异在逐字稿后段有讨论，claim 中仅作边界提示。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "运行设备的性能与游戏内动画帧设置（如30帧/60帧）会改变前摇浮动出现的概率比。",
+      "subject": "前摇浮动概率比",
+      "condition": "设备性能/运算压力变化，或游戏动画帧设置改变时",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "它可以受到你电脑当前的这个热度啊 就是性能啊影响 改变这个概率比",
+          "t_start": 2729,
+          "t_end": 2747
+        },
+        {
+          "text": "再比如说这个电脑的30帧 60帧 这个设置不是这个模拟器设置啊 是这个动画帧设置 必须是这个动画帧设置",
+          "t_start": 2747,
+          "t_end": 2761
+        },
+        {
+          "text": "这些设置可以改变前摇值的概率比",
+          "t_start": 2761,
+          "t_end": 2775
+        }
+      ],
+      "reason": "逐字稿明确说电脑性能可影响并改变概率比，且强调是动画帧设置而非模拟器设置，30/60帧设置可改变前摇值概率比。",
+      "limitations": [
+        "未给出具体概率数值或定量关系。",
+        "属于讲解口述结论，未见实测数据。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均有逐字稿机制结论支撑。上游给出的时间戳与 c02 跨行引文不符合逐字稿定位，已按原始逐字稿校正时间戳并将 c02 证据拆分为单行连续子串。c01 说明部署帧/前摇浮动的帧来源，c02 说明性能与动画帧设置会改变前摇浮动概率比，二者不构成重复。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

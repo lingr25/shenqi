@@ -1,0 +1,56 @@
+{
+  "workorder_id": "vod_wo_vod_b2_596",
+  "stem": "BV1KtHX6nEZS_p2_42575334226",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:14:57+0900",
+  "source_sha256": "3d0c7f4e38c418398652ca128b30a88262ae0a8f9e73c0633f8d1b7f5c2d3bac",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "火陈与星熊这套作业的伤害并没有那么极限",
+      "verdict": "reject",
+      "reason": "该命题只是对特定作业伤害余量的实战评价，未给出可复现的参数、判定条件或通用机制；且「这套作业」依赖上下文指涉，不满足自包含与显式条件要求，并属于纯实战观察结论，不具规则价值。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "火陈与星熊这套作业的操作容错和冗余非常多",
+      "verdict": "reject",
+      "reason": "该命题使用「这里的操作」等指示性表述，未补齐具体机制主体、可复现条件与量化边界，只是对特定作业容错冗余的主观实战评价；不满足自包含、显式三元约束与排除纯实战观察的要求。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "两个候选均只是对特定作业伤害余量与容错冗余的实战评价，缺少可复用机制参数和显式成立条件，按硬性闸门予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

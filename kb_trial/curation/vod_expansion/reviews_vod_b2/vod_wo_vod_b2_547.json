@@ -1,0 +1,50 @@
+{
+  "workorder_id": "vod_wo_vod_b2_547",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:05:37+0900",
+  "source_sha256": "f25db8d16fc42825ffa5d400ace16bfb9a5559acb17394bac1e32035ab361f74",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙部署后，位于其身前的敌人（包括被其阻挡的敌人）对克莱门沙造成的物理伤害和法术伤害均会降低。",
+      "subject": "克莱门沙",
+      "condition": "敌人位于克莱门沙身前；被克莱门沙阻挡的敌人也包含在内",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "根据他的部署 朝向所有在他身前的敌人 对他造成的物理和法术伤害都会降低 包括被他阻挡的",
+          "t_start": 2101,
+          "t_end": 2114
+        }
+      ],
+      "reason": "逐字稿直接读出克莱门沙的机制描述，明确其朝向身前敌人时，敌方对克莱门沙造成的物理和法术伤害都会降低，并特别说明包括被其阻挡的敌人；该命题自包含且参数明确。",
+      "limitations": [
+        "未说明减伤的具体数值或百分比",
+        "未说明“身前”的精确判定边界",
+        "未说明是否对物理、法术之外的伤害类型生效"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选 c01 的引文与 2101s 逐字稿行完全一致；内容为机制描述的直接陈述，明确朝向减伤覆盖物理和法术伤害并包括阻挡目标，四项硬性闸门均通过，裁定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

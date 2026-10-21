@@ -1,0 +1,64 @@
+{
+  "workorder_id": "vod_wo_vod_b2_650",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:05:09+0900",
+  "source_sha256": "7629bea862bca84aeea5c4074eff31f67c0e46f082a9b38268c333b5f1b073f0",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "使用推水月进坑的方法时，目标坑所在格的纵坐标必须为偶数；若坑所在格的纵坐标为奇数，则无法通过该推挤方法将水月挤下坑，该方法对奇数格不成立。",
+      "subject": "推水月进坑的方法（目标坑纵坐标奇偶要求）",
+      "condition": "使用该方法且目标坑所在格纵坐标为偶数；纵坐标为奇数时不成立",
+      "scope": "entity_mechanism",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "这个方法的硬性要求是 这个坑必须得是那个偶数呃 奇数偶数奇数偶数必须得设偶数格啊 这个坑必须得是偶数格",
+          "t_start": 6325,
+          "t_end": 6353
+        },
+        {
+          "text": "注意啊 这个必须得是偶数格 不是偶数的格的坑是挤不下去的",
+          "t_start": 6379,
+          "t_end": 6390
+        },
+        {
+          "text": "这个方法只对偶数格成立 对奇数格不成立",
+          "t_start": 6482,
+          "t_end": 6496
+        },
+        {
+          "text": "做不到 因为这个纵坐标是奇数格",
+          "t_start": 6529,
+          "t_end": 6544
+        }
+      ],
+      "reason": "主播在讨论推水月入坑方法时明确称硬性要求是坑必须为偶数格，并补充非偶数格挤不下去、该方法只对偶数格成立；后文又以纵坐标奇数格为例说明无法向下挤入，因此可采纳为该特定方法的入坑条件。",
+      "limitations": [
+        "逐字稿主要明确纵坐标奇偶，横坐标是否另有要求未在本窗口展开。",
+        "该方法的具体操作步骤与完整干员配置未在本窗口完整给出。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 为课堂讲解中明确给出的推水月入坑条件，逐字稿中有直接证据，且后文用奇数格反例说明不成立；未见未定论猜测或纯画面依赖，故裁定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,37 @@
+{
+  "workorder_id": "vod_wo_vod_b2_525",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:58:01+0900",
+  "source_sha256": "69432941f1b63d42a3b8e80540f12987742ca04ca1ad393e7d36ffe5170c3f9e",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "珊比三技能3.6秒的间隔内会打出三到五次攻击，而2.4秒内做不到同样次数，因此实际节奏是3.6秒一次，形成3.6秒真空。",
+      "verdict": "pending",
+      "reason": "G3 不通过：逐字稿 1137/1145 的 3.6 秒讨论未明确主体为「珊比三技能」；前文 1122 的「他三技能」指代不清，且「三次五次」与「3.6秒真空」的具体参数、成立条件未闭合，需人工听审或后续实机验证。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "仅 c01 一个候选。逐字引文可对齐，但主体归属与关键参数不明确，暂不采纳为可复用机制定论，判 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

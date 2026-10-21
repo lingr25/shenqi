@@ -1,0 +1,37 @@
+{
+  "workorder_id": "vod_wo_vod_b2_629",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:01:30+0900",
+  "source_sha256": "7f467e97e4083bfba6fd30d68f590c63d0cf655dca1db79d0b5b27416dfe571f",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "在66帧撤退炮台后，炮台的第一A不会重置抬手且可以转火。",
+      "verdict": "pending",
+      "reason": "逐字稿中存在方向一致的观察句（如“他没有重新抬手”“他可以转火的”），具备机制价值；但主播随后提出“不能排除这个可能有可能单纯是我动画看不见”，且仍在尝试64帧撤退，66帧撤退后是否真的不重置抬手、适用条件是否仅为索敌帧/前摇期间均未闭合，需后续实机验证或人工听审。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "唯一候选来自撤炮台实验的口头观察，虽然逐字稿中存在与命题方向一致的观察句，但同一窗口内后续讨论出现动画不可见等未排除假说，且关键条件未闭合，故不判 keep，留待 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

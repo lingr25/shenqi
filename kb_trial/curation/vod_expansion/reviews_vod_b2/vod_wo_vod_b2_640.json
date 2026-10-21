@@ -1,0 +1,66 @@
+{
+  "workorder_id": "vod_wo_vod_b2_640",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:03:13+0900",
+  "source_sha256": "e530077eb37303625d78450b2659193f4aa1846dd6d9585319a1a2c79da02934",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "火陈拥有一个回转时间为36秒多的技能。",
+      "subject": "火陈",
+      "condition": "universal",
+      "scope": "entity_mechanism",
+      "category": "技能回转",
+      "evidence": [
+        {
+          "text": "因为他有一个36秒多回转的一个技能来说",
+          "t_start": 5518,
+          "t_end": 5539
+        }
+      ],
+      "reason": "逐字稿中主播明确说明火陈有一个36秒多回转的技能，属于可复用的干员技能回转参数，具备机制知识价值。",
+      "limitations": [
+        "未明确对应火陈的哪一个技能",
+        "36秒多的具体数值未精确到秒，且需考虑ASR转写误差"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "火陈的优势区间是百分比血，且火陈的百分比血区间独一无二。",
+      "verdict": "reject",
+      "reason": "该候选是对干员强度/优势区间的评价性结论，逐字稿未给出可复现条件、具体参数或机制展开；『百分比血』与『独一无二』均不足以构成可复用机制定论，不满足Gate 3与Gate 4。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c02有明确逐字稿支撑的36秒多回转参数，作为火陈的技能回转机制保留；c01属于优势区间评价，缺少可复现条件与具体机制参数，排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

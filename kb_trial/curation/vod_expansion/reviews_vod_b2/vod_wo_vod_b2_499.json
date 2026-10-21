@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_499",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:52:04+0900",
+  "source_sha256": "8280044eec32cbec94ca42687c25ed130e45f94b8a6d2f4cd99ac58172d139f5",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "潮勇者的攻击力为140，且潮勇者造成的伤害为100%法术伤害。",
+      "subject": "潮勇者",
+      "condition": "无特殊触发条件（固有属性）",
+      "scope": "entity_mechanism",
+      "category": "敌人属性/伤害结算",
+      "evidence": [
+        {
+          "text": "然后这个潮勇者的话 他是140攻击力",
+          "t_start": 6092,
+          "t_end": 6111
+        },
+        {
+          "text": "啊140攻击力 140攻击力百分百法伤",
+          "t_start": 6111,
+          "t_end": 6128
+        }
+      ],
+      "reason": "逐字稿在6092秒与6111秒连续明确口述潮勇者攻击力为140，并说明其伤害为百分百法伤；主体、数值和伤害属性均明确，可作为该敌人的固有属性机制保留。",
+      "limitations": [
+        "攻击力与法伤比例来自主播口述，逐字稿未给出测试来源或面板截图。",
+        "“潮勇者”为逐字稿中的称谓，若入知识库宜与实际敌人正式名称进一步核对。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01为对潮勇者攻击力与伤害属性的明确口述，逐字引文可在转写中原样对齐，参数明确且非未闭合猜想，故保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

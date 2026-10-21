@@ -1,0 +1,65 @@
+{
+  "workorder_id": "vod_wo_vod_b2_496",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:51:51+0900",
+  "source_sha256": "ce55edf7effc45d5935c381de5bf928e76f3c941e52e1389813f18ad457360c2",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "铃音的法抗为10。",
+      "subject": "铃音",
+      "condition": "universal",
+      "scope": "entity_mechanism",
+      "category": "数值测算",
+      "evidence": [
+        {
+          "text": "凌音的法抗是十",
+          "t_start": 4996,
+          "t_end": 5024
+        }
+      ],
+      "reason": "逐字稿明确口述铃音（转写作“凌音”）法抗为十；该数值属于具体干员的固有面板参数，可作为后续反推血量的基准。",
+      "limitations": [
+        "逐字稿未展示面板截图或测试过程，数值来源为口述。",
+        "ASR将“铃音”写作“凌音”，需依据后文“按照铃音”等上下文校正。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "参照多个五星术战者血量面板（样本含2600血）并多加300血来估算克莱门沙血量问题不大",
+      "verdict": "reject",
+      "reason": "原文以“应该是没什么问题的”给出估算，属于未验证推测/计算假设，不是经得起推敲的可复用机制定论，违反Gate 4。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01为具体干员固有面板数值，转写名称虽有ASR差异但可由上下文校正，予以采纳；c02为未闭合的血量估算与推测，不具备机制定论价值，予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

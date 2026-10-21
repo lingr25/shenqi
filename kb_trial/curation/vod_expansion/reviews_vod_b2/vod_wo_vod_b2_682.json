@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_682",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:11:29+0900",
+  "source_sha256": "ed126fc06e16f63f096afdd0621e0899530f57b617ff506b00b5f51b11d6c5f9",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "下干员帧为15帧、撤离帧为23帧时，干员没有任何反应，是安全的。",
+      "verdict": "pending",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ],
+      "reason": "逐字稿确实记录了15帧下、23帧撤后“没有任何反应”“它是安全的”，但未交代15/23帧相对哪个计时原点起算，也未给出完整可复现条件与适用范围；随后主播仍在寻找精确部署/撤离帧（14下15撤还是15下16撤），讨论未闭合，故判 pending。"
+    }
+  ],
+  "review_note": "本单仅 c01 一个候选。该候选有实测现象支撑，但计时原点、完整条件和精确边界未闭合，尚不能作为可复用机制定论；无 keep，顶层判 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

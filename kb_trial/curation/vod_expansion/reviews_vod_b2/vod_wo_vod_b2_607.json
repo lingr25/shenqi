@@ -1,0 +1,75 @@
+{
+  "workorder_id": "vod_wo_vod_b2_607",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T13:57:35+0900",
+  "source_sha256": "59edcf6be02079483951d93d04f6012034b34538d43a8c029e1c70a3fba446df",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "不可通行地块属性用于定义敌人处于不可通行地块内部时是否会缓慢从中出来。",
+      "subject": "不可通行地块属性",
+      "condition": "敌人处于不可通行地块内部时",
+      "scope": "universal",
+      "category": "地块属性/寻路",
+      "evidence": [
+        {
+          "text": "不可通行 是用来定义怪走在里面会不会缓慢出来的",
+          "t_start": 574,
+          "t_end": 591
+        }
+      ],
+      "reason": "主播在讲解地块属性时明确说明不可通行属性用于判定单位处于其中时是否缓慢出来；该陈述属于可复用的地块属性/寻路规则，而非单纯对局现象。",
+      "limitations": [
+        "逐字稿未进一步说明“缓慢出来”的具体速度、适用单位类别或触发参数。",
+        "“怪”已按知识库表述规范化为“敌人”，未改变原意。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "地图边缘不是可通行地块。",
+      "subject": "地图边缘",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "地块属性/寻路",
+      "evidence": [
+        {
+          "text": "地图边缘不是可通行地块",
+          "t_start": 574,
+          "t_end": 591
+        }
+      ],
+      "reason": "主播明确否定地图边缘属于可通行地块，并在上下文将其作为地块属性的一部分说明；命题自包含且为通用地图地块规则。",
+      "limitations": [
+        "逐字稿未展开地图边缘在寻路碰撞中的全部具体参数，但基本属性结论明确。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单两个候选均通过四大闸门。c01经规范化改写为自包含机制陈述，c02为明确的地图边缘地块属性结论；均可作为地块属性/寻路知识库原子命题保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

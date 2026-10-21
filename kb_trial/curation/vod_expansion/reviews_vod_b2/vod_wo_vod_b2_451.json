@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_451",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:26:40+0900",
+  "source_sha256": "e98bf8a395fb2b1c4765360056063a6410a13d6872929bfa903bf9f77b61a420",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "2290伤害对应的DOT与其他伤害对应的DOT不是同一批次",
+      "verdict": "reject",
+      "reason": "该句仅是对某次对局伤害数字的现场勘误/现象观察，依赖「这里」「他俩」等画面指代，未明确DOT来源、批次判定参数与可复现条件；不能形成自包含机制命题，且不具备稳定规则价值。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "逐字稿中存在一次关于DOT批次的现场纠正，但候选命题未补全具体主体和可复现判定条件，属于画面依赖的对局实例观察，按硬性闸门不予采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

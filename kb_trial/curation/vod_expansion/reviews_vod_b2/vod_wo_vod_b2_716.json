@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_716",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:05:14+0900",
+  "source_sha256": "ae1ea2dac28873644967c4dddf2866ac3c75d9872b0fffbac1a73dae78713a1c",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "克莱门沙的传送不是逐帧传送到弹道坐标，而是满足条件时传送到弹道坐标",
+      "verdict": "reject",
+      "reason": "候选结论仅基于 53:28-53:41 的局部现象推断，但同一上下文 54:44 主播明确自我纠正：我搞错了、我刚才搞错了，他就是逐帧传送到自己的弹道坐标处；54:58 又解释横向位移来自温蒂失衡一直在持续，且摩擦力导致失衡速度逐帧减少。因此该候选结论已被后文直接推翻，属于错误推导；同时 condition 仅写满足条件时，未给出显式触发条件。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "整单仅有 c01 一个候选。其引文在逐字稿中可字符级对齐，但该结论在后续同一逐字稿窗口中被主播明确撤回并给出相反机制解释，故不满足稳定定论要求；此外候选未给出显式的满足条件。无任何可 keep 机制命题，整单判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

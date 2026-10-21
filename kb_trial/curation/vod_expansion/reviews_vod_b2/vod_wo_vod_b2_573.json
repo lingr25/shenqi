@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_573",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:11:31+0900",
+  "source_sha256": "2540cce2ed3ea15782cf435a089e611b6e6d8c9c46678d986eb105a3846e0e76",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "在实战中，63.678帧已证明可以产生阻挡反应。",
+      "verdict": "reject",
+      "reason": "候选证据在标注的746-792秒窗口中不存在；该引文实际出现于约4380秒。且该命题只是特定实战单点现象，未给出具体关卡、干员/装置、部署时机与可复现边界条件，主体和成立条件不明确，不能作为可复用机制定论。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G2",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "唯一候选 c01 为特定实战帧数观察，且证据时间戳错配；缺少可复现条件与显式主体/条件，按硬性闸门排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

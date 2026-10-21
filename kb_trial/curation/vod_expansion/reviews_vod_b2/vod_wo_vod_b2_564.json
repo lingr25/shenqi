@@ -1,0 +1,96 @@
+{
+  "workorder_id": "vod_wo_vod_b2_564",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:10:57+0900",
+  "source_sha256": "d3b099af4719966f9b13e5d93f3ab2b5f8269362e6f8dc2e1976cf2c437e11dc",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "星熊的基础攻击力为802。",
+      "subject": "星熊",
+      "condition": "universal",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "星熊是802 攻击力8022.3",
+          "t_start": 3417,
+          "t_end": 3434
+        },
+        {
+          "text": "802没有问题",
+          "t_start": 3533,
+          "t_end": 3544
+        }
+      ],
+      "reason": "逐字稿在核算星熊输出时先给出802，随后又确认「802没有问题」，可支撑星熊本次核算所采用的面板攻击力为802。",
+      "limitations": [
+        "原句含ASR串字且未直接出现「基础」二字；802究竟是裸面板还是本次核算采用的面板值，逐字稿未进一步说明。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "在本次核算中，星熊获得的坚韧效果提供+35%攻击力加成。",
+      "subject": "坚韧效果（作用于星熊）",
+      "condition": "星熊获得该坚韧效果",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "加35%攻击力的坚韧",
+          "t_start": 3544,
+          "t_end": 3556
+        }
+      ],
+      "reason": "逐字稿在星熊攻击力核算段明确说出「加35%攻击力的坚韧」，可直接支撑+35%攻击力加成这一效果。",
+      "limitations": [
+        "紧接的「50的坚韧」含义不明，可能是另一档值、另一参数或口误；本条仅保留逐字稿明确出现的+35%部分。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c03",
+      "topic": "按主播核算, 星熊在坚韧+35%攻击力加成下的最终攻击力为3048",
+      "verdict": "reject",
+      "reason": "该条是具体对局中的一次性伤害核算结果，不是可复用机制定论；且仅凭+35%坚韧无法推出3048，逐字稿中还出现「50的坚韧」及其他倍率信息，条件不完整，若保留会引入未说明参数。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01、c02有逐字稿直接支撑，可保留但需注意ASR与「基础」表述的边界；c03属于一次性核算且条件不完整，予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

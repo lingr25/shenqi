@@ -1,0 +1,37 @@
+{
+  "workorder_id": "vod_wo_vod_b2_619",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T13:59:44+0900",
+  "source_sha256": "a069c637fe5966d45a115648099038979c20a1adeb8d14ccf40edccee3ad01e6",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "克莱二技能放逐仓留下的漩涡使敌人移速降低70%，并造成200点侵蚀损伤和相当于攻击力285的物理伤害。",
+      "verdict": "pending",
+      "reason": "转写原文为“并两每秒受到200点侵蚀 损伤和相当于八二攻击力 285的物理伤害”，伤害触发周期存在“每秒/每两秒”歧义，物理伤害系数表述也不清晰；关键持续伤害参数未能从逐字稿中唯一确定，需人工听审或实机验证。减速70%部分清楚，但原候选将多组参数合并为同一命题，故整体留待核验。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "c01 的引文可在转写中逐字对齐，且属于讲座中的机制陈述；但持续伤害的触发周期和伤害系数受 ASR 转写含混影响，不能形成唯一可复用定论，故判 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

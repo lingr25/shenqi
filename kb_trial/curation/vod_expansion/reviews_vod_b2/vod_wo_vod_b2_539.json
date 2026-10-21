@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_539",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:04:19+0900",
+  "source_sha256": "76e026e2743a6457329c3c28f2d8680775b0e80817523f0c2110c785d131e102",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "真言与酒神的麻痹效果可以起到保障生存的作用。",
+      "subject": "真言与酒神的麻痹效果",
+      "condition": "universal",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "但是主要就是真言和酒神的话 他那个麻痹太强了 麻痹可以保生存",
+          "t_start": 1612,
+          "t_end": 1624
+        }
+      ],
+      "reason": "上下文明确将真言与酒神的麻痹效果同“保生存”联系起来，并进一步说明“活着才有输出”，可作为特定干员/状态效果的生存价值定性结论。",
+      "limitations": [
+        "未交代麻痹的触发概率、持续时间、作用范围等具体参数。",
+        "“太强了”属于主观强度评价，未量化为具体数值；采纳时弱化为可保障生存的定性结论。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "仅一个候选 c01，逐字稿中有直接支撑“麻痹可以保生存”的连续原文，改写为自包含的生存价值结论后采纳；具体参数缺失已在 limitations 中标注。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

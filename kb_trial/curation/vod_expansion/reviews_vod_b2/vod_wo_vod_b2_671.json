@@ -1,0 +1,66 @@
+{
+  "workorder_id": "vod_wo_vod_b2_671",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:08:57+0900",
+  "source_sha256": "2c12a7f2468e548ccd6f29a143c44a169e881dd53ec46d4ebb82f37ecd72ab1d",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "《明日方舟》中，阻挡解除隐匿的持续时间存在1秒与3秒两种设计。",
+      "subject": "阻挡解除隐匿的持续时间",
+      "condition": "发生阻挡时",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "阻挡有一秒解除隐匿阻挡有三秒的解除隐匿",
+          "t_start": 1012,
+          "t_end": 1026
+        }
+      ],
+      "reason": "主播在同一句中断言阻挡解除隐匿有1秒和3秒两种时长，参数在逐字稿中明确，未依赖画面；后续关于“为什么一定要时间多”的疑问不影响该已陈述的存在性事实。",
+      "limitations": [
+        "逐字稿未说明哪些具体单位或技能对应1秒或3秒。",
+        "逐字稿未交代两种时长叠加、刷新或覆盖的规则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "银灰已处于反隐状态时Buff仍可能挂不上，且不存在能保证Buff百分之百挂上的手段。",
+      "verdict": "reject",
+      "reason": "该候选来自主播连续反问“为什么没挂上Buff”及未闭合疑问，属于未定论假说/反问，未给出可复现机制定论；且“Buff”的具体指代与作用条件不明确，无法作为自包含规则。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c02有逐字稿明确参数且为陈述句，保留为阻挡解除隐匿时长机制；c01属于未闭合反问与模糊Buff指代，排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

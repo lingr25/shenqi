@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_591",
+  "stem": "BV1KtHX6nEZS_p2_42575334226",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:14:31+0900",
+  "source_sha256": "663d6a654eaad418ad184f80a044b3814083fd6c48fafbdef0edb893ba38427b",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "目标被灼烧伤害烫死而非被打死时，无敌时间异常并导致挨打",
+      "verdict": "pending",
+      "reason": "逐字引文可在 765s 行做字符级对齐，主播确实将现象归因于“烫死”而非直接击杀；但“他”的指代、受影响单位、无敌判定的具体类型及可复现参数均未明确，候选将其泛化为“目标”存在过度概括，尚需实机验证或人工听审。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "c01 的逐字引文可对齐，但主体指代和 scope 不明确，且“无敌时间乱了”缺少机制参数，不能作为可复用定论；按 pending 保留待验证。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

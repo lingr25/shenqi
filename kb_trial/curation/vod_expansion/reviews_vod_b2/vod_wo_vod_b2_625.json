@@ -1,0 +1,64 @@
+{
+  "workorder_id": "vod_wo_vod_b2_625",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:00:33+0900",
+  "source_sha256": "b8771c42a46f68b027e8c108487465eba1e7018ba90ef9004419eb882d0d011b",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "当第一A的首次索敌判定在目标小兵的无敌状态结束前发动时，该次索敌无法锁定该小兵。",
+      "subject": "第一A的首次索敌判定",
+      "condition": "目标小兵的无敌状态在首次索敌发动时尚未结束",
+      "scope": "entity_mechanism",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "在他第一次索敌的时候 他这个无敌还没结束 导致他索敌他的时候还锁不到他",
+          "t_start": 3044,
+          "t_end": 3060
+        }
+      ],
+      "reason": "逐字稿明确说明第一次索敌时目标无敌尚未结束，导致锁不到该小兵；改写为自包含的索敌时机陈述后符合四闸门。",
+      "limitations": [
+        "未给出精确帧号与无敌结束帧；仅说明首次索敌受无敌状态影响，后续索敌或其它索敌技能未验证。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "带无敌状态的小兵无法被第一A锁定为索敌目标。",
+      "verdict": "reject",
+      "reason": "与 c02 为同一机制现象，c02 保留了“首次索敌时无敌尚未结束”的关键条件，表述更精确；按去重规则保留 c02。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "DUP"
+      ]
+    }
+  ],
+  "review_note": "c02 为可保留的索敌时机机制；c01 与其重复，保留更精确的 c02。转录中关于光环碰撞箱的后续内容为假说，未作为候选保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

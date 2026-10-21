@@ -1,0 +1,81 @@
+{
+  "workorder_id": "vod_wo_vod_b2_485",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:50:18+0900",
+  "source_sha256": "5661905584da640ff1af2f359dab27aa408ca425050164a324578914e3ce9d94",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "在克莱门莎三技能的实测中，按两个攻击间隔的节奏触发了两次弹药消耗；第一次弹药消耗到第二次弹药消耗的间隔为2.4秒，第二次到第三次弹药消耗的间隔为3.6秒。",
+      "subject": "克莱门莎三技能弹药消耗",
+      "condition": "在实测中由侵蚀损伤爆发触发弹药消耗时",
+      "scope": "instance",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "一下两下 这是两间隔的 两间隔的",
+          "t_start": 4174,
+          "t_end": 4181
+        },
+        {
+          "text": "两间隔地触发了两次弹药消耗",
+          "t_start": 4181,
+          "t_end": 4187
+        },
+        {
+          "text": "因为第一次弹药消耗到第二次弹药消耗的间隔 只有2A只有2.4秒",
+          "t_start": 4215,
+          "t_end": 4230
+        },
+        {
+          "text": "这个这俩二三之间是3.6秒",
+          "t_start": 4314,
+          "t_end": 4331
+        }
+      ],
+      "reason": "逐字稿给出了两间隔触发两次弹药消耗的实测描述，并分别读出第一次到第二次约2.4秒、第二次到第三次约3.6秒的具体间隔数值，属于有明确参数支撑的实测记录。",
+      "limitations": [
+        "该结论是单次实战/实测记录，不是通用内置冷却公式。",
+        "逐字稿未交代关卡、敌人、具体帧位与手动读秒误差，2.4秒和3.6秒仅可作为该实测样本的观测值。",
+        "ASR 文本存在个别错字，数值需结合画面/人工听审进一步确认。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "侵蚀损伤爆发只能由平A触发，因此数平A间隔即可推算弹药轰炸触发间隔",
+      "verdict": "reject",
+      "reason": "该候选把本测试中“以普通攻击触发爆条来计数”的测量前提泛化为“侵蚀损伤爆发只能由平A触发”，且“数平A间隔推算”本质是实验推算方法而非可复用机制定论；适用条件与范围未限定，不通过 G3。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "c02 为克莱门莎三技能弹药轰炸触发间隔的实测数值记录，有逐字稿中的具体秒数与触发次数支撑，按 instance 保留；c01 是测量方法/前提推导，且存在将测试条件泛化为通用规则的问题，予以 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

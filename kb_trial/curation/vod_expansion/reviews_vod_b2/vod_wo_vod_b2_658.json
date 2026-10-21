@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_658",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:06:40+0900",
+  "source_sha256": "2bbe17990317000bc15e0be750fd2f99e987b47d0feeeb8b9725caad979772d3",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "奎龙具有传送免疫，因此无法通过传送类效果将其推入坑中。",
+      "subject": "奎龙",
+      "condition": "当尝试以传送类效果将奎龙推入坑中时",
+      "scope": "entity_mechanism",
+      "category": "状态效果/位移",
+      "evidence": [
+        {
+          "text": "能参与奎龙推坑姐吗 奎龙传送免疫回龙传送免疫推不了",
+          "t_start": 6698,
+          "t_end": 6709
+        }
+      ],
+      "reason": "逐字稿中主播在问答语境下明确给出“奎龙传送免疫……推不了”的结论，可将“回龙”按上下文及前文“奎龙”校正为同一对象，并归纳为奎龙对传送路径推坑的免疫。",
+      "limitations": [
+        "逐字稿未区分传送免疫与一般推动免疫，结论仅限传送路径导致无法推坑，不扩展为奎龙普遍不可推动。",
+        "具体测试条件与参数未在窗口内展开，需实机或人工听审确认“推不了”的精确边界。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 的引文可在逐字稿同一行内逐字定位，问答已闭合且给出了奎龙传送免疫导致无法推坑的机制结论。审查时将其收紧为“传送类效果无法将其推入坑中”，未采纳为一般性“不可推动”。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

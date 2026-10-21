@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_476",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:34:03+0900",
+  "source_sha256": "543b02537e5aaecd79e8665aad87b290c0dfdbbb6f427b765f16a57dafa9d9fb",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "当全场有任何敌人触发侵蚀损伤爆发时，克莱门沙会消耗一发弹药，对该敌人所在位置进行数次轰炸；每次轰炸会对该位置及其周围四格的所有地面敌人造成物理伤害和元素伤害。",
+      "subject": "克莱门沙的侵蚀损伤爆发触发弹药轰炸机制",
+      "condition": "全场有任何敌人发生侵蚀损伤爆发",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "一旦全场有任何敌人侵蚀损伤 爆发时都会消耗一发弹药 对该敌人所在的位置进行数次轰炸 每次轰炸对该位置",
+          "t_start": 2150,
+          "t_end": 2165
+        },
+        {
+          "text": "该位置及其周围四格 所有地面敌人造成物理伤害和元素伤害",
+          "t_start": 2165,
+          "t_end": 2180
+        }
+      ],
+      "reason": "逐字稿连续描述克莱门沙在敌人侵蚀损伤爆发时消耗弹药并进行范围轰炸；单行证据分别支撑弹药消耗、轰炸位置与范围伤害。",
+      "limitations": [
+        "逐字稿未给出轰炸次数、伤害倍率及“周围四格”具体判定细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "克莱门沙由侵蚀损伤爆发触发的弹药轰炸所造成的伤害，会受到其第一天赋的影响。",
+      "subject": "克莱门沙的第一天赋对侵蚀损伤爆发触发弹药轰炸的伤害影响",
+      "condition": "弹药轰炸由敌人侵蚀损伤爆发触发",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "轰炸造成的伤害也会受到第一天赋的影响",
+          "t_start": 2165,
+          "t_end": 2180
+        }
+      ],
+      "reason": "逐字稿在描述侵蚀损伤爆发触发轰炸后，紧接说明轰炸伤害受第一天赋影响，能支撑该机制结论。",
+      "limitations": [
+        "未说明第一天赋的具体触发概率、暴击倍率或伤害加成数值。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均能在逐字稿中找到单行连续原文支撑，属于克莱门沙技能机制描述；未发现未定论猜测。上游引文跨行拼接不合规，本回执已改用单行连续证据。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

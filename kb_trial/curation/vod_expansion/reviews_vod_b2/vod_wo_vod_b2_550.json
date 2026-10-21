@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_550",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:06:04+0900",
+  "source_sha256": "73630ef9e65707beb869f9ed1b9a9be35de6d9d3f7b6a12fd2a41e6582af60b6",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙的技能一（放逐仓）开启后，其攻击会造成物理溅射伤害。",
+      "subject": "克莱门沙开启技能一后的攻击",
+      "condition": "开启技能一（放逐仓）后",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "技能一充实风暴潮 放逐仓浮游",
+          "t_start": 2114,
+          "t_end": 2130
+        },
+        {
+          "text": "开启开启技能后 克莱门沙的攻的攻击会造成物理溅射伤害",
+          "t_start": 2197,
+          "t_end": 2212
+        }
+      ],
+      "reason": "逐字稿先说明技能一与放逐仓相关，随后直接陈述开启技能后克莱门沙的攻击会造成物理溅射伤害；该句属于技能机制描述而非猜测或纯实况观察，补齐技能编号后可作为自包含机制命题保留。",
+      "limitations": [
+        "逐字稿未给出溅射伤害倍率、溅射半径等具体参数",
+        "逐字稿未明确该物理溅射是否对主目标以外的所有敌人同等生效"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅有一个候选 c01。该候选引文可在逐字稿行内字符级对齐，且属于技能描述中的明确机制陈述；上游命题未写清技能编号，结合上下文补全为技能一（放逐仓）后可通过四大闸门，判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

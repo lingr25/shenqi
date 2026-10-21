@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_694",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T15:57:33+0900",
+  "source_sha256": "beb554d1e0886a506fca2b8faf2daab4c8c56f47bad250d36abf1fbfcc3ca578",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "夜魔二技能对处于移动（位移）过程中的目标无法造成伤害，因为该目标在移动过程中处于无敌状态。",
+      "subject": "夜魔二技能",
+      "condition": "目标处于移动（位移）过程中且处于无敌状态",
+      "scope": "entity_mechanism",
+      "category": "技能特例/位移/伤害结算",
+      "evidence": [
+        {
+          "text": "夜魔二技能和这个推有伤害吗",
+          "t_start": 2927,
+          "t_end": 2941
+        },
+        {
+          "text": "他这个移动过程中有无敌哎 夜魔打不出伤害啊",
+          "t_start": 2941,
+          "t_end": 2950
+        }
+      ],
+      "reason": "上下文先询问夜魔二技能与推动是否造成伤害，随后主播观察并确认目标移动过程中有无敌，导致夜魔二技能打不出伤害；紧接着的“对的对的”等回应将这一现象确认为机制结论。",
+      "limitations": [
+        "逐字稿未明确该无敌状态是否适用于所有位移类型与所有敌人，还是仅限当前“次数怪”及当前测试场景。",
+        "未给出具体伤害数值或帧窗口，仅能确认伤害结算被移动过程中的无敌状态阻断。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 的命题可由逐字稿直接支撑：夜魔二技能对移动过程中的目标打不出伤害，原因是目标移动过程中处于无敌。该结论在上下文中有明确确认，不属于开放猜测；但适用范围受逐字稿信息限制，已在 limitations 中标注。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

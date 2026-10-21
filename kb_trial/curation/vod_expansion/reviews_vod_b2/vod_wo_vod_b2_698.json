@@ -1,0 +1,37 @@
+{
+  "workorder_id": "vod_wo_vod_b2_698",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T15:57:56+0900",
+  "source_sha256": "da83a52ac6cbbbb36b7f60f20cb38b279f81ab4716d46c909fc0ee8abf98336a",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "敌人被推拉到一定程度后，可以短暂脱离浮游仓的作用范围。",
+      "verdict": "pending",
+      "reason": "引文可与逐字稿连续对齐，命题也可改写为自包含陈述；但“一定程度”“短暂”“一定时间之后又可以传送回去”均为定性描述，缺少推拉阈值、脱离持续时间、回传条件及可复现参数。该互动具有机制讨论价值，但当场讨论尚未闭合，需后续实机验证或人工听审，不能作为可入库定论。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "仅一条候选。其核心内容涉及推拉位移与浮游仓范围互动的机制现象，但关键参数与边界条件缺失，当前只能判 pending，整体不进入 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

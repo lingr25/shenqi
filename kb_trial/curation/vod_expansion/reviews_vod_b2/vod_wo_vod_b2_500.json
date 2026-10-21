@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_500",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:52:15+0900",
+  "source_sha256": "09004c1be2d6da9c08804780a512a4ef9dba7e03ee78c48f0273f4f68582e2ad",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "逐帧像素测算记录到的像素读数包括“二百一十二百一十一像素”和“223像素”。",
+      "verdict": "reject",
+      "reason": "该候选仅为逐帧像素读数的实况观察记录，未给出可复现条件、参数含义或可复用机制结论；属于纯实战现象观察，不具备规则价值，违反 Gate 4。另其三元约束不完整，且证据时间戳未按下一行时间戳精确标注（6018→6065、6065→6092）。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G2",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单仅包含一个候选命题，内容为像素读数记录，不能形成可复用的机制定论。按纯观察、无规则价值及三元约束不完整处理，整体裁定为 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

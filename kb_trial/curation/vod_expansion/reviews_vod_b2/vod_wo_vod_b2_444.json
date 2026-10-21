@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_444",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T23:15:59+0900",
+  "source_sha256": "73bbab52f8c740c2e8c99590b25001ac7138711bc7bad6e4408065fb37c3f785",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "技能二风暴潮单次攻击打出1875和2375两个伤害数值",
+      "verdict": "reject",
+      "reason": "仅为一次实战中的固定伤害数字观察；未交代敌人防御、暴击/增益、目标状态等可复现条件，且转写后续仍有未闭合的伤害计算，不能作为可复用机制定论。违反 Gate 4；同时将特定实战数值表述为技能一般结果，条件与作用域不充分。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "候选 c01 的引文可在 3246s 行中逐字匹配，但命题把单场实战的固定伤害数字表述为技能二风暴潮的一般结果；缺少目标防御、暴击/增益等成立条件，属于未闭合的实战观察，故不采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

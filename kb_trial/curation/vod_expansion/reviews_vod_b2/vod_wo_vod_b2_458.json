@@ -1,0 +1,76 @@
+{
+  "workorder_id": "vod_wo_vod_b2_458",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:28:38+0900",
+  "source_sha256": "a3d9f655f260e1e2c9327b42ef51d46bcef26b029528218957e56f7584b8db28",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "在872时刻的一次AOE中，践行者受到的1775和1875两个伤害数字对应两次暴击、零次不暴击。",
+      "subject": "践行者受到的872时刻AOE伤害",
+      "condition": "872时刻发生一次AOE，并出现1775与1875两个伤害数字",
+      "scope": "instance",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "然后872的话是一次AOE",
+          "t_start": 6063,
+          "t_end": 6080
+        },
+        {
+          "text": "1775和1875 看见没有 这是1775和1875这样两个红字",
+          "t_start": 6085,
+          "t_end": 6099
+        },
+        {
+          "text": "这里一个1775和一个1875的话 所以的话也是二和零",
+          "t_start": 6099,
+          "t_end": 6115
+        }
+      ],
+      "reason": "逐字稿先说明872时刻是一次AOE，随后明确出现1775和1875两个伤害数字，并给出‘也是二和零’的暴击分布结论；结合前文‘二’指暴击次数、‘零’指非暴击次数，可支撑该次实战的暴击分布。",
+      "limitations": [
+        "仅适用于该次872时刻AOE的实战记录，不是通用暴击率规则。",
+        "‘二和零’的具体含义依赖前文语境，逐字稿未给出完整面板、伤害公式与随机种子。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "在854时刻，伤害数字1775对应的暴击分布为两次暴击、一次不暴击。",
+      "verdict": "pending",
+      "reason": "该段讨论确有伤害时间线与暴击分布核对价值，但逐字稿在5944附近以‘二六/二七/175’等残缺ASR进行数字位推断，未在同一可引用片段中清楚绑定‘854时刻的1775’与‘两次暴击、一次不暴击’，且目标单位需画面或人工听审确认。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "c02的AOE时点、两个伤害数字及‘二和零’结论在连续逐字稿中有支撑，按instance保留；c01转写关键绑定关系不清晰，留pending待人工核对。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

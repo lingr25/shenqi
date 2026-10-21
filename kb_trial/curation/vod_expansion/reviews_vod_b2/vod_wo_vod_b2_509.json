@@ -1,0 +1,97 @@
+{
+  "workorder_id": "vod_wo_vod_b2_509",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:55:14+0900",
+  "source_sha256": "868b933e39e117a890c92ee0056854efdef58663153b61518423240aee154806",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "轰炸攻击首次触发元素爆条需要累计3次攻击（3A）。",
+      "subject": "轰炸攻击的元素爆条机制",
+      "condition": "首次触发元素爆条",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "3A爆条",
+          "t_start": 146,
+          "t_end": 155
+        },
+        {
+          "text": "攻击先是3A暴跳",
+          "t_start": 213,
+          "t_end": 218
+        }
+      ],
+      "reason": "逐字稿先出现“3A爆条”，后又说明“攻击先是3A暴跳”，可确认该轰炸攻击的首次元素爆条发生在累计3次攻击时。",
+      "limitations": [
+        "逐字稿未给出具体干员名、技能正式名称与单次元素伤害数值，故仅能限定为该轰炸攻击的机制。",
+        "“暴跳”为转写/口误，结合上下文校正为“爆条”。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "轰炸攻击在首次元素爆条之后，后续一个完整爆条周期由6次攻击加3次攻击构成，合计9次攻击；即此后每9次攻击触发一次爆条。",
+      "subject": "轰炸攻击的元素爆条机制",
+      "condition": "首次元素爆条之后",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "然后接下来6A打在进京期间 一个周期的话是6+3=10等于九 一个周期是9A",
+          "t_start": 155,
+          "t_end": 173
+        },
+        {
+          "text": "6+3=9",
+          "t_start": 173,
+          "t_end": 177
+        },
+        {
+          "text": "一个周期 按照九例算",
+          "t_start": 177,
+          "t_end": 194
+        },
+        {
+          "text": "然后呢在9A第二次爆条 在9A第三次爆条在9A第四次爆条 在9A第五次爆条 第五次暴跳之后 消耗了所有的弹药",
+          "t_start": 218,
+          "t_end": 236
+        }
+      ],
+      "reason": "逐字稿明确给出“6+3=9”“一个周期是9A”，并连续说明第二次至第五次爆条按9A间隔出现，可支撑首次爆条后每9A一循环的结论。",
+      "limitations": [
+        "“6+3=10等于九”为转写/口误，结合后文“6+3=9”与“一个周期是9A”校正为9。",
+        "逐字稿未给出具体干员名、技能正式名称与元素伤害数值，故仅能限定为该轰炸攻击的机制。",
+        "“进京期间”“暴跳”为转写/口误，未纳入规范命题。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均围绕同一轰炸攻击的元素爆条时序：首次3A触发，之后按6A+3A=9A循环。逐字稿有直接语句支撑；对ASR错字“暴跳”“6+3=10等于九”结合上下文校正。具体干员与数值参数未给出，故scope限定为该攻击的实体机制而非全域规则。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

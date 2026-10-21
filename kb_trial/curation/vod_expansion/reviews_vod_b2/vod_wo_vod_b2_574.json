@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_574",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:11:17+0900",
+  "source_sha256": "15a5344a051b4d3580d27890bbdce79ff24c1dbae650b52232ee7b7fbe32303a",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "从68帧之后继续推算，得到帧位序列2.1、2.3以及16之后的一串数字",
+      "verdict": "reject",
+      "reason": "不满足 Gate 1 与 Gate 3：命题缺少明确主体（未说明是哪个干员、技能、系统或状态），也未给出成立条件，只是对转写中含糊数字的中间推算片段；且“2.1、2.3、16之后的一串数字”受 ASR 影响无法确认。该内容属于未闭合的推算过程，不构成可复用机制定论。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单仅有一个候选 c01。其引文可在逐字稿中找到对应行，但命题本身是缺少主体和条件的帧位推算片段，数字转写含糊且未形成闭合机制结论，按硬性闸门应判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

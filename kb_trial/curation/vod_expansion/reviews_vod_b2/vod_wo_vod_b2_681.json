@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_681",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:11:37+0900",
+  "source_sha256": "9773c5d150637a96530f157a675588ba00dc0f83fe353cd6aaf4ca323bf32618",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在漩涡已生成后，若干员于第13帧部署并在第16帧撤离，该干员仅存续3帧便死亡。",
+      "subject": "受漩涡光环检测的干员",
+      "condition": "漩涡已生成后，干员于第13帧部署、第16帧撤离",
+      "scope": "instance",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "我这里的话保险起见 13帧下我不卡 太极限啊 13帧下 然后16帧撤",
+          "t_start": 1791,
+          "t_end": 1807
+        },
+        {
+          "text": "我保证不会出问题 我这里只下和撤了三帧",
+          "t_start": 1807,
+          "t_end": 1816
+        },
+        {
+          "text": "看见没有 他就死了 但是反过来说的话 如果我在15帧下 如果我在16帧下 然后再往后七帧撤",
+          "t_start": 1816,
+          "t_end": 1836
+        }
+      ],
+      "reason": "逐字稿明确给出13帧部署、16帧撤离以及“只下和撤了三帧”的实测描述，并紧接着确认其死亡；结合上下文是在讨论漩涡生成后的光环判定时机，可作为该实例的帧时序实测结果。",
+      "limitations": [
+        "未记录所用干员的具体身份、关卡与漩涡来源，死亡结果可能受干员生命值和同帧结算顺序影响。",
+        "“他就死了”的指代依赖上下文，需结合画面或后续实机验证干员具体身份。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 的引文均可与逐字稿行做字符级对齐，且包含明确帧数与实测结果；虽缺少干员/关卡等细节，但作为特定实例的帧时序观测可保留，并在 limitations 中标注边界。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

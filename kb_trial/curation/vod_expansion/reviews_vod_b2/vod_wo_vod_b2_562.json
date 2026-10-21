@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b2_562",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:09:23+0900",
+  "source_sha256": "70c14d34ff7596f0b402c3a24185155a6787681d23a4ff8c8f2ba7cdb8deb6b8",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在计入名为“克罗希尔”的加攻击力效果后，假日威龙陈的攻击力核算值为858。",
+      "subject": "假日威龙陈（火陈）",
+      "condition": "计入克罗希尔提供的攻击力加成",
+      "scope": "instance",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "火柴是858",
+          "t_start": 3217,
+          "t_end": 3223
+        },
+        {
+          "text": "是克罗希尔的加攻击力",
+          "t_start": 3223,
+          "t_end": 3235
+        }
+      ],
+      "reason": "逐字稿先质疑917是否不对，随后明确修正为858，并说明该值计入“克罗希尔的加攻击力”；属于有正确结论的勘误，可作为本次伤害核算的实例性取值保留。",
+      "limitations": [
+        "逐字稿仅出现“克罗希尔”，疑为“可露希尔”等名称的ASR转写误差，需人工听审确认。",
+        "未交代假日威龙陈的等级、潜能、模组、技能等级及完整增益列表，858仅对应本次核算配置。",
+        "该数值为实例核算值，不应外推为无buff基础攻击力。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单仅含c01。该候选满足自包含、逐字引文、三元约束与勘误闸门；保留为instance，并记录配置缺失与名称ASR风险。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

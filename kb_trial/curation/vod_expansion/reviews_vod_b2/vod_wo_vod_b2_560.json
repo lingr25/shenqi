@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_560",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:08:49+0900",
+  "source_sha256": "37c91e1e15a9b864de7d83eec4623a85f199991bbd439e514378cf90a0f72ecf",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "敌人总血量按 85000×1.6 + 2808×6 核算",
+      "verdict": "pending",
+      "reason": "逐字稿明确给出该算式，但指代对象为“他这里”，未在窗口内指明具体敌人或关卡；候选将其泛化为“敌人总血量”且 scope 设为 general，主体与适用范围不闭合。需补全具体核算对象并确认 2808×6 的含义后才能作为机制命题入库。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "c01 的算式与逐字引文可对齐，但主体“他”未指名，且公式明显是特定核算实例而非全域通用规则；按 pending 处理，待补全敌人/关卡与附加项语义。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

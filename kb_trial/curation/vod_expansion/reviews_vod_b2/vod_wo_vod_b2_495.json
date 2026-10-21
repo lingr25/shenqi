@@ -1,0 +1,52 @@
+{
+  "workorder_id": "vod_wo_vod_b2_495",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:51:59+0900",
+  "source_sha256": "29e1ed8f623c8c86f26bd79e9122edc8f715132b310b0f44e58a24e74e0edac0",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "按血条像素变化折算，克莱门沙被击中六下后等效血量约为4000。",
+      "verdict": "pending",
+      "reason": "逐字稿确有“这是被打了六下”和“等效4000血”的原文，但等效血量的关键折算参数（血条像素变化、伤害/防御数值对应关系）主要依赖画面，文本窗口无法独立复核；且随后又出现“等效5600”，4000并未形成闭合定论。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "按血条像素变化折算，克莱门沙的等效血量另有一版5600的结果。",
+      "verdict": "pending",
+      "reason": "“等效5600”在逐字稿中可逐字匹配，但该句仅为孤立数值，缺少受击次数、伤害/防御参数和像素折算过程；且与前一条4000构成未闭合的替代测算，需人工听审或实机验证。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "两条候选均涉及克莱门沙等效血量的逐帧像素估算。逐字稿能匹配到结论数字，但关键折算参数只在画面中，且4000与5600两版结果未在文本内闭合，故均判 pending，暂不进入 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

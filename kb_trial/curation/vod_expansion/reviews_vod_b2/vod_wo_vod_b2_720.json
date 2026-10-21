@@ -1,0 +1,89 @@
+{
+  "workorder_id": "vod_wo_vod_b2_720",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:06:13+0900",
+  "source_sha256": "51372dcb2914a4f826d596091de8799b9b841573f0d54964ca667d14d0add562",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "睡眠与眩晕本质上是持续使敌人进入特定状态机的 Buff，而非状态机本身；睡眠期间推失衡不会打断睡眠效果。",
+      "subject": "睡眠与眩晕状态效果",
+      "condition": "睡眠或眩晕效果生效期间",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "你想睡眠的时候也可以推失衡的 并不会打断睡眠 因为睡眠本质上是一个Buff",
+          "t_start": 3373,
+          "t_end": 3388
+        },
+        {
+          "text": "这个Buff持续的 让敌人去要求他进入这个STAN状态 眩晕也是 但是他不是状态机 本身他是一个Buff控制这只怪一直进状态机",
+          "t_start": 3388,
+          "t_end": 3401
+        },
+        {
+          "text": "所以即使弹出时退出去 也并不打断它的整体的效果",
+          "t_start": 3401,
+          "t_end": 3415
+        }
+      ],
+      "reason": "主播在讨论放逐与失衡交互时明确说明睡眠、眩晕是持续要求敌人进入状态机的 Buff，并指出睡眠期间推失衡不会打断睡眠；该段还说明即使中途退出也不打断其整体效果。",
+      "limitations": [
+        "逐字稿中“弹出时退出去”存在 ASR 歧义，具体退出对象未在文本中完全闭合；未给出状态持续时间与帧参数。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "失衡是纯状态机；若失衡被其他状态机打断，则失衡无法继续。",
+      "subject": "失衡状态",
+      "condition": "失衡被其他状态机打断时",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "只有失衡是纯状态 任何状态机一旦打断失衡的话",
+          "t_start": 3401,
+          "t_end": 3415
+        },
+        {
+          "text": "那么失衡是不可能再继续了",
+          "t_start": 3415,
+          "t_end": 3427
+        }
+      ],
+      "reason": "主播在对比失衡与睡眠/眩晕时给出明确结论：失衡是纯状态，其他状态机一旦打断失衡，失衡不能再继续。",
+      "limitations": [
+        "未说明哪些具体状态机能打断失衡、打断发生的帧时序与判定边界。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均有逐字稿原句支撑，且可整理为自包含的状态效果机制陈述；未发现未闭合猜测或弹幕反问。c01 中“弹出/退回”表述有 ASR 歧义，结论中保留可确认的睡眠/眩晕 Buff 与推失衡不打断效果部分。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,81 @@
+{
+  "workorder_id": "vod_wo_vod_b2_699",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T15:58:51+0900",
+  "source_sha256": "7ec3a78b58cd21168553de1b8a06b83a63096852d01f270b660fe08dee061ba7",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "自负单位不会被挂上传送效果。",
+      "subject": "自负单位",
+      "condition": "目标单位具有自负属性",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "自负单位是不会被挂上这个传送的哦",
+          "t_start": 3326,
+          "t_end": 3342
+        }
+      ],
+      "reason": "主播明确说明自负单位不会被挂上传送，属于可复用的状态交互规则；引文与逐字稿完全一致。",
+      "limitations": [
+        "逐字稿未说明“传送”的具体来源或技能名称，仅给出自负单位不受传送影响的规则。",
+        "未说明自负是否为不可驱散或永久属性。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "克莱门沙具有自负，不会被挂上传送，因此无法打断大锁的自爆。",
+      "subject": "克莱门沙",
+      "condition": "克莱门沙具有自负属性",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "克莱门沙能打断大锁自爆吗",
+          "t_start": 3323,
+          "t_end": 3326
+        },
+        {
+          "text": "不能不能 克莱曼莎有自负 自负单位是不会被挂上这个传送的哦",
+          "t_start": 3326,
+          "t_end": 3342
+        }
+      ],
+      "reason": "问题与回答共同构成闭环：问克莱门沙能否打断大锁自爆，答“不能”，并说明克莱门沙有自负、自负单位不会被挂上传送；因此该具体结论有逐字稿支撑。",
+      "limitations": [
+        "逐字稿未展开大锁自爆与传送效果之间的具体打断机制，仅给出“不能”的结论。",
+        "“克莱门沙”与“克莱曼莎”存在转写差异，按上下文统一为克莱门沙。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单两个候选均有逐字稿直接支撑：c01 是可复用的一般状态交互规则，c02 是其在“克莱门沙无法打断大锁自爆”上的具体结论。二者为一般规则与具体应用关系，不构成重复。未发现未闭合猜想或画面依赖问题。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

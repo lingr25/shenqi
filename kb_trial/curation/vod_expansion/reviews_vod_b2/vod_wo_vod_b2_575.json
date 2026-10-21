@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_575",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:11:22+0900",
+  "source_sha256": "533d242894a4d0fd6cd18004a02f805281ff98dd925a3c8096a94e7840521a7d",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "在334帧处，距离打断目标还差4帧。",
+      "verdict": "reject",
+      "reason": "该候选仅描述一次特定实战中的帧差观察，命题未明确给出承受/触发机制的具体干员、技能、打断目标或可复现条件，不满足自包含命题与显式三元约束；且原始引文含“恐怕是来不及”的口头推测，属于未闭合判断，不能作为可复用机制定论。引文与转写文本字符级一致，但不足以通过 G1/G3/G4。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "唯一候选为特定实战帧数观察，主体与可复现条件不明确，并含“恐怕是来不及”的口头推测；虽引文对齐通过，但未形成可复用机制陈述，故整单判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

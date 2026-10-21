@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_616",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T13:58:47+0900",
+  "source_sha256": "2b37e5d0a5dcaf8bbb24a3d416594e5ac5930b675ab242933c3899dede1550fd",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "活动Boss场地上的圈会对站在其中的角色造成伤害，实测感受为“很烫”、会掉血",
+      "verdict": "reject",
+      "reason": "逐字稿仅有“好烫的圈”这一主观感叹，未明确说明圈造成伤害、掉血数值、触发频率或可复现条件；上下文随后还说“没搞懂啥机制”，属于未闭合的实战感受/未解机制观察，不满足显式三元约束与排除未定论假说闸门。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "该工单仅有一个候选命题。引文“好烫的圈”可在逐字稿中字符级对齐，但候选将主观感受扩写为“圈会对站在其中的角色造成伤害、会掉血”，缺乏逐字稿中的明确机制陈述与参数支撑，且主播当场表示未搞懂机制，故整体不采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

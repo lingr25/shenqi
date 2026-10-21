@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_580",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:12:34+0900",
+  "source_sha256": "2b906066f98a5dcef9e53bf15931938d5cbcefd7dfc392cdf3400c89d54b5173",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在保留星熊两判伤害但缺少火陈两判伤害的条件下，结城理需要攻击17下以补足伤害。",
+      "subject": "结城理的攻击次数",
+      "condition": "保留星熊两判伤害且缺少火陈两判伤害",
+      "scope": "instance",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "如果有星熊这两判的话 如果有星熊这两派 但是的话没有火陈这个两派",
+          "t_start": 6303,
+          "t_end": 6322
+        },
+        {
+          "text": "结城理要打17下",
+          "t_start": 6322,
+          "t_end": 6331
+        },
+        {
+          "text": "677验证通过",
+          "t_start": 6449,
+          "t_end": 6463
+        }
+      ],
+      "reason": "主播先说明星熊两判存在但火陈两判缺失，随后给出结城理需打17下；后续实机以677验证通过，支持该条件下的攻击次数需求。上游证据跨行拼接无效，已按逐字稿拆分为独立行证据。",
+      "limitations": [
+        "逐字稿未说明17下是否为严格最小次数，仅能确认该条件下该打法可通过。",
+        "“两判/两派”为ASR用词，按上下文理解为两次判定或两段伤害。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选c01在拆分跨行证据后可由逐字稿支撑；结论属于特定打法/关卡实例，非全域通用规则。后续677验证通过，故按keep处理，并注明17下非严格最小值未交代。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

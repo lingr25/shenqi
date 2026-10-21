@@ -1,0 +1,110 @@
+{
+  "workorder_id": "vod_wo_vod_b2_672",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:09:07+0900",
+  "source_sha256": "96c586ec001700747ad65b7a7fb29061c3192eafb8615079012fa7dca198d3d0",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "敌人在被推动期间处于无敌状态。",
+      "subject": "被推动的敌人",
+      "condition": "敌人处于被推动/位移期间",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "我们说他在那个推动期间是有无敌的对吧",
+          "t_start": 1089,
+          "t_end": 1109
+        },
+        {
+          "text": "被推到这里的敌人还在一个无敌期间",
+          "t_start": 1230,
+          "t_end": 1242
+        }
+      ],
+      "reason": "讲者先明确说推动期间有无敌，后又说被推到该处的敌人仍处于无敌期间，可支撑推动位移期间存在无敌状态。",
+      "limitations": [
+        "未细分不同推动来源、力度或位移状态是否完全同规则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "处于无敌状态的敌人不可被选中。",
+      "subject": "处于无敌状态的敌人",
+      "condition": "无敌状态生效期间",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "而无敌期间是不可选中的",
+          "t_start": 1089,
+          "t_end": 1109
+        }
+      ],
+      "reason": "逐字稿直接陈述无敌期间不可选中，命题主语与条件可由上下文补全为处于无敌状态的敌人。",
+      "limitations": [
+        "该句在推动无敌测试语境中给出，未展开区分其他不可选中来源。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c03",
+      "claim": "处于无敌状态的敌人无法被直接挂上Buff。",
+      "subject": "处于无敌状态的敌人",
+      "condition": "无敌状态生效期间，尝试直接施加Buff",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "同样也包含着挂不上Buff",
+          "t_start": 1089,
+          "t_end": 1109
+        },
+        {
+          "text": "在这个时候Buff是没有办法直接挂上的",
+          "t_start": 1119,
+          "t_end": 1153
+        }
+      ],
+      "reason": "讲者明确将无敌期间与挂不上Buff并列，并在后续说明停下后仍无敌时Buff无法直接挂上。",
+      "limitations": [
+        "光环类Buff随后会进入逐帧检测，待无敌结束后可能再挂上；本命题仅限定无敌期间直接挂取失败。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "三个候选均有逐字稿明确陈述支撑，且可改写为自包含机制命题；c03按原文补入“直接”以反映后续帧检测语境。无候选被排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

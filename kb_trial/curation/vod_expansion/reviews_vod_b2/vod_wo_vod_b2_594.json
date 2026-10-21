@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_594",
+  "stem": "BV1KtHX6nEZS_p2_42575334226",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:14:11+0900",
+  "source_sha256": "607f9a2909433095b5d0ec3f68a16949935eb0aee25037b57950eed7880da7e3",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "星熊未能阻挡到敌人，原因是阻挡部署得太晚，且敌人位置挤得太上，导致星熊的阻挡未起效。",
+      "verdict": "reject",
+      "reason": "该候选是当局战斗中的口头复盘，虽能对齐逐字稿原句，但“太晚”“太上”缺乏可复现的帧时序、位置或判定参数，属于纯实战现象观察，不具备可复用机制定论价值，未通过 Gate3 与 Gate4。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "唯一候选 c01 为直播实况中的操作结果复盘，逐字引文可与 1199s 行连续子串对齐，但核心条件“阻挡太晚”“挤得太上”无明确参数与可复现边界，无法上升为原子机制命题。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

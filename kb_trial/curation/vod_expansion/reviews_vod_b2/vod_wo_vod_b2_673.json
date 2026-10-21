@@ -1,0 +1,58 @@
+{
+  "workorder_id": "vod_wo_vod_b2_673",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:09:08+0900",
+  "source_sha256": "e300460ed4a9a2d4c2848860a4d94554fc0ebca7b891aa469f8290fc881f73f4",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "敌人被推动停下时仍保持无敌，在停下之后、漩涡生成的瞬间敌人仍处于无敌状态，因此此时无法直接给敌人挂上Buff",
+      "subject": "被推动的敌人",
+      "condition": "敌人被推动停下后，且漩涡生成瞬间敌人仍处于无敌状态",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "而无敌期间是不可选中的 同样也包含着挂不上Buff",
+          "t_start": 1089,
+          "t_end": 1109
+        },
+        {
+          "text": "停下的时候他还保持着无敌 停下之后 漩涡生成的时候 敌人还在无敌之中 在这个时候Buff是没有办法直接挂上的",
+          "t_start": 1119,
+          "t_end": 1153
+        },
+        {
+          "text": "而五帧的时候 正常来讲 被推到这里的敌人还在一个无敌期间 所以挂不到",
+          "t_start": 1230,
+          "t_end": 1242
+        }
+      ],
+      "reason": "上下文先说明无敌期间不可选中且挂不上 Buff；随后主播纠正为敌人被推动停下后仍保持无敌，并在后续帧观察中再次指出被推到该位置的敌人处于无敌期间所以挂不到。该命题属于可复用的状态判定结论。",
+      "limitations": [
+        "逐字稿未明确具体干员或技能名称；帧号表述存在“五帧/65帧”的 ASR 不一致，但不影响“无敌期间无法直接挂 Buff”的结论。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选 c01 的引文可在对应逐字稿行原样截取，后续帧测试再次确认被推动敌人处于无敌期间导致 Buff 无法挂接；命题自包含，条件与作用域明确，未发现未定论假说或开放疑问，故裁定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

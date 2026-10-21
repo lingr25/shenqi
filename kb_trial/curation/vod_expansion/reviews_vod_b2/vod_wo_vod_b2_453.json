@@ -1,0 +1,58 @@
+{
+  "workorder_id": "vod_wo_vod_b2_453",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:27:27+0900",
+  "source_sha256": "c4ba54b9a65e978f57598466db0960222fff5097a9038ca993ab255befd513bb",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "践行者在屏障存在时，生命上限提升至15000。",
+      "subject": "践行者",
+      "condition": "该践行者处于屏障存在状态",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "这个践行者的话 这里不知道为什么打3A之后 他还能剩一半血",
+          "t_start": 5147,
+          "t_end": 5155
+        },
+        {
+          "text": "屏障存在时大幅提升生命上限",
+          "t_start": 5168,
+          "t_end": 5200
+        },
+        {
+          "text": "他是1万5000的血上限",
+          "t_start": 5168,
+          "t_end": 5200
+        }
+      ],
+      "reason": "5147行先点出正在观察的对象是践行者；5168行主播直接陈述屏障存在时提升生命上限，并给出其血上限为1万5000，属于对当前机制参数的明确结论，而非开放疑问。",
+      "limitations": [
+        "逐字稿只显示当前对局中的践行者，未明确该效果是否为所有践行者通用、是否来自特定技能，以及屏障消失后生命上限是否复原。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选c01可由上下文补全为践行者的屏障状态机制；引文均在逐字稿中逐字匹配，且主播给出了明确数值结论，故保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

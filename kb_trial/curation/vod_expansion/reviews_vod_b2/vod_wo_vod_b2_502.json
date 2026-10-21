@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_502",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:52:17+0900",
+  "source_sha256": "e61ca1a73d146aae72cd28d7e3eaf26d3d1404a7d3aa93176ed3c7115b6f11c5",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "潮勇者的攻击力为140，且攻击类型为百分百法伤。",
+      "subject": "潮勇者",
+      "condition": "无特殊条件",
+      "scope": "entity_mechanism",
+      "category": "敌方数值",
+      "evidence": [
+        {
+          "text": "然后这个潮勇者的话 他是140攻击力",
+          "t_start": 6092,
+          "t_end": 6111
+        },
+        {
+          "text": "啊140攻击力 140攻击力百分百法伤",
+          "t_start": 6111,
+          "t_end": 6128
+        }
+      ],
+      "reason": "逐字稿明确陈述潮勇者攻击力为140，并进一步说明其140攻击力为百分百法伤；该信息属于敌方单位固有数值与伤害类型，具备复用价值。",
+      "limitations": [
+        "主播口述为主，未展示面板截图或逐帧验证过程。",
+        "未说明是否存在关卡修正、活动机制修正或特殊难度修正。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅一个候选命题。两条引文均可在逐字稿对应行中字符级匹配，主体、数值与伤害类型明确，未依赖画面指涉，也未属于未定论猜测；后续关于减伤幅度的不确定讨论未纳入该命题。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

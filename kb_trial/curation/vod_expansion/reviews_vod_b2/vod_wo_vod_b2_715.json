@@ -1,0 +1,57 @@
+{
+  "workorder_id": "vod_wo_vod_b2_715",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:05:05+0900",
+  "source_sha256": "1ff90a0c6271748a031455f278953588b3e1b3fea8bf4ffb09a5c22a5c13ad30",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "单帧位移不是磕墙造成",
+      "verdict": "reject",
+      "reason": "命题依赖现场指代（“这里”“这个”），没有明确位移主体、触发状态与可复现条件，属于一次性实战观察；且证据起止秒数未按下一行时间戳标注。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "若位移由磕墙造成则位移距离会明显大于一帧位移量",
+      "verdict": "reject",
+      "reason": "该句是基于当前实况的即时推导/比较判断，未给出可复现的速度、距离、碰撞条件等参数，主体与适用范围不明确，且整段讨论后续出现“我搞错了”的自我更正，不能作为稳定机制定论。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G2",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "两个候选均围绕同一段调试实况展开：c01是带现场指代的单次观察，c02是未闭合的即时推导，且后续主播对相关解释作出自我更正。两条均未形成自包含、可复现、可复用的机制定论，故全部判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

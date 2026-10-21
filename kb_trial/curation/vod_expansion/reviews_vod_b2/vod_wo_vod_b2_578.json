@@ -1,0 +1,52 @@
+{
+  "workorder_id": "vod_wo_vod_b2_578",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:12:06+0900",
+  "source_sha256": "e8f6368838e87ecd7df0fdf0b9af8cacf1418f987e3747ba8a3e994d06186d37",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "新干员一技能和三技能的爆条与伤害相关",
+      "verdict": "pending",
+      "reason": "引文可在逐字稿第5670s行中字符级对齐，且该句为陈述式机制说明；但逐字稿仅称“新干员”，未给出具体干员名称，无法形成自包含的实体机制命题。需人工听审确认所指干员身份后，再判断是否可入库。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "新干员二技能按攻击力进行爆条结算",
+      "verdict": "pending",
+      "reason": "引文可在逐字稿第5670s行中字符级对齐，且“按攻击力爆条”较接近明确机制结论；但主体仍写作“新干员”，逐字稿窗口未给出具体干员名称，无法补齐自包含主体。需人工确认干员身份及技能归属后再定。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1"
+      ]
+    }
+  ],
+  "review_note": "两条候选的核心句来自同一行逐字稿，引文均可字符级对齐；但均以“新干员”指代，逐字稿窗口未给出具体干员名称，导致命题不能自包含。c01仅说明“爆条和伤害有关”，参数较粗；c02说明“二技能按攻击力爆条”，机制价值更高但仍缺主体身份。故两条均暂判 pending，等待人工确认干员身份与后续验证。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

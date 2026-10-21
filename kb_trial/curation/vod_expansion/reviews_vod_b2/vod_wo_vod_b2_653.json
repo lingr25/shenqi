@@ -1,0 +1,37 @@
+{
+  "workorder_id": "vod_wo_vod_b2_653",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:05:39+0900",
+  "source_sha256": "7b6f6790e7fc0e27b532fdb2bcc978925783211fa10a5e6841aa0f543676899a",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "阿戈尔科技是否属于深海猎人",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ],
+      "reason": "原文以「……吧」的反问/未验证确认形式出现，后续没有给出机制解释或验证，属于未定论的口头判断；按 Gate 4，主播的开放疑问与未闭合推测不得 keep。该命题也只是设定归属问答，不构成可复用机制定论。"
+    }
+  ],
+  "review_note": "唯一候选 c01 的引文可在 6561s 逐字稿行中字符级对齐，但其内容是未闭合的口头设问/确认，且缺乏机制论证与可复现条件。整单无 keep，判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

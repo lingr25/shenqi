@@ -1,0 +1,48 @@
+{
+  "workorder_id": "vod_wo_vod_b2_695",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T15:57:20+0900",
+  "source_sha256": "e5f300e3d9b4ead4bf0d593f3c738ea07fbfac9a56a91b2d66bd90b6e1e2e0e0",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙的“烫”效果和银灰的“反隐”效果都属于光环机制。",
+      "subject": "克莱门沙的“烫”效果和银灰的“反隐”效果",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "总之光环是这样一种机制啊 包括克莱门沙这个烫 然后的话敌人的这个呃 这个银灰的反隐 这个银灰的反隐都属于光环",
+          "t_start": 3018,
+          "t_end": 3034
+        }
+      ],
+      "reason": "上下文在 50:18 处对光环机制作出总结，直接列举克莱门沙的“烫”和银灰的“反隐”都属于光环；该句为结论性总结，非猜测或反问。上游给出的 18-33 秒时间戳与本窗口不对应，回执按逐字稿实际所在行修正为 3018-3034 秒。",
+      "limitations": [
+        "逐字稿中“克莱门沙”为 ASR 写法，具体干员/技能标准名未在上下文内确认；本命题仅确认其“烫”效果归入光环机制。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 的引文可在 50:18 行逐字匹配；上游时间戳 18-33 明显不对应本窗口，已按实际行修正。命题经改写为自包含机制陈述后通过四闸门，予以 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

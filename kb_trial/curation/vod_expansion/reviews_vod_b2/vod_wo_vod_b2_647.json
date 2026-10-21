@@ -1,0 +1,80 @@
+{
+  "workorder_id": "vod_wo_vod_b2_647",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:06:03+0900",
+  "source_sha256": "49220389f9469e4a2f11ed7462d69f1a0550fcc445ae4dd259b149c977102a05",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "维娜的短板是攻击范围太短（手短），其他方面并不差。",
+      "subject": "维娜",
+      "condition": "universal",
+      "scope": "entity_mechanism",
+      "category": "干员机制",
+      "evidence": [
+        {
+          "text": "维纳的问题就是手太短 维纳其实别的地方都还是不差的",
+          "t_start": 6095,
+          "t_end": 6107
+        }
+      ],
+      "reason": "逐字稿直接评价维娜，指出其问题为手短，并称其他方面不差；后文亦出现规范名“维娜”，可将ASR“维纳”校正为同一干员。该句可独立成立，作为干员固有短板结论。",
+      "limitations": [
+        "未给出攻击范围的具体数值或格数；“其他方面并不差”含主观评价成分。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "维纳/疑似vvan的12秒站立（战栗？）与合约环境可用性",
+      "verdict": "pending",
+      "reason": "逐字稿中“歪魔维纳有12秒站立”存在主体与状态名的ASR歧义（可能是薇薇安娜/战栗等），关键机制术语未确认；“合约可用性不取决于秒数”又偏策略性判断，需人工听审或实机验证后再定。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1"
+      ]
+    },
+    {
+      "local_id": "c03",
+      "topic": "合约环境敌人不会老实走到面前，远程/AOE使维纳站不住",
+      "verdict": "reject",
+      "reason": "该命题是对合约实战环境的泛化观察（“总有远程怪”“总有一些怪”）与主观生存性结论，缺少具体敌人、AOE范围、触发参数和可复现条件；按Gate 4纯实战观察无参数/不可复现，不具备规则价值。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01保留为干员固有短板结论；c02因关键术语/主体ASR不明且偏策略判断暂挂；c03为无参数实战泛化观察，排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,69 @@
+{
+  "workorder_id": "vod_wo_vod_b2_586",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:13:42+0900",
+  "source_sha256": "8569ad2e63616ec6a653d362d853a55cddbb5fd176637a347c97914f3aed447f",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "秒表上下移动0.5格对应12帧。",
+      "subject": "秒表",
+      "condition": "秒表上下移动0.5格",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "这一帧之后六帧也就是344",
+          "t_start": 6811,
+          "t_end": 6815
+        },
+        {
+          "text": "哦不对 我白痴了 我白痴了 上下0.50.5格 这边的话应该是12帧",
+          "t_start": 6833,
+          "t_end": 6842
+        }
+      ],
+      "reason": "主播先按6帧计数，随后当场明确自我勘误，给出“上下0.50.5格……应该是12帧”的闭合修正，符合勘误类可保留结论。",
+      "limitations": [
+        "逐字稿中“上下0.50.5格”存在ASR重复，0.5格位移需结合画面复核；未说明测试帧率与判定边界。"
+      ],
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      }
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "秒表再走11帧后撞到火陈。",
+      "verdict": "reject",
+      "reason": "仅为特定对局中的碰撞观察；虽有11帧参数，但缺少可复现的机制条件与规则结论，按Gate4排除。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01为闭合勘误，保留12帧结论；c02为一次性碰撞现象，排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

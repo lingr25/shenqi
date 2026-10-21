@@ -1,0 +1,75 @@
+{
+  "workorder_id": "vod_wo_vod_b2_465",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:28:28+0900",
+  "source_sha256": "97d07640089df021d595d572fb2decda7dab5caa5ba0c6da5751e4ccad1b5073",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "放逐仓在移动数格或遇到不可移动的障碍后才会消失。",
+      "subject": "放逐仓",
+      "condition": "放逐仓移动数格或遇到不可移动的障碍后",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "在移动数格或遇到不可不可移动的障碍后后 才会消失",
+          "t_start": 6613,
+          "t_end": 6658
+        }
+      ],
+      "reason": "逐字稿直接说明放逐仓的消失条件，命题补全了明确主体，属于可复用的实体机制陈述；引文与原始转写行字符级匹配。",
+      "limitations": [
+        "“移动数格”未在逐字稿中给出具体格数。",
+        "“不可移动的障碍”的判定细节未展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "放逐仓消失后会留下漩涡。",
+      "subject": "放逐仓",
+      "condition": "放逐仓消失后",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "放逐仓消失后留下旋下旋涡",
+          "t_start": 6613,
+          "t_end": 6658
+        }
+      ],
+      "reason": "逐字稿直接说明放逐仓消失后会留下漩涡，命题主体和结果明确；引文与原始转写行字符级匹配，ASR 的“旋下旋涡”可按上下文规范为“漩涡”。",
+      "limitations": [
+        "未说明漩涡的持续时间、作用范围与具体效果。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均来自同一段对放逐仓机制的明确描述，逐字引文可在原始转写行中精确匹配，且均已具备明确主体、条件与实体机制范围，未发现未定论猜测或纯实战现象问题，故均予采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

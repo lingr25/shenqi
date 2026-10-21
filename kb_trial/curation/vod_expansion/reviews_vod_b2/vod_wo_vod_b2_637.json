@@ -1,0 +1,65 @@
+{
+  "workorder_id": "vod_wo_vod_b2_637",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:03:15+0900",
+  "source_sha256": "94f0d91dd678cd1a14786bfb4c82c229cba0b03655a114d11ca86159f3329707",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "干员克莱门莎的三技能在同一格内存在5秒发射冷却；同一格五秒内不能连续发射子弹，因此爆条过快时有时不会发射子弹。",
+      "subject": "克莱门莎的三技能",
+      "condition": "同一格内且距上次发射不足5秒；三技能爆条过快时",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "三技能如果爆条过快 有时候不会发射子弹 他那个是同一个格子 有五秒的冷却 就是不能在一个格子 连续一个格子五秒之内连续发射子弹",
+          "t_start": 4917,
+          "t_end": 4933
+        }
+      ],
+      "reason": "逐字稿直接陈述三技能爆条过快时有时不发射子弹，并解释为同一格5秒冷却、五秒内不能连续发射子弹；参数5秒与因果链均在引文中出现。",
+      "limitations": [
+        "引文句未直接点名所属干员，干员名按同窗口后文音译归一为克莱门莎。",
+        "爆条过快的具体判定阈值与索敌细节未在逐字稿中闭合。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "三技能的同一格发射冷却机制在PV中有介绍但未说明具体时间，解包确认CD为五秒。",
+      "verdict": "reject",
+      "reason": "与 c01 重复：核心结论同为三技能同一格5秒发射冷却，c01 已包含该参数及爆条过快时不发射子弹的后果；按去重约定保留表述更完整的 c01。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "DUP"
+      ]
+    }
+  ],
+  "review_note": "本单可保留的机制定论是同一格5秒发射冷却及其导致爆条过快时有时不发射子弹；c02 的核心参数与 c01 重复，作为来源补充不另立命题。索敌未解部分未进入候选，未纳入裁定。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

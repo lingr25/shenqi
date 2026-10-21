@@ -1,0 +1,76 @@
+{
+  "workorder_id": "vod_wo_vod_b2_475",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:33:41+0900",
+  "source_sha256": "48dd014ed8369a1616f64ba7b63f774a1dffd327a1c51e452415d85075ff6796",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "开启技能后，克莱门沙的攻击造成物理溅射伤害，召唤的流放旋涡持续造成侵蚀损伤与物理伤害。",
+      "subject": "克莱门沙开启技能后的攻击与召唤的流放旋涡",
+      "condition": "克莱门沙开启技能后（攻击）；流放旋涡存在期间（旋涡持续伤害）",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "开启技能后 克莱门沙的攻击会造成物理溅射伤害 召唤的15流放旋涡 这些数据E也会持续造成侵蚀损伤与物理伤害",
+          "t_start": 1977,
+          "t_end": 1991
+        }
+      ],
+      "reason": "逐字稿明确说明克莱门沙开启技能后的攻击造成物理溅射伤害，并说明召唤的流放旋涡会持续造成侵蚀损伤与物理伤害；命题已补全主体，属于特定干员技能机制。",
+      "limitations": [
+        "逐字稿中的“15流放旋涡”“这些数据E”存在ASR噪声，未给出旋涡持续时间与具体伤害数值。",
+        "仅能确认伤害类型与技能归属，不能据此推导精确倍率。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "克莱门沙召唤的流放旋涡造成的物理伤害受到第一天赋的影响。",
+      "subject": "克莱门沙召唤的流放旋涡造成的物理伤害",
+      "condition": "第一天赋生效时",
+      "scope": "entity_mechanism",
+      "category": "天赋联动",
+      "evidence": [
+        {
+          "text": "漩涡造成的物理伤害也会受到第一天赋的影响",
+          "t_start": 1991,
+          "t_end": 2016
+        }
+      ],
+      "reason": "逐字稿直接说明漩涡造成的物理伤害也会受到第一天赋影响；结合前文可知该漩涡为克莱门沙技能召唤物，结论明确且可复用。",
+      "limitations": [
+        "逐字稿未给出第一天赋的具体触发概率、倍率或暴击结算细节。",
+        "仅确认旋涡物理伤害受第一天赋影响，未覆盖其他伤害分支。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均能在逐字稿单行中找到字符级连续原文证据，且均属于克莱门沙技能与第一天赋联动的明确机制陈述，未涉及未闭合猜测或纯画面指涉，故均判 keep。ASR噪声不影响核心机制结论，但精确数值需后续资料补充。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

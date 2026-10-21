@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_627",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:01:07+0900",
+  "source_sha256": "eac1960282b14befff3638c906be3a5abda3e5ab30b68342038e04800fc04e94",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙三技能的前摇为18帧。",
+      "subject": "克莱门沙三技能",
+      "condition": "克莱门沙释放三技能时",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "18帧的技能前摇",
+          "t_start": 3284,
+          "t_end": 3289
+        }
+      ],
+      "reason": "上下文先讨论克莱门沙三技能，随后主播直接报出“18帧的技能前摇”；该句为明确参数陈述，非猜测。",
+      "limitations": [
+        "逐字稿仅记录口头帧数，未展示逐帧验证过程或前摇起止判定口径。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "克莱门沙三技能的抬手为66帧，而不是36帧。",
+      "subject": "克莱门沙三技能的抬手",
+      "condition": "克莱门沙释放三技能时",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "我说为什么变成36合着 不是36 是66",
+          "t_start": 3289,
+          "t_end": 3296
+        },
+        {
+          "text": "这一帧抬手66 抬手是没有问题的 注意啊",
+          "t_start": 3319,
+          "t_end": 3325
+        }
+      ],
+      "reason": "主播先否定36帧并改口为66帧，随后再次确认“这一帧抬手66”，属于明确勘误结论。",
+      "limitations": [
+        "36帧说法的来源未在逐字稿中展开；仅为主播口头纠正，未给出逐帧截图或测试条件。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两候选均为帧时序明确陈述，引文可在逐字稿中字符级对齐；c02为显式勘误。二者均按特定干员技能机制保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

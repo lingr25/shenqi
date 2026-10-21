@@ -1,0 +1,69 @@
+{
+  "workorder_id": "vod_wo_vod_b2_675",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:09:43+0900",
+  "source_sha256": "624ad2179294335e49a4f49c77ccc57c240ad46a8ec53dbc4ce105a2e3424334",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "未能成功被施加Buff的敌人会进入帧循环检测列表，系统每帧检测一次该敌人是否仍为隐匿单位。",
+      "subject": "未能成功被施加Buff的敌人",
+      "condition": "敌人未能成功被施加Buff",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "所以挂不到 所以挂不到 挂不到的时候会怎么样",
+          "t_start": 1230,
+          "t_end": 1242
+        },
+        {
+          "text": "它会进入一个帧循环的检测列表 每帧检测一次 这个敌人究竟还是不是一个隐匿的单位",
+          "t_start": 1242,
+          "t_end": 1257
+        }
+      ],
+      "reason": "前句以“挂不到的时候会怎么样”发问，紧接着回答会进入帧循环检测列表并每帧检测是否为隐匿单位；该结论直接说明Buff施加失败后的检测/重试机制，属于可复用规则。",
+      "limitations": [
+        "逐字稿未说明检测列表的移除条件、检测通过后的具体行为，以及“隐匿”判定的完整边界。"
+      ],
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      }
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "被推到的敌人在第5帧时仍处于无敌期间，因此无法被施加Buff。",
+      "verdict": "pending",
+      "reason": "逐字稿确有“五帧的时候……还在一个无敌期间 所以挂不到”的表述，但“五帧”的起算基准（推位移开始、碰撞、光环生成或其他事件）未在上下文中明确，无法据此复现该帧机制；属关键参数缺失，留待实机或人工听审确认。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "c02有明确逐字稿支撑，构成可复用的帧循环检测机制，判keep；c01虽有机制价值，但“五帧”的起算点缺失，无法闭合为可复现命题，判pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

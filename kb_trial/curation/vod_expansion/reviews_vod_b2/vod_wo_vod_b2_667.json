@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_667",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:08:19+0900",
+  "source_sha256": "19d8ae51e557805b9a1783faddd3b9714c75e4a726e1cf8d62a50723a4f48950",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "Buff/损伤相关判定时，判定条件不是同一个敌人，而是同一个格子。",
+      "subject": "Buff/损伤相关判定",
+      "condition": "进行Buff/损伤相关判定时",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "不是同一个怪 是同一个格子",
+          "t_start": 717,
+          "t_end": 736
+        }
+      ],
+      "reason": "该句处于讨论Buff挂上后出损伤/元素、恢复隐匿后出伤的语境中，主播以“不是同一个怪 是同一个格子”纠正判定理解，后续“可以可以”表示确认；因此可采纳为判定依据是同一格子而非同一敌人的机制陈述。",
+      "limitations": [
+        "逐字稿未交代该结论覆盖的全部Buff/损伤类型。",
+        "同句中的“先造成一次伤害”带有“好像”的不确定表述，未纳入本命题。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选c01有逐字稿直接支撑，属于主播对Buff/损伤判定依据的明确纠正；未定论的“先造成一次伤害”未纳入。无其他候选。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

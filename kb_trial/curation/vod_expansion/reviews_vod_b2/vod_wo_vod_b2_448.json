@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_448",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:26:58+0900",
+  "source_sha256": "5f5161e08541bb5dc7b91909ad42831e3e56b700dec50d77f30418ae6e3efbd7",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "践行者身上出现的伤害数字若末位为2（如3972、3472），该数字即为暴击伤害。",
+      "verdict": "reject",
+      "reason": "上游引文将多个不连续转写行拼接为单条证据，无法在任一行中字符级完全匹配，违反Gate 2；同时该结论是对本局特定伤害数字末位的实战观察，缺少可复现机制条件，且与前文“这两个二结尾的是两个dot”存在口径冲突，不能作为通用机制定论，违反Gate 4。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G2",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "践行者的DOT（持续伤害）造成三倍伤害。",
+      "verdict": "pending",
+      "reason": "转写句“dot打的是什么伤害 dot打的是三倍都伤害”存在ASR歧义（“三倍都/毒”不明），且“三倍”的基准、作用对象（践行者受到的DOT还是践行者施加的DOT）及成立条件均未交代。该话题有机制价值，但关键参数缺失，需人工听审或实机验证后再定。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "本单两候选均未达到直接入库标准：c01证据跨行拼接且属单局末位数字观察，c02转写存在ASR歧义和基准缺失，留待人工听审与实机验证。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

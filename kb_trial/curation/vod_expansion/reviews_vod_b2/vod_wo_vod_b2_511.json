@@ -1,0 +1,71 @@
+{
+  "workorder_id": "vod_wo_vod_b2_511",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:54:43+0900",
+  "source_sha256": "9a00e951ccc8fb811fc7796e2777e342df1df5e2f9f6a4414317c68b491c26c5",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在具有30发轰炸的机制中，30发轰炸必定全部发生在爆条之后。",
+      "subject": "具有30发轰炸的机制中的30发轰炸",
+      "condition": "触发该30发轰炸时",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "30发轰炸必定都是在那个",
+          "t_start": 260,
+          "t_end": 265
+        },
+        {
+          "text": "报销之后的",
+          "t_start": 265,
+          "t_end": 269
+        }
+      ],
+      "reason": "主播用“必定都是”明确判定30发轰炸均发生在爆条之后；逐字稿中的“报销”为ASR误写，按上下文应作“爆条”。原候选引文跨行拼接，终审改为拆分为连续两行原始证据。",
+      "limitations": [
+        "具体干员或技能名称未出现在当前逐字稿窗口内。",
+        "“报销”为ASR误写，需人工听审确认其对应“爆条”。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "由于30发轰炸均在爆条之后，轰炸总伤害可直接按30×10计算。",
+      "verdict": "reject",
+      "reason": "逐字稿只说“可以直接按照30×10”，但紧接着又说明轰炸为三倍物理伤害、2.5倍元素，说明30×10只是中间计算量，不能直接等同于“轰炸总伤害”。候选将中间量误作总伤害，且未纳入后续倍率条件，属于不完整/错误推导。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01 的核心结论有逐字稿直接支撑，但需将跨行引文拆为两条原始证据并纠正ASR误写后采纳。c02 将“30×10”误作轰炸总伤害，忽略随后出现的三倍物理与2.5倍元素等倍率条件，判为错误/未闭合推导并排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

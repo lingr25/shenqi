@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_654",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:05:34+0900",
+  "source_sha256": "0b63c29e0aa51c508f5b7cbacaa4032ceb7ae5fe39c5d11bbc44fbf292f58547",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "打群干员对单体目标的输出大于打单干员对单体目标的输出。",
+      "verdict": "reject",
+      "reason": "引文仅为口语化比较，且紧接「100多秒的持续」等特定战斗语境讨论，未给出具体干员、技能、敌人属性、持续时间等可复现参数；候选将其泛化为全体打群干员与打单干员的通用结论，违反 Gate3（条件/范围不明确）与 Gate4（无明确参数的实战观察/未闭合结论）。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单仅审查 c01。逐字稿中虽有字面比较句，但上下文是特定战斗与持续时间下的口语评论，缺少可复现参数，不能支撑泛化的机制定论，故判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,76 @@
+{
+  "workorder_id": "vod_wo_vod_b2_598",
+  "stem": "BV1KtHX6nEZS_p2_42575334226",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:16:17+0900",
+  "source_sha256": "8b24182d092d631939dc108e26556756f71fa93b3f5a566cabfdd48c638f4585",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在非常早开（极限早开）方案中，火陈的早开时间点为64.011。",
+      "subject": "火陈的早开时间点",
+      "condition": "非常早开（极限早开）方案",
+      "scope": "instance",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "假设说火陈就撞六下了",
+          "t_start": 1724,
+          "t_end": 1728
+        },
+        {
+          "text": "我要非常早开的话的需求是",
+          "t_start": 2076,
+          "t_end": 2100
+        },
+        {
+          "text": "64.011吧 64.01",
+          "t_start": 2100,
+          "t_end": 2106
+        }
+      ],
+      "reason": "上下文先提到火陈撞六下，随后在讨论“非常早开”的需求时给出64.011/64.01这一时间数值，可支撑该方案下火陈早开时间点为64.011的实例参数。",
+      "limitations": [
+        "口播同时出现“64.011吧 64.01”，精确值可能存在四舍五入或口误，需人工听审确认。",
+        "逐字稿未明确时间单位与起算点。",
+        "该数值仅适用于所述非常早开/极限早开方案，不是通用机制。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "极限早开方案中星熊的时间点要求更严格，需按之前的778取162778",
+      "verdict": "pending",
+      "reason": "命题依赖窗口外的“之前的778”参数，且“162778”未在逐字稿中明确单位/小数点；星熊时间点的具体含义与可复现条件未闭合，需补全前文或人工听审。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1"
+      ]
+    }
+  ],
+  "review_note": "c01有明确数值与上下文支撑，按实例级时序参数保留，但需注意口播精度与单位未明；c02因引用窗口外“之前的778”且162778含义未闭合，暂判pending，待补全前文或人工听审。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_604",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T13:57:11+0900",
+  "source_sha256": "29b5163dff7faab6d3290d07eca9efd41319ffd4c8bd87ed6d2e3011616e8df3",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在活动关卡中，普通关的Buff为我方所有，EX关的Buff全部变为敌方所有。",
+      "subject": "活动普通关与EX关的关卡Buff归属",
+      "condition": "在本次活动关卡中，关卡类型为普通关或EX关",
+      "scope": "instance",
+      "category": "关卡Buff/活动机制",
+      "evidence": [
+        {
+          "text": "普通关我方Buff ex关全部变成敌方Buff",
+          "t_start": 310,
+          "t_end": 378
+        }
+      ],
+      "reason": "逐字稿中主播明确总结当前活动关卡Buff归属：普通关给我方Buff，EX关全部变成敌方Buff，并以“没错没错”确认。该句可改写为不依赖画面的自包含机制陈述。",
+      "limitations": [
+        "未说明具体Buff名称、数值、叠加规则与作用对象范围。",
+        "未明确该规则是否覆盖本次活动的全部普通关与EX关，还是仅为主播基于当前进度的概括。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选命题在逐字稿中有明确陈述，且可改写为自包含的关卡Buff归属机制。上游时间戳与逐字稿行不一致，已按原文行校正至310s起、下一行378s止。该结论可作为本次活动实例机制保留，但具体Buff参数仍需后续补充。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

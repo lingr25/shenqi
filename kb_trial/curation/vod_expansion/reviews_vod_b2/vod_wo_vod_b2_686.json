@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_686",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:11:27+0900",
+  "source_sha256": "b45a8b6a502b563deb36a40b1710da01c8dc597ee809e6819822fdd5773d1e35",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "实测在14~24帧区间内连续部署十帧，角色仍然没有反应。",
+      "verdict": "reject",
+      "reason": "该候选属于纯实战现象观察：主体仅写作“角色/目标单位”，未说明具体敌方、干员、技能或地图状态；逐字稿虽有“14~24之间部署了十帧”等帧区间参数，但缺少可复现条件与明确作用主体，不能构成自包含的可复用机制命题。G1主体不明确，G3主体/条件不完整，G4纯现象观察无明确可复现条件，均不通过。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单仅有一个候选 c01。其引文可在 2445s 行中逐字匹配，但命题仅为单次帧部署实验现象，未给出具体实验主体、技能/敌方状态及可复现条件，按 Gate1/G3/G4 排除。无 keep 项，顶层 verdict 为 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_612",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T13:58:27+0900",
+  "source_sha256": "84d25b572e40d5d81303b3c3e3a4d2c5f45cc44f26d040653a80b4cc8e9a59b5",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "魔王兔理论上可被推到蓝门",
+      "verdict": "pending",
+      "reason": "候选句虽可改写为自包含陈述，且引文可在逐字稿中逐字对齐，但同句紧接着明确表示不确定地图是否设置终点，导致触发条件缺失、讨论未闭合，不能作为可复用机制定论；需实机确认终点设置后再定。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "若终点设置不在魔王兔所在图中则推到蓝门无意义",
+      "verdict": "pending",
+      "reason": "该句是条件性推论，主体、条件与作用域均可明确，引文也能逐字对齐；但主播当场未验证该条件是否成立，地图终点设置这一关键参数缺失，讨论未闭合，宜留待后续实机验证或人工听审。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "两个候选均围绕魔王兔能否被推入蓝门及其与地图终点设置的关系。c01仅为带不确定性的理论可能，条件缺失且未闭合；c02为条件性推论，条件表述完整但当场未验证前提是否成立。二者均具机制讨论价值，但关键参数缺失，统一判 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_493",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:51:17+0900",
+  "source_sha256": "ca5fc1909f67da3b3b60b79a5074c357944b835aa2168f0fa544f39ba9af2510",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门莎第一天赋在克莱门莎受到其他减少防御的效果时，触发概率会大幅提升。",
+      "subject": "克莱门莎第一天赋",
+      "condition": "克莱门莎受到其他减少防御的效果时",
+      "scope": "entity_mechanism",
+      "category": "天赋机制",
+      "evidence": [
+        {
+          "text": "或受到其其他减八减少防御的效果时",
+          "t_start": 5103,
+          "t_end": 5128
+        },
+        {
+          "text": "受到其他减少防御的效果时 2克莱门沙第一天赋的触发概率为",
+          "t_start": 5185,
+          "t_end": 5208
+        },
+        {
+          "text": "会大幅提升",
+          "t_start": 5208,
+          "t_end": 5212
+        }
+      ],
+      "reason": "逐字稿连续出现第一天赋描述：条件为受到其他减少防御的效果，随后明确触发概率会大幅提升；该句属于干员固有机制的陈述，而非临场猜测。",
+      "limitations": [
+        "逐字稿仅给出“大幅提升”的定性描述，未提供具体触发概率数值或叠加上限。",
+        "“其他减少防御的效果”的具体判定范围未在该窗口内进一步说明。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅有一个候选 c01。其条件与结果均由逐字稿中的天赋描述句直接支撑，虽未给出具体概率增量，但作为条件性机制结论可保留，数值细节列为限制。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

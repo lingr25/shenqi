@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_546",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:05:31+0900",
+  "source_sha256": "09edbe5af426e2368592819c6a81f9082c0c90a7ebef39f23a0cc848b73d08b9",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "上下文中提及的克莱门沙的普通攻击不是真群攻。",
+      "subject": "克莱门沙的普通攻击",
+      "condition": "该干员普通攻击生效时",
+      "scope": "entity_mechanism",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "他平A不是真群攻 我知道啊",
+          "t_start": 1908,
+          "t_end": 1918
+        }
+      ],
+      "reason": "逐字稿中主播以肯定语气指出该干员平A不是真群攻；上下文围绕克莱门沙的平A与轰炸输出展开，可将代词补全为该干员，形成特定干员机制陈述。",
+      "limitations": [
+        "具体干员名依赖ASR转写为“克莱门沙”，可能存在同音错字。",
+        "未给出“真群攻”的判定定义与普通攻击目标数参数；紧邻的“大概率打三”属于推测，未纳入本条。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01有逐字稿原句支撑，经补全主语可构成自包含的特定干员机制陈述；未把相邻的“大概率打三”推测并入，故保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

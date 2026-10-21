@@ -1,0 +1,129 @@
+{
+  "workorder_id": "vod_wo_vod_b2_691",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T15:57:06+0900",
+  "source_sha256": "eddcead858d6e5e8102bb3a922840e432946ccdaa00682f1dba97042e74381fc",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "银灰的反隐效果通过光环碰撞箱碰撞挂载「隐匿免疫Buff」实现。",
+      "subject": "银灰的反隐效果（隐匿免疫Buff）",
+      "condition": "银灰部署后其反隐光环与敌人发生碰撞箱碰撞时",
+      "scope": "entity_mechanism",
+      "category": "机制实现",
+      "evidence": [
+        {
+          "text": "为什么要下两帧 是这样的 就是反隐",
+          "t_start": 2708,
+          "t_end": 2720
+        },
+        {
+          "text": "同样是挂Buff 挂一个隐匿免疫Buff 他也是通过光环来实现的 光环是通过碰撞箱的碰撞来实现的",
+          "t_start": 2720,
+          "t_end": 2727
+        }
+      ],
+      "reason": "上下文先点明讨论的是反隐，随后明确说明反隐同样是挂Buff、挂隐匿免疫Buff，并通过光环碰撞箱碰撞实现，可由逐字稿直接支撑。",
+      "limitations": [
+        "逐字稿未给出光环半径或碰撞箱尺寸。",
+        "「反隐」主语承接前文，需结合上下文理解。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "银灰部署后的下一帧创建反隐碰撞箱，该碰撞箱与敌人的结算顺序为同帧后结算；反隐Buff在敌我双方索敌结算完成后才挂上，因此在反隐Buff挂上的当帧，敌人与干员均无法在该帧索敌。",
+      "subject": "银灰部署后创建的反隐碰撞箱与隐匿免疫Buff的结算时序",
+      "condition": "银灰部署后进入下一帧，且反隐碰撞箱与敌人发生同帧后结算",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "在部署的下一帧银灰会创建一个碰撞箱 然后的话这个碰撞箱和敌人的结算顺序还是同帧后结算的 就是说他在部署下一帧挂上反隐",
+          "t_start": 2727,
+          "t_end": 2739
+        },
+        {
+          "text": "但是他在敌人我方都结算完了之后 最后挂上这个反隐Buff 这一帧挂上了 但是敌人不可能在这一帧进行索敌",
+          "t_start": 2739,
+          "t_end": 2750
+        },
+        {
+          "text": "干员也不可能在这一帧进行索敌 就是包括那个漩涡 他也不能在这一帧进行索敌 因为他是锁完敌之后才挂上的反隐",
+          "t_start": 2750,
+          "t_end": 2762
+        }
+      ],
+      "reason": "逐字稿明确说明部署下一帧创建碰撞箱、与敌人同帧后结算、在敌我双方索敌结算完成后才挂上反隐Buff，并明确该帧敌人和干员均不能进行索敌。",
+      "limitations": [
+        "逐字稿未展开不同敌人或装置碰撞箱差异。",
+        "同帧后结算的具体程序实现依赖游戏帧循环，逐字稿未给出可视化帧号。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "银灰必须在场两帧才能提供一帧反隐：若在第1帧直接撤退，反隐Buff会立刻被移除而无任何效果；第2帧敌人才可被锁定，部署两帧实际只提供反隐一帧。",
+      "subject": "银灰反隐光环/隐匿免疫Buff的在场时长与撤退时序",
+      "condition": "银灰部署后立即撤退，或持续在场一至两帧",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "然后如果我这一帧直接撤了的话 那么之间就不会有任何效果 因为撤了的话 他会立刻把Buff给撤掉 所以我必须要两帧",
+          "t_start": 2762,
+          "t_end": 2771
+        },
+        {
+          "text": "必须要零帧一帧的砧木挂上这个隐匿免疫Buff 然后两帧这个这个敌人这个被反隐的敌人可以被我锁到 然后同时两帧撤退",
+          "t_start": 2771,
+          "t_end": 2786
+        },
+        {
+          "text": "就是因为部署两帧 他是反隐一帧",
+          "t_start": 2812,
+          "t_end": 2820
+        }
+      ],
+      "reason": "逐字稿明确说明该帧直接撤退会立刻撤掉Buff、因此必须要两帧，并进一步给出「部署两帧，他是反隐一帧」的结论。",
+      "limitations": [
+        "未说明其他反隐来源是否完全同构。",
+        "具体帧号受部署与撤退操作帧影响，逐字稿未列出全部边界条件。",
+        "转写文本存在「砧木」等ASR错字，但机制结论仍可辨识。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "三条候选均能在45:08至46:52段找到连续原文支撑，且分别对应反隐实现方式、碰撞箱与反隐Buff结算时序、部署两帧仅提供一帧反隐三个不同层次，非重复。上游引文存在跨行拼接和秒数误标，本回执已按逐字稿行拆分证据并校正为绝对秒数；四条硬性闸门均通过，终审均判keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_685",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:11:33+0900",
+  "source_sha256": "de25ea47a9c1cb88bf890e682f06d91387ddfe2fc91f3cdbc3b79dc200feeb32",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在消失弹道的13~14帧判定窗口中，要使该机制生效需要连续操作两帧：第13帧部署、第14帧挂上，并在第15帧撤离；仅操作其中一帧不成立。",
+      "subject": "消失弹道",
+      "condition": "在消失弹道的13~14帧判定窗口内",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "就是要下两帧 就是要下两帧 13部署14挂 然后15撤才行",
+          "t_start": 2321,
+          "t_end": 2332
+        },
+        {
+          "text": "看见没有 我在14~24之间部署了十帧 他仍然没有反应 但是我在13~15之间部署两帧 他就可以死掉",
+          "t_start": 2445,
+          "t_end": 2458
+        }
+      ],
+      "reason": "主播在试完13~14后明确结论为“要下两帧”，并给出13部署、14挂、15撤的帧序列；随后用14~24部署十帧无反应、13~15部署两帧成功的对照实验支撑该帧窗口结论。",
+      "limitations": [
+        "逐字稿未明确“消失弹道”对应的具体干员/技能/敌人，结论仅按文本中的消失弹道帧判定场景理解。",
+        "13/14/15帧为本次实验设定，需结合实机帧计数复现；“仅一帧不成立”由“必须下两帧”及对照组推断。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 有逐字稿直接结论和后续对照实验支撑，满足自包含、逐字对齐、三元约束及非未定论假说要求，判 keep；但该结论属于消失弹道特定帧窗口的实体机制层面，具体技能/单位未在文本中交代。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

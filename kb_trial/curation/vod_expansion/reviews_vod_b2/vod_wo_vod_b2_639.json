@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_639",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:03:20+0900",
+  "source_sha256": "f78bac849e58dbe95839c7be8c20af1a26d22418bec70722c8254cf87db3da1d",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱二技能的可推动总重量上限为8重。",
+      "subject": "克莱二技能",
+      "condition": "二技能推动结算时",
+      "scope": "entity_mechanism",
+      "category": "位移/技能特例",
+      "evidence": [
+        {
+          "text": "还有二技能这个只能推八重总动",
+          "t_start": 5469,
+          "t_end": 5480
+        }
+      ],
+      "reason": "主播在讨论克莱二技能时明确给出“只能推八重总动（疑为总重）”的重量限制，可归纳为该技能的可推动重量上限为8重。",
+      "limitations": [
+        "逐字稿“总动”疑为“总重”的ASR误差；8重限制按群体总重还是单体重量结算，窗口内表述存在张力，需结合实机复核。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "克莱二技能虽然表现为对群推动，但8重限制实质上是对单推动的重量上限。",
+      "subject": "克莱二技能",
+      "condition": "二技能推动结算时",
+      "scope": "entity_mechanism",
+      "category": "位移/技能特例",
+      "evidence": [
+        {
+          "text": "因为再怎么样的话 就是他对单的推是要有一个上限的",
+          "t_start": 5480,
+          "t_end": 5496
+        },
+        {
+          "text": "就是虽然你看着他是对群 但是八这个限制一定是给对单的限制",
+          "t_start": 5496,
+          "t_end": 5503
+        }
+      ],
+      "reason": "前句说明“对单的推要有上限”，后句进一步明确“八这个限制一定是给对单的限制”，可归纳为对单推动重量上限。",
+      "limitations": [
+        "与c01的“总重量”表述存在口径差异；8重限制究竟按单体重量还是群体总重量结算，建议知识库合并时标注需实机确认。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单两条候选均为机制陈述，且均有逐字稿连续原文支撑，未发现纯猜测、反问或画面依赖残句。两条命题围绕同一“8重限制”展开，c01给出上限数值，c02补充对群技能中该限制的对单口径；但二者在“总重/对单”表述上存在张力，建议知识库合并时保留双条并标注需实机复核。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

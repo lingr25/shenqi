@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_503",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:52:36+0900",
+  "source_sha256": "c8c2a2407b493a4e98fd5c4320a30a74f65100c24c27c2bc8e1d55d897105bfd",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "血条单像素对应的血量百分比，主播先将2%更正为0.5%。",
+      "verdict": "reject",
+      "reason": "候选只是记录主播在像素换算过程中的口头自问自答与自我更正，紧接着又出现“这是0.8%”，前后数值不一致；上下文还承认两像素误差太大、量像素准度差，说明该换算未闭合，属于未定论/开放疑问，违反G4。原命题以“主播先……更正……”为陈述，不是自包含的可复用机制规则，违反G1；且未交代像素换算所依赖的分辨率/UI缩放等条件与适用范围，违反G3。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "该候选引文可在逐字稿中找到连续原文，但内容为主播未闭合的像素换算口头更正，后续数值与测量误差讨论均表明结论不稳定，不能作为可复用机制定论采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_463",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:28:21+0900",
+  "source_sha256": "9d94cf2e58c24fdf2223716ab37f3987cfd648674b46379aadd28254487e27d4",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "一次数值为2510的伤害因命中处于减防状态的目标，不能计入有效伤害数据。",
+      "subject": "数值为2510的伤害样本",
+      "condition": "该伤害命中处于减防状态的目标",
+      "scope": "instance",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "已经打在减防上了 不能算",
+          "t_start": 6416,
+          "t_end": 6427
+        },
+        {
+          "text": "2510是这个是这个已经打在减防上了",
+          "t_start": 6427,
+          "t_end": 6479
+        }
+      ],
+      "reason": "上下文正在整理60组伤害数据，主播明确将2510样本标为打在减防上并判作废，属于对无效样本的勘误。",
+      "limitations": [
+        "只判定该样本作废，未给出减防来源、敌人状态细节或可推广的伤害公式参数。",
+        "“减防”为逐字稿表述，未进一步解释具体减防机制。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本单仅一个候选。逐字稿显示在整理石头人伤害数据，2510样本因目标处于减防状态被明确排除；证据逐字一致，按特定样本作废处理保留，注意其并非通用伤害公式定论。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

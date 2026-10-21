@@ -1,0 +1,37 @@
+{
+  "workorder_id": "vod_wo_vod_b2_712",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:04:15+0900",
+  "source_sha256": "2258183975d003fb941bf702c9f702a01de2d78b6805ca65b35eccc34f5c7a5b",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "处于放逐状态的目标受到推拉时没有产生任何推动位移效果",
+      "verdict": "pending",
+      "reason": "候选仅记录单次实测观察，且逐字稿上下文明确存在未闭合矛盾：主播先称记得放逐过程中被推一下应该可以动，随后又说刚才那一下没有动并表示很奇怪；缺少可复现参数与闭合结论，不满足 Gate 4，留待后续实机验证或人工听审。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单仅一个候选 c01。其引文可在 2730s 与 2755s 对应逐字稿行中字符级匹配，但该说法来自一次实测现象，且当场对“放逐中被推是否可动”出现前后矛盾与疑惑，未形成可复用的机制定论，因此不采纳为 keep，判 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

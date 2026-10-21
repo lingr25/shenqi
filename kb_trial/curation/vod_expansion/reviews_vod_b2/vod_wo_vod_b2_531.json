@@ -1,0 +1,56 @@
+{
+  "workorder_id": "vod_wo_vod_b2_531",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:02:59+0900",
+  "source_sha256": "dfa0002930941f180ee8f888c12c60300abbafacb2494c8292b737722cdc1b60",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "三技能拉好聚好后一套技能内把所有怪聚在一格",
+      "verdict": "reject",
+      "reason": "未通过 Gate 1/Gate 3：命题以“三技能”作主语，未指明具体干员，无法自包含；且“所有的怪都聚在一格”与同段随后出现的“奎龙有传送免疫、推不了”相冲突，缺少“非传送免疫”条件，属于过度概括。另候选 evidence 的 t_end=1392 并非该行下一行时间戳 1401，未满足 Gate 2 的精确时间标注要求。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "三技能拉好聚好后一套技能内打十次爆条",
+      "verdict": "reject",
+      "reason": "未通过 Gate 1/Gate 3：仅称“三技能”，未给出具体干员或技能主体，不能形成自包含机制命题；“十次爆条”也缺少可复现条件与目标限制。逐字稿原文为“打十次保条”，虽可考虑 ASR 修正，但仍无足够参数支撑为定论。另候选 evidence 的 t_end=1392 并非该行下一行时间戳 1401，未满足 Gate 2 的精确时间标注要求。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "窗口内可核对到“三技能聚怪/十次保条”的口语结论，但主语缺失，且 c01 忽略传送免疫限制；两条均不满足自包含与显式主体/条件要求，候选 evidence 的时间戳也未按行边界精确标注，故全部 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

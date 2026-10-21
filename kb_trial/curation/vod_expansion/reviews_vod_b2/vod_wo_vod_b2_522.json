@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_522",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:56:11+0900",
+  "source_sha256": "d835bd985bc8f9c32abfb4a73800b3fee162ce212a51081a1f2243a30917bdc2",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "技能范围判定方式需更严谨测试，不能仅凭特效盲猜",
+      "verdict": "reject",
+      "reason": "该候选只是对范围判定方式未知的谨慎表述和待验证议题，没有给出任何可复用的具体机制定论；实际是按格子还是其他方式仍未闭合，属于未定论内容，不满足 Gate 4。同时主体未落到具体技能/系统，条件与机制成立关系也不明确，不满足 Gate 3。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "唯一候选 c01 的引文与逐字稿对齐，但其内容是范围判定方式未知时的谨慎表述，未给出可复用机制结论，属于待验证/未闭合议题，不能进入知识库定论。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,75 @@
+{
+  "workorder_id": "vod_wo_vod_b2_611",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T13:58:45+0900",
+  "source_sha256": "9bfa7a57698f5b6e118563934a92b27bccefe998d4e969e95e0599aeae20d8dd",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "活动第四关右下角的楼梯和土堆仅为装饰布景/贴图，所在地块格没有特殊效果，不是真实楼梯，与普通地块没有区别。",
+      "subject": "活动第四关右下角的楼梯与土堆所在地块",
+      "condition": "在活动第四关中，针对右下角楼梯与土堆所在格",
+      "scope": "instance",
+      "category": "地块/地图",
+      "evidence": [
+        {
+          "text": "然后这个的话这个楼梯只是装饰布景效果啊 他和这个这些土堆堆 像这种地块没有什么区别",
+          "t_start": 1000,
+          "t_end": 1013
+        },
+        {
+          "text": "它并不是真实存在的楼梯 它和这些地方是一样的",
+          "t_start": 1013,
+          "t_end": 1020
+        },
+        {
+          "text": "没有实际意义",
+          "t_start": 1020,
+          "t_end": 1025
+        }
+      ],
+      "reason": "主播在确认查看活动第四关右下角楼梯后，明确说明楼梯与土堆只是装饰布景，和普通地块无区别，不是真实楼梯且没有实际意义；该讨论属于对地块机制的勘误澄清，可由逐字稿直接支撑。",
+      "limitations": [
+        "仅适用于该活动第四关右下角该组楼梯/土堆地块。",
+        "其他地图中的不可通行地块或特殊地形仍需单独判定，不能由本命题外推。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "方舟是2D游戏，场景画面不拥有实际建模，场景没有那么多效果。",
+      "verdict": "reject",
+      "reason": "该候选仅为对2D游戏画面/渲染的一般性泛化说明，并非可复用的具体机制陈述；“场景没有那么多效果”表述模糊，缺乏可验证参数。其机制含义已被 c01 的具体地图结论覆盖，故不单独保留。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1"
+      ]
+    }
+  ],
+  "review_note": "c01 是对活动第四关右下角楼梯/土堆地块无实际机制的明确勘误，证据充分，予以保留。c02 属于宽泛的2D画面表现说明，不构成独立机制规则，且其具体机制结论已由 c01 覆盖，判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

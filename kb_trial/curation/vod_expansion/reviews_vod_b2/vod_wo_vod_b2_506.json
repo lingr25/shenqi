@@ -1,0 +1,86 @@
+{
+  "workorder_id": "vod_wo_vod_b2_506",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:53:17+0900",
+  "source_sha256": "5c9e6ad5d6468607adac3b7550f5f7ae97f87f26eef54d357e78c97587d50a51",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙二技能的持续伤害（dot）以技能循环第5秒为起算点，经过8秒后，约在第13秒挂上。",
+      "subject": "克莱门沙二技能的持续伤害（dot）",
+      "condition": "以克莱门沙二技能循环第5秒为起算点",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "从五秒的时候开始",
+          "t_start": 6999,
+          "t_end": 7004
+        },
+        {
+          "text": "再过八秒13 这下会挂上",
+          "t_start": 7004,
+          "t_end": 7012
+        }
+      ],
+      "reason": "逐字稿在二技能总伤测算段明确给出“从五秒的时候开始”“再过八秒13 这下会挂上”，可推出二技能dot在约第13秒挂上；上下文持续讨论二技能、dot与爆条。",
+      "limitations": [
+        "逐字稿只给出约第13秒的口算结果，未说明帧级精确判定点。",
+        "未交代不同攻速或帧率下该时间点是否变化。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "克莱门沙二技能第13秒挂上的持续伤害（dot）无法触发下一次爆条，因而在该轮二技能循环中不产生再次爆条的作用。",
+      "subject": "克莱门沙二技能第13秒挂上的持续伤害（dot）",
+      "condition": "在克莱门沙二技能单轮循环中，该dot于第13秒挂上时",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "再过八秒13 这下会挂上",
+          "t_start": 7004,
+          "t_end": 7012
+        },
+        {
+          "text": "但是也没什么用 报不了下一次条了",
+          "t_start": 7012,
+          "t_end": 7018
+        }
+      ],
+      "reason": "紧接“第13秒会挂上”后，主播明确说“报不了下一次条了”，表明该dot在本轮二技能循环中不能用于触发下一次爆条；这是对该时间节点收益的收窄结论。",
+      "limitations": [
+        "“没什么用”被限定为不产生再次爆条作用，未外推到其他伤害或减防等潜在效果。",
+        "逐字稿未给出爆条阈值、敌人初始条量等参数，结论限定在该轮循环与前述设置下。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均可在转录窗口中找到对应原文，且上下文处于二技能总伤/dot爆条测算段。c01与c02构成连续结论：第13秒挂上的dot无法触发下一次爆条。上游证据时间戳与转录窗口实际行不一致，回执中已按实际行校正。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_569",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:10:14+0900",
+  "source_sha256": "026f517c01d9be19697a287892046d00d0280660f5f6b9fdebb7fc7b2dccb307",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在索敌过程中，攻击动画结束时刻发生的那次抬手属于动画制。",
+      "subject": "索敌过程中攻击动画结束时刻的抬手",
+      "condition": "攻击动画结束时刻",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "索敌我说的很清楚了 就是动画结束的时候的抬手就是动画制",
+          "t_start": 4012,
+          "t_end": 4021
+        }
+      ],
+      "reason": "主播在讨论如何区分冷却制与动画制后，明确给出索敌相关结论：动画结束时的抬手就是动画制。该句在逐字稿中完整可引，且不依赖画面指涉，可作为一般索敌/动画时序机制陈述。",
+      "limitations": [
+        "逐字稿未完整定义“动画制”与“冷却制”的术语边界。",
+        "该结论为主播自述实测结论，未给出完整测试参数与复现步骤。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 有明确逐字稿原句支撑，上下文正在讨论冷却制与动画制的区分；该命题可改写为自包含的一般机制陈述，未发现未闭合猜想或画面依赖问题，故裁定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

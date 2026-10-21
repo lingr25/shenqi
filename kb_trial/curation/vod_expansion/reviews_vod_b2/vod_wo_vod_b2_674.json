@@ -1,0 +1,56 @@
+{
+  "workorder_id": "vod_wo_vod_b2_674",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:09:11+0900",
+  "source_sha256": "42c2825dc1c3cc49befda18d26aadab407c8db00a923edc87c58099780f5d67e",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "漩涡在第65帧开始消失，第66帧开始出现。",
+      "verdict": "reject",
+      "reason": "引文虽可在逐字稿中字符级匹配，但原句中的主语为代词「它」，无法从文本唯一确定为「漩涡」；命题也缺少该机制所属的具体干员/技能/系统、触发条件与作用域，属于依赖画面的帧观察，不满足自包含命题与显式三元约束，且无可复现规则价值。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "撞击与炸开发生在第65帧，同一瞬间开始生成Buff光环。",
+      "verdict": "reject",
+      "reason": "引文可在逐字稿中字符级匹配，但「他」所指代的单位/技能未被文本明确，且「撞击与炸开」「Buff光环」缺少具体主体、触发条件与作用域；该句还带有「这一帧看见没有」的画面指涉，无法仅凭逐字稿复核为可复用机制定论。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "两候选均依赖画面指涉与未明确指代的「它/他」，且缺少可复现条件与明确作用域，只能视为特定测试中的帧观察，未达到可复用机制命题标准，故均判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

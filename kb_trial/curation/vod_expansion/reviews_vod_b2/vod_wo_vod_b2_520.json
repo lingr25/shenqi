@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_520",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:56:08+0900",
+  "source_sha256": "f4314a4e9a2d2bc7dfe237ce1faeed018461ad815d98552f1f1ef8d235e8b462",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "珊比二技能持续时间很短，因此不能按同一格承受十次爆炸来计算伤害，而应让珊比二技能在两个相邻格子各爆炸五次。",
+      "subject": "珊比二技能的爆炸伤害计算",
+      "condition": "珊比二技能持续时间很短，且伤害计算场景涉及两个相邻格子",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "他是0.7秒可以哎 但是珊比二持续又很短 珊比二持续是很短的 你不能算报十次 你得让他爆五次",
+          "t_start": 797,
+          "t_end": 808
+        },
+        {
+          "text": "你得让他在两个相邻的格子各报五次 懂吧 你让他报十次的话 那是就是肯定谁也拖不出来的 你想珊比二技能才多久",
+          "t_start": 808,
+          "t_end": 833
+        }
+      ],
+      "reason": "上下文先讨论理想化十发/十次轰炸，随后主播以珊比二技能持续时间短为由，明确否定直接按十次计算，并给出两个相邻格子各五次的分配口径；该结论服务于珊比二技能的DPS与伤害构成计算，属于特定技能机制分支。",
+      "limitations": [
+        "逐字稿未给出珊比二技能的精确持续时间，也未说明两个相邻格子的判定来源。",
+        "该结论是讲解中的伤害计算口径，仍建议以实机帧数据或技能描述复核。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选命题有逐字稿直接支撑，核心是珊比二技能因持续时间短，伤害计算不应按单格十次爆炸处理，而应采用两个相邻格子各五次的分配口径。已补全主语并规范“报/爆”的ASR写法；证据均取自连续转写行。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

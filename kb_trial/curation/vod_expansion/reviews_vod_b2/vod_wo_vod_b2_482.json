@@ -1,0 +1,60 @@
+{
+  "workorder_id": "vod_wo_vod_b2_482",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:49:29+0900",
+  "source_sha256": "8e5964162cdf9100b811bde1b766537519e6670bd35712e5222acf4d099bd866",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "三技能轰炸的伤害结算顺序为先造成物理伤害，后造成元素伤害。",
+      "subject": "三技能轰炸",
+      "condition": "三技能轰炸命中并结算伤害时",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "面敌人造成物理伤害和元素伤害",
+          "t_start": 3415,
+          "t_end": 3431
+        },
+        {
+          "text": "先误伤后元素",
+          "t_start": 3655,
+          "t_end": 3674
+        },
+        {
+          "text": "嗯先轰炸是先物伤后元素",
+          "t_start": 3686,
+          "t_end": 3703
+        }
+      ],
+      "reason": "逐字稿先说明轰炸会对目标及其周围造成物理伤害和元素伤害，随后明确总结“先轰炸是先物伤后元素”，可支撑该技能轰炸伤害结算顺序为先物理、后元素的机制结论。上游引文存在跨行拼接，已按原始逐字稿行拆分校正；ASR中的“误伤/仙无伤”按上下文规范为“物伤/先物伤”。",
+      "limitations": [
+        "逐字稿未在本窗口内复述技能编号，“三技能”归属依据工单章节与上下文认定。",
+        "该结论来自伤害数值观察与主播当场总结，未提供逐帧或代码级验证。",
+        "ASR存在“误伤”“仙无伤”等错字，需按上下文理解为“物伤”“先物伤”。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01为对三技能轰炸伤害结算顺序的明确机制结论，逐字稿中有“先轰炸是先物伤后元素”等表述支撑。上游引文存在跨行拼接问题，但可按原始逐字稿行拆分为连续子串证据，故不因此拒绝。ASR错字已按上下文规范化，未引入逐字稿外的新参数。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

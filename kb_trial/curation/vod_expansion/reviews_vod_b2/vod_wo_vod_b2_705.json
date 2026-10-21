@@ -1,0 +1,89 @@
+{
+  "workorder_id": "vod_wo_vod_b2_705",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T15:59:58+0900",
+  "source_sha256": "cb110fe1b0bfd90919780b6bd236887dfac9ccb23bb89aa8338f2cb8af50a520",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在放逐判定中，若需要敌方单位向阻挡内侧挤入0.02格，则其移速超过0.4格/秒时即具备满足该0.02格内侧偏移的位移量。",
+      "subject": "放逐判定中的敌方单位",
+      "condition": "需要向阻挡内侧挤入0.02格；敌方单位移速超过0.4格/秒",
+      "scope": "universal",
+      "category": "位移/移速",
+      "evidence": [
+        {
+          "text": "移速超过0.4就够了",
+          "t_start": 723,
+          "t_end": 736
+        },
+        {
+          "text": "怪是零点偏移0.02 然后阻挡外面是0.707",
+          "t_start": 736,
+          "t_end": 755
+        }
+      ],
+      "reason": "逐字稿在讨论向阻挡内侧偏移0.02格所需移速时，明确给出“移速超过0.4就够了”，并以0.02格偏移与阻挡外侧0.707作为几何对象，支撑0.4格/秒为满足0.02格内侧位移的门槛。",
+      "limitations": [
+        "0.4格/秒是可达0.02格位移的门槛，并非0.6格/秒的单帧保底；逐字稿后续仍在排查阻挡方向与碰撞顺序对实际放逐的影响。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在放逐判定中，若需要敌方单位向阻挡内侧挤入0.02格，则当其移速超过0.6格/秒时，移速条件上保证有解；按30帧/秒计算，这对应每帧位移不低于0.02格。",
+      "subject": "放逐判定中受阻挡偏移影响的敌方单位",
+      "condition": "需要向阻挡内侧挤入0.02格；移速超过0.6格/秒；按30帧/秒计算",
+      "scope": "universal",
+      "category": "位移/移速",
+      "evidence": [
+        {
+          "text": "移速超过0.6是保证有解的",
+          "t_start": 736,
+          "t_end": 755
+        },
+        {
+          "text": "一帧走0.02",
+          "t_start": 811,
+          "t_end": 828
+        },
+        {
+          "text": "相当于一秒走0.6格",
+          "t_start": 811,
+          "t_end": 828
+        }
+      ],
+      "reason": "逐字稿明确称“移速超过0.6是保证有解的”，并在后文用“一帧走0.02”“一秒30帧”“相当于一秒走0.6格”解释0.6格/秒与每帧0.02格位移的对应关系，支撑该阈值作为保底移速条件。",
+      "limitations": [
+        "0.6格/秒仅保证移速条件上可单帧走满0.02格；逐字稿后文显示实际放逐仍可能受阻挡面、方向与碰撞顺序影响，完整判定条件未在窗口内闭合。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两候选均能在逐字稿中找到明确逐字支撑：c01为0.4格/秒可满足0.02格内侧偏移的门槛，c02为0.6格/秒在30帧/秒下每帧0.02格的保底移速条件。c02不等同于完整放逐判定不受阻挡方向、碰撞顺序等影响，已在limitations中注明。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

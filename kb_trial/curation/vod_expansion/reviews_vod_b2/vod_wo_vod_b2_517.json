@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_517",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:55:27+0900",
+  "source_sha256": "2cfc67aa0a7944fd9fe225af159cee1b054198d0d25eb02936b5f64351471b7c",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "在总伤构成里，有意义的伤害来源是轰炸和元素。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ],
+      "reason": "该句是特定理想总伤计算语境下的口语化价值判断，未给出明确主体（哪位干员、哪个技能或何种总伤口径）、成立条件与适用范围；脱离上下文不能作为可复用机制命题。引文本身可逐字对齐。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "在总伤构成里，平A伤害是很虚的数值，平A伤害越少，DPS越高。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G3"
+      ],
+      "reason": "该结论缺少明确主体（哪位干员、哪个技能、何种总伤估算口径）与成立条件；“很虚”属于评价性表述，“平A伤害越少，DPS越高”也不能作为通用机制规则，只属于特定估算口径下的口语化判断。"
+    }
+  ],
+  "review_note": "本工单两条候选均为特定理想总伤计算中的口语化价值判断，未形成带明确主体、条件与 scope 的可复用机制定论；全部 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

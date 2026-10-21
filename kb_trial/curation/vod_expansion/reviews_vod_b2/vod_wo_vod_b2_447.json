@@ -1,0 +1,70 @@
+{
+  "workorder_id": "vod_wo_vod_b2_447",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:26:17+0900",
+  "source_sha256": "62c002f33c3dd7ab84f44b489d2a62044226bacef0fb8fa8e286644d5f45446e",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "践行者的防御力为800，生命值为10000。",
+      "subject": "践行者",
+      "condition": "universal",
+      "scope": "entity_mechanism",
+      "category": "敌人属性",
+      "evidence": [
+        {
+          "text": "践行者800防御",
+          "t_start": 3365,
+          "t_end": 3389
+        },
+        {
+          "text": "践行者是1万血",
+          "t_start": 3879,
+          "t_end": 3910
+        }
+      ],
+      "reason": "逐字稿中主播直接口述践行者防御为800，并在后续确认践行者为1万血；属于明确的敌人固有属性数值，非未定论推测。",
+      "limitations": [
+        "数值来自主播口述，逐字稿未给出游戏内面板截图或单位全称。",
+        "生命值以“1万血”口述折算为10000点。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "测试中另一只践行者的剩余生命值约为七八千。",
+      "verdict": "reject",
+      "reason": "证据中的“看起来只有七八千”是主播对画面血条的目测估读，属于未精确验证的实例观察，不具备可复现参数或规则价值，违反 Gate 4。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01 有逐字稿直接数值支撑，可作为践行者的固有敌人属性保留；c02 仅为血条约七八千的目测实例，不是稳定机制结论，按 Gate 4 排除。顶层因存在 keep 判为 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

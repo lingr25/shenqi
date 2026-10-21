@@ -1,0 +1,96 @@
+{
+  "workorder_id": "vod_wo_vod_b2_552",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:06:59+0900",
+  "source_sha256": "241a85b103b3456fdab1e0e41d5b70bdb976de2ec5d6076bb8582f875f2fe952",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "对于破盾会重置攻击动画的敌人，若要让破盾重置前摇，破盾必须发生在敌人该次攻击之前；因此开技能时点不能过晚。",
+      "subject": "破盾触发时点与开技能时点",
+      "condition": "敌人的盾被打破后会重置攻击动画，且需要利用破盾重置前摇而非后摇",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "第一个是这里攻击 注意这里注意他抬手 他又缩回去了 这里是被打破了盾 破盾之后的话 他会重置抬手",
+          "t_start": 1798,
+          "t_end": 1811
+        },
+        {
+          "text": "这里必须重置前摇 不能重置后摇 如果重置后摇的话 就会攻击间隔大幅的缩短 重置前摇的话就可以拉长 让他最后能杀这个条件",
+          "t_start": 1811,
+          "t_end": 1824
+        },
+        {
+          "text": "限制了那个开技能时间不能太晚 得让破盾的时候 在他那一次攻击之前",
+          "t_start": 1824,
+          "t_end": 1839
+        }
+      ],
+      "reason": "上下文先说明该敌人破盾会重置抬手，并强调必须重置前摇而非后摇；随后得出开技能时点不能太晚、破盾需发生在该次攻击之前的时序约束。",
+      "limitations": [
+        "具体敌人名称与精确帧窗口未在逐字稿中给出",
+        "该约束依赖破盾会重置攻击动画的敌人机制，不能无条件外推到所有敌人"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在该关卡流程中，若开技能过晚，目标敌人会因治疗与回血而回复生命；若其生命值再增加2800点，就无法被击杀。",
+      "subject": "该关卡流程中的目标敌人",
+      "condition": "开技能时点过晚，且目标敌人受到治疗/回血影响",
+      "scope": "instance",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "还是不太行 这里有治疗 这里有回血 这里有回血 太晚开技能的话",
+          "t_start": 1862,
+          "t_end": 1869
+        },
+        {
+          "text": "血会回上",
+          "t_start": 1869,
+          "t_end": 1877
+        },
+        {
+          "text": "对太晚开技能的话 再加2800血就死不了",
+          "t_start": 1877,
+          "t_end": 1889
+        }
+      ],
+      "reason": "逐字稿明确指出太晚开技能时存在治疗和回血，血量会回上，并给出“再加2800血就死不了”的结论，构成该关卡流程中开技能过晚导致无法击杀的数值/时序约束。",
+      "limitations": [
+        "2800点的确切含义（净回血量或击杀阈值差值）未在逐字稿中进一步拆解",
+        "仅适用于该关卡流程中的特定敌人与治疗/回血条件"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 与 c02 均有逐字稿连续原文支撑，分别对应破盾重置前摇的时序上界和过晚开技能后回血导致无法击杀的实例约束；均改写为自包含陈述后保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

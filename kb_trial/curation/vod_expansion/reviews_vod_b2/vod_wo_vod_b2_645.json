@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_645",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:04:00+0900",
+  "source_sha256": "8ebaa8fd33ca84d84f96940a4161f754e7d7c776510ae9d7bc2e3eb09fe3594c",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "二技能不是群体控制，而是对单控制",
+      "verdict": "reject",
+      "reason": "Gate 1 与 Gate 3 不通过：命题仅写「二技能」，未给出具体干员或技能名称，逐字稿窗口内也无法唯一确定其指代对象，因此不是自包含机制命题；同时缺少明确主体与可核验的三元约束。引文文本本身可在逐字稿行中找到连续一致子串，且该句为陈述性结论而非开放猜想，但主体指代缺失使其无法作为知识库可复用结论保留。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "本单仅含候选 c01。该候选讨论「二技能」的控制类型，形式上属于机制结论，但核心主体「二技能」未绑定具体干员或技能，窗口内无法无歧义还原，违反自包含命题与显式三元约束闸门。逐字引文与转写文本一致，未发现需以未定论假说排除的问题；综合判为 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_638",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:02:44+0900",
+  "source_sha256": "e2be83903858a4098c3898a9f2fc234d80243b977562642898efd7f62f7bc461",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "“一直在索敌”并非可复用的机制原因；该旧结论是基于偶然几次出现相同结果、且在测试中同时改变同一变量而作出的归因谬误，应予撤回。",
+      "subject": "“一直在索敌”这一旧索敌结论",
+      "condition": "仅基于偶然几次出现相同结果且测试中同时改变同一变量时",
+      "scope": "instance",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "不是一直在索敌 不是一直在索敌 刚才我是归因谬误 我是归因谬误",
+          "t_start": 5024,
+          "t_end": 5034
+        },
+        {
+          "text": "我偶然测出来了几把 然后的话发生了同一个情况",
+          "t_start": 5034,
+          "t_end": 5040
+        },
+        {
+          "text": "并且我在改变同一个变量 因此运气好归因过去了 但是不是这个理由 不是这个理由",
+          "t_start": 5040,
+          "t_end": 5069
+        }
+      ],
+      "reason": "主播明确撤回“一直在索敌”的旧结论，并解释此前是偶然测出几把、同时改变同一变量后运气好归因，且连续强调“不是这个理由”。该候选属于对错误理解的明确勘误，可保留为撤回记录。",
+      "limitations": [
+        "本条仅记录旧结论被撤回，未给出替代性的索敌触发机制。",
+        "同一窗口后续仍有“难道是索敌的触发区别吗”等未闭合讨论，实际机制仍需后续实机验证。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 为对旧结论“一直在索敌”的明确撤回，主播给出归因谬误解释，符合勘误类 keep；但该窗口未给出替代性索敌机制，故在 limitations 中标注实际触发条件仍待验证。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

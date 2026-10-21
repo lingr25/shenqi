@@ -1,0 +1,91 @@
+{
+  "workorder_id": "vod_wo_vod_b2_487",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:50:38+0900",
+  "source_sha256": "d9bb2b9997f39d88fa5cc1ea236232d2216dc02129568c36e0feba7fd0bef995",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门莎的三技能在任意敌人侵蚀损伤爆发时消耗一发弹药，并对该敌人所在位置进行数次轰炸。",
+      "subject": "克莱门莎的三技能",
+      "condition": "全场任意敌人发生侵蚀损伤爆发时",
+      "scope": "entity_mechanism",
+      "category": "触发条件",
+      "evidence": [
+        {
+          "text": "有任何敌人侵蚀损伤 爆发时都会消耗一发弹药 对该敌人",
+          "t_start": 4230,
+          "t_end": 4248
+        },
+        {
+          "text": "看一下位置 进行数次轰炸 轰炸每次轰炸对该位置及其",
+          "t_start": 4331,
+          "t_end": 4349
+        },
+        {
+          "text": "对该敌人所在的位置",
+          "t_start": 4384,
+          "t_end": 4398
+        }
+      ],
+      "reason": "逐字稿复述了三技能的基础触发文本：任意敌人侵蚀损伤爆发会消耗一发弹药，并对该敌人所在位置发动轰炸，且后文多次重复该技能描述，可改写为自包含机制命题。",
+      "limitations": [
+        "逐字稿未明确弹药总量、具体轰炸次数与单次伤害倍率。",
+        "同格目标是否会限制同时轰炸需结合后续同格限制文本另行表述，本条只保留基础触发与弹药消耗。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "克莱门莎三技能的每次轰炸会对侵蚀损伤爆发的敌人所在位置及其周围四格的所有地面敌人造成物理伤害和元素伤害，轰炸伤害受克莱门莎第一天赋影响。",
+      "subject": "克莱门莎三技能的每次轰炸",
+      "condition": "每次轰炸触发时",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "每次轰炸对该位置及其",
+          "t_start": 4331,
+          "t_end": 4349
+        },
+        {
+          "text": "其周围四格 所有地面敌人造成物理伤害和元素伤害 轰炸造成的伤害也会受到第一天赋的影响",
+          "t_start": 4349,
+          "t_end": 4363
+        }
+      ],
+      "reason": "逐字稿明确复述了三技能轰炸的范围、伤害类型与天赋影响：目标位置周围四格、所有地面敌人、物理伤害和元素伤害，且轰炸伤害受第一天赋影响。",
+      "limitations": [
+        "逐字稿未给出物理/元素伤害倍率与第一天赋具体加成数值。",
+        "“周围四格”与“地面敌人”按逐字稿复述，逐字稿未进一步解释判定边界。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 与 c02 均来自三技能文本/机制的逐字稿复述，引文可在单行逐字稿中字符级匹配；两条分别描述弹药消耗与轰炸触发、单次轰炸范围/伤害/天赋影响，不构成重复，均判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

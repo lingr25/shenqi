@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_534",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:03:41+0900",
+  "source_sha256": "8806fe6253c9aadedb9ff45b7d67d2a02e55afadadc4a715b6e98f70d4b77865",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "真言酒神组合（原文称“真九组合”）最大的强项是生存，针灸能为该组合提供大量生存保障",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "引文可在 1445s 行逐字对齐，但该候选是组合强度与生存能力的比较性评价，未给出可复现的机制参数、触发条件或明确作用主体；“针灸”在转写中指向不明，无法作为自包含机制主体。该句属于主播对阵容强项的主观定位，不是可复用的原子机制结论，按 Gate 1/3/4 排除。"
+    }
+  ],
+  "review_note": "本工单仅一条候选。逐字引文对齐通过，但其内容为阵容强度评价而非明确机制规则，关键主体“针灸”亦未能从上下文确定为规范对象，故不予采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

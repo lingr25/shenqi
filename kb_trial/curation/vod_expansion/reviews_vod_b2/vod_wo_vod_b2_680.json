@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_680",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:10:01+0900",
+  "source_sha256": "29a9f874afbb64f14fced5827f8bccb875bb824cc36c18c8c04d03334e941750",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "光环是一种在范围内持续检测是否要上Buff的通用机制",
+      "subject": "光环",
+      "condition": "目标处于光环范围内并接受持续检测",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "光环是一种在范围内持续检测是否要上Buff的通用机制",
+          "t_start": 1849,
+          "t_end": 1886
+        },
+        {
+          "text": "这类机制实际上是很普遍的",
+          "t_start": 2026,
+          "t_end": 2031
+        }
+      ],
+      "reason": "逐字稿明确将光环描述为范围内持续检测是否上Buff的通用机制，随后又补充这类机制很普遍，足以支撑该自包含机制陈述。",
+      "limitations": [
+        "未说明光环检测的具体间隔、同帧结算顺序或不同光环类型之间的差异。",
+        "该结论来自口头讲解，仍需结合游戏机制文档或后续实机测试确认参数边界。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 的引文可在逐字稿中字符级匹配，命题为关于光环检测机制的通用结论，未依赖画面指涉，也未属于未定论猜测或反问，故裁定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

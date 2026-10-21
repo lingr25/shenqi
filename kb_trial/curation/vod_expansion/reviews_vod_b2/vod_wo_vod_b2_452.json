@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_452",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:26:49+0900",
+  "source_sha256": "e833ccc76da34ed789527a36fc9eaefe5b4ab4366689def88876d6c6bd7108ce",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "践行者受到3次普攻后仍剩余一半血量，与预期不符。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "该候选仅是对局中的血量异常观察，主播明确表示「不知道为什么」「没搞懂」，未给出可复现条件、完整参数或已闭合的机制结论，属于未定论假说/开放式疑惑；且命题未形成可复用的自包含机制陈述，条件与范围不足，按 Gate 1、Gate 3、Gate 4 排除。"
+    }
+  ],
+  "review_note": "本工单仅有一个候选命题。其逐字引文可在原稿中字符级对齐，但内容为未闭合的血量异常观察，后续「屏障存在时大幅提升生命上限」虽可能解释该现象，候选本身仍未形成机制定论，故整体判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

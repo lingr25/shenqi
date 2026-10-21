@@ -1,0 +1,74 @@
+{
+  "workorder_id": "vod_wo_vod_b2_566",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:10:09+0900",
+  "source_sha256": "d31e0199f91fda9c414f746335a45d6abbce51341b1200f3f8036be3132c2999",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在该次作战记录的输出核算中，火陈的总输出为27段，由9次平A、8次套和8次火龙转构成。",
+      "subject": "火陈",
+      "condition": "该次作战记录的输出核算中",
+      "scope": "instance",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "火陈是27 第九次平A加上八次套 八次火龙转",
+          "t_start": 3737,
+          "t_end": 3771
+        },
+        {
+          "text": "一下两下 三下四下 五下 六下 七下 八下九下 一共九下",
+          "t_start": 3303,
+          "t_end": 3329
+        },
+        {
+          "text": "这个龙要转八次 每个拐角要转两次",
+          "t_start": 1909,
+          "t_end": 1916
+        }
+      ],
+      "reason": "逐字稿在伤害核算段落明确给出火陈总段数为27，并拆分为9次平A、8次套与8次火龙转；另处逐次计数确认平A为9下，并说明龙转8次。上下文属于该次作战记录的输出拆分，故按 instance 采纳。",
+      "limitations": [
+        "该结论仅适用于该次作战记录的具体部署与命中情况；‘套’与‘火龙转’为直播口语，未给出正式技能/伤害段数定义。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "结城理的输出为15刀, 另加真伤部分。",
+      "verdict": "pending",
+      "reason": "逐字稿仅给出‘结城理15刀加上真伤’，未交代真伤的具体数值、触发条件与核算边界；作为可复用机制命题关键参数缺失，需后续实机或人工听审补全。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "c01 有完整逐字稿支撑，按该次作战记录的实例伤害拆分采纳；c02 仅提及真伤部分，未给出数值与条件，保留 pending。上游证据时间戳 737/765 与逐字稿实际行 3737s 不符，回执中已按原行校正为 3737-3771。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

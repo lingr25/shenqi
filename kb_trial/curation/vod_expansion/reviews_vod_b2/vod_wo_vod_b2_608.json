@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_608",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T13:57:51+0900",
+  "source_sha256": "955c08f748fb8fd94923381a26f14e8a6210b29eb4e491e9365fc593601094fa",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "红门地块在游戏地块属性中被判定为可通行地块，红门地块是能够被进入的。",
+      "subject": "红门地块",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "地块属性/门判定",
+      "evidence": [
+        {
+          "text": "红门是啥属性 红门是dd 然后是可通行地块 红门是能进去的",
+          "t_start": 591,
+          "t_end": 606
+        }
+      ],
+      "reason": "主播在讲解地块属性时，先区分地图边缘不可通行，随后明确回答红门为可通行地块，并补充红门是能进去的；该句是当场给出的机制结论，且逐字引文可在同一转写行中完全对齐。",
+      "limitations": [
+        "逐字稿中“红门是dd”的转写含义未展开，未纳入命题。",
+        "逐字稿未进一步区分红门与蓝门，也未说明进入红门的具体单位类别。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 在讲解地块属性时明确将红门归为可通行地块，并称红门能进去；引文可字符级对齐，主体与属性明确，属于可复用地块机制结论。虽“dd”转写不明，但核心结论清晰，判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

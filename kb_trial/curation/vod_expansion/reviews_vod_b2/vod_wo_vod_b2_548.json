@@ -1,0 +1,81 @@
+{
+  "workorder_id": "vod_wo_vod_b2_548",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:06:13+0900",
+  "source_sha256": "f789a1e1a41de6df106401f5b8d94aeaf64e15ecf1527875142e0a9a7d544f56",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙携带一技能「充实风暴潮」时，召唤的放逐仓处于浮游状态，会携带周围数名地面敌人并不断将敌人传送至前方。",
+      "subject": "克莱门沙一技能「充实风暴潮」召唤的放逐仓",
+      "condition": "克莱门沙携带一技能「充实风暴潮」",
+      "scope": "entity_mechanism",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "技能一充实风暴潮 放逐仓浮游 放逐仓会携带周围数名地面敌人 并将其不断传送至前方",
+          "t_start": 2114,
+          "t_end": 2130
+        },
+        {
+          "text": "开启开启技能后 克莱门沙的攻的攻击会造成物理溅射伤害 召唤的浮游浮游放逐仓可以推走敌人并产生",
+          "t_start": 2197,
+          "t_end": 2212
+        }
+      ],
+      "reason": "逐字稿明确复述一技能描述：放逐仓浮游、携带周围数名地面敌人并不断传送至前方；后文也出现克莱门沙与召唤放逐仓的对应关系。",
+      "limitations": [
+        "“数名”未给出具体携带数量。",
+        "“不断传送至前方”未给出传送频率或距离参数。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "克莱门沙携带一技能「充实风暴潮」时，召唤的放逐仓在移动数格或遇到不可移动的障碍后才会消失。",
+      "subject": "克莱门沙一技能「充实风暴潮」召唤的放逐仓",
+      "condition": "克莱门沙携带一技能「充实风暴潮」",
+      "scope": "entity_mechanism",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "放逐舱 在移动数格或遇到不可移动的障碍后才会消失",
+          "t_start": 2114,
+          "t_end": 2130
+        }
+      ],
+      "reason": "逐字稿同一行明确给出放逐仓消失条件：移动数格或遇到不可移动的障碍后消失；后文也提到移动数格后消失并留下漩涡。",
+      "limitations": [
+        "“数格”未给出具体格数。",
+        "逐字稿中“放逐舱”为转写异写，按上下文统一为“放逐仓”。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均由逐字稿中的技能描述复述支撑，主体、条件与作用域可补全为自包含机制陈述；未发现未定论猜测或开放疑问。唯“数名”“数格”为模糊参数，作为定性机制保留并注明限制。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

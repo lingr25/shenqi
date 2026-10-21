@@ -1,7 +1,7 @@
 {
   "run": "20261019_vod_review",
   "task": "vod_expansion 工单 LLM 审读（PROMPT.md 四闸门）→ reviews_{batch}/ → converge（proposed，待用户抽查）",
-  "generated_at": "2026-10-20T23:14:17+0900",
+  "generated_at": "2026-10-21T18:10:14+0900",
   "driver": {
     "script": "/workspace/review_driver.py (repo 外驱动, 幂等可续跑)",
     "version": "vod-review-driver-1.0",
@@ -26,12 +26,12 @@
   },
   "usage_by_model": {
     "lingr-free": {
-      "calls": 389,
-      "prompt_tokens": 1551660,
-      "completion_tokens": 2985684,
-      "reasoning_tokens": 2714873,
-      "total_tokens": 4537344,
-      "seconds": 27285.0
+      "calls": 690,
+      "prompt_tokens": 2479093,
+      "completion_tokens": 4837215,
+      "reasoning_tokens": 4405323,
+      "total_tokens": 7316308,
+      "seconds": 41098.2
     },
     "lingr-speed": {
       "calls": 178,
@@ -74,31 +74,31 @@
       "counts": {
         "workorders": 764,
         "candidates": 1227,
-        "workorders_reviewed": 437,
-        "keep": 545,
-        "repair_rounds": 18,
-        "claims_rewritten": 429,
-        "reject": 156,
-        "pending": 30,
-        "workorders_unreviewed": 327
+        "workorders_reviewed": 737,
+        "keep": 784,
+        "repair_rounds": 19,
+        "claims_rewritten": 597,
+        "reject": 310,
+        "pending": 96,
+        "workorders_unreviewed": 27
       },
       "excluded_by_gate": {
-        "pending:G1": 17,
-        "pending:G2": 3,
-        "pending:G3": 18,
-        "pending:G4": 13,
-        "reject:DUP": 26,
-        "reject:G1": 96,
-        "reject:G2": 16,
-        "reject:G3": 65,
-        "reject:G4": 122
+        "pending:G1": 51,
+        "pending:G2": 5,
+        "pending:G3": 65,
+        "pending:G4": 39,
+        "reject:DUP": 31,
+        "reject:G1": 170,
+        "reject:G2": 53,
+        "reject:G3": 171,
+        "reject:G4": 257
       },
       "final_reviewer_model_by_workorder": {
-        "lingr-free": 258,
+        "lingr-free": 558,
         "lingr-speed": 179
       },
       "llm_calls_by_model": {
-        "lingr-free": 261,
+        "lingr-free": 562,
         "lingr-speed": 194
       }
     }

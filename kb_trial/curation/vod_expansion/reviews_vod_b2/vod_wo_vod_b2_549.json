@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_549",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:06:01+0900",
+  "source_sha256": "b9e8da79a0e9cf0e10b5946fb3cb0b8bfc99e246025085885e2c2bcb7a9aaa9f",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "放逐仓在移动数格或遇到不可移动障碍后消失并留下漩涡；该漩涡的效果会作用于处于漩涡中的所有敌人，包括空中敌人。",
+      "subject": "放逐仓消失后留下的漩涡",
+      "condition": "放逐仓移动数格或遇到不可移动障碍后消失并留下漩涡",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "放逐舱 在移动数格或遇到不可移动的障碍后才会消失",
+          "t_start": 2114,
+          "t_end": 2130
+        },
+        {
+          "text": "旋涡处于漩涡的所有敌人 包括空中敌人都会受到旋涡的效果影响",
+          "t_start": 2179,
+          "t_end": 2197
+        }
+      ],
+      "reason": "上下文先给出放逐仓技能描述：移动数格或遇到不可移动障碍后消失，随后明确漩涡会作用于处于其中的所有敌人，并特别说明包括空中敌人；该结论直接来自讲解/技能描述转述，非猜测。",
+      "limitations": [
+        "逐字稿未交代漩涡的具体效果类型、数值、持续时间与触发频率。",
+        "“包括空中敌人”仅说明作用对象范围，未说明空中单位的具体判定方式。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅一个候选。c01 为放逐仓技能机制的作用对象结论，有逐字稿直接支撑；具体漩涡效果参数未展开，保留为机制陈述并在 limitations 中标注边界。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

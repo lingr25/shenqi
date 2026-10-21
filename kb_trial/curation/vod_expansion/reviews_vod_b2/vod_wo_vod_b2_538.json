@@ -1,0 +1,71 @@
+{
+  "workorder_id": "vod_wo_vod_b2_538",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:04:39+0900",
+  "source_sha256": "d3f4c78426a76a7afe7b3c9142c341ba6987333d11e5992c1defc73381646633",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "与真言相比，酒神有概率使伤害更均匀，因此打同质量的大怪时伤害表现更好。",
+      "subject": "酒神（相对真言）",
+      "condition": "攻击同质量的大怪时，并与真言作比较",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "主要是酒神有概率对他们伤害更均匀 如果打同样的质量的一些大怪的话",
+          "t_start": 1568,
+          "t_end": 1583
+        },
+        {
+          "text": "他会打的更好",
+          "t_start": 1583,
+          "t_end": 1593
+        }
+      ],
+      "reason": "逐字稿直接给出酒神与真言的对比：酒神有概率使对大怪的伤害更均匀，并在打同质量大怪时表现更好；可作为受条件限制的实体机制结论保留。",
+      "limitations": [
+        "未给出具体触发概率或伤害均匀性的量化定义",
+        "“同质量的大怪”缺乏可复现的数值标准",
+        "结论来自主播口头比较，未提供数值验算"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "真言触发概率较低，反复凹概率收益有限",
+      "verdict": "reject",
+      "reason": "该句属于无明确参数的定性观察/打法评价，未说明真言具体触发效果、概率量级及可复现条件，按 Gate4 不具备可复用规则价值。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c02 有逐字稿直接支撑，保留为受“同质量大怪”条件限制的比较结论；c01 仅为低概率与凹概率收益的定性评价，缺少可验证参数，排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

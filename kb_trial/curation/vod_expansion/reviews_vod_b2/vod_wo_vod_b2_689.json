@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_689",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T15:56:28+0900",
+  "source_sha256": "0f4dd7f4a6c4476096e066f2738e870e257d23fc2462a6e0915304d878c1e4c0",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "阻挡一次会对被阻挡的隐匿目标施加持续三秒的反隐/显隐效果，使其在效果期间能够被攻击。",
+      "subject": "阻挡行为（阻挡判定）",
+      "condition": "目标处于隐匿状态且被阻挡一次",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "不是阻挡一次 直接反隐三秒 当然可以打了",
+          "t_start": 2626,
+          "t_end": 2633
+        },
+        {
+          "text": "他阻挡一下反野三秒 你看啊 我们再看一遍啊 仔细看啊",
+          "t_start": 2664,
+          "t_end": 2675
+        }
+      ],
+      "reason": "逐字稿中主播先明确说出“阻挡一次 直接反隐三秒 当然可以打了”，随后又重复“阻挡一下反野三秒”并提示再看一遍；上下文同时讨论隐匿目标原本不可攻击、显隐后可攻击，因此可支撑该三秒反隐/显隐机制结论。",
+      "limitations": [
+        "逐字稿仅体现主播口头观察与重复确认，未展示逐帧计时过程。",
+        "未说明不同隐匿类型、特殊阻挡或帧率/延迟是否会影响该三秒时长。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 通过四大闸门：引文可在逐字稿中字符级对齐，命题已改写为自包含陈述，并补齐主体、条件与通用范围。2675s 附近对“阻挡显影一秒”的疑问属于主播对先前说法/弹幕说法的困惑，前面 2626s 与 2664s 已形成重复的“三秒”结论，故保留 c01。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

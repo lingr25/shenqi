@@ -1,0 +1,40 @@
+{
+  "workorder_id": "vod_wo_vod_b2_480",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:49:01+0900",
+  "source_sha256": "7afc2f373289d3f088702aafbadd47cfe43f5eaaa25667d90423c9e761a71dd9",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "轰炸伤害数字以二开头表示未暴击，以二结尾表示暴击。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3",
+        "G4"
+      ],
+      "reason": "该候选将特定实战中观察到的伤害数字首位/末位规律上升为通用辨识规则，但未指明具体干员、技能、伤害数值范围或适用关卡，依赖画面中叠字的读法；上游引文跨 3011s 与 3018s 两行拼接，违反逐字引文对齐；且紧接着的「但是中间呢」表明辨识方法尚未闭合，属于待验证的实战观察而非可复用机制定论。"
+    }
+  ],
+  "review_note": "本单仅一个候选。c01 是特定实战中通过伤害数字位数辨别暴击的读法，主体、条件与适用范围均不明确，且证据引文跨行拼接、讨论未闭合，四大闸门均不通过，予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

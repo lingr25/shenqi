@@ -1,0 +1,56 @@
+{
+  "workorder_id": "vod_wo_vod_b2_641",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:03:13+0900",
+  "source_sha256": "dc4c309367b14a17e297061874470e8b1d34db2030b6c66918c190ae1faa11e1",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "在合约中，火陈技能不适合怪很多的地图。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "引文虽可在逐字稿中逐字对齐，但原句以「这个技能」指代，未明确是火陈的哪一个技能；「不适合怪很多的地图」只是无参数、无复现条件的关卡适配判断/打法结论，未形成可复用原子机制。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "在合约中，火陈技能不适合涤墨类地图。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "「那个涤墨那种肯定不行」依赖前文指代，本句未明确主体与技能；同时只是地图适配的口头否定，未给出机制条件或参数，不具备原子机制命题价值。"
+    }
+  ],
+  "review_note": "两个候选均为关卡适配/打法评价，且关键主体「这个技能」「那种」指代不清；逐字引文可对齐，但没有形成自包含、可复用的机制定论，故整单 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

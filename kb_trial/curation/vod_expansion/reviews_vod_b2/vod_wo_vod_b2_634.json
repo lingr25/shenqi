@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_634",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:02:11+0900",
+  "source_sha256": "d657d145309368da5e4792a119ebdda396977c18ecb7e5a7bedf81260c427708",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "32、33、34三帧分别单独暴露时炮台没有找到目标，32、33、34三帧组合暴露时炮台反而找到了目标。",
+      "verdict": "pending",
+      "reason": "候选为索敌帧实验中的口头观察，逐字引文可对齐，但未说明炮台所属干员/技能、目标单位、部署与撤除时序，以及“组合暴露”的具体定义；且随后仍要继续试32和33，讨论未闭合，关键参数与可复现条件不足，暂不能作为稳定机制定论。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "唯一候选 c01 属于索敌帧实验现象，引文可在逐字稿中字符级对齐，但主体限定和实验条件不完整，且讨论明显未闭合，判 pending，不纳入 claims。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

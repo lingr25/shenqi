@@ -1,0 +1,68 @@
+{
+  "workorder_id": "vod_wo_vod_b2_617",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T13:59:10+0900",
+  "source_sha256": "eac2c3d27ab95ec9070f4067340b9f4b124ddf9244c44c2342ac9ee44430c658",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "活动Boss一阶段实战中，Boss只出现一阶段血量，未进入后续阶段。",
+      "verdict": "reject",
+      "reason": "引文可逐字对齐，但仅为单局实况观察；上下文随后还出现“没搞懂啥机制”，无法据此确认Boss阶段数量或形成可复现机制规则，违反Gate 4（纯实战观察/未定论）。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ],
+      "evidence": [
+        {
+          "text": "这才只有一阶段",
+          "t_start": 1756,
+          "t_end": 1785
+        }
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "活动Boss一阶段实战中，用一波流即可打完该场战斗。",
+      "verdict": "reject",
+      "reason": "该句是单局通关方式/打法结果叙述，不是自包含的机制命题；“一波流”也不是可复用机制参数，且缺少明确机制主体、成立条件与可复现参数，违反Gate 1、Gate 3、Gate 4。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "evidence": [
+        {
+          "text": "一波流就打完了",
+          "t_start": 1823,
+          "t_end": 1846
+        }
+      ]
+    }
+  ],
+  "review_note": "两候选均为Boss实战即时观察或通关打法叙述，虽引文可逐字对齐，但缺少可复用机制参数与闭合结论；本单无足够证据形成机制定论，全部拒绝。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

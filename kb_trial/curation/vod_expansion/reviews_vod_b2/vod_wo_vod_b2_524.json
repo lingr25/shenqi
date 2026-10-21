@@ -1,0 +1,71 @@
+{
+  "workorder_id": "vod_wo_vod_b2_524",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:58:01+0900",
+  "source_sha256": "104321bf3f46dd05dd01f3936f683a539a4565aaa6d2da1b11fef1d70ca84269",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "在8秒爆条冷却中减去3.6秒冷却缩减量后，剩余冷却为4.4秒。",
+      "subject": "爆条冷却剩余时长",
+      "condition": "爆条冷却基数为8秒且本次减冷却量为3.6秒",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "爆条8-3.6",
+          "t_start": 1076,
+          "t_end": 1087
+        },
+        {
+          "text": "哦是4.4 搞错了 我说怎么感觉这么不对劲",
+          "t_start": 1087,
+          "t_end": 1097
+        }
+      ],
+      "reason": "逐字稿先出现“爆条8-3.6”，随后主播明确更正为“4.4”并承认“搞错了”，构成对算术错误的闭合勘误，可作为该场景下冷却计算结论。",
+      "limitations": [
+        "仅针对8秒基数与3.6秒减量；3.6秒的构成及适用边界未在证据中展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "假设0、1.2、2.4秒三发并在0到2.4秒插入两次珊比，从而一次爆条周期共减三次冷却",
+      "verdict": "reject",
+      "reason": "该命题是“假设说”开头的未闭合推演，主体“他/谁打出”与“减谁的冷却”未明确；且“插入两次珊比”与“一共减三次”的计数关系在逐字稿中未交代完整，不能直接作为自包含机制定论。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c02为明确的算术勘误，可保留；c01属未闭合假设推演且关键主体/计数关系不明，予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

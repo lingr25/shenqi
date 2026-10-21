@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_472",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:29:35+0900",
+  "source_sha256": "aaaf2c6c4ee5e4844d4203efcee7687a3d747add82ea8da04e6f8f60ba0eae7f",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙技能三「与海为敌」造成的物理伤害会受克莱门沙第一天赋的影响。",
+      "subject": "克莱门沙技能三「与海为敌」造成的物理伤害",
+      "condition": "克莱门沙开启技能三「与海为敌」并造成物理伤害时",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "物理伤害也会受到第一天赋的影响 技能三与海为敌",
+          "t_start": 301,
+          "t_end": 313
+        }
+      ],
+      "reason": "逐字稿中主播明确陈述技能三「与海为敌」的物理伤害也会受到第一天赋影响，候选命题与上下文一致；改写仅补全“克莱门沙第一天赋”的所属关系，使其自包含。",
+      "limitations": [
+        "逐字稿未在该证据句中说明第一天赋的具体名称、数值与触发概率。",
+        "证据句未细分破防、未破防等条件是否影响该联动结论。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 的引文在 301s 行中可字符级完全匹配，且命题属于特定干员技能与第一天赋联动的可复用机制陈述，不属于未定论猜想或画面依赖残句，故判 keep。窗口内其余内容多为实战数值记录与口语叙述，未形成其他候选。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,115 @@
+{
+  "workorder_id": "vod_wo_vod_b2_732",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:09:18+0900",
+  "source_sha256": "df3b5f34c9a0b420dc2eb9465598136668afd8836700ea9ee5e68f25a8919a51",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "敌人处于眩晕或睡眠状态时，其状态机会将敌人当前动画帧卡住保持不动；行走寻路中的腿部位置也会停在被控时的位置。",
+      "subject": "眩晕/睡眠状态机对敌人动画的处理",
+      "condition": "敌人处于眩晕或睡眠状态",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "眩晕和睡眠的STAN状态机的特色是卡住敌人 当前的动画保持不动",
+          "t_start": 5919,
+          "t_end": 5932
+        },
+        {
+          "text": "比如说如果他现在这个小兵 把这个剑往起挥起来了 然后的话你把这个他给睡了 那他会一直卡在这个动作 包括走路寻路的时候",
+          "t_start": 5932,
+          "t_end": 5943
+        },
+        {
+          "text": "也是他这个腿迈在哪里的话 都会在那个位置",
+          "t_start": 5943,
+          "t_end": 5955
+        }
+      ],
+      "reason": "主播明确说明眩晕和睡眠的STAN状态机会卡住敌人当前动画并保持不动，并用挥剑、走路寻路时腿部位置作为例子，足以支撑该机制结论。",
+      "limitations": [
+        "逐字稿未列出所有敌人动画类型；结论针对眩晕/睡眠状态机的一般表现。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "失衡状态机播放敌人对应的待机动画，而非保持被控时的当前动画帧。",
+      "subject": "失衡状态机对敌人动画的处理",
+      "condition": "敌人处于失衡状态",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "但是相应的话如果是失衡就不一样了 你看一下失衡状态机啊",
+          "t_start": 5943,
+          "t_end": 5955
+        },
+        {
+          "text": "失衡状态机和束缚束缚不是状态机啊 播放的都是对应的待机动画",
+          "t_start": 5955,
+          "t_end": 5971
+        }
+      ],
+      "reason": "主播将失衡与眩晕/睡眠作对比，并明确失衡状态机播放对应待机动画；由前后对比可归纳失衡不采用卡当前动画帧的处理。上游引文跨行，已拆分为两段逐字证据。",
+      "limitations": [
+        "逐字稿未说明不同敌人待机动画的具体差异；“不卡当前帧”由上下文对比推得。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "束缚不属于状态机。",
+      "subject": "束缚",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "失衡状态机和束缚束缚不是状态机啊",
+          "t_start": 5955,
+          "t_end": 5971
+        }
+      ],
+      "reason": "主播在区分失衡状态机与束缚时明确说“束缚不是状态机”，属于对状态机分类的勘误性结论。",
+      "limitations": [
+        "逐字稿中“束缚”有重复口癖，但否定其为状态机的语义明确；未展开束缚的完整底层实现。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本单三条候选均有逐字稿机制陈述支撑，准予保留。c01完整覆盖眩晕/睡眠卡当前动画帧及走路寻路表现；c02上游引文跨行，审查时拆分为连续行证据后成立；c03为明确纠正性分类结论，可保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

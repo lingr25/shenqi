@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b2_504",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:53:17+0900",
+  "source_sha256": "ad89264dee041f2daaa5312f74f3de42fb303512f2dcf0dd282c0b2cd07261f1",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "当二技能范围内存在其他敌方单位时，二技能的直接攻击无法命中被二技能锁定并推挤的两名目标。",
+      "subject": "二技能的直接攻击",
+      "condition": "二技能范围内存在其他敌方单位",
+      "scope": "entity_mechanism",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "二技能如果范围内还有其他怪的话 他DA打不到那个自己锁的那俩人",
+          "t_start": 6429,
+          "t_end": 6444
+        },
+        {
+          "text": "就是自己推的那些人",
+          "t_start": 6444,
+          "t_end": 6447
+        }
+      ],
+      "reason": "逐字稿明确指出二技能在范围内有其他敌人时，打不到自己锁定的两名目标；下一行补充这两名目标就是被自己推挤的对象。该现象属于二技能的索敌/命中判定机制，不依赖画面即可理解。",
+      "limitations": [
+        "逐字稿未给出干员与技能全名，仅能确定是某干员的二技能。",
+        "原文“DA”疑为ASR或口语表达，回执中按“直接攻击”理解。",
+        "未说明索敌优先级、其他敌人数量与站位等边界条件。"
+      ],
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      }
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 的原始引文跨两行拼接，回执已按逐字稿拆分为两条 evidence 后满足逐字对齐。机制内容有逐字稿支撑，改写为自包含陈述后采纳；但逐字稿未出现干员与技能全名，使用时需结合视频源补全主体。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

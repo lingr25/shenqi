@@ -1,0 +1,60 @@
+{
+  "workorder_id": "vod_wo_vod_b2_488",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:50:45+0900",
+  "source_sha256": "8f6e705d0b46293a576513624918a5bfb2bf1e9085e41d835eef3f98aef97eb3",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门莎三技能的轰炸不会同时对同一个位置发动；同一格可以被反复轰炸，但不能同时被重复轰炸，该限制并非内置冷却。",
+      "subject": "克莱门莎三技能的轰炸机制",
+      "condition": "当多次轰炸指向同一格并处于同时判定时",
+      "scope": "entity_mechanism",
+      "category": "索敌/位置判定",
+      "evidence": [
+        {
+          "text": "不会同时对同一个位置发动轰炸",
+          "t_start": 4370,
+          "t_end": 4384
+        },
+        {
+          "text": "同一格不是不会被反复轰炸 看一下位置 进行数次轰炸",
+          "t_start": 4331,
+          "t_end": 4349
+        },
+        {
+          "text": "内置冷却不太解释得通了",
+          "t_start": 4262,
+          "t_end": 4289
+        }
+      ],
+      "reason": "逐字稿中主播复述并确认技能限制为「不会同时对同一个位置发动轰炸」，随后以「因为这俩位置不同」解释先前疑似冷却的间隔；同时提到同一格可被反复轰炸，说明限制是同一位置不可同时重复轰炸而非内置冷却。",
+      "limitations": [
+        "逐字稿未给出「同时」判定的精确帧/毫秒窗口。",
+        "未量化同一格可重复轰炸的最小间隔。",
+        "转写存在 ASR 错字与口语双重否定，需按上下文理解「同一格不是不会被反复轰炸」。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选命题有逐字稿原文支撑，主体、条件与作用域明确；主播已用位置不同解释疑似内置冷却现象，并明确复述同格不可同时轰炸的限制，故判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

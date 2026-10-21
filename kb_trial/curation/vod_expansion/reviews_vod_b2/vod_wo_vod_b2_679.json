@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_679",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:09:52+0900",
+  "source_sha256": "0438801ec472c569ce83d98a80c0c755f6e98c77a252f281d0cd362ae923b0eb",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "漩涡生成后，漩涡光环的第一次判定约在生成后第5帧发生，可为光环范围内单位挂上Buff。",
+      "subject": "漩涡生成后的漩涡光环",
+      "condition": "漩涡生成后，且光环范围内存在可被检测/施加Buff的单位",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "第一次判定是在五帧左右",
+          "t_start": 1775,
+          "t_end": 1791
+        },
+        {
+          "text": "他在五帧的话就能挂上",
+          "t_start": 1634,
+          "t_end": 1670
+        }
+      ],
+      "reason": "29:35 明确给出第一次判定约在五帧；27:14 的“五帧的话就能挂上”可作为同一机制的实战对照，且后文说明光环是范围内持续检测是否上Buff的通用机制，足以支撑该首帧判定结论。",
+      "limitations": [
+        "逐字稿只给出“五帧左右”的近似值，未提供逐帧精确验证。",
+        "后文对同帧结算顺序和Buff时长仍有不确定表述，本命题仅覆盖第一次判定时机。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 有逐字稿直接证据，主体、条件、范围均可从上下文补全；第一次判定约第5帧属于可复用帧时序机制，故 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

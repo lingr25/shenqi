@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_728",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:08:16+0900",
+  "source_sha256": "8238bbba0c7437b8c954517d0399aa55a8fee8eaa78b4bdee46ed053ec33464a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "杏仁的急停半径只有在拉力弹道持续期间内才能触发；当拉力弹道已经消失、且拉力的持续时间已经结束时，急停半径无法触发。",
+      "subject": "杏仁的急停半径",
+      "condition": "拉力弹道持续期间内可触发；拉力弹道消失且拉力持续时间结束后无法触发",
+      "scope": "entity_mechanism",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "急停半径触发不了弹道在这里已经消失了 弹道在这里消失了 他的拉力持持持续时间结束了 只有在拉力弹道持续的期间内 才能触发这个急停",
+          "t_start": 5081,
+          "t_end": 5093
+        }
+      ],
+      "reason": "逐字稿明确说明急停半径在弹道消失、拉力持续时间结束后无法触发，并总结只有拉力弹道持续期间内才能触发，构成可复用的触发条件结论。",
+      "limitations": [
+        "未给出急停半径的具体数值、触发帧窗口以及不同拉力强度下的边界。",
+        "该结论来自主播口述总结，窗口内未展示逐帧参数验证。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选为机制触发条件结论，逐字稿中有明确口述支撑；主体、条件与作用域可补全且不属于未定论猜测，通过四闸门，予以采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

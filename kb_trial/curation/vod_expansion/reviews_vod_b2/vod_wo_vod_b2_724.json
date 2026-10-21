@@ -1,0 +1,89 @@
+{
+  "workorder_id": "vod_wo_vod_b2_724",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:07:45+0900",
+  "source_sha256": "a4fed1c7d7bee52156c9de26df8285345b45bf5eaf6d736eeada1564dacc9274",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "单位发生磕墙时，其速度会分解为平行于墙的方向分量与垂直于墙的方向分量。",
+      "subject": "发生磕墙的单位速度",
+      "condition": "单位发生磕墙",
+      "scope": "universal",
+      "category": "碰撞结算",
+      "evidence": [
+        {
+          "text": "呃磕墙也可以一定程度上清掉网上的速度 看就是是速度 在磕墙的时候",
+          "t_start": 4335,
+          "t_end": 4348
+        },
+        {
+          "text": "会分解成平行于墙的方向 和那个垂直于墙的方向",
+          "t_start": 4348,
+          "t_end": 4361
+        }
+      ],
+      "reason": "上下文正在解释高速度单位磕墙后的表现，主播明确说明磕墙时速度会分解为平行于墙与垂直于墙的两个方向分量，属于可复用的碰撞结算规则。",
+      "limitations": [
+        "仅说明速度分解，未给出各分量的具体数值或不同墙体方向下的坐标轴命名。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "发生磕墙时，平行于墙方向的速度分量会被垂直于墙方向的速度分量以0.4倍磨损扣减，结算式可写作 VY = VY - 0.4VS。",
+      "subject": "磕墙时平行于墙方向的速度分量",
+      "condition": "单位发生磕墙且速度被分解为平行于墙与垂直于墙的分量",
+      "scope": "universal",
+      "category": "碰撞结算",
+      "evidence": [
+        {
+          "text": "呃磕墙也可以一定程度上清掉网上的速度 看就是是速度 在磕墙的时候",
+          "t_start": 4335,
+          "t_end": 4348
+        },
+        {
+          "text": "垂直于平行于墙的方向的速度 也会被垂直于墙的方向的速度以0.4倍磨损",
+          "t_start": 4348,
+          "t_end": 4361
+        },
+        {
+          "text": "它竞争小就是VY等于VY减0.4VS 怕你出一个没有那么强的数值 所以的话会磨损掉一部分",
+          "t_start": 4361,
+          "t_end": 4372
+        }
+      ],
+      "reason": "同段机制说明中，主播在速度分解之后明确给出0.4倍磨损以及 VY = VY - 0.4VS 的口播结算式；后文也用纵向速度高于横向速度的结果印证该磨损结算。",
+      "limitations": [
+        "转写中“它竞争小”疑为口播公式引导语的ASR误识；VY/VS的具体轴名及0.4系数是否仅适用于边界磕墙，仍需结合画面或人工听审确认。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01与c02来自同一段连续碰撞结算讲解，分别覆盖速度分解和磨损公式。c01原始引用跨行，已改为单行逐字稿证据；c02公式口播明确，保留并标注变量轴名与ASR限制。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

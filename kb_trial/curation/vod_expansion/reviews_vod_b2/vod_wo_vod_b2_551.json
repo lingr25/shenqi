@@ -1,0 +1,82 @@
+{
+  "workorder_id": "vod_wo_vod_b2_551",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:06:50+0900",
+  "source_sha256": "d1d30e3fb5d638b702d60a3bde78dd04145e6d8bdb268d8b3873b0a6c4191bc4",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "单位在攻击抬手阶段护盾被打破后，其攻击抬手会被重置，且重置的是前摇而非后摇。",
+      "subject": "护盾被打破的单位",
+      "condition": "单位处于攻击抬手阶段时护盾被打破",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "这里是被打破了盾 破盾之后的话 他会重置抬手",
+          "t_start": 1798,
+          "t_end": 1811
+        },
+        {
+          "text": "这里必须重置前摇 不能重置后摇",
+          "t_start": 1811,
+          "t_end": 1824
+        }
+      ],
+      "reason": "逐字稿明确说破盾后会重置抬手，并进一步限定为重置前摇、不能重置后摇；上下文中的“他”指被破盾单位。",
+      "limitations": [
+        "逐字稿未点名具体敌人，也未给出重置发生的精确帧数。",
+        "是否适用于所有护盾单位仍需实机逐类验证。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "单位在攻击抬手阶段被破盾并触发抬手重置时，重置前摇会拉长攻击间隔；若重置后摇则会大幅缩短攻击间隔。",
+      "subject": "被破盾单位的攻击间隔",
+      "condition": "单位处于攻击抬手阶段时护盾被打破并触发抬手重置",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "如果重置后摇的话 就会攻击间隔大幅的缩短 重置前摇的话就可以拉长",
+          "t_start": 1811,
+          "t_end": 1824
+        }
+      ],
+      "reason": "逐字稿用对比条件说明重置后摇会缩短攻击间隔、重置前摇可拉长攻击间隔；这解释了破盾重置前摇对后续攻击窗口的影响。",
+      "limitations": [
+        "“最后击杀条件”属于特定关卡流程，未作为通用结论纳入。",
+        "逐字稿未给出攻击间隔变化的具体帧数或倍率。",
+        "“重置后摇”为反事实对照，实际破盾重置的是前摇而非后摇。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均来自同一段机制讲解：c01给出破盾重置前摇而非后摇的结论，c02给出该重置对攻击间隔的后果。引文均可在对应逐字稿行中字符级匹配，故保留；具体敌人名称与帧数未在逐字稿中给出，已在 limitations 标注。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

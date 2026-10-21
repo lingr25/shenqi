@@ -1,0 +1,84 @@
+{
+  "workorder_id": "vod_wo_vod_b2_530",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:02:47+0900",
+  "source_sha256": "738f53bd3cc4d985e378b7291f1fde567af3d036c3b15d48993e6b03b48b61d6",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "珊比二技能的减速循环要实现永控，前提是敌人死得足够快。",
+      "subject": "珊比二技能的减速循环",
+      "condition": "敌人死亡速度足够快",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "像珊比二技能就是他先推出去70减速对吧 然后的话他推完之后 珊比再开接着减速 珊比那个减速也很高",
+          "t_start": 1268,
+          "t_end": 1281
+        },
+        {
+          "text": "必须得死的够快 他才可以实现这种永控",
+          "t_start": 1351,
+          "t_end": 1366
+        }
+      ],
+      "reason": "前文先明确讨论珊比二技能的减速与循环，随后在[1351s]给出明确定论：必须死得够快才能实现这种永控。该句是肯定性机制结论，不依赖画面即可理解，且引文逐字匹配。",
+      "limitations": [
+        "逐字稿未给出‘死得够快’的量化阈值或DPS门槛，仅说明定性前提。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "珊比二技能的减速循环在单波来敌数量过多时无法维持永控。",
+      "subject": "珊比二技能的减速循环",
+      "condition": "单波来敌数量过多",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "像珊比二技能就是他先推出去70减速对吧 然后的话他推完之后 珊比再开接着减速 珊比那个减速也很高",
+          "t_start": 1268,
+          "t_end": 1281
+        },
+        {
+          "text": "如果一波来太多敌人的话就不行",
+          "t_start": 1351,
+          "t_end": 1366
+        }
+      ],
+      "reason": "在[1351s]主播明确说明一波来太多敌人就不行，承接前文珊比二技能减速循环话题，可形成单波来敌数量过多会破坏永控的机制限制结论。引文逐字匹配，且为肯定性结论。",
+      "limitations": [
+        "逐字稿未给出‘一波来太多敌人’的具体数量阈值，也未说明其与重量、阻挡或输出能力的量化关系。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均来自同一段明确结论，但分别对应两个可区分的机制要点：敌人死亡速度是永控前提，以及单波来敌数量过多会破坏永控，不按重复处理。主体可由前文[1268s]‘珊比二技能’语境补全；引文均可在逐字稿单行中原样匹配。两条均判 keep，并保留参数阈值缺失的限制说明。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_466",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:29:05+0900",
+  "source_sha256": "862bb3b7d5ed7400157b3ce529d0fea855da5b0f781838d9a4afdef5ff282dec",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "二技能的实际攻击距离至少有4格",
+      "verdict": "pending",
+      "reason": "候选将直播中的手长观察概括为二技能至少4格，但逐字稿仅出现“他”“手”“1234个长”等口语/ASR表达，窗口内未明确具体干员或技能主体，无法改写为自包含机制命题；且“1234”是否应规范为“4格”依赖画面演示与人工听审，关键参数不足以直接定论。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "整单仅有一个候选。引文文本可在逐字稿原行中字符级匹配，但命题主体未明确且关键数字表达受ASR/画面依赖影响，不能形成可复用机制定论，建议人工听审或后续实机复核。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

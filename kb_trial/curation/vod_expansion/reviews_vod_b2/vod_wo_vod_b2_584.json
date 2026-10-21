@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_584",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:13:15+0900",
+  "source_sha256": "84a95a39dce57f806f7b9d081af40559e83ed1e5fae7c915afd3f0392529bfe1",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "可露希尔回费问题与三车计数法教学章节中的校对阻挡帧被判定为「四无」",
+      "verdict": "reject",
+      "reason": "该候选是对单次教学/实战中“这次”校对阻挡帧取值的即时观察，未给出可复现条件、参数定义或可复用机制规则；“四无”与阻挡帧的数值含义在逐字稿中未闭合，后续仍在讨论该帧是否为极限。另证据 t_end=6666 未按窗口下一行 6671s 标注。按 Gate 2/3/4 排除。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G2",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "唯一候选 c01 的引文文本可在 6657s 行内字符级对齐，但时间戳标注不符合下一行时间戳约定；且其内容本质为单次实例取值观察，缺少明确条件、参数定义与可复用机制结论，故不 keep。全单无 keep，顶层 verdict 为 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

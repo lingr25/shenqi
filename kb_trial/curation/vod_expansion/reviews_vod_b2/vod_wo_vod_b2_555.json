@@ -1,0 +1,101 @@
+{
+  "workorder_id": "vod_wo_vod_b2_555",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:07:56+0900",
+  "source_sha256": "f240a186e450431fbb01818dae38b81057d5e977aa07864f9c91e20b6a8d328f",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "秒表通过释放技能抬手挂移速Buff时，挂上Buff的时间受技能前摇影响；由于前摇存在概率波动，挂Buff的时间点会波动，进而导致秒表的移动时间不一致。",
+      "subject": "秒表通过技能抬手挂移速Buff的流程",
+      "condition": "秒表释放技能抬手施加移速Buff；技能前摇存在概率波动",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "时间不一样 但是不是加攻速 是加移速 秒表是通过技能就是释放技能抬手 然后去挂Buff的这个过程中",
+          "t_start": 2179,
+          "t_end": 2190
+        },
+        {
+          "text": "加额加Buff的时间是受到前摇影响的 然后前摇是有概率波动的 前额的波动导致挂Buff的时间有波动 导致他的移动时间是不一样的",
+          "t_start": 2190,
+          "t_end": 2206
+        }
+      ],
+      "reason": "逐字稿明确将Buff更正为移速，并说明挂Buff时间受前摇影响、前摇概率波动导致移动时间不同。",
+      "limitations": [
+        "未给出前摇波动的具体概率分布或帧数范围",
+        "仅适用于该单位/该技能分支，不外推为所有Buff施加均受前摇影响"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "秒表的攻击动画占有时长固定，前摇与后摇互补波动；秒表在释放技能期间静止不移动，因此前摇波动会改变其在加速Buff生效期内的实际移动帧数，使秒表移动到特定格子的时间和后续阻挡帧产生概率波动。",
+      "subject": "秒表的攻击/技能动画时序及其在加速Buff下的移动与阻挡判定",
+      "condition": "攻击动画占有时长固定且前摇/后摇互补；秒表在放技能期间不移动；移速Buff持续时间固定",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "移动时间是有概率的 所以的话就是 所以的话他影响的是阻挡帧 一个是那个小锤到这里被火陈的阻挡帧",
+          "t_start": 2206,
+          "t_end": 2225
+        },
+        {
+          "text": "因为攻击动画的占有时长是不变的 前腰的波动就会导致后摇的波动 因为是互补的",
+          "t_start": 2251,
+          "t_end": 2265
+        },
+        {
+          "text": "移速的Buff的持续时间是一样长的 但是的话因为前摇的波动影响 他有一段时间不在那个Buff生效期间内 不在移动",
+          "t_start": 2265,
+          "t_end": 2279
+        },
+        {
+          "text": "在放技能期间不再移动 就导致了他被加速Buff影响 移动的帧数是有变化的 所以的话他理论上来讲也是有概率的",
+          "t_start": 2279,
+          "t_end": 2294
+        },
+        {
+          "text": "移动到这一格的时间是有概率的",
+          "t_start": 2294,
+          "t_end": 2307
+        }
+      ],
+      "reason": "逐字稿说明攻击动画占有时长不变且前摇/后摇互补，放技能期间不移动，导致加速Buff下移动帧数变化；并指出移动时间有概率、影响阻挡帧。",
+      "limitations": [
+        "未给出前摇/后摇波动的具体帧数参数",
+        "结论基于该特定单位与实战阻挡场景，外推到所有攻击动画需额外验证"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均有明确逐字稿支撑且为可复用机制结论，无未定论假说；均判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

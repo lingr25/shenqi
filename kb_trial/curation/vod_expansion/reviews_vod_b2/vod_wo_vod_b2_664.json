@@ -1,0 +1,75 @@
+{
+  "workorder_id": "vod_wo_vod_b2_664",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:07:59+0900",
+  "source_sha256": "d9a65ab07ccbc6b685c7b23a28156a3652b163c740842c79d775f46f89282165",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "单位撞墙时，位移距离会额外增加0.1格，因此需要额外预留时间。",
+      "subject": "撞墙位移判定",
+      "condition": "单位发生撞墙时",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "撞墙的话还会多走0.1格 0.1格的话需要多预留",
+          "t_start": 471,
+          "t_end": 492
+        }
+      ],
+      "reason": "主播在计算预留帧时明确指出撞墙会多走0.1格，并因此需要多预留时间；该句不依赖画面即可理解，属于可复用的位移与时序机制结论。",
+      "limitations": [
+        "逐字稿未单独给出0.1格对应的具体帧数。",
+        "后文提到的12帧为与光环碰撞判定合计后的总预留，不能直接拆分为0.1格对应的帧数。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "光环碰撞判定需要额外预留10帧。",
+      "subject": "光环碰撞判定",
+      "condition": "光环碰撞判定生效时",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "我还得预留十帧那个光环的碰撞判定 我还得多预留十帧的光环 碰撞判定",
+          "t_start": 492,
+          "t_end": 510
+        }
+      ],
+      "reason": "主播明确说还要多预留十帧用于光环的碰撞判定，并重复强调同一数值；属于具体的预留帧机制结论。",
+      "limitations": [
+        "逐字稿仅称“那个光环”，未说明该光环的具体来源或归属；若后续确认是特定装置或敌人光环，scope 应降为 entity_mechanism 或 instance。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均有逐字稿明确支撑，保留；已修正 evidence 的时间戳边界，并将 c01 的口语指代改写为自包含表述。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_677",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:09:27+0900",
+  "source_sha256": "e6efd613c44caa1b08bb616cc736ebcabdb23a1479762be5c41ae9c42c7f00e1",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在帧检测循环中，时间少并非根本要素，时间对才是最根本的；即使卡到其他九帧也没有意义，只有卡到正确的那一帧才有意义。",
+      "subject": "帧检测循环中的卡帧时序结果",
+      "condition": "在帧检测循环中",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "我们接下来要说明的问题是 时间少并不是根本的要素 就是时间对才是最根本的 在这个帧检测循环之中",
+          "t_start": 1497,
+          "t_end": 1507
+        },
+        {
+          "text": "你即使卡到了其他九帧也是没有意义的 但是你要是卡到了正确的那一帧 就是有意义的",
+          "t_start": 1507,
+          "t_end": 1534
+        }
+      ],
+      "reason": "上下文明确讨论帧检测循环中的卡帧时序：主播先指出时间少不是根本、时间对才是根本，随后强调卡到其他九帧无意义、卡到正确帧才有意义；该命题可改写为自包含的通用机制陈述，且引文与逐字稿可逐字对齐。",
+      "limitations": [
+        "逐字稿未展开说明“正确的那一帧”具体是哪一帧，也未给出检测循环周期或“其他九帧”的完整判定条件。",
+        "“时间少”为直播口语原文，其精确技术含义仍需结合后续实机验证。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "仅一条候选；逐字引文可在对应转写行中字符级对齐，命题属于帧检测循环中的时序原则，具有复用机制价值，予以保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

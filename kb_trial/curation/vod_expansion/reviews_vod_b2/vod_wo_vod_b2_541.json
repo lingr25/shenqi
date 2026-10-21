@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_541",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:04:40+0900",
+  "source_sha256": "dbb38dbc7765ac31746543c66a87eaded5c859e490b4248014367c7996561078",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "本次伤害由平A约10万多、轰炸物理伤害约10万多、元素伤害20万三部分构成",
+      "verdict": "reject",
+      "reason": "该候选是特定对局中的伤害拆分观察，未给出可复现条件与明确主体，仅以“本次伤害”指代，不能作为可复用机制命题；且逐字稿 1763s 明确纠正“元素不是20万伤害，元素是10万”，候选中的元素伤害20万与后文冲突。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "唯一候选 c01 为特定实战伤害拆分观察，主体与成立条件不充分，且元素伤害数值被后文明确纠正，不满足可复用机制命题要求，整单无 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,77 @@
+{
+  "workorder_id": "vod_wo_vod_b2_498",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:52:20+0900",
+  "source_sha256": "9cf89fc8e7a645c0364e6b68cb5b21f252df307311b2fdde4cddb5958c36ea67",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙造成物理伤害时，有一定概率使攻击力提升。",
+      "subject": "克莱门沙的第一天赋",
+      "condition": "克莱门沙造成物理伤害时",
+      "scope": "entity_mechanism",
+      "category": "技能特例/触发概率/状态效果",
+      "evidence": [
+        {
+          "text": "克莱门沙造成物理伤害时 有一定概率攻击力提升",
+          "t_start": 5840,
+          "t_end": 5857
+        }
+      ],
+      "reason": "5840s 的逐字稿直接读出克莱门沙第一天赋的触发与效果：造成物理伤害时按概率提升攻击力；属于可复用的干员机制描述，不依赖画面。",
+      "limitations": [
+        "逐字稿未给出触发概率、攻击力提升幅度与持续时间。",
+        "是否每次伤害独立判定、是否存在冷却或内置阈值未说明。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "当敌人处于侵蚀损伤爆发状态或受到其他减少防御的效果时，克莱门沙第一天赋的触发概率会大幅提升。",
+      "subject": "克莱门沙的第一天赋触发概率",
+      "condition": "敌人处于侵蚀损伤爆发状态，或受到其他减少防御的效果时",
+      "scope": "entity_mechanism",
+      "category": "技能特例/触发概率/状态效果",
+      "evidence": [
+        {
+          "text": "当敌人轻视损伤 爆发或受到其他减少防御的效果时 第一天赋的触发概率会大幅提升",
+          "t_start": 5840,
+          "t_end": 5857
+        }
+      ],
+      "reason": "同一句天赋描述在基础触发条件之后补充了概率提升条件；逐字稿明确出现“受到其他减少防御的效果时 第一天赋的触发概率会大幅提升”。其中“轻视损伤 爆发”按游戏术语还原为“侵蚀损伤爆发”。",
+      "limitations": [
+        "逐字稿未给出“大幅提升”的具体概率或倍率。",
+        "ASR 将“侵蚀损伤爆发”转写为“轻视损伤 爆发”，需以游戏内文本复核该术语。",
+        "其他减少防御效果的具体范围与是否叠加未说明。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均对应 5840s 附近逐字读出的克莱门沙第一天赋描述：c01 为基础触发与攻击力提升效果，c02 为特定减防/侵蚀损伤爆发条件下的触发概率提升。未发现未定论猜测或画面依赖；概率与数值细节缺失记为局限性。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}
