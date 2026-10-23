@@ -1,0 +1,40 @@
+{
+  "run": "20261022_spotcheck",
+  "date": "2026-10-22/23",
+  "purpose": "vod_b1/vod_b2 审读抽查（rev1/rev2）、deixis 指代筛查、时间戳偏移扫描",
+  "approval": {
+    "by": "lingr25",
+    "at": "2026-10-23",
+    "decision": "剔除 deixis drop 44 条（vod_b1 11 / vod_b2 33）+ 抽查存疑 vod_b1#30 (vod_wo_vod_b1_050/c02) 与 vod_b2#3 (vod_wo_vod_b2_489/c01，已在 deixis drop 中)；其余 keep 批准并入"
+  },
+  "results": {
+    "vod_b1": {
+      "keep_before": 181,
+      "rejected": 12,
+      "keep_after": 169
+    },
+    "vod_b2": {
+      "keep_before": 807,
+      "rejected": 33,
+      "keep_after": 774
+    }
+  },
+  "ts_offset_scan": "review_still_wrong=2（vod_wo_vod_b2_039/c02, vod_wo_vod_b2_089/c01）经人工核对为 12 字前缀在相邻两行重复的误报，manifest 时间戳与逐字稿一致，未改",
+  "excluded": [
+    "usage.jsonl（LLM 用量日志，不入库）"
+  ],
+  "files_sha256": {
+    "deixis_keeps_20261022.json": "d0f3e79dd3cfbea2d6bddd20fd58e5926d8aa9b013305aa16ef3ae109c5e6f56",
+    "deixis_keeps_20261022.md": "94fa6d2cef1ae123610bb23f68e28afd337d468771b2051712a2a4814678fdea",
+    "deixis_llm_jsonl.py": "bc582cf16cec257b8e12f1047a26bdbe36d7b79881b9dfb43073ed473a5cd1b3",
+    "deixis_llm_rest.py": "90b81923fa94058c0896f1d677efe3f42938f9474a8844d702683dca1c4b5544",
+    "deixis_llm_results.jsonl": "7528cca310af612d503e114bb80776acb8e34f79adc01c5e4a0b546cc56e1c03",
+    "deixis_manual.py": "de71967b26b25db4f24f60e19aaeb79e598d1d52afd45d9af3b5afc72af44c7c",
+    "deixis_merge.py": "aa019a8c3c780815170bb6992a8e9c833054afd522af1385343ee7f4bc7e6ac0",
+    "deixis_scan.py": "c105cc1062b3d1fae250433b1ccf78276a60ebab3fc6d67ed9252ecfc580116c",
+    "judgments.json": "351777d94eca019b27f13e68054b959ae06a5ff44a2fc720ff1dda321736ee02",
+    "sample_spotcheck.py": "d079303aee45afded30dd92ae121e53554b4df610b37e204134ba9c89cdfc673",
+    "spotcheck_vod_20261022.md": "18d417c205707afe6fa7313f69bb1b6cf3f9a5d361d68a0e47b6458c8c7a30fa",
+    "ts_offset_scan.py": "338efd09ebfd20a5ef3afdd889795604c449483fc7df3c74d3a1eb99a782bcdb"
+  }
+}
