@@ -1,8 +1,8 @@
 {
   "schema": "vod-expansion-approved-1.0",
   "batch": "vod_b2",
-  "status": "proposed_pending_parent_approval",
-  "entry_count": 807,
+  "status": "approved",
+  "entry_count": 774,
   "source": {
     "workorders": "kb_trial/curation/vod_expansion/workorders_vod_b2/",
     "reviews": "kb_trial/curation/vod_expansion/reviews_vod_b2/",
@@ -3318,49 +3318,6 @@
       "workorder_id": "vod_wo_vod_b2_069",
       "batch": "vod_b2",
       "stem": "BV1GVeb6dEVw_p2_42032367721",
-      "local_id": "c02",
-      "claim": "在该演示中，敌人的物理碰撞箱上下不对称：上边距为0.1、下边距为0.3；墙体物理碰撞箱宽0.2且两边各0.1对称放置。敌人被挤到墙体边界并处于失衡状态时，向下弹出只需移动0.2格、向上弹出需移动0.4格，因此系统判定向下弹出距离更短，敌人向下弹出。",
-      "subject": "该演示中的敌人物理碰撞箱与墙体物理碰撞箱",
-      "condition": "敌人被挤到墙体边界且处于失衡状态；墙体宽0.2且两边各0.1对称放置",
-      "scope": "instance",
-      "category": "位移",
-      "recorded_at": "2026-09-19",
-      "source_file": "transcripts_txt/BV1GVeb6dEVw_p2_42032367721.txt",
-      "evidence": [
-        {
-          "text": "这个这上下是0.1额 从上到这里是0.1",
-          "t_start": 988,
-          "t_end": 1004
-        },
-        {
-          "text": "从这里到下是0.3 这是物理碰撞箱的形状",
-          "t_start": 1004,
-          "t_end": 1018
-        },
-        {
-          "text": "妈呀这个墙是0.2的宽度 两边各0.1对称放置",
-          "t_start": 1018,
-          "t_end": 1029
-        },
-        {
-          "text": "只需要那个呃移动0.2格呃 往上走的话需要移动 从这里到这里是0.4格",
-          "t_start": 1055,
-          "t_end": 1071
-        },
-        {
-          "text": "所以的话他认为往下走更短 于是它就会弹下来",
-          "t_start": 1071,
-          "t_end": 1083
-        }
-      ],
-      "evidence_sha256": "1ea2a319e9ef76bd13764393bdd62c2ec31f4c0ba81ebae5ff26eb5716e8252d",
-      "reviewer_model": "lingr-free",
-      "reason": "逐字稿给出敌人碰撞箱上下边距、墙体宽度及上下弹出所需距离，并据此得出向下弹出距离更短。"
-    },
-    {
-      "workorder_id": "vod_wo_vod_b2_069",
-      "batch": "vod_b2",
-      "stem": "BV1GVeb6dEVw_p2_42032367721",
       "local_id": "c03",
       "claim": "敌人在墙体边界处失衡时，若下侧碰撞箱重叠更小，其弹出方向由命中失衡那一帧的碰撞箱排斥决定，与推拉提供的速度和位移方向无关；因此无论拉力方向为何甚至原地失衡，敌人都会向下弹出。",
       "subject": "敌人",
@@ -5154,34 +5111,6 @@
       "reason": "逐字稿中讲师先给出规则「0.4 减去敌人到敌人之间的模长」，紧接着说明「乘50」，并以距离 0.2 为例算出「0.2 乘50是十」，支撑双敌人权重的公式与示例计算。"
     },
     {
-      "workorder_id": "vod_wo_vod_b2_108",
-      "batch": "vod_b2",
-      "stem": "BV1GVeb6dEVw_p2_42032367721",
-      "local_id": "c02",
-      "claim": "在本次白板计算的双敌人两方向权重示例中，两方向权重应为 10 与 1，其比为十比一；先前所说的五比一（对应权重 2 与 10）是口误。",
-      "subject": "双敌人两方向权重",
-      "condition": "本次白板计算的双敌人两方向权重示例（简化计算）",
-      "scope": "instance",
-      "category": "索敌",
-      "recorded_at": "2026-09-19",
-      "source_file": "transcripts_txt/BV1GVeb6dEVw_p2_42032367721.txt",
-      "evidence": [
-        {
-          "text": "提供了一个这个方向的十的权重 最后的提供的就是一个五比一的这样一个权重 这边是五 这边是一 然后的话长为0.2 模长是0.2",
-          "t_start": 4455,
-          "t_end": 4468
-        },
-        {
-          "text": "十和一这边是十 这边是一 然后的话模长是0.2 然后的话按照勾股定理",
-          "t_start": 4476,
-          "t_end": 4490
-        }
-      ],
-      "evidence_sha256": "d7197f509559e5cc44d9e2760f0c9ddf510f85b036111b26025620734d5d3425",
-      "reviewer_model": "lingr-free",
-      "reason": "主播先给出五比一/权重2与10，随后在 4476s 明确改口为「十和一 这边是十 这边是一」，因此保留更正后的 10 与 1（十比一）结论。"
-    },
-    {
       "workorder_id": "vod_wo_vod_b2_109",
       "batch": "vod_b2",
       "stem": "BV1GVeb6dEVw_p2_42032367721",
@@ -6097,87 +6026,6 @@
       "reason": "上下文是在纠正条件归属：0.1半径内有其他被阻挡敌人时触发的是旋转步骤处理，而阻挡偏移本身必定发生。该区分具有机制规则价值，且不属于未闭合猜测。"
     },
     {
-      "workorder_id": "vod_wo_vod_b2_131",
-      "batch": "vod_b2",
-      "stem": "BV1GVeb6dEVw_p2_42032367721",
-      "local_id": "c01",
-      "claim": "在该对称位置例题中，2号与3号敌人位于横距0.03、纵距0.3的对称位置；按起始值0.4减去模长0.3得0.1、再乘以50计算，2号敌人和3号敌人的权重各为5，且二者的权重向量分别朝向自身反方向。",
-      "subject": "2号敌人和3号敌人的权重向量",
-      "condition": "该例题中2号与3号位于横距0.03、纵距0.3的对称位置，模长0.03近似按0.3计，起始值取0.4，乘数50",
-      "scope": "instance",
-      "category": "位移",
-      "recorded_at": "2026-09-19",
-      "source_file": "transcripts_txt/BV1GVeb6dEVw_p2_42032367721.txt",
-      "evidence": [
-        {
-          "text": "这分别是2号敌人和3号敌人 在两个对称的位置 然后的话横距是0.03",
-          "t_start": 6906,
-          "t_end": 6917
-        },
-        {
-          "text": "纵距是0.3",
-          "t_start": 6917,
-          "t_end": 6930
-        },
-        {
-          "text": "首先啊是0.4减模长对吧",
-          "t_start": 7012,
-          "t_end": 7017
-        },
-        {
-          "text": "减模长也就是这个0.3和0.03 我姑且也算0.3了 然后再乘以50 他的权重是那个0.1×50 也就是五",
-          "t_start": 7017,
-          "t_end": 7029
-        },
-        {
-          "text": "它们分别都向着自身反方向 拥有着五的权重向量对吧 这个是五 这个是五 有没有问题 然后的话一这个有0.2的向量 0.2对吧 这是三条",
-          "t_start": 7029,
-          "t_end": 7050
-        }
-      ],
-      "evidence_sha256": "3381a29b6b5dcf1d9a5f4058aaba0e66f08d1929a6f4bb7a66e73f849dcc0779",
-      "reviewer_model": "lingr-free",
-      "reason": "上下文先给出2号、3号在横距0.03、纵距0.3的对称位置，随后口述0.4减模长、将模长0.03近似按0.3处理并乘50，得到权重0.1×50=5，并确认两权重向量各朝向自身反方向。该结论在逐字稿中有明确参数与计算过程支撑。"
-    },
-    {
-      "workorder_id": "vod_wo_vod_b2_131",
-      "batch": "vod_b2",
-      "stem": "BV1GVeb6dEVw_p2_42032367721",
-      "local_id": "c02",
-      "claim": "在该对称双权重例题中，2号与3号敌人的权重向量在竖直方向互相抵消，在斜向不能抵消反而叠加，最终对4号敌人提供大小为1的向外向量。",
-      "subject": "2号敌人和3号敌人的权重向量对4号敌人的合力",
-      "condition": "该例题中2号与3号敌人位于4号敌人的对称位置，且各自权重均为5，权重向量方向对称",
-      "scope": "instance",
-      "category": "位移",
-      "recorded_at": "2026-09-19",
-      "source_file": "transcripts_txt/BV1GVeb6dEVw_p2_42032367721.txt",
-      "evidence": [
-        {
-          "text": "这分别是2号敌人和3号敌人 在两个对称的位置 然后的话横距是0.03",
-          "t_start": 6906,
-          "t_end": 6917
-        },
-        {
-          "text": "它们分别都向着自身反方向 拥有着五的权重向量对吧 这个是五 这个是五 有没有问题 然后的话一这个有0.2的向量 0.2对吧 这是三条",
-          "t_start": 7029,
-          "t_end": 7050
-        },
-        {
-          "text": "和一个竖直向上的 大概接近五的这样一个向量 竖直方向的可以抵消 但是斜向的不能抵消 斜向都不能抵消 还会加成",
-          "t_start": 7066,
-          "t_end": 7077
-        },
-        {
-          "text": "所以的话会提供一个向外的一的向量",
-          "t_start": 7077,
-          "t_end": 7087
-        }
-      ],
-      "evidence_sha256": "fdbd0fc930ea7bf2a9c0f69a52b944ec3cb05c213e8054f35a5f8df571037dfe",
-      "reviewer_model": "lingr-free",
-      "reason": "在权重各为5的对称双权重前提下，主播明确说明竖直方向分量可以抵消、斜向分量不能抵消且会加成，随后得出对4号提供向外大小为1的向量。该结论有明确条件与分解过程支撑。"
-    },
-    {
       "workorder_id": "vod_wo_vod_b2_132",
       "batch": "vod_b2",
       "stem": "BV1GVeb6dEVw_p2_42032367721",
@@ -6209,67 +6057,6 @@
       "evidence_sha256": "f537dc400b6cbd7b8691064844b86436181d28a6f784429ae8dfba02e765efb0",
       "reviewer_model": "lingr-free",
       "reason": "上下文给出了2号、3号对称位置及4号位于阻挡位置的例题参数；主播先给出约一半的粗估，随后在7141行明确修正为“比一半小”。该结论是例题内的位移粗估，可自包含为实例命题。"
-    },
-    {
-      "workorder_id": "vod_wo_vod_b2_133",
-      "batch": "vod_b2",
-      "stem": "BV1GVeb6dEVw_p2_42032367721",
-      "local_id": "c01",
-      "claim": "在对称双权重布局的例题中，4号敌人的偏移方向为向外；原因是2号与3号敌人对4号提供的推力方向均为敌敌方向向外推，即敌敌方向反向于救敌人方向。",
-      "subject": "对称双权重布局例题中的4号敌人",
-      "condition": "在对称双权重布局的例题场景中，2号与3号敌人对称布置并均向4号提供向外的推力时",
-      "scope": "instance",
-      "category": "位移",
-      "recorded_at": "2026-09-19",
-      "source_file": "transcripts_txt/BV1GVeb6dEVw_p2_42032367721.txt",
-      "evidence": [
-        {
-          "text": "为什么是向外移 因为是向外推啊 敌敌方向向外推 2号给4号提供的是这个方向的",
-          "t_start": 7151,
-          "t_end": 7162
-        },
-        {
-          "text": "不是把4号往顺帧方向推吗 是敌敌方向反向于救敌人啊",
-          "t_start": 7175,
-          "t_end": 7185
-        },
-        {
-          "text": "所以是向外的呀",
-          "t_start": 7185,
-          "t_end": 7188
-        }
-      ],
-      "evidence_sha256": "be145cf1127d86c8f109eb14ae96c3a61ecce212d8b85617d191bb453c9388ca",
-      "reviewer_model": "lingr-free",
-      "reason": "该候选是课堂对称双权重例题中对4号敌人偏移方向的闭合解释。逐字稿明确说明4号向外移，因为2号、3号对4号提供的是敌敌方向向外的推力，并最终以“所以是向外的呀”收束。证据可在原始逐字稿中字符级对齐，属于实例级机制结论。"
-    },
-    {
-      "workorder_id": "vod_wo_vod_b2_135",
-      "batch": "vod_b2",
-      "stem": "BV1GVeb6dEVw_p3_42033611369",
-      "local_id": "c01",
-      "claim": "在位移向量计算中，按向量方式思考时，对特定权重比可将其简化认定为十比一（即直接除以十）；这种简化带来的误差可以控制，并可保证并不大。",
-      "subject": "位移向量计算中的权重比简化",
-      "condition": "按向量方式思考，且针对该讲课中的特定权重计算案例",
-      "scope": "instance",
-      "category": "位移",
-      "recorded_at": "2026-09-19",
-      "source_file": "transcripts_txt/BV1GVeb6dEVw_p3_42033611369.txt",
-      "evidence": [
-        {
-          "text": "我们中间确实有一些简化 比如说我这里的话直接认定是十比一 直接除以十",
-          "t_start": 60,
-          "t_end": 68
-        },
-        {
-          "text": "但是这些地方的误差我们都是可以控制的 都是可以保证并不大的",
-          "t_start": 79,
-          "t_end": 90
-        }
-      ],
-      "evidence_sha256": "f0fbe1405d8d7ffdfca5d4cfa2f9aac2016ab561a49b55e8c4beb56fb9ffab5c",
-      "reviewer_model": "lingr-free",
-      "reason": "上下文明确讨论位移向量计算中权重比的处理：讲者说明可按向量方式思考，并在具体案例中将权重比直接认定为十比一或除以十；随后指出这类简化的误差可以控制且保证不大。属于有逐字稿支撑的计算简化结论。"
     },
     {
       "workorder_id": "vod_wo_vod_b2_136",
@@ -8867,34 +8654,6 @@
       "reason": "上下文在划分酒神0.2半径五档后说明同一档内仇恨等同；主播据此指出同仇恨时会打先创建的单位，并继续用一号、二号、三号枚举落位，说明相同仇恨下的索敌顺序由创建先后决定。"
     },
     {
-      "workorder_id": "vod_wo_vod_b2_204",
-      "batch": "vod_b2",
-      "stem": "BV1L4ez6oEcc_p1_42058057471",
-      "local_id": "c02",
-      "claim": "在酒神五档仇恨分区中，当1、2号均处于靠前档位时，3号必须使自身仇恨超过1、2号、到达0.2之外，才会被索敌系统选中。",
-      "subject": "3号（待索敌单位）",
-      "condition": "1、2号均处于靠前档位；3号需要被索敌系统选中",
-      "scope": "instance",
-      "category": "索敌/仇恨",
-      "recorded_at": "2026-09-20",
-      "source_file": "transcripts_txt/BV1L4ez6oEcc_p1_42058057471.txt",
-      "evidence": [
-        {
-          "text": "就会导致3号至少要超过这个点才可以被12号优先呃",
-          "t_start": 3019,
-          "t_end": 3032
-        },
-        {
-          "text": "他必须要超过12号的仇恨 也就是到达这个0.2之外 在这个区间内我才可以去索敌3号",
-          "t_start": 3045,
-          "t_end": 3057
-        }
-      ],
-      "evidence_sha256": "1eb770140f4e73e0a90cc456e21b383d9907e6a815104bebcc5dcd11411084ec",
-      "reviewer_model": "lingr-free",
-      "reason": "主播在酒神五档仇恨分区讲解中明确给出该索敌条件：1、2号靠前时，3号需超过其仇恨点，即到达0.2之外，才会被索敌。逐字稿中的「12号」结合上下文「一号2号三号」与「都」应理解为1、2号；参数0.2由逐字稿直接给出。"
-    },
-    {
       "workorder_id": "vod_wo_vod_b2_206",
       "batch": "vod_b2",
       "stem": "BV1L4ez6oEcc_p1_42058057471",
@@ -10049,54 +9808,6 @@
       "evidence_sha256": "15f9021562a049840f1ba59f32cfa6052e52a134c5dd3c94d65547236567eeba",
       "reviewer_model": "lingr-speed",
       "reason": "上下文通过控制坐标距离与帧数测试，验证了二次索敌并非全图或单纯半径圆，而是以首个受击敌人为中心建立检测区（方形判定/碰撞箱）来寻找补足打数的后续目标。"
-    },
-    {
-      "workorder_id": "vod_wo_vod_b2_274",
-      "batch": "vod_b2",
-      "stem": "BV1L4ez6oEcc_p3_42061792207",
-      "local_id": "c02",
-      "claim": "特定弹射/填补打数机制的二次索敌是以主目标为中心的正方形范围（0.6半宽正方形，计入碰撞箱后等效1×1正方形）进行搜索判定，而非传统圆形半径。",
-      "subject": "多目标弹射/补充打数的二次索敌判定范围",
-      "condition": "主目标命中后向周围寻找次级目标填补不足打数",
-      "scope": "universal",
-      "category": "帧时序",
-      "recorded_at": "2026-09-20",
-      "source_file": "transcripts_txt/BV1L4ez6oEcc_p3_42061792207.txt",
-      "evidence": [
-        {
-          "text": "被打的那个敌人会向周围做一个索敌",
-          "t_start": 1546,
-          "t_end": 1560
-        },
-        {
-          "text": "以主目标周围做一个索敌",
-          "t_start": 1560,
-          "t_end": 1565
-        },
-        {
-          "text": "来填补自己不足的打数",
-          "t_start": 1565,
-          "t_end": 1594
-        },
-        {
-          "text": "他这个看起来是以一个方形范围搜索第二目标",
-          "t_start": 1799,
-          "t_end": 1811
-        },
-        {
-          "text": "刚才是少一帧案例是打不到的 现在多一帧案例就是能打到",
-          "t_start": 2034,
-          "t_end": 2050
-        },
-        {
-          "text": "能达到是正方形",
-          "t_start": 2050,
-          "t_end": 2076
-        }
-      ],
-      "evidence_sha256": "bed44a1c45d17a38c1945c92683419c463106a43303724c1db5d879f1e4c3c33",
-      "reviewer_model": "lingr-speed",
-      "reason": "上下文通过测量横纵坐标移动差与帧时序（多一帧刚好进入正方形边界碰撞判定），闭环验证了二次索敌并非以半径圆判定，而是以正方形（半宽0.6/考虑碰撞箱）为判定区域。"
     },
     {
       "workorder_id": "vod_wo_vod_b2_275",
@@ -12761,49 +12472,6 @@
       "reason": "逐字稿先指出该单位此时血量为零，并解释其按比例回到场上时因比例缩放变为零；随后明确M3因血量切换会出现低于1血的0血状态。该结论不依赖画面，可由转写直接支撑。"
     },
     {
-      "workorder_id": "vod_wo_vod_b2_343",
-      "batch": "vod_b2",
-      "stem": "BV1xRho6DEAQ_p2_42226486217",
-      "local_id": "c02",
-      "claim": "处于0血状态的M3在该毒雾图中受到每0.5秒一次的真实伤害时，会触发不死并将血量变为1血；不死结束后再受到毒雾真实伤害则会死亡。",
-      "subject": "处于0血状态的M3",
-      "condition": "M3处于0血状态并受到毒雾真实伤害",
-      "scope": "instance",
-      "category": "伤害结算",
-      "recorded_at": "2026-09-26",
-      "source_file": "transcripts_txt/BV1xRho6DEAQ_p2_42226486217.txt",
-      "evidence": [
-        {
-          "text": "注意啊 这个时候他的血量是零 为什么血量是零 因为在底下的时候不死是一 然后他有7235的血",
-          "t_start": 210,
-          "t_end": 223
-        },
-        {
-          "text": "但是的话这个图是毒物图啊 每0.5秒一次真伤",
-          "t_start": 223,
-          "t_end": 234
-        },
-        {
-          "text": "所以的话他回来的时候会在一秒之内受到真伤",
-          "t_start": 234,
-          "t_end": 240
-        },
-        {
-          "text": "M3因其血量切换 所以会有一个低于一血的零血的时候",
-          "t_start": 245,
-          "t_end": 259
-        },
-        {
-          "text": "所以这里的话当他受了一下伤害的时候 然后他就触发了不死 把自己变成一血了 然后等到不死结束之后 他就死了 被烫的",
-          "t_start": 259,
-          "t_end": 278
-        }
-      ],
-      "evidence_sha256": "880759a23a702ef46fe104d49bceaa5f5c95d9a3b77928404c81e2a6ebd16f75",
-      "reviewer_model": "lingr-free",
-      "reason": "上下文交代M3回到场上时血量为0，且该图为毒雾图、每0.5秒造成一次真实伤害；随后明确其受到一次伤害后触发不死变为1血，不死结束后被灼烧死亡。该命题是带明确触发条件的实例结论。"
-    },
-    {
       "workorder_id": "vod_wo_vod_b2_344",
       "batch": "vod_b2",
       "stem": "BV1xRho6DEAQ_p2_42226486217",
@@ -14846,39 +14514,6 @@
       "reason": "前文先提到释放浮游放逐舱，随后直接陈述该侵蚀损伤会持续八秒钟；引文可字符级对齐，主播未使用猜测或反问，可作为该实体机制的状态持续时间结论。"
     },
     {
-      "workorder_id": "vod_wo_vod_b2_419",
-      "batch": "vod_b2",
-      "stem": "BV1BCpw6cENH_p2_42513075262",
-      "local_id": "c01",
-      "claim": "在放逐舱关卡中，石头人继续上行的位置存在一个隐藏路径点；石头人继续上行是由该隐藏路径点导致的，并非路径表现异常。",
-      "subject": "石头人（放逐舱关卡中的上行单位）",
-      "condition": "在放逐舱关卡中，石头人移动到继续上行段并经过该隐藏路径点",
-      "scope": "instance",
-      "category": "寻路",
-      "recorded_at": "2026-10-06",
-      "source_file": "transcripts_txt/BV1BCpw6cENH_p2_42513075262.txt",
-      "evidence": [
-        {
-          "text": "等一下这个石头人什么路径点",
-          "t_start": 935,
-          "t_end": 961
-        },
-        {
-          "text": "我靠怪不得再往上走 这里他还有个路径点",
-          "t_start": 961,
-          "t_end": 977
-        },
-        {
-          "text": "那就没问题了",
-          "t_start": 977,
-          "t_end": 994
-        }
-      ],
-      "evidence_sha256": "5cdfe1840dff86122a37a9d15a13f0c027eb3dcdf908c3faed45eef601249657",
-      "reviewer_model": "lingr-free",
-      "reason": "主播先疑惑石头人的路径点，随后发现再往上走处还有一个路径点，并说“那就没问题了”，表明该上行现象由隐藏路径点解释，而非路径表现异常。"
-    },
-    {
       "workorder_id": "vod_wo_vod_b2_422",
       "batch": "vod_b2",
       "stem": "BV1BCpw6cENH_p2_42513075262",
@@ -15491,39 +15126,6 @@
       "workorder_id": "vod_wo_vod_b2_457",
       "batch": "vod_b2",
       "stem": "BV1BCpw6cENH_p2_42513075262",
-      "local_id": "c02",
-      "claim": "在践行者与石头人的战斗中，865处发生的伤害为一次DOT，倍率为10.05A，该次伤害数值为2390。",
-      "subject": "践行者与石头人战斗中865处发生的伤害",
-      "condition": "在践行者与石头人的战斗时间线中，865处",
-      "scope": "instance",
-      "category": "帧时序",
-      "recorded_at": "2026-10-06",
-      "source_file": "transcripts_txt/BV1BCpw6cENH_p2_42513075262.txt",
-      "evidence": [
-        {
-          "text": "等到865的时候是",
-          "t_start": 6032,
-          "t_end": 6037
-        },
-        {
-          "text": "一次dot 也就是10.05A",
-          "t_start": 6037,
-          "t_end": 6046
-        },
-        {
-          "text": "这里出来了2390",
-          "t_start": 6046,
-          "t_end": 6055
-        }
-      ],
-      "evidence_sha256": "58fc7659a530364f5e1ede490a6aab1c623a7070760bc20f78ffbeef1d91dbe2",
-      "reviewer_model": "lingr-free",
-      "reason": "逐字稿明确将865与DOT、10.05A以及随后出现的2390相连，属于该战斗伤害时间线中的具体实例记录。"
-    },
-    {
-      "workorder_id": "vod_wo_vod_b2_457",
-      "batch": "vod_b2",
-      "stem": "BV1BCpw6cENH_p2_42513075262",
       "local_id": "c03",
       "claim": "在践行者与石头人的战斗中，872处发生的伤害为一次AOE。",
       "subject": "践行者与石头人战斗中872处发生的伤害",
@@ -15542,39 +15144,6 @@
       "evidence_sha256": "dd4fa848e2d1bf57c032700cf322e749b912dc1feb12d655fefcb7f72410724d",
       "reviewer_model": "lingr-free",
       "reason": "逐字稿明确说「然后872的话是一次AOE」，给出时间点和伤害类型，作为该战斗时间线的实例记录。"
-    },
-    {
-      "workorder_id": "vod_wo_vod_b2_458",
-      "batch": "vod_b2",
-      "stem": "BV1BCpw6cENH_p2_42513075262",
-      "local_id": "c02",
-      "claim": "在872时刻的一次AOE中，践行者受到的1775和1875两个伤害数字对应两次暴击、零次不暴击。",
-      "subject": "践行者受到的872时刻AOE伤害",
-      "condition": "872时刻发生一次AOE，并出现1775与1875两个伤害数字",
-      "scope": "instance",
-      "category": "伤害结算",
-      "recorded_at": "2026-10-06",
-      "source_file": "transcripts_txt/BV1BCpw6cENH_p2_42513075262.txt",
-      "evidence": [
-        {
-          "text": "然后872的话是一次AOE",
-          "t_start": 6063,
-          "t_end": 6080
-        },
-        {
-          "text": "1775和1875 看见没有 这是1775和1875这样两个红字",
-          "t_start": 6085,
-          "t_end": 6099
-        },
-        {
-          "text": "这里一个1775和一个1875的话 所以的话也是二和零",
-          "t_start": 6099,
-          "t_end": 6115
-        }
-      ],
-      "evidence_sha256": "ade4588ecf10957a96ff9523cb41c35c39ee0236db3bfe357220be4e90e72f6b",
-      "reviewer_model": "lingr-free",
-      "reason": "逐字稿先说明872时刻是一次AOE，随后明确出现1775和1875两个伤害数字，并给出‘也是二和零’的暴击分布结论；结合前文‘二’指暴击次数、‘零’指非暴击次数，可支撑该次实战的暴击分布。"
     },
     {
       "workorder_id": "vod_wo_vod_b2_460",
@@ -15641,62 +15210,6 @@
       "evidence_sha256": "754109ee888a43abab66f2c8d91b224002f53aac64eb34f4c94a9743def19538",
       "reviewer_model": "lingr-free",
       "reason": "主播在说明DOT间隔时先口述“每呃五秒一次”，随即改口为“每一秒一次”，属于当场勘误；上下文对象为石头人，故采纳1秒DOT间隔结论。"
-    },
-    {
-      "workorder_id": "vod_wo_vod_b2_462",
-      "batch": "vod_b2",
-      "stem": "BV1BCpw6cENH_p2_42513075262",
-      "local_id": "c01",
-      "claim": "石头人测试中数值为2896的伤害记录发生在目标处于减防状态时，因此该条记录不能作为有效伤害数据计入统计。",
-      "subject": "石头人测试中数值为2896的伤害记录",
-      "condition": "该次伤害结算时目标已处于减防状态",
-      "scope": "instance",
-      "category": "伤害结算",
-      "recorded_at": "2026-10-06",
-      "source_file": "transcripts_txt/BV1BCpw6cENH_p2_42513075262.txt",
-      "evidence": [
-        {
-          "text": "这个2896已经是打在茧房上的了",
-          "t_start": 6291,
-          "t_end": 6297
-        },
-        {
-          "text": "2896是这个已经打在减防上了 已经不能算了",
-          "t_start": 6302,
-          "t_end": 6312
-        }
-      ],
-      "evidence_sha256": "754d2a9b3f1f5bbd93b209365f64d45b59d9e8637d28db8750f3c6aa9501f901",
-      "reviewer_model": "lingr-free",
-      "reason": "上下文明确说明该2896记录发生在减防状态，主播据此排除该条数据；后一条引文直接给出“减防”与“不能算了”的结论，属于对错误计入数据的勘误。"
-    },
-    {
-      "workorder_id": "vod_wo_vod_b2_463",
-      "batch": "vod_b2",
-      "stem": "BV1BCpw6cENH_p2_42513075262",
-      "local_id": "c01",
-      "claim": "一次数值为2510的伤害因命中处于减防状态的目标，不能计入有效伤害数据。",
-      "subject": "数值为2510的伤害样本",
-      "condition": "该伤害命中处于减防状态的目标",
-      "scope": "instance",
-      "category": "伤害结算",
-      "recorded_at": "2026-10-06",
-      "source_file": "transcripts_txt/BV1BCpw6cENH_p2_42513075262.txt",
-      "evidence": [
-        {
-          "text": "已经打在减防上了 不能算",
-          "t_start": 6416,
-          "t_end": 6427
-        },
-        {
-          "text": "2510是这个是这个已经打在减防上了",
-          "t_start": 6427,
-          "t_end": 6479
-        }
-      ],
-      "evidence_sha256": "97802fd05376425f79e4be8352c56472b8cc84fd7fff4a1ec0ed90616b5a3728",
-      "reviewer_model": "lingr-free",
-      "reason": "上下文正在整理60组伤害数据，主播明确将2510样本标为打在减防上并判作废，属于对无效样本的勘误。"
     },
     {
       "workorder_id": "vod_wo_vod_b2_464",
@@ -16203,44 +15716,6 @@
       "workorder_id": "vod_wo_vod_b2_489",
       "batch": "vod_b2",
       "stem": "BV1BCpw6cENH_p3_42516023078",
-      "local_id": "c01",
-      "claim": "克莱门莎三技能两次爆条位置不同时，两次轰炸均会触发。",
-      "subject": "克莱门莎三技能",
-      "condition": "同一次三技能期间，两次爆条位置不在同一格",
-      "scope": "entity_mechanism",
-      "category": "索敌/位置判定",
-      "recorded_at": "2026-10-06",
-      "source_file": "transcripts_txt/BV1BCpw6cENH_p3_42516023078.txt",
-      "evidence": [
-        {
-          "text": "不会同时对同一个位置发动轰炸",
-          "t_start": 4370,
-          "t_end": 4384
-        },
-        {
-          "text": "因为这俩位置不同",
-          "t_start": 4370,
-          "t_end": 4384
-        },
-        {
-          "text": "但是这个不在同一格",
-          "t_start": 4384,
-          "t_end": 4398
-        },
-        {
-          "text": "他没有问题",
-          "t_start": 4398,
-          "t_end": 4409
-        }
-      ],
-      "evidence_sha256": "d08ee7e161895af04fad49da69c01015c0167eccfd93debbbb9a0f069a19ee46",
-      "reviewer_model": "lingr-free",
-      "reason": "逐字稿先读出‘不会同时对同一个位置发动轰炸’的限制，随后以‘因为这俩位置不同’和‘但是这个不在同一格’说明两次爆条位置不同，并给出‘他没有问题’的实测判断，可支持位置不同时两次轰炸均可触发。"
-    },
-    {
-      "workorder_id": "vod_wo_vod_b2_489",
-      "batch": "vod_b2",
-      "stem": "BV1BCpw6cENH_p3_42516023078",
       "local_id": "c02",
       "claim": "克莱门莎三技能两次爆条落在同一格，且第一次到第二次弹药消耗间隔约2.4秒时，后一次不触发轰炸。",
       "subject": "克莱门莎三技能",
@@ -16612,115 +16087,6 @@
       "reason": "逐字稿明确陈述潮勇者攻击力为140，并进一步说明其140攻击力为百分百法伤；该信息属于敌方单位固有数值与伤害类型，具备复用价值。"
     },
     {
-      "workorder_id": "vod_wo_vod_b2_504",
-      "batch": "vod_b2",
-      "stem": "BV1BCpw6cENH_p3_42516023078",
-      "local_id": "c01",
-      "claim": "当二技能范围内存在其他敌方单位时，二技能的直接攻击无法命中被二技能锁定并推挤的两名目标。",
-      "subject": "二技能的直接攻击",
-      "condition": "二技能范围内存在其他敌方单位",
-      "scope": "entity_mechanism",
-      "category": "索敌",
-      "recorded_at": "2026-10-06",
-      "source_file": "transcripts_txt/BV1BCpw6cENH_p3_42516023078.txt",
-      "evidence": [
-        {
-          "text": "二技能如果范围内还有其他怪的话 他DA打不到那个自己锁的那俩人",
-          "t_start": 6429,
-          "t_end": 6444
-        },
-        {
-          "text": "就是自己推的那些人",
-          "t_start": 6444,
-          "t_end": 6447
-        }
-      ],
-      "evidence_sha256": "944d619bd0b58f1ef1ce7c4858525b7ea0007cf4aa1e3f105a7b8b3653157b73",
-      "reviewer_model": "lingr-free",
-      "reason": "逐字稿明确指出二技能在范围内有其他敌人时，打不到自己锁定的两名目标；下一行补充这两名目标就是被自己推挤的对象。该现象属于二技能的索敌/命中判定机制，不依赖画面即可理解。"
-    },
-    {
-      "workorder_id": "vod_wo_vod_b2_505",
-      "batch": "vod_b2",
-      "stem": "BV1BCpw6cENH_p3_42516023078",
-      "local_id": "c01",
-      "claim": "二技能的漩涡在爆炸后每秒触发一次，在二技能14.5秒持续时间内共触发14次。",
-      "subject": "二技能的漩涡",
-      "condition": "二技能持续期间，且漩涡已爆炸",
-      "scope": "entity_mechanism",
-      "category": "伤害结算",
-      "recorded_at": "2026-10-06",
-      "source_file": "transcripts_txt/BV1BCpw6cENH_p3_42516023078.txt",
-      "evidence": [
-        {
-          "text": "二技能应该算是14.5秒 其实主要二技能有个什么问题呢 二技能如果范围内还有其他怪的话 他DA打不到那个自己锁的那俩人",
-          "t_start": 6429,
-          "t_end": 6444
-        },
-        {
-          "text": "然后还有漩涡",
-          "t_start": 6506,
-          "t_end": 6510
-        },
-        {
-          "text": "漩涡的话是炸完之后每秒一次",
-          "t_start": 6510,
-          "t_end": 6515
-        },
-        {
-          "text": "嗯14.5秒的持续的话是14套",
-          "t_start": 6515,
-          "t_end": 6521
-        }
-      ],
-      "evidence_sha256": "a45738e432db4cdd912bf21ddbe92b26918f259fd236eba1e770ea7c054552f4",
-      "reviewer_model": "lingr-free",
-      "reason": "上下文在讨论二技能总伤时先确认二技能约14.5秒，随后明确说漩涡爆炸后每秒一次、14.5秒持续共14套，因此可保留为二技能漩涡的触发段数结论。"
-    },
-    {
-      "workorder_id": "vod_wo_vod_b2_505",
-      "batch": "vod_b2",
-      "stem": "BV1BCpw6cENH_p3_42516023078",
-      "local_id": "c02",
-      "claim": "二技能持续期间包含24刀普攻与14次漩涡判定，攻击段数合计38下。",
-      "subject": "二技能",
-      "condition": "二技能持续期间",
-      "scope": "entity_mechanism",
-      "category": "伤害结算",
-      "recorded_at": "2026-10-06",
-      "source_file": "transcripts_txt/BV1BCpw6cENH_p3_42516023078.txt",
-      "evidence": [
-        {
-          "text": "二技能应该算是14.5秒 其实主要二技能有个什么问题呢 二技能如果范围内还有其他怪的话 他DA打不到那个自己锁的那俩人",
-          "t_start": 6429,
-          "t_end": 6444
-        },
-        {
-          "text": "24刀",
-          "t_start": 6460,
-          "t_end": 6489
-        },
-        {
-          "text": "普攻",
-          "t_start": 6489,
-          "t_end": 6498
-        },
-        {
-          "text": "嗯14.5秒的持续的话是14套",
-          "t_start": 6515,
-          "t_end": 6521
-        },
-        {
-          "text": "24下和14项分为38下",
-          "t_start": 6824,
-          "t_end": 6832
-        }
-      ],
-      "evidence_sha256": "904c73c3249b81a984f8d3f52477094a4afcc76ed72da0b847b9cb287d689d5d",
-      "reviewer_model": "lingr-free",
-      "reason": "上下文确认二技能约14.5秒，随后列出24刀、普攻和14套漩涡，并用“24下和14项分为38下”给出合计38下，因此该攻击段数拆分可作为二技能总伤模型参数保留。"
-    },
-    {
       "workorder_id": "vod_wo_vod_b2_505",
       "batch": "vod_b2",
       "stem": "BV1BCpw6cENH_p3_42516023078",
@@ -16945,34 +16311,6 @@
       "evidence_sha256": "52a820a91cc64e8a127e8fe9dfc24d479dd16cae9a423a0029e4b934f21cb3ae",
       "reviewer_model": "lingr-free",
       "reason": "逐字稿在04:38处明确给出轰炸的物理与元素伤害倍率，属于可复用的伤害结算结论。"
-    },
-    {
-      "workorder_id": "vod_wo_vod_b2_516",
-      "batch": "vod_b2",
-      "stem": "BV1BCpw6cENH_p4_42517005027",
-      "local_id": "c01",
-      "claim": "元素爆条每9秒触发一次，因此十次元素爆条全部集中在同一格会耗时过长，不能作为紧凑的理想总伤循环。",
-      "subject": "元素爆条",
-      "condition": "计算紧凑的理想总伤循环时",
-      "scope": "universal",
-      "category": "状态效果",
-      "recorded_at": "2026-10-06",
-      "source_file": "transcripts_txt/BV1BCpw6cENH_p4_42517005027.txt",
-      "evidence": [
-        {
-          "text": "就是我不能真的就是指一个格子 那么一直打下去对吧 我不能真的就是十次暴条",
-          "t_start": 649,
-          "t_end": 666
-        },
-        {
-          "text": "然后全都花在一个格子上 这个九秒钟爆一次条 不是9A爆一次条对吧 太慢了",
-          "t_start": 666,
-          "t_end": 679
-        }
-      ],
-      "evidence_sha256": "38a6a1f343b6f99d7b205da5df5b0b84b11d1385646fed058860b8fc80463ee0",
-      "reviewer_model": "lingr-free",
-      "reason": "上下文在讨论理想总伤假设时明确说不能把十次爆条全放在同一格，并给出九秒爆一次条、太慢的理由；可复现为元素爆条间隔对紧凑循环的限制。"
     },
     {
       "workorder_id": "vod_wo_vod_b2_518",
@@ -17846,62 +17184,6 @@
       "reason": "上下文先说明该敌人破盾会重置抬手，并强调必须重置前摇而非后摇；随后得出开技能时点不能太晚、破盾需发生在该次攻击之前的时序约束。"
     },
     {
-      "workorder_id": "vod_wo_vod_b2_552",
-      "batch": "vod_b2",
-      "stem": "BV1KtHX6nEZS_p1_42574483316",
-      "local_id": "c02",
-      "claim": "在该关卡流程中，若开技能过晚，目标敌人会因治疗与回血而回复生命；若其生命值再增加2800点，就无法被击杀。",
-      "subject": "该关卡流程中的目标敌人",
-      "condition": "开技能时点过晚，且目标敌人受到治疗/回血影响",
-      "scope": "instance",
-      "category": "帧时序",
-      "recorded_at": "2026-10-09",
-      "source_file": "transcripts_txt/BV1KtHX6nEZS_p1_42574483316.txt",
-      "evidence": [
-        {
-          "text": "还是不太行 这里有治疗 这里有回血 这里有回血 太晚开技能的话",
-          "t_start": 1862,
-          "t_end": 1869
-        },
-        {
-          "text": "血会回上",
-          "t_start": 1869,
-          "t_end": 1877
-        },
-        {
-          "text": "对太晚开技能的话 再加2800血就死不了",
-          "t_start": 1877,
-          "t_end": 1889
-        }
-      ],
-      "evidence_sha256": "73e9fbf849b5d2a0da429bca200f2c87141321620ea4cae71672eaeb487de254",
-      "reviewer_model": "lingr-free",
-      "reason": "逐字稿明确指出太晚开技能时存在治疗和回血，血量会回上，并给出“再加2800血就死不了”的结论，构成该关卡流程中开技能过晚导致无法击杀的数值/时序约束。"
-    },
-    {
-      "workorder_id": "vod_wo_vod_b2_553",
-      "batch": "vod_b2",
-      "stem": "BV1KtHX6nEZS_p1_42574483316",
-      "local_id": "c01",
-      "claim": "在该关卡中，龙沿既定路线共转向八次，且每个拐角转向两次。",
-      "subject": "该关卡中的龙",
-      "condition": "该关卡中龙沿既定路线经过拐角时",
-      "scope": "instance",
-      "category": "位移",
-      "recorded_at": "2026-10-09",
-      "source_file": "transcripts_txt/BV1KtHX6nEZS_p1_42574483316.txt",
-      "evidence": [
-        {
-          "text": "这个龙要转八次 每个拐角要转两次",
-          "t_start": 1909,
-          "t_end": 1916
-        }
-      ],
-      "evidence_sha256": "7301021ff3d0f954873a1eba29076b9580b7e5b9a6cc168150aade2c40d1a7a2",
-      "reviewer_model": "lingr-free",
-      "reason": "逐字稿在拆解该图流程时明确给出该龙的转向总次数与每个拐角的转向次数，数字清楚，可作为该关卡的路径/位移参数保留。"
-    },
-    {
       "workorder_id": "vod_wo_vod_b2_554",
       "batch": "vod_b2",
       "stem": "BV1KtHX6nEZS_p1_42574483316",
@@ -18380,39 +17662,6 @@
       "reason": "逐字稿在星熊攻击力核算段明确说出「加35%攻击力的坚韧」，可直接支撑+35%攻击力加成这一效果。"
     },
     {
-      "workorder_id": "vod_wo_vod_b2_566",
-      "batch": "vod_b2",
-      "stem": "BV1KtHX6nEZS_p1_42574483316",
-      "local_id": "c01",
-      "claim": "在该次作战记录的输出核算中，火陈的总输出为27段，由9次平A、8次套和8次火龙转构成。",
-      "subject": "火陈",
-      "condition": "该次作战记录的输出核算中",
-      "scope": "instance",
-      "category": "伤害结算",
-      "recorded_at": "2026-10-09",
-      "source_file": "transcripts_txt/BV1KtHX6nEZS_p1_42574483316.txt",
-      "evidence": [
-        {
-          "text": "火陈是27 第九次平A加上八次套 八次火龙转",
-          "t_start": 3737,
-          "t_end": 3771
-        },
-        {
-          "text": "一下两下 三下四下 五下 六下 七下 八下九下 一共九下",
-          "t_start": 3303,
-          "t_end": 3329
-        },
-        {
-          "text": "这个龙要转八次 每个拐角要转两次",
-          "t_start": 1909,
-          "t_end": 1916
-        }
-      ],
-      "evidence_sha256": "8c1730e31b2c0897a0eec986507ed0322c99fec9ad6cb7d72f0e3377c69dd2fa",
-      "reviewer_model": "lingr-free",
-      "reason": "逐字稿在伤害核算段落明确给出火陈总段数为27，并拆分为9次平A、8次套与8次火龙转；另处逐次计数确认平A为9下，并说明龙转8次。上下文属于该次作战记录的输出拆分，故按 instance 采纳。"
-    },
-    {
       "workorder_id": "vod_wo_vod_b2_568",
       "batch": "vod_b2",
       "stem": "BV1KtHX6nEZS_p1_42574483316",
@@ -18589,39 +17838,6 @@
       "reason": "逐字稿明确说明小车撤退后两帧会变数，并将其归因为四舍五入计数；该描述属于可复用的帧时序/计数机制。上游引文为跨行拼接，已按原始逐字稿拆分为两条连续行证据。"
     },
     {
-      "workorder_id": "vod_wo_vod_b2_580",
-      "batch": "vod_b2",
-      "stem": "BV1KtHX6nEZS_p1_42574483316",
-      "local_id": "c01",
-      "claim": "在保留星熊两判伤害但缺少火陈两判伤害的条件下，结城理需要攻击17下以补足伤害。",
-      "subject": "结城理的攻击次数",
-      "condition": "保留星熊两判伤害且缺少火陈两判伤害",
-      "scope": "instance",
-      "category": "伤害结算",
-      "recorded_at": "2026-10-09",
-      "source_file": "transcripts_txt/BV1KtHX6nEZS_p1_42574483316.txt",
-      "evidence": [
-        {
-          "text": "如果有星熊这两判的话 如果有星熊这两派 但是的话没有火陈这个两派",
-          "t_start": 6303,
-          "t_end": 6322
-        },
-        {
-          "text": "结城理要打17下",
-          "t_start": 6322,
-          "t_end": 6331
-        },
-        {
-          "text": "677验证通过",
-          "t_start": 6449,
-          "t_end": 6463
-        }
-      ],
-      "evidence_sha256": "5304acb9096b71b73663cf5685bca558f48b6690a94f0c9485c08e51461ce4c9",
-      "reviewer_model": "lingr-free",
-      "reason": "主播先说明星熊两判存在但火陈两判缺失，随后给出结城理需打17下；后续实机以677验证通过，支持该条件下的攻击次数需求。上游证据跨行拼接无效，已按逐字稿拆分为独立行证据。"
-    },
-    {
       "workorder_id": "vod_wo_vod_b2_581",
       "batch": "vod_b2",
       "stem": "BV1KtHX6nEZS_p1_42574483316",
@@ -18650,44 +17866,6 @@
       "reason": "讲师在逐字稿中明确将回费复杂化归因于可露希尔：任何图只要用到可露希尔，且需要其扣费，该图回费就会变得“又臭又恶心”，可支撑该定性结论。"
     },
     {
-      "workorder_id": "vod_wo_vod_b2_582",
-      "batch": "vod_b2",
-      "stem": "BV1KtHX6nEZS_p1_42574483316",
-      "local_id": "c01",
-      "claim": "在使用可露希尔且需要其扣费的回费计数中，若计数过帧（过时间），补救方法为先等待一秒，再等到两个计数都显示九。",
-      "subject": "可露希尔扣费导致的回费计数",
-      "condition": "使用可露希尔且需要其扣费时，回费计数过帧（过时间）",
-      "scope": "entity_mechanism",
-      "category": "帧时序",
-      "recorded_at": "2026-10-09",
-      "source_file": "transcripts_txt/BV1KtHX6nEZS_p1_42574483316.txt",
-      "evidence": [
-        {
-          "text": "主要是可露希尔啊 主要是可露希尔 你一旦任何图啊 任何图只要你用到可露希尔",
-          "t_start": 6468,
-          "t_end": 6480
-        },
-        {
-          "text": "且需要他的那个扣费的话 那么这个图的回费一定会变得又臭又恶心",
-          "t_start": 6480,
-          "t_end": 6489
-        },
-        {
-          "text": "过时间的话 等一秒",
-          "t_start": 6549,
-          "t_end": 6555
-        },
-        {
-          "text": "我只要再等这两个都是九就可以了",
-          "t_start": 6569,
-          "t_end": 6579
-        }
-      ],
-      "evidence_sha256": "cece635ece047a6eceddad1aea6ce42a48e74d7c23e537387f677dfe7ff6cff3",
-      "reviewer_model": "lingr-free",
-      "reason": "上下文先说明可露希尔扣费会使回费计时变得复杂；随后主播以“过时间了”为例，给出过帧后的补救操作：等一秒，再等到两个计数都显示九。该句为教学性结论，不是猜测。"
-    },
-    {
       "workorder_id": "vod_wo_vod_b2_583",
       "batch": "vod_b2",
       "stem": "BV1KtHX6nEZS_p1_42574483316",
@@ -18709,34 +17887,6 @@
       "evidence_sha256": "0d1115d542e5e876208b275c99cfd8b80aa930d5c91da6de8c4526fd758421bf",
       "reviewer_model": "lingr-free",
       "reason": "主播在讲解漏过时间后的读数处理时，明确给出计数读数的取舍规则：关注第一个数字的整数部分与三个数字各自的小数部分。该句是教学性结论，不是猜测或反问，且有逐字稿直接支撑。"
-    },
-    {
-      "workorder_id": "vod_wo_vod_b2_586",
-      "batch": "vod_b2",
-      "stem": "BV1KtHX6nEZS_p1_42574483316",
-      "local_id": "c01",
-      "claim": "秒表上下移动0.5格对应12帧。",
-      "subject": "秒表",
-      "condition": "秒表上下移动0.5格",
-      "scope": "entity_mechanism",
-      "category": "帧时序",
-      "recorded_at": "2026-10-09",
-      "source_file": "transcripts_txt/BV1KtHX6nEZS_p1_42574483316.txt",
-      "evidence": [
-        {
-          "text": "这一帧之后六帧也就是344",
-          "t_start": 6811,
-          "t_end": 6815
-        },
-        {
-          "text": "哦不对 我白痴了 我白痴了 上下0.50.5格 这边的话应该是12帧",
-          "t_start": 6833,
-          "t_end": 6842
-        }
-      ],
-      "evidence_sha256": "3b0ba06ee0759f7c977644a8ba266f70774adba104960947529c3b29d8a190dc",
-      "reviewer_model": "lingr-free",
-      "reason": "主播先按6帧计数，随后当场明确自我勘误，给出“上下0.50.5格……应该是12帧”的闭合修正，符合勘误类可保留结论。"
     },
     {
       "workorder_id": "vod_wo_vod_b2_593",
@@ -18849,67 +17999,6 @@
       "evidence_sha256": "d9ef0407207967a39971d3226c24e0c9dde59fbe440a3972577330febcafa096",
       "reviewer_model": "lingr-free",
       "reason": "上下文在讨论17刀组成时给出星熊为7+2，随后又确认“这个熊就是要7+2的”，属于该轴的具体刀数组成结论。"
-    },
-    {
-      "workorder_id": "vod_wo_vod_b2_602",
-      "batch": "vod_b2",
-      "stem": "BV1KtHX6nEZS_p3_42575594392",
-      "local_id": "c01",
-      "claim": "龙节数为七、结城理刀数为15的15刀轴组成不成立；该刀数轴中星熊的刀数应为7+2。",
-      "subject": "15刀轴组成与星熊刀数",
-      "condition": "在讨论龙节数为七、结城理刀数为15的15刀轴组成时",
-      "scope": "instance",
-      "category": "刀数轴/勘误",
-      "recorded_at": "2026-10-09",
-      "source_file": "transcripts_txt/BV1KtHX6nEZS_p3_42575594392.txt",
-      "evidence": [
-        {
-          "text": "龙变成七结城理变成15",
-          "t_start": 798,
-          "t_end": 806
-        },
-        {
-          "text": "对不能这样啊 刚才搞错了 刚才搞错了",
-          "t_start": 829,
-          "t_end": 840
-        },
-        {
-          "text": "这个熊就是要7+2的",
-          "t_start": 851,
-          "t_end": 858
-        }
-      ],
-      "evidence_sha256": "84a74bc9778c92028e1b5dc4ae1a59d2089f87450a6c160c9327bc2acbcc5a5a",
-      "reviewer_model": "lingr-free",
-      "reason": "逐字稿先出现“龙变成七结城理变成15”，随后主播明确说“不能这样啊 刚才搞错了”，并纠正为“这个熊就是要7+2的”，构成对先前15刀轴组成的勘误。"
-    },
-    {
-      "workorder_id": "vod_wo_vod_b2_603",
-      "batch": "vod_b2",
-      "stem": "BV1KtHX6nEZS_p3_42575594392",
-      "local_id": "c02",
-      "claim": "在主播讨论的特定伤害轴中，星熊若要额外多打EA，需要火陈的龙撞击一次。",
-      "subject": "星熊",
-      "condition": "在主播讨论的特定伤害轴中；火陈的龙撞击一次",
-      "scope": "instance",
-      "category": "伤害结算/刀数",
-      "recorded_at": "2026-10-09",
-      "source_file": "transcripts_txt/BV1KtHX6nEZS_p3_42575594392.txt",
-      "evidence": [
-        {
-          "text": "火陈的龙两判是这个伤害 然后的话星熊",
-          "t_start": 682,
-          "t_end": 697
-        },
-        {
-          "text": "英雄多打ea的话也需要龙撞一下",
-          "t_start": 697,
-          "t_end": 702
-        }
-      ],
-      "evidence_sha256": "3e4e47cd43527f1d72c1a81e99178130717e622c45368e5f6b025661baa2c871",
-      "reviewer_model": "lingr-free",
-      "reason": "逐字稿先提到火陈的龙两判与星熊，随后说星熊多打EA也需要龙撞一下；结合上下文可将ASR「英雄」校正为「星熊」，抽取为特定伤害轴中星熊额外EA对火陈龙一判的依赖关系。"
     },
     {
       "workorder_id": "vod_wo_vod_b2_604",
@@ -19180,39 +18269,6 @@
       "reason": "上下文先讨论红门属于可通行地块、火陈的龙有自身碰撞判定等例子，随后主播给出总括性结论：单位判定由地块通用属性与单位自身判定叠加构成；该结论不依赖画面即可理解，具备机制架构价值。"
     },
     {
-      "workorder_id": "vod_wo_vod_b2_611",
-      "batch": "vod_b2",
-      "stem": "BV1gpp46QEwe_p1_42591784930",
-      "local_id": "c01",
-      "claim": "活动第四关右下角的楼梯和土堆仅为装饰布景/贴图，所在地块格没有特殊效果，不是真实楼梯，与普通地块没有区别。",
-      "subject": "活动第四关右下角的楼梯与土堆所在地块",
-      "condition": "在活动第四关中，针对右下角楼梯与土堆所在格",
-      "scope": "instance",
-      "category": "地块/地图",
-      "recorded_at": "2026-10-09",
-      "source_file": "transcripts_txt/BV1gpp46QEwe_p1_42591784930.txt",
-      "evidence": [
-        {
-          "text": "然后这个的话这个楼梯只是装饰布景效果啊 他和这个这些土堆堆 像这种地块没有什么区别",
-          "t_start": 1000,
-          "t_end": 1013
-        },
-        {
-          "text": "它并不是真实存在的楼梯 它和这些地方是一样的",
-          "t_start": 1013,
-          "t_end": 1020
-        },
-        {
-          "text": "没有实际意义",
-          "t_start": 1020,
-          "t_end": 1025
-        }
-      ],
-      "evidence_sha256": "33e375c95ceba7d2045b8b06715486d9cda121939adbc58945149a676898962d",
-      "reviewer_model": "lingr-free",
-      "reason": "主播在确认查看活动第四关右下角楼梯后，明确说明楼梯与土堆只是装饰布景，和普通地块无区别，不是真实楼梯且没有实际意义；该讨论属于对地块机制的勘误澄清，可由逐字稿直接支撑。"
-    },
-    {
       "workorder_id": "vod_wo_vod_b2_613",
       "batch": "vod_b2",
       "stem": "BV1gpp46QEwe_p1_42591784930",
@@ -19458,29 +18514,6 @@
       "evidence_sha256": "b607a392477f48b70bbdb26378acdbb9760563024ae1d7d834daf1d68edc864a",
       "reviewer_model": "lingr-free",
       "reason": "上下文先明确否定“锁面板”解释，说明该干员技能期间没有攻击力加成；随后在实机演示中指出小兵处于无敌状态，且首次索敌时无敌尚未结束，导致第一A锁不到。可归纳为该类未命中现象与是否锁定面板无关。"
-    },
-    {
-      "workorder_id": "vod_wo_vod_b2_625",
-      "batch": "vod_b2",
-      "stem": "BV1gpp46QEwe_p1_42591784930",
-      "local_id": "c02",
-      "claim": "当第一A的首次索敌判定在目标小兵的无敌状态结束前发动时，该次索敌无法锁定该小兵。",
-      "subject": "第一A的首次索敌判定",
-      "condition": "目标小兵的无敌状态在首次索敌发动时尚未结束",
-      "scope": "entity_mechanism",
-      "category": "索敌",
-      "recorded_at": "2026-10-09",
-      "source_file": "transcripts_txt/BV1gpp46QEwe_p1_42591784930.txt",
-      "evidence": [
-        {
-          "text": "在他第一次索敌的时候 他这个无敌还没结束 导致他索敌他的时候还锁不到他",
-          "t_start": 3044,
-          "t_end": 3060
-        }
-      ],
-      "evidence_sha256": "436153fe955709ef8e7ccdba8c0cb3b457737baa5aa82cca8c8fc6ada7e73a8e",
-      "reviewer_model": "lingr-free",
-      "reason": "逐字稿明确说明第一次索敌时目标无敌尚未结束，导致锁不到该小兵；改写为自包含的索敌时机陈述后符合四闸门。"
     },
     {
       "workorder_id": "vod_wo_vod_b2_627",
@@ -19736,34 +18769,6 @@
       "evidence_sha256": "a3237948be6c668916d5b4327e5994cd13b637fb5d88bf0fd3521ed08d4480c5",
       "reviewer_model": "lingr-free",
       "reason": "逐字稿明确说明湖光十字路口为40秒和50秒一波，且M3最主要输出需要对齐该波次；属于特定地图与位置的实例级结论。"
-    },
-    {
-      "workorder_id": "vod_wo_vod_b2_642",
-      "batch": "vod_b2",
-      "stem": "BV1gpp46QEwe_p1_42591784930",
-      "local_id": "c02",
-      "claim": "M3用于湖光地图十字路口主要输出的回转速度快于该处40秒和50秒的波次节奏。",
-      "subject": "M3用于湖光地图十字路口主要输出的回转",
-      "condition": "湖光地图十字路口波次为40秒和50秒",
-      "scope": "instance",
-      "category": "关卡适配/回转时序",
-      "recorded_at": "2026-10-09",
-      "source_file": "transcripts_txt/BV1gpp46QEwe_p1_42591784930.txt",
-      "evidence": [
-        {
-          "text": "那个M3最主要的输出能力 就是打那个就是打那个十字路口要对齐波次 那个十字路口是40秒和50秒的一波",
-          "t_start": 5579,
-          "t_end": 5591
-        },
-        {
-          "text": "他这个回转的话要比那个更快",
-          "t_start": 5591,
-          "t_end": 5602
-        }
-      ],
-      "evidence_sha256": "6dbc0f4e2a2b6f2e87ff10aee281b4073373682c4175be745d0e32b05e1ed071",
-      "reviewer_model": "lingr-free",
-      "reason": "紧接上一句以“他这个回转”指代M3，且“比那个更快”承接十字路口波次；可推出M3主要输出回转快于该波次节奏。"
     },
     {
       "workorder_id": "vod_wo_vod_b2_643",
@@ -20579,39 +19584,6 @@
       "evidence_sha256": "e081721dfada86ecda70a51472bbe15f2462145d170d180359202ba30c0fa5bd",
       "reviewer_model": "lingr-free",
       "reason": "逐字稿明确将光环描述为范围内持续检测是否上Buff的通用机制，随后又补充这类机制很普遍，足以支撑该自包含机制陈述。"
-    },
-    {
-      "workorder_id": "vod_wo_vod_b2_681",
-      "batch": "vod_b2",
-      "stem": "BV1gpp46QEwe_p2_42593356669",
-      "local_id": "c01",
-      "claim": "在漩涡已生成后，若干员于第13帧部署并在第16帧撤离，该干员仅存续3帧便死亡。",
-      "subject": "受漩涡光环检测的干员",
-      "condition": "漩涡已生成后，干员于第13帧部署、第16帧撤离",
-      "scope": "instance",
-      "category": "帧时序",
-      "recorded_at": "2026-10-09",
-      "source_file": "transcripts_txt/BV1gpp46QEwe_p2_42593356669.txt",
-      "evidence": [
-        {
-          "text": "我这里的话保险起见 13帧下我不卡 太极限啊 13帧下 然后16帧撤",
-          "t_start": 1791,
-          "t_end": 1807
-        },
-        {
-          "text": "我保证不会出问题 我这里只下和撤了三帧",
-          "t_start": 1807,
-          "t_end": 1816
-        },
-        {
-          "text": "看见没有 他就死了 但是反过来说的话 如果我在15帧下 如果我在16帧下 然后再往后七帧撤",
-          "t_start": 1816,
-          "t_end": 1836
-        }
-      ],
-      "evidence_sha256": "924864c5f7c39518ad2f93969893f8fa6a8a4965037259ee50c8eda1bb24fb76",
-      "reviewer_model": "lingr-free",
-      "reason": "逐字稿明确给出13帧部署、16帧撤离以及“只下和撤了三帧”的实测描述，并紧接着确认其死亡；结合上下文是在讨论漩涡生成后的光环判定时机，可作为该实例的帧时序实测结果。"
     },
     {
       "workorder_id": "vod_wo_vod_b2_684",
@@ -21716,34 +20688,6 @@
       "reason": "上下文在讨论一般敌人被推入墙缝时，主播以 Unity 连续型物理检测解释其会被挡在墙外；该句直接给出连续型检测可停在墙外的机制结论。"
     },
     {
-      "workorder_id": "vod_wo_vod_b2_729",
-      "batch": "vod_b2",
-      "stem": "BV18BpG6LEtq_p1_42630319587",
-      "local_id": "c02",
-      "claim": "第九章中有三种被设置为离散型碰撞检测的敌人，其位移仅在落点检测碰撞，因此当位移落点落在墙体内部时，这些敌人可以进入墙体。",
-      "subject": "第九章中被设置为离散型碰撞检测的三种敌人",
-      "condition": "敌人属于第九章中被设置为离散型碰撞检测的三种敌人之一，且位移落点位于墙体内部",
-      "scope": "entity_mechanism",
-      "category": "位移",
-      "recorded_at": "2026-10-10",
-      "source_file": "transcripts_txt/BV18BpG6LEtq_p1_42630319587.txt",
-      "evidence": [
-        {
-          "text": "但是九章这些怪的话 他有个问题 他设置的是离散型 只在落点检测那个碰撞 就导致他如果落点在墙里边的话 是可以进去的",
-          "t_start": 5175,
-          "t_end": 5189
-        },
-        {
-          "text": "为什么你九章有三种怪设置离散型 一个是这个怪 然后另一个是那个 另两个是那啥",
-          "t_start": 5236,
-          "t_end": 5251
-        }
-      ],
-      "evidence_sha256": "e5135c855e18ee1a61a98618a03474301d3a31dd052a690d203081ded0b1f45a",
-      "reviewer_model": "lingr-free",
-      "reason": "第一条引文直接说明第九章这些怪采用离散型碰撞检测、只在落点检测碰撞，落点在墙内时可以进入墙体；第二条引文补充第九章存在三种此类怪。该结论属于特定敌人固有机制分支。"
-    },
-    {
       "workorder_id": "vod_wo_vod_b2_730",
       "batch": "vod_b2",
       "stem": "BV18BpG6LEtq_p1_42630319587",
@@ -22421,34 +21365,6 @@
       "reason": "前文说明横推敌人会被卡住，后文明确归因为碰撞箱不对称、下侧边缘特别长；可作为墙缝处横推受阻的碰撞箱机制结论。"
     },
     {
-      "workorder_id": "vod_wo_vod_b2_752",
-      "batch": "vod_b2",
-      "stem": "BV18BpG6LEtq_p2_42631758665",
-      "local_id": "c02",
-      "claim": "当前讨论的关卡墙体由 1×1 墙块逐块拼接而成，接缝处会形成多个缝，而不是一整块连续墙体。",
-      "subject": "当前讨论的关卡墙体",
-      "condition": "当前讨论关卡中的墙体采用离散墙块生成",
-      "scope": "instance",
-      "category": "地形碰撞",
-      "recorded_at": "2026-10-10",
-      "source_file": "transcripts_txt/BV18BpG6LEtq_p2_42631758665.txt",
-      "evidence": [
-        {
-          "text": "这个连成这么一整块 别在这个1×1了就行 这到底干啥呢 是非得一块一块的",
-          "t_start": 2378,
-          "t_end": 2392
-        },
-        {
-          "text": "中间多个缝",
-          "t_start": 2392,
-          "t_end": 2396
-        }
-      ],
-      "evidence_sha256": "a124d0ed3a1db17bef17e95a11dad1f2aea67dfa4150ab6d2f736fe8a4960034",
-      "reviewer_model": "lingr-free",
-      "reason": "逐字稿中主播把卡墙问题归因于墙体被做成 1×1 一块一块，并提到中间多个缝；可作为当前讨论地形构造的实例事实。"
-    },
-    {
       "workorder_id": "vod_wo_vod_b2_753",
       "batch": "vod_b2",
       "stem": "BV18BpG6LEtq_p2_42631758665",
@@ -22700,5 +21616,47 @@
       "reviewer_model": "lingr-free",
       "reason": "上下文先说明费用尺在可露希尔更新后、打合约条件下崩坏，随后明确将本质原因指向减回费图前几帧读不了；引文逐字对应，可采纳为特定版本/条件下的异常机制结论。"
     }
-  ]
+  ],
+  "approved_by": "lingr25",
+  "approved_at": "2026-10-23",
+  "post_review_rejections": {
+    "deixis_screen": 32,
+    "user_spotcheck": 1,
+    "ids": [
+      "vod_wo_vod_b2_069/c02",
+      "vod_wo_vod_b2_108/c02",
+      "vod_wo_vod_b2_131/c01",
+      "vod_wo_vod_b2_131/c02",
+      "vod_wo_vod_b2_133/c01",
+      "vod_wo_vod_b2_135/c01",
+      "vod_wo_vod_b2_204/c02",
+      "vod_wo_vod_b2_274/c02",
+      "vod_wo_vod_b2_343/c02",
+      "vod_wo_vod_b2_419/c01",
+      "vod_wo_vod_b2_457/c02",
+      "vod_wo_vod_b2_458/c02",
+      "vod_wo_vod_b2_462/c01",
+      "vod_wo_vod_b2_463/c01",
+      "vod_wo_vod_b2_489/c01",
+      "vod_wo_vod_b2_504/c01",
+      "vod_wo_vod_b2_505/c01",
+      "vod_wo_vod_b2_505/c02",
+      "vod_wo_vod_b2_516/c01",
+      "vod_wo_vod_b2_552/c02",
+      "vod_wo_vod_b2_553/c01",
+      "vod_wo_vod_b2_566/c01",
+      "vod_wo_vod_b2_580/c01",
+      "vod_wo_vod_b2_582/c01",
+      "vod_wo_vod_b2_586/c01",
+      "vod_wo_vod_b2_602/c01",
+      "vod_wo_vod_b2_603/c02",
+      "vod_wo_vod_b2_611/c01",
+      "vod_wo_vod_b2_625/c02",
+      "vod_wo_vod_b2_642/c02",
+      "vod_wo_vod_b2_681/c01",
+      "vod_wo_vod_b2_729/c02",
+      "vod_wo_vod_b2_752/c02"
+    ],
+    "evidence": "runs/20261022_spotcheck/"
+  }
 }

@@ -3,21 +3,24 @@
   "schema": "vod-expansion-audit-1.0",
   "workorders_total": 134,
   "decisions_count": 214,
-  "keep_count": 181,
+  "keep_count": 169,
   "errors": [],
   "decisions": [
     {
       "workorder": "vod_wo_vod_b1_001",
       "local_id": "c01",
       "stem": "BV1cmaa6VEPR_p1_42251649424",
-      "verdict": "keep",
+      "verdict": "reject",
       "claim": "在空费为零帧、一格为一帧的帧定标下，同一批在地图定义中为零帧出生的敌方单位，其影子分别在0帧、2帧、3帧、4帧出现。",
       "subject": "同一批在地图定义中为零帧出生的敌方单位的影子",
       "condition": "空费为零帧、一格为一帧的帧定标；同一批敌方单位在地图定义中为零帧出生",
       "scope": "instance",
       "category": "帧时序",
       "reviewer_model": "lingr-free",
-      "reason": "主播先给出空费为0、一格为1的帧定标，随后在同一实机演示中依次指出0帧、2帧、3帧、4帧出现的影子，并明确这些怪在map定义里都是零出生；逐字稿直接支撑该批次影子逐帧出现的观察。"
+      "reason": "[deixis_screen] 顶上/底下影子的0/2/3/4帧只能看画面对应（原 keep 理由：主播先给出空费为0、一格为1的帧定标，随后在同一实机演示中依次指出0帧、2帧、3帧、4帧出现的影子，并明确这些怪在map定义里都是零出生；逐字稿直接支撑该批次影子逐帧出现的观察。）",
+      "reject_reason_code": "deixis_screen",
+      "rejected_by": "lingr25",
+      "rejected_at": "2026-10-23"
     },
     {
       "workorder": "vod_wo_vod_b1_002",
@@ -257,14 +260,17 @@
       "workorder": "vod_wo_vod_b1_011",
       "local_id": "c02",
       "stem": "BV1cmaa6VEPR_p1_42251649424",
-      "verdict": "keep",
+      "verdict": "reject",
       "claim": "在路线预演拼接配置中，第二条路线预演（对应出怪前 2.7 秒设置的路线）在最后出生的飞贼出生后 10 帧触发。",
       "subject": "第二条路线预演",
       "condition": "路线预演配置为出怪前 2.7 秒；并与第一条路线预演针对同一只最后出生的飞贼出生时间计时",
       "scope": "instance",
       "category": "帧时序",
       "reviewer_model": "lingr-free",
-      "reason": "主播先说明两条路线分别对应出怪前 3 秒和 2.7 秒，随后明确第二个路线预演在出生后十帧进行；结合前一条候选可确定该出生时间指同一只最后出生的飞贼。"
+      "reason": "[deixis_screen] “这个出生之后十帧”所指单位靠画面（原 keep 理由：主播先说明两条路线分别对应出怪前 3 秒和 2.7 秒，随后明确第二个路线预演在出生后十帧进行；结合前一条候选可确定该出生时间指同一只最后出生的飞贼。）",
+      "reject_reason_code": "deixis_screen",
+      "rejected_by": "lingr25",
+      "rejected_at": "2026-10-23"
     },
     {
       "workorder": "vod_wo_vod_b1_012",
@@ -341,14 +347,17 @@
       "workorder": "vod_wo_vod_b1_016",
       "local_id": "c01",
       "stem": "BV1cmaa6VEPR_p1_42251649424",
-      "verdict": "keep",
+      "verdict": "reject",
       "claim": "在本例录播演示关卡的第二兵团起始波次中，RODEX 编号20 对应的鱼怪先出生，其牌子在下一帧出生，二者出生间隔为 1 帧。",
       "subject": "RODEX 编号20 对应的鱼怪与其牌子",
       "condition": "本例第二兵团起始波次中",
       "scope": "instance",
       "category": "帧时序",
       "reviewer_model": "lingr-free",
-      "reason": "上下文先确认该牌子对应 RODEX 编号20 及底下鱼怪，随后明确出现怪出生、下一帧牌子出生的顺序，因此该实例的 1 帧出生间隔成立。"
+      "reason": "[deixis_screen] “本例录播演示关卡”未命名，鱼/牌子靠“这里这个”指画面（原 keep 理由：上下文先确认该牌子对应 RODEX 编号20 及底下鱼怪，随后明确出现怪出生、下一帧牌子出生的顺序，因此该实例的 1 帧出生间隔成立。）",
+      "reject_reason_code": "deixis_screen",
+      "rejected_by": "lingr25",
+      "rejected_at": "2026-10-23"
     },
     {
       "workorder": "vod_wo_vod_b1_016",
@@ -380,27 +389,33 @@
       "workorder": "vod_wo_vod_b1_018",
       "local_id": "c01",
       "stem": "BV1cmaa6VEPR_p1_42251649424",
-      "verdict": "keep",
+      "verdict": "reject",
       "claim": "在同一波次内，因路线与牌子造成额外延迟时，相比另一组，多出两条路线的一组会晚四帧；先前「只多三帧」的说法经核对不成立，实际不止三帧。",
       "subject": "同一波次内因路线与牌子产生额外延迟的两组怪出生时序",
       "condition": "同一波次内；两组怪因路线和牌子产生额外延迟，其中一组多出两条路线",
       "scope": "universal",
       "category": "帧时序",
       "reviewer_model": "lingr-free",
-      "reason": "主播先称两组前面只多三帧，随即表示「这不止三帧」，随后明确说「哦不对不对」「搞错了」，并把正确对象说为「多两条路线」后「多四帧」，构成对先前只多三帧说法的当场勘误，并给出两条额外路线对应四帧差的结论。"
+      "reason": "[deixis_screen] “这个才是80/这俩”单例画面读数（原 keep 理由：主播先称两组前面只多三帧，随即表示「这不止三帧」，随后明确说「哦不对不对」「搞错了」，并把正确对象说为「多两条路线」后「多四帧」，构成对先前只多三帧说法的当场勘误，并给出两条额外路线对应四帧差的结论。）",
+      "reject_reason_code": "deixis_screen",
+      "rejected_by": "lingr25",
+      "rejected_at": "2026-10-23"
     },
     {
       "workorder": "vod_wo_vod_b1_019",
       "local_id": "c01",
       "stem": "BV1cmaa6VEPR_p1_42251649424",
-      "verdict": "keep",
+      "verdict": "reject",
       "claim": "牌子比怪早出生时，牌子会站在怪的前面而不是后面。",
       "subject": "牌子",
       "condition": "牌子比对应的怪早出生",
       "scope": "entity_mechanism",
       "category": "帧时序",
       "reviewer_model": "lingr-free",
-      "reason": "1671s 行中主播以“牌子比怪早出生”为原因，明确推出牌子会站在前面而非后面；1622s 行补充牌子一般早于对应怪，说明该结论不是纯个例口误，具备可复用机制价值。"
+      "reason": "[deixis_screen] “在这前面站”方向依赖画面（原 keep 理由：1671s 行中主播以“牌子比怪早出生”为原因，明确推出牌子会站在前面而非后面；1622s 行补充牌子一般早于对应怪，说明该结论不是纯个例口误，具备可复用机制价值。）",
+      "reject_reason_code": "deixis_screen",
+      "rejected_by": "lingr25",
+      "rejected_at": "2026-10-23"
     },
     {
       "workorder": "vod_wo_vod_b1_020",
@@ -602,14 +617,17 @@
       "workorder": "vod_wo_vod_b1_029",
       "local_id": "c02",
       "stem": "BV1cmaa6VEPR_p1_42251649424",
-      "verdict": "keep",
+      "verdict": "reject",
       "claim": "维亚关卡中，无碎角且编号顺序对应时间为0123时，从上到下编号依次为3、2、1的怪出生帧依次为1、0、3帧。",
       "subject": "维亚关卡中从上到下编号依次为3、2、1的怪",
       "condition": "无碎角且编号顺序对应时间为0123",
       "scope": "instance",
       "category": "帧时序",
       "reviewer_model": "lingr-free",
-      "reason": "主播在无碎角示例中明确给出：若编号顺序对应时间为0123，则编号321分别对应出生帧103。"
+      "reason": "[deixis_screen] “从上到下321”对应位置依赖画面（原 keep 理由：主播在无碎角示例中明确给出：若编号顺序对应时间为0123，则编号321分别对应出生帧103。）",
+      "reject_reason_code": "deixis_screen",
+      "rejected_by": "lingr25",
+      "rejected_at": "2026-10-23"
     },
     {
       "workorder": "vod_wo_vod_b1_030",
@@ -641,14 +659,17 @@
       "workorder": "vod_wo_vod_b1_032",
       "local_id": "c02",
       "stem": "BV1cmaa6VEPR_p1_42251649424",
-      "verdict": "keep",
+      "verdict": "reject",
       "claim": "在出怪排序中，路线预演（路线演示）与牌子一样会占用出怪时间并参与排序，因此可视为出怪；在245的望财实例中，路线预演时间为242而对应怪时间为245，五帧间隔发生在两处路线预演之间。",
       "subject": "路线预演（路线演示）与牌子",
       "condition": "关卡出怪排序包含路线预演或牌子时",
       "scope": "universal",
       "category": "帧时序",
       "reviewer_model": "lingr-free",
-      "reason": "逐字稿明确说明牌子和路线演示会占用时间、参与排序，并在245的望财中占掉两个怪之间多出的时间，因此可理解为出怪；该结论属于可复用排序机制，而非未验证猜测。"
+      "reason": "[deixis_screen] “这俩/他俩”的242/245读数依赖画面（原 keep 理由：逐字稿明确说明牌子和路线演示会占用时间、参与排序，并在245的望财中占掉两个怪之间多出的时间，因此可理解为出怪；该结论属于可复用排序机制，而非未验证猜测。）",
+      "reject_reason_code": "deixis_screen",
+      "rejected_by": "lingr25",
+      "rejected_at": "2026-10-23"
     },
     {
       "workorder": "vod_wo_vod_b1_032",
@@ -813,14 +834,17 @@
       "workorder": "vod_wo_vod_b1_042",
       "local_id": "c01",
       "stem": "BV1cmaa6VEPR_p1_42251649424",
-      "verdict": "keep",
+      "verdict": "reject",
       "claim": "演示中的这个两波次关卡采用如下出怪层级结构：共2个波次，每个波次只有1个兵团，每个兵团包含39个小队。",
       "subject": "演示中的两波次关卡的出怪层级结构",
       "condition": "仅针对逐字稿中展示的该特定关卡配置",
       "scope": "instance",
       "category": "关卡配置/出怪结构",
       "reviewer_model": "lingr-free",
-      "reason": "逐字稿在同一行明确给出该演示关卡的波次、兵团和小队数量，属于可核对的关卡配置观察；将其限定为该实例可避免推广到所有两波次关卡。"
+      "reason": "[deixis_screen] “演示中的这个两波次关卡”未命名（原 keep 理由：逐字稿在同一行明确给出该演示关卡的波次、兵团和小队数量，属于可核对的关卡配置观察；将其限定为该实例可避免推广到所有两波次关卡。）",
+      "reject_reason_code": "deixis_screen",
+      "rejected_by": "lingr25",
+      "rejected_at": "2026-10-23"
     },
     {
       "workorder": "vod_wo_vod_b1_043",
@@ -985,14 +1009,17 @@
       "workorder": "vod_wo_vod_b1_050",
       "local_id": "c02",
       "stem": "BV1cmaa6VEPR_p1_42251649424",
-      "verdict": "keep",
+      "verdict": "reject",
       "claim": "近战单位不会有索敌帧。",
       "subject": "近战单位",
       "condition": "universal",
       "scope": "universal",
       "category": "帧时序/索敌",
       "reviewer_model": "lingr-free",
-      "reason": "主播明确说明当前近战单位不会有索敌帧；该结论用于区分近战与远程单位的索敌帧行为。"
+      "reason": "[user_spotcheck] 抽查 vod_b1 #30：“近战单位不会有索敌帧”过度泛化（原 keep 理由：主播明确说明当前近战单位不会有索敌帧；该结论用于区分近战与远程单位的索敌帧行为。）",
+      "reject_reason_code": "user_spotcheck",
+      "rejected_by": "lingr25",
+      "rejected_at": "2026-10-23"
     },
     {
       "workorder": "vod_wo_vod_b1_050",
@@ -2233,14 +2260,17 @@
       "workorder": "vod_wo_vod_b1_109",
       "local_id": "c01",
       "stem": "BV1cmaa6VEPR_p1_42251649424",
-      "verdict": "keep",
+      "verdict": "reject",
       "claim": "红门右侧这一列地块是正经地块，而非地图外/废除地图；其地块类型为dd。",
       "subject": "红门右侧一列地块",
       "condition": "在讨论的特定关卡地图中，该列地块位于红门右侧",
       "scope": "instance",
       "category": "地块属性",
       "reviewer_model": "lingr-free",
-      "reason": "逐字稿中主播明确纠正了“右边这一列不是地块”的误解，并给出结论：红门右边这一列是正经地块，不是废除地图，且地块类型为dd。该结论具有机制辨析价值，且不依赖未验证猜测。"
+      "reason": "[deixis_screen] 未指明具体关卡名称，离开画面无法得知具体是哪张地图中哪个红门右侧的地块。（原 keep 理由：逐字稿中主播明确纠正了“右边这一列不是地块”的误解，并给出结论：红门右边这一列是正经地块，不是废除地图，且地块类型为dd。该结论具有机制辨析价值，且不依赖未验证猜测。）",
+      "reject_reason_code": "deixis_screen",
+      "rejected_by": "lingr25",
+      "rejected_at": "2026-10-23"
     },
     {
       "workorder": "vod_wo_vod_b1_109",
@@ -2259,14 +2289,17 @@
       "workorder": "vod_wo_vod_b1_110",
       "local_id": "c01",
       "stem": "BV1cmaa6VEPR_p1_42251649424",
-      "verdict": "keep",
+      "verdict": "reject",
       "claim": "红门右侧一列属于正经的dd地块，角色在该地块上左转并非处于地图外；该左转是技能结束所致，而不是地图外位移。",
       "subject": "红门右侧一列地块",
       "condition": "角色位于该地块且技能结束时",
       "scope": "instance",
       "category": "地图地形/位移",
       "reviewer_model": "lingr-free",
-      "reason": "上下文先明确红门右侧一列是正经dd地块、非废除地图，随后用同一现象说明角色是在该地块左转、只是技能结束，并非处于地图外。该结论是对地图外误判的纠正，具备机制知识价值。"
+      "reason": "[deixis_screen] “红门右侧一列”未说明关卡，“这里左转”靠画面（原 keep 理由：上下文先明确红门右侧一列是正经dd地块、非废除地图，随后用同一现象说明角色是在该地块左转、只是技能结束，并非处于地图外。该结论是对地图外误判的纠正，具备机制知识价值。）",
+      "reject_reason_code": "deixis_screen",
+      "rejected_by": "lingr25",
+      "rejected_at": "2026-10-23"
     },
     {
       "workorder": "vod_wo_vod_b1_111",
@@ -2567,14 +2600,17 @@
       "workorder": "vod_wo_vod_b1_131",
       "local_id": "c01",
       "stem": "BV1cmaa6VEPR_p2_42252239801",
-      "verdict": "keep",
+      "verdict": "reject",
       "claim": "海面/水地块的地块属性是低地，即这些海面区域整体被判定为低地。",
       "subject": "海面/水地块",
       "condition": "universal",
       "scope": "universal",
       "category": "地块判定",
       "reviewer_model": "lingr-free",
-      "reason": "主播在讨论地块判定时先提出海面/水地块是高台还是低地的问题，随后明确说这些水的地方是“滴滴”（按上下文与章节标题应为“低地”），并以“所以这些海都是滴滴”收束为定论；其解释鹰角会参照美术效果填写对应地块属性，足以支撑海面/水地块被判定为低地的机制结论。"
+      "reason": "[deixis_screen] 引文中的“这些水/这些海”特指当前直播关卡画面中的特定区域，离开画面无法明确具体关卡和位置。（原 keep 理由：主播在讨论地块判定时先提出海面/水地块是高台还是低地的问题，随后明确说这些水的地方是“滴滴”（按上下文与章节标题应为“低地”），并以“所以这些海都是滴滴”收束为定论；其解释鹰角会参照美术效果填写对应地块属性，足以支撑海面/水地块被判定为低地的机制结论。）",
+      "reject_reason_code": "deixis_screen",
+      "rejected_by": "lingr25",
+      "rejected_at": "2026-10-23"
     },
     {
       "workorder": "vod_wo_vod_b1_132",
