@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_032",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T10:12:59+0900",
+  "source_sha256": "67d1cecdcbda120e6a1058f6d494f936ea8fff414f72daed5df87ade13a91940",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "商店中锁定的藏品虽然显示锁在商店内，但仍可以在其他获取渠道、甚至其他商店中获取。",
+      "subject": "商店中处于锁定状态的藏品",
+      "condition": "藏品为商店锁藏品",
+      "scope": "universal",
+      "category": "商店/石托邦交互",
+      "evidence": [
+        {
+          "text": "商店的藏品虽然锁在商店当中 但是依旧可以在其他渠道 甚至其他商店获取",
+          "t_start": 5577,
+          "t_end": 5588
+        }
+      ],
+      "reason": "逐字稿明确给出结论：商店锁藏品被锁定在商店界面内，仍可通过其他渠道乃至其他商店获取；该陈述不依赖画面指涉，具备可复用机制价值。",
+      "limitations": [
+        "未说明是否所有获取渠道均遵循同一规则，也未给出跨商店重复获取的概率或上限。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "先进入商店再清除石托邦，商店内的栏位依旧会减少三个，且刷新商店无法恢复栏位。",
+      "subject": "先进入商店后清除石托邦时的商店栏位",
+      "condition": "先进入商店，再清除石托邦",
+      "scope": "entity_mechanism",
+      "category": "商店/石托邦交互",
+      "evidence": [
+        {
+          "text": "我们先进入商店 再清除石头帮 商店当中的栏位依旧会减三",
+          "t_start": 5588,
+          "t_end": 5598
+        },
+        {
+          "text": "即使刷新也没用 所以别忘了看清楚石托邦再进商店呀",
+          "t_start": 5598,
+          "t_end": 5619
+        }
+      ],
+      "reason": "逐字稿以断言方式说明顺序交互结果：先进商店再清除石托邦后，商店栏位仍减少三；并补充即使刷新也无法恢复。该结论含具体参数与可复现条件。",
+      "limitations": [
+        "未交代清除石托邦的具体操作定义、是否受节点等级或构造影响，以及该结论是否适用于所有商店节点。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均满足自包含、逐字引文对齐、显式三元约束，并且不是未定论猜测或反问。c01为商店锁藏品跨渠道获取的通用机制结论；c02为石托邦与商店栏位顺序交互的具体机制结论。全部保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

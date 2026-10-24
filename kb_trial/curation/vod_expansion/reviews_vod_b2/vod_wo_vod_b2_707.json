@@ -1,0 +1,74 @@
+{
+  "workorder_id": "vod_wo_vod_b2_707",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:04:24+0900",
+  "source_sha256": "470f2e3bf567dd1b2ad02d0ee98cfc2529e821e13bc646100c79f2229bbeafd2",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "当单位每帧位移0.02格时，按每秒30帧的帧率计算，其移速相当于每秒0.6格。",
+      "subject": "以每帧0.02格位移的单位",
+      "condition": "帧率为每秒30帧且单位每帧位移0.02格",
+      "scope": "universal",
+      "category": "帧时序/移速",
+      "evidence": [
+        {
+          "text": "一帧走0.02 一秒30帧追寻着你 0.6格想和你在一起 相当于一秒走0.6格",
+          "t_start": 811,
+          "t_end": 828
+        }
+      ],
+      "reason": "逐字稿明确给出帧位移与移速的换算关系：一帧0.02格、每秒30帧，合计相当于每秒0.6格。将命题改写为条件式，避免把特定帧位移误写成所有单位通用帧位移。",
+      "limitations": [
+        "逐字稿未明确该0.02格/帧对应的具体移速来源；本命题仅保留换算关系，不主张所有单位每帧均位移0.02格。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "正常移速为每秒0.3格。",
+      "subject": "正常移速（常规移速基准）",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "帧时序/移速",
+      "evidence": [
+        {
+          "text": "移速正常来说一秒0.3啊",
+          "t_start": 811,
+          "t_end": 828
+        }
+      ],
+      "reason": "逐字稿在同一段讨论中明确陈述正常移速为每秒0.3格，并用于判断怪移速是否足以在一帧内产生所需位移，属于可复用数值基准。",
+      "limitations": [
+        "未说明该0.3格/秒适用于所有敌人还是仅表示常规基准；具体单位仍应以其移速参数为准。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均为逐字稿中明确陈述的数值与换算关系。c01 改写为条件式换算，避免将0.02格/帧误作全体单位通用帧位移；c02 保留为常规移速基准。未发现未定论猜测或画面依赖。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

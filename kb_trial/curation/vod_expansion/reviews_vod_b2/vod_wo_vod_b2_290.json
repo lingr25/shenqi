@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_290",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:32:02+0900",
+  "source_sha256": "af746a13ee7734a8a63aa5dacde08794aad93c8c55af66f95b9463ed524da203",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在《明日方舟》集成战略（肉鸽）模式的属性结算中，若某效果具有局内改变能力，则该效果一定不属于局外结算。",
+      "subject": "肉鸽模式中具有局内改变能力的属性结算效果",
+      "condition": "肉鸽模式；该效果具有局内改变能力",
+      "scope": "universal",
+      "category": "属性结算",
+      "evidence": [
+        {
+          "text": "肉鸽里面的话可以简化的计算 凡拥有局内的改变能力的 一定都不是局外",
+          "t_start": 1916,
+          "t_end": 1932
+        }
+      ],
+      "reason": "主播在讲解肉鸽属性结算与局内/局外 Buff 时，明确给出“凡拥有局内改变能力的一定都不是局外”的简化判据，并紧接着重复一次，上下文足以支撑该规则。",
+      "limitations": [
+        "该判据限定在肉鸽语境中使用；逐字稿未穷举所有例外或边界。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "《明日方舟》肉鸽属性结算中，局外效果不会在局内发生改变；但该命题的逆命题不成立，即局内不发生变化的效果不一定属于局外。",
+      "subject": "局外效果与局内不变效果的关系",
+      "condition": "肉鸽模式",
+      "scope": "universal",
+      "category": "属性结算",
+      "evidence": [
+        {
+          "text": "局外的run是不会在局内改变的 但是这句这句话反过来 它的逆命题是不成立的",
+          "t_start": 1932,
+          "t_end": 1943
+        },
+        {
+          "text": "就是说所有局内的东西 就是所有局内不发生变化的东西 他不一定是局外 比如说其中一个典型例子是神盾",
+          "t_start": 1943,
+          "t_end": 1954
+        }
+      ],
+      "reason": "主播先明确“局外的run不会在局内改变”，随后强调其逆命题不成立，并解释为“所有局内不发生变化的东西不一定是局外”，还举神盾作为典型例子，形成可复用的逻辑边界结论。",
+      "limitations": [
+        "逐字稿只举神盾一例说明逆命题不成立，未系统列出全部反例。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均落在同一段肉鸽属性结算讲解中，分别给出简化判据及其逆命题边界；逐字稿有明确结论和例子，未发现未定论猜测或画面依赖残句，均采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_602",
+  "stem": "BV1KtHX6nEZS_p3_42575594392",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:16:17+0900",
+  "source_sha256": "856b90d4dbc51af7ea43aa3815f6997ddc767e7303d03462bb0a12b0cdf43b50",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "龙节数为七、结城理刀数为15的15刀轴组成不成立；该刀数轴中星熊的刀数应为7+2。",
+      "subject": "15刀轴组成与星熊刀数",
+      "condition": "在讨论龙节数为七、结城理刀数为15的15刀轴组成时",
+      "scope": "instance",
+      "category": "刀数轴/勘误",
+      "evidence": [
+        {
+          "text": "龙变成七结城理变成15",
+          "t_start": 798,
+          "t_end": 806
+        },
+        {
+          "text": "对不能这样啊 刚才搞错了 刚才搞错了",
+          "t_start": 829,
+          "t_end": 840
+        },
+        {
+          "text": "这个熊就是要7+2的",
+          "t_start": 851,
+          "t_end": 858
+        }
+      ],
+      "reason": "逐字稿先出现“龙变成七结城理变成15”，随后主播明确说“不能这样啊 刚才搞错了”，并纠正为“这个熊就是要7+2的”，构成对先前15刀轴组成的勘误。",
+      "limitations": [
+        "逐字稿未说明具体关卡、技能与“7+2”的具体刀数构成。",
+        "部分干员名与术语为 ASR 转写，按上下文规范化保留。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "仅一条候选；其核心为对15刀轴组成的勘误，逐字稿有明确纠错语句与星熊“7+2”参数，故判 keep；但具体关卡、技能及“7+2”构成未在逐字稿展开，列入 limitations。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,89 @@
+{
+  "workorder_id": "vod_wo_vod_b2_523",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:58:01+0900",
+  "source_sha256": "df245ab072c0be8ea0fa43ff473d67fceeca13c19f21c0b6face61e5d81aff11",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "爆条的冷却时间为8秒。",
+      "subject": "爆条的冷却计时",
+      "condition": "爆条触发后",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "然后还有珊比的伤害去减那个条的冷却",
+          "t_start": 1024,
+          "t_end": 1039
+        },
+        {
+          "text": "八秒的冷却 然后",
+          "t_start": 1039,
+          "t_end": 1050
+        }
+      ],
+      "reason": "上下文先讨论‘条的冷却’，随后明确给出‘八秒的冷却’，可支撑爆条冷却为8秒的机制定论。",
+      "limitations": [
+        "逐字稿未说明该8秒是基础冷却还是已计入其他修正。",
+        "未说明具体元素类型。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "珊比只提供灼烧伤害，爆条冷却减少来自配合干员与珊比的伤害",
+      "verdict": "reject",
+      "reason": "引文中的‘他’与‘那个伤害’指代不明，无法在不引入未给出信息的情况下补全为自包含主体；将‘只靠烫’改写为‘只提供灼烧伤害’也超出原句可确认范围。该段仍处于‘我想一下/如果’的未闭合推演中。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c03",
+      "topic": "在2.4秒内打两下、3.6秒打三下",
+      "verdict": "reject",
+      "reason": "命题缺少‘谁在打’的主体，2.4/3.6依赖特定干员攻击间隔或技能时序，不能作为通用机制；且第一条证据来自1050行，t_end应为1058而非1065，时间戳标注不精确。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "仅保留明确给出数值的8秒爆条冷却；另两条受指代不明、非通用计算及时间戳标注影响，不予采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

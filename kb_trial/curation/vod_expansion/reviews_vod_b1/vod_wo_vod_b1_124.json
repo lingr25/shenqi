@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b1_124",
+  "stem": "BV1cmaa6VEPR_p2_42252239801",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:59:26+0900",
+  "source_sha256": "88d352efb6e4b180bf72ea00be07d9b2300580e2ff30329ffc2921daa9ce5435",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "娜斯提PV演示中出现的技能装置不能改变敌人的寻路路径；其表现是装置以斜向贴合敌人的方式移动，而这种形态不符合改路径机制应有的表现。",
+      "subject": "娜斯提PV演示中的技能装置",
+      "condition": "在娜斯提PV演示中装置以斜向贴合敌人的方式移动时",
+      "scope": "entity_mechanism",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "就是当初娜斯提那个视频演示 就可以直接看出来 不可能是不可能是会改路径的 视频演示里就能看出来信息",
+          "t_start": 151,
+          "t_end": 176
+        },
+        {
+          "text": "装置这就不可能是能改路径的东西的表现 这样斜着贴着他过去 这不是可以改路径 这不是改路径可以做到的形态",
+          "t_start": 253,
+          "t_end": 276
+        },
+        {
+          "text": "这就单纯是不了解寻路机制 这就单纯是不了解寻路机制 所以这个视频其实完全就已经足够说 他不可能改路径了",
+          "t_start": 276,
+          "t_end": 292
+        }
+      ],
+      "reason": "主播在讲解中明确以娜斯提PV的演示形态为依据，指出装置斜向贴合敌人移动不是改路径机制可实现的形态，并直接下结论称该PV中的装置不可能改路径；属于明确否定错误理解并给出结论的机制判断。",
+      "limitations": [
+        "仅针对娜斯提PV演示所展示的装置形态，不覆盖正式实装后若发生改动的可能性。",
+        "逐字稿未展开斜向贴合为何不符合改路径机制的技术细节，需结合画面或后续实测确认。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单唯一候选为主播对娜斯提PV装置不改变敌人寻路路径的明确否定性判断，有连续逐字稿证据支撑，且不依赖未定论猜测；按 entity_mechanism 采纳，并保留PV阶段结论的适用边界。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

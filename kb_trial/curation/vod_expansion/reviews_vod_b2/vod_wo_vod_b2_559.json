@@ -1,0 +1,37 @@
+{
+  "workorder_id": "vod_wo_vod_b2_559",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:08:42+0900",
+  "source_sha256": "41a720c77f3381c4dc1f7ed318390282274a4a83030dfe881c32e512c6139a15",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "关卡初始费用加20",
+      "verdict": "pending",
+      "reason": "逐字稿有明确原文和数值“加20”，但上下文未说明具体关卡/模式、加成来源及可复现条件，无法确定其作用域是当前关卡实例还是通用规则；需人工核对画面/关卡信息后再定。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "候选 c01 的引文与逐字稿 [2896s] 完全一致，且“关卡初始费用加20”本身具有机制/参数价值；但该句脱离当前关卡与模式信息后作用域和触发条件不明，暂不宜作为可复用机制定论，判 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

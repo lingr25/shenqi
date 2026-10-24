@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_479",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:48:41+0900",
+  "source_sha256": "303d954cb37d6e99ecd823d90761ddf56a287d1bfc19f0f356f7239fe1664d0e",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "三技能的轰炸造成三倍物理伤害",
+      "verdict": "pending",
+      "reason": "逐字稿可确认主播明确说出「这个轰炸是三倍物理」，引文与时间戳匹配；但上下文窗口未出现具体干员名或可唯一指认的三技能名称，无法在不依赖画面的情况下构成自包含机制命题。按 Gate 1/Gate 3 需补齐主体，暂判 pending。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "本工单仅有一条候选 c01。其核心机制信息「轰炸是三倍物理」在 2781s 附近有明确逐字稿支撑，且不是反问或未定论猜测；但主体仅写作「三技能」，逐字稿窗口内缺少具体干员或技能名称，无法构成知识库可独立复用的自包含命题。建议后续结合画面或前后上下文补齐主体后再定稿。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

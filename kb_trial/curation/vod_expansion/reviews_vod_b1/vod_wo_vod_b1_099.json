@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b1_099",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:53:25+0900",
+  "source_sha256": "911b6a90369a0183564bd554e901d05061f96ceff9d69c9d356a4eecfe053605",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在 PRTS map 的 JSON 文件中，以 RELIL 开头的记录包含地块的属性设置。",
+      "subject": "PRTS map 的 JSON 文件中以 RELIL 开头的记录",
+      "condition": "在 PRTS map 的 JSON 文件中查看关卡数据时",
+      "scope": "universal",
+      "category": "地块属性/数据字段",
+      "evidence": [
+        {
+          "text": "在PTS点map的关卡页 按F我不会解包 用那个map直接去扒文件的话",
+          "t_start": 6038,
+          "t_end": 6047
+        },
+        {
+          "text": "反正在这些那个JSON文件里头记录的",
+          "t_start": 6070,
+          "t_end": 6084
+        },
+        {
+          "text": "然后点这个开头RELIL的 其中就能找到地块的属性设置了",
+          "t_start": 6093,
+          "t_end": 6105
+        }
+      ],
+      "reason": "上下文先说明在 map 关卡页扒文件、JSON 文件中记录大量图内设置，随后指出点击以 RELIL 开头的记录即可找到地块属性设置，足以支撑该数据字段定位结论。",
+      "limitations": [
+        "依赖 PRTS map 站点/JSON 结构，站点改版或字段命名变化可能失效。",
+        "逐字稿中 PRTS 曾转写为 PTS，RELIL 为逐字转写，未二次核实实际字段拼写。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅一条候选 c01。逐字稿上下文明确围绕 PRTS map 的 JSON 文件与地块属性设置，候选命题自包含且引文可在单行中精确匹配，未依赖未定论猜测，予以 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

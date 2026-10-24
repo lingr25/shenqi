@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_663",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:07:05+0900",
+  "source_sha256": "97638c84c4c955f41de2b5574aecb7e65669749e9a18f65ee769886cce8933ec",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在极限帧操作下，干员可以做到0帧完成部署、1帧使阻挡生效、2帧完成撤退。",
+      "subject": "干员的部署、阻挡与撤退操作",
+      "condition": "极限帧操作下",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "零帧部署一帧阻挡两帧撤退 两帧撤退",
+          "t_start": 413,
+          "t_end": 424
+        }
+      ],
+      "reason": "逐字稿在帧操作细节章节中直接给出“零帧部署一帧阻挡两帧撤退”的帧时序结论，未依赖画面指涉，也未表现为猜测或开放反问；可整理为可复用的部署、阻挡生效与撤退帧时序机制命题。",
+      "limitations": [
+        "逐字稿仅给出口号式结论，未展开具体按键、暂停或帧对齐操作步骤。",
+        "0帧、1帧、2帧的判定口径与实战可复现条件仍需后续实机帧测试或人工听审补充。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选 c01 有逐字原句支撑，主语、条件与适用范围可补齐，属于可复用的帧时序结论，裁定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

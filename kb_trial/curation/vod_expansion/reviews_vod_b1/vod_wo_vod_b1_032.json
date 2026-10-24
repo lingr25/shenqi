@@ -1,0 +1,80 @@
+{
+  "workorder_id": "vod_wo_vod_b1_032",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:23:04+0900",
+  "source_sha256": "2c7d73ea1bb1269b7de7ef670d1dae66fbdda28901ecbd0485bb3ad8e18e187e",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "在出怪排序中，路线预演（路线演示）与牌子一样会占用出怪时间并参与排序，因此可视为出怪；在245的望财实例中，路线预演时间为242而对应怪时间为245，五帧间隔发生在两处路线预演之间。",
+      "subject": "路线预演（路线演示）与牌子",
+      "condition": "关卡出怪排序包含路线预演或牌子时",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "就是你可以理解为牌子也是一个出怪路线 也是一个出怪 他们在这里的占用时间 和那个其他东西没有任何不同",
+          "t_start": 2598,
+          "t_end": 2614
+        },
+        {
+          "text": "然后呢也就是这俩站路线演示 但是他俩的路线演示在他之前 这个是245的怪 然后路线也是在242",
+          "t_start": 2690,
+          "t_end": 2704
+        },
+        {
+          "text": "五帧间隔是发生在他俩之间 路线演示发生在什么时间 就会占那个哪两个怪中间的多的时间 所以的话路线演示也可以理解为这里的出怪",
+          "t_start": 2704,
+          "t_end": 2718
+        },
+        {
+          "text": "他也是参与排序的东西 然后包括牌子 牌子也是一个同时间的 可以理解为出怪 他也是占这个出怪时间排序的东西",
+          "t_start": 2718,
+          "t_end": 2732
+        }
+      ],
+      "reason": "逐字稿明确说明牌子和路线演示会占用时间、参与排序，并在245的望财中占掉两个怪之间多出的时间，因此可理解为出怪；该结论属于可复用排序机制，而非未验证猜测。",
+      "limitations": [
+        "上游结论以245的望财为实例，通用化后的排序细节仍需其他关卡验证。",
+        "逐字稿未给出路线预演与牌子的完整排序算法。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "245的望财最后一波的最后出怪时间为 40、36、38、38、38、36、38、38、40。",
+      "verdict": "reject",
+      "reason": "该候选为特定实战波次的观察数据，且后续逐字稿称“就这四个怪”，与列出的九项时间不一致；缺少时间单位与可复用条件，属于纯实战现象观察，不具备机制规则价值。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c02 保留为出怪排序通用机制：路线预演与牌子占时间并参与排序，可视为出怪；c01 仅为未闭合且自相矛盾的实例数据，按 Gate4 排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

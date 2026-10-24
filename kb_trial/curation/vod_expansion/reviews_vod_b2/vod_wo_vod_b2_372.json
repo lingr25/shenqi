@@ -1,0 +1,58 @@
+{
+  "workorder_id": "vod_wo_vod_b2_372",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:00:05+0900",
+  "source_sha256": "b0b6bccc36e62e4fd4e39a63e8311d1aadb4b2303ee032a7b747406c65bc4788",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "关卡出怪底层逻辑并不规定绝对出怪时间，而是由出怪动作（action）配置起始时间、间隔与生成数量（count）。在可继承战况的关卡（如生息演算树洞战斗）中，若此前击杀部分敌人使剩余 count 减少，再次进图时，新生成的怪物仍然会从动作初始时间开始按固定间隔依序刷新在靠前的时间位，而非保留幸存敌人原本所处的靠后时间位。",
+      "subject": "关卡出怪系统与生息演算战况继承机制",
+      "condition": "带有战斗进度继承机制的关卡中，某个出怪动作（action）的怪物数量（count）因击杀而减少后重新载入关卡",
+      "scope": "universal",
+      "category": "帧时序/出怪时序",
+      "evidence": [
+        {
+          "text": "鹰角就直接改这个count数 比如说你八个打的只剩四个了 那他就把这个四改成了四 所以就会产生一个什么问题",
+          "t_start": 2370,
+          "t_end": 2383
+        },
+        {
+          "text": "就变成九十十一十二出 注意到这个问题了吗 哪怕你打死的是那个九十十一十二的四个怪 你按理来讲",
+          "t_start": 2398,
+          "t_end": 2409
+        },
+        {
+          "text": "你没打死的是十三十四十五十六这四个怪 但是等到你再进图的时候 出来的还是九十十一十二",
+          "t_start": 2409,
+          "t_end": 2423
+        }
+      ],
+      "reason": "主播详细剖析了关卡出怪action中count机制与关卡地图工具（PRTS Map）全局绝对时间的差异，并以生息演算树洞继承击杀削减count为例，明确揭示了进图后从头依序排布时间位的底层刷新机制，具有极高的机制规则价值。",
+      "limitations": [
+        "该现象基于鹰角关卡底层使用“起始延时+间隔+count计数”生成怪物的配置机制，主要体现在支持战况继承（修改剩余count）的模式中。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "该工单深入讲解了关卡配置中action出怪间隔与count递减重载时的时序逻辑，论证完整且具有普遍参考意义，四大闸门全部通过，予以保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

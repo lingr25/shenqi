@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_412",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:11:53+0900",
+  "source_sha256": "d42e8862f45068a1eb165ec53d02f65c2783e7df957bab8c8c7b5312cb65ae74",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "一技能的攻击力倍率为2.9倍",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G3"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "reason": "主体严重缺失（Gate 1、Gate 3 不通过）：逐字稿仅有口语碎片「一技能2.9倍」，未提及任何具体干员名称，且从前后文（推导损伤机制、翻看技能描述）中无法仅凭转写闭环确认指涉的主体干员，属于依赖画面的非自包含陈述。"
+    }
+  ],
+  "review_note": "工单仅有一条候选命题。逐字稿中主播仅念出「一技能2.9倍」，全程未报出干员名称，无法在不依赖画面的情况下补全主体，不符合自包含命题要求，予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

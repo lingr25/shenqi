@@ -1,0 +1,56 @@
+{
+  "workorder_id": "vod_wo_vod_b2_454",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:27:24+0900",
+  "source_sha256": "9bf9bbb3aebea00015bb543a0ed074a3e9e51da75c3af04bb763a257a8164135",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "835/836/845三个相邻伤害数字分别来自DOT、普通攻击、DOT",
+      "verdict": "reject",
+      "reason": "仅为特定实战中浮动伤害数字的来源识别，未给出具体干员/技能/状态主体与可复现条件；且后续发言出现自我修正并称仍需确认“谁是谁”，讨论未闭合，不能作为可复用机制定论。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "836对应一次普通攻击，该次攻击结算1775和265",
+      "verdict": "reject",
+      "reason": "命题依赖画面中的具体伤害数字编号进行归属判断，缺少明确干员/技能/状态主体及触发条件；且原文以“哦不对”自我修正，后文仍在“确认谁是谁”，属于未闭合的实战观察。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "两条候选均为某次实战伤害数字归属的现场辨认，未形成自包含、可复用的机制结论；且讨论在自我修正与继续确认中未闭合，按硬性闸门全部排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

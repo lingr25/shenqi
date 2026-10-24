@@ -1,0 +1,82 @@
+{
+  "workorder_id": "vod_wo_vod_b2_704",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T15:59:53+0900",
+  "source_sha256": "7bf36716b57b19fbdbb8cf4519b01bd0ee3ac29142b4c60bd74eff531750960a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在阻挡偏移的几何计算中，将模长按0.707比例放缩后，斜边距离对应为0.7071格；纵向距离由0.7071格再乘以0.707继续收缩。",
+      "subject": "阻挡偏移的几何计算中的模长、斜边距离与纵向距离分量",
+      "condition": "按0.707比例对模长进行放缩时",
+      "scope": "universal",
+      "category": "位移/阻挡偏移",
+      "evidence": [
+        {
+          "text": "把这个模长放缩到0.707",
+          "t_start": 563,
+          "t_end": 579
+        },
+        {
+          "text": "这个斜边的距离要收缩到0.7071",
+          "t_start": 579,
+          "t_end": 594
+        },
+        {
+          "text": "纵向的距离要从0.7071收缩到",
+          "t_start": 594,
+          "t_end": 608
+        },
+        {
+          "text": "然后乘以0.707",
+          "t_start": 594,
+          "t_end": 608
+        }
+      ],
+      "reason": "逐字稿在讲解阻挡偏移的勾股/模长放缩，明确给出0.707、0.7071以及纵向距离再乘0.707的步骤；上游命题缺少主语，但上下文足以改写为自包含的几何推导。",
+      "limitations": [
+        "逐字稿未明示放缩前的初始模长或坐标值。",
+        "0.7071的距离单位“格”由上下文推断，逐字稿该处未直接读出单位。",
+        "同期主播仍对正面/侧面/背面阻挡是否同值提出疑问，本命题只保留放缩步骤本身，不扩展为各阻挡面同值。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "怪物阻挡偏移量约为0.02格并修正为约0.027格",
+      "verdict": "reject",
+      "reason": "G4：逐字稿“这就是0.02啊 0.027吧 没有0.02那么少”中的0.027带有口头估算语气，且后续讨论仍继续以0.02作为偏移量计算，未形成闭合定论。G3：候选未给出具体怪物、触发条件与适用范围，条件与scope不明确。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01是讲解中的几何放缩步骤，有逐字稿和数值支撑，可保留为推导性机制，但需标注初始参数与单位未明示；c02的0.027为未闭合的口头估算，且后续仍按0.02讨论，按G4排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,64 @@
+{
+  "workorder_id": "vod_wo_vod_b2_383",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:01:52+0900",
+  "source_sha256": "26413e4a750112a6df68098d3a9f1c2fc079b46f126503e712d64ba4ebbfc403",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙部署后，其第一天赋会根据部署朝向，使位于克莱门沙身前的敌人（包括其阻挡的敌人）对克莱门沙造成的物理和法术伤害降低；若伤害来源为海怪，则减伤效果额外增加。",
+      "subject": "克莱门沙的第一天赋（部署朝向减伤分支）",
+      "condition": "克莱门沙部署后；伤害来源位于克莱门沙身前（按部署朝向判定），或伤害来源为海怪时触发额外减伤",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "克莱门沙部署后 根据他的部署朝向所有在他身前的敌人 对他造成的物理和法术伤害都会降低",
+          "t_start": 161,
+          "t_end": 176
+        },
+        {
+          "text": "受到来自其自身 前方单位造成的物理和法术伤害降低 前锋伤害来源为海怪 额外降低",
+          "t_start": 443,
+          "t_end": 500
+        },
+        {
+          "text": "包括阻挡",
+          "t_start": 500,
+          "t_end": 517
+        },
+        {
+          "text": "海怪额外增加",
+          "t_start": 517,
+          "t_end": 535
+        }
+      ],
+      "reason": "逐字稿在 161s 直接描述克莱门沙部署后根据部署朝向，使身前的敌人对其造成的物理和法术伤害降低；443s 进一步复述来自自身前方单位的物法伤害降低，并说明伤害来源为海怪时额外降低；500s 补充包括阻挡，517s 补充海怪额外增加。因此该候选可作为克莱门沙天赋减伤机制的定论。",
+      "limitations": [
+        "逐字稿未给出具体减伤数值、海怪额外减伤倍率以及身前判定范围的精确几何参数。",
+        "“海怪”分类应以游戏内实际分类为准。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅有一个候选 c01。其核心内容可被逐字稿多处直接支撑，且已改写为自包含机制陈述；未涉及未定论假说或反问，故裁定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

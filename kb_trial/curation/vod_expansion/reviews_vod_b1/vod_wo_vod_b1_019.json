@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b1_019",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T21:21:56+0900",
+  "source_sha256": "1fe0882761cd15375d1fd8ef612962c0c1831285872237ed9910e63ad518b869",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "牌子比怪早出生时，牌子会站在怪的前面而不是后面。",
+      "subject": "牌子",
+      "condition": "牌子比对应的怪早出生",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "牌子注意这里就是牌子比那个怪早出生了 正因为牌子比怪早出生 所以他才是会在这前面站 而不是在这后面站",
+          "t_start": 1671,
+          "t_end": 1687
+        },
+        {
+          "text": "牌子和鱼之间谁先谁后 这个我们之间之后另说 牌子一般都应该是比它对应的怪早的 然后我们继续这个到这个之间的话",
+          "t_start": 1622,
+          "t_end": 1638
+        }
+      ],
+      "reason": "1671s 行中主播以“牌子比怪早出生”为原因，明确推出牌子会站在前面而非后面；1622s 行补充牌子一般早于对应怪，说明该结论不是纯个例口误，具备可复用机制价值。",
+      "limitations": [
+        "逐字稿未说明“前面/后面”的精确判定维度（路径节点、阻挡位或渲染顺序）。",
+        "未给出出生先后相差帧数的适用边界。",
+        "案例处于特定路线/兵团讨论中，跨关卡通用性仍需更多实例验证。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选 c01 的引文可在逐字稿 1671s 行字符级匹配，且 1622s 行补充了牌子一般早于对应怪的背景。命题具备明确主体、条件与因果结论，不属于未闭合猜测，故整体判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

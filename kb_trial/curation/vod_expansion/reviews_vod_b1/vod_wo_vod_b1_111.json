@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b1_111",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:56:19+0900",
+  "source_sha256": "288ee9716b7a7bbc5f31cb72b3ea245b00249d2a3b7c15e0a7b4363ade57cfbc",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在《明日方舟》中判断地图边界时，可以打开地图预览（map），查看地图上所有带立体表现的地块；这些带立体表现的地块才是真正的格子。",
+      "subject": "地图预览（map）中带立体表现的地块",
+      "condition": "在判断地图边界、查看地图预览时",
+      "scope": "universal",
+      "category": "地图边界判定",
+      "evidence": [
+        {
+          "text": "看map上所有这种有立体的这种格子 都是一个真正的格子",
+          "t_start": 6992,
+          "t_end": 7022
+        }
+      ],
+      "reason": "该行主播明确给出判断地图边界的方法：上 map 后，地图上所有有立体表现的格子都是真正格子；与后文用攻击范围/地块碰撞箱判断地图内的方法并列，属于方法论结论而非猜测。",
+      "limitations": [
+        "逐字稿未说明「map」具体指游戏内地图预览还是外部地图工具。",
+        "未交代立体格子与无地块地图外之间的完整边界判定规则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅一个候选。c01 通过四闸门，引文可在 6992s 行内字符级匹配，t_end 按下一行时间戳修正为 7022s。该结论为可复用的地图边界判断方法，scope 定为 universal。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

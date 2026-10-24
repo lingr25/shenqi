@@ -1,0 +1,64 @@
+{
+  "workorder_id": "vod_wo_vod_b1_102",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:54:23+0900",
+  "source_sha256": "b0c93b0ad230618ce8f75cdec0a1edcc43005798b611bb48b01797801b3cc908",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "凛冬二技能无法对真正的地图边缘（地图外无地块碰撞箱的区域）产生判定或反应。",
+      "subject": "凛冬二技能",
+      "condition": "技能释放位置处于真正的地图边缘，即地图外无地块碰撞箱的区域；贴图边缘不属于该条件",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "那没有任何的反应",
+          "t_start": 6302,
+          "t_end": 6313
+        },
+        {
+          "text": "这个才是真正的地图边缘啊 在这个外面什么也没有",
+          "t_start": 6313,
+          "t_end": 6328
+        },
+        {
+          "text": "这个边缘是贴图的边缘 不是真正的地图边缘 这些才是地块的边缘",
+          "t_start": 6328,
+          "t_end": 6337
+        },
+        {
+          "text": "它不碰撞的话 就没有办法这样识别每一格",
+          "t_start": 6246,
+          "t_end": 6252
+        }
+      ],
+      "reason": "转录中主播先提出凛冬二技能能否判定地图边缘，随后实测；在真正地图边缘处释放时得到“那没有任何的反应”，并明确区分贴图边缘与真正地图边缘、提到需要和地块碰撞箱碰撞。因此可采纳为该技能在真实地图边缘无判定的实体机制分支。",
+      "limitations": [
+        "仅依据单次实测，未穷举不同部署方向、目标状态或所有地图边界情形。",
+        "“没有任何反应”的具体表现（无目标、无特效、无伤害等）未在逐字稿中进一步细分。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 为实测结论，逐字稿有明确测试过程与结果，并区分了真地图边缘与贴图边缘；改写为自包含机制陈述后保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

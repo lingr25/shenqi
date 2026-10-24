@@ -1,0 +1,87 @@
+{
+  "workorder_id": "vod_wo_vod_b2_492",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:52:05+0900",
+  "source_sha256": "e614d0c3be25ef3452cd6af59806edb9ac5019c2415ec15f09c811e8db7c5dc5",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "隐痕者的攻击力为800，物理伤害为800，法术伤害为140。",
+      "subject": "隐痕者",
+      "condition": "隐痕者进行攻击时",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "然后的话是老头引痕者",
+          "t_start": 4768,
+          "t_end": 4774
+        },
+        {
+          "text": "隐痕者",
+          "t_start": 4774,
+          "t_end": 4785
+        },
+        {
+          "text": "老头800攻击力",
+          "t_start": 4826,
+          "t_end": 4838
+        },
+        {
+          "text": "误伤800",
+          "t_start": 4838,
+          "t_end": 4844
+        },
+        {
+          "text": "攻击力百分之百的无途径 法术伤害140",
+          "t_start": 4850,
+          "t_end": 4892
+        }
+      ],
+      "reason": "上下文先说明“老头”指隐痕者，随后给出800攻击力、800物伤（逐字稿转写为“误伤”）及法术伤害140；可改写为自包含的隐痕者攻击数值命题。",
+      "limitations": [
+        "“误伤800”按上下文理解为“物伤800”，系ASR转写误差。",
+        "“攻击力百分之百的无途径”表述不清，未作为额外结论采纳。",
+        "逐字稿未给出隐痕者等级或关卡修正信息，数值需游戏数据复核。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "克莱门沙的防御力推导结果在350到400之间。",
+      "verdict": "reject",
+      "reason": "不满足Gate 2与Gate 4：上游引文将5024s与5035s两行拼接，不是单行连续子串；且随后主播说“先随便蒙个数吧”，表明该数值区间属临时估算，讨论未闭合，不能作为机制定论。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G2",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01可通过多行原样证据重构为隐痕者攻击数值命题，故keep；c02因引文跨行且为未闭合估算，reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,67 @@
+{
+  "workorder_id": "vod_wo_vod_b2_593",
+  "stem": "BV1KtHX6nEZS_p2_42575334226",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:14:55+0900",
+  "source_sha256": "ec38b040b5751049aed896e6fbdaa7709cc3d923421ecebfa8efd5c9f5b7f0a1",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "在特定战斗时间轴中，677作为开技能时间属于晚开；采用677开技能可以撞到秒表，并且是其中最容易撞到秒表的开技时机。",
+      "subject": "677开技能时间轴",
+      "condition": "采用677作为开技能时间，且该时间晚于常规开技时机",
+      "scope": "instance",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "677是一个晚开的时间 所以的话他理所当然的话 是可以撞到那个秒表的 是最容易撞到秒表的",
+          "t_start": 1002,
+          "t_end": 1023
+        }
+      ],
+      "reason": "逐字稿明确将677描述为晚开时间，并据此得出可以撞到秒表且最容易撞到秒表的结论；属于特定关卡/时间轴的开技时序机制，可保留为 instance 结论。",
+      "limitations": [
+        "“秒表”的具体机制指代未在逐字稿中展开，需结合关卡画面或后续上下文确认。",
+        "“最容易”缺少对比数据，属于主播当场结论，后续可实机复核。",
+        "677的计时单位未明示。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "677轴到目前为止基本被验证为稳定。",
+      "verdict": "reject",
+      "reason": "仅为阶段性稳定性观察，“基本验证”未给出可复现条件与完整参数，未闭合为可复用机制；不满足 Gate 4，且条件/范围表述不完整（Gate 3）。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01作为单局稳定性观察被排除；c02有明确逐字稿支撑，保留为特定时间轴的开技时序机制，但“秒表”指代及“最容易”的比较依据需后续确认。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

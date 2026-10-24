@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b2_764",
+  "stem": "BV17rp16HECP_p3_42739106781",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:14:04+0900",
+  "source_sha256": "b6f8dd5bb34381f941207240febc0e0caae5a0de7180d092846f8bce075a1b75",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在可露希尔更新后且可露希尔参与合约的条件下，费用尺崩坏的本质原因是减回费图的前几帧无法读取。",
+      "subject": "费用尺（费用条）崩坏",
+      "condition": "可露希尔更新后且可露希尔参与合约",
+      "scope": "instance",
+      "category": "费用条计时器",
+      "evidence": [
+        {
+          "text": "那个额费用尺在那个可露希尔更新之后崩了 在可露希尔打合约的条件下崩了 这个东西本质上是因为那个就是额减回费图的",
+          "t_start": 73,
+          "t_end": 88
+        },
+        {
+          "text": "那个前几帧的话是读不了的",
+          "t_start": 88,
+          "t_end": 108
+        }
+      ],
+      "reason": "上下文先说明费用尺在可露希尔更新后、打合约条件下崩坏，随后明确将本质原因指向减回费图前几帧读不了；引文逐字对应，可采纳为特定版本/条件下的异常机制结论。",
+      "limitations": [
+        "具体版本号未在逐字稿中给出。",
+        "“前几帧”的具体帧数、读取方式与完整复现步骤未交代。",
+        "该结论仅适用于逐字稿所述可露希尔更新后打合约的异常条件，非全域通用规则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "仅一条候选。其核心因果句有连续逐字稿支撑，但应限定为可露希尔更新后合约条件下的费用尺异常结论，不能外推为通用机制。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

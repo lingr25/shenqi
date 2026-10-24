@@ -1,0 +1,63 @@
+{
+  "workorder_id": "vod_wo_vod_b2_393",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:04:26+0900",
+  "source_sha256": "f17498211eeeb5e6c8c20157bb9fee694b977c4d047225ed75d809b72526add0",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "侵蚀损伤爆条当次攻击的伤害结算使用该次爆条减防生效前的防御力；侵蚀损伤的减防在当次攻击伤害结算之后才生效。",
+      "subject": "侵蚀损伤爆条当次攻击的伤害结算",
+      "condition": "攻击造成侵蚀损伤爆条时",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "先造成伤害再减防",
+          "t_start": 1677,
+          "t_end": 1682
+        },
+        {
+          "text": "侵蚀是先造成伤害再减防",
+          "t_start": 1699,
+          "t_end": 1711
+        },
+        {
+          "text": "计算表明不是啊 计算表明不是啊 你看这里的话 他是4032的",
+          "t_start": 1730,
+          "t_end": 1740
+        },
+        {
+          "text": "4032的攻击力值对吧 然后减去500防的话 等于3532的伤害 他这里爆条了",
+          "t_start": 1740,
+          "t_end": 1750
+        }
+      ],
+      "reason": "主播先明确给出“侵蚀是先造成伤害再减防”的时点结论，随后用4032攻击力、500防御力与3532伤害的验算排除干员自身问题，支撑侵蚀损伤减防不在爆条当次伤害结算中生效。",
+      "limitations": [
+        "该结论基于对六章冰刀哥的实测与口播推算，未展示侵蚀减防的具体数值；但时点规则由口播明确给出。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 的核心机制结论有逐字稿明确口播与数值验算支撑，四闸门通过，予以保留；已改写为不依赖具体干员/敌方的自包含时点规则。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

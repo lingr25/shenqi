@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_467",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:29:07+0900",
+  "source_sha256": "b1b99514c06baa5979e6ab81072cacb96a1a111dba8b67b2dd1c4c7f33b3d413",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "二技能命中并非简单溅射：若为溅射则范围内三个目标应全部变红；实际两个不可选中建设目标未被命中",
+      "verdict": "pending",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "引文能在 [6687s] 原行中字符级对齐，但候选把逐字稿中的『他这二技能』抽成无具体干员名的『二技能』，主体不完整，违反 G1/G3；同时逐字稿只给出一次画面观察与『如果…应该三个都红』的条件推测，未明确闭合到『不是溅射』，也未交代『变红』的判定规则及不可选中目标能否被溅射命中，属于需人工听审/实机复核的未决讨论，违反 G4。"
+    }
+  ],
+  "review_note": "本单唯一候选 c01 的引文可精确匹配，但主体缺少具体干员/技能名，且结论系从单次实战画面条件句外推，关键参数与闭合结论不足，故暂判 pending，不纳入知识库定论。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

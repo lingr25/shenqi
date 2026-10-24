@@ -1,0 +1,37 @@
+{
+  "workorder_id": "vod_wo_vod_b2_543",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:05:20+0900",
+  "source_sha256": "7f57a41186327a6aab7c845f5b4ee44410cae9f94038eabc747fd41e95013ce4",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "珊比的元素伤害是10万，不是20万",
+      "verdict": "pending",
+      "reason": "逐字稿明确出现“元素不是20万伤害 元素是10万”，且属于对20万说法的勘误，G1/G2/G4可过；但该数值对应的技能、等级、目标抗性、增益或具体计算配置均未交代，无法形成可复现的机制条件，G3不通过。需人工听审或后续实机核验后再入库。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "本工单仅一个候选。候选是明确的数值勘误，但缺少成立条件与可复现配置，不能作为通用/实体机制定论；按关键参数缺失判 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

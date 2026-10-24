@@ -1,0 +1,81 @@
+{
+  "workorder_id": "vod_wo_vod_b2_078",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:43:03+0900",
+  "source_sha256": "28346cf5ffb64123b0a2a5f2c8b34c74209a6cf1d14bf60b2c6908c0153edbc4",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "角色类单位每三帧扫描一次阻挡半径内未被阻挡的单位，并判定该单位是否可被阻挡。",
+      "subject": "角色类单位",
+      "condition": "角色类单位的阻挡扫描周期到来，且目标位于阻挡半径内并处于未被阻挡状态",
+      "scope": "universal",
+      "category": "帧时序/阻挡判定",
+      "evidence": [
+        {
+          "text": "每三帧扫描阻挡半径内未被阻挡的单位 判定一次 四是否可被阻挡",
+          "t_start": 2378,
+          "t_end": 2388
+        }
+      ],
+      "reason": "逐字稿明确陈述每三帧扫描阻挡半径内未被阻挡的单位并判定是否可被阻挡；后文亦称该逻辑没有反例。虽存在钩索师、解放者等额外强制阻挡判定，但不影响基础三帧扫描规则作为可复用机制定论。",
+      "limitations": [
+        "逐字稿未交代同帧多目标或目标状态变化时的细节处理。",
+        "钩索师、解放者等额外强制阻挡判定属于例外，不改变常规三帧阻挡扫描的基础逻辑。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "当同时存在多个可被阻挡的敌人时，角色类单位会优先阻挡其中离自身中心最近的敌人。",
+      "subject": "角色类单位",
+      "condition": "同一阻挡扫描帧内存在多个位于阻挡半径内且可被阻挡的敌人",
+      "scope": "universal",
+      "category": "帧时序/阻挡判定",
+      "evidence": [
+        {
+          "text": "同时多个可被阻挡敌人时 优先阻挡离自信自身中心最近的敌人",
+          "t_start": 2378,
+          "t_end": 2388
+        },
+        {
+          "text": "这个逻辑至今也没有变过 优先阻挡自离自身中心最近的呃",
+          "t_start": 2388,
+          "t_end": 2403
+        }
+      ],
+      "reason": "逐字稿连续两处陈述同时多个可被阻挡敌人时优先阻挡离自身中心最近者，并称该逻辑至今没有变过，符合可复用机制定论。",
+      "limitations": [
+        "逐字稿明确表示距离完全相同或平局时的处理不清楚，因此未覆盖完全同距目标的优先级。",
+        "候选敌人必须可被阻挡且处于阻挡判定范围内。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单两个候选均通过四大闸门。c01 的三帧扫描与可阻挡判定有逐字稿直接支撑；c02 的最近敌人优先规则有连续两处陈述支撑，且主播称逻辑至今未变。平距处理未被交代，仅作为限制记录，不构成 reject 或 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,74 @@
+{
+  "workorder_id": "vod_wo_vod_b2_095",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:48:08+0900",
+  "source_sha256": "1244fa055e678aab67bf5016f51b725b18ddc689a5706751b51d25220974d443",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "阻挡偏移是敌人被阻挡时发生的坐标偏移现象，表现为敌人从起点A到终点C的坐标变化。",
+      "subject": "阻挡偏移",
+      "condition": "敌人被阻挡时",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "所以的话从那个起点A到终点C就是阻挡偏移 阻挡时发生的坐标偏移现象",
+          "t_start": 3561,
+          "t_end": 3576
+        }
+      ],
+      "reason": "逐字稿直接给出阻挡偏移的定义，将其说明为阻挡时发生的坐标偏移，并明确对应从起点A到终点C的坐标变化。命题自包含，条件与主体明确，属于通用机制陈述。",
+      "limitations": [
+        "A、C为讲解中的抽象起止点标签，逐字稿未进一步展开其具体坐标定义。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "发生阻挡偏移时，敌人会在0.2秒之内被强制移动到偏移落点。",
+      "subject": "被阻挡偏移作用的敌人",
+      "condition": "发生阻挡偏移时",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "敌人会在0.2S之内强制移动到这一点",
+          "t_start": 3561,
+          "t_end": 3576
+        }
+      ],
+      "reason": "逐字稿在同一段讲解中明确说明敌人会在0.2S之内被强制移动到该点，支撑阻挡偏移具有0.2秒内强制位移至落点的机制结论。",
+      "limitations": [
+        "逐字稿仅给出0.2秒上限，未在命题中展开逐帧位移曲线及边界条件。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两候选均来自同一逐字稿行，分别陈述阻挡偏移定义与0.2秒内强制移动到落点；引文可字符级对齐，主体、条件、适用范围明确，且无未定论猜测或开放疑问，故均采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

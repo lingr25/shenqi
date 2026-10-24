@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_266",
+  "stem": "BV1L4ez6oEcc_p3_42061792207",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:27:34+0900",
+  "source_sha256": "e819df235896cd9490dd8976129affc57231e4d2c666323cf09170adc50da77a",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "命中判定边界收敛在32帧到35帧之间及对应数值",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "上下文为主播现场测距、二分法逼近实测数据的推导与猜测过程（后文出现‘怀疑有一个0.6的建设半径’、‘再二分确定一下吧’等），属于未定论的现场推导假说（违反Gate 4）；且缺少明确的测试主体、攻击判定对象与场景约束（违反Gate 1与Gate 3）。"
+    }
+  ],
+  "review_note": "工单涉及的32~35帧以及数值推算是主播针对某攻击/溅射范围进行的现场二分逼近和粗略估算，后文紧接着‘怀疑有一个0.6的建设半径’、‘有点问题了’、‘再二分确定一下吧’，完全处于未闭合的假设推导与试错阶段，不具备定论机制价值，予以拒绝。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

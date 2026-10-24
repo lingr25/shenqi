@@ -1,0 +1,91 @@
+{
+  "workorder_id": "vod_wo_vod_b2_676",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:10:14+0900",
+  "source_sha256": "d43cd957d51af97d402556b4e37862c74aaef4cc4e556482892e1ca7ab6fda7f",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在五帧爆炸命中刚生成的大爹时，大爹处于短暂无敌，dot未能挂载；直到第15帧的下一次帧循环检测才出现dot。",
+      "subject": "刚生成并处于短暂无敌的大爹",
+      "condition": "五帧爆炸命中；大爹刚生成后数帧内处于无敌",
+      "scope": "instance",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "而五帧的时候 正常来讲 被推到这里的敌人还在一个无敌期间 所以挂不到",
+          "t_start": 1230,
+          "t_end": 1242
+        },
+        {
+          "text": "五帧的时候没有出现之前的dot 它在多少帧出",
+          "t_start": 1356,
+          "t_end": 1364
+        },
+        {
+          "text": "看见了吗 刚才在15帧的时候 他这里出了dot 就是说虽然只有短短的几帧时间 刚生成的几帧时间去挂上了这个无敌",
+          "t_start": 1364,
+          "t_end": 1378
+        }
+      ],
+      "reason": "逐字稿明确给出五帧爆炸、五帧未出现dot、15帧出现dot，并结合无敌期间挂不到与刚生成几帧挂上无敌的上下文；属于有明确帧参数的实测结论。",
+      "limitations": [
+        "为一次具体帧位测试，未给出完整关卡与操作配置。",
+        "5帧/15帧是当场实测值，dot的具体来源技能未在本窗口说明。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "大爹刚生成时获得的短暂无敌会持续影响至下一次帧循环检测；只有在下一次检测时才能再次挂载Buff，因此大爹的Buff挂载受帧循环检测周期约束。",
+      "subject": "大爹刚生成时的短暂无敌状态",
+      "condition": "大爹刚生成并获得数帧无敌；Buff挂载依赖帧循环检测",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "就是说虽然只有短短的几帧时间 刚生成的几帧时间去挂上了这个无敌",
+          "t_start": 1364,
+          "t_end": 1378
+        },
+        {
+          "text": "但是的话它的影响是持续到下一次检测的 只有在下一次检测的时候 就是帧这个循环 他才可以说再次挂上Buff 所以这里是有一个周期的",
+          "t_start": 1378,
+          "t_end": 1392
+        }
+      ],
+      "reason": "上下文从5帧无dot、15帧出现dot的实测，推导短暂无敌会影响至下一次帧循环检测；主播明确给出持续到下一次检测、下一次才能再次挂Buff、存在周期的结论，非开放疑问。",
+      "limitations": [
+        "“周期”指帧循环检测节点，不等同固定秒数周期。",
+        "仅针对本窗口中的大爹与该Buff挂载情境，未证明所有Buff共享同一检测周期。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均围绕大爹短暂无敌与帧循环检测展开：c01保留为有明确5帧/15帧参数的实例观察，c02保留为由该实测推出的实体机制结论。未发现未闭合猜想或纯闲聊内容。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

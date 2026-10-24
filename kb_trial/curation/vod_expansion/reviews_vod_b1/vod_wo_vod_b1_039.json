@@ -1,0 +1,74 @@
+{
+  "workorder_id": "vod_wo_vod_b1_039",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:24:06+0900",
+  "source_sha256": "6e850782752fc259d181e89a5f88f8a2050e52ceb70c8851d9f9c6c1be4fe9e1",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "卡波次参数的默认值为零，界面标注为 don't 卡波次，常态不开启，因此默认状态下波次会被卡住。",
+      "subject": "卡波次参数",
+      "condition": "默认参数值为 0，界面标注为 don't 卡波次且常态不开启",
+      "scope": "universal",
+      "category": "波次调度",
+      "evidence": [
+        {
+          "text": "比如说为什么波次会被卡 是因为这里的默认参数是零 就是这里写的是don't卡波次不卡不卡 常态不开启 所以就是卡",
+          "t_start": 2969,
+          "t_end": 2983
+        }
+      ],
+      "reason": "主播直接解释波次被卡的原因，指出默认参数为零且常态不开启，未使用猜测语气，属于可复用的波次调度参数默认值结论。",
+      "limitations": [
+        "逐字稿未完整展示界面字段原文，'don't卡波次'为转写文本；未讨论该参数改为其他值时的具体表现。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "在没有特殊配置的情况下，只要这一个波次的怪没有死光，下一个波次的怪就不会出生。",
+      "subject": "波次调度系统",
+      "condition": "没有特殊配置，且当前这一个波次的怪没有死光",
+      "scope": "universal",
+      "category": "波次调度",
+      "evidence": [
+        {
+          "text": "所以就是鹰角会默认说 在没有特殊配置的情况下 这个只要只要这一个波次的怪没有死光 下一个波次的怪就不会出生啊",
+          "t_start": 2983,
+          "t_end": 2997
+        }
+      ],
+      "reason": "主播明确说明默认波次调度规则：无特殊配置时，当前波次未清空则下一波不会出生，构成通用出怪行为结论。",
+      "limitations": [
+        "未说明特殊配置的具体种类；下一行关于重生单位是否计入当前波次未清为未验证猜测，未纳入本结论。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均来自主播对波次机制的直接解释，逐字稿引文可精确匹配，命题自包含且条件明确，故均 keep；未发现重复。c02 后续关于重生计数的说法为未验证猜测，未纳入 claims。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

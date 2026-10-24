@@ -1,0 +1,85 @@
+{
+  "workorder_id": "vod_wo_vod_b2_331",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed",
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:44:01+0900",
+  "source_sha256": "f3b1873994b99f952502230369121fe0b3c4c6398d46ed263f679ab8cd64c8ce",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "停顿免疫在底层的实现机制是为单位施加一个无减速效果的停顿Buff；该Buff的优先级极高，会顶替并覆盖常规停顿，使单位不受到停顿减速效果。",
+      "subject": "停顿免疫机制",
+      "condition": "单位具有停顿免疫状态时",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "停顿免疫的应用呃 的生效方法就是我上了一个没有停 没有减速的停顿 然后的话因为他优先级特别高",
+          "t_start": 6168,
+          "t_end": 6180
+        },
+        {
+          "text": "让停顿死掉了 所以的话那就不会受到停顿效果了 这是停顿免疫的写法 Buff的互斥 这个东西在其他地方其实也是存在的",
+          "t_start": 6180,
+          "t_end": 6193
+        }
+      ],
+      "reason": "主播详细解析了底层代码中停顿免疫的实现原理（高优先级无减速停顿顶替常规停顿），属于可复用的通用底层机制结论，上下文完整自包含。",
+      "limitations": [
+        "属于底层代码实现逻辑，常规实战中直接视为免疫即可"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "用于实现停顿免疫的高优先级无减速停顿Buff不附带脆弱效果，也不会被铃兰天赋等依赖“处于停顿状态”的机制判定识别，机制表现上等同于纯粹的免疫。",
+      "subject": "用于实现停顿免疫的特殊停顿Buff",
+      "condition": "与依赖停顿状态判定的技能/天赋（如铃兰）交互时",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "那个更高优先级的停顿 它不会有脆弱效果 就是它不会被铃兰那种判定识别",
+          "t_start": 6291,
+          "t_end": 6301
+        },
+        {
+          "text": "它只是代码解包上应该分类为停顿 但是在机制理解上来讲的话 你直接忘了它 就当它是免疫 没什么区别",
+          "t_start": 6301,
+          "t_end": 6317
+        }
+      ],
+      "reason": "辟谣并明确澄清了该特殊底层停顿Buff是否会触发“处于停顿”相关联动的机制疑问（如铃兰脆弱），结论明确闭合。",
+      "limitations": [
+        "仅针对具有停顿免疫机制的单位及其底层停顿Buff"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单两项候选命题均通过四大闸门审查。修正了上一次输出中跨行拼接引文的问题，分别拆分为逐字稿单行原样连续子串并标注对应的单行起止秒数。",
+  "repair_rounds": 1,
+  "unresolved_problems_auto_demoted": []
+}

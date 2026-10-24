@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_727",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:08:12+0900",
+  "source_sha256": "d0172da957d73cc4f943f33cb3aa7fcfdbb4c537a3c161dde238d9cf88e00698",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "碰撞判定为离散型碰撞；高速移动的单位卡在两面墙的墙缝中间时，其所有向左的水平速度会被碰撞判定磨掉，并表现为在该墙缝处停住。",
+      "subject": "离散型碰撞判定系统（作用于卡入墙缝的高速移动单位）",
+      "condition": "高速移动单位卡在两面墙的墙缝中间",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "为什么精准的停在这里了 这个东西是离散型碰撞",
+          "t_start": 4875,
+          "t_end": 4894
+        },
+        {
+          "text": "它是离散型碰撞 他卡在了这两个墙的墙缝中间 把所有的向左的速度给磨掉了",
+          "t_start": 4897,
+          "t_end": 4921
+        }
+      ],
+      "reason": "上下文先追问单位为何精准停在墙缝处，随后明确解释为离散型碰撞，并说明卡在两个墙的墙缝中间会把所有向左的速度磨掉。该段属于对碰撞系统的机制解释，并非纯画面指涉或未闭合猜测。",
+      "limitations": [
+        "逐字稿未给出离散型碰撞的帧步长、墙缝宽度阈值及速度磨除的具体公式。",
+        "“离散型碰撞”系主播当场结论，当前窗口主要支撑一次实机现象。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 的核心结论可由逐字稿直接支撑：碰撞被解释为离散型，单位卡入两面墙的墙缝后向左水平速度被磨掉并停住。已改写为自包含陈述，并将跨行候选引文拆为两条单行精确引文；未发现需要排除的同单重复命题或未定论假说。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

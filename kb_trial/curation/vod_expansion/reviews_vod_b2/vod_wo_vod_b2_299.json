@@ -1,0 +1,89 @@
+{
+  "workorder_id": "vod_wo_vod_b2_299",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:34:47+0900",
+  "source_sha256": "f28016970ed816bfeb5b5ae6b02eaf13c49324f567a746920df8ecbb8483bef1",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "当敌方单位受关卡符文（rune）乘法影响时，伊内斯偷取攻击力造成的减算不会同等削弱其带乘法后的攻击力；因此无模组伊内斯可使普通关卡中喷子类敌人的攻击力被偷至 0 并无法炸出伤害，但面对紧急关卡中同类敌人时无法将其攻击力偷至 0。",
+      "subject": "无模组伊内斯的攻击力偷取与敌方关卡符文乘法结算",
+      "condition": "敌方单位应用关卡符文乘法；伊内斯未装备模组",
+      "scope": "entity_mechanism",
+      "category": "属性结算/计算顺序",
+      "evidence": [
+        {
+          "text": "但是如果敌方使用一些关卡run的乘法啊 关卡ruin的乘法 那么的话这个数值就不会被削弱 比如说什么 比如说紧急 如果大家打过的话",
+          "t_start": 2832,
+          "t_end": 2845
+        },
+        {
+          "text": "应该可以注意到就是伊内斯呃 没有模组的伊内斯 伊内斯可以偷完一个普通关的喷子的攻击力 然后的话让他炸不出来伤害",
+          "t_start": 2845,
+          "t_end": 2857
+        },
+        {
+          "text": "但是的话如果他偷那个偷那个就是 额紧急的 他还是偷不了 偷不成零 还是偷不成零 他的计算顺序是一百一百乘以1.2 然后再减去100",
+          "t_start": 2857,
+          "t_end": 2877
+        }
+      ],
+      "reason": "逐字稿明确给出：敌方使用关卡符文乘法时该数值不会被同样削弱，并对比无模组伊内斯偷普通关喷子可使其伤害炸不出、偷紧急关喷子则无法偷到 0。该结论属于属性结算顺序的可复用机制分支。",
+      "limitations": [
+        "‘喷子’的具体敌人名称与关卡编号未在逐字稿中说明；普通/紧急倍率仅由后文 1.2 示例体现。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "当无模组伊内斯对受紧急关卡符文乘法影响的喷子类敌人偷取 100 点攻击力时，敌方攻击力按先 100×1.2 再减去 100 的顺序结算，即 100×1.2−100，而不是先 100−100 再×1.2。",
+      "subject": "紧急关卡喷子类敌人的攻击力结算（伊内斯偷取 100 点攻击力时）",
+      "condition": "紧急关卡符文乘法生效；伊内斯偷取 100 点攻击力",
+      "scope": "entity_mechanism",
+      "category": "属性结算/计算顺序",
+      "evidence": [
+        {
+          "text": "他的计算顺序是一百一百乘以1.2 然后再减去100",
+          "t_start": 2857,
+          "t_end": 2877
+        },
+        {
+          "text": "而不是100-100乘1.2",
+          "t_start": 2877,
+          "t_end": 2895
+        }
+      ],
+      "reason": "主播直接给出紧急关喷子的计算顺序为 100 乘 1.2 后再减 100，并明确否定 100-100 乘 1.2 的顺序，支撑关卡符文乘法先于伊内斯偷取减算的结论。",
+      "limitations": [
+        "100 与 1.2 是逐字稿中的示例数值，不代表所有紧急关倍率；具体敌人基础攻击仍需按实际数据确认。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 与 c02 均通过四闸门。c01 记录无模组伊内斯在普通/紧急关卡喷子上的偷取结果差异；c02 给出紧急关卡中关卡符文乘法先于偷取减算的具体计算顺序。二者互补，均保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

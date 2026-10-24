@@ -1,0 +1,56 @@
+{
+  "workorder_id": "vod_wo_vod_b2_683",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:10:54+0900",
+  "source_sha256": "cb17c7c51cb37621bcb964208424a6685ad7d1b23bd67f957c176e58a22b3c59",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "漩涡实验中干员只下一帧仍出 dot",
+      "verdict": "reject",
+      "reason": "仅为特定实机边界现象观察；未说明具体主体（哪名干员、哪个技能或漩涡光环系统）、DoT 的来源与完整可复现条件，不构成可复用机制定论，违反 G1/G3/G4。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "漩涡实验中干员下九帧仍可存活",
+      "verdict": "reject",
+      "reason": "仅为特定实机存活现象观察；未说明威胁来源、具体干员/技能、漩涡状态与完整可复现条件，无法抽象为机制规则，违反 G1/G3/G4。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "两条候选均来自逐字稿中的特定边界实验现象，逐字引文可在同一声明行中精确对齐，但候选命题缺少明确主体、完整触发条件与可复现实验设置，属于未闭合的实战观察而非可复用机制定论，故均判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_484",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:50:09+0900",
+  "source_sha256": "376f8d761b3dabdf7c953705fd2fd38e5ead2e2cef5f11f7b3d89c207878e13a",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "三技能轰炸相关数值的方差约为六",
+      "verdict": "pending",
+      "reason": "提供引文可在逐字稿中字符级匹配，但命题缺少具体干员/技能名，且“方差”所指变量、单位与样本条件未在转写中说明；“哎不对”“大概是六”“姑且”表明为当场近似修正，尚未闭合，需画面或后续计算/人工听审核实。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "三技能轰炸相关数值的均值约为46",
+      "verdict": "pending",
+      "reason": "“均值在46”可逐字匹配，但均值对应的是伤害、爆炸次数、概率还是其他统计量未在逐字稿中明确，单位与具体干员/技能也未闭合，无法形成自包含机制命题，需人工听审或画面补全。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "两候选的引文均能在给定窗口中找到连续原文，但都只是当场对轰炸相关统计量的口语估算；关键所指对象、单位、具体实体和样本条件缺失，且讨论未完全闭合，故均判 pending，不作 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

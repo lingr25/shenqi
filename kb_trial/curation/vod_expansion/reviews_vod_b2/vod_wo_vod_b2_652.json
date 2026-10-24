@@ -1,0 +1,65 @@
+{
+  "workorder_id": "vod_wo_vod_b2_652",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:05:34+0900",
+  "source_sha256": "b7f7eaafacfc6fc05ec237d2e9baa60df286376d4a3ac42655903e0b524fcc83",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "纵坐标为奇数格的地坑无法通过“先向下推挤敌人、撤掉干员、束缚敌人后再向下挤入”的推坑操作使敌人掉入坑中；该操作只对纵坐标为偶数格的地坑成立。",
+      "subject": "纵坐标为奇数格的地坑",
+      "condition": "采用先向下推挤、撤掉干员、束缚敌人后再向下挤入的推坑操作",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "你看这个坑 这个坑以纵坐标而言 就是一个典型的基数格的坑 这就是一个典型的基数哥的坑 他是没有办法说你那个向下推一下子",
+          "t_start": 6514,
+          "t_end": 6529
+        },
+        {
+          "text": "然后的话把这个干员撤了 把这个小刻束缚住 然后那个再往下挤一下子就下去了 做不到 因为这个纵坐标是奇数格",
+          "t_start": 6529,
+          "t_end": 6544
+        },
+        {
+          "text": "这个方法只对偶数格成立 对奇数格不成立",
+          "t_start": 6482,
+          "t_end": 6496
+        },
+        {
+          "text": "注意啊 这个必须得是偶数格 不是偶数的格的坑是挤不下去的",
+          "t_start": 6379,
+          "t_end": 6390
+        }
+      ],
+      "reason": "逐字稿明确说明该推坑方法的硬性要求是坑为偶数格，并用纵坐标为奇数格的坑为例说明“向下推、束缚后再向下挤”无法入坑；同时总结“只对偶数格成立，对奇数格不成立”。",
+      "limitations": [
+        "该结论针对所述向下推挤、束缚后再下挤的推坑方法，不覆盖其他位移路径或强制位移。",
+        "逐字稿未完整展开坑坐标取整与入坑判定的底层公式。",
+        "逐字稿中“基数格/基数哥”等为 ASR 识别偏差，按上下文应理解为“奇数格”。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 的核心结论在逐字稿中有明确陈述，属于可复用的位移/入坑判定规则。上游引文跨行，已拆分为逐行证据后通过 Gate 2；其余三大闸门亦通过。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

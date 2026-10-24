@@ -1,0 +1,56 @@
+{
+  "workorder_id": "vod_wo_vod_b2_201",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:57:04+0900",
+  "source_sha256": "df8cd63e175de3a7e2f2951b67f332e62b4f86ae8aea1a5e8644d5dab1b9fe7c",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "在净罪中怪进入蓝门半格仇恨反超幽灵的实战操作要求",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "该内容属于针对特定关卡（净罪）对局画面实况的操作指导与打法经验叙述（「注意这个怪啊」「否则他的仇恨将反超这个幽灵」），依赖画面指涉且未闭合为独立通用的底层机制定论，缺乏具体敌人参数与严格的复现规则，不具备知识库规则价值。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "在净罪中不能将怪控制过远以保证幽灵死后立刻接敌",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "纯属特定关卡实战操作指导与排怪建议（无规则价值），依赖实战情境与画面代词（「让这个可以立刻接敌」），未阐释通用机制参数或底层规则判定。"
+    }
+  ],
+  "review_note": "工单中上游抽取的两条候选命题均为针对特定关卡（净罪）实操录像的打法提示与现场指挥（属于 G4 排除的纯实战操作指导与 G1 画面代词依赖），虽然前半段上下文提及了零向量与蓝门半格的仇恨计算缺陷，但 c01 和 c02 本身仅抽取了实战复盘层面的具体应对，无法作为自包含的机制规则入库，故全数予以拒绝。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

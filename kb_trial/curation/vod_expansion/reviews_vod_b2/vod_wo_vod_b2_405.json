@@ -1,0 +1,37 @@
+{
+  "workorder_id": "vod_wo_vod_b2_405",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:08:55+0900",
+  "source_sha256": "8aa215fac2dc7da6ae2c2c442786fdd0b50847e90dc24c1211f9af2d67fbd996",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "敌人被二技能漩涡控制期间可能具有不可选中效果，导致漩涡未在生成第一时间为其施加DoT。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ],
+      "reason": "该候选只是复述主播的未验证猜测。逐字稿原文为「有可能这是一种类似睡眠的控制 在被控期间是不可选中的」，后续也仅出现「应该是有一种不可选中效果」，均属于开放假说而非已闭合定论，不满足 Gate 4。"
+    }
+  ],
+  "review_note": "本工单仅一个候选。引文可在 3918s 行逐字匹配，但其核心结论建立在「可能」「应该」类未验证推测上，不能作为可复用机制定论收录，故整单判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

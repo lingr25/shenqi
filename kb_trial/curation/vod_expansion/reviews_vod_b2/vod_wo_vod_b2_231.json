@@ -1,0 +1,70 @@
+{
+  "workorder_id": "vod_wo_vod_b2_231",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:16:47+0900",
+  "source_sha256": "f9752147d8c25bbacd2bb5899acba7bb250491cf8fae9636ab60b05c72893d28",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "异格银灰（初雪/银灰等体系装置）的风雪之眼加技力与减再部署机制判定规则为：部署区干员只要有任何一瞬间位于风雪之眼左侧，就会使其下次部署获得初始技力增加4点，且再部署时间减少20秒；即使后续排序被换至右侧，只要曾经位于左侧该效果依然生效。",
+      "subject": "风雪之眼机制",
+      "condition": "部署区干员有任意一瞬间位于风雪之眼左侧",
+      "scope": "entity_mechanism",
+      "category": "状态效果/技力",
+      "evidence": [
+        {
+          "text": "在位于风雪之岩左侧的干员都会使下次部署初始技力加次 并且再部署时间减20",
+          "t_start": 5515,
+          "t_end": 5532
+        },
+        {
+          "text": "他换即使换到了右边去 只要曾经位于左边",
+          "t_start": 5474,
+          "t_end": 5489
+        }
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "reason": "主播在总结讲演中明确给出了风雪之眼的判定机制定论，逐字稿提供了明确的数值（初始技力加4、再部署减20）和时序条件（任何一瞬间在左侧即生效，换位不清除）。",
+      "limitations": [
+        "需要当且仅当银灰在场时才会发生排序与判定"
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "银灰部署到场上后，风雪之眼先为左侧干员加技力再进行排序，排序前后各给左侧干员加一次技力",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "reason": "c02的表述是主播推导过程中的口语阐述，其最终统一归纳为c01的终极规则（即‘任何一瞬间位于左侧即生效’，并非排序前后重复叠两次独立技力加成），表述容易误导为加两次技力，已被c01吸收完备覆盖。"
+    }
+  ],
+  "review_note": "本段为银灰风雪之眼排序与技力生效机制的专论，c01包含了主播最终总结的完整机制与具体数值，四大闸门均通过；c02属于中间推论过程的残缺描述且容易引起‘叠加两次’的歧义，予以驳回。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

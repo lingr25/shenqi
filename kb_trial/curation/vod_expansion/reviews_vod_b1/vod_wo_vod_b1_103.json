@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b1_103",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:54:18+0900",
+  "source_sha256": "4da042ae1940e99086c0bfe7a91a5a268090a281802040aad076c5c00acccae1",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在《明日方舟》中，画面中看到的贴图边缘不是真正的地图边缘；真正的地图边缘外侧没有任何内容，地块边缘才是真正的地图边缘。",
+      "subject": "地图边缘、贴图边缘与地块边缘的区分",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "这个才是真正的地图边缘啊 在这个外面什么也没有",
+          "t_start": 6313,
+          "t_end": 6328
+        },
+        {
+          "text": "这个边缘是贴图的边缘 不是真正的地图边缘 这些才是地块的边缘",
+          "t_start": 6328,
+          "t_end": 6337
+        }
+      ],
+      "reason": "主播在实测凛冬二技能后明确指出：视觉上的贴图边缘并非真正地图边缘，真正地图边缘外侧没有内容，地块边缘才是判定意义上的边缘。该结论为显式机制陈述，而非未闭合猜测。",
+      "limitations": [
+        "逐字稿未说明引擎内部如何区分贴图与地块碰撞箱，只给出视觉边缘与地块边缘的结论。",
+        "结论基于当前测试场景的讲解，未覆盖所有地图主题或活动关卡的贴图布局差异。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 通过四闸：命题可自包含，引文可在转写中逐字定位，主体/条件/范围明确，且为实测后的机制结论。evidence 第 2 条 t_end 按下一行时间戳修正为 6337。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

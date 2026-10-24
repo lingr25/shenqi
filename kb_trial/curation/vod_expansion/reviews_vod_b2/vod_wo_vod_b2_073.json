@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_073",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:40:59+0900",
+  "source_sha256": "9e2410d9be5c56c542ae447723cf20dfdeb4abc8d092fd5267999d1dffd33229",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "穿墙落点偏左现象与右墙判定权重修正",
+      "verdict": "reject",
+      "reason": "候选属于未闭合异常观察与修正意向：主播仅发现本次穿墙落点偏左、推测右墙作用胜过左墙，并明确说不知道为什么、原结论需改，但没有给出可复用的修正后规则。该内容也不满足逐字引文对齐要求，候选 quotes 跨多条逐字稿行拼接，且部分空格/断句与单行原文不一致。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G2",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本单仅一个候选 c01。该候选对应一段尚未闭合的穿墙测试异常：左偏落点被观察到，但成因未知，主播只表示旧结论需要修改，未形成明确、可复现的机制定论；同时证据引文跨行拼接，非单行字符级连续子串。因此不能纳入机制知识库，判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

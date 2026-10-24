@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b2_137",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T17:06:57+0900",
+  "source_sha256": "38c5bcba5b769a16a806f2039cfae5d0eba75fbf9653de7d62105df602d6e9ce",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "45度斜向下位移的横向分量为0.641、纵向分量为0.141；主播修正了此前所说的数。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ],
+      "reason": "候选命题自称 45 度斜向下位移，但所给逐字稿证据仅出现“横是0.641”“纵是0.141”，未出现 45 度条件；后文 [220s] 明确说向斜下45度的0.2分量约为0.1414/0.1414，与本命题的0.641/0.141矛盾。该数值缺少适用对象与完整条件，不是自包含机制命题，且条件与证据不符。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "以0.141×0.641分之0.5的方式收缩，放缩比例约为10/3，收缩后结果是一个略大于0.1的数。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "命题未说明被收缩的主体（应为纵/横分量），不满足自包含与显式主体要求；且算式 0.141×(0.5/0.641)≈0.11，其横向放缩比例应约 0.5/0.641≈10/13，而非 10/3。候选把可能是 ASR 误写的“10/3”当作定论参数，推导内部不一致，属于错误推导。"
+    }
+  ],
+  "review_note": "两个候选均未通过硬性闸门：c01 的 45 度条件与数值同后文矛盾且缺少适用对象；c02 的放缩比例与算式不符，疑为转写误值，不能作为机制定论保留。整单判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

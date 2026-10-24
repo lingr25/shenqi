@@ -1,0 +1,86 @@
+{
+  "workorder_id": "vod_wo_vod_b1_040",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:23:56+0900",
+  "source_sha256": "e892c5c2dab49f5c4ed745e3af1f6bb3340a816f07e40ea66bece6bff4b0a8e8",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "兵团波次在结构上是离散的：上一个兵团结束之后，才会执行下一个兵团；而「阻止下一个兵团」参数默认为不阻止，所以在默认常态下，上一个兵团出完就直接出下一个兵团。",
+      "subject": "兵团波次调度系统",
+      "condition": "默认常态下，「阻止下一个兵团」参数为不阻止",
+      "scope": "universal",
+      "category": "波次调度",
+      "evidence": [
+        {
+          "text": "从结构上来讲 他是很离散的 上一个兵团结束之后才能去执行下一个兵团",
+          "t_start": 3029,
+          "t_end": 3044
+        },
+        {
+          "text": "这里的话阻止下一个兵团 默认是不阻止 默认是不阻止 所以才有这个常态的话 上一个兵团出完之后就直接出下一个兵团",
+          "t_start": 3058,
+          "t_end": 3071
+        }
+      ],
+      "reason": "逐字稿明确说明兵团结构离散，并指出「阻止下一个兵团」默认不阻止，因此默认情况下上一兵团出完即进入下一兵团。",
+      "limitations": [
+        "未说明「上一个兵团结束」在重生、传送门等边界情况下如何判定。",
+        "后续口播中关于传送门消失是否释放下一波属于未测试猜测，本命题未采纳该部分。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "把「阻止下一个兵团」参数改成 1，则上一个兵团必须被全部杀光，才会让下一个兵团出现；也就是说，鹰角可以用该参数修改兵团的出生条件。",
+      "subject": "兵团波次调度系统（「阻止下一个兵团」参数）",
+      "condition": "「阻止下一个兵团」参数改为 1",
+      "scope": "universal",
+      "category": "波次调度",
+      "evidence": [
+        {
+          "text": "鹰角也可以改更改兵团的出生条件 比如说他可以用这个参数去规定 说我上一个兵团也要全杀光了 才能去执行下一个兵团",
+          "t_start": 3044,
+          "t_end": 3058
+        },
+        {
+          "text": "如果这个参数改成一的话 那么就会是上一个兵团需要杀了 才能让下一个兵团出",
+          "t_start": 3071,
+          "t_end": 3082
+        }
+      ],
+      "reason": "逐字稿明确给出参数改为 1 后的效果：上一兵团需要被杀掉后，下一兵团才会出现，并说明可用该参数规定兵团出生条件。",
+      "limitations": [
+        "未说明参数为 1 时是否要求每个个体均被击杀，以及召唤物、重生、传送门等边界如何处理。",
+        "口播后续对传送门消失释放下一波的疑问未测试，不属于本命题采纳范围。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单两条候选均能在逐字稿窗口中找到字符级连续引文支撑，且属于兵团波次调度系统中可复用的机制命题：c01 说明默认不阻止参数下的离散波次衔接，c02 说明参数改为 1 后的出生条件变化。后续关于传送门释放下一波的口播属于未测试猜测，未纳入 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

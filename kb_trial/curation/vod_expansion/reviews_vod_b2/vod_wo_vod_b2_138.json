@@ -1,0 +1,75 @@
+{
+  "workorder_id": "vod_wo_vod_b2_138",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T17:07:02+0900",
+  "source_sha256": "a540b90011b72dcc033818bdb03dbd4a4c939dc9f147c8c0506eb773a1315675",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "对于横向分量约0.641、纵向分量约0.141的斜向位移向量，将横向分量放缩到0.5以内时，所需放缩比例约为10/13。",
+      "subject": "斜向位移向量的横向分量",
+      "condition": "横向分量约0.641，目标横向上限0.5",
+      "scope": "instance",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "这里横是0.641",
+          "t_start": 162,
+          "t_end": 177
+        },
+        {
+          "text": "纵是0.141对吧 然后进行收缩 也就是0.141×0.641分之0.5",
+          "t_start": 177,
+          "t_end": 189
+        },
+        {
+          "text": "要把横向放缩到0.5以内对吧 大概是10/13",
+          "t_start": 236,
+          "t_end": 257
+        }
+      ],
+      "reason": "逐字稿先给出横0.641、纵0.141，并给出收缩算式 0.141×0.5/0.641，随后确认横向放缩到0.5以内时比例约为10/13。该结论是针对该具体向量的近似放缩计算。",
+      "limitations": [
+        "该比例为特定数值例（横约0.641、纵约0.141）的近似结果，不是通用公式。",
+        "[189] 处转写为“大概是10/3”，与 [236] 的“大概是10/13”不一致；本回执采纳后者作为最终确认，但该异文需人工听审。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "向斜下45度位移时，右向分量为0.41421414141，下向分量为0.1414。",
+      "verdict": "pending",
+      "reason": "该候选来自带“对吧”的确认/反问片段，且右向分量 0.41421414141 与同一句中下向分量 0.1414、‘向斜下45度的0.2’不自洽；关键右向分量疑似 ASR 误听（可能应为0.1414），需人工听审或实机验证后再定论。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c02 经改写后可作为特定位移向量放缩实例保留；c01 因关键右向分量与45度斜向下不自洽且来自确认/反问片段，暂判 pending 待人工听审。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

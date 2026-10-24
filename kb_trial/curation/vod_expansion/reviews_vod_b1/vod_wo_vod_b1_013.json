@@ -1,0 +1,56 @@
+{
+  "workorder_id": "vod_wo_vod_b1_013",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T21:17:47+0900",
+  "source_sha256": "d937d8702b5e1b80cd0bacb3401eaee4d5f733898c831f0a2dc2f0a74cd49666",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "两个30导致四条路线预演并额外增加四帧，总帧数 7+1+4=12",
+      "verdict": "pending",
+      "reason": "逐字稿支持“四条路线预演导致额外加四帧”及“7+1再加四得12”的推导，但其中“两个30”未在窗口内说明具体实体或机制，且“7+1”的基准对象也未交代；无法形成自包含命题，需结合画面或后续实机确认。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "四条路线预演导致同一波次两个30敌人延迟四帧出生",
+      "verdict": "reject",
+      "reason": "与 c01 指同一现象且信息更少；同时“两个30敌人”主体不明确，仅依赖当场实战观察，缺少可复现条件，未通过自包含、显式主体与观察排除要求。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "DUP",
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单两个候选都围绕“四条路线预演导致额外四帧”展开。逐字引文可对齐，但关键主体“两个30”及“7+1”基准在逐字稿窗口内没有解释，不能安全落库；c01 保留待验证，c02 因重复且更弱而拒绝。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

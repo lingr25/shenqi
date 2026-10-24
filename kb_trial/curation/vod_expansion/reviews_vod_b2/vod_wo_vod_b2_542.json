@@ -1,0 +1,50 @@
+{
+  "workorder_id": "vod_wo_vod_b2_542",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:05:09+0900",
+  "source_sha256": "ea08493f14c1af57a14e8b571f5140d3c24034a57d8f7b46067ba06bc7c7a04b",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "即使全都三中，珊比的山壁控场也只能维持60秒。",
+      "subject": "珊比的山壁控场",
+      "condition": "全都三中",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "全都三中的话 山壁也只能管 就是60秒",
+          "t_start": 1729,
+          "t_end": 1763
+        }
+      ],
+      "reason": "上下文在质疑“全都三中”后的效果时，主播明确给出山壁只能维持60秒的量化结论；该句为陈述句而非猜测，且引文在逐字稿中逐字可定位。",
+      "limitations": [
+        "逐字稿未说明“三中”具体指哪三段命中或何种命中判定。",
+        "“山壁”为转写词，正式技能或状态名需人工复核。",
+        "未说明60秒计时起点以及是否受其他因素延长。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "仅一条候选，核心命题有明确量化与逐字引文；技能或状态名“山壁”及“三中”的具体指代需人工复核，但当前不构成拒绝或挂起理由。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

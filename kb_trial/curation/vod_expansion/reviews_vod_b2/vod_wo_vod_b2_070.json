@@ -1,0 +1,108 @@
+{
+  "workorder_id": "vod_wo_vod_b2_070",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:40:31+0900",
+  "source_sha256": "ffccf33e2a930cf5b399760f9042afee796978c1cb85a722d84e27e046246753",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "敌人处于非失衡寻路状态时走到两块墙体交界缝隙处，再进入失衡，弹出时左右墙体碰撞排斥会将该敌人保持在墙缝中，产生无法正常弹出的异常表现。",
+      "subject": "敌人（及其失衡碰撞箱）",
+      "condition": "敌人先在非失衡寻路状态走到两块墙体交界缝隙处，再进入失衡",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "如果让敌人在寻路状态下 非失衡状态下走到这个位置 然后这个位置再让敌人进入失衡也会",
+          "t_start": 1220,
+          "t_end": 1233
+        },
+        {
+          "text": "那么就会产生异常的表现 就会因为弹出的时候 因为左墙右挤 右强左挤 从而保持在这个墙缝里面",
+          "t_start": 1233,
+          "t_end": 1245
+        }
+      ],
+      "reason": "上下文明确说明在墙缝附近先以非失衡寻路进入、再触发失衡时，会因两侧墙体的碰撞排斥把单位保持在墙缝中，形成异常弹出表现；该结论不依赖单一画面指代。",
+      "limitations": [
+        "主播未展示具体计算过程，也未限定适用敌人类型或墙缝宽度。",
+        "前后文讨论离散型碰撞与墙缝判定，但本命题本身只陈述该可复现异常。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在寻常关卡中，让敌人足够贴近下侧墙体地块并贴墙行走，再使敌人进入失衡，可以复现墙缝排斥异常。",
+      "subject": "敌人",
+      "condition": "寻常关卡中，敌人先贴近下侧墙体地块并贴墙行走，再进入失衡",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "日常中 只要让敌人足够的贴近下策的这个墙体地块 然后的话贴着墙走 然后的话再让他进入失衡 也可以做到同样的事情",
+          "t_start": 1245,
+          "t_end": 1262
+        }
+      ],
+      "reason": "逐字稿直接给出了日常关卡中的可复现操作条件：贴近下侧墙体地块、贴墙走、再进入失衡，并说明可做到同样事情。",
+      "limitations": [
+        "未给出具体关卡、敌人类型或精确距离参数。",
+        "“下策”为逐字稿 ASR 文本，命题按上下文规范为“下侧”。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c03",
+      "claim": "早期版本中，挤只能把敌人挤到格子中心的 0.5 边界，不能挤到格子缝的 0.5 边界，因此通过贴墙失衡复现墙缝排斥异常较难实现。",
+      "subject": "挤机制（推拉失衡中的挤）",
+      "condition": "早期版本；通过贴墙失衡复现墙缝排斥异常",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "不过在以前的话 这样做不是很容易 因为那个就是呃挤 只能挤到格子中心的0.5边界 而不能挤到格子缝的0.5边界",
+          "t_start": 1262,
+          "t_end": 1276
+        }
+      ],
+      "reason": "逐字稿明确对比早期版本中“挤”的边界差异：只能到格子中心 0.5 边界，不能到格子缝 0.5 边界，并称这样做不容易；上下文“这样做”指前文贴墙失衡复现。",
+      "limitations": [
+        "未给出具体版本号。",
+        "0.5 边界为口述参数，未展示实测或计算细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "三条候选均有逐字稿直接支撑，且可改写成自包含机制陈述。c01 给出墙缝失衡异常的通用表现，c02 给出日常可复现条件，c03 给出早期版本边界差异；未发现未定论猜测、反问或跨行伪造引文。证据时间戳按 transcript_window 行号标注。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

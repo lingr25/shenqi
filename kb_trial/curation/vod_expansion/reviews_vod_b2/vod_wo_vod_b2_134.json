@@ -1,0 +1,56 @@
+{
+  "workorder_id": "vod_wo_vod_b2_134",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T17:04:58+0900",
+  "source_sha256": "401e035887054dea5f3c8077cb541a26c7403e4f1d3be4e7e5e6c7b2026a9910",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "位移的模长距离约0.3时，(0.4-0.3)×50得权重5，两个5同向分配为十比一",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "引文可逐字匹配，但命题依赖‘它/这个方向/权重’等上下文指代，未说明0.4、权重与同向分配各自对应何种位移/方向体系；主播后文又称该处为可控制误差的简化，使‘权重为5/十比一’并非闭合定论。不满足自包含与显式三元约束，不宜作为可复用机制命题。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "单方向分量为0.5、两方向合起来约1，故合计不是0.6；权重不直接乘10或50",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "引文可逐字匹配，但‘这个方向’‘他们两个’均依赖上下文；命题只给出否定性判断，未交代主体、成立条件与正确换算规则，属于未闭合推导片段，不满足自包含与显式三元约束。"
+    }
+  ],
+  "review_note": "本工单两条候选均能在转写中逐字定位，但都只是课堂具体算式/勘误片段，缺少自包含主体、条件和可复用结论，且含有后续被修正或简化的近似参数。按宁缺毋滥原则，不做 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

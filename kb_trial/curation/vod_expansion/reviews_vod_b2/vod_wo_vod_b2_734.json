@@ -1,0 +1,71 @@
+{
+  "workorder_id": "vod_wo_vod_b2_734",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:10:00+0900",
+  "source_sha256": "7ab48469b63d419960b8ab9c20586920c6b4543aec12b9b3cb2b56fd08027650",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "无法行动异常效果是后加入的异常效果，而眩晕状态机早已存在。",
+      "subject": "无法行动异常效果与眩晕状态机",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "无法行动的那个异常效果是这次新加的",
+          "t_start": 6117,
+          "t_end": 6130
+        },
+        {
+          "text": "眩晕状态机早就有的 眩晕就是用这个去做的",
+          "t_start": 6117,
+          "t_end": 6130
+        }
+      ],
+      "reason": "逐字稿明确将无法行动异常效果表述为“这次新加的”，并称眩晕状态机“早就有的”，同句还说明眩晕就是通过该状态机实现的，足以支撑二者新旧关系的机制性陈述。",
+      "limitations": [
+        "未给出具体版本号或更新节点，“后加入/早已存在”仅相对于该直播讨论时点。",
+        "逐字稿存在 ASR 误写（如“子弹状态机”），无法完全排除原意偏差。",
+        "未明确说明无法行动异常效果是否直接复用眩晕状态机；本命题仅保留新旧关系。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "眩晕Buff的效果就是让敌人一直进入眩晕状态。",
+      "verdict": "reject",
+      "reason": "该句仅将“眩晕Buff”同义反复为“让敌人进入眩晕状态”，未交代施加条件、作用范围，也未说明与眩晕状态机的底层关系；显式三元约束不完整，不具备可复用机制价值。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "c01 有逐字稿直接支撑，保留为无法行动异常效果与旧有眩晕状态机之间的新旧机制关系；c02 缺乏明确条件与范围，且属于同义反复，排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

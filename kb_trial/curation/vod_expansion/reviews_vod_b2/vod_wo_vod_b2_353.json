@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_353",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:51:17+0900",
+  "source_sha256": "440ad059823be023c28a950499dcf0ada34dcaa2f8561ae13d6c26e2572c59eb",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "祥子一技能与三技能没有攻击力加成，缓存攻击力对其无效",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "reason": "1. 违反Gate 1：原逐字稿及上游命题中的'祥子'为口误/ASR错词或主播口头代称，未明确指涉正规干员（结合上下文弹道与音符可能指塑心或阿尔图罗，但文本中指代不清，缺乏自包含性）。2. 违反Gate 4：主播口中的'缓存了也没有什么用啊，缓存了不和和不缓存也没什么区别'属于主观随口吐槽与聊天式推论，并非具有严谨规则价值的机制定论。"
+    }
+  ],
+  "review_note": "工单候选命题讨论的干员名称'祥子'属于主播口语借用/错词，且命题内容'缓存了也没用'属于直播中的主观吐槽，不构成经得起推敲的底层机制定论，予以reject处理。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

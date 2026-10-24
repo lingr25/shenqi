@@ -1,0 +1,97 @@
+{
+  "workorder_id": "vod_wo_vod_b2_623",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:00:57+0900",
+  "source_sha256": "948df6999084632ded0a90dc02c9e3d37488dfefe54480ad45b5b81f32f0fbe6",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "旋涡的本质既是Dot也是Buff，一旦挂到敌人身上，不会因为敌人恢复隐匿而被撤除或消除。",
+      "subject": "旋涡效果",
+      "condition": "旋涡效果已施加到敌人身上，且敌人随后恢复隐匿",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "Buff挂上就是挂上了隐匿回复 为什么会把Buff撤掉呢 这个旋涡也是个dot 也是个Buff 一样的一样的",
+          "t_start": 2607,
+          "t_end": 2635
+        }
+      ],
+      "reason": "逐字稿直接说明旋涡既是dot也是Buff，并以“Buff挂上就是挂上了”否定恢复隐匿会撤掉已挂Buff。",
+      "limitations": [
+        "窗口内未交代“旋涡”具体归属的干员/技能全名，仅能确认该效果本身的性质。",
+        "只明确不会被隐匿恢复撤除，未展开伤害结算细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "Dot技能不能直接索敌或对处于隐匿状态的单位造成伤害，但只要在破除隐匿的瞬间把Dot或Buff挂上去，敌人随后恢复隐匿时，这些已施加的Dot或Buff也不会被撤除，会继续生效。",
+      "subject": "Dot技能与已施加的Dot/Buff效果",
+      "condition": "敌人处于隐匿状态时Dot不能直接索敌；Dot/Buff在敌人破除隐匿的瞬间被施加，随后敌人恢复隐匿",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "是dot啊 什么叫等下就不能就是dot 他不是能对隐匿造成伤害 只是挂上了之后不会因为隐匿而撤掉",
+          "t_start": 2740,
+          "t_end": 2753
+        },
+        {
+          "text": "这个东西我们也是要证明也是很简单的 就是我们随便找一个隐匿的怪 就可以证明一下 他实际上是不能怪的 是锁不到的 比如说三杠五",
+          "t_start": 2760,
+          "t_end": 2778
+        },
+        {
+          "text": "对炼金师的dot和酒神都经常在肉鸽里收狗",
+          "t_start": 2816,
+          "t_end": 2822
+        },
+        {
+          "text": "挂上的Buff不会被撤掉是很正常的",
+          "t_start": 2822,
+          "t_end": 2827
+        },
+        {
+          "text": "所以你只要反掉一瞬间的隐 把这个Buff挂上去 就得",
+          "t_start": 2827,
+          "t_end": 2845
+        }
+      ],
+      "reason": "逐字稿先说明DoT不能锁隐匿怪，随后明确已挂上的Buff不会因隐匿被撤掉，并给出在破除隐匿瞬间挂上Buff的操作结论，能支撑“已施加效果留存”这一通用机制。",
+      "limitations": [
+        "原始候选引文跨多行拼接，本回执已按逐字稿拆成多条连续证据。",
+        "“不能怪的”“反掉”等为ASR口语/疑似错字，语义需人工听审确认。",
+        "“继续生效”的具体伤害结算形式未逐字展开，逐字稿明确的是Buff不被撤除。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本单两个候选均围绕已施加DoT/Buff在敌人恢复隐匿后的留存。c01是“旋涡”的具体实例，c02是更通用的DoT/Buff留存规则；二者非同一表述层级，均予保留。c02原始证据存在跨行拼接问题，回执中已按逐字稿逐行拆分，确保每条引文均为连续原文。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

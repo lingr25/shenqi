@@ -1,0 +1,72 @@
+{
+  "workorder_id": "vod_wo_vod_b2_755",
+  "stem": "BV18BpG6LEtq_p2_42631758665",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:12:40+0900",
+  "source_sha256": "c3af69f5328a47277b6a698dff8d238bcef04dda5a7f1882a41383a1d3e61c4a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在拉力机制中，力度等于「作用距离与初始距离之比」的四次幂乘以初始力度；因此当作用距离相对初始距离拉长时，拉力会按四次方指数放大，可能将目标直接拉飞。",
+      "subject": "拉力机制的力度计算",
+      "condition": "作用距离相对初始距离发生变化时（初始距离不为零）",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "距离比初始距离 然后的四次幂乘以初始力度是他的力度",
+          "t_start": 2738,
+          "t_end": 2752
+        },
+        {
+          "text": "才可以让它随着距离的拉长 然后以四次方的指数扩大对吧 第四次方去扩大这个拉力 直接飞出去",
+          "t_start": 2752,
+          "t_end": 2790
+        }
+      ],
+      "reason": "逐字稿明确给出力度由「距离比初始距离」的四次幂乘以初始力度构成，并补充说明距离拉长会以四次方指数扩大拉力；引文连续可定位，命题可改写为不依赖画面的自包含机制陈述。",
+      "limitations": [
+        "逐字稿未明确该公式适用的具体装置、模式或关卡范围，只能按拉力机制的一般计算来概括。",
+        "「直接飞出去」为定性/实战现象描述，未给出具体位移数值。",
+        "「对吧」属于口头确认语气，不构成开放疑问。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "在四次幂力度机制下，初始距离越短越好。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ],
+      "reason": "该句是从四次幂公式推导出的打法优化建议，并非可复用机制定论；主体与适用范围未明确，属于操作指导/评价性结论，按 Gate 3 与 Gate 4 排除。"
+    }
+  ],
+  "review_note": "c01 的核心公式与四次方放大结论在逐字稿中有明确表述，引文可逐字对齐，改写为自包含命题后保留；c02 为基于公式的打法建议，缺少明确机制主体与适用范围，按 Gate 4 排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

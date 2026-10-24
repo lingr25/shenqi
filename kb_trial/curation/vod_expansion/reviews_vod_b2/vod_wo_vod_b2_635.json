@@ -1,0 +1,56 @@
+{
+  "workorder_id": "vod_wo_vod_b2_635",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:02:26+0900",
+  "source_sha256": "ddfaa5e01825f235da90bd126b17d07da8b9f44b6b69d4f3fbe8d9302f5d87ee",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "32帧、33帧、34帧分别单独暴露均未触发索敌锁定",
+      "verdict": "pending",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "逐字引文可在原行中字符级对齐，但命题未补齐被暴露的具体主体、撤退操作对象、索敌系统及可复现实验条件；且上下文随后反复质疑因果关系与是否张冠李戴，讨论未闭合，暂不宜作为可复用机制定论。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "32帧、33帧、34帧组合撤退时反而触发索敌锁定",
+      "verdict": "pending",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "引文「然后组合起来的话反而找到了」可对齐，但「找到了」被改写为「触发了索敌锁定」时缺少明确主体与参数；后续主播持续表示解释不清、怀疑因果，实验结论未闭合，需留待后续实机验证或人工听审。"
+    }
+  ],
+  "review_note": "本工单两个候选均来自同一段索敌帧实验观察，逐字引文可对齐；但命题主体、实验条件和可复现参数不足，且上下文显示主播随后反复质疑因果与结论，讨论未闭合，故两项均判 pending，不纳入稳定机制知识。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,56 @@
+{
+  "workorder_id": "vod_wo_vod_b2_416",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:11:25+0900",
+  "source_sha256": "8df0108e9aa5e78b447fea89f092369f298f1d3dba57aeceb6fb9f1d8158f6f8",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "放逐仓被释放后会携带周围数名地面敌人，并将其不断传送至前方。",
+      "subject": "放逐仓",
+      "condition": "放逐仓被释放后",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "前释放一艘一艘浮浮游浮游放逐放逐仓 逐仓浮游放逐仓 会携会携带周围周围数名地地面敌人 并将其不断传送至前至前方",
+          "t_start": 5747,
+          "t_end": 5769
+        },
+        {
+          "text": "放逐仓会携带带周围数名",
+          "t_start": 5841,
+          "t_end": 5848
+        }
+      ],
+      "reason": "逐字稿中主播在描述/复核放逐仓释放后的效果，前后两处均明确提到放逐仓会携带周围数名敌人并持续向前传送。该结论具有机制价值，且不依赖画面指涉即可理解。",
+      "limitations": [
+        "未明确“数名”具体数量",
+        "未明确“周围”的判定半径/索敌范围",
+        "未明确传送频率、传送距离与“前方”的具体方向参数",
+        "逐字稿存在 ASR 重复与错字，但核心机制表述可辨认"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅有一个候选命题。引文可在逐字稿原始行中字符级连续匹配；候选虽为 observation 且参数存在模糊处，但“放逐仓释放后携带周围地面敌人并不断向前传送”是明确机制陈述，非主播猜测或反问，故保留为 entity_mechanism，并在 limitations 中标注未定参数。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

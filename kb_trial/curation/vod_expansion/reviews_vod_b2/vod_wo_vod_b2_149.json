@@ -1,0 +1,85 @@
+{
+  "workorder_id": "vod_wo_vod_b2_149",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed",
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:12:02+0900",
+  "source_sha256": "4d3ac2792c3144d72c5018d22cbf1dfd6907d96c43c55d25f988dcdeae2f2921",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "我方干员的受击范围统一为以干员中心为圆心、半径0.25的圆（受击半径为0.25）。",
+      "subject": "干员受击范围",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "目前干员的受击范围统一为半径0.25的圆 而只要敌人的攻击范围 与我方干员的受击范围相切或重叠 则该干员可受到敌人的远程攻击",
+          "t_start": 1598,
+          "t_end": 1613
+        }
+      ],
+      "reason": "逐字稿中明确确认了底层通用规则：干员受击范围统一为半径0.25的圆。",
+      "limitations": [
+        "早期版本存在个别干员（如伊芙利特受击半径曾为0.1）的异常情况，但后续版本已修复统一。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "敌人的远程攻击判定条件为敌方攻击范围与干员受击范围相切或重叠；当敌方攻击范围为圆形时，等价于敌人与干员中心的欧式距离小于等于敌人攻击半径加0.25。",
+      "subject": "敌方远程攻击判定",
+      "condition": "敌方未被阻挡且具有远程攻击能力",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "目前干员的受击范围统一为半径0.25的圆 而只要敌人的攻击范围 与我方干员的受击范围相切或重叠 则该干员可受到敌人的远程攻击",
+          "t_start": 1598,
+          "t_end": 1613
+        },
+        {
+          "text": "另外我们还可以使用勾股定理进行计算 发现根号五小于2.25 也就是说 如果敌人的攻击范围是圆形",
+          "t_start": 1897,
+          "t_end": 1909
+        },
+        {
+          "text": "只要敌人与干员之间的距离 小于等于敌人的攻击半径加0.25",
+          "t_start": 1909,
+          "t_end": 1921
+        }
+      ],
+      "reason": "上下文结合几何与勾股定理计算，明确阐述了相切/重叠判定以及圆形范围下的距离判断阈值（攻击半径+0.25），属于通用几何索敌机制。",
+      "limitations": [
+        "仅适用于非阻挡状态下的常规远程攻击判定；若敌人被阻挡则优先触发近战攻击。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "修正了c02中跨行拼接引文的问题，拆分为两段单行逐字严格对齐的证据。两条命题皆为明日方舟底层几何索敌通用规则，均予以保留。",
+  "repair_rounds": 1,
+  "unresolved_problems_auto_demoted": []
+}

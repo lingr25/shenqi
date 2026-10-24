@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_601",
+  "stem": "BV1KtHX6nEZS_p3_42575594392",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:16:13+0900",
+  "source_sha256": "799f5abef945bf1015c4aa26e0ab6053d4b2f5ad6965ce73567978f66d77b361",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "17刀轴中星熊的刀数为7+2刀。",
+      "subject": "星熊（17刀轴中的星熊）",
+      "condition": "用于17刀轴",
+      "scope": "instance",
+      "category": "刀数轴/伤害结算",
+      "evidence": [
+        {
+          "text": "17大概是这个组成 然后的话如果换成这个",
+          "t_start": 748,
+          "t_end": 759
+        },
+        {
+          "text": "这个熊就是要7+2的",
+          "t_start": 851,
+          "t_end": 858
+        }
+      ],
+      "reason": "上下文在讨论17刀组成时给出星熊为7+2，随后又确认“这个熊就是要7+2的”，属于该轴的具体刀数组成结论。",
+      "limitations": [
+        "7与2分别对应哪些具体攻击段未在窗口内说明",
+        "结论仅适用于该17刀轴，不应外推为通用机制"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "仅一个候选；逐字稿在17刀轴语境下明确出现星熊7+2，并最终以“这个熊就是要7+2的”确认。判为实例级刀数组成定论，需注意其适用范围。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

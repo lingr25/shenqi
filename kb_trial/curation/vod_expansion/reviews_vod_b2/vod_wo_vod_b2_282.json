@@ -1,0 +1,58 @@
+{
+  "workorder_id": "vod_wo_vod_b2_282",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:30:42+0900",
+  "source_sha256": "2e8d9327e60e160f74fd99aaab368b9382ec5dca424130d29a929fafb41124a6",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在伤害计算的流程划分中，针对伤害取 max(计算结果, 0.05 × 攻击力) 的 5% 保底伤害处理逻辑，归属于抗性结算流程。",
+      "subject": "保底伤害计算",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "伤害结算",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "对这个乘法过程进行扩充的话",
+          "t_start": 1062,
+          "t_end": 1066
+        },
+        {
+          "text": "他要过来取一个逗号max逗号 然后就是0.05乘以这一部分 攻击",
+          "t_start": 1066,
+          "t_end": 1093
+        },
+        {
+          "text": "这个是属于抗性结算流程的一部分",
+          "t_start": 1093,
+          "t_end": 1101
+        }
+      ],
+      "reason": "主播在讲授伤害结算流程时明确指出，在乘法抗性结算中取 max(原结果, 0.05 × 攻击) 的保底机制属于「抗性结算流程」的一部分，表述完整且具有通用的机制框架价值。",
+      "limitations": [
+        "该分类是讲师梳理的认知框架，旨在区分属性计算、抗性结算（含保底）与后续非属性伤害增减流程。"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单候选命题 c01 准确提炼了逐字稿中主播对 5% 攻击保底结算所处流程节点的定性。逐字引文按规范拆分为连续单行切片匹配，改写后的命题具备完整的自包含性。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_355",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:52:41+0900",
+  "source_sha256": "2c2687b657cba56d8903d4cba775310f78641db4543380773761e3a000ca3dcd",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "艾拉的缓存攻击力修正历程",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "reason": "该候选命题描述的是艾拉技能在历史更新版本中的BUG修复与表现变迁（弹药卡少一发、提前关技能、红字UI表现异常），属于历史版本补丁历程的实况叙述，缺乏明确的底层复用参数和确定性规则机制，且红字一会有一会没属于未固化的表现性观察，不符合底层机制知识库的收录标准（违反Gate 1与Gate 4）。"
+    }
+  ],
+  "review_note": "本工单候选命题讨论的是艾拉在历史版本中的调整过程（卡弹药、离弦、红字UI显示修补），属于版本历史观察与轶事，不构成可复用的底层机制规则，全单予以驳回。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,50 @@
+{
+  "workorder_id": "vod_wo_vod_b2_753",
+  "stem": "BV18BpG6LEtq_p2_42631758665",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:12:18+0900",
+  "source_sha256": "0f650b030504268bd32d3032f89b2416d2ce79b2a40963efe1e541d3f0d52ca1",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "当另一单位处于传送期间时，黍不会进行传送。",
+      "subject": "黍",
+      "condition": "另一单位处于传送期间",
+      "scope": "entity_mechanism",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "它和黍之间 我测过他在传送期间 黍是不会传送的",
+          "t_start": 2475,
+          "t_end": 2489
+        }
+      ],
+      "reason": "主播以“我测过”给出黍与另一单位传送交互的结论，语义上明确表达：另一单位处于传送期间时，黍不会传送。该句可改写为不依赖画面指代的机制陈述。",
+      "limitations": [
+        "未说明“另一单位”的具体身份或技能来源",
+        "未说明传送类型、判定帧与可复现测试方法",
+        "该结论来自主播口头测试陈述，缺少画面或日志复核"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 的引文可在 2475s 行内逐字匹配；主播以“我测过”给出黍与另一单位传送交互的结论，并非未闭合猜测。经改写为自包含机制命题后保留，具体对象与传送类型未展开，列入局限。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

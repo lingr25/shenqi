@@ -1,0 +1,95 @@
+{
+  "workorder_id": "vod_wo_vod_b2_292",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:31:51+0900",
+  "source_sha256": "daf2c4d83a77a37a2aa7b5c2bb2a5d12ba4eeab536599122de3151054d892e7c",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在集成战略中，部分藏品（如悲伤的红、丝竹客系列）虽然计算区间属于局内加成，但其数值在局内战斗过程中固定不发生变化。",
+      "subject": "集成战略藏品结算机制（如悲伤的红、丝竹客系列）",
+      "condition": "局内战斗进行中",
+      "scope": "universal",
+      "category": "属性结算",
+      "evidence": [
+        {
+          "text": "局内藏一个局内不会发生变化的藏品 典型的悲伤的红 这次肉鸽的 上次肉鸽的话 丝竹客系列藏品对吧 这些都是局内的",
+          "t_start": 2025,
+          "t_end": 2040
+        }
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "reason": "主播举例论证‘局内计算但不随战斗动态改变’的藏品类别，纠正了‘局内加成必然在局内动态变化’的认知误区，具备属性结算分类价值。",
+      "limitations": [
+        "具体藏品效果与归类仍需查阅拆包表格"
+      ]
+    },
+    {
+      "local_id": "c03",
+      "claim": "在集成战略中，基于零件数生效的藏品加成在局内战斗过程中数值恒定，因为掉落的零件箱需在战斗结算出门后开启，关卡战斗期间零件数无法发生改变。",
+      "subject": "基于零件数计算的集成战略藏品",
+      "condition": "关卡战斗过程中",
+      "scope": "universal",
+      "category": "属性结算",
+      "evidence": [
+        {
+          "text": "局内是不会改变零件数的 就算你打了一个箱子下来打一个零件箱 他那个零件箱也是 你就是出门出门之后把那个零件开了才行",
+          "t_start": 2095,
+          "t_end": 2116
+        },
+        {
+          "text": "那也是从你战斗一开始就定了呀",
+          "t_start": 2116,
+          "t_end": 2121
+        }
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "reason": "明确指出了零件数在局内不可变的机制根源（零件箱须离场结算开启），论证了此类藏品数值局内锁定的定论。",
+      "limitations": [
+        "仅适用于以零件为计量单位的特定集成战略主题（如萨卡兹肉鸽）"
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "朴素属性加成藏品局内数值不变化",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "reason": "口语漫谈举例（'莱塔尼亚的YY'等口误/黑话代称），属于常识性同义反复，且后半句关于'红'的讨论与 c01/c03 重合，机制规则定义不够自包含与严谨。"
+    }
+  ],
+  "review_note": "本片段讨论了集成战略中局外符文与局内藏品乘区的混淆点：澄清了‘局内藏品不等于局内动态变化’（如神盾、悲伤的红），并解释了零件类藏品因结算时序在战斗内数值恒定的底层逻辑。c01 与 c03 具备明确机制价值予以收录；c02 属于泛口语举例且有口误代称予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

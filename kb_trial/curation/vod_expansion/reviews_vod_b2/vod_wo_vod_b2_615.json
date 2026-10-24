@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_615",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T13:58:37+0900",
+  "source_sha256": "cef0b9f4dd7b7fe5b28ecd3bcd6e94e7c095e72b0a9f2053afce23e97a03c4c4",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "实战中感觉活动Boss的攻击范围（手）没有特别长，与原先以为活动Boss手很长的预期不一致",
+      "verdict": "reject",
+      "reason": "Gate 4 不通过：该候选是主播基于实战体感的主观观察与预期落差，使用了「感觉」等未验证表述，且没有给出Boss名称、攻击范围参数、可复现条件或明确机制结论；同段还伴随「他这么大圈是干什么的」的开放式疑问，不能作为可复用机制定论。Gate 1 与 Gate 3 也不通过：命题不是自包含机制陈述，主体仅笼统写为「活动Boss」，缺少明确触发条件与可判定范围。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单仅有一个候选命题，内容为主观体感与预期不符，未形成明确、可复现的Boss攻击范围机制结论；逐字引文虽可在转写中找到，但不能满足自包含、显式三元约束与排除未定论假说/反问的要求。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

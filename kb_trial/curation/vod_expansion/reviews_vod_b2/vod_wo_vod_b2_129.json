@@ -1,0 +1,84 @@
+{
+  "workorder_id": "vod_wo_vod_b2_129",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T17:03:08+0900",
+  "source_sha256": "00c25634529c0da28c1cbea5cc4c268d778a5f1d2bd08234f22e974d3e2702bc",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "阻挡偏移的完整流程从最初的阻挡点开始，一直延续到「转」之后才结束；「转」只占阻挡偏移流程的一半，单独的「转」这一段不叫阻挡偏移。",
+      "subject": "阻挡偏移流程",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "位移/阻挡偏移",
+      "evidence": [
+        {
+          "text": "阻挡偏移是从最开始的阻挡点在几之前 到那个转之后 这才是整个才是阻挡偏移 转这一部分只是阻挡偏移的一半一半流程",
+          "t_start": 6702,
+          "t_end": 6715
+        },
+        {
+          "text": "这一部分不叫阻挡偏移",
+          "t_start": 6715,
+          "t_end": 6752
+        }
+      ],
+      "reason": "上下文明确在纠正对阻挡偏移流程范围的窄化理解：完整流程从最初阻挡点延伸到「转」之后，「转」只是其中一部分，且单独的「转」不称为阻挡偏移。该结论具有机制术语界定价值。",
+      "limitations": [
+        "“在几之前”等步骤名受 ASR 影响不清晰，未给出各步骤的严格边界。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "阻挡偏移本身必定发生；需要满足条件（0.1半径范围内存在其他已被阻挡的敌人）才会发生的是旋转步骤的处理。",
+      "subject": "阻挡偏移与旋转步骤处理",
+      "condition": "阻挡偏移本身：单位被阻挡时；旋转步骤处理：0.1半径范围内存在其他已被阻挡的敌人",
+      "scope": "universal",
+      "category": "位移/阻挡偏移",
+      "evidence": [
+        {
+          "text": "对只有0.1半径之内 存在敌人的时候才会发生阻挡 才不是什么阻挡偏移",
+          "t_start": 6588,
+          "t_end": 6601
+        },
+        {
+          "text": "才会发生这些旋转步骤的处理 阻挡偏移是阻挡偏移是必定要发生的",
+          "t_start": 6601,
+          "t_end": 6615
+        }
+      ],
+      "reason": "上下文是在纠正条件归属：0.1半径内有其他被阻挡敌人时触发的是旋转步骤处理，而阻挡偏移本身必定发生。该区分具有机制规则价值，且不属于未闭合猜测。",
+      "limitations": [
+        "逐字稿未在此处形式化给出“阻挡偏移必定发生”的全部触发边界；0.1半径条件的具体适用范围需结合知识库其他条目。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均来自讲师对阻挡偏移流程与触发条件的现场纠正，具有明确机制界定价值。引文均可与逐字稿行字符级对齐；已将其改写为自包含陈述，并补足主体、条件与适用范围。未发现重复项或未定论假说。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

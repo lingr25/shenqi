@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_577",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:11:43+0900",
+  "source_sha256": "dc487eddb77e66df24b8c516c1788261c7e900f7c4ae91fd4b2963c577928c84",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "小锤在65.455未产生阻挡、直到344才产生阻挡的实测现象",
+      "verdict": "reject",
+      "reason": "属于一次性实战观察，时间点参数含义与可复现条件不清，未形成可复用机制规则；且上游 evidence 引文跨多行拼接，不是单行逐字稿中的连续子串，不满足逐字引文对齐。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G2",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "小锤抬手很靠后，因此不适合验证阻挡反应、更适合验证秒表",
+      "verdict": "reject",
+      "reason": "该句是对本次实验适用性的方法评论，而非可复用机制定论；且上游 evidence 引文跨多行拼接，不是单行逐字稿中的连续子串，不满足逐字引文对齐。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G2",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "两条候选均为一次性实况观察或实验方法评论，未形成可复用机制命题；且上游 evidence 均存在跨行拼接，不满足逐字引文对齐要求。故全部 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

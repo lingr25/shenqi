@@ -1,0 +1,65 @@
+{
+  "workorder_id": "vod_wo_vod_b2_103",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T13:09:29+0900",
+  "source_sha256": "1309c1449f7b450343679d87ace6d49e571fc8abe11e737736b53439f7b675e7",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在阻挡偏移权重计算中，若目标单位发生阻挡偏移时，2号敌人位于其0.1半径内，则2号敌人会提供一个顺帧方向、长度为1的向量。",
+      "subject": "阻挡偏移权重计算中的2号敌人（同一阻挡事件中相对编号的第二个敌人）",
+      "condition": "目标单位发生阻挡偏移，且2号敌人处于该单位的0.1半径内",
+      "scope": "universal",
+      "category": "索敌/阻挡偏移权重",
+      "evidence": [
+        {
+          "text": "首先三被阻挡偏移的时候 0.1半径之内有没有其他敌人 小兔有啊",
+          "t_start": 4237,
+          "t_end": 4252
+        },
+        {
+          "text": "有有哪个有2号对吧",
+          "t_start": 4252,
+          "t_end": 4257
+        },
+        {
+          "text": "2号如果有的话 会提供一个什么效果",
+          "t_start": 4257,
+          "t_end": 4263
+        },
+        {
+          "text": "顺帧方向的长度为一的向量对吧",
+          "t_start": 4263,
+          "t_end": 4268
+        }
+      ],
+      "reason": "上下文在讲解三号单位阻挡偏移落点计算时，先判定0.1半径内是否存在其他敌人，并明确有2号；随后说明2号提供顺帧方向、长度为一的向量。后文继续将该向量与其他0.1至0.4半径内敌人的权重相加、归一化并乘0.2，说明这是阻挡偏移权重规则中的一部分，而非单纯的实战现象叙述。",
+      "limitations": [
+        "2号是同一计算场景中的相对编号，并非游戏内固定实体编号。",
+        "本窗口只给出2号在0.1半径内的向量分支，未展开其完整数学推导。",
+        "尚未进行实机复核。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅包含 c01。候选命题可从逐字稿窗口中的白板计算课上下文得到支撑：0.1半径内存在2号时，2号提供顺帧、长度1的向量；该结论被后续权重归一化计算继续使用，未发现未闭合猜测或画面依赖问题。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

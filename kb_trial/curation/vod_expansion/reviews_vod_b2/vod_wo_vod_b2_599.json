@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_599",
+  "stem": "BV1KtHX6nEZS_p2_42575334226",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:15:30+0900",
+  "source_sha256": "b1b78de26bc50e6f0c322c2161b903ccaccf1d21dac878952bbfd86b68558266",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "在极限早开的实测中，火陈的龙只撞击了六次。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G2",
+        "G4"
+      ],
+      "reason": "该候选仅记录一次极限早开测试中龙撞击六次的实战现象；随后主播立即出现无法解释的转火异常并重试，讨论未闭合，未形成可复现的机制定论，缺少精确开技能时机等关键参数，不满足 Gate 4。另候选证据结束秒为 2222，而对应行下一时间戳为 2228，时间标注不精确，Gate 2 亦不通过。"
+    }
+  ],
+  "review_note": "本工单仅一个候选 c01，属于未闭合异常排查中的单次实战观察，非可复用机制结论；无 keep，整单判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

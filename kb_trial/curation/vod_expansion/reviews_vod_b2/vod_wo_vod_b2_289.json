@@ -1,0 +1,70 @@
+{
+  "workorder_id": "vod_wo_vod_b2_289",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:31:25+0900",
+  "source_sha256": "7dae6288fc436b8e8c94a0b27261a35de7926accf45a6c0b7fd05471f1017182",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "关卡中如「生命值提升至120%」「敌方生命值额外提升至150%」等属性强化描述以及危机合约词条，在数值计算上均属于局外结算流程中的关卡乘区间。",
+      "subject": "关卡强化词条（含危机合约及沙盘等强化词条）",
+      "condition": "局外属性结算流程",
+      "scope": "universal",
+      "category": "属性结算",
+      "evidence": [
+        {
+          "text": "这个啊生命值提升至120% 敌方生命值额外提升至150% 这个就是一个很典型的例子 这种东西都属于关卡成结算区间",
+          "t_start": 1772,
+          "t_end": 1789
+        },
+        {
+          "text": "然后的话合约那种东西其实也属于关卡车呃 关卡结算区间",
+          "t_start": 1793,
+          "t_end": 1809
+        }
+      ],
+      "reason": "主播详细解析了局外四个结算区间的划分，明确指出诸如‘提升至百分比’的关卡词条和危机合约词条归属于关卡乘区间，逻辑闭合且有精确逐字支撑。",
+      "limitations": [
+        "部分特殊词条可能会先进行加算整合后再作为乘数参与计算"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "同类叠加效果从规则上仍然属于局外关卡的加合成，不属于藏品加成系列",
+      "verdict": "reject",
+      "reason": "原句中主播表述出现口误混杂（如‘关卡的加合成’，结合上下文是指关卡加算或叠乘），且‘同类叠加效果’脱离具体词条指代不清，属于口语化解释中不完整的残缺陈述，未形成定义自闭合的独立机制命题。",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      }
+    }
+  ],
+  "review_note": "c01 机制表述清晰，属于底层属性结算四大区间的明确归类，予以采纳并补齐规范术语；c02 主播在口播时存在词汇混杂与口误（‘加合成’），语焉不详且非完整规则，判定排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

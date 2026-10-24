@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b1_088",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:50:36+0900",
+  "source_sha256": "68a3f7ef06926eac53a5dbc9e1e0ffb1cca91673a62f83b7ef4e3ef27c88857f",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "地块类型（tile key）用于识别地块，并主要决定地块的功能；当地块类型为地火时，才能输入伤害时间间隔、触发概率这类数值。",
+      "subject": "地块类型（tile key）/ 地火地块",
+      "condition": "识别地块与决定地块功能为全域通用；输入伤害时间间隔、触发概率这类数值时要求地块类型为地火",
+      "scope": "universal",
+      "category": "地块类型",
+      "evidence": [
+        {
+          "text": "地块类型就是这个tile key Tail key 一般用于一些针对于地块的识别",
+          "t_start": 5661,
+          "t_end": 5671
+        },
+        {
+          "text": "主要决定地块的功能 一个类型为地火的地块才能输入伤害时间间隔 触发概率的数",
+          "t_start": 5686,
+          "t_end": 5692
+        }
+      ],
+      "reason": "讲座在定义地块类型属性时明确指出 tile key 用于地块识别，并说明其决定地块功能；随后直接给出地火地块可输入伤害时间间隔、触发概率参数。两条逐字稿连续支撑该机制结论。",
+      "limitations": [
+        "逐字稿仅举例说明地块类型与地火参数输入，未穷举所有 tile key 取值与全部功能分支。",
+        "同段中『地火是什么地块 fire吧』属于对具体键名的不确定猜测，本 claim 未将 fire 作为确定结论纳入。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅一条候选，核心为地块类型/tile key 的功能与地火参数输入条件；逐字稿两处直接陈述支撑，且可改写为自包含机制命题，故裁定 keep。涉及 fire 键名的部分为未定论猜测，未纳入结论。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

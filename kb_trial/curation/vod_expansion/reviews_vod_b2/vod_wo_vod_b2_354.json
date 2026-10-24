@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_354",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:51:36+0900",
+  "source_sha256": "4afc24e0d779106a03b6f540aac4328ac26c7735021b056f97eb72de8586c9bf",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "缓存攻击力会使伤害红字不容易出现，因此调整红字也变得麻烦",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "reason": "G1/G4不通过：主播口中的“不容易出红字/调红字很麻烦”是对历史版本Bug修补过程（如艾拉弹药修复引发红字丢失）的经验性吐槽与现象观察，未阐明底层伤害红字判定机制的具体阈值、生效条件与可复现参数，属于模糊的经验性/实战观察叙述，缺乏严谨的规则机制定义。"
+    }
+  ],
+  "review_note": "工单候选命题讨论的是攻击力缓存与伤害红字暴击/高伤显示的关联，但上下文主要为吐槽历史修复艾拉等干员机制引发代码Bug的过程，缺少具体公式、参数与可复现的机制定论，不满足机制知识库的严谨性标准，予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

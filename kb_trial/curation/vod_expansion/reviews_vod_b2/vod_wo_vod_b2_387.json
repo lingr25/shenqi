@@ -1,0 +1,80 @@
+{
+  "workorder_id": "vod_wo_vod_b2_387",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:03:19+0900",
+  "source_sha256": "3f799aa42d0ff721b6182f53b4b9b013cda9bcdca261c5fd9ea379c78fb3d614",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙造成物理伤害时，有一定概率使攻击力提升。",
+      "subject": "克莱门沙",
+      "condition": "克莱门沙造成物理伤害时",
+      "scope": "entity_mechanism",
+      "category": "天赋触发",
+      "evidence": [
+        {
+          "text": "克莱门沙造成物理伤害时 有一定概率攻击力提升",
+          "t_start": 654,
+          "t_end": 665
+        }
+      ],
+      "reason": "逐字稿中主播念读克莱门沙第一天赋效果，明确给出主体、触发条件与效果：造成物理伤害时概率提升攻击力。该句可自包含，引文可在原始行中字符级定位。",
+      "limitations": [
+        "逐字稿未给出该概率的具体数值。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "当敌人进入侵蚀损伤爆发或受到其他减少防御的效果时，克莱门沙第一天赋的触发概率会大幅提升。",
+      "subject": "克莱门沙第一天赋",
+      "condition": "敌人进入侵蚀损伤爆发或受到其他减少防御的效果时",
+      "scope": "entity_mechanism",
+      "category": "天赋触发",
+      "evidence": [
+        {
+          "text": "当敌人轻人侵蚀损伤爆发 或受到其他减少防御的效果时",
+          "t_start": 654,
+          "t_end": 665
+        },
+        {
+          "text": "克莱门沙第一天赋的触发概率会大幅提升",
+          "t_start": 635,
+          "t_end": 654
+        }
+      ],
+      "reason": "逐字稿连续描述第一天赋条件性增幅：敌人处于侵蚀损伤爆发或受到其他减防效果时，克莱门沙第一天赋触发概率大幅提升。引文分别覆盖条件与结果，主体与作用范围明确。",
+      "limitations": [
+        "逐字稿未给出触发概率提升后的具体数值或倍率。",
+        "原文引文中“轻人”疑为 ASR 对“进入”的误写，claim 已按机制术语规范化，但 evidence 保留原文。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单两条候选均对应逐字稿中主播念读的克莱门沙第一天赋描述：基础触发效果与条件性概率提升。引文可在原始逐字稿行中字符级定位，主体、条件、范围明确，无未闭合猜测，故均 keep。触发概率具体数值未在窗口内给出，因此不纳入参数化结论。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

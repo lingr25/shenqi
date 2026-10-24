@@ -1,0 +1,84 @@
+{
+  "workorder_id": "vod_wo_vod_b2_140",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T17:07:47+0900",
+  "source_sha256": "8664e0655d2a9a7296f0906fad1f27e005c59a5adb56a33228833eefe8c74970",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "黍的传送在格判开始改变时触发，并将敌人传送回其所记录的标记格中心。",
+      "subject": "黍的传送",
+      "condition": "格判开始改变时",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "黍的传送是什么模式 在格判开始改变的时候",
+          "t_start": 310,
+          "t_end": 330
+        },
+        {
+          "text": "传送回本格 传送回标记格",
+          "t_start": 330,
+          "t_end": 344
+        },
+        {
+          "text": "黍的传送精确的记录到自己呃 是哪个格子下的标记 然后的话精准的传送到格子中心",
+          "t_start": 553,
+          "t_end": 566
+        }
+      ],
+      "reason": "逐字稿明确说明黍的传送在格判开始改变时触发，并会传送回本格/标记格；后文进一步说明其会精确记录哪个格子下的标记并精准传送到格子中心。上游第一条引文存在跨行拼接，本回执改引为同一行连续子串作为证据。",
+      "limitations": [
+        "逐字稿未进一步展开“格判开始改变”的精确定义及边界帧细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "黍的传送只能将敌人传送至其曾经到过的位置。",
+      "subject": "黍的传送",
+      "condition": "目标位置为敌人曾经到过的地方",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "黍只能传送敌人到敌人曾经去过的地方",
+          "t_start": 675,
+          "t_end": 690
+        }
+      ],
+      "reason": "逐字稿直接给出结论：黍相对最不自由，只能传送敌人到敌人曾经去过的地方，因此黍的传送受到“曾到过位置”的限制。",
+      "limitations": [
+        "逐字稿未说明“曾经去过”的记录粒度、时间窗口或与标记系统的具体关系。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均围绕黍的传送机制，逐字稿中有明确讲解且可找到同一条目内的连续逐字证据。c01 上游引文有跨行拼接问题，本回执改用合法连续子串后通过四闸门；c02 有单行明确证据。二者均判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

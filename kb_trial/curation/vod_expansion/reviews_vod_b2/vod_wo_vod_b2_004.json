@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_004",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:15:45+0900",
+  "source_sha256": "3d23d379d884af7afd346720157e72733563a04f6acd44ea0988808cee556ba8",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "希望是用于补充战力的资源。",
+      "subject": "希望",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "资源运营",
+      "evidence": [
+        {
+          "text": "三希望还是十源石锭 我想一下啊 前期还是先拿钱",
+          "t_start": 2148,
+          "t_end": 2154
+        },
+        {
+          "text": "希望是补战力的",
+          "t_start": 2154,
+          "t_end": 2162
+        }
+      ],
+      "reason": "主播在比较三希望与十源石锭的资源取舍时明确给出“希望是补战力的”定性，可支撑希望用于补充战力的资源作用；原命题中的“因此前期应优先拿源石锭”属于当局运营选择，未纳入通用机制。",
+      "limitations": [
+        "未说明希望的具体获取/消耗与招募规则；前期优先拿源石锭是特定运营决策，不宜作为普遍规则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 的核心机制信息为“希望用于补充战力”，逐字稿有直接表述；但上游把具体运营选择“前期优先拿源石锭”并入命题，审查时只保留可复用的资源作用部分，运营决策不纳入机制库。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

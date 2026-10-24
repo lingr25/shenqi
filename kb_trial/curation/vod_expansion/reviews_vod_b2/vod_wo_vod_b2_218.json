@@ -1,0 +1,89 @@
+{
+  "workorder_id": "vod_wo_vod_b2_218",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:58:42+0900",
+  "source_sha256": "599beb57d60b0152f7029c2ffaaa0e620caa4553057a55308ed66d2bc2999b15",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在索敌底层处理中，仇恨过滤器与嘲讽过滤器采用单调递增/递减的自然排序逻辑，严格将数值高的单位排在高位、数值低的排在低位。",
+      "subject": "仇恨过滤器与嘲讽过滤器",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "索敌",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "仇恨过滤器和嘲讽过滤器的排序都是非常逻辑自然的",
+          "t_start": 4014,
+          "t_end": 4028
+        },
+        {
+          "text": "他会把高的就是排高 低的就是排低 而二次过滤器它的排序并不自然 它会直接交换高低项 导致低的变高 高的变低",
+          "t_start": 4028,
+          "t_end": 4038
+        }
+      ],
+      "reason": "主播系统性阐述了索敌底层三个过滤器的排序行为区别，逐字稿明确指出仇恨和嘲讽过滤器是按数值高低自然排序（高排高、低排低），属于通用底层逻辑。",
+      "limitations": [
+        "未展开不同过滤器的具体数值量化权重交互"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "claim": "在索敌底层处理中，二次过滤器（如特性优先攻击空中单位或带特定Buff单位）不是重新做全局排序，而是直接交换其判定的目标项与当前最高项的位置，可能导致交换后中等优先级的目标反而排在更高项之前。",
+      "subject": "二次过滤器",
+      "condition": "存在符合二次过滤器优先条件的单位",
+      "scope": "universal",
+      "category": "索敌",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "对自己和自己目标的Buff 这些就是二次过滤器 二次过滤器会直接交换自己排定为优先的单位和仇恨最高的单位",
+          "t_start": 3955,
+          "t_end": 3966
+        },
+        {
+          "text": "他会把高的就是排高 低的就是排低 而二次过滤器它的排序并不自然 它会直接交换高低项 导致低的变高 高的变低",
+          "t_start": 4028,
+          "t_end": 4038
+        },
+        {
+          "text": "然后中等的反而可能比更高的高",
+          "t_start": 4038,
+          "t_end": 4043
+        }
+      ],
+      "reason": "明确揭示了二次过滤器内部的“直接交换高低项（Swap）”算法本质，以及由此带来的非单调排序副作用，属于重要的底层机制定论。",
+      "limitations": [
+        "若多个目标同时满足二次过滤条件时的交换先后顺序在当前片段未详细展开"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "本片段为主播系统讲授索敌底层算法的讲座内容（lecture）。清晰界定了仇恨过滤器、二次过滤器与嘲讽过滤器的执行顺序及各自排序行为算法特征（标准排序 vs 元素交换 Swap）。两项命题均通过四大闸门，予以收录。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

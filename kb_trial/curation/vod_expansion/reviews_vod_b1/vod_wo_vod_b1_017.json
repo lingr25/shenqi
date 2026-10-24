@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b1_017",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T21:20:56+0900",
+  "source_sha256": "b8f552ddd7cfeb987187479c2c29d11fce80d1f16e73b336cd4f1e16124bccd8",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在出怪排序中，当两条路线先于两只怪出生，并叠加一个波次之间的间隔时，合计多占 5 帧；该额外间隔属于波次之间的间隔，而非兵团之间的间隔。",
+      "subject": "路线参与出怪排序的帧时序",
+      "condition": "两条路线先于两只怪出生，且叠加一个波次之间的间隔",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "这两个路线在两个怪之前出生 然后加上一个波次之间的间隔 不是兵团之间的间隔 是一共多占五帧",
+          "t_start": 1599,
+          "t_end": 1611
+        }
+      ],
+      "reason": "逐字稿明确给出勘误性结论：两条路线在两只怪之前出生，叠加的是波次之间的间隔而非兵团之间的间隔，并称合计多占五帧。",
+      "limitations": [
+        "逐字稿未展开‘基线’定义，仅能确认相对默认排序多占 5 帧。",
+        "该片段只给出此配置下的结论，未证明所有波次/兵团转换均按同一数值成立。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选为明确勘误，逐字稿有连续原文支撑，且可改写为自包含的出怪排序帧时序命题；未发现未定论假说或画面依赖问题。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_241",
+  "stem": "BV1L4ez6oEcc_p2_42060876088",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:20:22+0900",
+  "source_sha256": "7f65049d39ca4e962ecac533b53e2d013ac787df73d0732066b59a697708d328",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "主播转述弹幕规则：每个职业六星限一，且自然物价值不能超过40块",
+      "verdict": "reject",
+      "reason": "该内容为直播挑战自定义规则/弹幕约束，并非游戏本体机制规则；且主播在后文中对该规则的细节存在疑问（'是单个自然物不能超过40块 还是所有的自然物加起来不能超过40块'），属于外部人工限制与未定论讨论，无游戏机制价值，违反 Gate 4 与 Gate 1。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "工单涉及的候选命题为玩家自定义的局外限制挑战规则（生息演算模式下的弹幕点歌/挑战要求），不属于《明日方舟》底层或干员固有机制，且主播自身对规则边界仍在反复发问确认，应予剔除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

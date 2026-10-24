@@ -1,0 +1,69 @@
+{
+  "workorder_id": "vod_wo_vod_b2_022",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:20:38+0900",
+  "source_sha256": "155da17c8688e260c42491a9c813fef2e19656cdff9ad6e5c131fed3512a8e10",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在路标档案馆截至视频制作时收集的600余条浪花单步估价变化数据中，-6到+8区间内的结果权重最大，合计占全部数据的99.34%；单个结果出率为6.62%；其余五个结果整体出率不到1%。",
+      "subject": "浪花单步估价随机变化的结果分布（路标档案馆数据）",
+      "condition": "基于路标档案馆截至视频制作时收集的600余条数据样本",
+      "scope": "entity_mechanism",
+      "category": "数据统计",
+      "evidence": [
+        {
+          "text": "截至视频制作时 路标档案馆已经收集了600余条数据 我们将这些数据进行分析",
+          "t_start": 3773,
+          "t_end": 3784
+        },
+        {
+          "text": "可以得出以下结论 减八到加11之间存在 在两档权重减六到加八的时 中国之权重最大 占那所有数据的99.34%",
+          "t_start": 3784,
+          "t_end": 3801
+        },
+        {
+          "text": "单个结果出率为6.62%",
+          "t_start": 3801,
+          "t_end": 3811
+        },
+        {
+          "text": "剩余的五个数据出率仅为前者的39分",
+          "t_start": 3816,
+          "t_end": 3834
+        },
+        {
+          "text": "整体出率不到1% 可以当成是不会造成太大影响的 小概率彩蛋",
+          "t_start": 3834,
+          "t_end": 3846
+        }
+      ],
+      "reason": "逐字稿先说明路标档案馆收集600余条数据并进行分析，随后给出-6至+8区间占99.34%、单个结果6.62%、剩余五个整体不到1%的统计结论。该命题有明确样本来源、参数和闭环结论，且限定在档案馆数据内，不宣称已证明底层真分布，故可保留。",
+      "limitations": [
+        "仅为路标档案馆约600条样本的统计结论，视频后续也质疑样本量，不能直接等价为浪花真实底层概率分布。",
+        "原句存在ASR错讹（如“中国之权重最大”），已在保持原意前提下按上下文改写。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 有逐字稿支持且参数明确，但需限定为路标档案馆数据统计；无其他候选。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

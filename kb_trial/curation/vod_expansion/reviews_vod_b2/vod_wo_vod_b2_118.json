@@ -1,0 +1,64 @@
+{
+  "workorder_id": "vod_wo_vod_b2_118",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T14:10:25+0900",
+  "source_sha256": "f92f86a786b36a1f0bf2a9674c166fd448ece6e5512e0508396892e0d702f98b",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "被阻挡的2号在0.1半径内检测到旧阻挡单位1号时，1号贡献的权重向量按以下方式构造：方向取垂直于「格子中心到1号」连线、顺帧方向的单位向量（长度为一），再做归一化并乘0.2，最终得到长度为0.2的权重向量。",
+      "subject": "旧阻挡单位1号贡献的权重向量",
+      "condition": "2号处于被阻挡状态且0.1半径内存在旧阻挡单位1号",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "2号判定0.1半径之内有旧阻挡单位一号 然后要计算一号的权重 一号要从格子中心到一号连线 垂直于该连线",
+          "t_start": 5301,
+          "t_end": 5313
+        },
+        {
+          "text": "并且顺帧方向找长度为一的90额 长度为一的权权重为一的这样一个向量 然后的话要归一化",
+          "t_start": 5313,
+          "t_end": 5328
+        },
+        {
+          "text": "再乘0.2",
+          "t_start": 5328,
+          "t_end": 5336
+        },
+        {
+          "text": "变成这样大的长度为0.2的一个向量 并且这个向量",
+          "t_start": 5336,
+          "t_end": 5358
+        }
+      ],
+      "reason": "逐字稿中主播以阻挡偏移机制演示的方式明确给出旧阻挡单位一号的权重向量构造步骤：先确定垂直于格子中心到一号连线且顺帧方向的单位向量，再归一化并乘0.2，得到长度0.2的向量。上下文属于机制讲解，不是猜测或开放疑问。",
+      "limitations": [
+        "逐字稿未进一步说明「顺帧方向」的精确正负定义。",
+        "逐字稿中「长度为一的权权重为一的这样一个向量」存在ASR重复，但不影响其表示单位向量且随后归一化再乘0.2的步骤。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅有一个候选命题。逐字稿窗口明确支持旧阻挡单位一号权重向量的构造步骤，主体、条件与范围可补齐为通用阻挡偏移机制，且不属于未定论假说或纯画面依赖描述，故裁定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

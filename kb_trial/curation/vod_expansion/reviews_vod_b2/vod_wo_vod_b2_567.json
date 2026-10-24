@@ -1,0 +1,57 @@
+{
+  "workorder_id": "vod_wo_vod_b2_567",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:09:50+0900",
+  "source_sha256": "458ce65e530b3042b793a23b7a6407a225070b502248765184f7cc921090e007",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "四连击段数少算一次，实际应为两次四连击",
+      "verdict": "reject",
+      "reason": "不满足 Gate 1/2/3：命题缺少具体操作主体（哪名干员、哪个技能或哪次伤害核算），无法改写为不依赖上下文的机制陈述；候选证据时间戳 215/227 与逐字稿实际行 3815/3827 不符；内容属于单次伤害核算中的算术补算，不具备可复用机制规则的普适性。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "补入漏算的一次四连击后总段数反而会偏多",
+      "verdict": "reject",
+      "reason": "不满足 Gate 1/3/4：命题依赖 c01 的上下文才能理解，缺少明确主体与成立条件；且后续逐字稿出现“如果这个龙只撞到了一下子 有可能有可能第一次他龙只撞到了一下”，说明该推算未闭合，属于未验证假设。候选证据时间戳 234/238 也与实际行 3834 不符。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "两个候选均未通过硬性闸门：c01 是特定伤害核算中的补算修正，主体/技能未在逐字稿中闭合，且证据时间戳错误；c02 是建立在未验证假设上的推算，转写中出现“有可能”，不能作为机制定论。故无 keep，整单 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

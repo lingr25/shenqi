@@ -1,0 +1,63 @@
+{
+  "workorder_id": "vod_wo_vod_b2_272",
+  "stem": "BV1L4ez6oEcc_p3_42061792207",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:27:55+0900",
+  "source_sha256": "9c5d300698d331f5f15a2b668e02d7d20b581255334f3982ed69268c185419e5",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "多目标攻击在命中主目标后，若打数未满，会以主目标周围特定范围（方形检测区与碰撞箱交互）进行二次索敌以补足目标数。",
+      "subject": "多目标索敌机制",
+      "condition": "多目标技能/攻击的主目标已被命中且技能剩余打数不足",
+      "scope": "universal",
+      "category": "索敌",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "被打的那个敌人会向周围做一个索敌",
+          "t_start": 1546,
+          "t_end": 1560
+        },
+        {
+          "text": "以主目标周围做一个索敌",
+          "t_start": 1560,
+          "t_end": 1565
+        },
+        {
+          "text": "来填补自己不足的打数",
+          "t_start": 1565,
+          "t_end": 1594
+        },
+        {
+          "text": "他这个看起来是以一个方形范围搜索第二目标",
+          "t_start": 1799,
+          "t_end": 1811
+        }
+      ],
+      "reason": "上下文通过控制坐标距离与帧数测试，验证了二次索敌并非全图或单纯半径圆，而是以首个受击敌人为中心建立检测区（方形判定/碰撞箱）来寻找补足打数的后续目标。",
+      "limitations": [
+        "不同干员或技能的具体二次索敌范围几何形状（如方形半宽具体数值）可能随技能配置有所差异"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "命题反映了多目标溅射/弹射类二次索敌的核心逻辑：以主目标为锚点向外判定补足打数。结合后续测试上下文改写后具备完整的机制自包含性。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

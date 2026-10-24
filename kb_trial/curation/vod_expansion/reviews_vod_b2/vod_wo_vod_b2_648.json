@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_648",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:04:57+0900",
+  "source_sha256": "fb6f729bf3d8661e7db0947c6c55e594408ce6949fd89d5cdf52e9d71a9c4527",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "湖光图的十字路口具有很强的免疫性。",
+      "verdict": "pending",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ],
+      "reason": "逐字稿仅有『而且十字路口是很免疫的』这一笼统断言，未说明免疫对象（推拉、重量tag、控制效果等）、触发条件或可复现参数；命题具有机制讨论价值，但关键参数缺失且上下文未闭合，需人工听审或后续验证，故判 pending。"
+    }
+  ],
+  "review_note": "c01 的引文可在 6272s 行字符级匹配；但『很免疫』语义不完整，不能形成可复用机制定论。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

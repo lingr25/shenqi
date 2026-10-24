@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b2_277",
+  "stem": "BV1L4ez6oEcc_p3_42061792207",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:30:32+0900",
+  "source_sha256": "53fd75a503e8994bc6e90e436250e6b0fe17e1df298ec705cf6bb7478d4379e7",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "白铁每两秒获得1点技力",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "上下文未交代具体技能、天赋、装置状态或等级参数，主谓宾与机制触发前提严重缺失，属于孤立的口语碎片，不满足自包含机制陈述要求（Gate 1、Gate 3、Gate 4）。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "白铁在无模组情况下替代充电不足",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "reason": "属于特定对局中的实战配队打法尝试与感叹（'如果没有模组...白铁可不可以' -> '不行啊 充电不够啊'），缺少明确参数与复现条件，属实战体验观察而非通用机制规则（Gate 4）。"
+    }
+  ],
+  "review_note": "本片段记录的是主播在特定实战中尝试用白铁替代充能的打法测试，言语均为实况尝试与感叹，关键技能参数与机制上下文缺失，无沉淀价值的原子机制结论。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,50 @@
+{
+  "workorder_id": "vod_wo_vod_b2_497",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:51:45+0900",
+  "source_sha256": "8013bba9550fca965bb962e6e9f46e9fab1589ab2fe1f36c18cdd6166fcbdebb",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙的第二天赋按部署朝向判定：克莱门沙身前的所有敌人对克莱门沙造成的物理伤害和法术伤害都会降低；这一减伤效果包括被克莱门沙阻挡的敌人。",
+      "subject": "克莱门沙的第二天赋",
+      "condition": "敌人位于克莱门沙部署朝向的身前",
+      "scope": "entity_mechanism",
+      "category": "减伤判定/阻挡/判定范围",
+      "evidence": [
+        {
+          "text": "克莱门沙部署后 根据他的部署朝向所有在他身前的敌人 对他造成的物理和法术伤害都会降低 包括被他阻挡的敌人",
+          "t_start": 5857,
+          "t_end": 5872
+        }
+      ],
+      "reason": "5857s 行直接复述克莱门沙天赋文本，明确减伤依据部署朝向、作用于身前的敌人，并明确包含被其阻挡的敌人；后续对『包括』语义的讨论属于主播推测，不影响该条直接文本结论。",
+      "limitations": [
+        "逐字稿未给出具体减伤百分比。",
+        "『身前』的精确几何边界未在逐字稿中量化。",
+        "『第二天赋』的称谓来自上下文/章节，引文本身未出现该字样。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选为天赋文本的直接复述，四闸门通过，予以 keep；未给出数值和精确范围，作为 limitations 记录。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

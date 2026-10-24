@@ -1,0 +1,76 @@
+{
+  "workorder_id": "vod_wo_vod_b1_082",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:49:46+0900",
+  "source_sha256": "98f10a59fdd73a602b3d977dab8a504541cdcc6a304cffc0491c5d9cfdafbfaf",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "从地图文件中可以看到地块名，但地块名与地块属性之间没有本质关联。",
+      "subject": "地图文件中的地块名",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "部署设置/地块数据",
+      "evidence": [
+        {
+          "text": "从地图文件中我们也可以可以看到地块名 本质上来讲和后头这些东西没有本质关联",
+          "t_start": 5428,
+          "t_end": 5439
+        }
+      ],
+      "reason": "逐字稿明确说明从地图文件可见地块名，且地块名与后续所述内容没有本质关联；紧接着的上下文讨论所有属性均可逐块改写，支撑该数据层结论。",
+      "limitations": [
+        "未具体列出哪些地块字段属于与地块名无关的属性",
+        "未说明地块名在实际地图识别中的用途"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "地图文件中所有地块属性都可以单独、独特地逐块改写，一个块改一个样，但这之上仍存在一些比较通用的习惯写法。",
+      "subject": "地图文件中的地块属性",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "部署设置/地块数据",
+      "evidence": [
+        {
+          "text": "所有的属性都可以单独的独特的进行改写 就是一个块改一个样是没有任何压力的 但是的话仍然会有一些比较通用的习惯的写法",
+          "t_start": 5439,
+          "t_end": 5453
+        }
+      ],
+      "reason": "逐字稿直接说明所有属性均可单独独特改写、逐块不同没有压力，同时指出其上仍有通用习惯写法；属于地图数据可逐块独立配置的机制结论。",
+      "limitations": [
+        "未列举具体属性字段",
+        "未展开“通用的习惯写法”的具体内容"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均来自讲师对地图文件数据结构的明确陈述，不依赖画面指涉，逐字引文可在对应时间戳行内字符级匹配，主体、条件与适用范围明确，且不属于未定论猜测或反问。c01 说明地块名与地块属性无本质关联，c02 说明地块属性可逐块独立改写并存在通用习惯写法，均通过四大闸门，判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

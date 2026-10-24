@@ -1,0 +1,64 @@
+{
+  "workorder_id": "vod_wo_vod_b2_437",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T23:13:50+0900",
+  "source_sha256": "bd320589df909b25b670f1537cc479baff64445c20e09fc04aadcd0a1a066942",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙开启三技能后，在同时攻击3个单位的条件下，按10发弹药、每攻击3次触发一次侵蚀损伤爆发、约8秒后再以3次攻击触发下一次爆发的循环估算，约可支撑3轮，技能持续时间约为40秒。",
+      "subject": "克莱门沙三技能弹药消耗与持续时间估算",
+      "condition": "同时攻击3个单位；每3次攻击触发一次侵蚀损伤爆发，约8秒后再触发下一轮",
+      "scope": "entity_mechanism",
+      "category": "技能机制/持续时间估算",
+      "evidence": [
+        {
+          "text": "一旦全场有任何敌人侵蚀损伤爆发时 都会消耗一发弹药",
+          "t_start": 2675,
+          "t_end": 2688
+        },
+        {
+          "text": "如果按照打三个单位算的话 他十发弹药大概可以撑过去三轮 然后每3A报一次条的话",
+          "t_start": 2718,
+          "t_end": 2730
+        },
+        {
+          "text": "每3A爆一次调 再过八秒 再3A爆一词条哎",
+          "t_start": 2730,
+          "t_end": 2738
+        },
+        {
+          "text": "他的持续时间大概可以有40秒",
+          "t_start": 2742,
+          "t_end": 2748
+        }
+      ],
+      "reason": "逐字稿在44:35—45:42明确说明三技能弹药消耗与侵蚀损伤爆发相关，并在45:18—45:42以同时攻击3个单位为前提给出10发弹药约撑三轮、每3A爆条、再过8秒再3A爆条以及约40秒持续时间的条件化估算。该命题可改写为自包含估算结论，证据已校正到对应逐字稿行。",
+      "limitations": [
+        "估算依赖同时攻击3个单位且每3次攻击触发一次侵蚀损伤爆发、约8秒后再触发的循环假设，逐字稿未给出攻击间隔、目标存活与移动等完整参数。",
+        "40秒为约数，适用于该条件化估算，不应外推为无条件固定持续时间。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单仅一个候选c01。逐字稿在44:35—45:42明确给出三技能弹药消耗与侵蚀损伤爆发的关系，并在45:18—45:42以同时攻击3个单位为前提给出三轮、约8秒间隔和约40秒持续时间的条件化估算。候选命题可改写为自包含估算结论，证据经校正到对应逐字稿行后成立；需保留其条件化与约数限制。上游evidence时间戳均误填为45s，已按逐字稿校正至2675、2718、2730、2742等秒。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

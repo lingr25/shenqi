@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_441",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T23:14:56+0900",
+  "source_sha256": "1aac7f131afea489e35f1f9afb087e359183a64ecbd6ca82f3c0a904d60f9c67",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "500防御目标会显示红字",
+      "verdict": "reject",
+      "reason": "该命题是对当场实战画面的现象观察，虽引文可在逐字稿中逐字定位，但缺少攻击者攻击力、伤害类型、技能/天赋状态以及『红字』判定条件等关键参数。仅凭目标500防御不能推出会显示红字；且上下文后文还修正了关于暴击次数的判断，说明该观察未形成闭合、可复现的机制结论。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01 的两段引文与逐字稿行字符级一致，时间戳匹配。但候选只是500防御目标显示红字的单次实战观察，未给出攻击力、伤害公式条件或红字含义，不能构成自包含的可复用机制命题；后文还存在对暴击次数的更正，故按未闭合观察排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

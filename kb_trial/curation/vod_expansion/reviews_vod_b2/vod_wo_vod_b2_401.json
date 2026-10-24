@@ -1,0 +1,56 @@
+{
+  "workorder_id": "vod_wo_vod_b2_401",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:08:31+0900",
+  "source_sha256": "4f4bab17823075d7df2ac08a2e70464127aeac360ce1cbbbee1c1cb6a889e96c",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "二技能普攻溅射造成2.5倍攻击力的物理伤害",
+      "verdict": "pending",
+      "reason": "逐字稿确有『这是一个2.5攻击力倍率的伤害』『2.5倍物理0.2倍的损伤』以及『二技能的话攻击力是2.5倍』等倍率线索，但未明确干员名，且后文以『我是不是写反了普攻2.5倍的』反问怀疑二技能/普攻倍率记录写反，结论当场未闭合；需实机验证或人工听审。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "主播怀疑此前的倍率记录写反了，普攻溅射才是2.5倍攻击力",
+      "verdict": "reject",
+      "reason": "该候选是主播对倍率记录是否写反的开放式反问/未验证猜测，逐字为『诶不对 我是不是写反了普攻2.5倍的』，未形成明确否定与正确结论，违反 Gate 4；且非独立机制陈述。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单仅两个候选。c01 有倍率讨论价值，但主体未具名且讨论被后续反问打断，暂判 pending；c02 属主播未闭合疑问，判 reject。故顶层无 keep，全单为 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_368",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:58:25+0900",
+  "source_sha256": "29daa21268b8f74fad094d5a144a5ac1e711568c1cbb1092c1571172ebda00d0",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "关卡地图配置中若存在遗物中枢等不占用实际出怪流程的装置，其路线配置会安排一条空的占位路线（如INNM路线）进行占位。",
+      "subject": "遗物中枢等装置的关卡路线配置",
+      "condition": "关卡出怪路线与装置配置包含遗物中枢时",
+      "scope": "entity_mechanism",
+      "category": "出怪流程",
+      "evidence": [
+        {
+          "text": "所以的话如果是有一物中枢的话 那么就会安排一个INNM路线 空路线 然后的话就是用那个把中枢的路线配置成 这那个东西 占位用占位用",
+          "t_start": 1983,
+          "t_end": 2000
+        }
+      ],
+      "reason": "主播通过查看关卡底层的waves出怪波次和routes路线配置，解释了遗物中枢不在初始出怪流程内，但关卡数据中会专门分配一条空路线作为占位使用的底层机制，论述确定且有逐字稿支撑。",
+      "limitations": [
+        "ASR转写的INNM可能为关卡JSON配置字段缩写（如ENEMY/IN_NUM等），具体底层字段拼写未在逐字稿中完整核验",
+        "仅针对包含遗物中枢的特定关卡底层配置逻辑"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单审读了关于遗物中枢在出怪与路线配置中的占位机制。主播结合关卡数据配置详细阐述了遗物中枢不占用出怪波次，但在路线设置中会配置空路线进行占位。证据能够自闭合支撑命题，通过四大闸门审查。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

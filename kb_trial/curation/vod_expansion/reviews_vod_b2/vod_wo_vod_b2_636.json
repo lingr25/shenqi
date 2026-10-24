@@ -1,0 +1,40 @@
+{
+  "workorder_id": "vod_wo_vod_b2_636",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:02:32+0900",
+  "source_sha256": "166fef06e1253e2f65eb3fe690d82f6f602597dd0777f6e3c69c19b2b1bdbd83",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "抬手动作耗时九帧",
+      "verdict": "reject",
+      "reason": "原文“这是九帧抬手”中的“这”指代不明，候选改写后仍未补齐具体干员、敌人或动作主体，也未给出触发条件，不能形成自包含的可复用机制命题。该句属于实验过程中的口头计数/现象观察，缺少可复现条件，且上下文仍处于“解释不清楚”的未闭合状态。另候选 evidence 的 t_end=4635 不是该行下一行时间戳 4630，时间标注不精确。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单仅 c01 候选。该句是索敌帧实验中的即时口头观察，主体与可复现条件缺失，不能判定为可复用机制定论；按宁缺毋滥原则排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

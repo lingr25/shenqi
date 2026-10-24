@@ -1,0 +1,74 @@
+{
+  "workorder_id": "vod_wo_vod_b1_127",
+  "stem": "BV1cmaa6VEPR_p2_42252239801",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:12:30+0900",
+  "source_sha256": "f163335dcd0e6a56c7076ead8b7e0a18936553766e06067de07c99fee54ff5a0",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "火陈的龙在13帧出生。",
+      "subject": "火陈的龙",
+      "condition": "在火陈的龙生成流程的帧计数中",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "火陈的龙是在13帧出生的",
+          "t_start": 376,
+          "t_end": 380
+        }
+      ],
+      "reason": "逐字稿直接给出火陈的龙出生帧为13帧，主体和参数均明确，属于该召唤物固有机制的帧时序结论。",
+      "limitations": [
+        "逐字稿窗口内未明示帧计数起点与游戏帧率口径；13帧为对应实测口径下的数值。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "火陈的龙在14帧第一次移动。",
+      "subject": "火陈的龙",
+      "condition": "在火陈的龙于13帧出生后的同一帧计数中",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "然后的话在14帧第一次移动",
+          "t_start": 380,
+          "t_end": 397
+        }
+      ],
+      "reason": "逐字稿直接说明火陈的龙在14帧第一次移动，与上一句出生帧构成连续帧时序描述，参数明确且可复用。",
+      "limitations": [
+        "逐字稿窗口内未明示帧计数起点与游戏帧率口径；14帧为对应实测口径下的数值。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均来自同一段火陈的龙帧时序实测讲解，逐字稿中存在字符级一致的直接引文，且出生帧与首次移动帧参数明确；虽帧计数起点与帧率口径未在本窗口展开，但命题本身具有机制记录价值，故保留并在 limitations 中标注边界。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

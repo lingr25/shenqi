@@ -1,0 +1,48 @@
+{
+  "workorder_id": "vod_wo_vod_b2_367",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:56:02+0900",
+  "source_sha256": "a78825b4ec9e8f7af39dfabb1df386803542eca0040403f263167d6bf931f686",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在出怪波次中生成的箱子（装置）所在格，开局0帧部署干员时干员会被挤掉。",
+      "subject": "开局出怪波次生成的箱子与干员部署判定",
+      "condition": "开局第0帧在箱子生成的格子上部署干员",
+      "scope": "universal",
+      "category": "部署结算",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "但是那个箱子的话 就是你一开始开局零阵下干员是会被挤掉的",
+          "t_start": 1877,
+          "t_end": 1894
+        }
+      ],
+      "reason": "主播结合关卡配置对比说明了‘预设常驻障碍/树木’与‘波次生成的箱子等装置’的区别：通过波次生成的箱子在第0帧部署干员时会触发挤压判定导致干员被挤掉。陈述明确且具有可复用的机制规则价值。",
+      "limitations": [
+        "仅适用于通过出怪流程/波次配置生成的箱子类装置，地图开局预设自带的不可部署地形障碍无法在此下人。"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "命题 c01 逐字稿定位准确（对应[1877s 31:17]行），主播明确对比了预设障碍物与出怪流生成的箱子之间的区别，指出开局0帧部署会被挤掉，具有明确机制规则价值，予以采纳并规范陈述。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

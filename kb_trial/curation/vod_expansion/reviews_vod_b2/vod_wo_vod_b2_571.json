@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_571",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:11:04+0900",
+  "source_sha256": "ab3c5fbe4b617713dd163f70b84dab61e334ba09989ab1b05b9c3d18942e7977",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "当攻速加成足够多、使冷却先于攻击动画结束时，可以强制干员在攻击动画结束的瞬间立刻抬手；通过观察动画帧数是否缩短，可以确定干员的动画时长。",
+      "subject": "攻速加成与干员攻击动画",
+      "condition": "攻速加成足够多，使冷却先于攻击动画结束",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "所以的话在这种情况下 只要你那个攻速加的够多 就可以强制把那个",
+          "t_start": 4046,
+          "t_end": 4055
+        },
+        {
+          "text": "强制的让那个在动画结束的时候立刻抬手 然后观察有没有缩短正额 就可以确定他的动画时长啊",
+          "t_start": 4055,
+          "t_end": 4073
+        }
+      ],
+      "reason": "上下文先说明临时加攻速只减少冷却、不减少动画，随后给出通过堆足攻速强制动画结束时立刻抬手，并观察帧额/帧数变化来测动画时长的方法；该命题具有可复用的测量机制价值。",
+      "limitations": [
+        "逐字稿中“正额”疑为 ASR 误写，具体观测指标应理解为帧额/帧数一类帧时序量，必要时需人工听审确认。",
+        "该方法依赖攻速足以让冷却先于动画结束，不适用于无法通过攻速改变冷却等待的情形。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 是主播对测量干员动画时长方法的明确说明：先说明临时加攻速只减冷却、不减动画，再给出堆足攻速强制动画结束瞬间抬手并观察帧额/帧数变化的方法。引文可逐字对齐，改写后命题自包含，四大闸门均通过，判 keep；其中“正额”疑为 ASR 误写，已在 limitations 中标注。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

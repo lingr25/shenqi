@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_136",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T17:05:41+0900",
+  "source_sha256": "afbb61fd72da2e293e930417567b1953c2b14d8ee66d175cb9f2ce57f95a9756",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在计算顺帧转位移时，不能随意假定其取值为0.1；该取值至少需要通过位移几何进行估算，且实算结果略大于0.1。",
+      "subject": "顺帧转的位移取值",
+      "condition": "计算顺帧转位移数值时",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "顺帧转0.1是错的 顺帧转多少是对的 或者就是说你至少得给个估值",
+          "t_start": 99,
+          "t_end": 115
+        },
+        {
+          "text": "还因为他是这是个圆吗 别老瞎蒙啊",
+          "t_start": 115,
+          "t_end": 126
+        },
+        {
+          "text": "确实是一个略大于0.1的数 刚才是我想差了一点东西",
+          "t_start": 189,
+          "t_end": 207
+        }
+      ],
+      "reason": "主播明确否定直接取0.1并强调至少给估值、不能瞎蒙；后续实算结论确认该值略大于0.1，因此属于已闭合的勘误性机制结论。",
+      "limitations": [
+        "顺帧转的完整定义与适用边界未在本窗口展开",
+        "圆轨迹几何推导及0.1与最终值的误差范围未量化"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "仅 c01 一个候选。关键引文均可在逐字稿行中字符级匹配；命题经改写为自包含陈述后保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_316",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:38:39+0900",
+  "source_sha256": "3d0bdd5dfcab4467d7b0aa2bab29030e18d798463f975b4f0136eac4424afaa0",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "维什戴尔（EW）三技能描述中的 185% 攻击力倍率仅绑定并作用于周围一圈带眩晕的爆炸伤害，默认不作用于其他伤害分支。",
+      "subject": "维什戴尔（EW）三技能的攻击力倍率",
+      "condition": "技能描述中攻击力倍率明确绑定于特定效果段时",
+      "scope": "entity_mechanism",
+      "category": "乘区归属",
+      "evidence": [
+        {
+          "text": "比如说这里这185是写在这个周围 这一圈爆炸的 就是带眩晕的这个伤害上",
+          "t_start": 4665,
+          "t_end": 4677
+        },
+        {
+          "text": "默认他不会去额应用在其他的任何攻击力的 这个任何伤害的这个加成上",
+          "t_start": 4677,
+          "t_end": 4689
+        }
+      ],
+      "reason": "主播以维什戴尔（EW）三技能的185%倍率为例，明确阐述了攻击力倍率区别于属性攻击力加成的特性：攻击力倍率默认仅作用于其所描述的特定伤害分支（周围眩晕爆炸），不向其他伤害分支扩散。",
+      "limitations": [
+        "若技能或天赋有特殊说明（如麒麟R夜刀二技能），则按特例规则跨分支生效。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单主要探讨攻击力倍率的作用范围规则，以上游提到的维什戴尔（EW）三技能为例进行了详细定性说明，逐字稿上下文完整支撑该机制陈述，判定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

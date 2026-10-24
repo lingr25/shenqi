@@ -1,0 +1,63 @@
+{
+  "workorder_id": "vod_wo_vod_b1_121",
+  "stem": "BV1cmaa6VEPR_p2_42252239801",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:59:26+0900",
+  "source_sha256": "0e7e68d56f197906e536f769ea07c9258c3406783aa1c3873993e12427a95b1f",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "隐形敌刺的擦地判定依据是地面可通行属性，而不是高台与地面的分类；把擦地判定理解为看高台/地面分类属于误解。",
+      "subject": "隐形敌刺的擦地判定",
+      "condition": "隐形敌刺进行擦地判定时",
+      "scope": "entity_mechanism",
+      "category": "索敌/判定条件",
+      "evidence": [
+        {
+          "text": "你看这又是一个误解 隐形敌刺擦的是地面可通行属性",
+          "t_start": 68,
+          "t_end": 85
+        },
+        {
+          "text": "而不是高台和地面",
+          "t_start": 85,
+          "t_end": 92
+        },
+        {
+          "text": "地面可通型和高低地是两种东西",
+          "t_start": 92,
+          "t_end": 98
+        },
+        {
+          "text": "坑被擦是因为坑是可通行",
+          "t_start": 107,
+          "t_end": 112
+        }
+      ],
+      "reason": "逐字稿中主播明确将隐形敌刺的擦地判定与“地面可通行属性”绑定，并直接否定“高台和地面”的分类理解；后续又用“坑被擦是因为坑是可通行”作为佐证，属于对误解的明确纠正，具备可复用机制定论价值。",
+      "limitations": [
+        "逐字稿未展开擦地判定的完整目标筛选流程，也未说明其他敌人类别是否适用同一规则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅有一条候选命题。主播在逐字稿中明确纠正“擦地看高台/地面分类”的误解，并给出“地面可通行属性”作为判定依据；逐字引文可字符级对齐，主体、条件与范围可补全，且不属于未闭合猜想或反问，故裁定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

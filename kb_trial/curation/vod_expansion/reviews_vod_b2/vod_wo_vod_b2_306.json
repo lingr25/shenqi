@@ -1,0 +1,56 @@
+{
+  "workorder_id": "vod_wo_vod_b2_306",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:36:57+0900",
+  "source_sha256": "6ff70877a28260bd08dd2a6d5cb301dc4101ae5d7325fe98525eb67ae69bf217",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "苇草与慕斯减益叠加后敌方仅剩38%属性",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "未指明生效的具体属性类型（上下文实为攻击力削弱），且未提及干员具体技能或天赋名称；该内容仅为主播讲解配队打法时的算术算例演算，不具备独立自包含的机制规则价值。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "集成战略(肉鸽)中敌方属性按最终乘区相乘导致削弱大幅提升",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "主播口语表述模糊且概念混淆，将肉鸽环境的敌人难度属性修正与干员局内减益乘区杂糅，因果关系推导不成立，不符合严谨的机制定论标准。"
+    }
+  ],
+  "review_note": "本工单涉及的两个候选命题均基于口语化打法算例与混淆的概念陈述，缺乏技能名称、具体作用属性及严谨的乘区因果推导，均无法构成合格的知识库机制命题，全部判定 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

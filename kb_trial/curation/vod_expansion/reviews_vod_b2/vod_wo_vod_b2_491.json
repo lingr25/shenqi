@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_491",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:51:11+0900",
+  "source_sha256": "0d3722e45a75bda75790226d01ce046d42c764d8ee84d5672ad0d052820b3941",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙部署后，依据部署朝向位于其身前的敌人（包括被其阻挡的敌人）对克莱门沙造成的物理和法术伤害降低40。",
+      "subject": "克莱门沙的减伤天赋",
+      "condition": "克莱门沙部署后；伤害来源敌人位于其身前（按部署朝向判定），包括被其阻挡的敌人",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "克莱门沙部署后 根据他的部署朝向所有在他身前的敌人 对他造成的物理和法术伤害都会降低",
+          "t_start": 4598,
+          "t_end": 4641
+        },
+        {
+          "text": "所有在他身前的敌人 对他造成的物理和法术伤害都会降低 包括被他阻挡",
+          "t_start": 4571,
+          "t_end": 4582
+        },
+        {
+          "text": "所有在他身前的敌人 对他造成的物理和法术伤害都会降低40",
+          "t_start": 4726,
+          "t_end": 4741
+        }
+      ],
+      "reason": "上下文多次重复该天赋：克莱门沙部署后按部署朝向判定身前敌人，这些敌人对其造成物理和法术伤害降低，并明确包括被其阻挡的敌人；4726行进一步给出降低40。证据均为逐字稿连续子串，可作为实体机制结论保留。",
+      "limitations": [
+        "逐字稿只出现「降低40」，未明示40是百分比还是固定值，需以游戏内文本或实测复核。",
+        "逐字稿存在ASR错字（如「克莱门沙」「为他阻挡」等），本回执按上下文理解为包括被阻挡敌人，未改动证据原文。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01为讲师对克莱门沙减伤天赋的明确机制陈述，逐字稿多处重复身前敌人对其造成物理和法术伤害降低并包括阻挡，4726行明确给出降低40；可采纳。40的单位/百分比未在逐字稿明示，已作为局限注明。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

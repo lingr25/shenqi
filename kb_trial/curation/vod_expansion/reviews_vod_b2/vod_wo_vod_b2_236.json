@@ -1,0 +1,64 @@
+{
+  "workorder_id": "vod_wo_vod_b2_236",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:18:43+0900",
+  "source_sha256": "7507b436247e63c56430a2709ecc2ef7eeaf846d7c2200858b2e5d7b04702094",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "集成战略（肉鸽）中，借元钱箱等装置若因路径受阻等原因未能召唤出对应敌人，则无法获得召唤敌人携带的10源石锭奖励，仅击杀钱箱本体只能获得1源石锭。",
+      "subject": "集成战略借元钱箱及召唤物掉落结算",
+      "condition": "钱箱未成功召唤敌人被直接击杀或封死路径未激活",
+      "scope": "entity_mechanism",
+      "category": "掉落/收益结算",
+      "evidence": [
+        {
+          "text": "导致一旦箱子封死路径之后 那些怪就醒不了 顺带一提 在肉鸽中 如果他不召唤这个怪的话 就没有那十源石锭 这个箱子杀了只有一元石 定它",
+          "t_start": 5793,
+          "t_end": 5810
+        }
+      ],
+      "reason": "主播详细解释了肉鸽钱箱的召唤判定与掉落归属机制：10源石锭绑定在召唤出来的怪身上，若因机制未生成怪，击杀装置本身仅能获得保底的1源石锭。上下文清晰且有明确数值支撑。",
+      "limitations": [
+        "针对集成战略特定钱箱装置（如借元钱箱）的掉落规则"
+      ],
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      }
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "在肉鸽中，直接击杀钱箱只得到一元石",
+      "verdict": "reject",
+      "reason": "与 c01 为同一事件的两个侧面（召唤怪带10源石锭与箱子本体带1源石锭），已合并并入 c01 完整阐述，避免语义碎片化。",
+      "failed_gates": [
+        "DUP"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      }
+    }
+  ],
+  "review_note": "工单涉及肉鸽装置类敌人（钱箱）因路径长度超过1000限制导致无法激活/召唤怪，并顺带提及击杀掉落结算机制。c01与c02分别切分了掉落的两个数字，合并为c01一条完整命题保留，c02按重复判除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

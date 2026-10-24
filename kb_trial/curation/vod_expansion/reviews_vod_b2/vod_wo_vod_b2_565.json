@@ -1,0 +1,76 @@
+{
+  "workorder_id": "vod_wo_vod_b2_565",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:09:45+0900",
+  "source_sha256": "4f3618df2f597d7b48556f2fd65b896fae777d9c4cb5fdd8de1d3c3398c54208",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "目标单位攻击为二连击且伤害类型为法伤",
+      "verdict": "reject",
+      "reason": "不满足 Gate 1：原句以「他」指代目标单位，逐字稿窗口未给出该单位的具体名称或可自包含身份，命题依赖视频上下文。不满足 Gate 2：候选引文实际出现在 [3657s] 行，而非 117-123 秒。不满足 Gate 3：主体、条件与 scope 未明确，且上游标为 general 不成立。不满足 Gate 4：属于单场伤害核算中的目标参数观察，缺少可复现单位标识与条件，不具备可复用规则价值。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "目标单位法抗为 50",
+      "verdict": "reject",
+      "reason": "不满足 Gate 1：法抗 50 的主语仅为「他」，未补齐具体敌人或单位名称，无法形成自包含命题。不满足 Gate 2：候选引文实际出现在 [3620s] 行，而非 80-86 秒。不满足 Gate 3：该数值至多属于特定对局实例参数，不能按 general 泛化，主体与 scope 均不明确。不满足 Gate 4：属于未标明对象身份的单场伤害核算观察，缺少可复现条件。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c03",
+      "topic": "目标单位另有一个四连击",
+      "verdict": "reject",
+      "reason": "不满足 Gate 1：「再来个四连击」的主语和归属不明确，可能是另一段攻击、技能段数或另一单位行为，原句无法直接改写为自包含机制命题。不满足 Gate 2：候选引文实际出现在 [3620s] 行，而非 80-86 秒。不满足 Gate 3：主体、触发条件与 scope 均未明确。不满足 Gate 4：属于对局实况中的伤害拆分叙述，缺少可复现对象与条件。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单三个候选均来自单场伤害核算中的实况参数观察，均以代词「他」指代未命名目标单位，无法通过自包含命题闸门；且候选标注的时间戳与逐字稿实际所在行不符，违反逐字引文对齐要求。三项均不具备可复用的明确主体、条件与 scope，故全部 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

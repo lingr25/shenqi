@@ -1,0 +1,52 @@
+{
+  "workorder_id": "vod_wo_vod_b2_478",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:49:49+0900",
+  "source_sha256": "a726d82d348f1797578421176ad5c018d8941ce7f5763dc87b854ff801237d65",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "一旦全场有任何敌人发生侵蚀损伤爆发，三技能都会消耗一发弹药。",
+      "verdict": "pending",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G3"
+      ],
+      "reason": "逐字稿中确实出现该技能描述式规则，但后续实测出现未消耗弹药、未触发轰炸的反例，主播又提出‘好像有CD’并称待统计弹药消耗CD，说明‘任何……都会’的必要触发条件尚未闭合，缺少CD/触发限制参数，不能作为定论。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "实测中敌人侵蚀损伤爆发时，三技能并未消耗弹药、也未触发轰炸，因此「全场有任何敌人侵蚀损伤爆发都会消耗一发弹药」的规则不成立。",
+      "verdict": "pending",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ],
+      "reason": "逐字稿有‘没有消耗弹药 没有消耗弹药 没有轰炸 这是为什么’的观察与开放式疑问，且后续仅提出疑似CD、待统计弹药消耗CD，尚未给出闭合正确结论；作为勘误尚不能直接采纳为‘规则不成立’的定论。"
+    }
+  ],
+  "review_note": "本工单两个候选均涉及三技能弹药消耗条件与实测异常。c01为技能描述式规则，但被当场实测反例挑战且疑似存在CD条件；c02为实测反例观察，但关键原因与CD参数未闭合。两者均不满足可复用定论的严格标准，暂判pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,84 @@
+{
+  "workorder_id": "vod_wo_vod_b2_731",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:08:58+0900",
+  "source_sha256": "86bc1d259a651f47c61274c000d8ca6692936fa2e2e0481204b2bc50a4c52aa5",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "放逐是「类似睡眠的控制」与「传送」的复合效果；其中类似睡眠的控制会让敌人切换状态机，而眩晕、失衡、睡眠能打断敌人动作都是因为切状态机，因此放逐可以打断敌人的技能动作。",
+      "subject": "放逐效果",
+      "condition": "放逐效果命中敌人时",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "放逐为什么打断各种技能 你可以理解为这个传送效果 它是一个类似睡眠的控制和一个传送的复合 他这个类似睡眠的控制有让敌人切状态机",
+          "t_start": 5836,
+          "t_end": 5851
+        },
+        {
+          "text": "就是眩晕状态机 眩晕失衡 睡眠能够打断敌人的动作 都是因为切状态机",
+          "t_start": 5851,
+          "t_end": 5861
+        },
+        {
+          "text": "然后的话就可以打断技能绽放的刹那 烟火熄灭嗯的那个角落",
+          "t_start": 5861,
+          "t_end": 5874
+        }
+      ],
+      "reason": "逐字稿明确将放逐解释为类睡眠控制与传送的复合，并说明类睡眠控制通过让敌人切换状态机来打断动作；随后直接给出放逐可以打断技能。原候选引文跨行，已按单行原文拆分为多条 evidence。",
+      "limitations": [
+        "逐字稿未列出状态机的内部名称及所有可打断技能类型；“打断”的具体边界仍需结合实机敌人行为验证。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "目前没有针对放逐的抗性，因此放逐的打断效果表现得十分绝对。",
+      "subject": "放逐效果及其抗性",
+      "condition": "当前版本；放逐效果作用于敌人时",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "因为目前没有什么抗性 所以这个打断就显得很绝对",
+          "t_start": 5861,
+          "t_end": 5874
+        }
+      ],
+      "reason": "该句在讨论放逐打断技能后，直接以“目前没有什么抗性”解释打断效果为何显得绝对，属于对放逐当前抗性状况与表现关系的明确陈述。",
+      "limitations": [
+        "“目前”为版本相关表述，若后续版本新增针对放逐的抗性则需更新；逐字稿未列举抗性类型。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01、c02 均有逐字稿中的明确机制陈述支撑：c01 说明放逐由类睡眠控制与传送复合，并通过切换状态机打断动作；c02 说明当前无抗性使打断显得绝对。两候选均通过四闸门，故保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

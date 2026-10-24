@@ -1,0 +1,60 @@
+{
+  "workorder_id": "vod_wo_vod_b1_055",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:29:27+0900",
+  "source_sha256": "34bf8f5a9aa97b9191a7c490af566f6583310fb3be361a4e438c99eb74ffad5f",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "敌方单位处于出生状态机期间，其所在格（脚底）可以放置地雷。",
+      "subject": "处于出生状态机期间的敌方单位",
+      "condition": "敌方单位处于出生状态机期间",
+      "scope": "universal",
+      "category": "出生状态机",
+      "evidence": [
+        {
+          "text": "在初生状态机的时候 他的脚底下可以塞雷",
+          "t_start": 3874,
+          "t_end": 3885
+        },
+        {
+          "text": "但是反正他在脚底下可以塞雷",
+          "t_start": 3885,
+          "t_end": 3891
+        },
+        {
+          "text": "但是的话在这段时间脚底下可以放雷",
+          "t_start": 3904,
+          "t_end": 3915
+        }
+      ],
+      "reason": "上下文明确讨论敌方单位的出生状态机；主播连续肯定在出生状态机期间可在其脚底放置/塞雷，并补充该状态没有落地隐/部署保护、可被索敌。命题据此补全敌方单位主语，记录为可复用交互。",
+      "limitations": [
+        "直播未说明该“雷”的具体来源、类型或所属干员技能。",
+        "主播未解释底层原因，仅说明现象。",
+        "未逐项验证所有敌人、地图与地雷类可部署物是否均适用。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 有逐字稿中的连续原文支撑，且可补全为自包含机制陈述；虽然具体地雷类型与底层原因未交代，但可复现条件明确，按机制现象保留，并以 limitations 标注边界。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

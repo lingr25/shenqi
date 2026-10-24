@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_417",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:11:39+0900",
+  "source_sha256": "a4439aa9aeca8a8a154aff300d348d2ecdd53284b2ad2bf06f1b469875bf8cb6",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "浮游放逐舱造成的侵蚀损伤持续八秒钟。",
+      "subject": "浮游放逐舱造成的侵蚀损伤",
+      "condition": "目标受到浮游放逐舱造成的侵蚀损伤后",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "来释放一艘浮游放逐仓 浮浮游放逐舱会携带带周围",
+          "t_start": 6905,
+          "t_end": 6921
+        },
+        {
+          "text": "然后这个侵蚀损伤会持续八秒钟",
+          "t_start": 6953,
+          "t_end": 6964
+        }
+      ],
+      "reason": "前文先提到释放浮游放逐舱，随后直接陈述该侵蚀损伤会持续八秒钟；引文可字符级对齐，主播未使用猜测或反问，可作为该实体机制的状态持续时间结论。",
+      "limitations": [
+        "逐字稿未说明侵蚀损伤的跳伤间隔、刷新与叠加规则，也未给出帧级测量过程。",
+        "“八秒钟”来自口述数值，未交代不同来源的侵蚀损伤是否共用同一持续时间。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 的主体由前文释放浮游放逐舱的语境补全，持续时间有逐字稿直接陈述且引文精确匹配，四闸门通过，予以采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

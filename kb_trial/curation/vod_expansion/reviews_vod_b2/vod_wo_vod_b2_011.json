@@ -1,0 +1,60 @@
+{
+  "workorder_id": "vod_wo_vod_b2_011",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:17:02+0900",
+  "source_sha256": "584a559bce819fc6ad168af6d0f31d6eb60eef63089d9b0150a97e829d7268ae",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "培育种子的专用零件池整体质量很好，包含所有R和SR稀有度零件，N稀有度仅少数几种；因此获得幕后给予的两个种子后，越早通过秘境行商培育种子，越早获得叠层自然物，后期背包估价越高。",
+      "subject": "培育种子的专用零件池",
+      "condition": "黑流树海模式中持有幕后给予的两个种子且遇到秘境行商时",
+      "scope": "entity_mechanism",
+      "category": "零件池/掉落池",
+      "evidence": [
+        {
+          "text": "而培育种子有一个专门的零件池 它包含了R和SR的所有零件",
+          "t_start": 3256,
+          "t_end": 3265
+        },
+        {
+          "text": "N稀有度的零件只有浪花雾滚草和小八戒 也就是说 培育种子获得叠层很强的玉米 双金树苔藓板藤的概率非常大",
+          "t_start": 3265,
+          "t_end": 3277
+        },
+        {
+          "text": "因为种子的零件池很好 我们二层需要尽快的找到秘境行商 将幕后给的两个种子用掉 越早拿到叠层自然物 后期的估价就会越高",
+          "t_start": 3469,
+          "t_end": 3481
+        }
+      ],
+      "reason": "逐字稿明确说明培育种子有专门的零件池，包含R和SR的所有零件，N稀有度只有少数几种，并进一步说明二层应尽快找到秘境行商，用掉幕后给的两个种子，越早拿到叠层自然物后期估价越高。候选原evidence时间戳469/480与逐字稿窗口不符，已据原文定位到3469s，并补充3256s、3265s证据。",
+      "limitations": [
+        "逐字稿未给出池内各稀有度零件的具体掉率权重，只说明质量高与概率趋势。",
+        "“幕后”的具体来源与“两个种子”的稳定获取条件未展开。",
+        "“二层尽快”仍受路线、行动力与随机节点影响，属于由机制推导出的运营建议。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01通过四闸门。候选原命题混合机制前提与运营建议，终审改写为自包含机制陈述；候选evidence时间戳错误，已按逐字稿原文修正为3256s、3265s、3469s对应行。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

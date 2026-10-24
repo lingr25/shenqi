@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_207",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:57:58+0900",
+  "source_sha256": "ffa34afa2dc0acdc7c066b3d008e563f20af936c287017eba8aeaaf2d8a4b096",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在酒神0.2半径圆五档仇恨模型中，三个标记单位（1号、2号、3号）分别落在两个仇恨档位区间之一时，其落位排列共有8种。",
+      "subject": "三个待索敌单位（标记为1号、2号、3号）的仇恨档位落位排列",
+      "condition": "在酒神0.2半径圆五档仇恨模型中，每个单位分别落在两个仇恨档位区间之一",
+      "scope": "instance",
+      "category": "索敌/概率枚举",
+      "evidence": [
+        {
+          "text": "这是那个酒神的0.2半径圆 然后的话我们可以把它划分为五档",
+          "t_start": 2901,
+          "t_end": 2915
+        },
+        {
+          "text": "一号2号三号分别落在这两个区间之中 就有八种情况",
+          "t_start": 2938,
+          "t_end": 2960
+        }
+      ],
+      "reason": "主播在建立酒神0.2半径圆五档仇恨模型后，将1号、2号、3号三个单位的落位按两个仇恨档位区间进行枚举，并明确给出共有8种情况。该内容是合约精细计算中的确定性推导，不是猜测或开放疑问。",
+      "limitations": [
+        "逐字稿未明确说明这两个仇恨档位区间的具体编号或边界。",
+        "1号、2号、3号为讲解中的单位标记，并非正式干员名或敌人名。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "单候选 c01 通过四大闸门：已改写为自包含陈述，引文与逐字稿行字符级一致，主体/条件/范围明确，且属于讲解中的确定性枚举而非未定论猜测。范围按该合约精细计算案例标为 instance；两个仇恨档位区间的具体编号未在逐字稿中给出，列为限制。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

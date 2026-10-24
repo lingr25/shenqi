@@ -1,0 +1,50 @@
+{
+  "workorder_id": "vod_wo_vod_b2_430",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T23:11:40+0900",
+  "source_sha256": "2e0a54f0cde8a4b220da0db8ccf3840ea6954536e91b4bf7d3fa45107238ea4e",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门莎的二天赋在造成物理伤害时，有一定概率使攻击力提升，逐字稿中提升数值读作「四」。",
+      "subject": "克莱门莎的二天赋",
+      "condition": "造成物理伤害时，且二天赋概率判定成功",
+      "scope": "entity_mechanism",
+      "category": "天赋触发/状态效果",
+      "evidence": [
+        {
+          "text": "开门杀造成物理伤害时 有一定概率攻击力提升四",
+          "t_start": 2022,
+          "t_end": 2072
+        }
+      ],
+      "reason": "逐字稿在二天赋讨论段中明确给出该天赋的触发条件为「造成物理伤害时」，效果为「有一定概率攻击力提升四」；结合上下文可将其归属补全为克莱门莎的二天赋。该条属于可复用的实体机制陈述，未包含主播猜测或开放疑问。",
+      "limitations": [
+        "逐字稿未给出具体触发概率数值。",
+        "提升数值仅读作「四」，未交代单位是点数还是百分比。",
+        "同一行后续「当敌人侵蚀损伤爆发 或受到其他减少防御的效果时」涉及的后续条件与效果未纳入本条。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅一条候选。逐字稿明确陈述了克莱门莎二天赋在造成物理伤害时有一定概率提升攻击力，数值读作「四」，可判 keep。已补全主体并保留逐字引文；具体概率、数值单位及同句后续效果未在逐字稿中闭合，已在 limitations 标注。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

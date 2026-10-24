@@ -1,0 +1,101 @@
+{
+  "workorder_id": "vod_wo_vod_b2_334",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:44:26+0900",
+  "source_sha256": "4c754e884af602036a9b6bba7d32aa8c9ba57e75874fa5091bcbc8e64cfbac3b",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在伤害判定流程中，增伤与减伤效果原则上不存在加算区间，各增减伤效果按独立乘算结算。",
+      "subject": "伤害结算系统（增伤与减伤效果）",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "它没有乘区 不存在加算区间 因而表现为独立城",
+          "t_start": 6472,
+          "t_end": 6487
+        },
+        {
+          "text": "增伤减伤从原则上来讲也不存在加算",
+          "t_start": 6555,
+          "t_end": 6567
+        }
+      ],
+      "reason": "主播明确解释了伤判流程中Buff没有加算区间，增伤减伤原则上均属于独立结算。",
+      "limitations": [
+        "存在同类效果取最高或特定集成战略内部预先加算处理等特殊例外"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "集成战略（肉鸽）中出现的增伤/减伤加算，本质是同类藏品在内部数值求和预处理后作为一个统一Buff挂载，伤害结算层面藏品之间不存在加算机制。",
+      "subject": "集成战略藏品增减伤结算机制",
+      "condition": "集成战略模式下具有多个同类数值藏品生效时",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "肉鸽那个加算 只是因为他藏品自己内部处理了一下",
+          "t_start": 6555,
+          "t_end": 6567
+        },
+        {
+          "text": "把这些藏品的数值给加了加 然后作为一个Buff去挂上去 但是藏品之间伤害是不存在加算的",
+          "t_start": 6567,
+          "t_end": 6579
+        }
+      ],
+      "reason": "主播详细澄清了肉鸽中加算现象的代码底层实现方式（系统预处理合并数值挂载Buff，而非底层伤判规则存在加算）。",
+      "limitations": [
+        "不同主题集成战略的藏品或效果实现方式可能略有差异"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c03",
+      "topic": "伤害结算中同类效果取最高值",
+      "verdict": "reject",
+      "reason": "上下文主播紧接着说明不同主题肉鸽机制不一致（'我记得这每一代肉鸽都不一样 有那个减伤叠成的肉鸽 也有减伤取最高的肉鸽 这个都是测出来的'），该表述不具备通用规则定论效力，且存在口误与不确定性，不满足Gate 4。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01与c02分别确立了底层伤判无加算原则以及肉鸽藏品表面加算的底层合并机制，逐字引文完全对齐且为定论陈述；c03主播后文明确表示各代肉鸽规则不一，并非通用定论，故予以剔除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

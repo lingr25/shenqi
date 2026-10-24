@@ -1,0 +1,56 @@
+{
+  "workorder_id": "vod_wo_vod_b2_426",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:26:12+0900",
+  "source_sha256": "4f6cf4a589b894eb25bab326c4282482a36b5b71d954cf4f9d7c94a4ba421113",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "二技能期间，在炸弹消失之前存在一段不可以攻击的时间窗口。",
+      "verdict": "reject",
+      "reason": "未通过 Gate 1/3/4：命题未补全具体干员或技能主体，依赖上下文中的“二技能”“炸弹”等指代；且不可攻击窗口时长等关键参数缺失，仅为无明确参数与可复现条件的实战观察，不能作为可复用机制定论。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "二技能期间不能抬手的原因不全是不可选中效果。",
+      "verdict": "reject",
+      "reason": "未通过 Gate 1/3/4：主体“不能抬手”的具体干员或技能指代不明；“不全是因为不可选中”只否定部分原因，未给出正确成因或可验证参数，属未闭合讨论，不能作为机制定论。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "两条候选均为直播过程中的局部观察或未闭合讨论：逐字引文可在转写行中找到，但主体指代与关键参数缺失，且未形成可复用、可复现的机制结论。按严格审查标准全部排除，故工单裁定为 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

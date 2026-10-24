@@ -1,0 +1,85 @@
+{
+  "workorder_id": "vod_wo_vod_b2_197",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:55:13+0900",
+  "source_sha256": "9b564107ec993a3b73ebaf1dc61cec18fbd57fa91ecdcb225b80cbd0ea069910",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "鹰角寻路算法中，前进方向由格心到格心定义，而不是由单位自身坐标到其目标格定义；该定义构成算法缺陷。",
+      "subject": "鹰角寻路算法",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "寻路/前进方向定义",
+      "evidence": [
+        {
+          "text": "但是这一套算法有一个缺陷 前进方向是由革新到革新定义的 而不是由自身坐标到自己的那个目标定义的",
+          "t_start": 2451,
+          "t_end": 2464
+        }
+      ],
+      "reason": "逐字稿直接说明该算法将前进方向定义为格心到格心，而不是自身坐标到目标格，并称其为缺陷；‘革新’按上下文是‘格心’的转写误差，可改写为规范术语。",
+      "limitations": [
+        "逐字稿用‘革新’指代中心/格心，回执 claim 已按上下文规范化，但引文保留原始 ASR 文本。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "当单位（如敌人）处于自身寻路目标格的本格内时，格心到格心构成零向量；在鹰角寻路算法中，零向量上的投影为零，使修正值归零。",
+      "subject": "鹰角寻路算法中的单位（仇恨/寻路计算中主要为敌人）",
+      "condition": "单位处于自身寻路目标格的本格内，即自身所在格与当前寻路目标格相同",
+      "scope": "universal",
+      "category": "寻路/零向量与修正值",
+      "evidence": [
+        {
+          "text": "我在这中心格子中心有个路径点 路径点判定0.05 然后我刚到达这个格子 我还在努力的向这个格子中心走",
+          "t_start": 2489,
+          "t_end": 2504
+        },
+        {
+          "text": "那么在这种情况 它的革新是中间这个点 它的巡逻目标也是中间这个点 则会产生一个问题 这是一个零向量",
+          "t_start": 2504,
+          "t_end": 2517
+        },
+        {
+          "text": "在鹰角的算法中 这样子做会搞零 会归零 它在零向上 零向量上的投影是零 从而让修正值这一部分为零",
+          "t_start": 2517,
+          "t_end": 2533
+        }
+      ],
+      "reason": "逐字稿说明自身已到达中心路径点、路径目标是同一格时，格心到格心形成零向量；随后明确零向量上的投影为零，导致修正值归零。候选中的‘干员’按上下文应收束为‘单位/敌人’这类使用同一寻路与仇恨计算的单位。",
+      "limitations": [
+        "路径点判定 0.05 为转写中出现的参数，候选 claim 未将其作为核心条件展开；具体阈值适用范围需后续核实。",
+        "候选未继续展开修正值归零后的仇恨结果，但核心零向量与归零结论有逐字稿支撑。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 与 c02 均通过四闸门。c01 给出前进方向按格心到格心定义的总规则；c02 给出目标格为自身所在格时产生零向量并使修正项归零的具体分支。两命题机制相关但不重复。逐字稿中的‘革新’按上下文理解为‘格心/中心点’，引文按要求保留原始 ASR 文本。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

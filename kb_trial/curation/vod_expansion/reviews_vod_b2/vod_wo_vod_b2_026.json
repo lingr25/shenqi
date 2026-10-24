@@ -1,0 +1,86 @@
+{
+  "workorder_id": "vod_wo_vod_b2_026",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T09:07:17+0900",
+  "source_sha256": "188fc4403591cadf9ee186e5a77658d415b472da2b9a84376f66595c97aa1c9d",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在黑流树海三结局中，若石托邦各层出率分别为第一层10%、第二层20%、第三至五层40%、第六层30%，且各层判定独立，则一局同时出现六个石托邦（每层各一个）的概率为 0.1×0.2×0.4³×0.3=3.84×10⁻⁴，约等于万分之四。",
+      "subject": "黑流树海石托邦的六个楼层出率判定",
+      "condition": "三结局、各层出率分别为第一层10%、第二层20%、第三至五层40%、第六层30%，且各层判定独立",
+      "scope": "entity_mechanism",
+      "category": "概率模型",
+      "evidence": [
+        {
+          "text": "3.84 0.1×0.2乘0.4的三次方 再乘以0.3 3.84×10的四",
+          "t_start": 4938,
+          "t_end": 4953
+        },
+        {
+          "text": "我靠居然能有六个人打出来 百分之不是 居然能有人打出来六个石头 帮万分之四",
+          "t_start": 4849,
+          "t_end": 4861
+        }
+      ],
+      "reason": "逐字稿中先给出六层石托邦出率与六石托邦出现的万分之四说法，随后现场按各层出率连乘得到 3.84×10⁻⁴，可作为该独立判定模型下的概率推导。",
+      "limitations": [
+        "逐字稿未直接口述“各层独立”的完整前提，该前提由连乘算式隐含。",
+        "ASR 将“负四”转写为“的四”，需结合算式与“万分之四”校正。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在黑流树海三结局中，若石托邦各层出率分别为第一层10%、第二层20%、第三至五层40%、第六层30%，则一局中石托邦数量的期望为 0.1+0.2+3×0.4+0.3=1.8 个。",
+      "subject": "黑流树海石托邦数量期望",
+      "condition": "三结局、各层出率分别为第一层10%、第二层20%、第三至五层40%、第六层30%",
+      "scope": "entity_mechanism",
+      "category": "概率模型",
+      "evidence": [
+        {
+          "text": "以三结局为例 期望遇见1.8个石托邦",
+          "t_start": 4814,
+          "t_end": 4826
+        },
+        {
+          "text": "不是那为什么要这么算呢 直接0.1+0.2 加3×0.4加0.3不就得了 1.2 1.5 1.3 1.8",
+          "t_start": 4963,
+          "t_end": 4974
+        }
+      ],
+      "reason": "逐字稿明确出现“以三结局为例 期望遇见1.8个石托邦”，并给出按各层出率相加的计算式，支撑期望值结论。",
+      "limitations": [
+        "逐字稿未展开线性期望的数学证明。",
+        "“三结局”是否改变层数或出率分布未在本窗口进一步说明。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选分别对应六石托邦特定配置概率与石托邦数量期望，均能从逐字稿中的出率和计算式得到支撑；c01 的独立前提由连乘隐含，c02 的期望值有直接口述证据。未发现需排除的未定论假说或画面依赖残句。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

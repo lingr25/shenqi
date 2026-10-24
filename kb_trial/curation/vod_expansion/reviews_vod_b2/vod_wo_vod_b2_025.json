@@ -1,0 +1,108 @@
+{
+  "workorder_id": "vod_wo_vod_b2_025",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T09:07:16+0900",
+  "source_sha256": "02add7c85f7279f40d9827c970f8cdf8cbbc66a20e792c9f01b020aa57798c95",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "文明开化分队清除石托邦后，可获得2点行动力和2个随机收藏品。",
+      "subject": "文明开化分队",
+      "condition": "清除石托邦",
+      "scope": "entity_mechanism",
+      "category": "关卡机制/奖励",
+      "evidence": [
+        {
+          "text": "就可以获得二行动力和两个随机收藏品",
+          "t_start": 4691,
+          "t_end": 4706
+        }
+      ],
+      "reason": "逐字稿在文明开化分队机制段明确说明清除石托邦后可获得二行动力和两个随机收藏品。",
+      "limitations": [
+        "未说明奖励是否受难度、分队加成或其他条件影响",
+        "未交代随机收藏品的具体池"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "石托邦在一、二层的出率为10%~20%，在三层到五层为40%，在第六层为30%。",
+      "subject": "石托邦",
+      "condition": "按所在层数：1-2层、3-5层、6层",
+      "scope": "entity_mechanism",
+      "category": "关卡机制/概率",
+      "evidence": [
+        {
+          "text": "一二层只有10%到20%的出率 三层到五层是40%",
+          "t_start": 4691,
+          "t_end": 4706
+        },
+        {
+          "text": "第六层是30%",
+          "t_start": 4767,
+          "t_end": 4779
+        }
+      ],
+      "reason": "逐字稿明确给出石托邦各层出率，且第六层30%在后续行中重复出现。",
+      "limitations": [
+        "出率数值来自统计视频，逐字稿后文提到样本量可能影响部分数据置信度",
+        "未说明10%~20%区间的来源或是否存在其他分层条件"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c03",
+      "claim": "以三结局为例，石托邦的期望遇见个数为1.8个，因此大概率只能获得2~4点行动力和2~4个藏品。",
+      "subject": "三结局中的石托邦",
+      "condition": "三结局",
+      "scope": "instance",
+      "category": "关卡机制/概率",
+      "evidence": [
+        {
+          "text": "以三结局为例 期望遇见1.8个石托邦 我们大概率也只能获得2~4点行动力 和2~4个藏品",
+          "t_start": 4814,
+          "t_end": 4826
+        }
+      ],
+      "reason": "逐字稿在给出各层出率和清除奖励后，以三结局为例计算石托邦期望遇见1.8个，并据此说明大概率获得2~4点行动力和2~4个藏品。",
+      "limitations": [
+        "期望值1.8与2~4奖励区间的关系未展示完整概率分布",
+        "三结局具体层数结构未在窗口内完整说明"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "三条候选均能在逐字稿窗口中找到字符级一致引文，命题自包含且条件明确，属于可复用机制或概率结论；统计置信度问题已在 limitations 标注。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

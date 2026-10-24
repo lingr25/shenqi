@@ -1,0 +1,89 @@
+{
+  "workorder_id": "vod_wo_vod_b2_386",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:04:33+0900",
+  "source_sha256": "be6ebb3d1071e3bc8aba6cf7c8a52d22364ee5615fcf2ec1e1121995cd51b562",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙开启技能三「与海为敌」后，若场上没有敌人侵蚀损伤爆发，持续进行物理攻击且不消耗弹药；全场有任何敌人侵蚀损伤爆发时，会消耗一发弹药。",
+      "subject": "克莱门沙技能三「与海为敌」",
+      "condition": "技能三开启期间",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "技能三与海为敌 克莱门沙开启技能后 场上没有侵蚀损伤 爆发时不会消耗弹药",
+          "t_start": 241,
+          "t_end": 256
+        },
+        {
+          "text": "克莱门沙将会持续进行物理输出 一旦全场有任何敌人侵蚀损伤爆发时 都会消耗一发弹药",
+          "t_start": 256,
+          "t_end": 268
+        }
+      ],
+      "reason": "转写文本明确诵读并展示了技能三与海为敌的机制描述，详细说明了不爆发侵蚀损伤时不耗弹药持续物理输出、有敌人侵蚀损伤爆发时消耗弹药的触发逻辑。",
+      "limitations": [
+        "未说明弹药总量上限及持续时间"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "克莱门沙技能三「与海为敌」消耗弹药后，对触发侵蚀损伤爆发的敌人所在位置进行数次轰炸，每次轰炸对该位置及其周围四格的所有地面敌人造成物理伤害和元素伤害，伤害受第一天赋影响，且不会同时对同一个位置发动轰炸。",
+      "subject": "克莱门沙技能三「与海为敌」",
+      "condition": "技能三开启期间且消耗弹药触发轰炸时",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "对该敌人所在的位置进行数次轰炸",
+          "t_start": 256,
+          "t_end": 268
+        },
+        {
+          "text": "每次轰炸对该位置及其周围四格 所有地面敌人造成物理伤害和元素伤害 轰炸造成的伤害也会受到第一天赋的影响",
+          "t_start": 268,
+          "t_end": 280
+        },
+        {
+          "text": "并且克莱门沙不会同时对同一个位置发动轰炸",
+          "t_start": 280,
+          "t_end": 294
+        }
+      ],
+      "reason": "逐字稿中完整阐释了技能三消耗弹药后的轰炸机制，包括轰炸范围（目标格及周围四格）、目标限制（地面敌人）、伤害类型（物理加元素）、天赋联动与同格不重复轰炸的排他限制。",
+      "limitations": [
+        "轰炸具体次数与伤害倍率需查阅数值面板"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单审读克莱门沙三技能机制说明。转写文本为官方/官方演示文本念读，机制逻辑、触发前提、作用范围与排除规则均明确闭合，支持提炼为标准机制定论。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

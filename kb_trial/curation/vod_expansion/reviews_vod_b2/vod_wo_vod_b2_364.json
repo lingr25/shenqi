@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_364",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:55:40+0900",
+  "source_sha256": "2576c85b9fb0eacb5628ab8cfdbe2fb778cfb67eba8c3c999f35480de43ab330",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "出怪波次设计中的装置会占用出怪帧；其前提是该装置一开始就被写入出怪波次设计。完全不在出怪波次设计内、仅随地图直接布置的装置不会占用出怪流程，也不会造成一帧一出怪现象。",
+      "subject": "出怪波次设计中的装置",
+      "condition": "装置一开始即位于出怪波次设计内；完全不在出怪波次设计内时条件不成立",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "总之这些装置能站 真是因为他们一开始就在出怪波次设计里面 如果完全不在出怪波次设计里面 不会出现这种一帧一出怪的现象",
+          "t_start": 1811,
+          "t_end": 1824
+        },
+        {
+          "text": "因为他从一开始的时候就不在 这个不在出怪流程之中 他只是直接安排到图 一开始就带着",
+          "t_start": 1840,
+          "t_end": 1852
+        }
+      ],
+      "reason": "主播明确总结装置占帧原因，并在后文以不在出怪流程中的对象作对比，说明未写入出怪波次设计的装置不会占用出怪流程或造成一帧一出怪现象。该结论不依赖画面指涉，可作为底层出怪配置规则保留。",
+      "limitations": [
+        "逐字稿中“能站”疑为“能占”的 ASR 误写，回执未改动原始引文。",
+        "未细化不同装置类型、占位条目编码及具体占帧实现细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 有明确逐字稿结论与后文对比支撑，满足自包含、逐字引文对齐、显式三元约束和排除未定论假说四闸门；未发现未闭合猜测或画面依赖。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

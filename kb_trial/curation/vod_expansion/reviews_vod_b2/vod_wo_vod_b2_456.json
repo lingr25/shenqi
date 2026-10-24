@@ -1,0 +1,40 @@
+{
+  "workorder_id": "vod_wo_vod_b2_456",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:27:18+0900",
+  "source_sha256": "0e8223821cca56cc78d888a8ad45177eb4e8ed366b39479a7465969f6ec18685",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "异常红字3372与2390来源未定",
+      "verdict": "reject",
+      "reason": "候选仅是对局中异常数值的观察，未给出明确主体、成立条件、可复现场景或机制结论；3372与2390的来源当场仍未确定，属于未闭合观察/推测，违反 Gate 1、Gate 3、Gate 4。且候选 evidence 的 t_end 未按下一行时间戳标注，违反 Gate 2 的时间精度要求。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单唯一候选 c01 仅记录异常红字数值，未形成可复用机制命题；来源未定，属未闭合观察，故判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

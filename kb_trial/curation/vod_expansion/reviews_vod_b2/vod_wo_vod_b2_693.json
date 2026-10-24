@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_693",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T15:57:25+0900",
+  "source_sha256": "c40bebcbd2b2951536623767065155f061e2d578a7e759617d66637500ba4921",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "漩涡的反隐不属于阻挡反隐；漩涡只要对敌人造成一次伤害即可触发反隐，敌人是否处于隐匿状态不影响触发。",
+      "subject": "漩涡的反隐机制",
+      "condition": "漩涡对敌人造成至少一次伤害；不要求阻挡，敌人是否隐匿不作为触发前提",
+      "scope": "entity_mechanism",
+      "category": "状态效果/反隐",
+      "evidence": [
+        {
+          "text": "也就是说这个反隐只要不是阻挡反隐",
+          "t_start": 2906,
+          "t_end": 2918
+        },
+        {
+          "text": "但是我们能造出伤害就行",
+          "t_start": 2918,
+          "t_end": 2927
+        },
+        {
+          "text": "这本质上就是旋涡 只要造成一次伤害 他隐匿不隐匿就行",
+          "t_start": 2950,
+          "t_end": 2968
+        }
+      ],
+      "reason": "2906s 主播明确否定阻挡反隐；2918s 指出只要造成伤害即可；2950s 在实机对照后总结漩涡造成一次伤害即可，隐匿与否不影响触发。",
+      "limitations": [
+        "未说明伤害被无敌、护盾或闪避完全吸收时是否仍视为“造成一次伤害”。",
+        "未给出漩涡对应实体/装置的正式全称及帧级触发时序。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 的引文均可在逐字稿中逐字定位；主播在实机对照后形成明确结论，符合自包含、逐字引文、显式三元约束与排除未定论假说四项闸门，予以 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_678",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:09:58+0900",
+  "source_sha256": "eeb43ade33d1a8627ca04762a1b5b00ea73be98a49b553891a5e43d5fa569f6b",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "开技能后约1秒生成漩涡的时间轴观察",
+      "verdict": "reject",
+      "reason": "引文虽可逐字定位，但仅为演示过程中的相对口头描述，未指明具体干员/技能与计时起点，无法确认『开技能发生在1秒、漩涡在2秒』或『开技能后约1秒生成』；缺少自包含主体和可复现条件，属画面/实况依赖的纯观察。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单仅有一个候选，属于实验演示时序的口头片段；逐字引文可对齐，但断言依赖未言明的计时起点和具体技能主体，不能作为可复用机制定论，故整体判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

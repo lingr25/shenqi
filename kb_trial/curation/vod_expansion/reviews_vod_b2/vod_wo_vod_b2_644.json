@@ -1,0 +1,66 @@
+{
+  "workorder_id": "vod_wo_vod_b2_644",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:04:20+0900",
+  "source_sha256": "93eb15fe1cf4c04ed6bd9a1a136952c40626f4930a1a77031dfab7ce3d322b7f",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "带内置CD的干员在合约作战中的强度并不必然被严重削弱。",
+      "subject": "带内置CD的干员",
+      "condition": "在合约作战中",
+      "scope": "universal",
+      "category": "内置CD/合约调轴",
+      "evidence": [
+        {
+          "text": "有内置CD是不是很影响合约强度 那不一定 那不一定",
+          "t_start": 5778,
+          "t_end": 5794
+        }
+      ],
+      "reason": "主播先以反问提出内置CD是否很影响合约强度，随后明确回答“那不一定”，并紧接着说明合约中可通过精细调轴和组合配对规避影响，因此该结论有直接口述支撑。",
+      "limitations": [
+        "仅为总体结论，未给出具体内置CD数值、干员或合约词条。",
+        "“不一定”不等于内置CD无影响，具体强度仍需逐例测算。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "在合约中精细调轴使怪物错开所在格子并实现轰炸",
+      "verdict": "pending",
+      "reason": "“精细调轴让怪错开格子”有逐字稿支撑，但“从而实现轰炸”未说明由何主体/技能触发，也缺少可复现的合约、怪物路径与时间参数；关键机制未闭合，需人工听审或后续实机验证。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "c01 为可直接引用的总体结论，四闸门通过；c02 的调轴前半句有支撑，但“轰炸”指代与触发主体不明，判 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

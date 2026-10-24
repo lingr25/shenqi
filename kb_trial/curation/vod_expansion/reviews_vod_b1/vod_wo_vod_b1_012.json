@@ -1,0 +1,76 @@
+{
+  "workorder_id": "vod_wo_vod_b1_012",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T21:17:48+0900",
+  "source_sha256": "84aca2925bafc4f7311eb9fa999a806d185b48a80d1f24f0315b8596b1813dcb",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "出怪计时中，2.7秒加一帧对应第82帧出生。",
+      "subject": "出怪计时中的2.7秒加一帧",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "2.7秒加一帧是82帧出生",
+          "t_start": 1347,
+          "t_end": 1361
+        }
+      ],
+      "reason": "主播在讲解路线预演导致的额外帧时，直接给出该帧数换算，作为后续计算多出帧数的参数；上下文明确，不依赖画面指涉。",
+      "limitations": [
+        "未说明帧原点以及“82帧”是相对哪个基准计算。",
+        "仅能作为该换算关系的定论，不能外推为所有出怪时序的绝对出生帧。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "当波次存在两条额外路线预演时，出怪帧数会因此比常规多两帧。",
+      "subject": "存在两条额外路线预演的波次出怪帧数",
+      "condition": "波次存在两条额外路线预演",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "因为这里多出了两条路线 那么他就多了两帧 从而变成一个就是加两帧变成五",
+          "t_start": 1347,
+          "t_end": 1361
+        }
+      ],
+      "reason": "主播明确指出该处多出两条路线导致多两帧，且后文“四条路线→多加四帧”的同类推算支持“额外路线预演会增加出怪帧数”的机制。",
+      "limitations": [
+        "逐字稿中的“变成五”是具体实例数值，未纳入通用结论。",
+        "未给出每条路线预演与帧数的完整映射及所有基准间隔下的数值表现。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均来自同一段机制讲解。c01为帧数换算参数，c02为路线预演导致额外帧的机制结论；均已改写为自包含陈述，逐字稿引文可字符级对齐，无未闭合猜测，故均 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,37 @@
+{
+  "workorder_id": "vod_wo_vod_b2_394",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:06:20+0900",
+  "source_sha256": "96f13d67d5c8620442ef773c84960cc2a180356b60887e42b39b1c7d46e4afb1",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "珊比在天使损伤爆发时获得15%的侵蚀损伤。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G2"
+      ],
+      "reason": "Gate 2 不通过：上游引文“天使损伤爆发时 珊比获得 15%的侵蚀损伤”并非逐字稿任一行的连续子串，而是将 1872s、1875s、1935s 三行跨非连续时间拼接而成；其中 1875s 到 1935s 间隔约 60 秒。"
+    }
+  ],
+  "review_note": "唯一候选 c01 因引文未满足逐字引文对齐（Gate 2）被拒；逐字稿虽分散出现“天使损伤爆发时”“珊比获得”“15%的侵蚀损伤”，但未形成单行连续引文，不能作为可验证的机制命题采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b2_148",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:09:00+0900",
+  "source_sha256": "3e64beb1107063f725a7152ce423762e55c5613fd35564a05c2a07cf1baaf4b6",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "源石虫的阻挡半径小于0.5，当其被阻挡时会被推挤到0.5边界，因此表现为被阻挡后向后退一下。",
+      "subject": "源石虫",
+      "condition": "源石虫被阻挡时",
+      "scope": "entity_mechanism",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "注意这个源石虫阻挡之后往后退了一下",
+          "t_start": 1423,
+          "t_end": 1434
+        },
+        {
+          "text": "是因为阻挡半径比那个0.5少 导致什么 导致 呃阻挡之后被推挤到0.5边界",
+          "t_start": 1434,
+          "t_end": 1451
+        }
+      ],
+      "reason": "上下文在复看老奇机制视频时以源石虫被黑角阻挡为例，主播明确指出源石虫阻挡后往后退，是因为阻挡半径比0.5少，导致阻挡后被推挤到0.5边界。两段逐字稿直接支撑该因果链，可作为源石虫的实体机制定论。",
+      "limitations": [
+        "逐字稿只给出源石虫阻挡半径“小于0.5”，未给出精确数值。",
+        "未说明该0.5推挤边界是否与阻挡者类型绑定；转录例子为黑角阻挡。",
+        "上游单条引文跨行拼接，本回执已拆分为两条连续逐字证据。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选c01通过四大闸门。其核心机制“源石虫阻挡半径小于0.5，被阻挡时被推挤到0.5边界”在逐字稿中有明确因果陈述支撑；已改写为自包含命题，并将跨行引文拆为两条可字符级对齐的证据。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

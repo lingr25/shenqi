@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_256",
+  "stem": "BV1L4ez6oEcc_p2_42060876088",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:24:27+0900",
+  "source_sha256": "de542514b5a6021d2a497d542b04cd9bf1f4abee6f1fe08c2a6dd5c45c28a6a8",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "正常受击半径是0.1",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "上下文为主播针对幕落攻击范围和羊受击半径异常的口头猜想与推导过程（如'主要是这只是个猜想'、'2.0不就可以解释一切了吗'、'怎么可能是0.2呢'），其脱口而出的'正常受击半径是0.1啊'缺乏具体主体定义（通用敌人还是特定单位）、成立条件及数据依据，且在后续推导中不断自我反问与摇摆，属于未定论的口头假说，违反Gate 1、Gate 3与Gate 4。"
+    }
+  ],
+  "review_note": "工单仅包含一条候选命题。逐字稿显示主播在实测排查关卡中单位交互异常时进行口头反推与推测，其提及的数值（0.1、0.2、2.0）均为现场猜想与思维风暴，未形成经得起推敲的闭环机制定论，全部予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b1_001",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T21:12:25+0900",
+  "source_sha256": "bbf629971ab923b032f628b379352ee9a124346c0004a02e39aa7a897791cf3c",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在空费为零帧、一格为一帧的帧定标下，同一批在地图定义中为零帧出生的敌方单位，其影子分别在0帧、2帧、3帧、4帧出现。",
+      "subject": "同一批在地图定义中为零帧出生的敌方单位的影子",
+      "condition": "空费为零帧、一格为一帧的帧定标；同一批敌方单位在地图定义中为零帧出生",
+      "scope": "instance",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "就是空费是零 然后的话一格是一 这里是二帧",
+          "t_start": 631,
+          "t_end": 648
+        },
+        {
+          "text": "那个顶上这个影子是零帧出生的 底下这个影子的话是二帧出生的",
+          "t_start": 648,
+          "t_end": 657
+        },
+        {
+          "text": "这是三帧这个影子出来了 四帧这个影子出来了 这个就是一帧一出怪 大家可以观察到一个问题 即使在map定义里面都是零出生的怪",
+          "t_start": 657,
+          "t_end": 672
+        }
+      ],
+      "reason": "主播先给出空费为0、一格为1的帧定标，随后在同一实机演示中依次指出0帧、2帧、3帧、4帧出现的影子，并明确这些怪在map定义里都是零出生；逐字稿直接支撑该批次影子逐帧出现的观察。",
+      "limitations": [
+        "仅基于该实机演示批次，未覆盖所有地图或波次。",
+        "0/2/3/4序列的具体成因及是否普遍适用未在本命题中展开论证。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选c01为课堂演示中对一帧一出怪现象的实例观察，具有明确帧定标、出生条件与逐字引文支撑，未出现未定论猜测或开放疑问，故保留为instance。未发现需排除的其他候选。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

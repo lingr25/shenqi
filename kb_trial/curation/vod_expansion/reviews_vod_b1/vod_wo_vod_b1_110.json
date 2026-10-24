@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b1_110",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:56:18+0900",
+  "source_sha256": "1c0e969e5bbab39e76ed9d1932adb0f913dbd44f913be8901407e987a74e858e",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "红门右侧一列属于正经的dd地块，角色在该地块上左转并非处于地图外；该左转是技能结束所致，而不是地图外位移。",
+      "subject": "红门右侧一列地块",
+      "condition": "角色位于该地块且技能结束时",
+      "scope": "instance",
+      "category": "地图地形/位移",
+      "evidence": [
+        {
+          "text": "右边这一列是正经的地块啊 红门右边这一列 这不是废除地图 它是正经的地块 而且是dd",
+          "t_start": 6770,
+          "t_end": 6783
+        },
+        {
+          "text": "哎这就说明不是地图外 这是在这里左转的 这里只是技能结束了而已",
+          "t_start": 6909,
+          "t_end": 6920
+        }
+      ],
+      "reason": "上下文先明确红门右侧一列是正经dd地块、非废除地图，随后用同一现象说明角色是在该地块左转、只是技能结束，并非处于地图外。该结论是对地图外误判的纠正，具备机制知识价值。",
+      "limitations": [
+        "逐字稿未给出具体干员、技能名和关卡编号；『技能结束』导致左转的完整条件需结合画面或其他资料确认。",
+        "『dd地块』的具体定义未在本窗口展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 是对『红门右侧地块属于地图外』误判的纠正，逐字稿有明确地块性质与左转/技能结束的陈述；经改写为自包含命题后保留。未发现重复候选。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

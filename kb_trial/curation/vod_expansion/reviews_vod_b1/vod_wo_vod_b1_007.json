@@ -1,0 +1,100 @@
+{
+  "workorder_id": "vod_wo_vod_b1_007",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T21:14:44+0900",
+  "source_sha256": "8507b490e408602535a715cbf65bfe8849a07971bbff12e3c9b59c29be2a89c5",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "底层出怪逻辑采用间隔制：规定上一波执行完到下一波出怪之间的间隔时间，而不是规定出怪所处的绝对时间点。",
+      "subject": "波次出怪调度",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "从本质上来讲是在安排间隔 在安排出怪的间隔",
+          "t_start": 1055,
+          "t_end": 1069
+        },
+        {
+          "text": "而不是在安排出怪的时间 他是规定了上一波执行完之后五秒钟出下一波",
+          "t_start": 1069,
+          "t_end": 1081
+        },
+        {
+          "text": "这代表了他的整个程序运行 其实都是在运行间隔的",
+          "t_start": 1081,
+          "t_end": 1095
+        }
+      ],
+      "reason": "逐字稿明确说明出怪调度的本质是在安排出怪间隔：规定上一波执行完之后五秒再出下一波，而不是规定某一波在某个绝对时间点出怪。该结论可复用为底层波次调度规则。",
+      "limitations": [
+        "本命题只描述波次层面的间隔调度，未覆盖兵团、小队内部各自的延迟与计时规则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "在一帧一出怪逻辑下，每两个出怪之间的实际间隔至少为理论间隔值加一帧；基础表现为理论间隔值加一帧，特定情况下可能不止一帧。",
+      "subject": "一帧一出怪逻辑下的实际出怪间隔",
+      "condition": "遵循一帧一出怪逻辑",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "然后根据一帧一出怪逻辑 所以每两个出怪之间都是他的理论值 理论间隔值加一帧",
+          "t_start": 1123,
+          "t_end": 1139
+        },
+        {
+          "text": "这里的所有的出怪间呃 出呃出怪的间隔都是理论的间隔加一帧",
+          "t_start": 1144,
+          "t_end": 1157
+        },
+        {
+          "text": "然后的话在执行上加一帧这样的逻辑",
+          "t_start": 1157,
+          "t_end": 1171
+        },
+        {
+          "text": "他也至少是九秒又一帧 至少是理论时间 理论间隔再加一帧 同时的话又不止又在一定情况下不止一帧",
+          "t_start": 715,
+          "t_end": 731
+        }
+      ],
+      "reason": "逐字稿多次指出一帧一出怪逻辑会使出怪间隔在理论间隔值基础上加一帧，并在前文补充说明至少加一帧且特定情况下可能更多。上游命题的“等于”过强，按逐字稿修正为“至少为理论间隔值加一帧，基础表现为加一帧”。",
+      "limitations": [
+        "额外帧数的具体成因在逐字稿中未闭合，本命题只锁定一帧一出怪逻辑带来的基础加一帧。",
+        "实际间隔还可能受其他延迟或队列因素影响，需后续实机或更多逐字稿验证。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单两条候选均为出怪调度底层机制的明确结论：c01 为波次间隔制而非绝对时间点；c02 为一帧一出怪导致基础加一帧。c01 原引文跨行，回执中已拆分为逐行证据；c02 将上游“等于”按逐字稿前文“至少/有时不止一帧”的补充修正为“至少加一帧，基础表现为加一帧”。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

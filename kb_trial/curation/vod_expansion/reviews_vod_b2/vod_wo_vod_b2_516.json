@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_516",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:55:49+0900",
+  "source_sha256": "89b2bac9e5c1860cbaf7106a504e62f1d56f61dddf4dd34be7c4b358ab1d6679",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "元素爆条每9秒触发一次，因此十次元素爆条全部集中在同一格会耗时过长，不能作为紧凑的理想总伤循环。",
+      "subject": "元素爆条",
+      "condition": "计算紧凑的理想总伤循环时",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "就是我不能真的就是指一个格子 那么一直打下去对吧 我不能真的就是十次暴条",
+          "t_start": 649,
+          "t_end": 666
+        },
+        {
+          "text": "然后全都花在一个格子上 这个九秒钟爆一次条 不是9A爆一次条对吧 太慢了",
+          "t_start": 666,
+          "t_end": 679
+        }
+      ],
+      "reason": "上下文在讨论理想总伤假设时明确说不能把十次爆条全放在同一格，并给出九秒爆一次条、太慢的理由；可复现为元素爆条间隔对紧凑循环的限制。",
+      "limitations": [
+        "逐字稿只给出9秒的口述间隔，未给出技能持续时间或完整窗口，因此结论是理想总伤建模约束，不是任意长时战斗中的绝对不可能。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 的逐字引文可定位，核心是元素爆条约9秒触发一次导致同一格连续十次爆条过慢；已改写为自包含的建模约束并补齐条件。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

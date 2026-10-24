@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_408",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:09:26+0900",
+  "source_sha256": "5bbbf8c9d02c182508c2505db0ce1fba5954415aa469d8c24e3e317f28086a32",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "三技能「与海为敌」技能基础效果",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "reason": "上下文缺失所属干员主体，且技能名称疑似存在ASR转写错词；内容仅为主播照读游戏内技能文本概述，缺乏具体机制参数与可复用的定论价值，不满足自包含与机制深度要求。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "「与海为敌」爆发时的弹药消耗与轰炸效果",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G2"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "reason": "逐字稿原文存在严重ASR错误（转写为'14个敌人轻视损伤'），上游强行推演曲解为'全场每个有敌人的位置各消耗一发弹药'，导致触发条件严重失真；且主播仅在翻看阅读面板描述（'哦哦他都写了'），未形成闭合的实测机制结论。"
+    }
+  ],
+  "review_note": "本工单两项候选命题均源自主播初步阅读未明确干员的技能面板文字。其中c01缺失所属干员且无具体参数；c02逐字稿ASR受损严重（'侵蚀损伤爆发'被错转为'14个敌人轻视损伤'），导致上游抽取结论失真，均予以驳回。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

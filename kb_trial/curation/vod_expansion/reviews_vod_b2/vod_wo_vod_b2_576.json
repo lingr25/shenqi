@@ -1,0 +1,73 @@
+{
+  "workorder_id": "vod_wo_vod_b2_576",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:11:52+0900",
+  "source_sha256": "6ab25fa942a078c25c188d09491d77e890c2235bff652b12e0bd6ddd78037e6f",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "567早开的实测中，命中发生在334/345帧，本次尝试已失败（角色死亡）。",
+      "verdict": "reject",
+      "reason": "属于单次实战现象观察，且主体不完整，未明确具体干员/技能/被命中事件；引文虽可见于4647行，但候选标注起止4643-4655与应标4647-4655不一致。不满足G1、G3、G4，G2时间标注也不精确。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "567帧早开不可行。",
+      "verdict": "pending",
+      "reason": "该结论有机制边界价值，逐字稿也明确出现“567是肯定不太行的”，但缺少具体干员、技能、被验证事件等关键主体信息，无法改写为自包含机制命题，需人工听审或后续实机验证补全参数。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    },
+    {
+      "local_id": "c03",
+      "topic": "比567帧再早一帧开启，也一定会死。",
+      "verdict": "reject",
+      "reason": "属于对未闭合结论的延伸推测，“早一帧”相对基准不明确，且缺少具体主体与可复现条件；主播口头断言不能作为已验证机制定论。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本单三个候选均未达到可入库的自包含机制定论。c01为单次实战观察且主体与时间标注不完整；c02体现567帧早开失败的边界结论，但缺少具体干员/技能/事件等关键参数，留待人工听审或后续验证；c03为未闭合的延伸推测。故无keep，整单pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

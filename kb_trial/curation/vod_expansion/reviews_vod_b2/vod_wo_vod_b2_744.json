@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_744",
+  "stem": "BV18BpG6LEtq_p2_42631758665",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:11:10+0900",
+  "source_sha256": "35a9cd7a72ea323553eca592fb7fb65210cc1d1a2153e66504f6ff30fb5e18e2",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "被推出地图外的怪要慢慢往回走，还要走100多个（单位原文未说明）。",
+      "verdict": "reject",
+      "reason": "仅为特定对局中的实况观察/感叹，“100多个”未给出明确单位，且缺少可复现条件与明确的机制边界；按Gate 3（三元约束不足）和Gate 4（无明确参数与可复现条件的纯观察）排除。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "候选c01的逐字引文可在1505秒行中字符级匹配，但命题只是主播对特定对局现象的实况描述，未说明走回距离的单位、适用范围和可复现条件，不能作为可复用机制定论。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,37 @@
+{
+  "workorder_id": "vod_wo_vod_b2_718",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:05:32+0900",
+  "source_sha256": "b58e2f18dc78a12d2ed69b5116a947e5789a36168b37620172ef1f9a4a34fa03",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "火神传送实现方式：原先逐帧传送到落点的认知被推翻",
+      "verdict": "reject",
+      "reason": "该候选引用的 3268s 处仅为未闭合猜测（“可能真的用传送矢量了”），且 3284s 主播明确改口“我搞错了”“他就是逐帧传送到自己的那个就是弹道坐标处”，故该“已被推翻”的结论不成立，属于未定论假说且被后续口述自我否定，违反 Gate 4。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "唯一候选 c01 的引文可在 3268s 行找到连续原文，但其内容为随后被主播自我否定的传送矢量猜测；最终口述回到逐帧传送到弹道坐标处，不构成可复用定论，故全单 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

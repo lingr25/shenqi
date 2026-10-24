@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b1_126",
+  "stem": "BV1cmaa6VEPR_p2_42252239801",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:12:32+0900",
+  "source_sha256": "ff3dc5c3602c224d674446e697a20f71c54561913bf02028839b7ba212dc4c86",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "判断火陈能否起飞、龙往哪飞必须严格依据地图 tile（地块），不能凭直觉",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ],
+      "reason": "G1 不通过：上游命题实为主播的分析方法论建议（「你需要去更严格的去判断这个地图的这个 tale 这些东西究竟是什么东西 才能够去分析它会不会撞墙」），是「应当怎样去判断」的操作/思路指导，而非可复用的机制定论；句中「火陈」「这个龙」的机制行为本身并未被陈述，主体所指悬空。G3 不通过：缺少显式的 condition 与可复现参数（哪张图、哪种 tile、何种寻路分支），scope 亦无法落定为 universal/entity_mechanism/instance 中的具体结论，仅有「依据 tile」这一空泛前提。G2 通过：引文「那么实际上的话 你需要去更严格的去判断这个地图的这个tale」可在 305s 行内字符级对齐（含 ASR 原样错拼 tale），未跨行拼接。补充：紧接的 320s 行「我还没看那个火陈的龙究竟是几帧撞的墙呢」表明该话题当场未闭合，不具备规则价值。"
+    }
+  ],
+  "review_note": "本工单仅 1 条候选。上下文为关于『从娜斯提 PV 反推寻路机制』的方法论讲义：主播先论证「PV 演示足以说明娜斯提装置不可能改路径」，随后延伸出「要判断火陈的龙能否起飞、往哪飞，必须严格看地图 tile 才能分析会不会撞墙」。该延伸句是研究方法的自我要求，而非对寻路机制的定论描述，且主播自陈尚未实测「火陈的龙究竟是几帧撞的墙」，讨论未闭合。逐字引文本身与 305s 行字符级一致（含 ASR 错拼 tale），G2 无障碍，但命题不满足 Gate1 的『机制陈述』要求与 Gate3 的三元约束，故整体判 reject，本单无 keep，顶层 verdict 为 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

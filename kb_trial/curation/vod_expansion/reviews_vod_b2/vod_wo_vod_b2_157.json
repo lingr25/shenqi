@@ -1,0 +1,95 @@
+{
+  "workorder_id": "vod_wo_vod_b2_157",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:14:34+0900",
+  "source_sha256": "4875c7002f736b110271c5b45f550e4c1eb54af7d43d0e170ed043597f642f73",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "在雷蛇直走阻挡电池组的场景中，不会出现第三个敌方单位因偏移进入夜半攻击范围的情况；原机制视频中所谓第三个单位会因偏移进入夜半攻击范围的说法有误。",
+      "subject": "雷蛇直走时的第三敌方单位偏移判定",
+      "condition": "雷蛇按直线路径移动（而非斜走）",
+      "scope": "instance",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "他这里说的不对啊 下方堆第三个单位时候 第三个因为偏移进入夜半攻击范围 这不对",
+          "t_start": 2125,
+          "t_end": 2134
+        },
+        {
+          "text": "这里直着走还是斜着走 视频 这里这里是直着走的 直着走不会有这种事 不会有这种事 他这里讲的是有问题的",
+          "t_start": 2152,
+          "t_end": 2165
+        }
+      ],
+      "reason": "主播核对录播路径为直走，并明确说“直着走不会有这种事”“他这里讲的是有问题的”，否定原机制视频关于第三个单位因偏移进入夜半攻击范围的说法，属于明确勘误。",
+      "limitations": [
+        "仅针对该录播关卡与直走路径；未给出偏移判定的通用公式。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "将敌方单位直接阻挡在雷蛇下方时，该单位同样不会被夜半攻击，因此无需刻意卡位。",
+      "subject": "被雷蛇阻挡在其下方的敌方单位",
+      "condition": "敌方单位被雷蛇阻挡在雷蛇下方",
+      "scope": "instance",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "为什么不直接阻挡在雷蛇下方 一样不会被夜半攻击 还不需要刻意卡位",
+          "t_start": 2178,
+          "t_end": 2193
+        }
+      ],
+      "reason": "逐字稿中主播以反问加断言的方式给出结论：直接挡在雷蛇下方也一样不会被夜半攻击，不需要刻意卡位；后文也总结为多此一举。该结论否定原视频中卡位必要性的错误理解。",
+      "limitations": [
+        "仅适用于该关卡与该套夜半、雷蛇位置关系；未给出通用攻击范围坐标。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "原机制视频关于雷蛇0.7071阻挡圆与夜半攻击的表述",
+      "verdict": "reject",
+      "reason": "仅转述原机制视频主张，后续上下文对其相关说法提出勘误/辟谣，并非经主播验证的可复用机制定论；“不会被夜半攻击”也依赖特定关卡布局与卡位，不具备独立通用规则价值。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01为原视频主张的转述，且后续上下文对其相关说法提出勘误，不作为定论保留；c02、c03为主播明确给出的勘误/结论，属于该实例场景下的可复用辟谣结论，保留为 instance。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

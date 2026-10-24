@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b1_131",
+  "stem": "BV1cmaa6VEPR_p2_42252239801",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:13:58+0900",
+  "source_sha256": "23dd0e04ff64f6270691291bad9efebd05ce00c65502895203be2fddee296cbc",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "海面/水地块的地块属性是低地，即这些海面区域整体被判定为低地。",
+      "subject": "海面/水地块",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "地块判定",
+      "evidence": [
+        {
+          "text": "这些水的地方是滴滴啊 虽然说视觉不怎么可靠 但是鹰角在实现一些东西的时候 还是会多少参照一下这个美术效果",
+          "t_start": 461,
+          "t_end": 474
+        },
+        {
+          "text": "然后他就会添滴滴 所以这些海都是滴滴",
+          "t_start": 474,
+          "t_end": 490
+        }
+      ],
+      "reason": "主播在讨论地块判定时先提出海面/水地块是高台还是低地的问题，随后明确说这些水的地方是“滴滴”（按上下文与章节标题应为“低地”），并以“所以这些海都是滴滴”收束为定论；其解释鹰角会参照美术效果填写对应地块属性，足以支撑海面/水地块被判定为低地的机制结论。",
+      "limitations": [
+        "逐字稿中“低地”被转写为“滴滴”，依赖上下文与章节标题校正。",
+        "未在逐字稿中枚举所有水地形变体；若存在特殊海水/深水地块，需实机复核。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选 c01 满足四闸门：命题自包含，引文可在逐字稿中字符级匹配，主体/条件/范围明确，且为主播对地块属性的明确结论而非猜测或反问。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

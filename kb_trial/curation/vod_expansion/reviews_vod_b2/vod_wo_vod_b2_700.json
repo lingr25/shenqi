@@ -1,0 +1,66 @@
+{
+  "workorder_id": "vod_wo_vod_b2_700",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T15:58:43+0900",
+  "source_sha256": "965ca55ed08835d8066195679d6d7b81fc718cb0df3a69677e63a35da79e41f2",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "当前版本中，剧情boss均带有自负状态；历史上曾存在不带自负状态的剧情boss。",
+      "subject": "剧情boss（敌方剧情首领）",
+      "condition": "讨论语境限定为当前版本；历史版本作为例外",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "剧情boss都有自负 剧情boss都有自负 曾经也存在过没有的",
+          "t_start": 3342,
+          "t_end": 3360
+        }
+      ],
+      "reason": "主播在回答自负与传送问题时明确称剧情boss都有自负，并紧接着补充曾经存在过没有自负的boss；据此规范为带历史例外的剧情boss状态机制陈述。",
+      "limitations": [
+        "未逐一列出哪些剧情boss带有自负，也未说明历史例外对应的具体版本或关卡。",
+        "原文全称表述与历史例外并存，故claim限定为当前/通常情况。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "曾经存在过不带自负状态的剧情boss",
+      "verdict": "reject",
+      "reason": "属于对过去实战/历史情况的模糊观察，未给出具体boss、版本、关卡或可复现参数；“那个boss被溜了满地跑”也无法支撑通用机制，按Gate 4排除。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01为剧情boss自负状态的直接结论，但原文全称表述后紧接历史例外，故改写为当前/通常规则并保留例外；c02仅是对过去某boss无自负并被溜的模糊观察，缺少具体对象和可复现参数，排除。另[3326s]有‘自负单位不会被挂上传送’的更明确机制句，但不在候选中，未新增命题。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

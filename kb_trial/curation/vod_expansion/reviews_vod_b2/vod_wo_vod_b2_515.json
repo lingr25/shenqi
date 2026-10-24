@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_515",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:55:20+0900",
+  "source_sha256": "0a7ddcdd1b20bb472119032d69139bc61deb407d2390fe8f529c3a8f46624b67",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "核对后确认计算中使用的2.35倍物理伤害倍率没有错误",
+      "verdict": "reject",
+      "reason": "该候选仅复述主播对本次算式中2.35数值的确认，未说明该倍率的来源、构成或可复现的伤害结算规则，不属于独立可复用的机制陈述；命题中的主体、成立条件与作用范围也不明确，仅能理解为一次性计算核对。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "逐字稿可对齐“2.35没错没错”，说明主播在核对后确认该数值无误，但这只是对一次性计算结果的确认，未形成关于2.35倍物理伤害倍率来源或结算规则的可复用机制定论，故拒绝。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,81 @@
+{
+  "workorder_id": "vod_wo_vod_b2_702",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T15:59:34+0900",
+  "source_sha256": "9b279c971909a9f10da5ae10812dacddc10510ee72b2fa39673666d66609c2cf",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c03",
+      "claim": "怪物与干员的创建先后顺序中，只有一帧能实现干员先于敌人创建，其余情况均为干员后于敌人创建。",
+      "subject": "怪物与干员的创建先后判定",
+      "condition": "创建先后判定中",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "他那个还有一个怪和干员的创建先后的问题 他只有一帧是可以做到说干员比敌人先创建 然后其他的情况都是干员比敌人后创建",
+          "t_start": 262,
+          "t_end": 280
+        }
+      ],
+      "reason": "逐字稿中主播直接陈述创建先后顺序的帧数结论，未使用猜测性措辞，属于可复用的帧时序机制陈述。",
+      "limitations": [
+        "未说明该单帧在完整帧序列中的具体位置或编号。",
+        "未覆盖不同生成方式（如召唤、传送、特殊部署）是否同样适用。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "侧阻挡两个怪物且部署帧未对齐时可推导出四种判定结果",
+      "verdict": "reject",
+      "reason": "上游引文跨越 231s 与 247s 两行拼接，不是单行连续子串，违反逐字引文对齐（G2）；且紧接枚举后出现「可能呗」，属于未验证的可能性表述，违反未定论假说排除（G4）。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G2",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "正常的三帧阻挡只有三种判定情况",
+      "verdict": "reject",
+      "reason": "逐字稿用「正常来讲……应该只有三种情况」表述，属于未验证的推测性结论；且未列出三种情况的具体内容与「三帧阻挡」的成立参数，不能作为可复用机制定论。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本单仅 c03 为逐字稿直接陈述且可自包含的帧时序机制，予以保留；c01 引文跨行且带未定论措辞，c02 为带「应该」的未验证情况数推测，均排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

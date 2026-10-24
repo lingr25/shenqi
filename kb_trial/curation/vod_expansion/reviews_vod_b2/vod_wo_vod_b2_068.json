@@ -1,0 +1,76 @@
+{
+  "workorder_id": "vod_wo_vod_b2_068",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:40:11+0900",
+  "source_sha256": "512a4f4964d9fc5daaa463e22e28d84be0946e34ef3de65fcd7fb6d2d539b966",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "Unity 的推拉判定大部分时候是连续型判定，会在射线的预碰撞位置直接检测到碰撞并将位移拦停，因此常规推拉位移不会因速度过快而越过墙体。",
+      "subject": "Unity 推拉位移判定（《明日方舟》中常规推拉位移的碰撞检测）",
+      "condition": "常规推拉位移由连续型检测处理，并在射线预碰撞位置检测到碰撞",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "大部分时候的话 推呃unity的推拉判定是一种非常连续的判定",
+          "t_start": 880,
+          "t_end": 896
+        },
+        {
+          "text": "他会在那个射线的预呃预碰撞位置 直接检测到这个地方会发生碰撞拦停",
+          "t_start": 896,
+          "t_end": 910
+        },
+        {
+          "text": "因为速度过快的而越过强的可可能性 只有离散型才会发生这种表现",
+          "t_start": 910,
+          "t_end": 922
+        }
+      ],
+      "reason": "逐字稿明确说明 Unity 推拉判定大部分是连续型，会在射线预碰撞位置检测碰撞并拦停；随后指出速度过快导致越墙只可能发生在离散型检测中，支持常规推拉不会因速度过快穿墙的结论。",
+      "limitations": [
+        "“大部分时候”限定为常规连续型推拉判定。",
+        "后文登临意先拉再挤穿墙属于碰撞箱不对称/边界特例，并非速度过快导致。",
+        "未给出离散型检测的阈值、帧率或所有例外条件。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "速度过快导致越过墙体只会在离散型碰撞检测中发生，连续型检测不会出现越墙表现。",
+      "verdict": "reject",
+      "reason": "与 c01 重复，均说明连续型检测会在预碰撞位置拦停、速度过快穿墙只属于离散型。按去重规则保留 c01；且原命题“连续型检测不会出现越墙表现”表述过宽，后文登临意连续型穿墙由先拉再挤/碰撞箱不对称导致，并非速度过快。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "DUP"
+      ]
+    }
+  ],
+  "review_note": "两个候选均围绕连续型/离散型碰撞检测与速度穿墙。c01 证据完整、自包含，保留；c02 与其重复且表述过宽，按 DUP 排除。后文登临意穿墙机制属于碰撞箱不对称特例，不影响 c01 关于速度穿墙的结论。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

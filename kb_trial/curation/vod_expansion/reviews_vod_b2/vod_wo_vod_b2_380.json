@@ -1,0 +1,73 @@
+{
+  "workorder_id": "vod_wo_vod_b2_380",
+  "stem": "BV1xRho6DEAQ_p3_42227206884",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:02:14+0900",
+  "source_sha256": "03c485d8a6d33d03a637540272823aeb75423403dc6cd96da37cdb19fd83adab",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "侵蚀属性的六星干员珊比会大幅缩短元素损伤爆发（爆条）的持续时间。",
+      "subject": "侵蚀属性六星干员珊比",
+      "condition": "珊比相关效果生效时（逐字稿未说明具体触发方式）",
+      "scope": "entity_mechanism",
+      "category": "状态效果/元素损伤",
+      "evidence": [
+        {
+          "text": "侵蚀有一个很严重的问题啊 就是侵蚀的这个六星珊比他是大幅的缩减",
+          "t_start": 1736,
+          "t_end": 1749
+        },
+        {
+          "text": "暴条持续的",
+          "t_start": 1749,
+          "t_end": 1761
+        }
+      ],
+      "reason": "1736秒处明确给出主体“侵蚀的这个六星珊比”和“大幅的缩减”，1749秒处紧接说明缩减对象是“暴条持续的”，可合并为一条关于珊比缩短爆条持续时间的实体机制。逐字稿未给出具体数值与触发来源，故保留定性结论。",
+      "limitations": [
+        "爆条持续时间的缩减幅度仅为“大幅”的定性描述，未给出具体数值或百分比",
+        "干员名“珊比”为逐字稿转写，可能存在 ASR 偏差，未在文本中给出规范名",
+        "未说明该效果来自天赋、技能还是其他机制"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "侵蚀六星不可能是妮芙那种模式",
+      "verdict": "reject",
+      "reason": "该候选为对未来侵蚀六星设计模式的预测，非可复用机制定论；“妮芙那种模式”未在逐字稿中定义，依赖上下文，且属于未验证假说，不满足自包含与排除未定论假说闸门。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01 的逐字稿文本可支撑珊比大幅缩短爆条持续时间的定性机制，予以 keep；c02 是对未来六星形态的预测且指代不明确，予以 reject。整单存在一条 keep，故顶层 verdict 为 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

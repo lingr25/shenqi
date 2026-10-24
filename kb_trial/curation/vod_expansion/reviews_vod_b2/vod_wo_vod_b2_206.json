@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_206",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:57:12+0900",
+  "source_sha256": "fa50191ea415683612fb8746877d28a9f40e25cd5184099810ddcc96e63ac051",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "蓝门半格内的仇恨为零，因为仇恨投影到零向量上都是零。",
+      "subject": "蓝门半格内的仇恨值",
+      "condition": "单位或仇恨位置处于蓝门半格范围内",
+      "scope": "universal",
+      "category": "索敌/仇恨",
+      "evidence": [
+        {
+          "text": "蓝门半格内仇恨是零啊 都是零啊 因为投影到零向量上都是零",
+          "t_start": 3090,
+          "t_end": 3104
+        }
+      ],
+      "reason": "逐字稿中主播在讲解合约精细计算时明确回答蓝门半格内仇恨如何计算，并给出仇恨为零及其投影到零向量的原因；该陈述为明确机制结论，非猜测、反问或纯实战复述。",
+      "limitations": [
+        "未在逐字稿中展开“半格”边界与“投影到零向量”的具体数学定义",
+        "未说明是否适用于所有蓝门相关索敌类型"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 的引文与逐字稿第 3090 秒行字符级一致，命题为自包含机制结论，主体、条件、范围可明确，且非未定论假说或反问，予以 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

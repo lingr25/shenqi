@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_178",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:23:48+0900",
+  "source_sha256": "ae5860203b09ce3e58939aadd082b5cbf6262485d74f7a9e9efd796f0a0d4000",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在以仇恨值排序的仇恨过滤器中，精度为0.1；当两个敌方单位的路径距离差不超过0.1时，距离值会向下取整判定为相同仇恨值，从而触发同仇恨按先创建顺序索敌的机制。",
+      "subject": "仇恨过滤器（基于仇恨值/路径距离排序）",
+      "condition": "多个敌方单位路径距离差小于等于0.1",
+      "scope": "universal",
+      "category": "索敌/仇恨排序",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "它仍然会在0.1距离之内同仇恨打先创建的",
+          "t_start": 1385,
+          "t_end": 1421
+        },
+        {
+          "text": "因为在0.1的仇恨过滤器精度下 如果没超过革新0.1的话 都会向下取整",
+          "t_start": 1465,
+          "t_end": 1479
+        }
+      ],
+      "reason": "上下文明确解释了仇恨过滤器精度为0.1的底层逻辑：在敌方单位路径距离差未超过0.1时，数值会向下取整归入同一仇恨档位，进而按照同仇恨打先创建（先生成）的规则进行索敌判定。原命题成立且被逐字稿明确支持。",
+      "limitations": [
+        "逐字稿中存在部分ASR错词（如“革新”可能为“阈值”或特定专有名词），但机制的核心数值0.1精度与向下取整、先创建结算逻辑表述完整闭合。"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单候选命题论述清晰，阐明了索敌仇恨过滤器精度0.1及其对路径距离向下取整导致的同仇恨判定现象。满足四大闸门，予以保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

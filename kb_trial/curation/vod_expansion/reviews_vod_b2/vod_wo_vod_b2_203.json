@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_203",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:56:22+0900",
+  "source_sha256": "0499c7de6698d32754ccb005516ade25707c6174c0aa67747853cc664de1de87",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "多个单位仇恨值相同时，索敌会优先命中先创建的单位；创建先后可对应为一号、二号、三号等单位编号。",
+      "subject": "索敌系统",
+      "condition": "多个单位仇恨值相同",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "在这个五个分华内部仇恨都是等同的 所以的话同仇恨就会打 先创建 先创建的是一号2号或者3号",
+          "t_start": 2929,
+          "t_end": 2938
+        }
+      ],
+      "reason": "上下文在划分酒神0.2半径五档后说明同一档内仇恨等同；主播据此指出同仇恨时会打先创建的单位，并继续用一号、二号、三号枚举落位，说明相同仇恨下的索敌顺序由创建先后决定。",
+      "limitations": [
+        "该结论在直播中以酒神五档和一号/二号/三号单位为例说明，逐字稿未展开验证不同装置或非单位目标是否完全一致。",
+        "证据保留转写原文，未修正其中可能的ASR错字。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "仅一个候选。逐字稿2929s行可精确匹配引文；命题可改写为自包含的通用索敌规则，主体、条件、范围明确，且非主播未闭合猜测，故裁定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,58 @@
+{
+  "workorder_id": "vod_wo_vod_b2_185",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:25:05+0900",
+  "source_sha256": "456877598e1b1d4d6ec2dd8725a554634403ed8c538ec9549c7212db69044f1d",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "敌方单位的仇恨（曼哈顿寻路距离整数部分）定义为按顺序串联所有路径点到终点蓝门的曼哈顿距离之和，本质上只统计格子数，不计算实际物理路径长度。",
+      "subject": "敌方单位寻路仇恨值",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "寻路/仇恨计算",
+      "evidence": [
+        {
+          "text": "仇恨是串联所有路径点到终点的曼哈顿距离之和嗯 举一个比较简单的例子",
+          "t_start": 1793,
+          "t_end": 1814
+        },
+        {
+          "text": "在曼哈顿寻路中是零距离 从本格到一格远的格子中 你不管路径点在哪里 他们在曼哈顿寻路中都是一距离",
+          "t_start": 1903,
+          "t_end": 1915
+        },
+        {
+          "text": "从本质上来讲不是路径长度的计算 它只看格子数 它只看格子数",
+          "t_start": 1942,
+          "t_end": 1955
+        }
+      ],
+      "reason": "主播明确给出了仇恨与曼哈顿寻路距离的底层计算规则定义，并通过具体实例解析了只看格子数而非实际连续几何距离的机制本质，论据完整且闭合。",
+      "limitations": [
+        "仅包含曼哈顿寻路距离的整数部分，未展开小数部分或同距离时的平局判定规则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单中唯一候选命题 c01 属于核心底层机制教学，逐字稿中不仅有明确的陈述定义，还有详细的格子距离规则说明，四闸门全过，判定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

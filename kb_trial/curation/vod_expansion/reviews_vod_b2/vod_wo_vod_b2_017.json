@@ -1,0 +1,74 @@
+{
+  "workorder_id": "vod_wo_vod_b2_017",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:18:30+0900",
+  "source_sha256": "0d8cf9e493e00af0246ec0a963e3b5d1dbb0f7cf00f181f449ac7f19cb9553bb",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "狭路相逢洞按节点数分为三节点和四节点两种形态，其中三节点形态必定由三个狭路组成。",
+      "subject": "狭路相逢洞",
+      "condition": "该狭路相逢洞为三节点形态",
+      "scope": "universal",
+      "category": "地图生成/关卡机制",
+      "evidence": [
+        {
+          "text": "狭路相逢洞分为两种 三节点和四节点 三节点一定是三个狭路",
+          "t_start": 3527,
+          "t_end": 3540
+        }
+      ],
+      "reason": "逐字稿明确陈述狭路相逢洞分为三节点和四节点两种，并指出三节点一定是三个狭路，构成可复用的节点生成规则。",
+      "limitations": [
+        "仅确认三节点形态由三个狭路组成，未展开四节点形态的节点构成细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "狭路相逢洞的四节点形态中会包含一个应急助力。",
+      "subject": "狭路相逢洞的四节点形态",
+      "condition": "该狭路相逢洞为四节点形态",
+      "scope": "universal",
+      "category": "地图生成/关卡机制",
+      "evidence": [
+        {
+          "text": "而四节点的狭路洞里会藏着一个应急助力",
+          "t_start": 3540,
+          "t_end": 3557
+        }
+      ],
+      "reason": "逐字稿明确给出四节点狭路相逢洞中藏有一个应急助力的结论，属于可复用的节点构成规则。",
+      "limitations": [
+        "未说明应急助力的具体作用、出现位置或触发方式。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均有逐字稿直接陈述支撑，命题自包含且未依赖画面；证据可在对应时间戳行内字符级对齐。未发现同义重复或未定论假说，故均保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,69 @@
+{
+  "workorder_id": "vod_wo_vod_b2_294",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:33:01+0900",
+  "source_sha256": "8295dfe258c549598f9acbbe29a69dc38931f99b250a7d80d296c7f5e8dd97a8",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "集成战略藏品「疗养卡」的效果虽然文案描述为部署时10秒内提升攻击速度，但在干员重生（复活）后同样会触发并获得该攻速加成效果。",
+      "subject": "集成战略藏品疗养卡",
+      "condition": "干员重生后",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "比如说那个部署时额 攻速提升攻速加40 部署时十秒内攻速加40",
+          "t_start": 2360,
+          "t_end": 2374
+        },
+        {
+          "text": "疗养卡 但是我们在实战中是可以发现的对吧 那个实际上重生后也是可以加这个东西的",
+          "t_start": 2374,
+          "t_end": 2392
+        }
+      ],
+      "reason": "主播明确指出了藏品「疗养卡」在实战中的机制特例：底层将重生视为等同于部署触发点，因此获得文案上标注为部署时的攻速加成，具有明确的机制复用价值。",
+      "limitations": [
+        "未详述具体重生的干员类型（如傀儡师替换回本体或具备不退场重生天赋干员）是否存在差异"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "疗养卡的文案与实战效果不完全一致",
+      "verdict": "reject",
+      "failed_gates": [
+        "DUP"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "reason": "与 c01 讨论同一机制事实，c02 偏向文案吐槽与元评价（Meta-commentary），机制价值已被 c01 完整覆盖，故判重排除。"
+    }
+  ],
+  "review_note": "本工单主要讨论了鹰角文案不准确现象中的具体机制特例（疗养卡对重生干员生效）。c01成功提炼出该具体机制并得到文本支撑，予以保留；c02系对同一事实的重复表述与泛化吐槽，予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

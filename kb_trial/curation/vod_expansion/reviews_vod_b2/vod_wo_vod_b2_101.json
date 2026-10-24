@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_101",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T13:09:45+0900",
+  "source_sha256": "92ee02260efac7cdf2781bfc58619faf578a8bf3313d6c1ad734d8a21ead4f76",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "阻挡偏移在仅阻挡单个敌人时，只需将敌人挤到 0.5 边界即可，不需要处理多单位阻挡偏移中更复杂的计算。",
+      "subject": "阻挡偏移计算",
+      "condition": "仅阻挡单个敌人",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "就是之前咱们不算过那个水月的入坑吗 嗯那个不就是有一个阻挡偏移的 一个那个只涉及对单的阻挡偏移",
+          "t_start": 3806,
+          "t_end": 3819
+        },
+        {
+          "text": "只用几到0.5就完事了 这套逻辑要算更多的",
+          "t_start": 3819,
+          "t_end": 3832
+        }
+      ],
+      "reason": "上下文在讨论阻挡偏移时明确区分对单情形与多单位推广：对单时只做挤到 0.5 边界的简化计算，并称更复杂的计算属于多单位推广。该结论有逐字稿支撑，且可改写为不依赖“此前水月入坑”上下文的机制简化陈述。上游给出的时间戳明显偏移，已按逐字稿实际行修正到 3806s/3819s。",
+      "limitations": [
+        "仅覆盖单敌人阻挡偏移的简化结论，多单位转挤权重算法需另条命题。",
+        "ASR 的“几到0.5”按上下文应为“挤到0.5”，未改变机制参数。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅有一个候选。其原始表述依赖“此前水月入坑”的上下文，已改写为自包含的对单阻挡偏移简化规则。逐字稿引文实际位于 3806s 与 3819s 两行，候选时间戳错误已修正；引文可字符级匹配。该结论排除多单位复杂计算，属于阻挡偏移机制的可用简化。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

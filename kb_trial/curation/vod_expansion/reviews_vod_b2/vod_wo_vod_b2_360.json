@@ -1,0 +1,81 @@
+{
+  "workorder_id": "vod_wo_vod_b2_360",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:55:21+0900",
+  "source_sha256": "791fd1214fbc5a51cea91fbe4554c3ffac99533c8924a8815604b73beb8c5ba7",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "鹰角 waves 波次设置包含三类控制参数：是否卡下一个波次/兵团、出怪前是否播放从红门到蓝门的路线演示、以及是否显示提示牌。",
+      "subject": "鹰角 waves 波次设置",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "关卡机制",
+      "evidence": [
+        {
+          "text": "然后这个设置是决定要不要卡那个下一个兵团 这个设置是决定出不出那个路线演示 就是出怪之前不是会出一堆红的",
+          "t_start": 1613,
+          "t_end": 1631
+        },
+        {
+          "text": "像那个怪一样从红门爬到蓝门的那个东西吧 这个就是控制这个的 然后这个是用来控制牌子的",
+          "t_start": 1631,
+          "t_end": 1646
+        }
+      ],
+      "reason": "逐字稿在讲解 waves 波次设置参数时，明确列出三个控制项：是否卡下一个兵团/波次、是否出路线演示、以及控制提示牌。上下文足以支撑其为关卡波次配置层面的通用机制结论。",
+      "limitations": [
+        "逐字稿未给出这些设置项的正式字段名。",
+        "「兵团」可能为口误或 ASR 偏差，具体字段含义需以编辑器/代码为准。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "鹰角 waves 波次设置中，关卡常态默认启用卡波次；表示“不卡”的 don't 选项默认关闭。",
+      "subject": "鹰角 waves 波次设置中的卡波次选项",
+      "condition": "关卡处于常态且未手动改动波次设置",
+      "scope": "universal",
+      "category": "关卡机制",
+      "evidence": [
+        {
+          "text": "默认要卡就是don't不卡 don't卡就是不卡的意思 不卡的常态是不开的 常态不开不卡 意思就是常态要卡",
+          "t_start": 1646,
+          "t_end": 1663
+        }
+      ],
+      "reason": "逐字稿直接说明默认要卡，don't 表示不卡，且不卡的常态是不开的，因此常态下等价于要卡。这是对 waves 默认参数的明确机制说明。",
+      "limitations": [
+        "未说明具体关卡覆盖该默认值时的例外或修改方式。",
+        "「don't」为直播中的口头/界面读法，正式字段名未在逐字稿中给出。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单两个候选均为 waves 波次设置讲解中的显式机制陈述；c01 总结三类控制参数，c02 说明卡波次选项的默认状态。已按逐字稿拆分为可逐行对齐的证据，两个命题均通过四大闸门，判为 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

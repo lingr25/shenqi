@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_098",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:48:33+0900",
+  "source_sha256": "ced941c054acfbdc4ab49e32f734d0a49f444833c404e522f116094856ae8b00",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在阻挡偏移持续期间，敌人可以同时进行寻路，并会在寻路后被阻挡偏移拉回。",
+      "subject": "受阻挡偏移作用的敌人",
+      "condition": "阻挡偏移持续期间",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "甚至阻挡偏移和巡逻也不是冲突的 阻挡偏移的持续过程中 敌人是可以同时的进行寻路",
+          "t_start": 3710,
+          "t_end": 3723
+        },
+        {
+          "text": "然后被阻挡偏移拉回来的",
+          "t_start": 3723,
+          "t_end": 3734
+        }
+      ],
+      "reason": "逐字稿在 3710s 明确说明阻挡偏移与巡逻不冲突，敌人可在阻挡偏移持续过程中同时进行寻路；3723s 紧接说明敌人随后会被阻挡偏移拉回。该陈述为自包含的通用机制结论，未依赖画面指涉，也不是未闭合猜想。",
+      "limitations": [
+        "逐字稿未给出寻路与阻挡偏移并行结算的帧序优先级、具体寻路路径参数或拉回判定的精确帧数。",
+        "逐字稿后文还提到黍的传送与阻挡偏移的交互，但本条仅涵盖寻路/巡逻被拉回这一分支。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 与逐字稿 3710s、3723s 两处直接陈述一致，构成可复用的阻挡偏移与寻路交互机制结论；四大闸门均通过，准予保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

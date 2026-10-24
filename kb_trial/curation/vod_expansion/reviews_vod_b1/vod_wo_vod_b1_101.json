@@ -1,0 +1,37 @@
+{
+  "workorder_id": "vod_wo_vod_b1_101",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:53:50+0900",
+  "source_sha256": "f95c5372e47a6bc30c220ba2d47217764e8fd03ecff365640e2692d1bc4fff44",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "凛冬二技能需要与地块碰撞箱碰撞才能识别每一格地块",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ],
+      "reason": "候选命题的核心依据是主播以“我印象”开头的赛前推测；后续虽实测真正地图边缘无反应，但逐字稿未直接验证“必须与地块碰撞箱碰撞才能识别每一格地块”的因果条件。该说法属于未定论假说/未验证推测，违反 Gate 4。"
+    }
+  ],
+  "review_note": "本工单仅 c01。逐字稿中主播先提出“需要和地块碰撞箱碰撞”的个人印象，随后进行地图边缘实测；实测只支持真正地图边缘无反应的现场现象，未直接闭合“碰撞箱判定每一格”的机制条件。按硬性闸门排除该未验证机制假说。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

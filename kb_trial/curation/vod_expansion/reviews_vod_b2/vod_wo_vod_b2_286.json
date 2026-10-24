@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_286",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:31:15+0900",
+  "source_sha256": "8b988d4a5b18b85be11ee5b0c395e9264e0ad4e005d1b94096994c2d98605caf",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在属性结算流程中，局外属性计算划分为四个区间：关卡加区间、关卡乘区间、藏品加区间、藏品乘区间；其中前两个合称为关卡符文（Rune），后两个合称为藏品符文。",
+      "subject": "局外属性计算区间划分",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "属性结算",
+      "evidence": [
+        {
+          "text": "就是我们命名为局外有四个区间 关卡加区间 关卡乘区间 然后藏品加区间 藏品乘区间 前两个我们称为关卡如文 后两个我们称为藏品论文",
+          "t_start": 1501,
+          "t_end": 1514
+        }
+      ],
+      "reason": "主播系统性定义了属性结算流程中局外的四个计算区间分类及其所属层次（关卡符文与藏品符文），为底层数值计算体系的通用定义。",
+      "limitations": [
+        "ASR转写的'如文'/'论文'实为'符文/Rune'；这是一种机制解析中的分析命名模型，需结合具体加成生效节点判定。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "“关卡加/乘、藏品加/乘”的区间命名仅为便于理解的分类方式，藏品提供的数值效果并非必然归属于藏品区间；藏品效果只有在局外计算时，才会落在藏品加或藏品乘区间。",
+      "subject": "藏品属性结算区间归属规则",
+      "condition": "藏品效果在局外进行结算时",
+      "scope": "universal",
+      "category": "属性结算",
+      "evidence": [
+        {
+          "text": "但是这只是一种命名啊 这只是一种便于理解的命名方式 不是说藏品的效果就一定属于藏品润区间 只是说如果藏品在局外进行计算的话",
+          "t_start": 1514,
+          "t_end": 1529
+        },
+        {
+          "text": "他会在藏品家和藏品城这两个区间 然后的话这里又有一个又有一个注意事项 就是说关卡城是一个同类叠城",
+          "t_start": 1529,
+          "t_end": 1548
+        }
+      ],
+      "reason": "主播明确辟谣了“藏品效果一律进藏品区间”的误区，指出藏品效果若具备局内动态特征可能属于局内加成，只有局外生效的藏品效果才会落入藏品加/乘区间。",
+      "limitations": [
+        "局内生效的藏品加成（如拥有局内动态改变能力的藏品）会落入局内计算区间，不参与局外这四个区间的计算。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单涉及明日方舟属性结算底层框架中的局外计算区间定义。两项候选命题分别阐明了区间的四元分类定义以及藏品加成的区间归属边界，逐字稿上下文充分完整，ASR错别字（如如文/论文、藏品家/藏品城）经自包含规范化后成立，均通过四大硬性闸门。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

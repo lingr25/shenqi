@@ -1,0 +1,75 @@
+{
+  "workorder_id": "vod_wo_vod_b1_024",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:18:59+0900",
+  "source_sha256": "3e281836a09b91ba0c0c6e129d812f7798c051c022964ea57bc332683e4f7d86",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在梁生关卡中，左侧三个车的出生帧为 0、2、4（逐字稿转录记为“024”，不应理解为单指第 24 帧）。",
+      "subject": "梁生关卡左侧的三个车",
+      "condition": "在梁生关卡中",
+      "scope": "instance",
+      "category": "帧时序/出怪顺序",
+      "evidence": [
+        {
+          "text": "就是左边的那个三个车是024出生",
+          "t_start": 1895,
+          "t_end": 1922
+        }
+      ],
+      "reason": "逐字稿直接给出左侧三个车的出生帧转录“024”；结合同段后续对“103”“024”等帧序列的讨论，按上下文应规范化为三个车的出生帧序列 0、2、4，而非单帧 024。",
+      "limitations": [
+        "仅为梁生关卡该波次左侧三车的实例帧序，不能外推为通用出怪规则。",
+        "具体每个车对应的帧序仍需结合原画面复核。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在梁生关卡中，右上角右侧的教练出生帧为 3。",
+      "subject": "梁生关卡右上角右侧的教练",
+      "condition": "在梁生关卡中",
+      "scope": "instance",
+      "category": "帧时序/出怪顺序",
+      "evidence": [
+        {
+          "text": "然后右上角的那个右边的那个教练是三帧出生",
+          "t_start": 1895,
+          "t_end": 1922
+        }
+      ],
+      "reason": "逐字稿直接说明右上角右侧教练为三帧出生，参数明确，可作为梁生关卡出怪帧序的实例记录。",
+      "limitations": [
+        "仅针对梁生关卡该位置的教练，不能外推为通用规则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均为梁生关卡出怪帧序的实例观察，逐字稿有明确参数支撑；c01 将转录“024”按上下文规范化为 0、2、4，避免误解为第 24 帧。无未闭合猜想或画面依赖残句，故均保留为 instance 级命题。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

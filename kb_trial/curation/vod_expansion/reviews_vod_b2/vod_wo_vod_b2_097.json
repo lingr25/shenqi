@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_097",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:48:40+0900",
+  "source_sha256": "c432be2041cc29a21dcddba7c8bd44a79980d23b97f6535701ceab87b461b65e",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "阻挡偏移的每一帧位移不具有速度概念，并非平滑结算速度，而是直接计算好自身应走的位移量，并精准到达该位移点。",
+      "subject": "阻挡偏移",
+      "condition": "阻挡偏移结算每帧位移时",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "一帧位移的面积就是这些它不具有速度的概念 也并非是真正在平滑的去结算这个速度 而是直接计算好自己应该走的位移是多少",
+          "t_start": 3698,
+          "t_end": 3710
+        },
+        {
+          "text": "精准的到达这个位移点 阻挡偏移拥有这样的性质",
+          "t_start": 3710,
+          "t_end": 3723
+        }
+      ],
+      "reason": "逐字稿明确说明阻挡偏移每帧位移不按速度平滑结算，而是直接给出并到达应走位移点；上下文将其作为阻挡偏移的性质强调，可作为机制结论。",
+      "limitations": [
+        "未给出每帧应走位移量的具体公式或参数，仅定性说明结算性质"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "阻挡偏移在确定起点和落点之后不会处理中间点，而是直接从起点到达落点。",
+      "subject": "阻挡偏移",
+      "condition": "确定起点和落点之后",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "再次强调一遍啊 这是一个确定起落点之后嗯 不会去管中间点的 直接从起点到达落点的这样一种机制 这是阻挡偏移",
+          "t_start": 3786,
+          "t_end": 3798
+        }
+      ],
+      "reason": "逐字稿明确将“确定起落点后不管中间点、直接从起点到落点”作为阻挡偏移机制再次强调，符合可复用机制陈述。",
+      "limitations": [
+        "未进一步界定“中间点”具体指寻路路径节点还是逐帧插值点"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均有逐字稿逐字引文支撑，且为对阻挡偏移位移结算机制的明确结论；未发现未定论猜测或画面依赖，均保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

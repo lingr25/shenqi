@@ -1,0 +1,97 @@
+{
+  "workorder_id": "vod_wo_vod_b2_473",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:33:41+0900",
+  "source_sha256": "585be735949737ab546810b0f7dcffbdc8e16dfa73f2671e9ca48f1ba47fb52c",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "克莱门沙第一天赋的暴击率按期望推算约为30%，其标准差约为4%，95%置信区间约为20%~40%。",
+      "subject": "克莱门沙第一天赋的暴击率",
+      "condition": "基于118个数据中35次暴击的统计推导",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "第一天赋的影响",
+          "t_start": 949,
+          "t_end": 974
+        },
+        {
+          "text": "总共118个数据 然后其中35次暴击",
+          "t_start": 974,
+          "t_end": 984
+        },
+        {
+          "text": "嗯标准差在4%",
+          "t_start": 1018,
+          "t_end": 1033
+        },
+        {
+          "text": "30%概率",
+          "t_start": 1033,
+          "t_end": 1045
+        },
+        {
+          "text": "95致信",
+          "t_start": 1052,
+          "t_end": 1056
+        },
+        {
+          "text": "在20~40",
+          "t_start": 1056,
+          "t_end": 1080
+        },
+        {
+          "text": "20%至40之间最接近的 按照期望算的话是30%",
+          "t_start": 1080,
+          "t_end": 1092
+        }
+      ],
+      "reason": "逐字稿在统计118个数据中35次暴击后，给出标准差约4%、95%置信区间约20~40、按期望约30%的推算；上下文在949秒提及第一天赋，因此可归为克莱门沙第一天赋暴击概率的统计估计。",
+      "limitations": [
+        "该结论是基于118个样本的统计推算，并非官方公布的精确概率。",
+        "95%置信区间较宽，且转录中的“标准差”可能指样本比例标准误。",
+        "逐字稿未明确说明该批样本是否全部处于未破防状态。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "在克莱门沙的演示数据统计中，118个伤害样本中出现了35次暴击",
+      "verdict": "reject",
+      "reason": "Gate4：该命题只是对一次演示样本的计数观察，缺少可复现的机制条件和规则化结论；且上游引文“总共118个数据 然后其中35次暴击 30%”跨974秒与984秒两行拼接，不满足逐字引文对齐。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G2",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c02满足自包含、逐字证据和显式主体/条件，保留为克莱门沙第一天赋暴击概率的统计推算结论；c01仅为一次性样本计数且上游引文跨行，排除。c02的标准差与置信区间属于统计推算，非官方精确参数，已在limitations中注明。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

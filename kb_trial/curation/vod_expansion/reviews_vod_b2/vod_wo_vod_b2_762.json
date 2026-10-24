@@ -1,0 +1,77 @@
+{
+  "workorder_id": "vod_wo_vod_b2_762",
+  "stem": "BV17rp16HECP_p3_42739106781",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:14:09+0900",
+  "source_sha256": "148be9e032e0d8393a8d1d992359bc8ae5724d34813b5fbdf96b4aee7617e156",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "在《明日方舟》中，可露希尔更新后，费用尺（费用条）在可露希尔参与合约战斗的条件下会发生异常；该异常的本质原因是减回费图的前几帧无法读取。",
+      "subject": "可露希尔更新后的费用尺/费用条",
+      "condition": "可露希尔更新后；可露希尔参与合约战斗时",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "费用尺在那个可露希尔更新之后崩了 在可露希尔打合约的条件下崩了",
+          "t_start": 73,
+          "t_end": 88
+        },
+        {
+          "text": "这个东西本质上是因为那个就是额减回费图的",
+          "t_start": 73,
+          "t_end": 88
+        },
+        {
+          "text": "那个前几帧的话是读不了的",
+          "t_start": 88,
+          "t_end": 108
+        }
+      ],
+      "reason": "上游句过于笼统，但上下文明确其指向可露希尔更新后费用尺异常，并归因于减回费图前几帧读不了。将其改写为自包含机制陈述后，主体、条件与机制结论均有逐字稿支撑。",
+      "limitations": [
+        "逐字稿中“减回费图”疑为ASR或口误，具体术语需人工听审。",
+        "“可露希尔打合约”具体指干员上场还是关卡条件、是否仅合约模式触发，需实机确认。",
+        "后文“很多上的问题”未展开，未纳入本命题。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "AI可以做出一个类似人类的计数器",
+      "verdict": "reject",
+      "reason": "属于泛AI/人类计数器的题外话，不是《明日方舟》可复用机制；主体为泛化“AI”，无法形成知识库所需的游戏机制三元约束。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "本工单中 c01 为泛AI题外话，排除；c02 原文过泛，但上下文明确指向可露希尔更新后费用尺/减回费读帧异常，故改写为自包含机制命题并保留。需注意“减回费图”等术语待人工听审，合约触发条件也需实机复核。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

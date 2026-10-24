@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_668",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:08:14+0900",
+  "source_sha256": "988f72a0d4598eeab8dad505495a8c95d861d667f7398b1fc17f46cdc200b632",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "《明日方舟》的游戏时间以帧为唯一单位，不存在10ms这一游戏时间单位。",
+      "subject": "《明日方舟》的游戏时间系统",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "他他觉得自己那个东西只有10ms 但是实际上游戏里不有没有10ms这个东西 他只有帧这个东西",
+          "t_start": 775,
+          "t_end": 782
+        }
+      ],
+      "reason": "上下文在讨论合约求极限解与操作精度；主播明确纠正“只有10ms”的说法，指出游戏内不存在10ms时间单位，只有帧这一时间单位。该句为明确结论而非开放猜测。",
+      "limitations": [
+        "未说明不同客户端/帧率下的具体换算，也未解释10ms说法所对应的具体操作判定环节。",
+        "该结论来自主播口述，逐字稿未给出实测参数或官方文档。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 的引文可在 775s 行逐字对齐；命题补全为自包含的通用时间单位结论，主体/条件/范围明确，且属于对错误理解的明确纠正，未落入未定论假说或反问，故采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_359",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:55:32+0900",
+  "source_sha256": "73df5387066814f63f26551b83a32f494d170571dd7306e78458eda838e3c962",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在关卡 waves（波次）配置中，root index 代表出怪行进路线的编号索引，底层数据遵循从 0 开始计数的索引规则（如 0、1、2…）。",
+      "subject": "关卡waves波次配置中的root index",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "这里数量如果不是一是二的话 间隔一的设置就会让下一个是四 然后的话这里有个root index index指的是那个编号",
+          "t_start": 1570,
+          "t_end": 1580
+        },
+        {
+          "text": "这个编号是在这里写着的 是在这里写着的哦 顺带这个编号是零 这个编号是一 这个编号是二 这个是因为他原语言是C加加吧 还是什么东西",
+          "t_start": 1580,
+          "t_end": 1594
+        }
+      ],
+      "reason": "主播在拆解并讲解鹰角关卡数据（waves波次配置）时，明确指出 root index 代表怪物/装置移动的路线编号，且底层索引从 0 开始递增编号。",
+      "limitations": [
+        "仅反映关卡配置文件（waves数据结构）中的索引定义规则，不直接改变游戏内实战的行动机制"
+      ],
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      }
+    }
+  ],
+  "excluded": [],
+  "review_note": "命题陈述了关卡底层数据结构中波次出怪路线的索引参数命名及起始编号规则（root index 从 0 计数），证据精准对齐，四项闸门均通过。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

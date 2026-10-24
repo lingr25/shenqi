@@ -1,0 +1,91 @@
+{
+  "workorder_id": "vod_wo_vod_b2_490",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:50:44+0900",
+  "source_sha256": "12eb6deab3bc0e3a4f9415cafa844aaddf5c7f07045dfc9307176fad56b10f0c",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙的第一天赋在克莱门沙造成物理伤害时，有一定概率触发并使自身攻击力提升。",
+      "subject": "克莱门沙的第一天赋",
+      "condition": "克莱门沙造成物理伤害时",
+      "scope": "entity_mechanism",
+      "category": "天赋机制",
+      "evidence": [
+        {
+          "text": "克莱门沙门杀造成物理伤害时 有一定概率攻击力提升",
+          "t_start": 4445,
+          "t_end": 4457
+        },
+        {
+          "text": "克莱门沙第一天赋的触发概率大幅提升",
+          "t_start": 4457,
+          "t_end": 4477
+        }
+      ],
+      "reason": "逐字稿明确说明克莱门沙在造成物理伤害时有一定概率提升攻击力，并在下一句直接以“第一天赋”指称该触发机制，可归纳为克莱门沙第一天赋的固有机制。",
+      "limitations": [
+        "未给出具体触发概率与攻击力提升幅度。",
+        "逐字稿存在 ASR 错字，干员名与部分表述需以游戏内文本复核。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "当敌人侵蚀损伤爆发，或受到其他减少防御的效果时，克莱门沙第一天赋的触发概率会大幅提升。",
+      "subject": "克莱门沙的第一天赋",
+      "condition": "敌人侵蚀损伤爆发或受到其他减少防御的效果时",
+      "scope": "entity_mechanism",
+      "category": "天赋机制",
+      "evidence": [
+        {
+          "text": "当敌人侵蚀损伤爆发 或受到其他减少防御的效果时",
+          "t_start": 4445,
+          "t_end": 4457
+        },
+        {
+          "text": "克莱门沙第一天赋的触发概率大幅提升",
+          "t_start": 4457,
+          "t_end": 4477
+        },
+        {
+          "text": "他减少防御的效果时 克莱门沙第一天赋的触发概率会大幅提升",
+          "t_start": 4489,
+          "t_end": 4503
+        }
+      ],
+      "reason": "逐字稿明确给出两个会提升克莱门沙第一天赋触发概率的条件：敌人侵蚀损伤爆发，或敌人受到减少防御的效果；后文再次复述同一结论，可作为机制定论保留。",
+      "limitations": [
+        "未给出触发概率提升的具体数值或倍率。",
+        "“其他减少防御的效果”的具体判定边界与可叠加性未在逐字稿中说明。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均围绕克莱门沙第一天赋的触发条件展开：c01 说明物理伤害触发攻击力提升，c02 说明侵蚀损伤爆发或减防效果会提高触发概率。证据可由逐字稿连续行分别对齐，未发现未闭合猜想或纯画面依赖，故均判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

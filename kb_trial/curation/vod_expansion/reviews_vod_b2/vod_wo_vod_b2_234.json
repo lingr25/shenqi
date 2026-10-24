@@ -1,0 +1,88 @@
+{
+  "workorder_id": "vod_wo_vod_b2_234",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:17:24+0900",
+  "source_sha256": "4f4a2ede5a7df30e0378a0e1936bc808aa5e12f64746e3b4cce9833f95e7feaa",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "集成战略中的借愿钱箱等装置类召唤敌人机制，在生成路径时会自动判定到最近目标点（蓝门）的寻路距离；若寻路距离上限超过1000（如使用障碍物/箱子封死导致不可达或超距），判定为不可达，装置不会激活且不会生成移动路径。",
+      "subject": "集成战略借愿钱箱及同类装置",
+      "condition": "到目标点（蓝门）的寻路距离超过1000限制（如被障碍物封死路径）",
+      "scope": "universal",
+      "category": "寻路",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "就是这种装置召唤敌人的 就是呃借元钱箱这一类的 它要自动判定那个到蓝门的寻路自动填充路径",
+          "t_start": 5728,
+          "t_end": 5740
+        },
+        {
+          "text": "然后的话他的判定内容中其中有一项是那个路径距离不能超过1000",
+          "t_start": 5740,
+          "t_end": 5756
+        },
+        {
+          "text": "肉鸽的这个钱箱的机制是要判断自动判断距离最近的蓝门",
+          "t_start": 5756,
+          "t_end": 5769
+        },
+        {
+          "text": "并且他有距离1000的限制 但是问题是封了三个箱子之后 他的巡逻距离超过1000了 然后导致他到蓝门不可达",
+          "t_start": 5769,
+          "t_end": 5780
+        },
+        {
+          "text": "在这种情况下的话 它是不会醒 不会生成路径的",
+          "t_start": 5780,
+          "t_end": 5793
+        }
+      ],
+      "reason": "逐字稿中明确解释了钱箱等装置的底层寻路判定机制（寻路距离 ≤ 1000 的可达性定义），通过箱子封路造成不可达/超距时不会激活并生成路径。逻辑闭环且参数明确，具备通用机制参考价值。",
+      "limitations": [
+        "“1000”的具体单位为底层寻路算法节点/坐标步进距离，口语中未展开具体测算公式",
+        "“三个箱子”是特定关卡地形下的封闭条件，通用本质为阻隔不可达"
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "用三个箱子封住肉鸽钱箱后，钱箱原地不动、处于发呆状态。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4",
+        "DUP"
+      ],
+      "reason": "属于纯实况观察叙述（observation），是对实操结果的口语描述，缺乏独立机制规则价值，且核心机理已在 c01 中完整陈述，故予以排除。"
+    }
+  ],
+  "review_note": "主播详细解析了集成战略借愿钱箱及同类装置的寻路激活判定逻辑（目标点可达判定与距离上限1000），c01 提取为自包含规则收录；c02 为局内现象叙述，判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_669",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:08:33+0900",
+  "source_sha256": "b7fcbd09a5a1efba01b207fdb328bcd691341d800b03e889f42eb351504afb97",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "VCED打法的帧操作精度没有到达一帧。",
+      "verdict": "reject",
+      "reason": "该命题是对特定玩家/特定打法操作精度的实战复盘评述，并非可复用的游戏机制规则；且‘未达一帧’缺少可复现的帧参数与成立条件，上下文还使用‘三帧左右’的约数，属于纯实战观察/未定论判断。违反 Gate 3（条件与范围未显式限定为具体实例）及 Gate 4（无规则价值的实战观察与未闭合估计）。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单仅一条候选。引文可在 782s 行逐字对齐，但内容为特定打法操作精度的复盘评价，无明确参数与可复现条件，不具备知识库所需的通用机制价值，故全单 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,81 @@
+{
+  "workorder_id": "vod_wo_vod_b2_019",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:19:37+0900",
+  "source_sha256": "0a17cb2594ddca5a36935929518430f56ec491ab111248fb866fefc63ead0124",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在失与得节点进行零件交换时，N级零件能换出N级零件，R级零件能换出R级零件。",
+      "subject": "失与得节点的零件交换机制",
+      "condition": "在失与得节点进行N级或R级零件交换",
+      "scope": "entity_mechanism",
+      "category": "事件机制/掉落机制",
+      "evidence": [
+        {
+          "text": "失与得的零件交换整体遵循稀有度 N能够换出NR 能够唤出R",
+          "t_start": 3666,
+          "t_end": 3681
+        }
+      ],
+      "reason": "主播明确总结失与得零件交换整体遵循稀有度，并给出N换N、R换R的对应例子，可整理为可复用交换规则。",
+      "limitations": [
+        "逐字稿仅明确N→N与R→R，未列出SR及更高稀有度的完整交换表。",
+        "“失与得”为逐字稿转录名，具体活动/节点正式名称未在窗口内进一步说明。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在失与得节点用SR零件交换时，可以换出5个SR零件，并有概率换出涂装概念体、服装概念体、喷气背包这三种物品。",
+      "subject": "失与得节点的SR零件交换机制",
+      "condition": "使用SR零件进行交换",
+      "scope": "entity_mechanism",
+      "category": "事件机制/掉落机制",
+      "evidence": [
+        {
+          "text": "能够唤出R但是SSR0件交换时",
+          "t_start": 3666,
+          "t_end": 3681
+        },
+        {
+          "text": "不仅可以换出SR的五个零件 还有概率换出三种涂装概念体 服装概念体 喷气背包",
+          "t_start": 3681,
+          "t_end": 3696
+        }
+      ],
+      "reason": "上下文先提到SR零件交换，随后列举换出SR五个零件及有概率换出涂装概念体、服装概念体、喷气背包；逐字稿可支撑该产出集合，具体概率未给出但机制方向明确。",
+      "limitations": [
+        "未给出各结果的具体概率数值，也未说明各结果是否互斥。",
+        "“三种涂装概念体 服装概念体 喷气背包”缺少标点，本回执按三项物品解读；若原始语义不同需人工听审。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均来自同一段失与得节点零件交换机制讲解。c01可整理为N/R稀有度对应规则；c02可整理为SR交换产出规则。逐字稿可定位到对应连续子串；对c02的“三种涂装概念体 服装概念体 喷气背包”按三项物品处理，避免把“三种”误挂到涂装概念体上。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

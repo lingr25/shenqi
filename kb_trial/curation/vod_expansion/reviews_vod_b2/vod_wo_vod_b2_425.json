@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_425",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:26:24+0900",
+  "source_sha256": "173a1aa2c2a90a3c1a7d4989e39855ebcaa72ed76c0f2cf7687c828b6fd5952a",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "二技能实际持续时间为16秒，由21.21秒与5.18秒两个记录时间点相减得出",
+      "verdict": "pending",
+      "reason": "逐字稿中存在「所以实际上是16秒 持续」「16S的持续」等支持性文本，但命题主体仅写作「二技能」，未给出具体干员或技能归属；当前逐字稿窗口内也未出现干员名，无法改写为自包含机制命题。另后文出现「16S持续 但是要减1.5秒 这个东西的飞行」，提示需区分总持续与有效作用窗口。候选引文文本可逐字匹配，但其 t_end（1655/1670）未按下一行时间戳标注，时间戳精确性也有瑕疵。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "候选的核心数值有逐字稿依据，但缺少具体干员/技能归属，不能直接形成自包含原子命题；且后文提示存在飞行导致的1.5秒有效窗口修正，需补全主体与统计口径后再复核。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

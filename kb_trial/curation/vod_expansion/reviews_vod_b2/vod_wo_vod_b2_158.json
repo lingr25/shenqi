@@ -1,0 +1,48 @@
+{
+  "workorder_id": "vod_wo_vod_b2_158",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:12:23+0900",
+  "source_sha256": "13e4e44227f0c94e4d1f49f3a95e0fd6fed52db54a7c8dfae6c1285eacbd627a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "不同于一般干员和召唤物，地图机关等trap类单位（逐字稿误转为chap类）的阻挡半径是可以调整的（例如障碍物/箱子）。",
+      "subject": "地图机关等trap类单位",
+      "condition": "单位类型为地图机关/trap类单位",
+      "scope": "universal",
+      "category": "阻挡机制",
+      "evidence": [
+        {
+          "text": "对于chap类单位 例如各类地图机关 他们的阻挡半径是可以调整的 比如箱子的阻挡半径小 火龙能够不能的阻挡半径",
+          "t_start": 2479,
+          "t_end": 2489
+        }
+      ],
+      "reason": "原视频讲解了通用阻挡半径规则的例外情况：干员和召唤物阻挡半径默认固定，但地图机关（如箱子等trap类单位）阻挡半径属于可配置/可调整参数。逐字稿中'chap类'系trap类的ASR音误，表述具备清晰的底层机制价值。",
+      "limitations": [
+        "逐字稿后半句存在ASR断句及残缺（'火龙能够不能的阻挡半径'），未完整交代各类机关具体阻挡半径数值。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01命题清晰陈述了地图机关与普通单位在阻挡半径设定上的机制差异，证据字符精确对应[2479s 41:19]行，四大闸门均通过。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

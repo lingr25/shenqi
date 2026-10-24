@@ -1,0 +1,75 @@
+{
+  "workorder_id": "vod_wo_vod_b2_141",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:09:23+0900",
+  "source_sha256": "77a57c9fe8f22d5029bb1889f4cb03ba15598a52377a40db81de40d25aae43e7",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "乌尔比安技能的传送落点分布机制为：在以目标格子为中心的边长0.9格正方形内，去除中间宽度0.6格的十字形区域后，落点在四角剩余的四个边长0.15格的小正方形区域内按面积均匀（即等概率）随机分布。",
+      "subject": "乌尔比安的传送机制",
+      "condition": "乌尔比安技能触发传送效果时",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "鱼的传送是传送到四角的四个正方形 概率均匀 一面积均匀 一面积均匀",
+          "t_start": 373,
+          "t_end": 383
+        },
+        {
+          "text": "他的写法实际上是在那个0.9的大正方形内 去除了0.6的两条宽度 可以理解为在0.9的大正方形内 对角的四个",
+          "t_start": 501,
+          "t_end": 514
+        },
+        {
+          "text": "这个0.15正方形PRTS那个写法 我觉得有点抽象的",
+          "t_start": 514,
+          "t_end": 524
+        }
+      ],
+      "reason": "主播详细解释了解包/PRTS中乌尔比安传送落点的空间几何分布规则，明确了0.9格大框、去除0.6格十字、四角四个0.15格小正方形且按面积均匀随机分布的定论机制。",
+      "limitations": [
+        "落点后因阻挡判定的二次偏移需另行计算"
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "乌尔比安与见行者（珊比）传送判定的条件差异",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "reason": "文本中‘自负’明显为ASR严重识别错误（疑似‘字符’/‘寻路/索敌/tag’或特定内部机制名），主播仅随口列举‘自负、重量、可达’等词泛泛对比，没有展开该条件的严格定义和底层判定流程，缺乏机制闭环与规则自包含性。"
+    }
+  ],
+  "review_note": "本工单审读乌尔比安传送落点几何分布及传送限制条件。c01详细给出了落点几何尺寸（0.9大方框、0.6十字镂空、四个0.15小方块、面积均匀分布），通过全部硬性闸门予以采纳；c02中存在严重ASR错误（‘自负’）且讨论语焉不详，予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

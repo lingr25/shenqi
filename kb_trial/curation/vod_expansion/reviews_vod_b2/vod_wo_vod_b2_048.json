@@ -1,0 +1,81 @@
+{
+  "workorder_id": "vod_wo_vod_b2_048",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:28:09+0900",
+  "source_sha256": "9331d043d618ca2808eaa16e5fc95fb07b07506996179df0e40dd66d370af85d",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在黑流树海第1层的节点生成中，不存在“出现额外作战则必定为紧急作战”的机制。",
+      "subject": "黑流树海一层的节点生成规则",
+      "condition": "黑流树海第1层生成节点时",
+      "scope": "instance",
+      "category": "地图生成/节点分布",
+      "evidence": [
+        {
+          "text": "并且黑流树海的一层没有有额外作战 必有紧急的机制",
+          "t_start": 6566,
+          "t_end": 6574
+        }
+      ],
+      "reason": "逐字稿中主播明确陈述黑流树海一层没有“额外作战必有紧急”的机制，属于对节点生成规则的否定性澄清；去掉口语重复后可作为自包含机制命题。",
+      "limitations": [
+        "口播结论，未展示原始数据或代码级验证。",
+        "“额外作战”的具体节点术语需结合游戏内文本确认。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在黑流树海第1层，即使连续经过三个不同节点，仍有34%的概率不掉落零件。",
+      "subject": "黑流树海一层的零件掉落结果",
+      "condition": "连续经过三个不同节点",
+      "scope": "instance",
+      "category": "掉落概率",
+      "evidence": [
+        {
+          "text": "并且黑流树海的一层没有有额外作战 必有紧急的机制 哪怕连走三个不同",
+          "t_start": 6566,
+          "t_end": 6574
+        },
+        {
+          "text": "也有34%的概率不掉零件",
+          "t_start": 6574,
+          "t_end": 6587
+        }
+      ],
+      "reason": "前句给出条件“哪怕连走三个不同”，后句紧接着给出“也有34%的概率不掉零件”；两段均为逐字稿原文，组合后可支撑该概率结论。",
+      "limitations": [
+        "“三个不同”后未在逐字稿中明确补出“节点”，此处按上下文补全。",
+        "34%为口播统计值，未交代样本量、节点类型细分与统计口径。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均在逐字稿窗口内有连续原文支撑：c01为黑流树海一层节点生成机制的否定性结论，c02为带条件与概率的掉落统计结论。二者均已改写为自包含陈述，未发现未闭合猜想或反问。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

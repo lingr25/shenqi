@@ -1,0 +1,85 @@
+{
+  "workorder_id": "vod_wo_vod_b2_086",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:45:13+0900",
+  "source_sha256": "22391e6fc824abfe1ce64f3df311698d1065a9460692e137c08fde2b19608643",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在《明日方舟》的阻挡偏移机制中，挤与转都属于阻挡偏移；将挤排除在阻挡偏移之外是望文生义导致的常见错误。",
+      "subject": "挤与转（阻挡偏移流程中的两个部分）",
+      "condition": "阻挡偏移机制中",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "认为己不属于阻挡偏移",
+          "t_start": 2883,
+          "t_end": 2896
+        },
+        {
+          "text": "这是一个典型的望文生义问题 我以前也犯过这个错误",
+          "t_start": 2896,
+          "t_end": 2911
+        },
+        {
+          "text": "都属于阻挡偏移 阻挡偏移的完整全称 应该是阻挡状态下发生的坐标偏移现象 所以无论是挤还是赚 都是在这一套逻辑之中的",
+          "t_start": 2911,
+          "t_end": 2929
+        }
+      ],
+      "reason": "上下文先指出常见误解为认为挤不属于阻挡偏移，随后明确这是望文生义，并说明挤与转都属于阻挡偏移、处于同一套逻辑中。该结论为勘误性概念澄清，不依赖画面。",
+      "limitations": [
+        "逐字稿中『挤』被ASR写作『己』、『转』在末句被写作『赚』，已按上下文校正。",
+        "本命题只澄清归属关系，未展开阻挡偏移的完整计算流程。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "阻挡偏移的完整全称是阻挡状态下发生的坐标偏移现象。",
+      "subject": "阻挡偏移",
+      "condition": "单位处于阻挡状态下并发生坐标偏移",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "阻挡偏移的完整全称 应该是阻挡状态下发生的坐标偏移现象",
+          "t_start": 2911,
+          "t_end": 2929
+        }
+      ],
+      "reason": "主播在勘误语境中直接给出阻挡偏移的完整定义，并随后说明挤与转均处于这一逻辑之中。『应该是』在此为口语化定义表述，结合前文专栏引用，不属于未闭合猜测。",
+      "limitations": [
+        "逐字稿使用『完整全称』这一非形式化措辞；更精确的机制边界需参考后续流程或专栏原文。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单围绕阻挡偏移的概念澄清。c01 的勘误结论与 c02 的定义均能在逐字稿 48:03—48:49 找到直接逐字支撑，且不依赖画面。ASR 错字按上下文校正后不影响机制结论。两条候选不构成重复：c01 澄清挤与转的归属及常见误解，c02 给出阻挡偏移的定义。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

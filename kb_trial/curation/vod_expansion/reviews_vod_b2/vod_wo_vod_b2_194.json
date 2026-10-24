@@ -1,0 +1,90 @@
+{
+  "workorder_id": "vod_wo_vod_b2_194",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:54:59+0900",
+  "source_sha256": "f5709550e1062c1df67ddd4d05408c6589e17971d63330a667f01bb8916013dd",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在常规4号仇恨过滤器等机制中，寻路距离的整数部分计算方式为从当前位置沿路径串联到终点的所有曼哈顿寻路距离之和。",
+      "subject": "寻路距离计算",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "串联到终点的所有曼哈顿巡立寻路之和传送门的出入口是不算的 传送门不是有个出口 有个入口吗 这中间的距离是零",
+          "t_start": 2079,
+          "t_end": 2091
+        }
+      ],
+      "reason": "主播详细解析索敌/仇恨中的距离计算公式，明确指出整数部分为串联到终点的曼哈顿寻路距离总和，属于底层机制规则。",
+      "limitations": [
+        "仅涵盖寻路距离的整数部分，小数部分需结合当前坐标与地块中心向量投影计算"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在计算寻路距离时，传送门入口到出口之间的跨越距离不计入寻路距离（距离计为0）。",
+      "subject": "传送门",
+      "condition": "单位寻路路径经过传送门",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "串联到终点的所有曼哈顿巡立寻路之和传送门的出入口是不算的 传送门不是有个出口 有个入口吗 这中间的距离是零",
+          "t_start": 2079,
+          "t_end": 2091
+        }
+      ],
+      "reason": "主播明确给出传送门在寻路距离计算中的量化规则：传送门出入口之间的距离计为0，不参与曼哈顿距离累加。",
+      "limitations": [
+        "仅适用于计算总寻路距离时跳过出入口间距"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c03",
+      "topic": "传送门之间不进行寻路，因为很多传送门之间直接断绝、没有联通路径，计算传送门之间的寻路距离不合理",
+      "verdict": "reject",
+      "reason": "属于解释性推导与合理性说理（说明为何出入口距离计为0），其核心机制结论已包含在 c02 中，本身作为命题不具备独立的参数与机制断言价值。",
+      "failed_gates": [
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      }
+    }
+  ],
+  "review_note": "本切片讲解了敌方仇恨过滤器中寻路路径距离的计算方式。c01与c02分别阐明了曼哈顿距离串联求和与传送门出入口距离为0的核心规则，证据确凿，通过审查；c03为解释性论述，予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

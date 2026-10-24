@@ -1,0 +1,50 @@
+{
+  "workorder_id": "vod_wo_vod_b2_758",
+  "stem": "BV18BpG6LEtq_p2_42631758665",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:13:02+0900",
+  "source_sha256": "e7b03dbc1e3527eff1541ba81e462eaf867ff917199fe632825b4b527ecb0954",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在离散碰撞导致穿墙失败时，若敌方单位位于墙体左侧并撞到墙，则会被向左弹开，且其朝墙体方向的速度被清零。",
+      "subject": "离散碰撞中位于墙体左侧并撞墙的敌方单位",
+      "condition": "穿墙失败，且单位在墙体左侧与墙发生碰撞",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "他在墙左侧被这块墙碰到 然后往左弹 并且消掉所有的速度 消掉所有着往墙这个方向走的速度",
+          "t_start": 3126,
+          "t_end": 3140
+        }
+      ],
+      "reason": "上下文正在解释离散碰撞成功穿墙与失败撞墙的差异；主播回放失败案例时明确说明单位在墙左侧被墙碰到后向左弹开，并清除朝墙方向的速度，属于可用于解释碰撞处理的可复用机制陈述。",
+      "limitations": [
+        "逐字稿只描述了单位位于墙体左侧的碰撞情形，未说明墙体位于其他方向时的对称规则。",
+        "未给出不同速度、墙厚、帧率下的具体数值或边界条件。",
+        "口语中“消掉所有的速度”与“消掉朝墙方向走的速度”存在表述歧义，本命题按后一句限定为清除朝墙方向速度。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 的引文可在 3126s 行内逐字匹配；命题经改写后具备自包含主体、条件与作用范围，且来自主播对失败碰撞案例的明确机制解释，未落入未定论假说或纯画面指涉，故保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

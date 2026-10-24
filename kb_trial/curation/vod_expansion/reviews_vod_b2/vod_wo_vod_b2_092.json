@@ -1,0 +1,65 @@
+{
+  "workorder_id": "vod_wo_vod_b2_092",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:47:36+0900",
+  "source_sha256": "2798bdca0a115ab6aa144060cbac14204577aded22ecddd7674231fc3edeb489",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在多敌人阻挡偏移的旋转计算中，当前敌人以其预计算落点B为参照，检测更早被阻挡敌人的最终落点C；若某个C点与B的连线长度在0.1到0.4之间，则该更早敌人提供一个权重，权重大小为(0.4 - 连线长度) × 50，方向反向于两敌人之间的连线方向，用于让敌人去推挤敌人。",
+      "subject": "多敌人阻挡偏移旋转计算中更早被阻挡敌人的最终落点（C点）",
+      "condition": "旋转计算已触发；当前敌人预计算落点B周围存在更早被阻挡敌人的最终落点C，且B与C的连线长度在0.1到0.4之间",
+      "scope": "universal",
+      "category": "位移/阻挡偏移",
+      "evidence": [
+        {
+          "text": "他会在就是3号 敌人会在B3这个位置判断 所有比他早的敌人的C点",
+          "t_start": 3267,
+          "t_end": 3282
+        },
+        {
+          "text": "旋转这一部分一经触发的话 就会先计算0.1半径之内有谁 再计算0.4半径之内有谁分别提供权重",
+          "t_start": 3294,
+          "t_end": 3308
+        },
+        {
+          "text": "这里会用0.4减去刚才我画的那个向量的 那个蓝色的向量的长度 然后取模长取数值 然后再乘以50倍",
+          "t_start": 3441,
+          "t_end": 3453
+        },
+        {
+          "text": "也就是说那个在0.1到0.4之间 它提供了一个强大的反向于敌人和敌人方向的 然后一个让敌人去推挤敌人的这么一个权重",
+          "t_start": 3453,
+          "t_end": 3471
+        }
+      ],
+      "reason": "该段为机制讲解，明确给出0.1到0.4区间内更早阻挡敌人最终落点提供的权重公式、方向与推挤效果；上下文非猜测或单纯实战叙述，属于可复用规则。",
+      "limitations": [
+        "逐字稿未明确连线长度的坐标单位或归一化基准",
+        "未明确0.1与0.4端点是否包含",
+        "未说明多个0.4半径内权重如何叠加"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选c01通过四闸门，可作为多敌人阻挡偏移权重计算的通用规则保留；已补全B点/C点指代与旋转触发条件。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

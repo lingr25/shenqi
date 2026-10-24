@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_340",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed",
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:48:38+0900",
+  "source_sha256": "698e7dd287783c19e31fd1d30f9d488d166481aed5607a4ab6bedfe4c56dbed7",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "伤害计算流程大体可划分为三个主要环节：第一步为属性结算流程（计算攻防血等数值及倍率）、第二步为抗性结算流程（结合防御/法抗与穿透计算伤害及保底）、第三步为伤害结算流程（伤判环节，处理伤害增减、减伤、格挡及闪避等）。",
+      "subject": "伤害结算流程",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "完整的伤害结算流程就已经讲完了 它分三步属性抗性伤害 然后每一步的话又有各种细节",
+          "t_start": 6968,
+          "t_end": 6983
+        },
+        {
+          "text": "首先是属性结算流程",
+          "t_start": 1101,
+          "t_end": 1113
+        },
+        {
+          "text": "计算伤害 再然后的话是伤害结算流程",
+          "t_start": 1143,
+          "t_end": 1152
+        }
+      ],
+      "reason": "主播在课程中系统梳理了伤害计算的整体框架，明确指出完整伤害结算流程分为属性、抗性、伤害三步，并对属性结算流程、抗性结算流程与伤害结算流程展开了分步讲解，属于通用的机制框架总结。上游抽取时间戳有偏差（转写实际发生在6968s及1101s-1152s），已校正引文及时间戳。",
+      "limitations": [
+        "主播在后续补充说明伤判后还可划分出第四步（血量结算环节，用于处理锁血与不死机制）"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "修正了引文错误，将拼接修改的行替换为逐字稿单行原样连续子串（1101s处「首先是属性结算流程」与6968s处总括句），时间戳已对齐下一行起始秒数，四大闸门全部通过。",
+  "repair_rounds": 1,
+  "unresolved_problems_auto_demoted": []
+}

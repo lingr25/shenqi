@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b1_035",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:22:44+0900",
+  "source_sha256": "b8c2712c53d004be3dd74f290b7c0b35ab58baddaeb8825628629473dc2c4ec9",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "合约中因词条被隐藏而实际不出现的敌人，不占用出怪排程时间，效果等同于出怪 JSON 中未写入该敌人的对应行。",
+      "subject": "因合约词条被隐藏而实际不出现的敌人",
+      "condition": "敌人因合约词条被隐藏而实际不出现",
+      "scope": "universal",
+      "category": "出怪排程",
+      "evidence": [
+        {
+          "text": "合约可以因为词条 然后把这个怪给让他不出 在这种情况下的话 他也会真正的不占用时间",
+          "t_start": 2769,
+          "t_end": 2785
+        },
+        {
+          "text": "就和这个JSON里没写这两行是完全一样的",
+          "t_start": 2785,
+          "t_end": 2800
+        }
+      ],
+      "reason": "主播明确给出机制结论：合约词条导致敌人实际不出时，该敌人也不会占用出怪时间，并与出怪 JSON 中未写入对应行的效果相同。逐字稿中两段引文连续可查，主体、条件与适用范围清楚，且不属于猜测或开放疑问。",
+      "limitations": [
+        "未给出具体合约词条、关卡或出怪 JSON 示例。",
+        "主播以当前例子中的“这个怪”作说明，命题推广到所有同类隐藏敌人时未进一步展开边界。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 是主播对合约隐藏出怪与出怪排程关系的明确结论，并非未闭合猜测；两条证据均来自逐字稿单行连续原文，满足自包含、引文对齐、三元约束与排除未定论假说四项闸门，因此裁定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

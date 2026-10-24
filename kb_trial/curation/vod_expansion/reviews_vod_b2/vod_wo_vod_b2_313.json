@@ -1,0 +1,70 @@
+{
+  "workorder_id": "vod_wo_vod_b2_313",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:38:41+0900",
+  "source_sha256": "375800698eab4b7bdb2f7e7396ef55d045af69c46d367c352471d4a29faeeb1a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "维云斯第一版简介中计算结果与红字不符的根源是最初将乘数 10.651 误算为 10.65，导致数值偏小，后续结果无法与红字对上。",
+      "subject": "维云斯第一版简介的伤害数值计算",
+      "condition": "该简介将原本的乘数 10.651 误写为 10.65 时",
+      "scope": "instance",
+      "category": "机制推导原则/勘误",
+      "evidence": [
+        {
+          "text": "这货就是因为最开始这个10.651算错了",
+          "t_start": 3991,
+          "t_end": 4002
+        },
+        {
+          "text": "他算成10.65了 所以的话这里少了一点数值 导致他后面每一步都凑 后面出来算出来结果的时候凑不上那个红字",
+          "t_start": 4002,
+          "t_end": 4010
+        }
+      ],
+      "reason": "上下文明确否定了“每一步向下取整”能够正确解释红字的错误理解，并给出根因：初始乘数 10.651 被误算为 10.65，数值偏小，导致后续结果凑不上红字。属于可保留的勘误结论。",
+      "limitations": [
+        "该结论针对维云斯第一版简介的具体案例，不是游戏内通用取整规则。",
+        "逐字稿未给出红字具体数值与完整计算链。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "维云斯第一版简介把每一步计算数值都向下取整：657 乘 10.65 得到 6997，再乘 1.8 后继续取整。",
+      "verdict": "reject",
+      "reason": "该候选仅描述维云斯第一版简介中的错误计算做法，属于被后续勘误结论（c02）纠正的对象；本身不是可复用的机制定论，且缺少对错误性的明确判断，未满足 Gate 4 的规则价值要求。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单候选均围绕维云斯第一版简介的取整凑数争议。c02 给出了明确的勘误根因，可作为该案例的纠正结论保留；c01 只是对错误做法的观察描述，单独保留不具备规则价值，故排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_526",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:56:24+0900",
+  "source_sha256": "0d1d4187c62f0a02907b354ac36d5fdef8aeeeb5a739285363efcb69437446d1",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "按珊比三技能与该干员同时开启打满60秒，该干员会把自己的弹药打空，闪避也正好结束。",
+      "verdict": "reject",
+      "reason": "未通过 Gate 1：命题主语使用“该干员”指代，逐字稿窗口内未明确给出具体干员、技能或状态名称，无法改写为自包含机制陈述。未通过 Gate 3：主体不明确，三元约束不完整。未通过 Gate 4：上下文为“我觉得应该是这种套路”的推导与提议，属于未验证猜想/套路设想，不能作为机制定论。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "该候选虽有逐字稿原句支撑，但主体仅以“他/该干员”指代，无法确认为具体干员机制；且原段为“我觉得应该是这种套路”的未闭合推导，按硬性闸门应拒绝。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

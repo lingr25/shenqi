@@ -1,0 +1,82 @@
+{
+  "workorder_id": "vod_wo_vod_b2_031",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T10:10:23+0900",
+  "source_sha256": "0293eff54abd46366565b24b00183c5432277c0ae7e376ede06546ee1b51464a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "沙盘贝塔是固定在1~3层商店出售的结局藏品。",
+      "subject": "沙盘贝塔",
+      "condition": "进入1~3层商店且该商店在售结局藏品时",
+      "scope": "entity_mechanism",
+      "category": "商店/藏品概率",
+      "evidence": [
+        {
+          "text": "沙盘贝塔是一个固定在1~3层商店出售的 一元时定结局藏品",
+          "t_start": 5512,
+          "t_end": 5523
+        }
+      ],
+      "reason": "上下文明确主播给出沙盘贝塔的出售层数规则，属于特定藏品的商店出售机制；逐字稿证据连续且直接支撑该结论。",
+      "limitations": [
+        "逐字稿中「一元时定」疑为ASR识别错误，具体费用或品质修饰未在文本中澄清。",
+        "未交代四层之后、刷新商店或特殊商店中的出售规则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "在近900次商店统计中，沙盘贝塔第一页出现的概率为92.06%，第一页没有、第二页出现的概率为7.46%，第三页或第四页才能买到的概率不到1%。",
+      "subject": "沙盘贝塔的商店页数分布",
+      "condition": "基于近900次商店统计样本",
+      "scope": "entity_mechanism",
+      "category": "商店/藏品概率",
+      "evidence": [
+        {
+          "text": "我们统计了近900次 商店沙盘贝塔 第一页就出现的概率在92.06%啊 原来有概率的吗 第一页没有 第二页有的概率是7.46%",
+          "t_start": 5523,
+          "t_end": 5535
+        },
+        {
+          "text": "还有不到1%的概率 要在第三页 第四页才能买到这个结局藏品",
+          "t_start": 5535,
+          "t_end": 5548
+        }
+      ],
+      "reason": "上下文提供近900次商店统计的样本量及第一页、第二页、第三或第四页的页数概率，参数明确，证据逐字可核，可作为经验统计结论保留。",
+      "limitations": [
+        "统计样本来源、游戏版本、统计口径及是否区分刷新次数未交代。",
+        "该概率为经验统计结果，而非官方底层概率或确定性机制规则。",
+        "第三页或第四页合计概率仅表述为不到1%，未给出精确数值。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均通过四闸门。c01给出沙盘贝塔固定在1~3层商店出售的实体机制；c02给出近900次商店统计下的页数概率，参数明确且逐字稿证据连续可核。无排除项。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

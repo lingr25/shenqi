@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_536",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:03:50+0900",
+  "source_sha256": "e29cf3e2ca9fc51f10e376da3b5c423878bb53800aea1e5b0b7949d177195c84",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "真言与酒神组合的调整自由度很低，组合中可改变的变量只有真言开技能的时间和酒神开技能的时间两项。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ],
+      "reason": "G2通过：引文可在1525s行逐字匹配；G1基本自包含。但该命题是主播对特定组合强度与操作自由度的主观评价/打法定位结论，“只能改两个开技能时间”缺少可复现条件、明确参数和闭合机制验证，属于组合讨论而非可复用原子机制；条件与边界不明确，故不满足G3/G4。"
+    }
+  ],
+  "review_note": "本单仅一个候选。逐字引文对齐，但内容为主观组合强度与调整自由度评价，缺少机制参数和可复现条件，不具备知识库原子机制命题价值，终审不采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

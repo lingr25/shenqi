@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_080",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:43:07+0900",
+  "source_sha256": "e657d763b399394449642e05c5b48a75d29798ad185c5235f3d7c22ca5992b61",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "不可阻挡Buff的作用机制仅是让干员处于不可阻挡单位的状态，并在三帧阻挡扫描时判定不通过，因此干员解除不可阻挡状态并不等于会立即开始阻挡。",
+      "subject": "不可阻挡Buff（及干员解除不可阻挡状态后的阻挡判定）",
+      "condition": "在三帧阻挡扫描节点进行阻挡判定时；干员解除不可阻挡状态时",
+      "scope": "universal",
+      "category": "状态效果/阻挡判定",
+      "evidence": [
+        {
+          "text": "所以的话这里面就有一个问题 不可阻挡 这个Buff 仅仅是让干员处于一个不可以阻挡单位的状态 也就是在三帧阻挡扫描的时候",
+          "t_start": 2484,
+          "t_end": 2499
+        },
+        {
+          "text": "判定不通过 但是解除不可阻挡 不等于会开始阻挡 解除不可阻挡 不等于会开始阻挡 这一点上 在我们打那个红黄王双王",
+          "t_start": 2499,
+          "t_end": 2519
+        }
+      ],
+      "reason": "逐字稿明确说明不可阻挡Buff只是在三帧阻挡扫描时使干员处于不可阻挡状态并判定不通过，并重复强调解除不可阻挡不等于会开始阻挡，构成可复用的机制结论。",
+      "limitations": [
+        "具体开始阻挡的时间点取决于既定的阻挡帧；逐字稿后文提及与部署帧相关的3N+1节奏，但本命题未展开。",
+        "不可阻挡状态可与无敌等其他Buff绑定持续；本命题仅针对阻挡判定。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅有一个候选 c01。其引文与逐字稿窗口字符级一致，命题自包含，主体、条件、作用域明确，且非未定论假说或反问；四大闸门通过，判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

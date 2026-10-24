@@ -1,0 +1,74 @@
+{
+  "workorder_id": "vod_wo_vod_b2_208",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:57:26+0900",
+  "source_sha256": "a5a44b7da58fab4e44e949ea550ba755d0d66c61e7648925652d86fb8f6f9a92",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "敌方单位仇恨计算中的路径距离部分以曼哈顿寻路距离计算，包含整数格距离与不足一格的小数部分。",
+      "subject": "敌方单位仇恨距离中的路径部分",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "路径这一部分是以曼哈顿寻路距离 这里是整格的 然后这里部分是小数的",
+          "t_start": 3178,
+          "t_end": 3192
+        }
+      ],
+      "reason": "主播明确给出了路径仇恨由曼哈顿寻路距离构成，包含整格部分和小数部分的底层规则，表述明确无假设成分。",
+      "limitations": [
+        "口述中提及小数部分的处理但未详述小数部分的具体几何取法"
+      ],
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      }
+    },
+    {
+      "local_id": "c02",
+      "claim": "在敌方单位寻路中，当寻路目标格与自身本格相同时，曼哈顿寻路距离折算的路径仇恨部分归零（仅剩余格心偏移计算）。",
+      "subject": "敌方单位寻路距离折算的路径仇恨",
+      "condition": "敌方单位寻路目标格与自身本格相同",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "与自己的本格相同时为零 从而导致只剩这一部分 仇恨等同于革新 也就是零",
+          "t_start": 3192,
+          "t_end": 3202
+        }
+      ],
+      "reason": "逐字稿中说明了当目标格与自身所在格相同时曼哈顿距离归零的机制（文本中'革新'实为'格心'的ASR音误，在改写命题中作了术语规整），结论确定且闭合。",
+      "limitations": [
+        "原句中'革新'为ASR错字，实际指代格心坐标偏差"
+      ],
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      }
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单两条候选命题均源自主播对路径仇恨计算机制的教学讲解。虽然ASR将'格心'识别为'革新'，但上下文机制逻辑明确（本格曼哈顿距离为0时仅剩格内相对格心的偏移计算）。两项均满足自包含机制描述与四大闸门，准予keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

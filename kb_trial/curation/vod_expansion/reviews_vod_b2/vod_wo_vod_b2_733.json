@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_733",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:09:05+0900",
+  "source_sha256": "2ef24abe9215e36bdbc0c6a434ce2843a9b589542c11722bff1e24c190a091ec",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙将目标向外传送时，若拉力干员在近距离命中该目标，则由于目标每帧都被向外传送，拉力干员与目标的距离会持续拉大并积蓄速度，最终形成超高速位移与超高速失衡。",
+      "subject": "克莱门沙的向外传送效果与拉力干员的拉力效果交互",
+      "condition": "克莱门沙将目标向外传送，且拉力干员在距离很近时命中该目标",
+      "scope": "entity_mechanism",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "再用克莱门沙和这个拉力干员 通过那个他往外传送 然后让那个距离很近的这个拉力干员 命中的时候很近",
+          "t_start": 5880,
+          "t_end": 5895
+        },
+        {
+          "text": "然后呢那个被传送的很远 因为他每帧都往外传送嘛对吧 他就越来越远 越来越远 积蓄很多的速度",
+          "t_start": 5895,
+          "t_end": 5903
+        },
+        {
+          "text": "然后的话就是达成一个观赏女色超高速的位移 超高速的失衡",
+          "t_start": 5903,
+          "t_end": 5919
+        }
+      ],
+      "reason": "逐字稿中主播明确描述了克莱门沙与拉力干员的配合：拉力干员近距离命中被向外传送的目标后，目标因每帧都被传送而越来越远，速度持续积蓄，并最终达成超高速位移与超高速失衡。证据连续可定位，属于可复用的特定机制交互结论。",
+      "limitations": [
+        "逐字稿未给出具体传送频率、速度上限、位移距离或失衡强度等参数。",
+        "是否适用于所有拉力干员与传送组合仍需实机验证。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅有一个候选命题。该命题由主播在演示中作为机制解释明确陈述，逐字引文可在对应时间戳行内连续匹配；主体、条件与作用范围明确，且不属于未闭合猜测或纯反问。保留为实体机制交互结论，并标注参数细节缺失与适用边界。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

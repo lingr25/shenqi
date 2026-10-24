@@ -1,0 +1,71 @@
+{
+  "workorder_id": "vod_wo_vod_b2_434",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T23:13:09+0900",
+  "source_sha256": "1f7cab4df5353404009095309273895cab6219435754994594c0ec332f64a2bf",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙二技能的总技能持续时间为16秒。",
+      "subject": "克莱门沙二技能",
+      "condition": "技能开启后",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "这一个技能是16秒",
+          "t_start": 2332,
+          "t_end": 2346
+        },
+        {
+          "text": "我的总技能持续时间是16秒",
+          "t_start": 2424,
+          "t_end": 2432
+        }
+      ],
+      "reason": "上下文在复述克莱门沙技能描述前后明确说该技能为16秒，并在二倍速讨论中再次确认总技能持续时间为16秒；因此可采纳为克莱门沙二技能的时长参数。",
+      "limitations": [
+        "逐字稿未在同一句直接说出『克莱门沙二技能』，需结合章节与前后文确认。",
+        "二倍速录像下的视频实时时间与游戏内计时换算仍需另行校正。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "克莱门沙二技能在二倍速录像下的SP读数经回推修正后为6SP。",
+      "verdict": "pending",
+      "reason": "逐字稿只留下『那么这个时候就应该是6SP』及前后大量被打断的数字计算，未给出可复核的具体时点、初始SP和完整回推公式；具体数值需人工听审或实机验证，暂不能作为定论。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01采纳为克莱门沙二技能时长参数；c02属于回推SP的具体数值推导，逐字稿关键参数缺失且未闭合，留待后续验证。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

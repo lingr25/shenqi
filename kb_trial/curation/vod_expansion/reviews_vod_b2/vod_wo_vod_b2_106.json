@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_106",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T13:11:09+0900",
+  "source_sha256": "74482b745f672e32bd64d15476fd97e72ef38362b6e7ceaebb05e454f4858e5b",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在阻挡偏移的多敌人权重计算中，第2号敌人顺帧、第3号敌人逆帧并非鹰角规定的固定槽位规则；它们只是在正常情况下的表现，第3号出现逆帧是因为判定“全中”。",
+      "subject": "阻挡偏移中的第2号/第3号敌人落点方向",
+      "condition": "多敌人阻挡偏移且第3号判定“全中”时",
+      "scope": "universal",
+      "category": "机制认知/阻挡偏移",
+      "evidence": [
+        {
+          "text": "这是3号 这是正常情况下的一个表现 但是他是表现不是绝对的 鹰角不是规定了 说2号就应该顺帧 3号就应该逆帧 3号会逆帧",
+          "t_start": 4027,
+          "t_end": 4042
+        },
+        {
+          "text": "完全是因为全中 比如说3号如果在这个地方阻挡 他其实也应该是顺帧对吧",
+          "t_start": 4042,
+          "t_end": 4049
+        }
+      ],
+      "reason": "主播明确否定“2号必顺帧、3号必逆帧”的绝对化理解，指出这是正常情况下的表现而非鹰角规定，并把第3号逆帧归因于“全中”；上下文正在讲解阻挡偏移的多敌人权重计算，故可作为阻挡偏移机制的认知修正。",
+      "limitations": [
+        "“全中”在白板讲解中未展开为完整公式或精确判定半径参数，具体权重组合仍需结合后续实例。",
+        "该结论是机制认知层面的修正，不替代具体落点向量与归一化计算。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选为勘误类机制认知结论，逐字稿中主播明确否定槽位固定顺/逆帧的绝对规则，并保留“全中”作为第3号逆帧原因；已按上下文补全为自包含阻挡偏移命题，证据改用连续单行原文。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

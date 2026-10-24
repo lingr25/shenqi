@@ -1,0 +1,65 @@
+{
+  "workorder_id": "vod_wo_vod_b1_043",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:25:09+0900",
+  "source_sha256": "13ed8b22d0ffd4f9536b3b51f87ec0d7abe1e87391e11aa9aedb45e481842e6f",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "某个包含四名敌人的随机出怪组，其组内四名敌人的出怪权重分别为 850、105、35、15。",
+      "subject": "包含四名敌人的随机出怪组",
+      "condition": "该随机出怪组存在于对应关卡出怪数据中",
+      "scope": "instance",
+      "category": "出怪/权重随机",
+      "evidence": [
+        {
+          "text": "这四个是一组的随机出怪 然后的话他们之间的权重是850 105 35和15这样的一个设置",
+          "t_start": 3215,
+          "t_end": 3229
+        }
+      ],
+      "reason": "逐字稿明确口述该四敌随机出怪组及其组内权重设置；可将依赖画面的“这四个”改写为自包含的实例数据命题，参数完整且未新造数值。",
+      "limitations": [
+        "逐字稿未给出四名敌人的具体名称、所属关卡或随机出怪组的唯一标识，无法定位到具体数据条目。",
+        "权重值来自主播对画面数据的口述，逐字稿本身未展示数据源。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "四个怪所在随机出怪组的权重相加总数值为 1005。",
+      "verdict": "reject",
+      "reason": "该命题只是 c01 中 850、105、35、15 的算术求和（850+105+35+15=1005），不构成独立可复用机制规则；即使改写为自包含，也不具备规则价值，违反 Gate 4。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01 有逐字稿明确支撑且可改写为自包含的随机出怪组权重实例，保留；c02 为同一组权重的算术总和，属于派生观察而非独立机制，排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

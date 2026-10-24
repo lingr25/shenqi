@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_251",
+  "stem": "BV1L4ez6oEcc_p2_42060876088",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:23:22+0900",
+  "source_sha256": "17008047ded46a4ff74ba586957406be94208e153dbd36578cfbb5444021195a",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "举旗羊不能杀，不能急着杀",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ],
+      "reason": "引文与 5307s 行逐字一致，且可补全主体为「举旗羊」，故 G1/G2 通过；但该候选仅是特定关卡中的保羊打法/操作建议，缺少明确的触发条件、时机参数与作用域，不能构成可复用机制定论。后文又出现「不能太急也不能太慢」「那个旗子得等有技能的时候」等未闭合补充，说明其结论并非稳定规则，触发 G3/G4，判 reject。"
+    }
+  ],
+  "review_note": "本工单仅有一个候选 c01。其逐字引文可对齐，但命题内容是打法建议而非自包含的可复用机制定论，条件与 scope 缺失且讨论未闭合，故整体无 keep，终审 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

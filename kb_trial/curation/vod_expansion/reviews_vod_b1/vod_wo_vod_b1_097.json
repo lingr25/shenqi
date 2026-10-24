@@ -1,0 +1,74 @@
+{
+  "workorder_id": "vod_wo_vod_b1_097",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:53:11+0900",
+  "source_sha256": "dbbc4ea8da1ac4b9a7723a5baaf9f222dd4d0290a21f808dcb0976a22abe8a52",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "第七章存在外观为道路、实际路径属性为围栏的地块。",
+      "subject": "第七章地图中的地块",
+      "condition": "在第七章",
+      "scope": "instance",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "七章的话有一个看起来是围栏 但是实际上墙的东西 然后还有一个看起来是道路 实际上是围栏的东西",
+          "t_start": 5904,
+          "t_end": 5916
+        }
+      ],
+      "reason": "逐字稿明确将第七章的该地块列为地块属性与外观不一致的反例，属于具体地形属性事实。",
+      "limitations": [
+        "未给出具体关卡编号与坐标，仅标明第七章存在此类地块。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "诱导的寻路计算会排除敌人当前所在格的路径，因此位于第七章外观为道路、实际为围栏地块上的敌人可被诱导拉出。",
+      "subject": "诱导的寻路计算",
+      "condition": "敌人位于第七章「看起来是道路、实际是围栏」的地块上",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "诱导能拉出来 也是因为他把本格的路径给排除了 诱导是一个很奇怪的计算规则 它是",
+          "t_start": 5916,
+          "t_end": 5929
+        }
+      ],
+      "reason": "逐字稿在回答该地块上的敌人是否能被诱导拉出时，明确说「能拉出来」，并把原因归结为诱导计算排除了本格路径；后续还继续展开诱导与恐惧逻辑不同。",
+      "limitations": [
+        "逐字稿未给出具体关卡编号与坐标；关于诱导公式的后续口述存在「L减W」等细节，但核心的排除本格路径结论明确。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均围绕第七章地块外观/实际属性与诱导寻路反例。c01 为具体地块属性事实，c02 为诱导排除本格路径的机制结论；逐字稿均有连续原文支撑，未发现未闭合猜想或纯画面依赖，故均判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,65 @@
+{
+  "workorder_id": "vod_wo_vod_b2_628",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:01:21+0900",
+  "source_sha256": "eb76357368091d05855f7301657864bc223927cc5e61d039a929929ed9bd20b0",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在同时攻击三个目标时，克莱门沙二技能若要使DPS达到最高，需要控制第三个目标的爆条时机与其他目标错开。",
+      "subject": "克莱门沙二技能",
+      "condition": "同时攻击三个目标，且以DPS最高为目标",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "对三的话其实DPS算最高的话 就只能对二了 对三的话你得控制第三个的爆条错开",
+          "t_start": 3335,
+          "t_end": 3349
+        }
+      ],
+      "reason": "逐字稿明确讨论对三场景下DPS最大化，并指出需要控制第三个目标的爆条错开；属于该技能在特定目标数下的伤害结算条件。",
+      "limitations": [
+        "逐字稿未展开“爆条”的具体触发阈值、错开的时间窗口和实测数据。",
+        "结论来自讲解中的理论推导，未展示完整复现实验。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "克莱门沙二技能对二已经是一个相当理想的情况。",
+      "verdict": "reject",
+      "reason": "该句是对二目标场景的主观评价，未给出可复现参数或机制因果，属于缺乏参数的评价性结论，不能作为可复用机制定论。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01 有明确的技能、目标数条件与DPS最大化条件，逐字稿原句可直接支撑，保留；c02 仅为“理想情况”的主观结论，无机制参数，按 Gate 4 排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

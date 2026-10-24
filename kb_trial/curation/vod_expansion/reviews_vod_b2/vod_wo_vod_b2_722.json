@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_722",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:06:52+0900",
+  "source_sha256": "db4b9d61a32c2738498ccee9b0c25d459a390726abade62141a2d11534f829d8",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "拉力力度与初始距离及四次幂的计算特性",
+      "verdict": "pending",
+      "reason": "引文可在 4167s 行字符级匹配，但原句“力度会使比上初始距离 然后以四次幂作为力度”存在 ASR/口语歧义：无法确定是正比、乘算还是除算，何者取四次幂及初始距离定义也未交代；上游把“会使比上”改写为“先比上”还引入了原句没有的先后关系。后续讨论转向速度上限与磕墙清速，未闭合该公式，故需人工听审或实机复核。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "唯一候选 c01 的逐字引文对齐通过，但核心公式表述不清晰、适用条件与公式结构未闭合；不满足 keep 的定论要求，暂判 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,37 @@
+{
+  "workorder_id": "vod_wo_vod_b2_298",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:33:24+0900",
+  "source_sha256": "09d0e249bcef33b89bd8096f23740eef6ad49f197a252cae0f643cb4787d6092",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "敌方属性走最终乘处理导致伊内斯将煤气罐偷至0攻",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ],
+      "reason": "主播口头表述存在口误与逻辑矛盾。前文（2813s）称‘扣了100后再经过最终乘，乘多少都是零’，但后文（2868s-2877s）主播随即进行了勘误与澄清，明确指出紧急关卡属性计算顺序是‘先乘算关卡符文再减算固定值’（即100×1.2 - 100 = 20，而非 (100-100)×1.2）。候选命题提取了被后文推翻的前半段错误推导，不符合Gate 4。"
+    }
+  ],
+  "review_note": "本工单候选命题提取了主播在讲解过程中的口误和前后矛盾推导。主播在2877s处已明确修正了计算顺序（乘算在减算前），候选命题的‘先扣100再乘最终乘’与实际结论相反，予以驳回。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

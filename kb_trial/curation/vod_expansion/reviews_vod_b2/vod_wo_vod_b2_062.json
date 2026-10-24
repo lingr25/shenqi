@@ -1,0 +1,131 @@
+{
+  "workorder_id": "vod_wo_vod_b2_062",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:38:09+0900",
+  "source_sha256": "21b57db14565806c417b2286eb3aa04cc665e941a1b9fd3ef557a98174580668",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "推拉失衡位移的落点与墙体的距离在0.005到0.01之间时，只会发生碰撞拦停，使单位不能继续前移，不会发生向外挤的现象；距离大于0.01时，不会发生任何碰撞或挤出现象。",
+      "subject": "推拉失衡位移落点与墙体的距离判定",
+      "condition": "推拉失衡位移撞墙时，按落点与墙体的距离分档处理",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "一个是相离0.01 0.01以外",
+          "t_start": 32,
+          "t_end": 48
+        },
+        {
+          "text": "然后的话如果在0.01到0.005之间 只会发生几",
+          "t_start": 75,
+          "t_end": 87
+        },
+        {
+          "text": "只会发生碰撞 让他不能再往前迈一步 但是的话是不会发生 就是向外挤的现象 因为只有在内圈才可以向外挤到 0.005这个位置",
+          "t_start": 87,
+          "t_end": 100
+        },
+        {
+          "text": "然后距离大于0.001 就不会有任何现象发生 这是推拉失衡",
+          "t_start": 100,
+          "t_end": 120
+        }
+      ],
+      "reason": "上下文明确给出落点距离分档：0.01以外、0.01到0.005、0.005到-0.005、-0.005以下；并说明0.01到0.005之间只碰撞拦停且不外挤。末句逐字稿写作0.001，但结合前文0.01档位判断为ASR误差，按0.01理解。",
+      "limitations": [
+        "逐字稿末句的阈值转写作0.001，与前述0.01档位不一致，疑为ASR误转，需人工听审确认。",
+        "未给出碰撞拦停的逐帧时序细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "推拉失衡位移的落点与墙体的距离在-0.005到0.005之间时，会触发从墙内向外挤的弹出处理，最终弹出到与墙体相距0.005的位置。",
+      "subject": "推拉失衡位移落点与墙体的距离判定",
+      "condition": "推拉失衡位移撞墙且落点距离在-0.005到0.005之间",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "然后如果在0.005到-0.005之间",
+          "t_start": 61,
+          "t_end": 75
+        },
+        {
+          "text": "会发生这个从墙内往外挤的弹出",
+          "t_start": 75,
+          "t_end": 87
+        },
+        {
+          "text": "然后弹出到这个相距0.005的位置",
+          "t_start": 17,
+          "t_end": 32
+        },
+        {
+          "text": "因为只有在内圈才可以向外挤到 0.005这个位置",
+          "t_start": 87,
+          "t_end": 100
+        }
+      ],
+      "reason": "逐字稿在0.005到-0.005区间说明会发生从墙内往外挤的弹出，并在前文说明弹出到相距0.005的位置。",
+      "limitations": [
+        "未说明弹出处理的具体帧时序和中间速度变化。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "推拉失衡位移的落点与墙体的距离小于-0.005时，会触发预计算的射线检测处理。",
+      "subject": "推拉失衡位移落点与墙体的距离判定",
+      "condition": "推拉失衡位移撞墙且落点距离小于-0.005",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "如果落点在-0.005以下的话 就会触发这个就是呃这个预计算 也就是射线检测",
+          "t_start": 61,
+          "t_end": 75
+        }
+      ],
+      "reason": "逐字稿明确说明落点在-0.005以下会触发预计算，也就是射线检测。",
+      "limitations": [
+        "未展开射线检测的完整后续计算过程。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "三个候选分别对应推拉失衡撞墙落点距离的分档处理：0.01以外无现象、0.01至0.005仅碰撞拦停、0.005至-0.005向外挤弹出、-0.005以下触发射线检测。上游证据引文跨行拼接，本回执已按逐字稿单行原文替换为可核验证据；c01存在0.001/0.01的ASR阈值不一致，已在限制中标注。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

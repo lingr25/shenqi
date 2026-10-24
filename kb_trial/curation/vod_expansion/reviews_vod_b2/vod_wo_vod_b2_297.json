@@ -1,0 +1,81 @@
+{
+  "workorder_id": "vod_wo_vod_b2_297",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:33:37+0900",
+  "source_sha256": "d8f93aa28ade380fec6621940c92e79f7b138afa54fdeac0ba48aaccc8557c0a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "干员的攻防属性基础变化基本上属于局外藏品/符文区间，按加算结算（逐字稿称该区间为“桐城区”）。",
+      "subject": "干员的攻防属性基础变化",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "属性结算/区间",
+      "evidence": [
+        {
+          "text": "我们说了干员的攻防鞋属性的基础变化 基本上都是局外的藏品论文 也就是桐城区是加算的",
+          "t_start": 2945,
+          "t_end": 2961
+        }
+      ],
+      "reason": "逐字稿明确称干员攻防属性的基础变化基本上都在局外藏品/符文区间，也就是“桐城区”加算，支撑该机制结论。",
+      "limitations": [
+        "主播使用“基本上都是”表述，未穷尽所有特例。",
+        "“桐城区”“攻防鞋属性”“藏品论文”为逐字稿转写，规范术语需以 PRTS/原文为准。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "敌人的攻防属性基本上属于局内最终乘Buff结算区间，按乘算结算（逐字稿称该区间为“桐城区”）。",
+      "subject": "敌人的攻防属性",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "属性结算/区间",
+      "evidence": [
+        {
+          "text": "而敌人的话基本上都是攻防鞋属性",
+          "t_start": 2945,
+          "t_end": 2961
+        },
+        {
+          "text": "属于桐城区乘算的局内最终乘Buff",
+          "t_start": 2961,
+          "t_end": 2975
+        }
+      ],
+      "reason": "逐字稿将敌人攻防属性归入“桐城区乘算的局内最终乘Buff”，说明敌方属性结算基本按局内最终乘算处理。",
+      "limitations": [
+        "主播使用“基本上都是”表述，未穷尽所有特例。",
+        "“桐城区”“攻防鞋属性”为逐字稿转写，规范术语需人工听审确认。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均能在逐字稿中找到字符级连续引文，命题分别对应干员与敌人属性结算区间，属于可复用的属性结算机制定论；ASR 转写词已作保守规范化，具体术语边界保留为限制。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

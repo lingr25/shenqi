@@ -1,0 +1,56 @@
+{
+  "workorder_id": "vod_wo_vod_b2_262",
+  "stem": "BV1L4ez6oEcc_p3_42061792207",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:25:34+0900",
+  "source_sha256": "9b5b9556cbffc19e7650da7518986e44322541d30f5e102014b67b66ad09e544",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "移动距离为0.5时可以通过",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "缺乏自包含机制主体与成立条件（逐字稿脱离画面无法得知测试对象、施加位移手段以及'通过'的具体判定标准），属于高度依赖画面的测试过程即时观察，缺乏可复用的规则定论价值。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "移动距离为一距离时不通过",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "语句语义残缺，缺少承受或触发机制的具体主体与场景条件，属于试错初测中的瞬时观察，不满足自包含命题与显式三元约束要求。"
+    }
+  ],
+  "review_note": "工单讨论的是主播在实战/演习中通过二分法测试撤退帧与移动距离的过程。口头提及的'0.5通过'和'一距离不通过'完全依赖画面，未说明具体干员、敌人、技能及通过何种判定线，纯属过程观察而非明确机制定论，全部予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

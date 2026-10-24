@@ -1,0 +1,80 @@
+{
+  "workorder_id": "vod_wo_vod_b2_155",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:12:41+0900",
+  "source_sha256": "d1bf223019185538ea0d2f6289fc80e125a4078c3487eaa4c4198c592cd74e3f",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "阻挡判定与物理碰撞箱无关，而是依赖角色自带的「阻挡半径」属性；阻挡半径的默认值为0.7071。",
+      "subject": "阻挡判定与阻挡半径机制",
+      "condition": "默认情况（角色未特殊调整阻挡半径时）",
+      "scope": "universal",
+      "category": "阻挡机制",
+      "evidence": [
+        {
+          "text": "而是依赖于一个阻挡半径的属性 这个属性存在于每一个角色 这是最早提出这个概念的 阻挡和碰撞箱无关 默认为0.7071",
+          "t_start": 2059,
+          "t_end": 2070
+        }
+      ],
+      "reason": "逐字稿直接说明阻挡依赖阻挡半径属性、与碰撞箱无关，并给出默认值0.7071；上下文前文也在讨论阻挡机制与物理碰撞无关。",
+      "limitations": [
+        "仅覆盖默认阻挡半径；后续上下文提到部分地图机关等单位的阻挡半径可调整。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "以角色中心点为圆心、半径0.7071的圆内若存在敌人的中心点，则敌人被阻挡。",
+      "subject": "角色阻挡判定",
+      "condition": "默认阻挡半径下，敌人中心点进入以角色中心为圆心、半径0.7071的圆内",
+      "scope": "universal",
+      "category": "阻挡机制",
+      "evidence": [
+        {
+          "text": "也就是说以角色终点为圆 心半径为0.7071 如果这个圆内存在着敌人的终点",
+          "t_start": 2070,
+          "t_end": 2083
+        },
+        {
+          "text": "存在着敌方单位中心时 他们便会被雷蛇阻挡",
+          "t_start": 2437,
+          "t_end": 2449
+        }
+      ],
+      "reason": "第一条证据给出圆形判定范围，第二条雷蛇卡位讲解明确敌方单位中心处在以干员格中心为原点、半径0.7071的圆内时会被阻挡；可将口播中的「终点」按上下文理解为「中心点」。",
+      "limitations": [
+        "逐字稿中「终点」应为「中心点」的转写误差，需按坐标语义修正；阻挡后可能发生位移。",
+        "半径0.7071为默认值，特殊单位可调整阻挡半径。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均通过四项硬性闸门：c01给出阻挡半径默认值与碰撞箱无关的机制定论；c02给出圆形阻挡判定的几何条件，后续雷蛇卡位段落亦能佐证敌方中心点处于半径0.7071圆内会被阻挡。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

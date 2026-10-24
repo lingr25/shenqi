@@ -1,0 +1,84 @@
+{
+  "workorder_id": "vod_wo_vod_b2_216",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:58:41+0900",
+  "source_sha256": "221f10dbd5a7f78dc9fd3b26134ce9748ad323b8f508bca8e3044d89a9c83a23",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "索敌系统中的二次过滤器以特定Buff或特定状态条件的有无（如是否为空中单位、是否处于冻结状态等）作为排序依据。",
+      "subject": "索敌系统二次过滤器",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "索敌",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "二次过滤器是以某种Buff的 有无某种条件的有无",
+          "t_start": 3869,
+          "t_end": 3881
+        },
+        {
+          "text": "比如说那个是否是空中单位 是否拥有冻结Buff等等 是否拥有那个置酒者呃 那个鸡尾平那些东西吧 然后以Buff的有无作为排序",
+          "t_start": 3881,
+          "t_end": 3898
+        }
+      ],
+      "reason": "逐字稿中明确解释了二次过滤器的筛选依据是特定条件与Buff的有无，并给出了具体示例，属于索敌底层通用机制定论。",
+      "limitations": [
+        "示例中提到的部分具体buff名称存在口误或ASR误差（如'置酒者/鸡尾平'），但核心规则逻辑清晰"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "claim": "二次过滤器的重排序逻辑并非整体自然降序，而是直接交换其判定为优先的单位与仇恨过滤器原本排定最高顺位的单位，可能导致原本顺位较低的单位被置顶而原本最高的单位被换至低位。",
+      "subject": "索敌系统二次过滤器",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "索敌",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "对自己和自己目标的Buff 这些就是二次过滤器 二次过滤器会直接交换自己排定为优先的单位和仇恨最高的单位",
+          "t_start": 3955,
+          "t_end": 3966
+        },
+        {
+          "text": "他会把高的就是排高 低的就是排低 而二次过滤器它的排序并不自然 它会直接交换高低项 导致低的变高 高的变低",
+          "t_start": 4028,
+          "t_end": 4038
+        }
+      ],
+      "reason": "主播详细解释了二次过滤器的交换机制（Swap而非稳定排序），具有极高的底层机制价值，上下文阐述完整闭合。",
+      "limitations": [
+        "多目标场景下中间顺位单位的具体位移细节未在当前切片中完全展开"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选命题均描述了明日方舟索敌底层过滤器链中「二次过滤器」的关键特性（判定依据与直接交换的非稳定排序算法），逐字稿证据链完整且可信，全部判定为 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

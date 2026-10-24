@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_646",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:04:36+0900",
+  "source_sha256": "e414c6c600cbcc3d3ef5d16eceb81a4e9b05e15f14543b6150e82ac7d17272b8",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "在需要权衡控制与输出的技能中，控制通常比输出更重要。",
+      "verdict": "reject",
+      "reason": "该句是主播对控制与输出价值的主观取舍判断/打法建议，属于评价性结论而非可复用机制定论；虽逐字引文可对齐，但不满足机制命题闸门。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "在需要权衡控制与输出的技能中，控制收益可足足多一格。",
+      "verdict": "pending",
+      "reason": "该句包含“控制多一格”的量化观察，可能具有机制价值，但逐字稿窗口未明确是哪一个技能、相对何种输出方案比较，也缺少可复现条件；主体与条件均不完整，需补充上下文或人工听审。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "c01 为控制与输出权衡的主观价值判断，非机制定论，判 reject；c02 有“控制多一格”的量化表述，但缺少具体技能主体、比较基线与可复现条件，逐字稿窗口无法补全，判 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

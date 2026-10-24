@@ -1,0 +1,77 @@
+{
+  "workorder_id": "vod_wo_vod_b2_044",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:26:29+0900",
+  "source_sha256": "9c64b329412168b1b27aeab31ad4f729ec1b37f2f7d254d0a532360f33315423",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "不期而遇事件池中绝大多数事件全局只会出现一次；某个事件被遇到过之后，它就会从不期而遇事件池中移除，从而提升其他高收益事件的出率。",
+      "subject": "不期而遇事件池中的绝大多数事件",
+      "condition": "某个事件被遇到过之后",
+      "scope": "universal",
+      "category": "事件池/概率",
+      "evidence": [
+        {
+          "text": "绝大多数的事件全局只会出现一次 我们遇到过后不期的事件时就会减少 这个事件 也会进一步提升其他高收益事件的出率",
+          "t_start": 6375,
+          "t_end": 6380
+        }
+      ],
+      "reason": "逐字稿第6375秒直接说明绝大多数事件全局只出现一次、遇到过的事件会减少并提升其他高收益事件出率，构成可复用的事件池规则；属数据结论而非未闭合猜测。",
+      "limitations": [
+        "“绝大多数”不是全部，存在 c02 所述三个可重复事件例外。",
+        "出率提升的具体幅度未在逐字稿中给出。",
+        "该结论基于视频所称约万条不期而遇样本的统计。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "不期而遇事件池中有三个可重复事件：四位不同源、祸从口出、洞珠宝；其中四位不同源在第二层出现，祸从口出在3~6层出现，洞珠宝在三四层出现。",
+      "subject": "不期而遇事件池中的三个可重复事件（四位不同源、祸从口出、洞珠宝）",
+      "condition": "分别处于第二层、3~6层、三四层时",
+      "scope": "entity_mechanism",
+      "category": "事件池/概率",
+      "evidence": [
+        {
+          "text": "但有三个事件是例外 第二层能出现的四位不同源 3~6层的祸从口出 三四层的洞珠宝都是可重复的事件",
+          "t_start": 6380,
+          "t_end": 6389
+        }
+      ],
+      "reason": "逐字稿第6380秒明确列出三个可重复事件及其对应层数，作为全局唯一规则的例外，具备明确主体、条件和范围。",
+      "limitations": [
+        "事件名按逐字稿 ASR 原样记录，未做规范名校正。",
+        "逐字稿只说明可出现的层数范围，未说明是否仅限这些层数。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选 local_id 均有逐字稿直接支撑：c01 给出不期而遇事件池中绝大多数事件全局唯一、遇到后移出并提高其他高收益事件出率的规则；c02 给出三个可重复事件的例外及层数范围。未发现未定论假说、反问或画面依赖残句，故均判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

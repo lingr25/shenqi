@@ -1,0 +1,76 @@
+{
+  "workorder_id": "vod_wo_vod_b2_189",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:53:38+0900",
+  "source_sha256": "addb87fe9e2967d7928930e3415e0ca7438f8bd363c8d9da37f8f84c1a8ed5d5",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "敌方单位仇恨（基于曼哈顿寻路距离）的整数部分计算本质上不是实际几何路径长度的计算，而是串联所有路径点到终点的曼哈顿距离之和，只根据地块格子数进行判定。",
+      "subject": "敌方单位进门仇恨计算/曼哈顿寻路距离",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "寻路/仇恨计算",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "仇恨是串联所有路径点到终点的曼哈顿距离之和嗯 举一个比较简单的例子",
+          "t_start": 1793,
+          "t_end": 1814
+        },
+        {
+          "text": "无论它中间的路径点有多么歪 多么绕 在这一步中不做判定 所以大家可以发现寻路距离 曼哈顿寻路距离 或者说这个仇恨的计算",
+          "t_start": 1929,
+          "t_end": 1942
+        },
+        {
+          "text": "从本质上来讲不是路径长度的计算 它只看格子数 它只看格子数",
+          "t_start": 1942,
+          "t_end": 1955
+        }
+      ],
+      "reason": "主播详细解释了曼哈顿寻路与仇恨的计算机理，明确指出本格到本格为0距离、跨相邻格为1距离，仇恨整数部分本质只看地块格子曼哈顿距离而非实际物理路径长度，具有明确的机制通用规则价值。",
+      "limitations": [
+        "仅说明了地块格子级别的整数部分距离计算，尚未展开讨论同格/小数部分的具体判定规则。"
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "在仇恨判定中，中间路径点无论多么歪多么绕都不参与判定",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "DUP"
+      ],
+      "reason": "表述存在语病与歧义。所谓'不参与判定'指的不是不判定路径点，而是路径点之间的实际物理弯折/偏歪不影响基于格子的曼哈顿距离计算。该概念已完整合并进 c02，故将 c01 判为重复与表述不当排除。"
+    }
+  ],
+  "review_note": "工单讨论的是明日方舟底层寻路仇恨判定规则中的整数部分计算方式。c01表述有断章取义的歧义，c02更准确地概括了'曼哈顿寻路计算只看格子曼哈顿距离而非几何路径长度'的核心机制，结合前后文证据予以整合保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

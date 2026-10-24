@@ -1,0 +1,74 @@
+{
+  "workorder_id": "vod_wo_vod_b2_320",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:39:16+0900",
+  "source_sha256": "2e454ccdf015f61677095c9fc0017030a2706a04defb29eeea7140014d2ff433",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "法术抗性在属性结算阶段完成后受属性上限约束（上限为100），超出上限的部分会被裁切至100；随后的抗性穿透结算是在裁切后的100法抗基础上生效（例如150法抗面对10点固定法术穿透时，实际按100-10=90结算，而非150-10）。",
+      "subject": "法术抗性与法术穿透结算流程",
+      "condition": "法术抗性计算超出属性上限（如100）并参与穿透结算时",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "在属性结算流程之后会有上下限 然后的话结算抗性结算流程 抗性结算流程的话会有这个误穿法穿的结算",
+          "t_start": 5262,
+          "t_end": 5273
+        },
+        {
+          "text": "就是因为这个法抗在属性结算流程上 结算完之后是150 然后因为超过了属性上限会被缩小到100 缩小到100之后",
+          "t_start": 5290,
+          "t_end": 5302
+        },
+        {
+          "text": "这个100结算完的属性 再去进行这个物穿和法穿在这个环节中的结算 所以才会让它的结算值 是以100-10这样的模式进行的",
+          "t_start": 5302,
+          "t_end": 5316
+        }
+      ],
+      "reason": "主播详细阐明了属性上下限裁切发生在属性结算流程末尾、抗性穿透结算流程之前，并以150法抗与10点固定法穿的算例准确解释了结算时序与规则。",
+      "limitations": [
+        "算例主要针对固定法术穿透，百分比穿透遵循相同的顺序在抗性结算环节内生效"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "属性计算存在上下限，并在结算流程之后应用",
+      "verdict": "reject",
+      "reason": "表述过于泛化，其具体机制与结算时序已在 c02 中作为完整具体规则详细阐述，保留更具机制价值的 c02，本条作为重复泛化前置句予以排除。",
+      "failed_gates": [
+        "DUP"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      }
+    }
+  ],
+  "review_note": "工单涉及底层伤害公式中属性结算与抗性结算（穿透）的时序先后关系。c01表述过于泛化抽象，而c02以法术抗性为例清晰完整地给出了属性上限裁切先于抗性穿透结算的机制定论，逐字稿证据充分，故保留c02并拒绝重复泛化的c01。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

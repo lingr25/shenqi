@@ -1,0 +1,85 @@
+{
+  "workorder_id": "vod_wo_vod_b2_363",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:57:03+0900",
+  "source_sha256": "f882edae8260bddb96ac441b2b8ed1218906b7f5ffc02900f9d8dcf19762f9c3",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "出怪配置中的 trap 字段指代关卡里的装置。",
+      "subject": "出怪配置中的 trap 字段",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "出怪流程",
+      "evidence": [
+        {
+          "text": "这里的话这个trap就是一些装置 这就是一些装置 但是这些装置说的基本上都是那些 比如说萨米的话",
+          "t_start": 1770,
+          "t_end": 1784
+        }
+      ],
+      "reason": "主播在解释出怪配置时明确将 trap 字段解释为装置，并与普通怪、箱子等出怪条目并列，属于该配置字段语义的定论。",
+      "limitations": [
+        "逐字稿未穷举 trap 字段在各主题/模式中的全部具体取值。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "出怪配置中的 trap 字段所指装置并不固定，可能包括零件箱、宝箱、原石宝箱等，具体装置随主题/关卡不同。",
+      "subject": "出怪配置中的 trap 字段所指装置",
+      "condition": "在具体主题/关卡配置中",
+      "scope": "universal",
+      "category": "出怪流程",
+      "evidence": [
+        {
+          "text": "这里的话这个trap就是一些装置 这就是一些装置 但是这些装置说的基本上都是那些 比如说萨米的话",
+          "t_start": 1770,
+          "t_end": 1784
+        },
+        {
+          "text": "可呃介不是萨卡兹的话 可能是次 然后的话借缘的话可能就是一些",
+          "t_start": 1784,
+          "t_end": 1793
+        },
+        {
+          "text": "那个零件箱零件箱 这是零件箱 然后的话那个这个是箱 这个是宝箱 原石宝箱",
+          "t_start": 1793,
+          "t_end": 1811
+        }
+      ],
+      "reason": "上下文说明 trap 字段不是单一固定装置，主播按不同主题举例并列出零件箱、宝箱、原石宝箱等装置；已删去逐字稿不足以确证的“萨米主题中为零件箱”具体映射。",
+      "limitations": [
+        "具体主题与装置的严格对应关系受 ASR 转写影响，无法从当前窗口完全确认。",
+        "“萨米=零件箱”的具体映射未保留为结论。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 直接由逐字稿支撑，保留为 trap 字段语义的通用命题。c02 原命题含未确证的主题映射，审查时改写为仅保留逐字稿可支撑的“装置不固定且包括若干箱类装置并随主题/关卡不同”部分；两候选不构成重复。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

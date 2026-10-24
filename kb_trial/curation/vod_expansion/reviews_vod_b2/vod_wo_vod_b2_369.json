@@ -1,0 +1,74 @@
+{
+  "workorder_id": "vod_wo_vod_b2_369",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:58:30+0900",
+  "source_sha256": "525c791cbbe328dec0d8a1e91e2d072159cf4a44fb11d1be7c8b0d780b9d3cff",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "关卡出怪配置数据中，route index（路线索引）用于为敌方单位指定途经路径点（point）与行进路线。",
+      "subject": "关卡出怪路线配置系统 (route index)",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "对root index是给怪设point 设路线 设point",
+          "t_start": 2061,
+          "t_end": 2074
+        }
+      ],
+      "reason": "主播明确解释了关卡底层配置JSON中route index（ASR转写为root index）的核心功能是为怪设定路径点与行进路线，具有底层通用机制价值。",
+      "limitations": [
+        "ASR转写为root index，实为关卡配置中的route index"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "关卡出怪数据结构中，单个出怪行为（action）通常对应配置一个route index以关联一条具体的行进路线，但底层结构上亦支持多个波次调用相同路线。",
+      "subject": "关卡出怪行为配置 (action与route index)",
+      "condition": "关卡出怪数据配置",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "这里的话就很明显 一个action会配置一个root index 然后配置一条root",
+          "t_start": 2074,
+          "t_end": 2084
+        }
+      ],
+      "reason": "阐明了关卡出怪action与route index的对应映射规则，属于关卡底层生成与寻路配置机制。",
+      "limitations": [
+        "语音中的root实为route，指关卡配置中的路径定义"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单涉及关卡底层JSON配置中出怪action与route index/point寻路机制的解析说明。主播讲解明确，命题通过术语纠正（ASR的root纠正为route规范表述）后符合自包含与机制定论要求，两项均通过四道硬性闸门予以保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

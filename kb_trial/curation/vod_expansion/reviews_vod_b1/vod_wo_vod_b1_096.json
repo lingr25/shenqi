@@ -1,0 +1,91 @@
+{
+  "workorder_id": "vod_wo_vod_b1_096",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:52:47+0900",
+  "source_sha256": "0f321ade8a748ea40a9c83f4a98fde5a497398eea362f887764550838f2dd7ad",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在诱导寻路判定中，对某一格计算寻路距离 L 减去本格权重 W，若结果大于等于 1000，则判定该格不可通行。",
+      "subject": "诱导寻路判定",
+      "condition": "对某一格进行诱导选路/通行判定时",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "就是寻路距离 寻路距离L 然后减去本格的权重 本格的权重weight",
+          "t_start": 5935,
+          "t_end": 5951
+        },
+        {
+          "text": "他判断如果大于等于1000的话 就不行就不行",
+          "t_start": 5964,
+          "t_end": 5980
+        },
+        {
+          "text": "他就是L减W等于一 一小于1000啊 没有问题 通过就可以这样一个过程",
+          "t_start": 6004,
+          "t_end": 6017
+        }
+      ],
+      "reason": "逐字稿明确说明诱导的判定方式为寻路距离 L 减去本格权重 weight，并以示例给出阈值 1000：结果大于等于 1000 时不通过，小于 1000 时通过。上下文属于机制讲解而非单纯实况。",
+      "limitations": [
+        "未在逐字稿中展开寻路距离 L 与本格权重 weight 的具体定义、取值来源及不同地块权重表。",
+        "阈值 1000 的适用范围是否仅限诱导、是否与恐惧共用路径代价体系，需后续资料或实机验证。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "诱导和恐惧的逻辑不一样。",
+      "verdict": "reject",
+      "reason": "该句只给出笼统比较结论，未说明两者在何种条件、何种判定参数或何种范围上不同，不构成可复用原子机制命题；不满足 Gate 3 的显式主体/条件/范围约束。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G3"
+      ]
+    },
+    {
+      "local_id": "c03",
+      "topic": "前文所说的「恐惧路径点」是口误，应更正为「诱导路径点」。",
+      "verdict": "reject",
+      "reason": "该候选是对讲授中术语口误的更正，依赖前文指涉，并非独立的游戏机制规则；其范围不属于 universal/entity_mechanism/instance 的机制范围。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "c01 为核心诱导寻路判定机制，逐字稿中有参数、阈值和示例，判 keep；c02 过于笼统，c03 为术语更正而非机制命题，均排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,56 @@
+{
+  "workorder_id": "vod_wo_vod_b2_228",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:16:09+0900",
+  "source_sha256": "ee94abb2e384dfa649b20f3f3ca816f399d49833a217bd770836791a917ea946",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "初雪与惊蛰的索敌攻击顺序实例",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "纯实战观察现象（claim_type 为 observation），仅陈述了主播观察录像时发现打初雪而不是惊蛰的现象，缺乏具体敌人类型、矿工位置及二次过滤器与嘲讽过滤器的推导闭环，高度依赖录像画面指涉，不具备可复用的自包含规则价值。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "敌人先攻击单位与仇恨最高单位不一致属于仇恨排序问题",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "口语化的泛泛结论，未给出具体的排序机制、算法逻辑或触发条件（本段前文讲解的二次过滤器与负嘲讽过滤器交换逻辑在此处仅被一笔带过），不构成严谨的自包含机制命题。"
+    }
+  ],
+  "review_note": "本片段为主播在讲解完矿工过滤机制后，临时寻找实战录像切片作为印证。主播在 4916s-4976s 期间不断辨认画面上的干员部署顺序（先看错成初雪后部署，又纠正为惊蛰），最终仅得出一个局部的实战观察结论（c01）与一句宽泛定性（c02）。两项候选命题均缺乏明确的底层机制参数与成立前提，属于未闭合的观察与泛谈，全部予以拒绝。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

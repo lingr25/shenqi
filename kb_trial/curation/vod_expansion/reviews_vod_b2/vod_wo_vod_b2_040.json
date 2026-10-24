@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b2_040",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:24:48+0900",
+  "source_sha256": "233ffbe6294dcfb1e559f4cc28ba938c3909c69a8e5e47247b598c581b1cbf87",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "流窜居民在按地图实际路线进行寻路移动时，无法进入秘境行商、诡异行商、曲折密道、狭路相逢、潜龙小径、显露尽头、显露恶地、二结局的三个命运所指、致命据点，以及玩家已经走过的节点。",
+      "subject": "流窜居民",
+      "condition": "按地图实际路线进行寻路移动时",
+      "scope": "entity_mechanism",
+      "category": "寻路/节点进入限制",
+      "evidence": [
+        {
+          "text": "还有一个机制就是无法进入特定的节点 像是秘境 情商诡异 行商曲折 密道强相逢 强龙小径显露箭头 显露恶地 二局局所有三个命运所指",
+          "t_start": 5983,
+          "t_end": 5989
+        },
+        {
+          "text": "致命据点和我们走过的节点 居民都是无法到达的 也就是说如果看到前后两次居民突然没有移动 就可以判断某个节点",
+          "t_start": 5989,
+          "t_end": 5995
+        }
+      ],
+      "reason": "逐字稿[5983s]明确说明流窜居民有“无法进入特定的节点”的机制，并列出节点类型；[5989s]进一步确认“致命据点和我们走过的节点 居民都是无法到达的”。结合前文流窜居民按地图实际路线移动的语境，可归纳为流窜居民的寻路进入限制。上游证据时间戳与逐字稿不符且跨行拼接，本回执已按原文逐行重建证据；节点名按上下文对 ASR 错字进行了校正。",
+      "limitations": [
+        "转写节点名存在 ASR 噪声，如“强相逢”“强龙小径”“显露箭头”分别按上下文校正为狭路相逢、潜龙小径、显露尽头。",
+        "“二局局所有三个命运所指”具体是否指二结局全部三个命运所指，建议人工听审确认。",
+        "未说明该限制是否在追忆、树洞等特殊层数或特殊构造中完全一致。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅有一个候选 c01，其核心机制陈述有明确逐字稿支撑，属于可复用的流窜居民寻路限制规则，判 keep。上游 evidence 的 283-295 秒时间戳与引文跨行拼接均不成立，已在 claims 中改用 5983s、5989s 的逐字稿原文作为证据；节点名称中的 ASR 错字按上下文校正，并在 limitations 中记录待人工确认点。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

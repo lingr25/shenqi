@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b2_739",
+  "stem": "BV18BpG6LEtq_p2_42631758665",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:10:23+0900",
+  "source_sha256": "d8e77218c30d06b5e80c478a804569f951bedb803eb5d298afffa1afb8d8a9ab",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "处于地图外（墙外）的怪物不受避障力影响，会无条件以当前移速移动；怪物进入墙体时移动缓慢则是避障力造成的效果。",
+      "subject": "处于地图外或墙外的怪物",
+      "condition": "怪物位于地图外/墙外时；进入墙体时作为对照",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "因为在地图外是无条件以当前移速走 地图外往里走的话 不像那个进那个墙走壁张力 进墙的话缓慢移动 那是避障力的效果 墙外没有这种东西",
+          "t_start": 1238,
+          "t_end": 1250
+        },
+        {
+          "text": "直接以理论极速往里走",
+          "t_start": 1250,
+          "t_end": 1265
+        }
+      ],
+      "reason": "上下文正在讨论怪物飞出183格与杏仁传送拉力；1238s至1250s明确对比地图外与进墙时的移动表现，指出墙外没有避障力、会以当前移速移动，进墙缓慢是避障力的效果，因此该机制结论有逐字稿支撑。",
+      "limitations": [
+        "未量化“当前移速/理论极速”的具体数值关系。",
+        "未说明该规则是否对地图外所有单位类型均成立。",
+        "逐字稿中存在ASR异常表述“墙走壁张力”，claim未沿用该异常表述。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选c01的核心机制结论明确：地图外无避障力、以当前移速移动，进墙缓慢由避障力导致。上游引文跨行拼接问题已在回执中拆分为两条连续逐字稿证据，均与原文行内字符一致，故采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

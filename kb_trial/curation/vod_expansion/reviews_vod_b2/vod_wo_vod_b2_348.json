@@ -1,0 +1,84 @@
+{
+  "workorder_id": "vod_wo_vod_b2_348",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:49:50+0900",
+  "source_sha256": "1c5d9b215ac5a4a47509a1de5d3058b42fbbd6a592c0f6ef79f43614515e74fe",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "“正离弦”指弹道在技能开启前发射，并在技能开启后命中，使得该次攻击在命中伤害结算时享受到技能提供的攻击力加成效果，造成更高伤害。",
+      "subject": "弹道类远程攻击（离弦箭机制）",
+      "condition": "弹道在技能开启前发射且在技能开启后命中",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "离弦箭有两种离弦 正离弦和反离弦 比如说黑那种开技能的时候开开技能啊 那这就是一种正离弦 就是伤害变高的离弦",
+          "t_start": 764,
+          "t_end": 777
+        },
+        {
+          "text": "让那个攻击命中的时候吃到攻击力的加成效果",
+          "t_start": 777,
+          "t_end": 790
+        }
+      ],
+      "reason": "主播详细解释了弹道数据包在命中时调用来源攻击力属性的底层机制，并以黑为例阐明了“正离弦”的定义：弹道发射后开启技能，命中时能享受到技能带来的攻击力加成。",
+      "limitations": [
+        "仅适用于伤害结算在命中时刻动态读取来源攻击力加成的弹道机制（即离弦箭类型弹道）。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "“反离弦”指弹道在技能持续期间发射，但直到技能结束失去攻击力加成后才命中目标，导致该次攻击在命中伤害结算时无法享受到技能的攻击力加成。",
+      "subject": "弹道类远程攻击（离弦箭机制）",
+      "condition": "弹道在技能持续期间发射且在技能结束后命中",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "但是反过来讲还有反离弦 反离弦的话 就是他本来是在攻击技能期间发射的",
+          "t_start": 777,
+          "t_end": 790
+        },
+        {
+          "text": "但是的话他在技能结束失去了攻击力加成 才命中",
+          "t_start": 790,
+          "t_end": 800
+        }
+      ],
+      "reason": "上下文完整阐释了“反离弦”现象的定义与机制成因：技能期间射出弹道，但命中延迟导致攻击结算落在技能结束后，失去攻击力增益。",
+      "limitations": [
+        "同样受限于命中时动态调用属性的离弦箭机制。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本切片由主播系统讲解底层弹道数据包结算逻辑，进而引申出弹道动态结算中的‘正离弦’与‘反离弦’概念。两个候选命题定义明确、逻辑自洽且证据链条完整，均符合四大硬性闸门，予以收录。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

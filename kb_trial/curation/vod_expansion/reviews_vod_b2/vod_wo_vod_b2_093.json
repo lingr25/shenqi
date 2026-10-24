@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_093",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:47:37+0900",
+  "source_sha256": "e696f925cdbcd2d45024a34bf1b95629863eab93dda1a0c74e11a64ecbbf2f47",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在多敌人阻挡偏移的权重计算中，0.1～0.4半径区间提供的权重会乘以50，通常比0.1半径内提供的权重大得多；因此当周围一圈存在0.1～0.4半径之间的敌人时，阻挡偏移方向往往会朝向该敌人。",
+      "subject": "多敌人阻挡偏移计算中的0.1～0.4半径区间敌人权重",
+      "condition": "周围一圈存在位于0.1～0.4半径之间的敌人",
+      "scope": "universal",
+      "category": "位移/阻挡偏移",
+      "evidence": [
+        {
+          "text": "这里会用0.4减去刚才我画的那个向量的 那个蓝色的向量的长度 然后取模长取数值 然后再乘以50倍",
+          "t_start": 3441,
+          "t_end": 3453
+        },
+        {
+          "text": "也就是说那个在0.1到0.4之间 它提供了一个强大的反向于敌人和敌人方向的 然后一个让敌人去推挤敌人的这么一个权重",
+          "t_start": 3453,
+          "t_end": 3471
+        },
+        {
+          "text": "由于乘50这个权重往往比上面这个大得多 从而如果周围一圈存在 这个0.1到0.4半径之间的敌人的话 往往会按照他的走",
+          "t_start": 3471,
+          "t_end": 3486
+        }
+      ],
+      "reason": "上下文在讲解多敌人阻挡偏移的权重计算时明确说明，0.1～0.4半径之间的权重会按0.4减向量长度后取模再乘50，并提供强大的反向推挤权重；主播据此判断其通常大于0.1半径内权重，并总结周围存在此类敌人时偏移往往朝向该敌人。该说法有参数和条件支撑，非纯猜测。",
+      "limitations": [
+        "逐字稿只给出“往往”的倾向性结论，未穷举所有边界情形；权重还会受0.1半径内权重、0.4边界、顺/逆帧旋转等共同影响。",
+        "“上面”的比较对象依赖上下文指代，但结合前文0.1半径权重可确定其含义。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "单一候选命题有逐字稿直接支撑，经改写补全为自包含机制陈述后通过四大闸门，予以保留；无其他候选需排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

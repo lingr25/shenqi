@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_423",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:13:27+0900",
+  "source_sha256": "e3554178b07f298ce486349bc1e60fecc68419dab2718d0fca8293876899416b",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在《明日方舟》中，具有1.2秒（36帧）基础攻击间隔的攻击单位，若实际攻击间隔缩短为18帧，则对应攻速加成为+100%。",
+      "subject": "具有1.2秒/36帧基础攻击间隔且实际间隔为18帧的攻击单位",
+      "condition": "基础攻击间隔为1.2秒（36帧），实际攻击间隔为18帧",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "18阵攻击间隔的话 本源是一个什么模板",
+          "t_start": 1465,
+          "t_end": 1482
+        },
+        {
+          "text": "1.2的攻击间隔36变成18的话 那就是加百分百攻速",
+          "t_start": 1487,
+          "t_end": 1495
+        }
+      ],
+      "reason": "逐字稿中主播先讨论18帧攻击间隔，随后给出以1.2秒/36帧为模板的换算：36变18即间隔减半，因此为+100%攻速。该句是条件性数学推导，可作为攻击间隔与攻速换算的通用规则。",
+      "limitations": [
+        "该结论依赖基础攻击间隔确为1.2秒/36帧、实际攻击间隔确为18帧；上下文随后出现18.5帧、95~105攻速等保留估计，故不能据此唯一断定实测攻速为100%。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选c01为条件性换算推导，有直接逐字稿引文支撑；未把主播后续的推测值当作定论，故保留为通用帧时序/攻速换算规则，并在限制中标注实测不确定性。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

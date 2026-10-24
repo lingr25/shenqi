@@ -1,0 +1,37 @@
+{
+  "workorder_id": "vod_wo_vod_b2_711",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T16:02:47+0900",
+  "source_sha256": "60bb6dd57cc02f810e01c9e343a27c8e7ff0501e2907668747ab5c034c872fd1",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "重量为负数的敌人可以被推动",
+      "verdict": "reject",
+      "reason": "逐字引文虽能在 2088s 行中字符级对齐，但上下文是主播的推测与开放疑问（“而且我觉得”“会不会也有可能会修了”“有没有这种可能”），未形成可复现的机制定论；属于未闭合假说，违反 Gate 4。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "工单仅有一个候选 c01。其引文与逐字稿连续子串对齐，但上下文明显是推测和反问，缺少验证与明确参数，不能作为可复用机制结论；整单无 keep，裁定 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

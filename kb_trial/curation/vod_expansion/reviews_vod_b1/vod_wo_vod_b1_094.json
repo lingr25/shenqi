@@ -1,0 +1,90 @@
+{
+  "workorder_id": "vod_wo_vod_b1_094",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:53:00+0900",
+  "source_sha256": "0bec7c122df3aaae458e0ee4c5f914d707f4f5d49cde479704c9c0201cb220b7",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "地块的实际判定可以包含地块属性之外的额外判定。",
+      "subject": "地块判定系统",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "地块属性",
+      "evidence": [
+        {
+          "text": "但是实践中也常常存在着 地块黍性外的额外判定",
+          "t_start": 5869,
+          "t_end": 5876
+        }
+      ],
+      "reason": "主播在给出常见地块属性表后明确表示实践中存在地块属性之外的额外判定，说明地块实际行为不能仅由常见属性穷尽；该结论有逐字稿直接支撑，且不属于未定论猜测。",
+      "limitations": [
+        "未在逐字稿中列出额外判定的具体种类、参数或可复现关卡；原文‘属性’在转写中作‘黍性’。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "地块属性的设置可以违反惯例。",
+      "subject": "地块属性的设置",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "地块属性",
+      "evidence": [
+        {
+          "text": "对地块黍性的设置其实也可以违反惯例",
+          "t_start": 5869,
+          "t_end": 5876
+        }
+      ],
+      "reason": "主播直接陈述地块属性设置可以违反惯例，与随后的围栏、道路等反例说明一致，构成可复用的地块属性判定原则。",
+      "limitations": [
+        "未给出该原则的完整反例清单与参数；原文‘属性’在转写中作‘黍性’。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "存在一份汇总常见地块属性与干员判定内容的通用表格",
+      "verdict": "reject",
+      "reason": "该命题只说明视频中存在一张汇总表格，属于讲义材料/节目组织信息，不是可复用的游戏机制陈述；没有明确机制主体、触发条件与判定规则，不具备机制知识价值。",
+      "failed_gates": [
+        "G3"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      }
+    }
+  ],
+  "review_note": "c02、c03为地块属性表非穷尽、地块属性设置可违反惯例的通用结论，均有逐字稿直接支撑，保留；c01仅说明表格存在，不是机制命题，排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

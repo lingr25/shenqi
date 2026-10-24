@@ -1,0 +1,84 @@
+{
+  "workorder_id": "vod_wo_vod_b2_291",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:32:26+0900",
+  "source_sha256": "96201bd45ee9cca888304269ed86d67738f70527ae8df3fc178e143d48ec49e8",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在集成战略（肉鸽）模式中，若某个 Buff/效果具备局内发生改变的能力，则它一定不是局外 Buff；局外 Buff 在局内不会发生改变。",
+      "subject": "集成战略模式中的 Buff/效果",
+      "condition": "在集成战略（肉鸽）模式中；该 Buff/效果具有局内改变能力",
+      "scope": "universal",
+      "category": "属性结算",
+      "evidence": [
+        {
+          "text": "肉鸽里面的话可以简化的计算 凡拥有局内的改变能力的 一定都不是局外 凡拥有局内改变能力的 一定都不是局外 局内局外的Buff",
+          "t_start": 1916,
+          "t_end": 1932
+        },
+        {
+          "text": "局外的run是不会在局内改变的 但是这句这句话反过来 它的逆命题是不成立的 它的逆否命题哎 它的逆命题是不成立的",
+          "t_start": 1932,
+          "t_end": 1943
+        }
+      ],
+      "reason": "逐字稿明确给出集成战略中局内/局外 Buff 的简化判定：具备局内改变能力者不是局外 Buff，并且局外 run 不会在局内改变。两条引文分别支撑正向判定与反向排除。",
+      "limitations": [
+        "这是主播介绍的简化判定法，不是官方文案；具体对象仍需查表或实机验证，后续还提到血肉畸变等例外或修订。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在集成战略（肉鸽）模式中，局内不发生改变的 Buff/效果不一定是局外 Buff；即“具备局内改变能力者必不是局外 Buff”的逆命题不成立。",
+      "subject": "集成战略模式中在局内不发生改变的 Buff/效果（逐字稿举例为神盾）",
+      "condition": "在集成战略（肉鸽）模式中；某 Buff/效果在局内不发生变化",
+      "scope": "universal",
+      "category": "属性结算",
+      "evidence": [
+        {
+          "text": "局外的run是不会在局内改变的 但是这句这句话反过来 它的逆命题是不成立的 它的逆否命题哎 它的逆命题是不成立的",
+          "t_start": 1932,
+          "t_end": 1943
+        },
+        {
+          "text": "就是说所有局内的东西 就是所有局内不发生变化的东西 他不一定是局外 比如说其中一个典型例子是神盾",
+          "t_start": 1943,
+          "t_end": 1954
+        }
+      ],
+      "reason": "逐字稿明确说原命题反过来后的逆命题不成立，并举例所有局内不发生变化的东西不一定是局外，典型例子为神盾，支撑该逆命题无效的结论。",
+      "limitations": [
+        "逐字稿未展开神盾的完整参数，只说其局内扣血不会让加成消失；具体分类仍需查表。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 与 c02 均通过四闸门。c01 是集成战略局内/局外 Buff 的正向简化判定；c02 是该判定逆命题不成立的边界说明，并有神盾作为逐字稿内例证。两条均保留，无排除项。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

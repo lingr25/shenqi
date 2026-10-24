@@ -1,0 +1,70 @@
+{
+  "workorder_id": "vod_wo_vod_b2_333",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:44:14+0900",
+  "source_sha256": "348f2c894642e3c3a87044255591335a9e476b2904eee279c97b187526843b91",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "伤害判定环节中的各伤判彼此独立：系统依据同名叠加/不叠加规则、Buff优先级以及创建先后顺序确定判定顺序；伤判不存在预设的加算或乘算区间，其组合在数学上表现为相互独立的乘算结算。",
+      "subject": "伤判结算机制",
+      "condition": "同一伤害判定流程中存在多个伤判Buff",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "呃商判是各自独立的 依靠着同名不叠加或者同名叠加规则和Buff 优先级和就是商和那个就是先后创建顺序 去决定自己的创建顺序",
+          "t_start": 6454,
+          "t_end": 6472
+        },
+        {
+          "text": "它没有乘区 不存在加算区间 因而表现为独立城 比如闪避 每一个闪避都会是独立的乘算",
+          "t_start": 6472,
+          "t_end": 6487
+        }
+      ],
+      "reason": "主播系统性总结了伤判结算流程的核心底层逻辑：伤判各自独立、无加算区间、依赖同名规则/优先级/创建时序决定顺序，符合Gate 1-4。",
+      "limitations": [
+        "部分特定模式（如肉鸽）的同类藏品会在内部加算合并后再作为单个Buff挂载，需区分内部合并与伤判本身的结算"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "五个闪避独立乘算的具体数值举例（0.8与0.04028等数值推导）",
+      "verdict": "reject",
+      "reason": "主播在此处口误且数学计算混乱（先说五个0.8乘算得1024，后又纠正为五个20%闪避、0.8不被闪概率，其计算0.8^5约为0.32768而非0.04028，口算频频出错）。该示例属于口误修正的随口演算，且其核心机制（闪避相互独立乘算）已被c01完全覆盖，故排除。",
+      "failed_gates": [
+        "G4",
+        "DUP"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      }
+    }
+  ],
+  "review_note": "本片段讲解了伤判流程中伤判互相独立的底层规律。c01准确归纳了伤判独立性、优先级、创建顺序等通用结算机制，准予keep；c02为主播随堂口算的临时数值举例，且主播在计算0.8的5次方与概率时出现明显口算失误和混乱，不具备规则参数沉淀价值，且其机制结论与c01重复，予以reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

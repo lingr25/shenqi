@@ -1,0 +1,84 @@
+{
+  "workorder_id": "vod_wo_vod_b1_027",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:20:30+0900",
+  "source_sha256": "dfecdbf7d9fe0d41a916f7c2a7b8c0d2e143d6f4e18c6a74b25864ab74541209",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "Mono 用于出怪时间排序的排序算法采用二分法：把待排序的 N 个量分成高的一半和低的一半，再对每一半用同样方法继续分下去并迭代，最终得到顺序符合要求的排序。",
+      "subject": "Mono 用于出怪时间排序的排序算法",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "这一步排序的话用的是mono的快排 然后的话mono的快排有一个问题",
+          "t_start": 2169,
+          "t_end": 2176
+        },
+        {
+          "text": "mono是一个就是不快排 是一个二分法排序的东西 就是把一共要排序的N个东西 比如说假设说一共有十个十个量",
+          "t_start": 2176,
+          "t_end": 2192
+        },
+        {
+          "text": "它会分成一半一半分成高的一半 低的一半 然后呢再把这每一半儿 然后再进行迭代",
+          "t_start": 2192,
+          "t_end": 2204
+        }
+      ],
+      "reason": "上下文说明明日方舟出怪时间需要排序并使用 Mono 的排序算法，随后描述其分半、继续迭代的二分排序流程，是后续解释同帧乱序的基础机制。",
+      "limitations": [
+        "直播未展开源码级实现细节；具体分半、基准选择与实现版本未交代。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "Mono 用于出怪时间排序的快排会交换同值项；因此当多个出怪时间位于同一帧时，这些同帧出怪时间的排序处理会非常错乱。",
+      "subject": "Mono 用于出怪时间排序的快排",
+      "condition": "当多个出怪时间位于同一帧时",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "但是的话因为它会交换同值项 所以它对于同时间的这个处理就会非常的错乱",
+          "t_start": 2220,
+          "t_end": 2242
+        }
+      ],
+      "reason": "主播明确说明 Mono 快排会交换同值项，并直接推出同一时间处理会错乱；后文用同时间怪组举例验证，可作为同帧乱序机制的核心结论。",
+      "limitations": [
+        "具体同帧顺序还受怪组总数量、分半迭代次数等影响；主播称详细分析需查源码。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均通过四闸门。c01 给出 Mono 排序算法分半迭代的机制背景；c02 给出交换同值项导致同帧排序错乱的核心结论。证据均可在逐字稿中逐字定位。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

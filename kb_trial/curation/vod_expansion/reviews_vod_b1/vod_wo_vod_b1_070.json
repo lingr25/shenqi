@@ -1,0 +1,94 @@
+{
+  "workorder_id": "vod_wo_vod_b1_070",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T00:07:00+0900",
+  "source_sha256": "e76295c148defdda41638ee5a3bef1fbb52d2b5b0d2eea96299afd8792f56e5d",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "干员文案中出现的「高台」和「高地」在代码中对应同一个地块属性 high land。",
+      "subject": "干员文案中的「高台」与「高地」",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "地块判定",
+      "evidence": [
+        {
+          "text": "比如说近战地块 高台这些东西 凡是提到高台和高地的",
+          "t_start": 4903,
+          "t_end": 4915
+        },
+        {
+          "text": "说的都是high land的",
+          "t_start": 4915,
+          "t_end": 4921
+        }
+      ],
+      "reason": "上下文明确把「高台」「高地」的文案命名与代码中的 high land 属性对应起来，并称凡是提到二者说的都是 high land，属于可复用的地块属性命名结论。",
+      "limitations": [
+        "口播中的 high land 未在逐字稿中给出代码字段原始拼写，实际字段名可能为 highland/high_land，需要以代码或画面进一步核对。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "「低地」「近战地块」「地面」「近战位」是同一地块属性的四种不同文案叫法，与「高台」「高地」合计两种分类交出六个名字，属于非术语化命名。",
+      "subject": "《明日方舟》地块属性的文案命名",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "地块判定",
+      "evidence": [
+        {
+          "text": "首先说惊蛰的判定内容 高低地设有高地和低地两种 惊蛰二三技能都是这个判定 所以惊蛰二技能说的近战地块不过就是低地",
+          "t_start": 4896,
+          "t_end": 4903
+        },
+        {
+          "text": "但是同样判断这个属性 鹰角起了好多个名字 对于高地这里玛露希尔说高台",
+          "t_start": 4921,
+          "t_end": 4932
+        },
+        {
+          "text": "但是他们说的是一个东西 这是一个非术语化的命名",
+          "t_start": 4943,
+          "t_end": 4959
+        },
+        {
+          "text": "老鼠里叫做低地的东西 惊蛰却称之为近战地块 而苇草耶拉灰喉管 这个叫地面帕拉斯叫近战位 两种分类能交出六个名字",
+          "t_start": 4974,
+          "t_end": 4983
+        }
+      ],
+      "reason": "逐字稿直接给出高低地两种分类，并称同一属性被鹰角起了多个名字；其中低地可被称为近战地块、地面、近战位，高地方向出现高台等叫法，最后总结为两种分类合计六个名字且属于非术语化命名。",
+      "limitations": [
+        "逐字稿存在 ASR 噪声，干员名与部分文案名未逐项列出完整对应表；结论限于当前上下文所述命名现象。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均通过四闸门。c01 确认「高台」「高地」底层同属 high land；c02 确认同一高低地属性存在多种文案命名且两类合计六个名字，并明确为非术语化命名。转录中的 ASR 噪声不改变核心结论。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

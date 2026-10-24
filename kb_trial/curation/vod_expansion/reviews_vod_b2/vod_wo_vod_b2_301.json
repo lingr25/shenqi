@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_301",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:35:56+0900",
+  "source_sha256": "51ff875cea7cdac676ceb41a6db2cab9a5f0f9d1aa5b4330b10a28a9542096ef",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "血肉畸变这一机制已经改动",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G3"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "reason": "口语提醒片段，仅提及‘血肉畸变已经改了’，未说明改动的具体前后数值、机制变化内容或版本条件，不具备自包含的规则与机制价值。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "「受到伤害加成」的描述不宜按鹰角的文案字面过度解读，属于花佬的用词问题",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G3"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "reason": "属于针对第三方攻略专栏（花佬文章）文案表达的杂谈与元讨论，并非游戏本身的客观机制陈述，缺乏具体的机制规则与参数主体。"
+    }
+  ],
+  "review_note": "两个候选命题均为主播在讲解攻略文章时的口语提醒与行文点评，缺乏具体的机制推导与自包含规则参数，不符合机制库收录标准，全数驳回。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

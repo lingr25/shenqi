@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_212",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed",
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:58:20+0900",
+  "source_sha256": "91c4e4412bea77788d8dbfe8c68e92d6317632b876b9000fbee78c69cb93d6c2",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "当医疗干员按照生命值比例索敌时，若同帧部署且初始生命值仅差1点的两名干员（如炎熔与嘉维尔）各自扣减相同的50点生命值，生命上限较高的干员其当前生命值比例更高，生命上限较低的干员其生命值比例更低，医疗干员会在32帧索敌时优先治疗生命值比例更低者。",
+      "subject": "医疗干员索敌判定（基于生命值比例）",
+      "condition": "按生命值比例索敌，目标干员同帧部署且扣减相同绝对生命值",
+      "scope": "universal",
+      "category": "索敌",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "扣50血的话 岩溶血多 所以他的血量比例就更高 加瑞尔血少",
+          "t_start": 3411,
+          "t_end": 3421
+        },
+        {
+          "text": "他的血量比例就更低 但是我们这里的话是先部署岩溶的部署 而与敌人生成时间无关 这里我们是先部署岩溶的 可以随需求调整",
+          "t_start": 3421,
+          "t_end": 3434
+        },
+        {
+          "text": "例如一岩溶先部署 但是血量比例更高 他们使用的 然后加维尔会奶盐溶",
+          "t_start": 3434,
+          "t_end": 3443
+        }
+      ],
+      "reason": "逐字稿中明确展示了医疗干员依据百分比血量索敌的具体机制运算案例：两名单位在相差仅1血且同扣50血后，由总血量不同导致血量比例高低产生微小差异，从而影响排序判定。原跨行引文已拆分并精确对齐逐字稿单行原文。",
+      "limitations": [
+        "实战中受0.001精度限制，若比例差异小于截断阈值可能引发排序异常"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "修正了第一条evidence跨行拼接导致的文本不匹配问题，严格将[3411s]与[3421s]两行内容拆分为单行独立证据。命题陈述与判定逻辑保持不变。",
+  "repair_rounds": 1,
+  "unresolved_problems_auto_demoted": []
+}

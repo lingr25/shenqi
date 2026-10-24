@@ -1,0 +1,82 @@
+{
+  "workorder_id": "vod_wo_vod_b2_013",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:17:35+0900",
+  "source_sha256": "947a8e269d90ff3354baa205eeb5897e8dec1e1fdb0edb4ffce6156c64f1e1ea",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在黑流树海模式中，增加零件背包格子数的途径包括：开局用六块兑换获得 2 格、招募机械师获得 2 格、验尸获得 2 格、多边贸易自带 4 格、安全屋有概率增加 1 格。",
+      "subject": "黑流树海模式中的零件背包容量获取途径",
+      "condition": "在黑流树海模式中；安全屋增加 1 格为概率触发",
+      "scope": "universal",
+      "category": "机制类别：背包容量",
+      "evidence": [
+        {
+          "text": "黑流树海有很多种增加零件容量的方式 开局六块换二格子 招募机械 开局六块算二格子 招募机械师获得二格子 验尸获得二格子",
+          "t_start": 3442,
+          "t_end": 3458
+        },
+        {
+          "text": "多边贸易自带四格子 安全屋也有概率加一格子 格子越多 我们能放下的叠层自然物就越多 整体背包原石定的估价就会越高",
+          "t_start": 3458,
+          "t_end": 3469
+        }
+      ],
+      "reason": "逐字稿明确列举了黑流树海增加零件容量的多种方式，并给出对应格子数；虽上游证据秒数标错，但原文可在转写窗口中逐字定位，命题可自包含并规范化表述。",
+      "limitations": [
+        "未说明“六块”的具体兑换节点或货币单位。",
+        "安全屋增加格子的概率数值未给出。",
+        "招募机械师、验尸、多边贸易的具体触发条件未展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在黑流树海模式中，零件背包格子越多，能放下的叠层自然物就越多，整体背包的原石估价就越高。",
+      "subject": "黑流树海的零件背包容量",
+      "condition": "在黑流树海模式中",
+      "scope": "universal",
+      "category": "机制类别：背包容量",
+      "evidence": [
+        {
+          "text": "多边贸易自带四格子 安全屋也有概率加一格子 格子越多 我们能放下的叠层自然物就越多 整体背包原石定的估价就会越高",
+          "t_start": 3458,
+          "t_end": 3469
+        }
+      ],
+      "reason": "逐字稿直接陈述格子数量与可容纳叠层自然物、整体背包估价之间的正相关关系，属于可复用机制推导。",
+      "limitations": [
+        "仅说明正相关，未给出估价公式或具体数值。",
+        "“原石定”在逐字稿中为 ASR 文本，可能对应原石锭，但不影响命题方向。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均来自逐字稿中对黑流树海零件容量机制的明确陈述。c01 列举容量增加途径，c02 归纳容量带来的收益关系。均已按自包含命题改写并校正证据秒数；无未定论猜测或开放疑问，全部采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

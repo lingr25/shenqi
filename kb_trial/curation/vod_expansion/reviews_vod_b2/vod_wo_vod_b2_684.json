@@ -1,0 +1,60 @@
+{
+  "workorder_id": "vod_wo_vod_b2_684",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:10:57+0900",
+  "source_sha256": "3bc1874b0e66185e3b3d26eb9e8da30230dd4d127c16fde2186e65d3c5810160",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在13~15帧区间内执行13帧部署、14帧挂上、15帧撤退的两帧部署操作，会使实验中的目标单位死亡或触发爆炸。",
+      "subject": "实验中的目标单位",
+      "condition": "在13~15帧区间内执行两帧部署操作：13帧部署、14帧挂上、15帧撤退",
+      "scope": "instance",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "就是要下两帧 就是要下两帧 13部署14挂 然后15撤才行",
+          "t_start": 2321,
+          "t_end": 2332
+        },
+        {
+          "text": "刚才我们已经验证过13~15是会死的",
+          "t_start": 2373,
+          "t_end": 2381
+        },
+        {
+          "text": "我在14~24之间部署了十帧 他仍然没有反应 但是我在13~15之间部署两帧 他就可以死掉",
+          "t_start": 2445,
+          "t_end": 2458
+        }
+      ],
+      "reason": "逐字稿明确口述13部署、14挂上、15撤退的两帧操作，并先验证13~15会死，随后以14~24部署十帧无反应作对照，支撑该帧窗口操作可导致目标死亡/爆炸的结论。",
+      "limitations": [
+        "逐字稿未说明具体关卡、敌人名称以及『消失弹道』的完整指代。",
+        "『炸』与死亡的具体表现需结合画面复核。",
+        "该结论来自当场单次实验，泛化到其他单位或关卡前需进一步验证。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅审查 c01。逐字稿给出13~15帧窗口、13部署14挂15撤以及14~24十帧无反应的对照，构成可复核的帧时序观察；但目标身份和泛化适用范围依赖画面，故按 instance 保留并标注限制。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

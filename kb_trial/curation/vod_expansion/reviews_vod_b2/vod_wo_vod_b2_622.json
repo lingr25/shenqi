@@ -1,0 +1,52 @@
+{
+  "workorder_id": "vod_wo_vod_b2_622",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T13:59:46+0900",
+  "source_sha256": "f10445984648473a4112ba552851897e1c57ed19ad17640a3d2092343eee8204",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "只推小猫蛋卷一个单位时无法推动",
+      "verdict": "reject",
+      "reason": "引文可在逐字稿中字符级对齐，但命题仅为一次对局现象观察；未交代推动来源、力度/重量参数及可复现站位，无法形成可复用机制规则，违反 Gate 4。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "小猫蛋卷带一堆虫子时可被推动",
+      "verdict": "reject",
+      "reason": "引文可对齐，但“带上一堆虫子”数量与状态不明确，且未给出推动来源、力度/重量参数，属于缺乏可复现条件的实战观察，违反 Gate 4。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "两条候选均为对局实况观察，缺少推动来源、力度/重量参数、虫子数量等可复现条件，Gate 4 不通过，均拒绝；逐字引文本身可对齐，但不足以构成机制定论。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

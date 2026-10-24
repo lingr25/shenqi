@@ -1,0 +1,70 @@
+{
+  "workorder_id": "vod_wo_vod_b2_581",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:12:31+0900",
+  "source_sha256": "e2d8b88c5f29396378ebe74a1c3ca61ab0e9108376ee4d9320eceb517bc75261",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在任意关卡中使用可露希尔并触发可露希尔的扣费时，关卡的部署费用回复会变得复杂、难以处理。",
+      "subject": "可露希尔的扣费机制",
+      "condition": "在任意关卡中使用可露希尔并触发其扣费",
+      "scope": "entity_mechanism",
+      "category": "费用回复",
+      "evidence": [
+        {
+          "text": "额其实减回费好办 减回费开个费用尺就是了 主要是可露希尔啊 主要是可露希尔 你一旦任何图啊 任何图只要你用到可露希尔",
+          "t_start": 6468,
+          "t_end": 6480
+        },
+        {
+          "text": "且需要他的那个扣费的话 那么这个图的回费一定会变得又臭又恶心",
+          "t_start": 6480,
+          "t_end": 6489
+        }
+      ],
+      "reason": "讲师在逐字稿中明确将回费复杂化归因于可露希尔：任何图只要用到可露希尔，且需要其扣费，该图回费就会变得“又臭又恶心”，可支撑该定性结论。",
+      "limitations": [
+        "仅给出定性结论，未交代扣费触发频率、回费速率变化公式或具体关卡参数。",
+        "“又臭又恶心”为口语化描述，需结合可露希尔具体技能/天赋确认扣费机制细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "在关卡中使用可露希尔并触发扣费时，关卡的计时也会受到影响。",
+      "verdict": "pending",
+      "reason": "逐字稿仅有“这个图的计时会哎”，语句在关键处截断，未说明计时受影响的具体方式、参数或可复现条件；该候选将未闭合表述概括为“计时会受到影响”，需人工听审或实机验证，故判 pending。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01 有连续逐字稿支撑，可作为可露希尔扣费影响关卡回费的定性机制结论保留；c02 原话截断且计时影响未闭合，仅能 pending，待后续验证。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

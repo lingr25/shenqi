@@ -1,0 +1,69 @@
+{
+  "workorder_id": "vod_wo_vod_b2_717",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:06:18+0900",
+  "source_sha256": "8338b62a09ff68b3e9fdd0a3fcd68a2c419945c8d7c182ec0690b56784a5914c",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙会逐帧传送到自己的弹道坐标处，并随弹道坐标以相同速度向前推进。",
+      "subject": "克莱门沙的传送机制",
+      "condition": "传送机制生效且存在自身弹道坐标时",
+      "scope": "entity_mechanism",
+      "category": "位移/传送",
+      "evidence": [
+        {
+          "text": "然后再和自己的弹道坐标以同速度的向前传送",
+          "t_start": 3234,
+          "t_end": 3251
+        },
+        {
+          "text": "他就是逐帧传送到自己的那个就是弹道坐标处",
+          "t_start": 3284,
+          "t_end": 3298
+        }
+      ],
+      "reason": "3234s 处主播描述传送与自身弹道坐标同速向前；3284s 处主播明确勘误，将机制修正为“逐帧传送到自己的弹道坐标处”。两句结合可确认该机制结论，且主体由工单章节与上下文明确为克莱门沙，命题已改写为自包含陈述。",
+      "limitations": [
+        "逐字稿未给出传送判定与弹道坐标更新的精确帧序、坐标计算方式；“同速度”为口语描述，精确速度关系仍需实机验证。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "克莱门沙传送后在中途加入横向位移，后续移动仍会保持原来的纵向方向。",
+      "verdict": "pending",
+      "reason": "该候选的逐字引文可对齐，但同一窗口后段 3284s 主播明确说“我搞错了”，并把画面中的横向偏移归因于温蒂失衡持续作用。单次横向位移是否会被逐帧传送覆盖、持续外力与一次性位移如何区分，讨论未闭合，关键条件缺失，不宜作为定论。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01 采纳：3234s 的同速弹道描述与 3284s 的逐帧传送勘误共同支撑“逐帧对齐自身弹道坐标并随之前进”的机制结论。c02 虽逐字可定位，但随后主播自我勘误并将横向偏移归因于温蒂持续失衡，横向位移对后续方向的影响尚未闭合，判 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

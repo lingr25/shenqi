@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_514",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:54:38+0900",
+  "source_sha256": "977b199daae9f5fe6c470e5a27ff879a47d1351f572ce6237280e7c9536f0327",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "平A总伤害以36A为基础乘2.35再乘0.3/0.7得到30万",
+      "verdict": "reject",
+      "reason": "Gate 1/G3 不通过：命题未指明具体干员、技能或实体，'36A'中的A未定义，'0.3/0.7'在逐字稿中仅作'0.30.7'，无法确认是dot覆盖系数还是两个独立数值；条件与scope亦未显式给出。该句是特定数值推导而非自包含、可复用的机制定论。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "候选引文能在逐字稿对应行找到字符级连续子串，但命题核心参数与主体依赖上下文/画面，无法改写为明确的三元约束；不满足自包含与显式主体条件要求，故排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

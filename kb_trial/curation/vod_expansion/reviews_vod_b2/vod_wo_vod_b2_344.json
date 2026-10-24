@@ -1,0 +1,69 @@
+{
+  "workorder_id": "vod_wo_vod_b2_344",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:50:53+0900",
+  "source_sha256": "e1d939e8695323c14c17a9d70b5d945fc2abed96764868510dc603c6dc046812",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "不死状态并非全时段维持生命值不低于1，而是在伤害结算流程执行血量重设判定时生效，确保重设后的生命值不低于1。",
+      "subject": "不死机制",
+      "condition": "处于伤害结算流程的重设血量判定环节",
+      "scope": "universal",
+      "category": "伤害结算",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "所以不死并不是一种并不死 并不死并不是一种让血量不低于一的东西 是在重设血量时让血量不低于一的东西 他是在这种伤害结算流程之中",
+          "t_start": 278,
+          "t_end": 294
+        },
+        {
+          "text": "才能进行应用的一个东西",
+          "t_start": 294,
+          "t_end": 302
+        }
+      ],
+      "reason": "主播通过M3因比例缩放出现0血后再受击触发不死的实机现象，总结并定性了底层机制：不死并非全局被动锁血，而是仅在伤害结算的血量重设环节生效保底1血。",
+      "limitations": [
+        "未穷举所有具有不死/锁血特性的具体干员与技能的差异化实现"
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "不死不是一种常态维持血量不低于1的效果",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "DUP"
+      ],
+      "reason": "与 c02 属于同一推论的否定侧表述，c02 已完整包含否定前置假设（非全局维持）与肯定正确机制（伤害结算重设血量时保底1），合并至 c02 保留更好表述。"
+    }
+  ],
+  "review_note": "本片段讨论了底层伤害结算时序中的锁血/不死运作逻辑。c01与c02讨论的是同一结论的正反两面，将否定误区与肯定定论统一合并至c02保留，排除重复项c01。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

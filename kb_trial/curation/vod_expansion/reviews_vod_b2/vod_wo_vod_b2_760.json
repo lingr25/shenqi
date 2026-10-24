@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_760",
+  "stem": "BV18BpG6LEtq_p2_42631758665",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:13:10+0900",
+  "source_sha256": "e13aa0d692eeeb39c36f98e739bad7860b21474fa3a31230ae8149b1e5f83c18",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "当敌方单位的速度方向朝向墙体时，墙体碰撞会消除其朝墙方向的速度分量；当敌方单位的速度方向远离墙体时，墙体碰撞不会消除该速度。",
+      "subject": "受墙体碰撞的敌方单位",
+      "condition": "速度方向朝向墙体 / 远离墙体",
+      "scope": "universal",
+      "category": "碰撞机制",
+      "evidence": [
+        {
+          "text": "消掉所有着往墙这个方向走的速度",
+          "t_start": 3126,
+          "t_end": 3140
+        },
+        {
+          "text": "它每一块墙在判定碰撞的时候都是在往右挤 因为我的速度是远离墙的",
+          "t_start": 3154,
+          "t_end": 3164
+        },
+        {
+          "text": "所以它不会因为墙体来磨损掉我的速度 只有当这个速度是往墙的方向走的 这个墙对它的脊才会磨掉它的速度",
+          "t_start": 3164,
+          "t_end": 3192
+        }
+      ],
+      "reason": "逐字稿先说明左侧碰撞时消去朝墙方向速度，随后以远离墙体时每帧判定仍向右挤为例，得出远离墙时不会被墙体磨损速度；最后一句明确给出朝向墙才磨掉速度的条件。",
+      "limitations": [
+        "基于离散碰撞实机演示，逐字稿未展开不同墙型、斜向速度分量或具体帧对齐算法。",
+        "逐字稿中“脊”疑为 ASR 误字，证据保留原文。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选 c01 为可复用碰撞规则：速度方向决定墙体碰撞是否消除速度；引文均可在对应逐字稿行中逐字匹配，未含未定论猜测，故 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

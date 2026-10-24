@@ -1,0 +1,48 @@
+{
+  "workorder_id": "vod_wo_vod_b2_512",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:54:06+0900",
+  "source_sha256": "fa3264b98283567eca567d2aebe7648d25b215527b86eb0663dbe81a60cd1377",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "轰炸机制造成的物理伤害按3倍结算，元素伤害按2.5倍结算。",
+      "subject": "轰炸机制",
+      "condition": "轰炸造成伤害时",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "轰炸是三倍物理伤害2.5倍元素",
+          "t_start": 278,
+          "t_end": 285
+        }
+      ],
+      "reason": "逐字稿在04:38处明确给出轰炸的物理与元素伤害倍率，属于可复用的伤害结算结论。",
+      "limitations": [
+        "逐字稿窗口未说明该倍率是否受其他增伤、减伤、防御或抗性影响，也未展开‘轰炸’的完整来源。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选c01在逐字稿中有直接、连续的原文支撑，且为明确的伤害结算机制陈述；未发现未定论猜测或画面依赖问题，予以采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

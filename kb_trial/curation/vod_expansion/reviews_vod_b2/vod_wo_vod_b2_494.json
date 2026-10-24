@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_494",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:51:14+0900",
+  "source_sha256": "5a41b49a73f9ba0682d4b35fb09e65de7da218a5e6bab182dc245d2f4afc6a32",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在二杠一关卡中，大盾敌人的攻击力数值为600。",
+      "subject": "二杠一关卡中的大盾敌人",
+      "condition": "关卡为二杠一",
+      "scope": "instance",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "二杠一的大盾有600攻击力",
+          "t_start": 5135,
+          "t_end": 5144
+        }
+      ],
+      "reason": "主播在讨论大盾关卡归属后，明确给出二杠一大盾攻击力为600；该命题具备明确主体、关卡条件和数值参数，引文可在逐字稿对应行中字符级匹配。",
+      "limitations": [
+        "仅依据口述数值，逐字稿未展示敌人面板或关卡难度差异。",
+        "未说明该数值是否受活动、版本或特殊模式修正影响。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 为特定关卡内敌人攻击力的实例型数值结论，主体与关卡条件明确，证据引文与逐字稿 [5135s] 行原文连续子串一致；虽属具体关卡实例，但已给出可复核参数，未涉及未闭合猜测或纯画面指涉，故保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

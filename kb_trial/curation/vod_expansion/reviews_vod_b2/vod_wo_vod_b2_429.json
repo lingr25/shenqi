@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b2_429",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T23:11:06+0900",
+  "source_sha256": "050b20199c872b4835b5cc3bdb77fb86f292983b6e6aa007d7520b8cd4f7e85b",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "二技能位移总坐标1000、横坐标980按每格20折算，本次移动量为30",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3"
+      ],
+      "reason": "上游 evidence[0] 将「横坐标980」与「一次算20」跨行拼接为单条引文，违反逐字连续子串对齐要求；且「总坐标1000」「横坐标980」「一次算20」「这次动了30」之间的换算关系在逐字稿中没有闭合，无法推出“本次移动量为30”。同时主体“二技能”缺少所属干员/技能全名，单位和条件也不明确，不能形成自包含机制命题。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "二技能位移总长为315帧，核对无误",
+      "verdict": "pending",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ],
+      "reason": "逐字稿中确有“总长是315帧 一个没啥问题 没啥问题”的直接表述，数值本身有支撑；但当前窗口未给出该“二技能”所属干员或技能全名，无法写成自包含原子命题，主体与适用范围需结合视频标题、画面或前后文补齐，故留待人工/后续实机核验。"
+    }
+  ],
+  "review_note": "c02 的 315 帧数值有逐字稿直接证据，但主体“二技能”缺少具体干员/技能名，暂不能作为自包含机制命题入库；c01 的换算推导不成立且上游引文存在跨行拼接，直接排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

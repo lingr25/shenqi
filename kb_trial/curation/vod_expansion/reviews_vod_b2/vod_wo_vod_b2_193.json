@@ -1,0 +1,83 @@
+{
+  "workorder_id": "vod_wo_vod_b2_193",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:53:12+0900",
+  "source_sha256": "0488917dd5ec6475a4e5fd97e2f0be12c023c330ca2b662d9cd9451c3f8edea9",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "正常情况下普通敌人仅采用默认的4号仇恨过滤器，在该过滤器下敌人索敌干员依据路径距离与创建时间（后部署优先）等常规仇恨规则计算。",
+      "subject": "普通敌人的仇恨过滤器",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "索敌",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "在正常情况下的话 敌人的仇恨过滤器只有普普通通的打仇恨 只有普普通通的4号仇恨过滤器啊",
+          "t_start": 2041,
+          "t_end": 2050
+        }
+      ],
+      "reason": "逐字稿明确指出正常情况下敌人索敌仅挂载4号仇恨过滤器，区分于特殊索敌逻辑（如优先攻击血量最低单位等特化过滤器）。",
+      "limitations": [
+        "特化索敌敌人（如覆潮之下优先打生命最低的敌人）拥有独立的仇恨过滤器配置，不适用4号过滤器"
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "敌人攻击干员时的索敌依据创建时间",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "逐字稿中主播仅口语化提及'创建时间创建时间我们先不管嘲讽等级'，属于讲解过渡语，未给出关于'创建时间'具体如何折算仇恨权重的自包含规则陈述，且与后部署仇恨的常规常识相比表述残缺。"
+    },
+    {
+      "local_id": "c03",
+      "topic": "嘲讽等级是一个很大的数，保证比排在后面的仇恨值大",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "主播口语表述'你就记着这是一个很大的数 保证他肯定比那个后面的仇恨大就是了'为粗略概念解释，缺乏底层确切常数或权重计算公式，且高度依赖口头模糊定性，不满足机制知识库自包含与确定性定论要求。"
+    }
+  ],
+  "review_note": "本段直播重点辨析了普通敌人默认挂载的4号仇恨过滤器机制。c01命题成立且有明确结论；c02与c03仅为主播口头带过的概念提及（创建时间与嘲讽大数），缺乏具体数值与公式结构，予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

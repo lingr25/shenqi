@@ -1,0 +1,50 @@
+{
+  "workorder_id": "vod_wo_vod_b1_045",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:25:53+0900",
+  "source_sha256": "e6ea7837cb3bff69117ade39f349e285e01a4cd32535c97dbae01dff8906a8f0",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "敌方单位从出怪点出现后，其帧级行动流程包括索敌、移动、移动至相应位置、抬手攻击等节点；在已知出怪时间的前提下，这些节点各自发生的帧是描述该出怪后行动流程所需的信息。",
+      "subject": "出怪后的敌方单位行动流程",
+      "condition": "敌方单位从出怪点出现后，且已知出怪时间",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "就是知道出怪时间 知道出怪之后哪一帧索敌 哪一帧移动 哪一帧走到哪里 哪一帧抬手攻击",
+          "t_start": 3431,
+          "t_end": 3446
+        }
+      ],
+      "reason": "主播在总结出怪相关机制时，明确列举出怪后的索敌、移动、移动到位、抬手攻击等帧级节点，并强调在已知出怪时间后掌握这些节点发生的帧即可描述该流程；属于可复用的帧时序拆解，非未定论猜测。",
+      "limitations": [
+        "逐字稿未给出各节点的具体帧数。",
+        "未明确说明该帧级拆分是否适用于所有敌人、所有地图或所有出怪点。",
+        "“走到哪里”在逐字稿中较口语化，具体目标位置含义需结合后续资料或画面确认。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅有一个候选 c01。该命题由主播对出怪后帧级时序链的总结而来，逐字稿引文可字符级对齐，主体、条件、作用域可补全，且不属未闭合猜测或纯实战现象叙述。虽缺少具体帧数值，但命题本身是时序节点拆解框架，可保留为通用帧时序知识；具体帧数留待后续实机验证。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

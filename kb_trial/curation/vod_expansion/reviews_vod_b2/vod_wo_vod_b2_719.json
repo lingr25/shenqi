@@ -1,0 +1,72 @@
+{
+  "workorder_id": "vod_wo_vod_b2_719",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:06:23+0900",
+  "source_sha256": "0ddf4f76ac00179f6cec4e6fc1b72e9a4b0bd60116f288920578a861d005aadc",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "放逐传送与失衡在同一帧触发时，结算顺序为先传送到弹道坐标、后结算失衡位移。",
+      "subject": "放逐状态下的传送机制与失衡位移机制",
+      "condition": "传送与失衡在同一帧触发",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "然后同帧的话是先传送后失衡",
+          "t_start": 3333,
+          "t_end": 3347
+        },
+        {
+          "text": "同帧先传送到中间 然后再失衡到右边",
+          "t_start": 3488,
+          "t_end": 3499
+        }
+      ],
+      "reason": "主播在 3333s 明确总结同帧时先传送后失衡，并在 3488s 以“先传送到中间，然后再失衡到右边”复述该结算顺序；上下文还称其符合方舟一贯表现机制。",
+      "limitations": [
+        "逐字稿未说明不同放逐来源、不同位移类型或非同一帧触发时的例外。",
+        "具体坐标与方向依赖当场演示，结论仅覆盖同帧结算顺序。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "怪物体表的大部分位移在结算顺序上早于失衡位移结算。",
+      "verdict": "reject",
+      "reason": "候选引文实际位于 3347s 行而非标注的 3333s，违反 G2 精确时间戳要求；即便按 3347s 定位，“大部分怪身上的位移都是要早于适合”仍含关键术语 ASR 不确定性，且“大部分”的观察性表述未给出适用敌人范围、位移类型或可复现条件，不构成可复用机制定论，违反 G3/G4。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G2",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01 有明确逐字稿支撑，可保留为同帧结算顺序的通用机制命题。c02 候选的引文时间戳错位，且表述为模糊的观察性总结，关键术语存在 ASR 不确定性，不足以作为稳定机制定论，故排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

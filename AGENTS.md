@@ -139,20 +139,20 @@ shenqi/
 
 | 维度 | 实测值 |
 | --- | --- |
-| 甄选知识卡条数（`entries`） | **1388**（`entry_count` 字段 1388） |
-| 来源层 `source_layer` | QQ群聊 797、官方AI字幕 546、云端ASR重转写(无官方字幕分P) 28、官方AI字幕+云端ASR重转写 17 |
-| 来源轨 `track` | qq_chat 789、vod_official 546、vod_cloud 28、mixed_or_unknown 17、qq 8 |
+| 甄选知识卡条数（`entries`） | **2331**（`entry_count` 字段 2331） |
+| 来源层 `source_layer` | 官方AI字幕 1489、QQ群聊 797、云端ASR重转写(无官方字幕分P) 28、官方AI字幕+云端ASR重转写 17 |
+| 来源轨 `track` | vod_official 1489、qq_chat 789、vod_cloud 28、mixed_or_unknown 17、qq 8 |
 | QQ 轨按批次（`origin.card_section`） | QQ扩展(阶段四b4批) 458、QQ扩展(阶段三b3批) 302、QQ扩展(阶段二试批) 29、早期QQ窗口卡(window:*) 8 |
-| `review.status` | agent_verified 1371、user_verified 17 |
-| `evidence_review.status` | supported 1348、inherited_verified 40 |
-| `scope` | universal 590、general_mechanism 590、entity_mechanism 199、instance 8、未标注 1 |
-| 类别 `category` | 204 种（其中 129 种仅 1 条）；前 10：寻路 262、索敌 173、位移 161、帧时序 124、伤害结算 108、帧时序与计时器 77、状态效果 43、干员机制 39、拆包数据 29、其他 28 |
+| `review.status` | agent_verified 2314、user_verified 17 |
+| `evidence_review.status` | supported 2291、inherited_verified 40 |
+| `scope` | universal 1158、general_mechanism 590、entity_mechanism 502、instance 80、未标注 1 |
+| 类别 `category` | 418 种（其中 253 种仅 1 条）；前 10：寻路 307、帧时序 247、位移 243、索敌 238、伤害结算 204、状态效果 105、帧时序与计时器 77、技能特例 42、干员机制 40、拆包数据 29 |
 | 含 `derived_text_repairs` 的条目 | 75 |
 | 隔离（`curation/curated_staging.json`） | 6 |
 | 黑话词表 `glossary.json` | 2100 条（`short_def` 76、`mechanic_def` 50） |
 | 逐字稿 / 清洗字幕 / 原始字幕 | 71 / 71 / 71 个分P文件 |
-| `curated_high_quality.json` sha256（LF） | `a50105a2c3ba3beb61db45fdc5df80b25e4b115b408154328f17306de00310bc` |
-| 同上（CRLF 工作区口径） | `dab7078c3daa0f0dd22a57fc84c6f68c1e2b46dbabf91248c1bfbc151609a8f9` |
+| `curated_high_quality.json` sha256（LF） | `442eb190796742816181d51d3517d7efc8b00a3c9104bdac64cee66ac0442834` |
+| 同上（CRLF 工作区口径） | `cb079878cdde9c2b5c0a66cc814038d5d815c648b69252cc6c9489433dc9ba41` |
 <!-- stats:end -->
 
 甄选层是当前可直接接 RAG 的规则层，使用时必须遵守以下口径，**不得复述为权威或已验证**：

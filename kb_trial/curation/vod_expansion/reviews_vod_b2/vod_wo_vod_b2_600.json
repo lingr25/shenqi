@@ -1,0 +1,56 @@
+{
+  "workorder_id": "vod_wo_vod_b2_600",
+  "stem": "BV1KtHX6nEZS_p3_42575594392",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:16:12+0900",
+  "source_sha256": "bca82393313c01de8cb4e62df2b68e6376ed13f61b5f31f5225da5371db556de",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "早开0.5秒也过关了",
+      "verdict": "reject",
+      "reason": "仅为一次实战过关观察，未说明是哪个干员或技能、相对哪个判定或索敌时点“早开”，也无可复现条件；属于依赖画面与具体对局的实例现象，不构成自包含机制命题（违反 G1/G3/G4）。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "早开操作的容错区间很大",
+      "verdict": "reject",
+      "reason": "“早开操作”未明确具体主体、技能与触发条件，“很大”也不是可复现的区间参数；该句是基于单次凹图结果的主观概括，缺少可复用机制边界（违反 G1/G3/G4）。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "两条候选均来自同一句实战复盘。逐字引文可在 638s 行中精确匹配，但“早开0.5秒也过了/区间很大”是具体对局结果与口语概括，未给出明确技能主体、相对时点和可测区间，不能作为知识库机制定论；全单无 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

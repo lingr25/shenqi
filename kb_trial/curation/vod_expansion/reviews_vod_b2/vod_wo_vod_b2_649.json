@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_649",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:04:38+0900",
+  "source_sha256": "313abb367a73367429a391bc6be5c08195fc5cac8f4df96f007ddf7b7011aaf7",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱的传送效果是将敌人直接传送到炮弹所在的坐标，落点由炮弹的坐标决定，并非按固定距离位移。",
+      "subject": "克莱的传送效果",
+      "condition": "universal",
+      "scope": "entity_mechanism",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "因为克莱的传送是把那个敌人 直接传送到那个炮弹的坐标",
+          "t_start": 6285,
+          "t_end": 6298
+        }
+      ],
+      "reason": "逐字稿明确说明克莱的传送是把敌人直接传送到炮弹的坐标，并强调“注意是传送到炮弹的坐标”，因此落点由炮弹坐标决定；与固定距离位移不同这一点可由强调坐标落点推出。",
+      "limitations": [
+        "逐字稿未给出炮弹坐标与落点判定的完整参数或边界条件。",
+        "未说明该传送对不可通行格或坑位的具体交互细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 有逐字稿直接支撑，主体明确为克莱的传送机制，条件为通用，scope 属于特定干员机制；未发现未定论猜测或画面依赖残句，予以采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

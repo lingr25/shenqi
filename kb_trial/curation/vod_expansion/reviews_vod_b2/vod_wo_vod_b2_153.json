@@ -1,0 +1,76 @@
+{
+  "workorder_id": "vod_wo_vod_b2_153",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:11:26+0900",
+  "source_sha256": "ff825fd79d2804f4fd6378c8071f9d2272af7dcf29e15307504f175720941d8c",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在现行攻击判定逻辑下，我方干员的攻击范围与敌人的受击范围相切、重叠、或略微相邻时，均进入我方干员的攻击判定。",
+      "subject": "我方干员的攻击范围与敌人的受击范围",
+      "condition": "在现行攻击判定逻辑下，二者相切、重叠或略微相邻",
+      "scope": "universal",
+      "category": "受击判定",
+      "evidence": [
+        {
+          "text": "只要我方干员的攻击范围 与敌人的受击范围相切或重 时至今日的话 这个逻辑还要再加一个 就是略微相邻则进入我方干员的攻击判定啊",
+          "t_start": 1946,
+          "t_end": 1962
+        }
+      ],
+      "reason": "上下文明确讨论敌人受击范围与攻击范围的判定关系，主播给出“相切或重”并补充“略微相邻则进入攻击判定”的规则性结论。",
+      "limitations": [
+        "逐字稿写作“相切或重”，此处按上下文补全为“相切或重叠”。",
+        "“略微相邻”的具体距离阈值未交代。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "小兵的受击范围是半径0.1的圆。",
+      "subject": "小兵（敌方小兵单位）",
+      "condition": "该敌方单位属于小兵类型时",
+      "scope": "entity_mechanism",
+      "category": "受击判定/单位参数",
+      "evidence": [
+        {
+          "text": "而小兵的受击范围为0.1半径的圆",
+          "t_start": 2449,
+          "t_end": 2462
+        }
+      ],
+      "reason": "逐字稿直接给出小兵受击范围的半径参数，属于可复用机制参数。",
+      "limitations": [
+        "“小兵”的具体指代范围未在逐字稿中进一步界定。",
+        "未说明该参数是否受版本影响。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单两条候选均有逐字稿直接支撑：c01 为攻击范围与受击范围相切/重叠/略微相邻时进入攻击判定的通用规则，c02 为小兵受击半径0.1的单位参数。未发现同义重复、未闭合猜测或纯实战叙述。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_255",
+  "stem": "BV1L4ez6oEcc_p2_42060876088",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:24:53+0900",
+  "source_sha256": "8ac7bbe73dab12489124707c15c10476709948323d4164fbf4eec2577186bb9e",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "只有当阻挡位被占满时，幕落的攻击才会打不到目标。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G2",
+        "G4"
+      ],
+      "reason": "该命题来自主播对异常现象的未闭合推测，上下文存在“只是猜想”“有可能”“对吧”“我们可以做一点小测试”等表述，尚非可复用机制定论；且首条证据的 t_start=6614 与其所在逐字稿行 6624 不符，未满足逐字引文精确时间戳要求。"
+    }
+  ],
+  "review_note": "本工单唯一候选 c01 涉及幕落/目落开技能与阻挡数占满时打不到羊的现象，但逐字稿仍在猜想与计划实测阶段，未形成经得起推敲的机制结论；证据时间戳亦有错位。裁定全部排除，顶层为 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

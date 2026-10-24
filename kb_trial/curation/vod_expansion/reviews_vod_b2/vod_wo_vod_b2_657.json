@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_657",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:06:50+0900",
+  "source_sha256": "274ce9e244c7540595d59ccb6dfbce0d8bbd6c2757d6f56c03bc4951d0cd45c8",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "丰川祥子二技能生效期间，技能中的鱼以每帧一个的频率生成。",
+      "subject": "丰川祥子二技能中的鱼",
+      "condition": "丰川祥子二技能生效期间",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "看看祥子祥子二技能",
+          "t_start": 6748,
+          "t_end": 6761
+        },
+        {
+          "text": "每帧一个鱼 每帧一个鱼还偷A了",
+          "t_start": 6761,
+          "t_end": 6775
+        }
+      ],
+      "reason": "上下文先提到查看祥子二技能，紧接着描述该技能中鱼的表现并连续说“每帧一个鱼”，可将命题补全为二技能期间鱼按每帧一个的频率生成；该句不是开放疑问。",
+      "limitations": [
+        "逐字稿未给出帧率换算、持续时间或生成上限；命题只陈述逐帧生成频率，不涉及伤害或位移的具体数值。",
+        "“还偷A了”未纳入本命题。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 的引文可在逐字稿中字符级匹配，主体与条件可由相邻上下文补全；该命题属于祥子二技能的特定机制，保留。但证据仅为口语观察，后续可补充实机帧率与生成上限。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

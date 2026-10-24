@@ -1,0 +1,37 @@
+{
+  "workorder_id": "vod_wo_vod_b2_660",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:06:57+0900",
+  "source_sha256": "abe1fafcd5b34f47c57ab7a55512127bf6689c6de7456adf247806614d3f05bf",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "克莱蒙莎的模组输出提升幅度取20%时，DPS可达破万。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ],
+      "reason": "引文可在逐字稿 [6960s] 行内字符级匹配，主体与20%条件也能构成自包含陈述；但主播紧接着说“20%难说”，并用“得有吧/那DPS来说就破万啊”作口算式推测，属于未验证假说。20%究竟是输出提升还是概率提升、破万基于何种基线DPS与模组参数均未闭合，不满足Gate 4，不能作为可复用定论。"
+    }
+  ],
+  "review_note": "本工单仅一个候选，因核心的20%提升与破万DPS均为当场未定论推测，整体判reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

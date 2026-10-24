@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b1_029",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:21:28+0900",
+  "source_sha256": "afe5f9897164234adf5963c985800d56199560f0dfa3eda291044b4c7369487d",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "维亚关卡中，有碎角时，从上到下编号依次为3、2、1的怪出生帧依次为0、2、4帧。",
+      "subject": "维亚关卡中从上到下编号依次为3、2、1的怪",
+      "condition": "有碎角",
+      "scope": "instance",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "所以他们从上到下的话 编号是321 然后出生帧在有碎角时是024",
+          "t_start": 2464,
+          "t_end": 2481
+        }
+      ],
+      "reason": "主播在勘误后明确给出：从上到下编号321对应有碎角时出生帧024，且上下文是在维亚关卡兵团中讨论同帧乱序。",
+      "limitations": [
+        "仅适用于主播所举的维亚关卡该兵团/有碎角情形；主播后续说明更复杂兵团需查源码，未验证其他关卡。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "维亚关卡中，无碎角且编号顺序对应时间为0123时，从上到下编号依次为3、2、1的怪出生帧依次为1、0、3帧。",
+      "subject": "维亚关卡中从上到下编号依次为3、2、1的怪",
+      "condition": "无碎角且编号顺序对应时间为0123",
+      "scope": "instance",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "然后的话如果换一下是这个出生呃 这个出编号顺序对应的时间是0123 然后的话321分别对应着103 所以在无碎角的情况下",
+          "t_start": 2481,
+          "t_end": 2499
+        },
+        {
+          "text": "他是103出生 这样的逻辑",
+          "t_start": 2499,
+          "t_end": 2515
+        }
+      ],
+      "reason": "主播在无碎角示例中明确给出：若编号顺序对应时间为0123，则编号321分别对应出生帧103。",
+      "limitations": [
+        "仅适用于主播所举的无碎角且编号顺序对应时间为0123的简例；该映射是否随兵团总数量、牌子和路线占用变化未展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均为维亚关卡特定兵团实例，经主播中途勘误后明确了有/无碎角下的编号-出生帧映射；逐字稿有直接引文支撑，未涉及未定论猜测，故均保留为 instance 级机制观察。更复杂兵团需源码或后续验证，已在 limitations 标注。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

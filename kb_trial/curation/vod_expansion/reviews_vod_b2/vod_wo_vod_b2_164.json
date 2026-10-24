@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_164",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:22:32+0900",
+  "source_sha256": "ced7b29ccead805c2c552e61cac32a5a026da8f58d838f92d11b43aa6857e5d1",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "关卡中由单位/机制召唤出来的衍生敌方单位直接生成，与关卡波次（wave）出怪逻辑无关，不会占用出怪帧或导致后续常规敌方单位出怪延迟。",
+      "subject": "召唤类出怪机制",
+      "condition": "单位或机制在关卡中触发召唤生成敌人",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "召唤类的没有影响",
+          "t_start": 3025,
+          "t_end": 3029
+        },
+        {
+          "text": "召唤是直接就拉出来一条 他和这个出怪逻辑没有关系",
+          "t_start": 3043,
+          "t_end": 3055
+        }
+      ],
+      "reason": "主播明确总结并结合宝箱、涤墨等案例论证了召唤机制与波次出怪逻辑解耦，不占出怪帧，结论清晰自包含。",
+      "limitations": [
+        "需要区分作为装置原本在关卡波次配置中直接刷新的情况（会占帧），打醒后触发的召唤才属于不影响出怪帧的召唤机制"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "关卡波次（wave）中的额外出怪机制（以特定条件解锁/释放波次）会占用出怪帧，导致后续敌方单位出怪时间延后。",
+      "subject": "波次额外出怪机制",
+      "condition": "关卡波次内存在以特定条件解锁或释放的额外出怪配置",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "召唤类的没有影响 额外出怪是有影响的 额外出怪更倾向于在这个wave里面选择波次 或者说以什么条件解锁 释放不释放",
+          "t_start": 3029,
+          "t_end": 3043
+        }
+      ],
+      "reason": "上下文通过对比召唤类机制，明确指出了额外出怪属于关卡wave内的波次逻辑，会对后续出怪帧产生延迟影响。",
+      "limitations": [
+        "逐字稿未详细给出每种额外出怪类型具体延后的确切帧数"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单讨论了关卡底层出怪帧时序规则中『召唤类出怪』与『波次额外出怪』的区别。两项命题对比鲜明、逻辑闭合，均有逐字稿中确凿的论证支撑，改写为自包含陈述后予以保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

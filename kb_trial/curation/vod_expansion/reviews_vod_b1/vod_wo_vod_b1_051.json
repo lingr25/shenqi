@@ -1,0 +1,58 @@
+{
+  "workorder_id": "vod_wo_vod_b1_051",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:27:32+0900",
+  "source_sha256": "336779b65ac73af050eea5f5afcff8a14b237eee6e71c907d529116edb20e801",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "对无出生状态机的常规敌方单位，若将其出生帧记为第0帧，则第0~1帧不移动，第1~2帧产生第1个移动帧次；因此到达指定格子（如进门）的帧数等于出生帧加所需移动帧次再加1帧（例如出生帧为0且需移动100帧次时，到达帧为第101帧）。",
+      "subject": "无出生状态机的常规敌方单位的移动帧时序",
+      "condition": "出生帧记为第0帧，且该敌人无额外出生状态机",
+      "scope": "universal",
+      "category": "位移/帧时序",
+      "evidence": [
+        {
+          "text": "所以就是怪的这个移动就直接从零 假设说移动五帧 那么就是到六零帧出生 六帧的话就是移动五帧次 因为0~1是不移动的",
+          "t_start": 3707,
+          "t_end": 3721
+        },
+        {
+          "text": "1~2是移动一帧次的 所以0~6的话就是移动五帧次的 所以我要算他就是走到哪里 进门之类的时间的话",
+          "t_start": 3721,
+          "t_end": 3731
+        },
+        {
+          "text": "就需要那个比如说走到这里需要移动 假设说100帧次吧 那么我就会算他出生的时候是零 然后再加上101是会到这个格子",
+          "t_start": 3731,
+          "t_end": 3745
+        }
+      ],
+      "reason": "逐字稿明确说明0~1不移动、1~2为第一个移动帧次，并给出0~6移动五帧次以及需移动100帧次时从出生帧0加上101到达格子的推算，支持该帧时序公式。",
+      "limitations": [
+        "仅讨论无出生状态机的常规敌人；逐字稿后文提到极少数有出生状态机的单位会原地不动，不适用此推算。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选c01有逐字稿明确支撑，属于可复用的敌方移动帧时序推算；已补全自包含表述与出生状态机例外条件后采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

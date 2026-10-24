@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_568",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:10:17+0900",
+  "source_sha256": "945dff3768bd630a839b21d3fa7e9dbd6967de642ff6e21b4867a580f954d4a1",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "PRTS标注的攻击动画帧数是一个规定值；在实际运行过程中，还存在放大、加速、减慢等倍率修正。",
+      "subject": "PRTS标注的攻击动画帧数",
+      "condition": "实际运行过程中",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "就是它那里的帧数是一个规定值 这个规定值在实际运行过程中还可以有放大呃 加速 然后减慢的倍数",
+          "t_start": 3898,
+          "t_end": 3913
+        }
+      ],
+      "reason": "上下文连续说明PRTS所列帧数是规定值，实际运行会叠加加速、减慢等倍率修正，属于明确结论。",
+      "limitations": [
+        "未给出倍率来源、叠加公式及具体数值；“放大”的精确语义仍需结合后续实机或解包验证。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "PRTS标注的播放帧数以30帧作为标准时间单位来规定，且大体上按逻辑帧而非动画帧度量。",
+      "subject": "PRTS标注的播放帧数",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "他给你标注的是以30帧这样的标准时间单位 规定的播放帧数",
+          "t_start": 3913,
+          "t_end": 3922
+        },
+        {
+          "text": "你可以认为它大体上来讲是以逻辑帧度量的 而不是以动画帧度量的",
+          "t_start": 3922,
+          "t_end": 3931
+        }
+      ],
+      "reason": "主播明确说明PRTS标注以30帧标准时间单位规定播放帧数，并称其大体按逻辑帧而非动画帧度量，两段引文完整支撑该结论。",
+      "limitations": [
+        "未展开30帧标准单位与逻辑帧、动画帧之间的换算细节；“大体上”表明该表述存在近似性。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均来自PRTS帧数答疑段落，引文逐字可对齐，主体、条件、范围明确，且无未闭合猜想；c01说明标注值为规定值且运行时会受倍率修正，c02说明标注以30帧标准单位且大体按逻辑帧度量，均予保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

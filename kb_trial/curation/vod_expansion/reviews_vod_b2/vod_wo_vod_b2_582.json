@@ -1,0 +1,64 @@
+{
+  "workorder_id": "vod_wo_vod_b2_582",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:13:07+0900",
+  "source_sha256": "bf53ce77338876e20318e56544a62ebd0ffedbfa690bd5ba1ba8f4c9cceef296",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在使用可露希尔且需要其扣费的回费计数中，若计数过帧（过时间），补救方法为先等待一秒，再等到两个计数都显示九。",
+      "subject": "可露希尔扣费导致的回费计数",
+      "condition": "使用可露希尔且需要其扣费时，回费计数过帧（过时间）",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "主要是可露希尔啊 主要是可露希尔 你一旦任何图啊 任何图只要你用到可露希尔",
+          "t_start": 6468,
+          "t_end": 6480
+        },
+        {
+          "text": "且需要他的那个扣费的话 那么这个图的回费一定会变得又臭又恶心",
+          "t_start": 6480,
+          "t_end": 6489
+        },
+        {
+          "text": "过时间的话 等一秒",
+          "t_start": 6549,
+          "t_end": 6555
+        },
+        {
+          "text": "我只要再等这两个都是九就可以了",
+          "t_start": 6569,
+          "t_end": 6579
+        }
+      ],
+      "reason": "上下文先说明可露希尔扣费会使回费计时变得复杂；随后主播以“过时间了”为例，给出过帧后的补救操作：等一秒，再等到两个计数都显示九。该句为教学性结论，不是猜测。",
+      "limitations": [
+        "逐字稿未明确“两个计数”具体对应哪两个显示位，需结合原教学画面或人工听审确认。",
+        "“等一秒”为口语近似，未给出精确帧数；该补救法是否能推广到其他计时体系，窗口内未说明。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 的逐字引文可在窗口原文中逐条对齐；命题可改写为可露希尔扣费导致回费计数过帧后的计时补救操作，属于特定干员/装置机制分支下的帧时序结论。需在知识库中保留“两个计数”指代需结合教学画面确认的边界说明。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

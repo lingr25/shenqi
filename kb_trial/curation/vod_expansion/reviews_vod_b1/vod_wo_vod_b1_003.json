@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b1_003",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T21:12:14+0900",
+  "source_sha256": "267ef6778936b71c04c66b9a085981bcda38079d20b0386b9efea4230d32baa1",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "出怪帧定义为出影子出现的帧；统计时以出影子出现的帧为零帧。",
+      "subject": "出怪帧的定义/统计基准",
+      "condition": "严格统计出怪帧数据时",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "然后的话如果更严格的统计过这种数据 我们以出影子的帧为零 出影子的真为出怪帧啊",
+          "t_start": 672,
+          "t_end": 686
+        },
+        {
+          "text": "所以这一帧的话我们就定义为出怪帧",
+          "t_start": 697,
+          "t_end": 701
+        }
+      ],
+      "reason": "上下文在讨论出怪帧的统计口径，主播明确把出影子出现的帧记为零帧，并称该帧为出怪帧；后续句再次确认该定义。",
+      "limitations": [
+        "逐字稿中“出影子的真”应为 ASR 对“帧”的误写；未展开不同地图或波次下的边界情况。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "在出影子出现的帧（出怪帧），类似崖心二技能等必须锁定目标才能开启的技能已经可以开启。",
+      "subject": "必须锁定目标才能开启的技能（如崖心二技能等）",
+      "condition": "单位出影子出现的帧（出怪帧）",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "因为那个时候的话类似崖心二技能 割地三技能呃 践行者二技能这种必须锁定目标才能开的技能 就已经可以开了",
+          "t_start": 686,
+          "t_end": 697
+        }
+      ],
+      "reason": "该句被主播用作把出影子帧定义为出怪帧的理由，说明该帧已满足目标锁定类技能的索敌条件。",
+      "limitations": [
+        "逐字稿中另外两个技能名可能存在 ASR 误差，本命题只保留可确认的崖心二技能作为示例；未列出所有受影响的锁定类技能。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均通过四闸门。c01 给出出怪帧统计基准；c02 给出该基准下锁定类技能已可索敌的机制表现。c02 中部分技能名 ASR 不清，已在命题中降为可确认示例，不影响核心结论。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

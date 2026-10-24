@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_159",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:12:54+0900",
+  "source_sha256": "89dee6e2bba1759b712b26b5491b672a875ba33b9553a2200d1202aff6b25078",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "chap 类单位（例如各类地图机关）的阻挡半径并非固定，可以调整；箱子属于阻挡半径较小的例子。",
+      "subject": "chap 类单位（例如各类地图机关）的阻挡半径",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "对于chap类单位 例如各类地图机关 他们的阻挡半径是可以调整的 比如箱子的阻挡半径小",
+          "t_start": 2479,
+          "t_end": 2489
+        }
+      ],
+      "reason": "逐字稿中主播明确给出结论：地图机关等 chap 类单位的阻挡半径可调整，并以箱子作为阻挡半径较小的例子；该陈述不依赖画面指代，未附加猜测条件。",
+      "limitations": [
+        "未给出具体阻挡半径数值、可调范围或调整方式。",
+        "“chap类单位”为逐字稿原词，疑似术语或 ASR 转写差异，需结合原视频画面/来源确认规范名称。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 在逐字稿中有明确机制陈述与字符级可对齐引文，主体、条件与作用域可确定为通用寻路规则；无猜测或未闭合疑问，故 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

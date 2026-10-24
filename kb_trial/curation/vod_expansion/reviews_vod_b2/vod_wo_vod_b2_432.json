@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_432",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T23:12:02+0900",
+  "source_sha256": "ff7e074806583fe041bc58c99d1d06dfdac9365d436bcfc5a5d53bc67c31fdd2",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "在物理伤减少防御效果为24点的情况下，减防/物理伤害窗口的起始数值为14.23，经过8A之后时长为9.6秒。",
+      "verdict": "reject",
+      "reason": "引文虽可与逐字稿 [2072s] 行字符级对齐，但命题仅罗列「14.23」「8A」「9.6秒」「24点」等含义不明的数值与时间片段；「减防/物理伤害窗口」「起始数值」在逐字稿中没有可独立理解的定义，「8A」也无法从文本确定其机制含义。该候选缺少明确主体、成立条件与可复用机制表述，无法在不依赖视频画面的情况下改写为自包含命题。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "本工单仅有一个候选 c01。其逐字引文匹配，但内容为数值/时间推算残片，窗口定义、单位、主体及「8A」含义均不明确，不能形成可复用机制定论；按宁缺毋滥原则判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

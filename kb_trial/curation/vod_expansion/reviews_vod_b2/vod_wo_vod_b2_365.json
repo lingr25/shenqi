@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_365",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:57:47+0900",
+  "source_sha256": "d3cc3a237b7b68ad607b154d4daa02ae7f5ea85489bef7fdd941060826025b3e",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "关卡中预设的地图物件（如树木）不包含在出怪波次流程中，而是直接配置于地图中开局即存在，因此不会占用出怪时序逐帧生成。",
+      "subject": "地图预设物件（如树木）",
+      "condition": "物件直接配置于地图预设而非出怪波次设计中",
+      "scope": "universal",
+      "category": "出怪流程",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "比如说这一堆的数 这一堆的树 你慢慢瞅的话 就不会发现他们有什么 那个就是一个一个往外蹦的现象 因为什么",
+          "t_start": 1824,
+          "t_end": 1840
+        },
+        {
+          "text": "因为他从一开始的时候就不在 这个不在出怪流程之中 他只是直接安排到图 一开始就带着",
+          "t_start": 1840,
+          "t_end": 1852
+        }
+      ],
+      "reason": "主播通过对照讲解出怪波次生成的箱子与地图直摆物件（树）的区别，明确指出了直接安排在地图上的物件不走出怪流程、开局即在且不会逐帧生成，属于关卡底层生成机制规则。",
+      "limitations": [
+        "仅适用于地图预设固定物件，通过出怪波次生成的装置与宝箱仍会占用出怪流程与帧时序"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单候选命题论述清晰且有确切的底层关卡设计逻辑支撑（对比了一帧出怪生成的箱子与开局直接存在的地图树木），逐字稿证据充分，通过四项硬性闸门。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

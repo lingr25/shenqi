@@ -1,0 +1,74 @@
+{
+  "workorder_id": "vod_wo_vod_b2_296",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:34:19+0900",
+  "source_sha256": "c8c91eed61632ff418ad53a0b1155add277300743b4502484536b37511f71fa4",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在集成战略等玩法中，同乘区的攻击力加成在藏品数量增多时会发生加算稀释；局外攻击加成区间与局内攻击加成区间内部各自均会发生稀释。",
+      "subject": "藏品攻击力加成结算",
+      "condition": "同一乘区内部多个加成叠加时",
+      "scope": "universal",
+      "category": "属性结算",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "往往是那个当你藏品越多的时候 就是他们自己相互之间稀释 虽然我们一般说啊局外比局内不容易稀释 但是实际上局内局外都会稀释的",
+          "t_start": 2539,
+          "t_end": 2553
+        }
+      ],
+      "reason": "主播准确指出了加算区间内的边际稀释效应，且纠正了'局外不稀释'的误区，局外与局内同区内叠加均受加算稀释影响，属于经得起推敲的基础属性结算规律。",
+      "limitations": [
+        "未包含跨乘区乘算带来的总收益提升，仅讨论同一加成属性在单一区间内的累加稀释。"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "claim": "当干员总攻击力百分比加成数值固定时，由于局外加成与局内加成相互之间呈乘算关系，将加成分散至局外与局内两个区间比单一全部分配到某一区间能获得更高的最终乘积（例如加成各分100%可达4倍，而单区间加成200%仅为3倍）。",
+      "subject": "干员攻击力区间分配与乘算结算",
+      "condition": "攻击力加成分属局外乘区与局内乘区",
+      "scope": "universal",
+      "category": "属性结算",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "实际上并不是说全分到局外或者全分到局内 就是最就更好 因为全分到局外的话就三倍 全分到局内的话也是三倍 各分一半的话就是四倍啊",
+          "t_start": 2563,
+          "t_end": 2574
+        }
+      ],
+      "reason": "明确指出了明日方舟中局外加成区间与局内加成区间属于不同乘区并按乘法结算的核心机制，通过具体算数示例阐明了多乘区分散投资的数学与机制原理。",
+      "limitations": [
+        "实际对局中干员技能通常自带极高的局内加成，导致局外加成的实际边际价值通常更显著。"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单涉及的两个候选命题分别解释了单区间内部加算稀释与多区间跨乘区乘算收益的结算本质，证据均严密对应逐字稿连续行，改写后自包含性与三元约束完备，均予以通过。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

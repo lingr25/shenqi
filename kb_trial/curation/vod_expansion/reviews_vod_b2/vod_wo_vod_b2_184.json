@@ -1,0 +1,70 @@
+{
+  "workorder_id": "vod_wo_vod_b2_184",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:25:14+0900",
+  "source_sha256": "e4af1f920a876015e62d8cfe928260aba9045fd82fe5c0957647bcb4ff686598",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "箱子占据的地块本身是可通行地块；用箱子封死路径后，寻路系统并不是真的寻路不连通。",
+      "subject": "箱子地块与寻路系统",
+      "condition": "用箱子封死路径时",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "它的一个距离限制 寻路寻蓝门的距离限制 那个箱子是可通行地块",
+          "t_start": 1770,
+          "t_end": 1782
+        },
+        {
+          "text": "它并不是真的寻路不连通 这一点要注意",
+          "t_start": 1782,
+          "t_end": 1793
+        }
+      ],
+      "reason": "主播明确纠正了“封路导致寻路真正不连通”的理解：箱子所在格仍是可通行地块，所谓封死并非真的断开寻路。该结论属于对寻路机制的勘误与澄清，有逐字稿直接支撑。",
+      "limitations": [
+        "逐字稿未给出距离限制的具体数值或阈值",
+        "未说明适用于哪些具体敌人或地图"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "在 DS1 中用箱子封死下半部分的寻路后，召唤类敌人无法找到通往蓝门的路径。",
+      "verdict": "reject",
+      "reason": "主播使用“应该就是这个同机制”作未定论推测，且后续 c02 明确纠正为并非真正寻路不连通；该候选属于未闭合假说，不能作为机制定论保留。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c02 是对封路与寻路连通性理解的明确勘误，应保留；c01 属于未定论推测，应排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

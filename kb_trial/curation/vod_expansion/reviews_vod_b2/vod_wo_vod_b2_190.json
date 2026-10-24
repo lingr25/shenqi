@@ -1,0 +1,69 @@
+{
+  "workorder_id": "vod_wo_vod_b2_190",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:53:19+0900",
+  "source_sha256": "26f70461e123c58ee5e7e6b2b49281f338d4d4be976232bd27114faa1886617e",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "同帧部署多个干员时，先部署的干员不再被敌方普通仇恨优先锁定，后部署的干员仇恨值更高（仇恨加1）。",
+      "subject": "同帧部署的干员",
+      "condition": "同帧部署且敌方使用常规最后部署仇恨规则",
+      "scope": "universal",
+      "category": "索敌/仇恨",
+      "evidence": [
+        {
+          "text": "这一部分我们姑且可以命名为整数部分 同帧部署两个干员先部署的会被优先锁吗 现在不会了呀 因为现在角色类是同帧部署时后使的",
+          "t_start": 1963,
+          "t_end": 1977
+        },
+        {
+          "text": "同帧部署的时候仇恨多疑了",
+          "t_start": 1977,
+          "t_end": 1982
+        }
+      ],
+      "reason": "主播明确辟谣并解释了当前底层机制：同帧部署时不再是先部署的优先被锁定，而是后部署的干员仇恨增加（ASR'多疑了'即'多1了'），后部署者被优先锁定。",
+      "limitations": [
+        "仅适用于基于部署时间的通用仇恨规则（如4号仇恨过滤器），特殊索敌逻辑（如优先最低血量）除外"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "同帧部署时后部署的干员仇恨多一",
+      "verdict": "reject",
+      "failed_gates": [
+        "DUP"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "reason": "与 c01 讨论的是同一机制事实（同帧部署后部署干员仇恨增加导致锁定顺序改变），已合并至 c01 进行完整陈述。"
+    }
+  ],
+  "review_note": "c01 与 c02 共同构成了对同帧部署锁定规则的完整阐释。c01否定了旧的先部署优先锁定现象，c02（ASR中'多疑了'为'多1了'的错音）补充了后部署仇恨增加的机制细节，合并保留为一条高质量自包含命题。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

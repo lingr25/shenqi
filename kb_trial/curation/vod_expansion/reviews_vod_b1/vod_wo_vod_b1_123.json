@@ -1,0 +1,64 @@
+{
+  "workorder_id": "vod_wo_vod_b1_123",
+  "stem": "BV1cmaa6VEPR_p2_42252239801",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:12:48+0900",
+  "source_sha256": "02dd094de656582bef07592cb90ebfd6b38a9e82fe571cc5030a4da8242941ed",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "隐形敌刺的擦地判定依据地块的可通行属性，而不是地块属于地面或高台；坑因具备可通行属性会被擦，不能用「坑算地面所以会被擦」来解释。",
+      "subject": "隐形敌刺的擦地判定",
+      "condition": "隐形敌刺进行擦地判定时；地块是否可通行",
+      "scope": "entity_mechanism",
+      "category": "索敌/判定条件",
+      "evidence": [
+        {
+          "text": "隐形敌刺擦的是地面可通行属性",
+          "t_start": 68,
+          "t_end": 85
+        },
+        {
+          "text": "而不是高台和地面",
+          "t_start": 85,
+          "t_end": 92
+        },
+        {
+          "text": "地面可通型和高低地是两种东西",
+          "t_start": 92,
+          "t_end": 98
+        },
+        {
+          "text": "坑被擦是因为坑是可通行",
+          "t_start": 107,
+          "t_end": 112
+        }
+      ],
+      "reason": "主播先纠正误解，明确隐形敌刺擦地看的是地面可通行属性而非高台/地面分类；随后直接给出坑被擦的原因是坑可通行，足以支撑「坑算地面」不是原因。",
+      "limitations": [
+        "围栏反例在逐字稿中主要以反问形式出现，未逐项确认哪些围栏/地块不被擦，故不纳入核心结论。",
+        "未交代该判定是否推广到其他擦地/索敌类敌人。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选经改写为自包含机制命题后成立：核心结论由主播明确纠正与逐字稿原句支撑；围栏部分因仅以反问出现且参数不闭合，未写入核心 claim。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

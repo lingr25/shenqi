@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_474",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:33:41+0900",
+  "source_sha256": "282ba8f66df701017c6a6624190deb7901d839153c302d1bc0554f2128a7ff2a",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "克莱门沙侵蚀损伤爆条后普攻暴击/未暴击伤害数值为2776/2410",
+      "verdict": "reject",
+      "reason": "仅记录特定实战中的伤害数值，未给出敌人防御、关卡、增益、目标等可复现条件；爆条状态不足以推出固定伤害值，属于缺乏可复现条件的一次性实战观察（Gate4）。且上游引文将多行逐字稿拼接为单条，违反逐字引文对齐（Gate2）。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G2",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "克莱门沙第一天赋暴击率在侵蚀损伤爆条后看起来提高但幅度有限",
+      "verdict": "reject",
+      "reason": "“看起来高了不少”“也就那么点”属主观、未量化的实战观察，未给出暴击率参数、样本量或可复现条件，不能构成机制定论（Gate4）。候选证据结束时间也与下一行时间戳不精确对齐（Gate2）。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G2",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "两个候选均为实测过程中的数值/概率观察。c01虽给出具体伤害数字，但缺少可复现实验条件且上游引文跨行拼接；c02为主观模糊描述且未量化。按硬性闸门均不能作为可复用机制命题保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

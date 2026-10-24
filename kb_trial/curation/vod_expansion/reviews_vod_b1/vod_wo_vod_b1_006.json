@@ -1,0 +1,74 @@
+{
+  "workorder_id": "vod_wo_vod_b1_006",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T21:13:09+0900",
+  "source_sha256": "0fb1f57d9dea61abf158de5a105d9e45ec259c5c7a6a9967aecdb2d91fdcb7f6",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "兵团内各小队的 PDELAY/preDelay 类计时均以兵团开始执行的时刻为基准，而不是以上一小队出完的时刻为基准；小队之间不是串行衔接出怪。",
+      "subject": "兵团内各小队的 PDELAY/preDelay 类计时",
+      "condition": "兵团开始执行时",
+      "scope": "universal",
+      "category": "关卡出怪",
+      "evidence": [
+        {
+          "text": "所有的这个小队的pd类计时 指的都是从这个兵团开始执行的时候的时间 而不是上一波波完成的时间",
+          "t_start": 994,
+          "t_end": 1009
+        }
+      ],
+      "reason": "逐字稿在讨论兵团内小队计时基准时明确说明所有小队的 pd 类计时以兵团开始执行时间为基准，而非上一波完成时间；前一行也补充不是上一个小队出完下一小队出，支撑非串行结论。",
+      "limitations": [
+        "逐字稿将 preDelay 描述为“pd类计时”，本回执按上下文规范化为 PDELAY/preDelay。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "兵团内小队参数 count 表示该小队的出怪数量，interval 表示出怪的时间间隔。",
+      "subject": "兵团内小队参数 count 与 interval",
+      "condition": "解析/执行兵团内小队参数时",
+      "scope": "universal",
+      "category": "关卡出怪",
+      "evidence": [
+        {
+          "text": "这里的话它会有一个count和一个interview interview指的是那个出怪的间隔 count指的是出怪的数量",
+          "t_start": 942,
+          "t_end": 950
+        }
+      ],
+      "reason": "逐字稿直接解释兵团内小队参数：interview（按上下文为 interval）指出怪间隔，count 指出怪数量。",
+      "limitations": [
+        "逐字稿 ASR 将 interval 写作 interview；未给出具体参数数值，仅确认语义。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均围绕 JSON 出怪结构中的可复用机制，逐字稿有直接陈述支撑。上游 evidence 的秒数起点/终点有轻微偏差，本回执按逐字稿行校正：c01 取 994s 行，c02 取 942s 行且 t_end 取下一行 950s。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

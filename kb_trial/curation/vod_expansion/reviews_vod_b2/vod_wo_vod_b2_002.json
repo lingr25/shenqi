@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_002",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:15:02+0900",
+  "source_sha256": "061431a3ba30e1bca62777d4b94953d8fc434f271d105d75de0faba9fb566830",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "杰哥需要第4次平A才能击破，且第1次和第3次平A均无法击破杰哥。",
+      "verdict": "reject",
+      "reason": "该候选仅记录某次实战中对“杰哥”的平A次数结论，未交代攻击方、关卡、属性、技能、敌方数值等可复现参数；“杰哥”为昵称，无法构成自包含的规范机制主体。逐字稿中虽可对齐“第1A打出来也过不了杰哥 第3A打出来也过不了 需要第4A”，但这属于一次性实战观察，不具备可复用规则价值，不满足 Gate 1、Gate 3、Gate 4。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单唯一候选 c01 仅为主播在某局实战中的平A次数结论，缺少攻击方、关卡、属性与可复现条件，无法作为知识库可复用机制命题保留；引文文本可与逐字稿对齐，但硬性闸门未过，裁定为 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

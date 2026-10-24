@@ -1,0 +1,80 @@
+{
+  "workorder_id": "vod_wo_vod_b2_643",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:04:23+0900",
+  "source_sha256": "4b21e3e283b29165ec74c15a29a65caa24603d1cfd0f492a1a2d44df85d437ad",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "火神二技能整套释放期间的总段数为24刀，不是25刀；按“9下不触发天赋、16下触发天赋”进行分段是不正确的。",
+      "subject": "火神二技能",
+      "condition": "火神二技能整套释放期间",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "九下不触发天赋的和16下触发天赋的 这个段数肯定就不对啊 应该是24下 不是25下试一把",
+          "t_start": 5764,
+          "t_end": 5778
+        }
+      ],
+      "reason": "逐字稿明确否定“9下不触发天赋、16下触发天赋”的分段，并直接给出应为24下、不是25下；可作为火神二技能总段数的勘误结论。",
+      "limitations": [
+        "逐字稿未说明技能等级、天赋触发概率及内置CD的具体参数。",
+        "“24刀”按命中段数理解，不等同于总伤数值。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "火神二技能实际总段数为24刀，不存在第25刀。",
+      "verdict": "reject",
+      "reason": "与 c01 重复；c01 已包含“24刀而非25刀”的勘误结论且表述更完整。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "DUP"
+      ]
+    },
+    {
+      "local_id": "c03",
+      "topic": "用14.5除以0.6即可算出火神二技能的总段数为24刀。",
+      "verdict": "reject",
+      "reason": "与 c01 重复；该算式只是同一“总段数为24刀”结论的推导证据，未形成独立命题。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "DUP"
+      ]
+    }
+  ],
+  "review_note": "本单核心机制结论为火神二技能总段数应为24刀而非25刀。c01 有逐字稿直接支撑，保留并改写为自包含陈述；c02、c03 与 c01 属于同一结论的不同表述/推导，按重复项排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

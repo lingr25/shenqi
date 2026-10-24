@@ -1,0 +1,90 @@
+{
+  "workorder_id": "vod_wo_vod_b2_402",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:08:06+0900",
+  "source_sha256": "cba3e55059eb039ca029c8801de7f98858f646c60fd027debb0c24eaf62e0b65",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "放逐舱移动数格后消失并留下漩涡。",
+      "subject": "放逐舱",
+      "condition": "放逐舱完成数格移动后",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "放逐仓在移动数格后消失并留下漩涡",
+          "t_start": 3703,
+          "t_end": 3710
+        }
+      ],
+      "reason": "逐字稿明确说明放逐舱移动数格后消失并留下漩涡；主体与条件清楚，属于该装置的固有机制。",
+      "limitations": [
+        "“数格”具体格数未在逐字稿中给出。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "漩涡中的所有敌人速度下降，并且每秒受到侵蚀损伤和物理伤害。",
+      "subject": "漩涡",
+      "condition": "敌人处于漩涡范围内",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "漩涡中所有敌人速度下降 每秒受到一定的侵蚀 损伤和物理伤害",
+          "t_start": 3710,
+          "t_end": 3735
+        }
+      ],
+      "reason": "逐字稿直接给出漩涡的范围效果：减速，以及每秒造成侵蚀损伤与物理伤害；主体、条件、范围效果明确。",
+      "limitations": [
+        "减速幅度与每秒伤害/损伤的具体倍率未在逐字稿中给出。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c03",
+      "topic": "漩涡的伤害构成为2.5倍物理伤害与0.2倍侵蚀损伤",
+      "verdict": "reject",
+      "reason": "虽然 [3564s] 有“2.5倍物理0.2倍的损伤”的逐字句，但紧接着 [3579s] 主播提出“诶不对 我是不是写反了普攻2.5倍的”，对2.5倍物理伤害的归属产生开放式疑问，讨论未闭合；无法确认2.5倍物理伤害属于漩涡而非普攻，触犯 Gate 4。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01、c02有逐字稿直接支撑且自包含，保留；c03的倍率归属被随后的反问和“普攻2.5倍”修正疑云覆盖，不能作为定论。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_670",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:08:22+0900",
+  "source_sha256": "863e7b23b79831385114d579b7cd65049250ae1a822a998ec7890e373d678ed0",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "被阻挡的敌人位于格子正中心时，阻挡不会使该敌人发生位移。",
+      "subject": "被阻挡的敌人",
+      "condition": "阻挡发生时且敌人位于格子正中心",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "挡到他怎么没有位移啊 他在格子正中心当然不会位移了呀 抽象坐标修得正正的",
+          "t_start": 848,
+          "t_end": 863
+        }
+      ],
+      "reason": "上下文正在测试阻挡后的敌人位移表现，主播观察到敌人未发生位移，并明确解释原因是敌人处于格子正中心、坐标被修正得完全对齐。该结论可整理为阻挡位移在格子中心坐标条件下的通用机制边界。",
+      "limitations": [
+        "仅为当场口头说明，未给出具体坐标数值、帧数或不同非中心位置的对照测试。",
+        "未说明特殊位移抗性、阻挡者类型或敌人体型是否会影响该结论。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 通过四大闸门。引文与 848s 逐字稿原文连续子串一致；命题可自包含地表述为阻挡位移在格子正中心条件下的机制结论，主体、条件与 scope 均明确。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

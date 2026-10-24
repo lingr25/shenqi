@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b1_087",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:50:26+0900",
+  "source_sha256": "6fcc5f44a9eb4fe4cc448446d116ccfe82bcf84c73611b1cd015ae6feadcf5a0",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "地块类型是地块的一项属性，用于描述该地块是否为红门、蓝门或围墙等具体地块类型。",
+      "subject": "地块类型（地块属性）",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "地块数据",
+      "evidence": [
+        {
+          "text": "最后一个属性 地块类型 地块类型指的是某地块是红蓝门围墙",
+          "t_start": 5653,
+          "t_end": 5661
+        }
+      ],
+      "reason": "上下文明确在讲地块的最后一个属性为地块类型，并直接说明地块类型指某地块是红蓝门、围墙；属于通用地块数据定义，有逐字稿直接支撑。",
+      "limitations": [
+        "该表述只给出红蓝门、围墙等示例，未穷举所有地块类型。",
+        "具体 tile key 的完整取值与判定细节未被逐字稿完整列出。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选为讲席式定义，逐字稿可直接支撑地块类型是地块属性并用于识别红蓝门、围墙等地块类型，未发现未闭合猜想或画面依赖，裁定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

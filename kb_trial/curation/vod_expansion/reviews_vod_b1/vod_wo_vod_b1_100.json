@@ -1,0 +1,93 @@
+{
+  "workorder_id": "vod_wo_vod_b1_100",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:54:05+0900",
+  "source_sha256": "daf0488eed069e1720644985be411a69a0670db37bede5ce1d9e2ee2d1d4170e",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在关卡 JSON 中，只有属于出生控制、并且能参与兵团内部排序的内容，才会影响出怪帧。",
+      "subject": "关卡 JSON 中属于出生控制且能参与兵团内部排序的内容",
+      "condition": "内容属于出生控制且能参与兵团内部排序",
+      "scope": "universal",
+      "category": "帧时序/出怪",
+      "evidence": [
+        {
+          "text": "属于这里边出生控制的东西 只有这里边的东西会影响出怪真",
+          "t_start": 6124,
+          "t_end": 6137
+        },
+        {
+          "text": "只有在这里边设计的 能参与进这一个兵团之间内部排序的东西 这里能参与进这一个兵团内部排序的东西 才能影响出怪阵",
+          "t_start": 6137,
+          "t_end": 6174
+        }
+      ],
+      "reason": "主播在讲解 PRTS map/JSON 字段时明确给出筛选条件：出生控制内的东西才影响出怪真（帧），且只有能参与兵团内部排序的内容才影响出怪阵（帧）；合起来支撑该通用规则。",
+      "limitations": [
+        "“兵团内部排序”的具体排序字段与算法未在窗口内展开",
+        "“出生控制”对应的 JSON 节名称未明确",
+        "转写中的“出怪真/出怪阵”应为“出怪帧”的 ASR 误写"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "关卡 JSON 中的牌子会影响出怪帧，原因是牌子属于出生控制、能参与兵团内部排序的那类内容。",
+      "subject": "关卡 JSON 中的牌子",
+      "condition": "牌子属于出生控制且能参与兵团内部排序",
+      "scope": "entity_mechanism",
+      "category": "帧时序/出怪",
+      "evidence": [
+        {
+          "text": "我们说牌子影响出怪那些东西是因为",
+          "t_start": 6114,
+          "t_end": 6124
+        },
+        {
+          "text": "属于这里边出生控制的东西 只有这里边的东西会影响出怪真",
+          "t_start": 6124,
+          "t_end": 6137
+        },
+        {
+          "text": "只有在这里边设计的 能参与进这一个兵团之间内部排序的东西 这里能参与进这一个兵团内部排序的东西 才能影响出怪阵",
+          "t_start": 6137,
+          "t_end": 6174
+        }
+      ],
+      "reason": "主播在解释牌子与出怪的关系时，先说“牌子影响出怪那些东西是因为”，紧接着给出“属于出生控制”“能参与兵团内部排序”的判定条件，可支撑牌子作为该类内容会影响出怪帧的具体结论。",
+      "limitations": [
+        "“牌子”的具体对象类型/JSON 字段名未在窗口内展开",
+        "“兵团内部排序”的具体实现未说明",
+        "转写中的“出怪真/出怪阵”应为“出怪帧”的 ASR 误写"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本单是 PRTS map/JSON 讲解片段。c01 抽取了影响出怪帧的通用筛选条件；c02 是牌子作为具体对象/字段的示例性结论。两者均有逐字稿连续引文支撑，未发现未闭合猜测或反问，故均保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

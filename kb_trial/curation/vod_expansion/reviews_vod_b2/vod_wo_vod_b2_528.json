@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b2_528",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:03:31+0900",
+  "source_sha256": "992cab0d3cf4a217e860b7ed28dbe3a09f8ed353747341709487b187cc1b6e4b",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "二技能的周期是36，珊比二技能的周期是43",
+      "verdict": "pending",
+      "reason": "逐字稿中“他的二技能周期是36”的主体“他/闪避”受 ASR 转写影响无法补全为具体干员，候选命题的第一主体缺失；仅“珊比的二技能周期是43”可核验。因该候选的核心是两个技能周期的对照，关键主体不清，需人工听审或后续实机确认。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "二技能与珊比二技能都能形成控制，构成半控半杀，之后再一波推出去",
+      "verdict": "reject",
+      "reason": "该句包含“我觉得应该还算是比较配的对啊”等主观配合评价，且“二技能”“他”指代不明；“半控半杀”“再一波推出去”未给出可复现条件与明确参数，属于模糊战术描述而非可复用机制定论。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01 中“珊比二技能周期43”有逐字稿直接支撑，但“二技能周期36”的主体在转写中无法可靠补全；c02 为主观配合评价与模糊战术描述，未闭合为可复用机制。故本单无 keep，c01 留待 pending，c02 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

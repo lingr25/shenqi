@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_414",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:10:51+0900",
+  "source_sha256": "b025b3ba98ff57eff4672ee73374ac9184cbd6c5d496bc5386b3885c3b33278f",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "莱塔尼亚轻语者的攻击半径为 3.5。",
+      "subject": "莱塔尼亚轻语者",
+      "condition": "universal",
+      "scope": "entity_mechanism",
+      "category": "敌人属性",
+      "evidence": [
+        {
+          "text": "轻语者攻击半径3.5",
+          "t_start": 5868,
+          "t_end": 5887
+        }
+      ],
+      "reason": "逐字稿在该行明确以陈述句给出莱塔尼亚轻语者的攻击半径数值 3.5，主体与数值均可从文本直接确认，可作为该敌人固有属性命题保留。",
+      "limitations": [
+        "逐字稿未说明 3.5 的单位、测量方式或是否含碰撞箱修正。",
+        "上游 evidence 的起止秒数与实际转写行不一致，已按原始窗口校正为 5868–5887。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 的引文可在 5868s 行中字符级匹配；命题为主播明确陈述，非未验证猜测。按敌人固有属性保留，scope 为 entity_mechanism。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

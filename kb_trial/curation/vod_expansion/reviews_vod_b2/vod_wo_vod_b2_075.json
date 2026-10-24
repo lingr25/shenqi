@@ -1,0 +1,106 @@
+{
+  "workorder_id": "vod_wo_vod_b2_075",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:42:10+0900",
+  "source_sha256": "36a355952dcb99c916d53649a39ecc15c6fe557ca1725a740e8608d1ee8d86c9",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "阻挡判定是干员对敌人的单方面判定：敌人没有阻挡半径，敌人按点处理，干员按圆处理。",
+      "subject": "阻挡判定系统（干员对敌人）",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "阻挡判定",
+      "evidence": [
+        {
+          "text": "干员使用阻挡半径 阻阻挡这个东西只存在于角色类身上 这句话在强调说敌人是没有阻挡半径的 并不像碰撞箱和攻受机半径 敌一个范围",
+          "t_start": 2118,
+          "t_end": 2132
+        },
+        {
+          "text": "他是单方面的干员 对敌人的判定没有在敌人身上的所谓阻挡半径 没有谁体积更大 体积更小这一种说法 敌人是一个点 干员是一个圆阻挡",
+          "t_start": 2141,
+          "t_end": 2154
+        }
+      ],
+      "reason": "逐字稿明确说明阻挡判定是干员对敌人的单方面判定，敌人没有所谓阻挡半径，且将敌人描述为点、干员描述为圆阻挡。",
+      "limitations": [
+        "后续逐字稿另提到所有干员和敌人都是0.7071的阻挡半径，疑为对碰撞半径的口误或另指其他半径；本条仅采信阻挡判定单方面性部分。",
+        "未展开敌人自身碰撞箱对寻路或碰撞的影响。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "只有角色类单位能阻挡敌人类单位，敌人类单位不能阻挡角色类单位；阻挡判定只发生在角色类单位身上。",
+      "subject": "角色类单位与敌人类单位的阻挡关系",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "阻挡判定",
+      "evidence": [
+        {
+          "text": "啊只可能是角色类单位阻挡敌人类单位 敌人类单位是不能阻挡角色类单位的 判定只在角色类单位身上 因为判定只在角色类单位身上",
+          "t_start": 2201,
+          "t_end": 2215
+        }
+      ],
+      "reason": "逐字稿直接给出角色类单位阻挡敌人类单位、敌人类单位不能阻挡角色类单位，并强调阻挡判定只在角色类单位身上。",
+      "limitations": [
+        "未展开角色类单位内部是否还存在其他阻挡限制。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c03",
+      "claim": "敌人类单位只决定自身的阻挡数和是否可被阻挡，不能决定阻挡距离；阻挡距离由干员单方向决定。",
+      "subject": "敌人类单位在阻挡判定中的职责",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "阻挡判定",
+      "evidence": [
+        {
+          "text": "敌人除了决定自己的阻挡数和 可不可以被阻挡之外 没有其他的能力 他不能决定距离 距离是干员单方向决定的东西",
+          "t_start": 2228,
+          "t_end": 2242
+        }
+      ],
+      "reason": "逐字稿说明敌人除决定自身阻挡数和可被阻挡属性外没有其他能力，不能决定距离，距离由干员单方向决定。",
+      "limitations": [
+        "“阻挡数”与“可被阻挡”属性的具体来源未在本段展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "三条候选均为逐字稿直接支持的阻挡判定通用结论，未发现未定论假说、反问或画面依赖残句；c01 与 c02/c03 侧重点不同，不构成重复，均予采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

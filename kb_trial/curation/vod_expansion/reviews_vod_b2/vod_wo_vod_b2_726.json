@@ -1,0 +1,40 @@
+{
+  "workorder_id": "vod_wo_vod_b2_726",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:07:56+0900",
+  "source_sha256": "55b0aa1f6a5912d9049608a58bd6a1c9d1ff047d3da327ca4e3f3e80da78a0a7",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "怪物斜向横一格纵一格位移耗时2帧、总位移约1.4格、平均位移速度约0.7格/帧的实测观察",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3",
+        "G4"
+      ],
+      "reason": "G1/G3：命题以“怪物”模糊指代具体单位，未明确具体干员、敌人或技能主体，且绑定“本实测”语境，不能作为独立机制陈述；condition 仅给出费用条计时依据，未给出完整触发条件，scope 实际是特定实战现象而非通用规则。G2：上游 evidence.quote 跨 [4833s] 与 [4845s] 两条非连续逐字稿行拼接，不是任一行内的字符级连续子串，且 t_end 填 4858 秒在上下文中无对应行。G4：该候选本质为一次实战位移观察，参数使用“至少得有1.4格吧”“0.7格左右”等近似表述，缺少可复现的精确条件与参数，不具备可复用机制定论价值。"
+    }
+  ],
+  "review_note": "本单仅含 c01，候选内容为特定实战中的近似速度观察，且引文跨行拼接不符合逐字对齐要求；按宁缺毋滥原则判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

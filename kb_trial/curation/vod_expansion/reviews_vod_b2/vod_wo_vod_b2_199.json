@@ -1,0 +1,74 @@
+{
+  "workorder_id": "vod_wo_vod_b2_199",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:55:47+0900",
+  "source_sha256": "1208b20acf73b52a35bb29e615558cf63d9d994f997395f9a52fde80b7933ab8",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "当敌人进入其当前寻路目标路径点所在的格子、且尚未触碰该路径点判定时，其所在格与目标格重合导致前进方向向量为零向量，仇恨距离在零向量上的投影修正值归零，敌人的仇恨距离等同于自身所在格格心的距离。",
+      "subject": "敌方寻路与仇恨距离计算系统",
+      "condition": "敌人的寻路目标路径点位于自身所在本格，且尚未触碰该路径点判定",
+      "scope": "universal",
+      "category": "索敌(仇恨)/寻路",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "它的巡逻目标也是中间这个点 则会产生一个问题 这是一个零向量",
+          "t_start": 2504,
+          "t_end": 2517
+        },
+        {
+          "text": "它在零向上 零向量上的投影是零 从而让修正值这一部分为零",
+          "t_start": 2517,
+          "t_end": 2533
+        },
+        {
+          "text": "所以当他踩在路径点 本格还没踩到路径点的时候 是满足这种条件的",
+          "t_start": 2567,
+          "t_end": 2578
+        }
+      ],
+      "reason": "上下文系统性阐释了《明日方舟》寻路仇恨算法中前进方向由格心至目标格心定义的缺陷：当目标点与自身在同一格且未触碰路径点更新下一目标时，向量为零导致投影修正值归零，属于经过理论分析的通用底层机制。",
+      "limitations": [
+        "若单格内存在多个路径点，或敌人进入蓝门半格判定，可能存在额外的寻路边界分支"
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "敌人踩到路径点后会朝下一个路径点移动，因此不再满足零向量条件",
+      "verdict": "reject",
+      "failed_gates": [
+        "DUP"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "reason": "与 c01 重复。c02 仅为 c01 机制触发后的平凡退出状态转移（更新下一路径点后离开本格目标），核心规则已完整合并入 c01 中。"
+    }
+  ],
+  "review_note": "本片段主讲寻路仇恨算法中的'零向量缺陷'，c01 是关于目标点在本格时修正值归零的核心底层规则，予以规范化重写后 keep；c02 作为同一状态迁移过程的逆过程予以去重 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

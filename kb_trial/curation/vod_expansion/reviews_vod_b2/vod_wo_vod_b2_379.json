@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_379",
+  "stem": "BV1xRho6DEAQ_p3_42227206884",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:00:47+0900",
+  "source_sha256": "0d160528b6a3cdbe392dffd3645241ab2f16128c9440cd6cdc10ca8c6a4dccc9",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "敌方目标处于灼燃损伤爆发状态时，其状态效果为降低法术抗性，因此灼燃损伤爆发的抗性削减无法为物理伤害提供增益。",
+      "subject": "灼燃损伤爆发效果",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "那种为啥只给法术爆条 因为物理包条没有用啊 他是减法抗的",
+          "t_start": 1683,
+          "t_end": 1695
+        },
+        {
+          "text": "卓然的效果是减法抗啊 给给物理爆条干什么",
+          "t_start": 1695,
+          "t_end": 1708
+        }
+      ],
+      "reason": "主播在回答弹幕关于元素干员设计疑问时明确指出了底层机制事实：灼燃损伤爆发的附加负面效果是削减法术抗性，因此无法为物理伤害提供收益，属于确定性的机制陈述。",
+      "limitations": [
+        "逐字稿未提及灼燃损伤爆发造成的固定法术伤害数值、法抗降低具体数值及持续时间。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单候选 c01 准确反映了灼燃损伤爆发降低法术抗性的通用机制，两句引文均能在原逐字稿行中完全精确匹配，满足全部四大闸门要求，予以保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

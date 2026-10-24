@@ -1,0 +1,65 @@
+{
+  "workorder_id": "vod_wo_vod_b2_666",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:07:58+0900",
+  "source_sha256": "ff186672a5ab6578decfb4be2d05321fbbf5137276bab22e980180aaa6178dbb",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "对于已挂上延迟出伤Buff的目标，Buff挂上后约1秒触发伤害或元素损伤；只要Buff已成功挂上，目标之后恢复隐匿不影响出伤，极限情况下恢复隐匿后30帧才触发该Buff出伤仍然可以做到。",
+      "subject": "已挂上延迟出伤Buff的目标（敌方单位）",
+      "condition": "Buff已成功挂上，且目标在出伤前恢复隐匿；出伤约在Buff挂上后1秒触发",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "注意这里已经恢复隐匿了",
+          "t_start": 651,
+          "t_end": 657
+        },
+        {
+          "text": "然后出的dot",
+          "t_start": 657,
+          "t_end": 660
+        },
+        {
+          "text": "Buff是挂上之后一秒钟出损伤和元素啊 挂上只只要确保挂上了 恢复隐匿就是无所谓的事 所以最极限的话",
+          "t_start": 660,
+          "t_end": 678
+        },
+        {
+          "text": "实际上那个恢复隐匿之后 30帧才出伤都是可以做到的",
+          "t_start": 678,
+          "t_end": 689
+        }
+      ],
+      "reason": "上下文先观察到目标恢复隐匿后仍出dot，随后说明Buff挂上后约1秒出损伤和元素，只要Buff已挂上，恢复隐匿不影响出伤，并给出恢复隐匿后30帧出伤的极限说法。",
+      "limitations": [
+        "逐字稿未给出Buff的具体名称或来源。",
+        "30帧为口语极限值，未说明帧率、帧同步误差或测试边界。",
+        "紧接着的“这纯瞎讲”指代对象需人工听审确认语气。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选c01的30帧参数与Buff挂上后约1秒出伤、恢复隐匿不影响出伤的上下文一致；引文可逐字对齐，改写为自包含陈述后通过四闸门。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b1_132",
+  "stem": "BV1cmaa6VEPR_p2_42252239801",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:13:53+0900",
+  "source_sha256": "ed29c05cb81b1a9e39dcd58bcd1cd4fc2e5a9d3dbb442c775c30face2473a5a0",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "望的棋子不能下在不可部署的高地/高台地块上。",
+      "subject": "望的棋子",
+      "condition": "目标地块为不可部署的高地/高台",
+      "scope": "entity_mechanism",
+      "category": "地块判定",
+      "evidence": [
+        {
+          "text": "如果是不可部署的高地是不能下棋的",
+          "t_start": 490,
+          "t_end": 505
+        },
+        {
+          "text": "因为不能在装饰 是高台上下棋 但是这种海面就可以下棋",
+          "t_start": 505,
+          "t_end": 512
+        }
+      ],
+      "reason": "逐字稿在讨论望的棋子海面下棋时明确给出对照：不可部署的高地/高台不能下棋，海面可以下棋；该句直接支撑特定干员棋子的地块部署限制。",
+      "limitations": [
+        "逐字稿中的“高地/高台”表述受 ASR 影响，具体地块类型仍需以游戏内判定确认。",
+        "未说明望的棋子在其他不可部署地块上的行为。",
+        "海面可下棋是相关现象，但本命题仅保留不可部署高地/高台不可下棋的限制。"
+      ],
+      "rewritten": false,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      }
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 通过四大闸门：主语为望的棋子，条件为目标地块为不可部署高地/高台，范围属特定干员机制；逐字稿有直接陈述且引文可在原文中逐字匹配。海面可下棋属于相关观察，但未作为候选命题单列，故不在 claims 中扩展。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

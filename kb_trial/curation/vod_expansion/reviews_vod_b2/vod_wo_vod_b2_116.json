@@ -1,0 +1,84 @@
+{
+  "workorder_id": "vod_wo_vod_b2_116",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T15:29:58+0900",
+  "source_sha256": "4209b2fb4cec464264e0a1cb3afe16761d97335e2c6970c712d15629ae605458",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "归一化指对向量做模长归一，也就是把该向量除以它自身的模长。",
+      "subject": "向量归一化操作",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "位移/向量归一化",
+      "evidence": [
+        {
+          "text": "归一是模长归一 这是个向量",
+          "t_start": 5122,
+          "t_end": 5131
+        },
+        {
+          "text": "哦对哦 因为他没有别的再去影响哎 唯一不就是除以模吗 模不就是一吗",
+          "t_start": 5144,
+          "t_end": 5162
+        }
+      ],
+      "reason": "上下文正在讲解权重向量归一化；主播明确将归一化解释为模长归一，并补充‘除以模’，可支撑该定义。",
+      "limitations": [
+        "逐字稿未讨论零向量等数学边界；按通常定义适用于非零向量。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "向量 (0,-1) 的模长为 1，因此按模长归一化后结果仍为 (0,-1)。",
+      "subject": "向量 (0,-1) 的归一化",
+      "condition": "该向量为 (0,-1)，且其模长为 1",
+      "scope": "instance",
+      "category": "位移/向量归一化",
+      "evidence": [
+        {
+          "text": "他归一是啥 他归一就是零负一",
+          "t_start": 5131,
+          "t_end": 5144
+        },
+        {
+          "text": "哦对哦 因为他没有别的再去影响哎 唯一不就是除以模吗 模不就是一吗",
+          "t_start": 5144,
+          "t_end": 5162
+        }
+      ],
+      "reason": "主播先给出该向量归一化结果为零负一，随后确认其模长为一，因此除以模长后不变；属于对该例的可复现计算结论。",
+      "limitations": [
+        "该结论限于模长为 1 的向量；逐字稿只讨论了 (0,-1) 这一实例，未展开其他向量。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 为归一化定义，c02 为单位向量 (0,-1) 的归一化实例，二者均有逐字稿明确支撑，未发现未定论猜测或画面依赖残句。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

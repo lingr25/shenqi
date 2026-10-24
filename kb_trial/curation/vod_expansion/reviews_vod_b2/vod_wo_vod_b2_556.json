@@ -1,0 +1,118 @@
+{
+  "workorder_id": "vod_wo_vod_b2_556",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:07:47+0900",
+  "source_sha256": "8b98f48ceb7a7e72ab3218b42b67eb5e8360deca4527bb73577870608b5920f6",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "动画帧固定30~60帧，且不随子弹时间改变；在子弹时间过程中动画仍平滑移动。",
+      "subject": "动画帧（动画播放）",
+      "condition": "子弹时间过程中（该条件下动画仍平滑移动）",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "这个东西这个东西是动画帧 就是一限十秒 固定30~60帧 然后的话",
+          "t_start": 2369,
+          "t_end": 2379
+        },
+        {
+          "text": "这个东西它会额 它是不根据你子弹时间变化的 你子弹时间在过程中仍然会平滑的移动",
+          "t_start": 2379,
+          "t_end": 2423
+        }
+      ],
+      "reason": "逐字稿明确称动画帧固定30~60帧，且不根据子弹时间变化，子弹时间中仍平滑移动；原候选引文跨两行，回执已拆为两条逐行证据以符合逐字对齐。",
+      "limitations": [
+        "口播中“一限十秒”存在转写噪声，未进一步解释30~60帧的精确单位或设置方式。",
+        "本条仅确认动画帧不随子弹时间变化；后文提及的电脑性能/动画帧设置影响不属于本条结论范围。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "命中帧由动画播放去通知逻辑帧处理，由于动画帧与逻辑帧不同步，命中帧会产生概率性波动。",
+      "subject": "命中帧（由动画播放通知逻辑帧处理的命中事件）",
+      "condition": "动画帧与逻辑帧处于割裂、不同步状态",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "你看他这个仍然只能按这个格子移动 这是逻辑帧的运算结果咳 所以这两个东西的割裂导致一个什么问题 导致他相关的事件",
+          "t_start": 2471,
+          "t_end": 2484
+        },
+        {
+          "text": "如果去通知逻辑帧的话 就会产生概率 因为他俩是不同步的 而这种东西就是命中枕 命中帧是由动画的播放去通知逻辑帧进行处理",
+          "t_start": 2484,
+          "t_end": 2500
+        },
+        {
+          "text": "然后来达成的 但是抬手和那个动画的结束 是逻辑帧自我控制的 所以这两个他们不会改 但是命中帧的话是会波动的 但是的话我也说了",
+          "t_start": 2500,
+          "t_end": 2512
+        }
+      ],
+      "reason": "逐字稿明确把动画帧与逻辑帧的割裂、不同步，和命中帧由动画播放通知逻辑帧处理、从而产生概率波动联系起来，构成完整机制结论。",
+      "limitations": [
+        "未给出命中帧概率波动的具体幅度或可复现参数。",
+        "仅适用于由动画播放触发并通知逻辑帧的事件；逻辑帧自控事件不受此条直接约束。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c03",
+      "claim": "抬手与动画结束由逻辑帧自我控制，不随动画帧改变。",
+      "subject": "抬手与动画结束的时机",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "然后来达成的 但是抬手和那个动画的结束 是逻辑帧自我控制的 所以这两个他们不会改 但是命中帧的话是会波动的 但是的话我也说了",
+          "t_start": 2500,
+          "t_end": 2512
+        }
+      ],
+      "reason": "逐字稿明确说抬手和动画结束由逻辑帧自我控制，二者不会改，而命中帧会波动；候选命题与原文结论一致。",
+      "limitations": [
+        "未列出除抬手和动画结束外的其他逻辑帧控制项。",
+        "“不会改”在此仅指抬手与动画结束时机的属性，不推广到所有事件。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "三个候选均通过四闸门。c01原引文跨两行，回执已拆为两条逐行证据；c02与c03共享上下文但命题对象不同（命中帧 vs 抬手/动画结束），不判重复。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

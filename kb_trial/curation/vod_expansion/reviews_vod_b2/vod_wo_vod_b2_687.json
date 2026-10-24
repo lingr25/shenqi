@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_687",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:11:47+0900",
+  "source_sha256": "888549863b83463d66e12d4c60bb6fe7dfc3274de2bb619fabcd642afaeb7aa8",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "评估一个判定机制时，判定的时间点比判定的持续时间更重要。",
+      "subject": "判定机制的时间点与持续时间",
+      "condition": "评估判定机制时",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "看见没有 我在14~24之间部署了十帧 他仍然没有反应 但是我在13~15之间部署两帧 他就可以死掉",
+          "t_start": 2445,
+          "t_end": 2458
+        },
+        {
+          "text": "判定的时间点是远远比这个时间长度更重要的 不是在测试打断克的技能",
+          "t_start": 2458,
+          "t_end": 2469
+        }
+      ],
+      "reason": "上下文用部署帧区间对比说明：较长的部署持续帧未必触发结果，而较短但落在关键时点的部署即可生效；随后主播明确归纳为判定时间点比持续时间更重要。命题自包含、引文逐字对齐，且非未闭合猜测。",
+      "limitations": [
+        "该结论主要来自当场单次部署帧对比实验，未给出判定窗口的一般量化边界。",
+        "逐字稿中“打断克”等表述疑似ASR噪声，未作为结论参数使用。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选 c01 通过四大闸门，可作为帧时序通用结论保留；其证据包含明确对比实验与主播归纳结论，但需注意其量化边界尚未在逐字稿中展开。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

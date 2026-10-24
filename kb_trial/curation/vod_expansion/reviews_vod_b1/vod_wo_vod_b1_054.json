@@ -1,0 +1,64 @@
+{
+  "workorder_id": "vod_wo_vod_b1_054",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:29:00+0900",
+  "source_sha256": "8993167109c7477f5d1c6a2008a74b29dfc8993861d4c9653ce9096e056ce7f6",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "涤墨拥有出生状态机，其在出生/登场后会在原地停留一段时间而不移动。",
+      "subject": "涤墨",
+      "condition": "涤墨进入出生状态机期间（出生/登场后）",
+      "scope": "entity_mechanism",
+      "category": "状态效果/技能特例",
+      "evidence": [
+        {
+          "text": "除了极少数有出生状态机的单位啊 就是会在原会在蓝门原地不动半天 有没有有出生状态机的单位呢",
+          "t_start": 3749,
+          "t_end": 3762
+        },
+        {
+          "text": "然后的话实际上涤墨也有",
+          "t_start": 3819,
+          "t_end": 3824
+        },
+        {
+          "text": "其实涤墨也有啊",
+          "t_start": 3830,
+          "t_end": 3837
+        },
+        {
+          "text": "注意啊 他们在这里半天不走道 这个也是出生状态极",
+          "t_start": 3848,
+          "t_end": 3860
+        }
+      ],
+      "reason": "上下文先说明有出生状态机的单位会在蓝门原地不动半天，随后主播明确表示涤墨也有，并称其半天不走道也是出生状态机。转写中的『出生状态极』按上下文对应『出生状态机』的 ASR 误写，核心机制可由逐字稿直接支撑。",
+      "limitations": [
+        "逐字稿未给出涤墨出生状态机持续的具体帧数或秒数。",
+        "主播因相关关卡未开放无法实机演示；本段未说明涤墨出场的具体触发方式。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 具有机制价值且有逐字稿直接支撑：主播明确将涤墨与出生状态机关联，并描述其原地停留现象。具体持续时长与出场触发方式未在本段闭合，作为限制保留，不影响该定性结论成立。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

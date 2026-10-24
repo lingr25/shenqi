@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_312",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:37:18+0900",
+  "source_sha256": "f95ba59222f16bce619852d9fa36f23ecf3ff98c5b1ee82dd055f1ba08dd5920",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "干员等级与潜能加成在属性计算器区间一同计算，且该计算区间早于局外关卡乘区",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G2",
+        "G4"
+      ],
+      "reason": "1. 违反Gate 4：主播在随后的 4102s-4113s 处看到弹幕或代码后立即修正了观点（'他写的是final啊 那没事了 那没事了 那这个是我没看过了 他写的是final的话 那就是和那个血肉畸变同款key啊 对对对对 没有问题没问题 那就没事了'），推翻了前面关于其计算区间早于关卡乘区的陈述，属于未闭合或当场被修正的错误假说；2. 违反Gate 2：上游提供的引文包含错别字跨越拼接，不满足字符级精确匹配。"
+    }
+  ],
+  "review_note": "工单唯一的候选命题 c01 主张属性计算器中潜能加成早于局外关卡乘区，但紧接着在逐字稿 4102s 处主播被指出底层 key 为 final 后立刻撤回并改口（'那没事了...那这个是我没看过了'），属于已被推翻的未定论假说，不满足 Gate 4，全单予以驳回。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

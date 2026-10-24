@@ -1,0 +1,80 @@
+{
+  "workorder_id": "vod_wo_vod_b2_618",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T13:59:10+0900",
+  "source_sha256": "ccf583acf90dab45d4aa6826ee9c708de967d818620a840f59a39656ac4ce105",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "放逐仓使周围累计重量不超过八的最多15名地面敌人不断向前移动。",
+      "subject": "放逐仓",
+      "condition": "作用对象为地面敌人；累计重量不超过八；最多影响15名敌人",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "使周围累计不超过八重量的最多15名敌人",
+          "t_start": 2153,
+          "t_end": 2167
+        },
+        {
+          "text": "地面敌人不断向前移动",
+          "t_start": 2153,
+          "t_end": 2167
+        }
+      ],
+      "reason": "逐字稿明确给出放逐仓的影响对象、重量上限、人数上限与地面敌人向前移动效果，属于可复用的技能机制陈述。",
+      "limitations": [
+        "逐字稿后文仍在讨论“累计不超过八”的具体累计口径，本条仅保留技能说明层面的重量上限，不涉及负重量等边界。",
+        "未说明技能等级差异及地形、阻挡等外部因素对移动效果的影响。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "放逐仓在移动三格后留下漩涡。",
+      "subject": "放逐仓",
+      "condition": "放逐仓移动三格后",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "放逐仓在移动三格后留下漩涡",
+          "t_start": 2153,
+          "t_end": 2167
+        }
+      ],
+      "reason": "逐字稿明确陈述放逐仓移动三格后生成漩涡，参数与触发条件清晰，属于该技能的固有机制。",
+      "limitations": [
+        "未说明放逐仓的移动方向、漩涡持续时间、生成位置及与地形或阻挡的交互。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均来自同一段对放逐仓技能的机制说明，逐字稿中有明确参数与效果表述，未发现未定论假说或画面依赖残句。c01与c02分别描述载体影响敌人和移动后生成漩涡，属于不同机制，均予保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,96 @@
+{
+  "workorder_id": "vod_wo_vod_b2_460",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:27:57+0900",
+  "source_sha256": "58eec966947ec10fe9251c09d8f5ca1ddf4fa400d3a26d23a42e450a158915df",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "石头人的普通攻击间隔为18帧，即每18帧触发一次普攻。",
+      "subject": "石头人的普通攻击",
+      "condition": "universal",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "然后到后头的话就是每18帧一次的攻击 和每呃五秒一次的dot呃 每一秒一次的dot",
+          "t_start": 6115,
+          "t_end": 6136
+        },
+        {
+          "text": "石头人的",
+          "t_start": 6136,
+          "t_end": 6143
+        },
+        {
+          "text": "2776时疑似暴击 再过18帧",
+          "t_start": 6195,
+          "t_end": 6208
+        },
+        {
+          "text": "18帧 36帧",
+          "t_start": 6261,
+          "t_end": 6278
+        }
+      ],
+      "reason": "逐字稿明确出现“每18帧一次的攻击”，后续又以“再过18帧”“18帧 36帧”等观察佐证18帧间隔；紧邻上下文出现“石头人的”，可确认讨论对象为石头人的普攻间隔参数。",
+      "limitations": [
+        "未说明该18帧攻击间隔是否受攻速加成、减速或其他状态影响。",
+        "18帧为直播口头给出的参数，逐字稿未展开底层帧对齐推导。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "石头人的DOT伤害触发间隔为1秒；直播中主播先将间隔口述为5秒，随后改口为1秒。",
+      "subject": "石头人的DOT伤害",
+      "condition": "universal",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "和每呃五秒一次的dot呃 每一秒一次的dot",
+          "t_start": 6115,
+          "t_end": 6136
+        },
+        {
+          "text": "石头人的",
+          "t_start": 6136,
+          "t_end": 6143
+        }
+      ],
+      "reason": "主播在说明DOT间隔时先口述“每呃五秒一次”，随即改口为“每一秒一次”，属于当场勘误；上下文对象为石头人，故采纳1秒DOT间隔结论。",
+      "limitations": [
+        "主播当场改口，逐字稿未给出DOT伤害数值、持续时长或首次触发计时起点。",
+        "未说明DOT间隔是否受其他机制、帧率或状态影响。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两项候选均有逐字稿直接支撑：c01为石头人普攻18帧间隔，c02为石头人DOT 1秒间隔的当场勘误。二者均不依赖画面指涉，主体、条件与适用范围可补全，故均裁定keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

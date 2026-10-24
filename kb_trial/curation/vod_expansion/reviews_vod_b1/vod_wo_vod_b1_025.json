@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b1_025",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:20:12+0900",
+  "source_sha256": "7437f99bc63af9fb27fb49417bc1ff38cda9da7fe54422daa26016ff00769d29",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "同一组怪的出生帧序列在无碎角时为103、有碎角时为024",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "该命题依赖录像中具体画面所指的“同一组怪”，未交代具体关卡、敌群或可复现条件；“103/024”在逐字稿中只是特定实例下的读数，未形成可复用机制定论，属于纯实战现象观察，不具备规则价值。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "碎角自身的出生帧值为二帧",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ],
+      "reason": "该命题由主播“可以推测出来”的推断句导出，属于未验证推测；且“那个碎角是二”在上下文中可能指同帧序列中的位置或编号，逐字稿不足以支撑“碎角自身出生帧值为二帧”的明确三元约束与适用范围。"
+    }
+  ],
+  "review_note": "工单中两个候选均未通过硬性闸门。c01 是特定录像中的出生帧序列现象观察，缺少具体关卡/敌群等可复现条件；c02 是基于“可以推测出来”的未验证推断，且转写语义不足以支撑明确的出生帧值结论。故整体判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

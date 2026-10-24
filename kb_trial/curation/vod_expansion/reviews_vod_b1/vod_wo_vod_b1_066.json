@@ -1,0 +1,118 @@
+{
+  "workorder_id": "vod_wo_vod_b1_066",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T00:05:26+0900",
+  "source_sha256": "e75c70387f1cba8c0b48d1f1f5b5fb796e6ed6504cc84f1865aab43394a00e58",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在《明日方舟》解包 map data 的 tiles 数据中，每个地块记录 tileKey（地块名）与高低地属性；高低地属性只有 high land（高地）与 low land（低地）两种取值。",
+      "subject": "解包 map data 的 tiles 中每个地块的 tileKey 与高低地属性",
+      "condition": "读取解包 map data 的 tiles 数据时",
+      "scope": "universal",
+      "category": "解包数据结构",
+      "evidence": [
+        {
+          "text": "每个地块会有TKEY 就是地块名hit tap就是高低地 这里会有两种 一个是高地 一个是dd",
+          "t_start": 4698,
+          "t_end": 4709
+        },
+        {
+          "text": "高低地是直接翻译high land高地 Low land dd",
+          "t_start": 4709,
+          "t_end": 4723
+        }
+      ],
+      "reason": "逐字稿明确给出 map data/tiles 下每个地块包含 TKEY（tileKey）与高低地，并说明高低地只有高地与低地两种。上游 evidence 时间戳有偏差，已按实际逐字稿行修正。",
+      "limitations": [
+        "ASR 将 tileKey 记为 TKEY、低地记为 dd，字段英文名以解包实际为准。",
+        "未展开说明 tileKey 与高低地字段在 JSON 中的具体键名与编码值。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在《明日方舟》解包 map data 的 tiles 数据中，每个地块的 buildable type（部署类型）分为四类：近战部署、远程部署、全部部署、不可部署。",
+      "subject": "解包 map data 的 tiles 中每个地块的 buildable type 字段",
+      "condition": "读取解包 map data 的 tiles 数据时",
+      "scope": "universal",
+      "category": "解包数据结构",
+      "evidence": [
+        {
+          "text": "beautiful type 这个是呃 近战部署 远程部署",
+          "t_start": 4709,
+          "t_end": 4723
+        },
+        {
+          "text": "全部部署和那个不可部署这种四类",
+          "t_start": 4723,
+          "t_end": 4729
+        }
+      ],
+      "reason": "逐字稿明确列出 buildable type 的四种类型；因原文跨行，已拆为两条逐字证据，避免跨非连续行拼接。",
+      "limitations": [
+        "ASR 将 buildable type 识别为 beautiful type；具体字段英文名与枚举值以解包实际为准。",
+        "未说明四类部署类型在判定时的代码枚举顺序。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "在《明日方舟》解包 map data 的 tiles 数据中，每个地块的 passable mask（可通行设置）分为四类：fly only、walk only、全部可以、全部不可以。",
+      "subject": "解包 map data 的 tiles 中每个地块的 passable mask 字段",
+      "condition": "读取解包 map data 的 tiles 数据时",
+      "scope": "universal",
+      "category": "解包数据结构",
+      "evidence": [
+        {
+          "text": "Parcel and mask 是那个可通行设置是fly only Walk only 就是地面仅地面仅飞行",
+          "t_start": 4729,
+          "t_end": 4740
+        },
+        {
+          "text": "然后全部可以和全部不可以",
+          "t_start": 4740,
+          "t_end": 4752
+        }
+      ],
+      "reason": "逐字稿明确说明 Parcel and mask/passable mask 的可通行设置包含 fly only、walk only，以及全部可以/全部不可以。",
+      "limitations": [
+        "ASR 将 passable mask 识别为 Parcel and mask；具体字段英文名以解包实际为准。",
+        "未展开不同取值对应的通行对象细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "三个候选均围绕 map data tiles 的字段构成，逐字稿在 01:18:18–01:19:00 有明确说明；上游时间戳与跨行引文格式有误，终审已按窗口逐字稿拆分为合法 evidence，命题本身可保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

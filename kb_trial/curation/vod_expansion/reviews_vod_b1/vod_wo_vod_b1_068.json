@@ -1,0 +1,75 @@
+{
+  "workorder_id": "vod_wo_vod_b1_068",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T00:06:14+0900",
+  "source_sha256": "3d513a474e0e478cd194824fdabf5ca01604e1580dfe78a701bcde1189fbc871",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "blackboard 用于输入地块参数，地火地块的间隔和伤害参数写在 blackboard 中。",
+      "subject": "blackboard 参数系统",
+      "condition": "当地块需要输入可配置参数时，例如地火地块",
+      "scope": "universal",
+      "category": "地块参数",
+      "evidence": [
+        {
+          "text": "过后面这些的话 blackboard就是用来去输入一些参数 比如说地火这种地块会在black board里头写",
+          "t_start": 4806,
+          "t_end": 4818
+        },
+        {
+          "text": "就是呃多少秒一次火火的伤害是多少",
+          "t_start": 4818,
+          "t_end": 4832
+        },
+        {
+          "text": "他那个地火的间隔和伤害都是不同的 这种不同就是在这里控制的",
+          "t_start": 4832,
+          "t_end": 4841
+        }
+      ],
+      "reason": "主讲在解包文件语境中明确说明 blackboard 用于输入地块参数，并以地火地块为例说明火的间隔与伤害写在其中；随后又说明不同地图地火间隔和伤害的差异由该处控制，因此可作为地块参数系统的机制结论。",
+      "limitations": [
+        "逐字稿未展示 blackboard 中地火间隔与伤害的具体字段名、数据类型或默认值。",
+        "未系统枚举 blackboard 还用于哪些其他地块类型，仅以地火为例。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "各地图地火间隔与伤害的差异由 blackboard 控制。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "DUP"
+      ],
+      "reason": "与 c01 重复：c01 已完整表述 blackboard 用于输入地块参数，并以地火地块的间隔与伤害为例；c02 只是同一结论的另一种说法，保留 c01 后剔除 c02。"
+    }
+  ],
+  "review_note": "c01 通过四闸门：逐字稿明确说明 blackboard 用于输入地块参数，并以地火地块为例说明间隔与伤害写入其中。c02 与 c01 实质重复，按重复候选规则剔除。上游 evidence 时间戳与逐字稿窗口不一致，已在 claims 中按原始逐字稿行校正。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

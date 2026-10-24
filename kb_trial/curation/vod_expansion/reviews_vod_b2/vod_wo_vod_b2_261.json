@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_261",
+  "stem": "BV1L4ez6oEcc_p2_42060876088",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:25:15+0900",
+  "source_sha256": "52019a8aacaeafbe04fd918c984af27eba5b99cb9960f8a62da9db9ccd8dfe0b",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "羊不在幕落的攻击范围内，但幕落开启技能后可以打到羊",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "reason": "实测过程中的临时表象观察，依赖特定画面（指称特定敌人'这个羊'），且缺乏具体技能、范围机制与确切参数判定，未形成定论规则。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "幕落在目标位于攻击范围外时开技能仍能命中，是幕落自身的技能或攻击范围问题导致的",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "reason": "口头感叹（'这他妈的是目录自己的问题'），属于情绪化推断与模糊归因，未阐述幕落技能攻击判定的具体底层机制或量化参数，不具备机制知识库价值。"
+    }
+  ],
+  "review_note": "本片段记录了主播在测试幕落对羊的攻击范围时的困惑与摸索过程，言论多为'这个羊'、'开技能有问题'、'是目录自己的问题'等口头实况反馈与情绪感叹，无闭环的机制量化结论或可复用规则，全部予以驳回。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

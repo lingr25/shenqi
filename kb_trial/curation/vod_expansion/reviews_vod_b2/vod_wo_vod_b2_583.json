@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_583",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:13:20+0900",
+  "source_sha256": "33d41d66ab24305cadd9fb2e644920d552c75cf64bc0facddefee8c8bf7e798b",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "计数读数时，需要关注第一个数字的整数部分，以及三个数字各自的小数部分。",
+      "subject": "计数读数",
+      "condition": "进行计数读数时",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "重要的只有第一个数字的前三位数 第一个数字的整数部分 和三个数字的分别的小数部分",
+          "t_start": 6579,
+          "t_end": 6593
+        }
+      ],
+      "reason": "主播在讲解漏过时间后的读数处理时，明确给出计数读数的取舍规则：关注第一个数字的整数部分与三个数字各自的小数部分。该句是教学性结论，不是猜测或反问，且有逐字稿直接支撑。",
+      "limitations": [
+        "逐字稿还提到“第一个数字的前三位数”，其与“整数部分”的关系以及具体计数格式未在该窗口内完整展开。",
+        "未给出所有边界情况下的完整示例。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本单仅一个候选 c01。该候选为教学场景中的明确读数规则，引文可在逐字稿单行中字符级对齐，主体、条件与范围可补全，未发现未定论假说或开放疑问，故裁定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

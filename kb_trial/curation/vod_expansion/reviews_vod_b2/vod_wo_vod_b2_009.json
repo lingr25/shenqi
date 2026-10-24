@@ -1,0 +1,102 @@
+{
+  "workorder_id": "vod_wo_vod_b2_009",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:17:25+0900",
+  "source_sha256": "bb6dbb4b143e48d25f30dcc84174d0040c2634b346832550be3ba469a30cf5fd",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "R稀有度的自然物（回生玉米、双金树、多生苔藓）叠层能力较强，层数可叠加至50~100。",
+      "subject": "R稀有度自然物（回生玉米、双金树、多生苔藓）",
+      "condition": "universal",
+      "scope": "entity_mechanism",
+      "category": "零件效果",
+      "evidence": [
+        {
+          "text": "多生苔藓R稀有度只有这三个自然物 但偏偏这三个叠层都很强 后续叠个50~100都不是问题",
+          "t_start": 3156,
+          "t_end": 3166
+        }
+      ],
+      "reason": "逐字稿明确指出 R 稀有度自然物仅有回生玉米、双金树、多生苔藓三件，且三者叠层都很强、可叠至 50~100 层，属于可复用的零件机制结论。上游命题语句已自包含，仅补全三件具体名称。",
+      "limitations": [
+        "50~100 为视频口播约数，非精确叠加上限",
+        "源自第三方（李雪）视频转述，未逐条实机核验"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "板藤、链家果、光彩松露均为SR级别自然物，其效果为约30的即时收益，或如板藤那样可叠层。",
+      "subject": "SR级别自然物（板藤、链家果、光彩松露）",
+      "condition": "universal",
+      "scope": "entity_mechanism",
+      "category": "零件效果",
+      "evidence": [
+        {
+          "text": "板藤链家果光彩松露都是SR级别的自然物 要么拿到是30左右的即时收益 要么就是像板腾这种能叠好几还嫌很弱",
+          "t_start": 3176,
+          "t_end": 3187
+        }
+      ],
+      "reason": "逐字稿指出这三件为 SR 级自然物，并以「要么…要么…」区分两类效果（约30即时收益 / 如板藤可叠层）。上游命题把「30即时收益」泛化到全部三件（含叠层型的板藤），故改写为二择表述以贴合原文。",
+      "limitations": [
+        "「能叠好几还嫌很弱」为 ASR 残缺句，板藤叠层上限与强弱未交代",
+        "未说明30收益的具体结算口径（源石锭/估价等）"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "零件冷空气仅能通过事件途径获得，其出售价格为16。",
+      "subject": "零件冷空气",
+      "condition": "universal",
+      "scope": "entity_mechanism",
+      "category": "零件获取与售价",
+      "evidence": [
+        {
+          "text": "冷空气只有事件能够获得 本身能卖16块",
+          "t_start": 3187,
+          "t_end": 3199
+        }
+      ],
+      "reason": "逐字稿明确交代冷空气的获取渠道（仅事件）与出售价（16），属清晰的零件属性结论，主谓宾完整，无依赖画面或猜测。",
+      "limitations": [
+        "售价单位（源石锭或其他）逐字稿未明说"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "三件候选均来自「研读李雪视频」章节，逐字稿引文本身可在 transcript_window 中字符级匹配，但上游给的 t_start/t_end（196/216/227 等）指向杰哥、浮空控制、留种子等无关行，系时间戳错配；已据原文重新定位到 3156s、3176s、3187s 并回填正确秒数，故 G2 以最终回执为准判 pass。内容层面：c01、c03 为明确零件机制/属性结论；c02 上游将「30即时收益」误推广至含叠层型的板藤，已改写为原文的二择表述。需注意这些均系第三方视频口播结论，主播随后指出该视频「狭路相逢」部分有误，故本批零件结论宜标注为视频来源、未经独立实机复核。无未闭合猜想、反问或纯实况叙述，故均判 keep，excluded 为空。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

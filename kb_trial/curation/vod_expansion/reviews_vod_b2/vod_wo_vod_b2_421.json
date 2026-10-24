@@ -1,0 +1,40 @@
+{
+  "workorder_id": "vod_wo_vod_b2_421",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:12:29+0900",
+  "source_sha256": "9f07f14a06f0a98d02f64d629f86af5a263696c0eb6f738932f79a593b3ceefe",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "测试中目标受击时只跳出两个伤害数字。",
+      "verdict": "reject",
+      "reason": "仅为单次实战观察，未指明具体干员、技能、目标与可复现条件；‘只有两个数字’依赖画面且不能独立证明不可选中，不构成可复用机制定论。引文文本虽可匹配，但 t_end=1248 未按下一行时间戳 1251 标注，G2 亦不通过。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单唯一候选 c01 是伤害跳字数量的单次观察，未补齐主体、条件与 scope，也没有形成可复现的机制规则；不保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

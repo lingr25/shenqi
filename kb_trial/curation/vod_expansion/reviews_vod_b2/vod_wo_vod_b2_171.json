@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_171",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:19:31+0900",
+  "source_sha256": "308777c994e19c29d4d3f56f9eb2b54b6af1330103526f894afdb213c3d65e91",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在明日方舟索敌底层机制中，一个仇恨过滤器代表一套独立的排序规则；当新增干员或敌人需要前所未有的复合排序规则时，系统会新增一套仇恨过滤器来满足该索敌需求。",
+      "subject": "索敌系统/仇恨过滤器",
+      "condition": "引入未曾出现过的索敌排序规则需求",
+      "scope": "universal",
+      "category": "索敌",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "一个仇恨过滤器代表的就是一套规则 鹰角想新出一个干员或者一个敌人 他得拥有一套全新的索敌的时候",
+          "t_start": 1013,
+          "t_end": 1025
+        },
+        {
+          "text": "那么在这种情况下的话 它就会新出一套新的仇恨过滤器 然后用来满足自己的新规则的需要 一个仇恨过滤器代表一个规则",
+          "t_start": 1037,
+          "t_end": 1047
+        }
+      ],
+      "reason": "逐字稿详细讲解了底层索敌排序的模块化设计，明确指出了‘一个仇恨过滤器代表一套规则’，当出现新的复合排序逻辑时需增设对应过滤器，属于通用底层机制定论。",
+      "limitations": [
+        "具体的多级排序规则权重及实现方式依赖鹰角代码配置，转写中仅以仇恨/防御/重量作为举例说明"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "claim": "一套仇恨过滤器属于通用模块，可以同时供所有采用该相同索敌规则的敌人或干员复用。",
+      "subject": "索敌系统/仇恨过滤器",
+      "condition": "敌人或干员采用相同的索敌规则逻辑",
+      "scope": "universal",
+      "category": "索敌",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "一个仇恨过滤器的应用就可以给所有此类索敌的敌人或者干员一起用",
+          "t_start": 1047,
+          "t_end": 1059
+        }
+      ],
+      "reason": "主播明确解释了仇恨过滤器的复用性，不是绑定单一实体，而是全域通用组件，满足四大闸门。",
+      "limitations": [
+        "未详述过滤器具体的数据结构及配置方式"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "本切片深入讲解了索敌底层‘仇恨过滤器’的概念及其实例化规则。c01阐明了过滤器与规则的对应关系及扩展机制，c02阐明了过滤器的复用性，两者互相独立且均具备清晰严谨的逐字稿证据支撑，均予保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

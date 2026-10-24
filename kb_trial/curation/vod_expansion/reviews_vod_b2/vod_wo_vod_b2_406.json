@@ -1,0 +1,68 @@
+{
+  "workorder_id": "vod_wo_vod_b2_406",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:08:47+0900",
+  "source_sha256": "356a881786f2cc85fb8d9240533116ae4062aa0174049d2623aa086c95ba4284",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "每次造成200点固值损伤时，五次攻击报不了条，因此「造成200点固值损伤」这一推测不太可能成立",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "引文本身可在 3998s 行逐字匹配，但命题依赖未指明的『他/条』，未补齐造成损伤的具体主体、受击对象或损伤条阈值，无法自包含；且以『如果…』和『不太可能』表述，属于未闭合推测，不能作为可复用机制定论。",
+      "evidence": [
+        {
+          "text": "因为如果他造成200点固值损伤的话 他五下是报不了条的",
+          "t_start": 3998,
+          "t_end": 4013
+        }
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "元素损伤与法伤不是同一套结算机制",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ],
+      "reason": "引文虽能在 3998s 行逐字匹配，但后文 4013s 立即修正为『元素损伤和法伤是一样的』并说明两者均按乘以0.01、再乘100减抗性的方式结算，候选截取了被更正文句，属于被明确否定/未闭合的错误理解，不能采纳为定论。",
+      "evidence": [
+        {
+          "text": "元素损伤是和法伤是不一样的",
+          "t_start": 3998,
+          "t_end": 4013
+        }
+      ]
+    }
+  ],
+  "review_note": "两个候选均不满足硬性闸门。c01 缺少自包含主体且为条件推测；c02 的初始判断被同一窗口后文更正，不能作为最终机制结论。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

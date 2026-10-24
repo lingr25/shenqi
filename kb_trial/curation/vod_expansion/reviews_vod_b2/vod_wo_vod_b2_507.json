@@ -1,0 +1,56 @@
+{
+  "workorder_id": "vod_wo_vod_b2_507",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:53:49+0900",
+  "source_sha256": "f2fd26e3e81fbe56b2e9a79bae010fd97d98f479826d8955a6e3fc2216cdcbfe",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "理论总伤模型中计入暴击参数（30%概率、1.35倍）",
+      "verdict": "reject",
+      "reason": "未通过 G1/G3：命题仅以“理论总伤模型”为笼统主体，未给出具体干员、技能或系统，无法形成自包含的游戏机制陈述；且上游 evidence 的 t_start/t_end=9316/9320 与 transcript_window 不符，文本“30%概率”“暴击1.35”实际分别位于 6916s、6920s 行，G2 时间戳对齐失败。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "理论总伤模型中计入物理伤害倍率参数（2.35）",
+      "verdict": "reject",
+      "reason": "未通过 G1/G3：命题未说明“2.35倍物理”属于哪个具体干员、技能或普攻，上下文仅有未消解的代词“他这里普攻”，不能改写为自包含机制；且上游 evidence 的 t_start/t_end=10885/10891 与窗口不符，文本“2.35倍物理”实际位于 7085s 行，G2 时间戳对齐失败。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "两条候选均为理论总伤模型中的参数摘录，缺少具体干员/技能主体，且 evidence 时间戳与 transcript_window 不对齐；按硬性闸门均判 reject。若需保留，应人工补齐主体并重新对齐逐字稿。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

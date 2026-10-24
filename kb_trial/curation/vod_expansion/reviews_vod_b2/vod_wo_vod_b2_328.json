@@ -1,0 +1,121 @@
+{
+  "workorder_id": "vod_wo_vod_b2_328",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-speed",
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:43:07+0900",
+  "source_sha256": "710bdbf0552541fdd8c4cd531bdd696cfa66199f7e16a2d4d37ddaf76711b7ec",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "生命流失机制会跳过伤害结算流程中的第三环节（即包含伤判增减与无敌免伤的环节），因此能够对处于无敌状态下的单位造成伤害并使其扣减生命值（例如剧团喉舌的自我流血扣血机制）。",
+      "subject": "生命流失",
+      "condition": "伤害结算流程中进行第三环节免伤判定时",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "生命流失 生命流失可以跳过这个环节",
+          "t_start": 5767,
+          "t_end": 5779
+        },
+        {
+          "text": "生命流失最主要的意义就是可以打无敌的单位 比如说喉舌",
+          "t_start": 5779,
+          "t_end": 5794
+        },
+        {
+          "text": "这些报幕助手被打死的时候会流血 但是喉舌是全程无敌的 全程无敌 凭什么可以流血 是因为生命流失可以掉 可以无视掉无敌的这个免伤缓解",
+          "t_start": 5810,
+          "t_end": 5825
+        },
+        {
+          "text": "所以才可以流 才可以穿透它",
+          "t_start": 5825,
+          "t_end": 5830
+        }
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "reason": "逐字稿明确说明生命流失可以跳过伤害第三环节，并以喉舌全程无敌仍可流血为例说明其可无视无敌免伤效果，因果链完整。",
+      "limitations": [
+        "生命流失主要用于关卡机制、敌人自扣血或干员自我流失，干员对敌人的主动生命流失极其罕见或受限"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "claim": "生命流失并不默认跳过抗性结算流程（第二环节）：物理生命流失仍需计算防御力，法术生命流失仍需计算法术抗性；只有真实生命流失才会跳过抗性结算环节，从而同时跳过第二环节（抗性）和第三环节（伤判免伤）。",
+      "subject": "生命流失与伤害类型结算",
+      "condition": "计算不同伤害类型的生命流失时",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "生命流失的伤害类型仍然看二环节 它是什么东西",
+          "t_start": 5890,
+          "t_end": 5896
+        },
+        {
+          "text": "生命流失没有跳过前面的流程",
+          "t_start": 5896,
+          "t_end": 5902
+        },
+        {
+          "text": "如果他是物理生命流失 那么他就要计算防御力 如果他是法术生命流失 那他就要计算法抗 如果他是真实生命流失 他才能跳过二环节",
+          "t_start": 5902,
+          "t_end": 5914
+        },
+        {
+          "text": "把二三全跳了 只按照自己的攻防血攻击力倍率去决定伤害",
+          "t_start": 5914,
+          "t_end": 5922
+        }
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "reason": "逐字稿详细澄清生命流失的伤害类型仍受第二环节抗性结算影响，并逐项给出物理、法术、真实生命流失的判定规则，结论闭合。",
+      "limitations": [
+        "实战中不同伤害类型的生命流失来源极少（如反伤或特定机制），多数常见流失直接为真实生命流失"
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c03",
+      "topic": "真伤跳过伤害流程的第二环节，而生命流失跳过的是第三环节，二者跳过环节不同",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "DUP"
+      ],
+      "reason": "该条目与 c01、c02 的内容实质重复，c02 已更完整、精确地阐明了真伤跳过第二环节与生命流失跳过第三环节的具体分支判定关系，故 c03 作为冗余信息予以排除。"
+    }
+  ],
+  "review_note": "工单讨论了伤害计算整体架构中生命流失与真实伤害的核心差异。c01 阐明生命流失跳过第三环节（免伤/伤判）从而穿透无敌；c02 进一步细化生命流失与防御/法抗计算（第二环节）的关系。两条均能提取到精确的逐字稿行内引文，予以 keep；c03 属于前两者的简略重叠描述，判 DUP reject。已按程序校验要求将跨行引文拆分为逐行原样连续子串。",
+  "repair_rounds": 1,
+  "unresolved_problems_auto_demoted": []
+}

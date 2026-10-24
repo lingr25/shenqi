@@ -1,0 +1,121 @@
+{
+  "workorder_id": "vod_wo_vod_b2_457",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:28:02+0900",
+  "source_sha256": "a9b69987186ed455850c3b1163b0d03463e4a5ff36dc99a9328623091b7fd313",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在践行者与石头人的战斗时间线中，下一次伤害发生于时间点854；848为先前误报。",
+      "subject": "践行者与石头人战斗中的下一次伤害时间点",
+      "condition": "在践行者与石头人的战斗时间线中",
+      "scope": "instance",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "下次伤害在",
+          "t_start": 5577,
+          "t_end": 5586
+        },
+        {
+          "text": "在848",
+          "t_start": 5586,
+          "t_end": 5591
+        },
+        {
+          "text": "不对 在854",
+          "t_start": 5591,
+          "t_end": 5597
+        }
+      ],
+      "reason": "逐字稿显示主播先报出848，随后立即用「不对 在854」更正；前文「下次伤害在」提供了该修正针对下一次伤害时间点的指代。",
+      "limitations": [
+        "仅是该场战斗时间线的具体时间点修正，未说明数值单位、基准帧及可外推条件。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在践行者与石头人的战斗中，865处发生的伤害为一次DOT，倍率为10.05A，该次伤害数值为2390。",
+      "subject": "践行者与石头人战斗中865处发生的伤害",
+      "condition": "在践行者与石头人的战斗时间线中，865处",
+      "scope": "instance",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "等到865的时候是",
+          "t_start": 6032,
+          "t_end": 6037
+        },
+        {
+          "text": "一次dot 也就是10.05A",
+          "t_start": 6037,
+          "t_end": 6046
+        },
+        {
+          "text": "这里出来了2390",
+          "t_start": 6046,
+          "t_end": 6055
+        }
+      ],
+      "reason": "逐字稿明确将865与DOT、10.05A以及随后出现的2390相连，属于该战斗伤害时间线中的具体实例记录。",
+      "limitations": [
+        "仅针对该场战斗的该次伤害，未说明伤害公式、目标防御、暴击或减伤等边界。",
+        "「10.05A」为逐字稿原文，倍率含义未进一步解释。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "在践行者与石头人的战斗中，872处发生的伤害为一次AOE。",
+      "subject": "践行者与石头人战斗中872处发生的伤害",
+      "condition": "在践行者与石头人的战斗时间线中，872处",
+      "scope": "instance",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "然后872的话是一次AOE",
+          "t_start": 6063,
+          "t_end": 6080
+        }
+      ],
+      "reason": "逐字稿明确说「然后872的话是一次AOE」，给出时间点和伤害类型，作为该战斗时间线的实例记录。",
+      "limitations": [
+        "仅记录该次伤害类型为AOE，未说明AOE范围、来源、命中目标及数值。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "三个候选均能在逐字稿窗口中找到字符级连续引文，并明确指向践行者与石头人战斗中的854、865、872时间线节点；均为该场战斗的实例级记录，未发现未闭合猜想或画面依赖残句。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

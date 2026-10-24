@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b1_113",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:56:23+0900",
+  "source_sha256": "28c72a5400413a843a19092afc2ee67c2ce0b3774e4801048a7252017ed74bff",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "空想花庭中所有可部署格子与真正的地图外之间都仍隔着一圈。",
+      "subject": "空想花庭地图中的可部署格子",
+      "condition": "当关卡为空想花庭时",
+      "scope": "instance",
+      "category": "地图边界判定/地块布局",
+      "evidence": [
+        {
+          "text": "像空想花庭这个图 就是你所有能部署的格子 都必定离真正的地图外还有一圈",
+          "t_start": 7100,
+          "t_end": 7113
+        },
+        {
+          "text": "你所有可以部黍的地块 都离这个真正的外圈还有一圈",
+          "t_start": 7113,
+          "t_end": 7125
+        }
+      ],
+      "reason": "上下文在解释地图边界判定方法时，主播以空想花庭为例明确断言所有可部署格都距真正地图外还有一圈，并在后文与其他地图可能出现两圈的情况作对比；这是特定地图布局结论，不是开放猜测。",
+      "limitations": [
+        "仅适用于空想花庭该特定地图布局，不能外推为所有地图的通用规则。",
+        "逐字稿未进一步量化“一圈”的具体格数、坐标或版本信息，需以实测地图为准。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单仅有一个候选 c01。该命题可自包含为特定地图“空想花庭”的布局规则；两条引文均能在逐字稿对应行中字符级匹配，起止秒数按行时间与下一行时间标注。主体、条件、范围明确，且主播是在解释地图边界判定时给出的结论，不属于未定论假说或纯实战叙述，故裁定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

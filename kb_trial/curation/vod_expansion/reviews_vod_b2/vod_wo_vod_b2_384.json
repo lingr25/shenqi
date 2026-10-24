@@ -1,0 +1,48 @@
+{
+  "workorder_id": "vod_wo_vod_b2_384",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:02:05+0900",
+  "source_sha256": "9dfa07538a82eebfef2697ae43d74460ff3407fe034200ca826414060d482273",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙一技能「充实」触发时，其下次攻击的攻击力提升，并造成一定侵蚀损伤。",
+      "subject": "克莱门沙一技能「充实」",
+      "condition": "技能触发时",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "克莱门沙下次攻击的攻击力提升 并造成一定侵蚀损伤",
+          "t_start": 186,
+          "t_end": 198
+        }
+      ],
+      "reason": "逐字稿明确且完整陈述了克莱门沙一技能「充实」的机制效果（强化下次攻击与附带侵蚀损伤），具备实体机制复用价值，通过全部硬性闸门。",
+      "limitations": [
+        "逐字稿未交代具体数值参数（如攻击力提升倍率与侵蚀损伤数值）"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单审查克莱门沙一技能机制陈述，文本来自技能介绍宣读，陈述明确无歧义，逐字稿精确对齐，判定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

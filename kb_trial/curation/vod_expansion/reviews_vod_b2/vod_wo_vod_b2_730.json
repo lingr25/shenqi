@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_730",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:08:39+0900",
+  "source_sha256": "07d8aee5d66f8b67194ae76cbf2410b20703199df913a1124074c111ad25b113",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "干员没有物理碰撞箱。",
+      "subject": "干员（全体干员）",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "干员有物理碰撞箱吗",
+          "t_start": 5510,
+          "t_end": 5514
+        },
+        {
+          "text": "没有没有",
+          "t_start": 5514,
+          "t_end": 5529
+        }
+      ],
+      "reason": "在讨论推拉位移速度后，主播直接询问干员是否有物理碰撞箱，并随即连续否定；该问答给出了干员不具有物理碰撞箱的明确判断。",
+      "limitations": [
+        "逐字稿未进一步说明该“物理碰撞箱”具体对应阻挡、受推拉位移还是命中判定。",
+        "该结论来自口头快问快答，缺少更详细的机制边界说明。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅有一条候选。逐字稿中主播在讨论推拉位移速度后直接以问答形式否定干员具有物理碰撞箱，构成可复用的通用机制判断；证据已按行拆分对齐。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

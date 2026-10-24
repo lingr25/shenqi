@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_182",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:24:23+0900",
+  "source_sha256": "368aae957a2ecb9af32701521e1b2adc2afcf4c52b914a2e0a97a3af3b0666fb",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在萨米集成战略关卡「背山面水」中，若在宝藏钱箱周围使用障碍物将其完全封死，钱箱将不会被激活行动（被召唤的敌人不激活移动且击倒后不掉落10源石锭，仅有保底1源石锭）。",
+      "subject": "宝藏钱箱（包含召唤怪物的特殊宝箱）",
+      "condition": "使用障碍物将其所有可行进寻路路径完全封死",
+      "scope": "instance",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "其实你用三个箱子把它封住之后 它不会激活 不过这里笋干了解的有点太少了 但知其一不知其二啊 这种被封死的箱子的话",
+          "t_start": 1711,
+          "t_end": 1724
+        },
+        {
+          "text": "他是没有那个十原石的 只有你被召唤出来的怪的钱箱才会有十原石 不过这个封死的箱子的话 他也有一个保底 如果他再这么死去的话",
+          "t_start": 1724,
+          "t_end": 1735
+        }
+      ],
+      "reason": "主播详细解释了在集成战略关卡「背山面水」中利用障碍物完全阻断钱箱寻路路径时的机制表现（不激活移动、掉落物变为保底），属于已验证并明确阐释的机制结论。",
+      "limitations": [
+        "仅针对特定关卡或同类寻路距离受限/封死判定机制下的宝箱怪物",
+        "底层机制涉及寻路距离上限截断与连通性限制，本条为该机制在关卡中的具体表现"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01陈述了萨米肉鸽「背山面水」中宝箱怪物封死不激活及其掉落结算的特殊机制，文本中有完整的原理解析与结论确认，符合四大闸门要求。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

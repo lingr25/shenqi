@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b2_742",
+  "stem": "BV18BpG6LEtq_p2_42631758665",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:10:51+0900",
+  "source_sha256": "98f6f8ab7f0f947bc4fe9526a6cb220bd354e0bf56fcca2bc74d6d79e5453fd9",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "敌方单位在失衡状态下的碰撞通常是连续多次发生，而不是只发生单次碰撞。",
+      "subject": "敌方单位失衡状态下的碰撞",
+      "condition": "敌方单位处于失衡状态并发生碰撞",
+      "scope": "entity_mechanism",
+      "category": "位移/碰撞",
+      "evidence": [
+        {
+          "text": "失衡碰撞一般是连续的 这个是怪的 刚体设置问题一般都是连续的",
+          "t_start": 1591,
+          "t_end": 1606
+        },
+        {
+          "text": "失衡碰撞一般都是连续的呀",
+          "t_start": 1693,
+          "t_end": 1705
+        }
+      ],
+      "reason": "上下文在讨论敌方单位空中漫步与刚体碰撞时，主播两次明确表述失衡碰撞一般是连续的，并将其归因于敌人的刚体设置，因此可整理为敌方单位失衡碰撞连续发生的机制性结论；候选命题已改写为自包含表述。",
+      "limitations": [
+        "主播使用“一般”作经验概括，未给出碰撞次数、时间间隔、速度或力度阈值。",
+        "逐字稿未明确该结论适用于全部敌方单位，还是仅适用于特定刚体设置。",
+        "逐字稿未提供可复现实机步骤或定量参数。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 的两次引文均可在逐字稿对应行中字符级匹配；命题属于敌方单位刚体与失衡碰撞的机制性表述，虽为经验性概括但非未闭合猜想，故保留并补充主体、条件与适用范围。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

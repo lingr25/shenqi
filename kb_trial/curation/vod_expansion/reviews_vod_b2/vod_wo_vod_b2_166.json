@@ -1,0 +1,74 @@
+{
+  "workorder_id": "vod_wo_vod_b2_166",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:17:21+0900",
+  "source_sha256": "1368e4662be4fd94de90961661fc08c90f7a02fb9611c9c889eb81d0c8776d7c",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "干员类目标的仇恨值按部署时间计算。",
+      "subject": "干员类目标的仇恨值",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "干员的仇恨是按照部署时间计算的",
+          "t_start": 615,
+          "t_end": 629
+        }
+      ],
+      "reason": "第615秒课堂开场明确给出该结论，逐字稿可字符级定位；上游时间戳有误，已按原行修正。",
+      "limitations": [
+        "该表述是课堂开场的基础结论；后续讨论补充嘲讽等级等因素会影响仇恨排序，本条未展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "敌人类目标的仇恨值按巡逻距离决定。",
+      "subject": "敌人类目标的仇恨值",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "敌人的仇恨是按照巡逻距离决定的",
+          "t_start": 615,
+          "t_end": 629
+        }
+      ],
+      "reason": "第615秒课堂开场明确给出与干员部署时间并列的结论，逐字稿可字符级定位；上游时间戳有误，已按原行修正。",
+      "limitations": [
+        "巡逻距离的具体计算边界与当前版本变化未在本条展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均为课堂开场的明确机制陈述，逐字稿可定位；已修正上游错误时间戳并补全自包含主体。c01/c02 与后续嘲讽等级/版本复杂化讨论有边界关系，但核心命题成立，作为基础索敌规则保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

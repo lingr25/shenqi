@@ -1,0 +1,64 @@
+{
+  "workorder_id": "vod_wo_vod_b2_056",
+  "stem": "BV1GVeb6dEVw_p1_42029417572",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:34:56+0900",
+  "source_sha256": "1a0a2b629b01e394aaebfced1ed6ffe5fc18ae8e5973a98fd33d4eec6943cb1d",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在推拉逐帧移动判定中，若被推拉高速位移的单位在逐帧路径中没有一帧落入蓝门路径终点0.05半径判定范围内，单位会直接飞过蓝门而不是进入蓝门。",
+      "subject": "被推拉高速位移的单位",
+      "condition": "逐帧路径中没有一帧落入蓝门路径终点0.05半径判定范围内",
+      "scope": "universal",
+      "category": "落点判定",
+      "evidence": [
+        {
+          "text": "所以像这种格判的入坑判定 他就不会判定成进坑 他会在那个速度超过30的时候 当任何一个点位不落于坑里的时候 直接飞过坑",
+          "t_start": 217,
+          "t_end": 234
+        },
+        {
+          "text": "同样的道理也包括蓝门 蓝门的话 大家应该也见过 就是尸横直接飞过蓝门这样的这样的事儿",
+          "t_start": 234,
+          "t_end": 247
+        },
+        {
+          "text": "他们没有一帧在蓝门的",
+          "t_start": 247,
+          "t_end": 262
+        },
+        {
+          "text": "在路径终点0.05半径之内就会飞过这个坑 这是这种判断落点究竟在不在某一个坐标嗯",
+          "t_start": 262,
+          "t_end": 289
+        }
+      ],
+      "reason": "上下文先说明推拉是逐帧移动、没有中间落点，速度超过30且任一点位不落于坑内时会直接飞过坑；随后主播明确说同样道理包括蓝门，并举例某单位没有一帧在蓝门路径终点0.05半径内，因此会飞过该判定点。可归纳为蓝门落点判定同样可被高速逐帧位移跳过。",
+      "limitations": [
+        "逐字稿未交代蓝门判定半径是否在所有场景均固定为0.05，也未给出速度阈值与蓝门判定的完整边界",
+        "示例中的具体单位名称受 ASR 影响无法完全确认，但不影响该机制陈述"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 经改写为自包含机制陈述后通过四闸；引文均来自单行逐字稿连续子串。蓝门飞过由逐帧落点判定推出，具有可复用机制价值，保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

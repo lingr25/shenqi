@@ -1,0 +1,66 @@
+{
+  "workorder_id": "vod_wo_vod_b2_477",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:49:52+0900",
+  "source_sha256": "f719583aa4cdb135349c29de6c3bcbb3030c8de018d0f01510ad1c6a9a949d50",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "克莱门沙技能造成的轰炸会对其目标位置及其周围四格的所有地面敌人造成物理伤害和元素伤害，且轰炸造成的伤害受第一天赋影响。",
+      "subject": "克莱门沙技能造成的轰炸",
+      "condition": "克莱门沙技能轰炸触发时",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "该位置及其周围四格 所有地面敌人造成物理伤害和元素伤害 轰炸造成的伤害也会受到第一天赋的影响",
+          "t_start": 2165,
+          "t_end": 2180
+        }
+      ],
+      "reason": "逐字稿直接描述了轰炸对目标位置及其周围四格所有地面敌人的伤害，并明确轰炸伤害受第一天赋影响；上游命题中的“侵蚀损伤爆发触发”关系在窗口内未与轰炸同句闭合，故本回执只保留已有逐字稿明确支撑的范围与伤害结算规则。",
+      "limitations": [
+        "逐字稿该句以“该位置”开头，主语由上下文补为克莱门沙技能轰炸。",
+        "未在窗口内确认“侵蚀损伤爆发”与轰炸触发之间的唯一关系，需另行验证。",
+        "逐字稿有ASR数字插入和重复词，范围、目标类型和第一天赋加成按可读句意提取。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "克莱门沙在侵蚀损伤爆发时消耗一发弹药，且没有侵蚀损伤爆发时不消耗弹药。",
+      "verdict": "pending",
+      "reason": "逐字稿中既有“爆发时都会消耗……消耗一发弹药”和“没有侵蚀损伤爆发时不会消耗弹药”的陈述，但后文又出现疑似爆发却未消耗弹药的现场观察/开放疑问（“你看这个是不是爆发了 他没有消耗弹药”），窗口内未闭合，需实机复核例外条件或确认是否为误判。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c02保留克莱门沙轰炸的范围/目标类型/伤害受第一天赋影响的明确机制，并删除逐字稿未闭合的“侵蚀损伤爆发触发”条件；c01虽有直接陈述，但后续疑似反例和反问未解决，按未定论处理为pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

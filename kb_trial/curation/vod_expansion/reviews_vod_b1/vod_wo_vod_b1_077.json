@@ -1,0 +1,101 @@
+{
+  "workorder_id": "vod_wo_vod_b1_077",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:48:53+0900",
+  "source_sha256": "6039212cfd02e4679fb5934e3d68a218dd66c8453c23d4044ad4d4d24ba227d1",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "地块通行设置分为可通行与不可通行两类，可通行地块不会触发地面敌人「慢慢走」的表现。",
+      "subject": "可通行地块",
+      "condition": "地块通行设置标记为可通行时",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "通行设置包括可通行与不可通行两 可通行的话其实是比较明显的 一个可通行的地块 就不会触发那种就是慢慢走的",
+          "t_start": 5342,
+          "t_end": 5352
+        }
+      ],
+      "reason": "逐字稿明确将通行设置分为可通行与不可通行，并说明可通行地块不会触发“慢慢走”表现；下一行以地面敌人进入不可通行地块后的卡墙表现作对照，故该陈述有直接文本支撑。",
+      "limitations": [
+        "逐字稿未给出“慢慢走”的正式状态名或精确触发参数。",
+        "是否仅限地面敌人由后文语境补全。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "地面敌人进入不可通行地块后会迈小步向外挪动，俗称卡墙；卡墙是敌人「群众标」丢失后受避障力持续移动造成的现象。",
+      "subject": "地面敌人",
+      "condition": "地面敌人进入不可通行地块后",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "当地面敌人进入后 会迈开小短腿 扑腾扑腾的往外挪动 俗称卡墙 这实际上是敌人群众标丢之后 受到避障力在移动的现象",
+          "t_start": 5359,
+          "t_end": 5365
+        }
+      ],
+      "reason": "逐字稿直接描述地面敌人进入不可通行地块后向外挪动、俗称卡墙，并给出群众标丢失与避障力导致移动的解释，属明确机制说明。",
+      "limitations": [
+        "「群众标」「避障力」为转写原词，术语正名与底层实现细节未在逐字稿中展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c03",
+      "claim": "围墙、围栏和高台均属不可通行地块。",
+      "subject": "围墙、围栏和高台",
+      "condition": "按通用地块配置习惯",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "围墙围栏以及高台都是不可通行地块",
+          "t_start": 5365,
+          "t_end": 5375
+        }
+      ],
+      "reason": "逐字稿直接陈述围墙、围栏以及高台都是不可通行地块；后文补充地块属性可在地图文件中单独改写，故作为通用习惯归类保留。",
+      "limitations": [
+        "后文说明所有地块属性均可单独改写，因此该结论是通用习惯写法而非不可覆盖的绝对规则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "三条候选均可在逐字稿中找到字符级对齐证据，且为讲师对可通行设置、卡墙和地块分类的明确机制说明；未发现未定论假说或依赖画面的残句。c03 的绝对性受后文“属性可单独改写”限定，已在 limitations 标注。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

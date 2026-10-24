@@ -1,0 +1,65 @@
+{
+  "workorder_id": "vod_wo_vod_b2_749",
+  "stem": "BV18BpG6LEtq_p2_42631758665",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:11:51+0900",
+  "source_sha256": "7bb238b220c8a8acdf80c088ab8002798a44757065bc5c4e55360bf809d2ffd1",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在连续型射线碰撞检测下，若对象完全位于墙外且不在墙缝内，则其从墙外向内跨越墙体的位移会被落点间射线检测拦截，不会穿墙；若对象处于墙缝内则另当别论。",
+      "subject": "连续型射线碰撞检测机制",
+      "condition": "对象完全位于墙外且不在墙缝内，采用落点间射线检测",
+      "scope": "universal",
+      "category": "位移/碰撞检测",
+      "evidence": [
+        {
+          "text": "因为你从外头往里撞的话 肯定是会触发这个射线检测",
+          "t_start": 1976,
+          "t_end": 1988
+        },
+        {
+          "text": "可以在那个一个落点到另一个落点的之间 的射线上 然后进行检测碰撞有没有撞到墙",
+          "t_start": 2099,
+          "t_end": 2112
+        },
+        {
+          "text": "就理所当然的 他做一个射线检测的话 他的这个理论上是更优的 就是检测的会更加的完备",
+          "t_start": 2112,
+          "t_end": 2135
+        },
+        {
+          "text": "所以的话只要在墙外连续型就不可能穿墙 但是如果在墙缝就另当别论",
+          "t_start": 2135,
+          "t_end": 2160
+        }
+      ],
+      "reason": "逐字稿先说明从外向内撞会触发射线检测，随后对比离散落点检测与落点间射线检测，指出射线检测更完备，并明确给出墙外不穿墙、墙缝例外的边界结论。该命题属于可复用的碰撞检测机制说明。",
+      "limitations": [
+        "墙缝内的具体行为被明确排除，需另行判定。",
+        "未给出墙厚、落点间距、射线长度等具体参数。",
+        "该结论来自口头原理说明，当前窗口内未提供对应实机验证画面或数据。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 通过四闸门。逐字稿将离散落点检测与连续型射线检测进行对比，并明确墙外不穿墙、墙缝例外的边界；已改写为自包含机制陈述并补入墙缝例外。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

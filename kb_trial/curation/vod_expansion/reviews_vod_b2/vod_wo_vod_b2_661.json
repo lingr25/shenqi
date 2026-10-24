@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_661",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:07:12+0900",
+  "source_sha256": "db0ebb2b052b5083565f69490c884181780946bb9608e3de844ab8792768bc61",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "目标一旦被挂上Buff，不会因为目标恢复隐匿而撤掉该Buff",
+      "subject": "目标身上已挂上的Buff",
+      "condition": "目标已获得Buff并随后恢复隐匿",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "质检这种范围赋予的隐匿能无视吗",
+          "t_start": 7102,
+          "t_end": 7109
+        },
+        {
+          "text": "这一看就是挂上Buff了 不会因为恢复而撤掉",
+          "t_start": 7109,
+          "t_end": 7130
+        }
+      ],
+      "reason": "上下文先讨论范围赋予的隐匿能否被无视，随后主播以“这一看就是挂上Buff了 不会因为恢复而撤掉”作出结论性断言，明确表达已挂上的Buff不会因恢复隐匿而被移除；该句不是开放疑问，具备可复用机制价值。",
+      "limitations": [
+        "逐字稿未说明Buff的具体类型、持续时间以及恢复隐匿与Buff移除判定的精确先后。",
+        "转写存在ASR错字，不宜依据同段其它含混词句推断未明确给出的参数。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选c01在上下文中有直接结论句支撑，且可由前一行补全“恢复隐匿”的指代，满足四闸门；主播关于“能否无视恢复”的猜测部分未纳入命题。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

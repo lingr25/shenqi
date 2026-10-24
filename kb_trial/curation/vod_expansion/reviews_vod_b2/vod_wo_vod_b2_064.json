@@ -1,0 +1,87 @@
+{
+  "workorder_id": "vod_wo_vod_b2_064",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:37:34+0900",
+  "source_sha256": "fdba5e7f98e89dc0124bc813a17f26c485db646f4226cbba324e3115314a613d",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在《明日方舟》第九章中，深池方阵战士、深池卫队和深池影刀属于离散型失衡敌人。",
+      "subject": "深池方阵战士、深池卫队、深池影刀",
+      "condition": "universal",
+      "scope": "entity_mechanism",
+      "category": "位移/失衡",
+      "evidence": [
+        {
+          "text": "那个呃九章的有几个怪是这样的 是那个深池深池方阵战士",
+          "t_start": 214,
+          "t_end": 230
+        },
+        {
+          "text": "然后深池有卫队和深池影刀这几个怪嗯",
+          "t_start": 230,
+          "t_end": 244
+        }
+      ],
+      "reason": "主播先说明方舟失衡存在离散型，随后明确肯定第九章有几类怪属于该模式，并点名深池方阵战士、深池卫队和深池影刀。原候选引文跨行拼接，已拆分为两条连续逐字子串作为证据。",
+      "limitations": [
+        "主播未穷举所有离散型失衡敌人，仅肯定第九章这几类。",
+        "未说明是否存在其他未提及的离散型失衡敌人。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "离散型失衡敌人被失衡命中后，先移动到自身规定的落点，之后才会因失衡碰撞箱的相互排斥而向外弹出。",
+      "subject": "离散型失衡敌人",
+      "condition": "离散型失衡敌人被失衡命中时",
+      "scope": "entity_mechanism",
+      "category": "位移/失衡",
+      "evidence": [
+        {
+          "text": "离散型就只有落到落点之后再弹出",
+          "t_start": 273,
+          "t_end": 284
+        },
+        {
+          "text": "对吧 离散型要先到自己规定的落点 然后的话再因为失衡碰撞箱的相互排斥 弹出",
+          "t_start": 443,
+          "t_end": 456
+        }
+      ],
+      "reason": "逐字稿明确给出离散型失衡敌人的位移顺序：先到自身规定落点，之后才因失衡碰撞箱相互排斥而弹出；前一句也以‘只有落到落点之后再弹出’概括同一机制。",
+      "limitations": [
+        "未说明落点坐标的具体计算方式。",
+        "未确认所有离散型失衡敌人是否完全一致。",
+        "‘失衡碰撞箱相互排斥’为解释性机制，具体实现未由官方文本进一步确认。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均具有机制价值。c01 原引文跨行，已按逐字稿拆分为两条连续子串；c02 两条引文均可在对应单行中逐字匹配。两条命题均通过自包含、逐字证据、三元约束与排除未定论假说四项闸门，裁定为 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

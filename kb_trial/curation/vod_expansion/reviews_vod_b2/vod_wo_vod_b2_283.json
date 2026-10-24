@@ -1,0 +1,69 @@
+{
+  "workorder_id": "vod_wo_vod_b2_283",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:31:00+0900",
+  "source_sha256": "6da82c800f9d13a14eda4494886d2040b26e71320259182ea4c480c41b2310de",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "《明日方舟》的伤害计算按逻辑顺序分为三大环节：属性结算流程负责计算攻防血等属性数值，抗性结算流程依据攻防属性算出伤害，伤害结算流程负责伤害的增减。",
+      "subject": "伤害计算流程（属性计算、抗性计算与伤害增减三环节）",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "首先是属性结算流程",
+          "t_start": 1101,
+          "t_end": 1113
+        },
+        {
+          "text": "计算攻防血",
+          "t_start": 1118,
+          "t_end": 1126
+        },
+        {
+          "text": "计算工方写数值 然后抗性结算流程",
+          "t_start": 1126,
+          "t_end": 1137
+        },
+        {
+          "text": "计算伤害 再然后的话是伤害结算流程",
+          "t_start": 1143,
+          "t_end": 1152
+        },
+        {
+          "text": "伤害的增减",
+          "t_start": 1152,
+          "t_end": 1159
+        }
+      ],
+      "reason": "讲师在伤害计算课总览中明确把伤害计算拆成「属性结算流程（算攻防血）→抗性结算流程（按攻防算伤害）→伤害结算流程（伤害增减）」三段，随后还自述『这个总结方式不是非常程序化，但是我认为是比较符合人的思考的 逻辑顺序』并逐段展开，属于可复用的机制定论，非当场未闭合猜想。上游引文跨多行拼接违反逐字对齐，已拆分为多条单行原文证据。",
+      "limitations": [
+        "讲师自承该三段划分为教学性归纳而非严格程序实现顺序，各段边界与内部实现细节未在本段逐字稿展开",
+        "本段未给出各环节的具体公式参数，仅给出流程框架"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅 c01 一条候选。其内容为讲师在课程开篇对伤害计算流程所做的三段式总览，具备明确主体与可复用规则价值，四大闸门均通过。上游 evidence 把 1101s、1118s、1126s、1143s、1152s 等多行逐字稿拼接为单条引文，违反 Gate 2 的连续子串要求，故在回执中拆分为五条逐行原文证据并修正时间戳（原 start/end 18.35/19.22 与工单窗口不符）。命题语句已改写为自包含规范表述。综上裁定 keep，无被排除候选，顶层 verdict 为 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

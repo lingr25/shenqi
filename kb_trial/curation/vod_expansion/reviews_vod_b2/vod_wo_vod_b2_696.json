@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_696",
+  "stem": "BV1gpp46QEwe_p2_42593356669",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T15:58:15+0900",
+  "source_sha256": "0d1aadcf8fe53f67f95f8b96b20ae149dde5638e6ecf3bce87405bc694f7b408",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "夜魔二技能与温蒂的相关机制在光环分类上属于同一款，无需对二者作机制区分。",
+      "subject": "夜魔二技能与温蒂的相关机制",
+      "condition": "universal",
+      "scope": "entity_mechanism",
+      "category": "技能特例",
+      "evidence": [
+        {
+          "text": "总之光环是这样一种机制啊",
+          "t_start": 3018,
+          "t_end": 3034
+        },
+        {
+          "text": "夜魔二技能和温蒂本质上是同一款啊",
+          "t_start": 3034,
+          "t_end": 3047
+        },
+        {
+          "text": "我们不对这个夜魔二还是温蒂做区分了",
+          "t_start": 3047,
+          "t_end": 3060
+        }
+      ],
+      "reason": "上下文先总结光环是一种通用机制，随后主播明确将夜魔二技能与温蒂归为同一款，并说明不再对二者作区分。该结论可改写为自包含的光环机制同类判定。",
+      "limitations": [
+        "逐字稿仅给出二者同类的结论，未展开具体数值、持续时间、碰撞判定或帧时序参数。",
+        "需结合本段前面的光环机制说明理解其归类，不能单独从中推出完整判定流程。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 的核心结论在逐字稿 50:34 左右有明确原句；上游给出的 34–47 秒时间戳与转录不符，本次按原句实际位置 3018/3034/3047 秒校正证据。命题经改写补足“光环机制”上下文后保留，具体参数未展开，已列入 limitations。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

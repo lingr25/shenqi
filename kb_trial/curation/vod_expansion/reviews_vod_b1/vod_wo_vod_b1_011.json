@@ -1,0 +1,86 @@
+{
+  "workorder_id": "vod_wo_vod_b1_011",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T21:16:40+0900",
+  "source_sha256": "fa0394298d26f5ed24f0304ca57c18d0361119e06f7941ace300d29977865b47",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在路线预演拼接配置中，第一条路线预演（对应出怪前 3 秒设置的路线）在最后出生的飞贼出生后 2 秒 1 帧触发。",
+      "subject": "第一条路线预演",
+      "condition": "路线预演配置为出怪前 3 秒；场上存在多只飞贼，并以最后出生的那只飞贼的出生时间为计时起点",
+      "scope": "instance",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "前头还有三个那个什么飞贼对吧 他就是最后出生的那个飞贼的 就是路线预演的第一条路线 是最后一只飞贼出生后的两秒一帧",
+          "t_start": 1280,
+          "t_end": 1293
+        },
+        {
+          "text": "第一个是出怪前的三秒钟 第二个是出怪前的2.7秒钟",
+          "t_start": 1321,
+          "t_end": 1333
+        }
+      ],
+      "reason": "主播在讲解路线预演配置时明确给出第一条路线相对最后出生飞贼的偏移为两秒一帧，并说明两条路线分别对应出怪前 3 秒与 2.7 秒；参数明确且可复现。",
+      "limitations": [
+        "逐字稿未给出具体关卡名",
+        "两秒一帧的换算依赖该关卡出怪间隔与加帧逻辑"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在路线预演拼接配置中，第二条路线预演（对应出怪前 2.7 秒设置的路线）在最后出生的飞贼出生后 10 帧触发。",
+      "subject": "第二条路线预演",
+      "condition": "路线预演配置为出怪前 2.7 秒；并与第一条路线预演针对同一只最后出生的飞贼出生时间计时",
+      "scope": "instance",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "第一个是出怪前的三秒钟 第二个是出怪前的2.7秒钟",
+          "t_start": 1321,
+          "t_end": 1333
+        },
+        {
+          "text": "这个会在这个出生之后十帧 这样去进行一个预演",
+          "t_start": 1333,
+          "t_end": 1347
+        }
+      ],
+      "reason": "主播先说明两条路线分别对应出怪前 3 秒和 2.7 秒，随后明确第二个路线预演在出生后十帧进行；结合前一条候选可确定该出生时间指同一只最后出生的飞贼。",
+      "limitations": [
+        "逐字稿未给出具体关卡名",
+        "“这个出生”的具体指代依赖上一条已明确的飞贼出生时间"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均来自同一段路线预演机制讲解，逐字稿给出明确偏移：第一条路线为最后出生飞贼后 2 秒 1 帧，第二条路线为出生后 10 帧，并说明对应出怪前 3 秒与 2.7 秒的拼接配置。引文可在原始逐字稿中逐字对齐，主语、条件与范围已补全为特定路线预演配置，未见未定论假说或开放疑问，故均裁定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

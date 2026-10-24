@@ -1,0 +1,89 @@
+{
+  "workorder_id": "vod_wo_vod_b2_170",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:19:03+0900",
+  "source_sha256": "2d23b0d1018bfd8560021333c636e6afc6fe165d887c446e342cd6c0d51f9e9d",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在明日方舟索敌排序中，过滤器规则可用于排序的物理量/属性不仅限于仇恨值，还包括生命值、嘲讽等级/值、防御力、攻击力、距离、时间等多种属性。",
+      "subject": "索敌过滤器排序规则",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "索敌",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "这些规则可以进行排序的东西有很多东西 比如说生命值啊 仇恨值 然后还有嘲讽值嗯",
+          "t_start": 978,
+          "t_end": 991
+        },
+        {
+          "text": "以及各种各样的其他东西 比如说血量啊 奶量啊啊 不是血量啊 还有那个防御力呀 攻击力呀 然后还有什么",
+          "t_start": 991,
+          "t_end": 1006
+        }
+      ],
+      "reason": "逐字稿详细且清晰地说明了仇恨/索敌过滤器所支持排序的各项基础量，命题具有明确的底层规则机制价值，且为确定性陈述。",
+      "limitations": [
+        "口述中列举的部分属性（如奶量）被主播自我修正，实际可排序键值范围取决于客户端实现支持的属性枚举。"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "claim": "一个仇恨过滤器在底层对应一套具体的索敌排序规则；当新增干员或敌人需要此前不存在的全新复合索敌逻辑时，游戏会新增一个独立的仇恨过滤器供同类索敌需求复用。",
+      "subject": "仇恨过滤器（索敌规则实体）",
+      "condition": "当存在此前未定义的索敌排序规则组合时",
+      "scope": "universal",
+      "category": "索敌",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "嗯在各种各样鹰角呃 一个仇恨过滤器代表的就是一套规则 鹰角想新出一个干员或者一个敌人 他得拥有一套全新的索敌的时候",
+          "t_start": 1013,
+          "t_end": 1025
+        },
+        {
+          "text": "那么在这种情况下的话 它就会新出一套新的仇恨过滤器 然后用来满足自己的新规则的需要 一个仇恨过滤器代表一个规则",
+          "t_start": 1037,
+          "t_end": 1047
+        },
+        {
+          "text": "一个仇恨过滤器的应用就可以给所有此类索敌的敌人或者干员一起用",
+          "t_start": 1047,
+          "t_end": 1059
+        }
+      ],
+      "reason": "原文明确阐述了仇恨过滤器与索敌规则之间的对应关系及复用机制（一套规则对应一个过滤器实体，多个单位可共用），改写补全了复用属性后成为自包含的机制知识。",
+      "limitations": [
+        "仅适用于需要未出现过的排序组合场景，如果已有过滤器支持相同排序逻辑，则会直接复用已有过滤器而非强制新建。"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单主要讲解底层索敌过滤器的架构机制（支持排序的多维键值以及过滤器的复用模型）。两个候选命题均有确凿的上下文逐字稿支撑，经改写去除口语冗余后符合四大硬性闸门，全部予以保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

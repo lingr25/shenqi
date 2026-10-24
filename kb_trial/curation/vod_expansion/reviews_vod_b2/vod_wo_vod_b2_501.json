@@ -1,0 +1,52 @@
+{
+  "workorder_id": "vod_wo_vod_b2_501",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:52:30+0900",
+  "source_sha256": "5d190c17218a7dff1ac205bd5c47047cb049156ee5db78d4912a37f459a001c5",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "若减伤提升50%，减伤数值会从30变成45。",
+      "verdict": "reject",
+      "reason": "该句是条件假设下的数值换算，主播并未确认实际减伤为30或提升50%，属于未验证推导，不满足 Gate 4；且“减伤数值”脱离上下文后主体不够明确。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "减伤数值的推测值由30或50修正为30和50。",
+      "verdict": "reject",
+      "reason": "原文“应该是30或50减少”“应该是30和50减少”属于主播对减伤数值的口头推测与自我修正，未给出确定参数和闭合结论，仍为未定论假说，不满足 Gate 4。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "两条候选均围绕第二天赋身前减伤数值的临时推测展开。c01 是条件假设换算，c02 是“或/和”口误性自我修正，二者均未经实机验证或明确结论闭合，均因未定论推测被排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

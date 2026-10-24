@@ -1,0 +1,84 @@
+{
+  "workorder_id": "vod_wo_vod_b1_064",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T00:04:53+0900",
+  "source_sha256": "bc6312460d0a96bb4e2f5ed4ab6b2656109a1da6de057fca3d728f8e3a82bb73",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "真正的地图边界是非格子，即格子与格子外部之间的交界，而不是地图四周的一圈黑色区域。",
+      "subject": "地图边界",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "地图/地块",
+      "evidence": [
+        {
+          "text": "这个东西说的就是啊 就是真正的地图边界是非格子",
+          "t_start": 4608,
+          "t_end": 4619
+        },
+        {
+          "text": "格子到非格子之间 但是实际上我们平时推拉撞的这个墙啊 都只是周围黑色 这一圈都只是后周围黑色这一圈儿 在地图格子和非格子的边界",
+          "t_start": 4619,
+          "t_end": 4634
+        }
+      ],
+      "reason": "讲师在地块基础讲解中明确说明真正的地图边界是非格子，并在下一行补充为地图格子和非格子的边界；同时指出平时推拉撞的墙只是周围黑色一圈。上下文足以支撑该自包含结论。",
+      "limitations": [
+        "逐字稿未给出具体解包字段名或碰撞几何参数，结论来自讲课口述与演示。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "地图周围一圈黑色高台属于高台地块，与图内 forbidden 地块一样不可通行，不能把这一圈黑色高台当作地图边界。",
+      "subject": "地图周围一圈黑色高台（黑高台地块）",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "地图/地块",
+      "evidence": [
+        {
+          "text": "而这种墙体实际上是一些高台 一些黑高台 他和就是图内的这种forbidden 那些不可部署 不可通行的地块是不可通行的",
+          "t_start": 4641,
+          "t_end": 4654
+        },
+        {
+          "text": "就是这一圈不能把这一圈当成地图边界",
+          "t_start": 4654,
+          "t_end": 4665
+        }
+      ],
+      "reason": "讲师说明这种墙体实际是黑高台，并与图内 forbidden 这类不可部署、不可通行地块一样不可通行；随后明确这一圈不能当作地图边界。因此该命题有逐字稿直接支撑。",
+      "limitations": [
+        "逐字稿未逐项列出所有边缘黑色地块的 tile key 或 parcel mask 字段，黑色高台是否全部同属一类未完全展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均为讲师关于地图边界与地块属性的明确机制结论，满足自包含、逐字引文对齐、显式主体/条件/范围及排除未定论假说四项闸门。证据时间戳按 transcript_window 实际行校正为 4608s、4619s、4641s、4654s 等。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,70 @@
+{
+  "workorder_id": "vod_wo_vod_b2_603",
+  "stem": "BV1KtHX6nEZS_p3_42575594392",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T13:58:24+0900",
+  "source_sha256": "4a7b708f1237e90da210cb7ca3917a8a61e5387f4b461d2a7a3b271f633f67ef",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "在主播讨论的特定伤害轴中，星熊若要额外多打EA，需要火陈的龙撞击一次。",
+      "subject": "星熊",
+      "condition": "在主播讨论的特定伤害轴中；火陈的龙撞击一次",
+      "scope": "instance",
+      "category": "伤害结算/刀数",
+      "evidence": [
+        {
+          "text": "火陈的龙两判是这个伤害 然后的话星熊",
+          "t_start": 682,
+          "t_end": 697
+        },
+        {
+          "text": "英雄多打ea的话也需要龙撞一下",
+          "t_start": 697,
+          "t_end": 702
+        }
+      ],
+      "reason": "逐字稿先提到火陈的龙两判与星熊，随后说星熊多打EA也需要龙撞一下；结合上下文可将ASR「英雄」校正为「星熊」，抽取为特定伤害轴中星熊额外EA对火陈龙一判的依赖关系。",
+      "limitations": [
+        "未在逐字稿中展开EA全称与完整时序参数。",
+        "仅能说明该特定轴中的必要性，未证明充分性，不能外推为通用规则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "火陈的龙撞一下与撞两下在伤害轴上差别不大，且两者都很极限。",
+      "verdict": "reject",
+      "reason": "G4不通过：「都是很极限的」属于主观实战评价，且后续890s明确修正为「这个其实一点也不极限」；「区别并不大」也缺少可复现的定量参数与完整轴条件，不宜作为稳定机制定论。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c02有明确条件关系与逐字稿支撑，保留为特定伤害轴中的实例机制；c01因主观极限评价被后续勘误否定且缺乏可复现参数，予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

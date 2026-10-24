@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b1_053",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:28:00+0900",
+  "source_sha256": "7e4b6a27d52aa68ad9cd361341c45bdfc1b1dbe58c5f0db00958b47a55c60e15",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "空降兵落地后不能立刻进坑；原因是空降兵的出生状态机不会立刻切换，出生状态机与坠落状态机之间存在互斥。",
+      "subject": "空降兵",
+      "condition": "空降兵落地后",
+      "scope": "entity_mechanism",
+      "category": "状态效果/位移",
+      "evidence": [
+        {
+          "text": "空降兵之所以落地不可以立马进坑 就是因为初生状态机不会立刻切 那个是呃坠落状态机 使状态及时之间的互斥",
+          "t_start": 3780,
+          "t_end": 3796
+        }
+      ],
+      "reason": "主播在该段明确断言空降兵落地后不能立刻进坑，并归因于出生状态机不会立刻切换、与坠落状态机互斥；后续“在坑上完成完整演出效果”说明该状态机延迟用于避免立即死亡结算，支撑该机制结论。",
+      "limitations": [
+        "逐字稿中“使状态及时之间”存在 ASR 错乱，本回执按上下文理解为“出生状态机与坠落状态机之间”。",
+        "未给出状态机切换的具体帧数、优先级或所有适用敌人范围。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 有明确逐字稿断言与机制归因，主体、条件、范围可补齐；未发现未闭合假说或反问。ASR 个别错乱不影响核心结论，判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

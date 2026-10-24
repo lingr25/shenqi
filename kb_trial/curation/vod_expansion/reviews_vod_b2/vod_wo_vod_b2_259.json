@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_259",
+  "stem": "BV1L4ez6oEcc_p2_42060876088",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:26:01+0900",
+  "source_sha256": "5d90b7d0698561a7eb66b888e6e99e1d3c9f2741aa24fdd40f7a9fd332745dc0",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "幕落开启技能后在攻击范围内索敌，该技能的攻击范围为1格",
+      "verdict": "pending",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ],
+      "reason": "引文可字符级对齐，主播也口头承认攻击范围为1格；但整段处于异常推导与实测中，后续出现『这个羊不在攻击范围内 但是开技能可以打到他』等矛盾，且最终归因为『目录自己的问题』，未形成可复现的机制定论。宜留待实机验证或人工听审。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "幕落技能可攻击的敌人数量等同于阻挡数",
+      "verdict": "pending",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ],
+      "reason": "引文可对齐，但『答等同于阻挡数的敌人 然后可打做挡』ASR 残损，缺少技能开启等必要前提；上下文随后陷入混乱且未闭合，无法确认『可攻击敌人数量等同于阻挡数』的精确规则。"
+    }
+  ],
+  "review_note": "本工单两条候选均涉及幕落技能索敌/攻击范围，讨论过程中主播明确表示混乱、后续实测与口头断言存在矛盾，尚未闭合为可复用机制定论。两条均判 pending，建议后续实机验证或人工听审。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

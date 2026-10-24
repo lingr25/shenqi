@@ -1,0 +1,48 @@
+{
+  "workorder_id": "vod_wo_vod_b2_146",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:07:37+0900",
+  "source_sha256": "8523d351f6d44982801f25c06639a7fc22a4e319ea248463befab8d0971e9829",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "《明日方舟》游戏局内的空间位置坐标数据类型为单精度浮点数（float）。",
+      "subject": "局内空间位置坐标",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "位移",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "不过坐标是浮点数 坐标是单精度的浮点数 这个是可以确定的 坐标是浮点数的最典型案例 还是那个谁火陈火陈转转转",
+          "t_start": 1114,
+          "t_end": 1135
+        }
+      ],
+      "reason": "主播明确且肯定地确认空间坐标使用单精度浮点数存储与计算（区别于其他以定点数做计算的属性），并指出了典型案例，属于底层通用规则定论。",
+      "limitations": [
+        "主播自述位移具体计算过程中可能涉及多个中间步骤数据，未穷尽所有中间运算变量的数据类型，但位置坐标本身确定为单精度浮点数。"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单候选命题 c01 陈述清晰，逐字稿中有极其明确的断言（'坐标是单精度的浮点数 这个是可以确定的'），满足四大硬性闸门，予以采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

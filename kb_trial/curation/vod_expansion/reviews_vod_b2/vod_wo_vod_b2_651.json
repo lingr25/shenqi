@@ -1,0 +1,64 @@
+{
+  "workorder_id": "vod_wo_vod_b2_651",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:05:19+0900",
+  "source_sha256": "1c353e82484e8933851b1834ccdc7a2bc1bca401eb02e9564f6b49b8b758477b",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱传送将敌人传送到炮弹坐标后，推坑入坑判定会对纵坐标采用向偶取整：当实际位置纵坐标为 7.5 且目标坑位纵坐标为偶数格时，7.5 会被向偶取整为 8，因此可判定在坑并成功入坑；该方法只对偶数格坑成立，对奇数格坑不成立。",
+      "subject": "克莱传送推坑时的入坑判定纵坐标取整规则",
+      "condition": "实际位置纵坐标为 7.5，且目标坑位纵坐标为偶数格",
+      "scope": "entity_mechanism",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "不可以 因为克莱的传送是把那个敌人 直接传送到那个炮弹的坐标 注意是传送到炮弹的坐标啊",
+          "t_start": 6285,
+          "t_end": 6298
+        },
+        {
+          "text": "这个方法的硬性要求是 这个坑必须得是那个偶数呃 奇数偶数奇数偶数必须得设偶数格啊 这个坑必须得是偶数格",
+          "t_start": 6325,
+          "t_end": 6353
+        },
+        {
+          "text": "纵横坐标是七 纵坐标是八 他是因为纵坐标是偶数己的 这个位置是7.5 向偶取整取整为八 所以才可以判定在坑 这个才可以入坑",
+          "t_start": 6470,
+          "t_end": 6482
+        },
+        {
+          "text": "这个方法只对偶数格成立 对奇数格不成立",
+          "t_start": 6482,
+          "t_end": 6496
+        }
+      ],
+      "reason": "逐字稿明确说明克莱传送会把敌人送到炮弹坐标，并规定该推坑方法要求坑为偶数格；随后以纵坐标 7.5 向偶取整为 8、因而判定在坑为例，且补充只对偶数格成立、对奇数格不成立。四条引文均可在对应行原样定位，命题为可复用的机制结论。",
+      "limitations": [
+        "逐字稿仅展示纵坐标 7.5 向偶取整为 8 的坐标案例，未穷举其他半格坐标或所有位移类型。",
+        "“只对偶数格成立”来自该讲解段落的归纳，具体实现仍可结合更多实机或代码数据复核。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 以逐字稿中的克莱传送、偶数格硬性要求、7.5 向偶取整为 8 的入坑判定及奇偶格差异为依据，构成自包含机制陈述；引文与转写行字符级一致，未发现未定论猜测或反问，故 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

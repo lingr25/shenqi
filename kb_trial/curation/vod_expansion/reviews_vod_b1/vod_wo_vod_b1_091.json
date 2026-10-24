@@ -1,0 +1,94 @@
+{
+  "workorder_id": "vod_wo_vod_b1_091",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:51:36+0900",
+  "source_sha256": "727b96a289fc364232cad46cf108b637d96b13d2c4700a455ac89822464f4afa",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "路径距离的计算以目标格为起点向外扩展，并逐格计算外部格子的距离。",
+      "subject": "寻路距离计算系统",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "事实上 由于距离的计算是从目标格出发开始往外扩展 计算外面的格子的距离",
+          "t_start": 5734,
+          "t_end": 5743
+        }
+      ],
+      "reason": "逐字稿明确说明距离计算从目标格出发向外扩展并计算外部格子距离，属于通用寻路距离规则；上下文中的死胡同门与距离限制讨论支撑其可复用性。",
+      "limitations": [
+        "未交代不同地块权重如何赋值，仅说明距离扩展起点。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "在恐惧移动的选点中，当候选目标格是坑时，坑自身的高距离不计入路径，向外推格记录被推格子的权重，因此坑可作为恐惧路径点被选入；但恐惧从坑内出发到外部格需要走极长距离，超出恐惧五格以内的选点范围，导致恐惧钻入坑后出不来。",
+      "subject": "恐惧移动的选点机制与坑地块的寻路计算",
+      "condition": "恐惧移动选点，且候选目标格为坑",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "当目标格式坑的时候 真的高距离并不会被计入路径程",
+          "t_start": 5743,
+          "t_end": 5757
+        },
+        {
+          "text": "它在往外推格子的时候 是记录外面的格子 记录被推的这个格子的权重",
+          "t_start": 5757,
+          "t_end": 5770
+        },
+        {
+          "text": "这个实际上是可以作为中点进去的 可以作为恐惧路径点进去的 因此会有这种恐惧后钻进去 但是进去之后出不来了",
+          "t_start": 5782,
+          "t_end": 5796
+        },
+        {
+          "text": "问题是他只能选择五格以内的距离去走",
+          "t_start": 5807,
+          "t_end": 5820
+        },
+        {
+          "text": "这是恐惧的规则 恐惧只能选择五格以内的去走",
+          "t_start": 5820,
+          "t_end": 5830
+        }
+      ],
+      "reason": "逐字稿先说明距离从目标格向外扩展，随后以坑为目标格时高距离不被计入路径、推进时记录被推格子的权重；又明确坑可作为恐惧路径点进入，并说明从坑内向外需走1001格而恐惧只能选五格以内，因而能进不能出。",
+      "limitations": [
+        "逐字稿未给出坑高距离的完整数值模型；后文还提到类似坑但地块类型不识别为坑的例外（如临时布道），因此不能泛化到所有下沉地块。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01、c02 均有逐字稿直接支撑，且不依赖画面；c02 的推导在后续口播中补充了恐惧五格限制。未发现需排除候选。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

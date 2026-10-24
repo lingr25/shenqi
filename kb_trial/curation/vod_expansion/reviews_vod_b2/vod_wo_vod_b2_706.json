@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b2_706",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T16:00:32+0900",
+  "source_sha256": "5fba15ed2a259053e4ffca974d93e53022ac663200c23ee837e3c3d38f9b04cf",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "时差打法可以通过卡三帧阻挡实现，使两个怪都推得动或都推不动",
+      "verdict": "reject",
+      "reason": "纯打法/实战观察，'两个怪'指代不明且缺少具体敌人、位置、帧窗口与可复现参数；依赖关卡/画面上下文，不满足自包含与排除纯观察闸门。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "在时差位置，1.3移速的怪直接卡三帧阻挡就能进去",
+      "verdict": "reject",
+      "reason": "特定时差位置的实战观察，'进去'缺少明确目标，且未纳入同句中的0.65、侧放等关键条件与可复现帧窗口；属纯现象观察，规则价值不足。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "两条候选的逐字引文均可在对应转写行中字符级匹配，但均为特定关卡/位置的实战现象或打法描述，缺少可复现参数与精确帧窗口；按宁缺毋滥原则均不予采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

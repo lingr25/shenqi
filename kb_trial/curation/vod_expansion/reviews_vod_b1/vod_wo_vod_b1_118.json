@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b1_118",
+  "stem": "BV1cmaa6VEPR_p2_42252239801",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:57:10+0900",
+  "source_sha256": "346abc45ca15ee1763a7cb915630d019f1f4d067b994d149ce5bbcc0b79cf6bf",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "装饰性高台地块仍属于高台地块，而不是独立于高台与地面之外的其他地块类型。",
+      "subject": "装饰性高台地块",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "地块类型",
+      "evidence": [
+        {
+          "text": "装饰性高台也是高台",
+          "t_start": 37,
+          "t_end": 55
+        }
+      ],
+      "reason": "主播在同段讨论中明确纠正“地图边缘视为高台”的误读，并指出地块只有地面和高台两类；随后直接给出“装饰性高台也是高台”，属于对地块类型归属的定论性陈述。",
+      "limitations": [
+        "仅确认装饰性高台的地块类型归属，未展开其可部署、可通行或其他属性。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "坑不是独立于地面与高台之外的一种地块类型，坑地块也按地面地块处理。",
+      "subject": "坑地块",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "地块类型",
+      "evidence": [
+        {
+          "text": "坑不算一种坑 也算地面啊",
+          "t_start": 37,
+          "t_end": 55
+        },
+        {
+          "text": "不可部署地块也是地面 坑也是地面",
+          "t_start": 55,
+          "t_end": 68
+        }
+      ],
+      "reason": "逐字稿中主播明确说“坑不算一种坑 也算地面啊”，随后又补充“不可部署地块也是地面 坑也是地面”，可支撑坑不属于第三种地块类型而应归入地面的结论。",
+      "limitations": [
+        "逐字稿未展开坑地块在部署、通行或敌人寻路等具体系统中的全部判定细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均来自同一段对地图地块类型的纠正性讲解，引文可在逐字稿中字符级对齐，且命题自包含、条件与适用范围明确，不属于未闭合猜测或反问。因此全部 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

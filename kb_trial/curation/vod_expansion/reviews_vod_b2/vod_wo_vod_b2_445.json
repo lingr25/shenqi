@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_445",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:26:07+0900",
+  "source_sha256": "6e9b514a97218d310aa8aacf707431f517e336f24ccf00480a36865f4cd776a5",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "按风暴潮起手伤害 1875/2375 反推目标防御 700/200",
+      "verdict": "reject",
+      "reason": "候选将碎片化口算“1875是700 / 2375是200”解释为防御反推，但逐字稿未明确“防御”的指代、目标身份、攻击参数与伤害公式；后文还出现“践行者800防御”，讨论未闭合。该内容属于特定实战口算/未验证推导，缺乏可复现条件，不能作为可复用机制定论。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "唯一候选 c01 的引文可在转写窗口中找到连续子串，但“1875是700 / 2375是200”的口语关系不足以独立支撑“由风暴潮起手伤害反推目标防御”的结论；关键参数与条件缺失，且与后文“践行者800防御”存在未解释的上下文冲突，故不采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

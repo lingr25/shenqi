@@ -1,0 +1,48 @@
+{
+  "workorder_id": "vod_wo_vod_b2_224",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:16:06+0900",
+  "source_sha256": "b8f9bbf9f5ced4798aec6dfb313d12cd1c04fbfd4ea99101f9966259ed34d6d6",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "具有负嘲讽属性的单位（如部分矿工/刁民类友方目标），在索敌的仇恨计算与过滤器阶段会因嘲讽值为负而大幅降低其仇恨优先级排序。",
+      "subject": "具有负嘲讽属性的单位（如矿工）",
+      "condition": "敌方索敌进行仇恨过滤器计算与排序时",
+      "scope": "entity_mechanism",
+      "category": "仇恨排序",
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "evidence": [
+        {
+          "text": "矿工的话因为有负嘲讽 所以在仇恨过滤器中他会有那个很高的负值 所以的话会变低 这是仇恨过滤器",
+          "t_start": 4638,
+          "t_end": 4666
+        }
+      ],
+      "reason": "主播详细解析了索敌系统中多阶段过滤器的具体逻辑，明确指出负嘲讽属性在仇恨过滤器阶段会赋予负值从而拉低排序优先级，陈述逻辑闭合且属于底层索敌结算规则。",
+      "limitations": [
+        "口语中称呼的'很高的负值'具体在底层代码中的精确数值加减/倍率实现未在逐字稿中给出具体公式。"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选命题讨论了具有负嘲讽的特殊单位在敌方多级索敌过滤器（仇恨过滤器、二次过滤器、嘲讽过滤器）中的仇恨计算机理，逐字稿有严谨且完整的机制推导过程，四项硬性闸门均通过，予以采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

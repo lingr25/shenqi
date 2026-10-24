@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_708",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T16:00:39+0900",
+  "source_sha256": "f2596b040c78c1be95f6f806905b255feb59d8a22daa420d335da6779ad33bf6",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "传送会把怪物坐标修正到弹道坐标；弹道处于正中间时怪物也被修正到正中间，且弹道自身不发生偏移。",
+      "verdict": "pending",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ],
+      "reason": "逐字稿仅有一句结论性但边界不清的表述：‘只能说传送是把怪修正到弹道的坐标……这个弹道没有什么便宜’。其中‘便宜’疑为ASR误写，无法稳妥确认是否对应‘偏移’；‘正中间’缺少相对参照，且后续21:57主播明确称传送仍需再研究，尤其与其它位移类能力的复合效果未闭合。该条有机制讨论价值，但关键参数、适用范围和结论边界不足，暂判pending。"
+    }
+  ],
+  "review_note": "本工单仅一个候选。引文文本可与1288s所在行逐字对齐，但候选证据不足以支撑为可复用机制定论；按未闭合讨论处理。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

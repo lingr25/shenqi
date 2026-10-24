@@ -1,0 +1,52 @@
+{
+  "workorder_id": "vod_wo_vod_b2_459",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:27:47+0900",
+  "source_sha256": "d322046fa8d8be335f257e35cf770155d67bc562872363518f5b3c82811a27d0",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "践行者在854之后的伤害核对时已经死亡",
+      "verdict": "reject",
+      "reason": "该候选仅记录本局某一时刻践行者的死亡状态，属于纯实战现象观察；虽逐字引文可对齐，但缺少可复现条件与可复用规则价值，触发Gate 4。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "践行者在872的AOE结算时已经处于死亡状态",
+      "verdict": "reject",
+      "reason": "该候选同样只是本局特定时间点死亡状态的实战观察，未给出可复现机制条件或通用结论，触发Gate 4。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "两个候选的逐字引文均可在转写窗口中找到对应连续子串，命题也具备明确主体与时间点；但二者都只是具体对局中的死亡状态观察，没有形成可复用的伤害结算或死亡时序机制规则，按Gate 4全部排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

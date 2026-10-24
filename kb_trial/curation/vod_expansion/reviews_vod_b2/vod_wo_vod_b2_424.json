@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_424",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:18:17+0900",
+  "source_sha256": "4916eee3d2d186a8067dad510b2e7e7b21d6e70473af436aa860fe80525a5426",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "对于基础攻击间隔为36帧（1.2秒）的攻击，实测攻击间隔为18帧时对应约100%攻速加成；按保险估计取18.5帧作为帧取整误差边界，可反推攻速加成约落在95%~105%区间。",
+      "subject": "基础攻击间隔为36帧（1.2秒）的攻击",
+      "condition": "实测攻击间隔为18帧，并按保险估计取18.5帧作为帧取整误差边界",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "1.2的攻击间隔36变成18的话 那就是加百分百攻速",
+          "t_start": 1487,
+          "t_end": 1495
+        },
+        {
+          "text": "保险估计的话18.5",
+          "t_start": 1495,
+          "t_end": 1506
+        },
+        {
+          "text": "这是95~105攻速之间 95~105攻速之间",
+          "t_start": 1506,
+          "t_end": 1515
+        }
+      ],
+      "reason": "上下文先给出1.2秒=36帧、36帧变18帧即约+100%攻速的换算，再给出18.5帧的保险估计和95~105%区间；该候选可改写为条件化的帧-攻速反推规则，不直接断言未验证的实测攻速。",
+      "limitations": [
+        "95%~105%的上限来自主播对帧取整误差的保险估计，逐字稿未给出完整取整分布。",
+        "基础攻击间隔36帧为该推定的前提；未实机复核具体干员或技能。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01为基于逐字稿的帧间隔-攻速换算推导，已补全基础攻击间隔36帧并条件化表述；引文逐字对齐，未把“推测100”等未验证断言直接写入结论，故保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,102 @@
+{
+  "workorder_id": "vod_wo_vod_b2_088",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:46:29+0900",
+  "source_sha256": "4f412b09dd3694e4cfbf36f3784d37bf200cb157591ed2288b5e50c52d10cd10",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "阻挡偏移的触发条件为：敌人处于干员的阻挡半径之内，并且不在 0.00001 的排除范围内。",
+      "subject": "阻挡偏移判定",
+      "condition": "敌人处于干员阻挡半径之内，且不在 0.00001 排除范围内",
+      "scope": "universal",
+      "category": "位移/阻挡偏移",
+      "evidence": [
+        {
+          "text": "在阻挡半径之内就会发生阻挡 在阻挡之内 然后并且不在0.00001范围之内 就会发生阻挡偏移",
+          "t_start": 3050,
+          "t_end": 3066
+        }
+      ],
+      "reason": "逐字稿在完整讲解阻挡偏移触发条件时明确给出：在阻挡半径内发生阻挡，并且不在0.00001范围之内会发生阻挡偏移。",
+      "limitations": [
+        "未展开说明0.00001排除范围的具体几何含义",
+        "未讨论干员阻挡半径差异是否影响该触发判定"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在阻挡偏移的第一阶段（挤）中，若只阻挡一个敌人，且角色到该敌人的向量长度不足 0.5，则该向量会被延长到 0.5。",
+      "subject": "阻挡偏移第一阶段的挤判定",
+      "condition": "只阻挡一个敌人；角色到该敌人的向量长度不足 0.5",
+      "scope": "universal",
+      "category": "位移/阻挡偏移",
+      "evidence": [
+        {
+          "text": "角色A到敌人B向量长度不足0.5 延长到0.5",
+          "t_start": 3019,
+          "t_end": 3037
+        }
+      ],
+      "reason": "逐字稿在完整过阻挡偏移流程时明确说第一步若只阻挡一个敌人，角色A到敌人B向量长度不足0.5会延长到0.5。",
+      "limitations": [
+        "未覆盖阻挡多个敌人时的转挤流程",
+        "未说明0.5边界在坐标中的精确含义"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "阻挡偏移的判断条件中不比较阻挡半径与 0.5 的大小关系。",
+      "subject": "阻挡偏移的判断条件",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "位移/阻挡偏移",
+      "evidence": [
+        {
+          "text": "注意这里边的判断条件之中 没有阻挡半径和0.5谁大 没有0.5和阻挡半径谁大",
+          "t_start": 3066,
+          "t_end": 3090
+        }
+      ],
+      "reason": "逐字稿明确提醒阻挡偏移判断条件中没有阻挡半径和0.5谁大，用于纠正把二者大小关系纳入判断的误解。",
+      "limitations": [
+        "该命题只说明不存在该比较，未给出完整判断条件"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "三条候选均围绕阻挡偏移的触发、0.5延长边界与判断条件，逐字稿有明确机制陈述支撑；证据文本已按逐字稿行原样引用并校正到对应行时间戳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

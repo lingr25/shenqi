@@ -1,0 +1,123 @@
+{
+  "workorder_id": "vod_wo_vod_b2_554",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:07:07+0900",
+  "source_sha256": "302f6d05490720cc47730338518c185622744092e993dfa983acf614f0eb51bb",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在同一逻辑帧内、且在该帧逻辑运算之前接收到的操作命令，在程序判定中是等同的；早开10ms或晚开10ms没有区别，不存在所谓10ms容错或10ms操作精度。",
+      "subject": "同一逻辑帧内接收到的操作命令",
+      "condition": "操作命令在同一逻辑帧内、该帧逻辑运算之前被接收",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "他是不会说 因为我早开10ms还是晚开10ms 有区别的 因为在程序的认知中 你都是在这一帧接收到的命令",
+          "t_start": 2115,
+          "t_end": 2127
+        },
+        {
+          "text": "在这一次逻辑运算之前接收到的命令 那么就都是等同的 没有任何的区别 所以说不可能存在说",
+          "t_start": 2127,
+          "t_end": 2140
+        },
+        {
+          "text": "10ms的精度就嗯哎有以我个人的风格的话 我是比较讨厌这种这种话的",
+          "t_start": 2140,
+          "t_end": 2156
+        }
+      ],
+      "reason": "主播明确以程序接收命令的帧内归属解释：同一逻辑帧内、逻辑运算前收到的命令等同，早开或晚开10ms不造成区别，并否定10ms精度说法。",
+      "limitations": [
+        "讨论的是游戏逻辑帧判定，不等同于输入设备或网络传输的物理延迟。",
+        "逐字稿中的“10ms”为举例，未给出所有帧率或引擎实现下的通用数值。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "游戏以帧作为时间刻度；按逐字稿表述，单帧时间记录为33ms，累计前进时间在33ms之内不会过帧，累计前进时间超过33ms则会过帧。",
+      "subject": "游戏逻辑帧的过帧判定",
+      "condition": "累计前进时间未超过33ms时不过帧；累计前进时间超过33ms时过帧",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "但是游戏的话以真来划分刻度 在一个刻度之内定义是在是等效于同时间",
+          "t_start": 2051,
+          "t_end": 2068
+        },
+        {
+          "text": "虽然在时间记录上 他是33ms 你前进33ms之内 它不会过帧 前进累计时间超过33ms 它会过帧",
+          "t_start": 2068,
+          "t_end": 2083
+        }
+      ],
+      "reason": "主播把游戏时间刻度归到逻辑帧，并给出33ms累计阈值：未超过不过帧、超过过帧；该结论有明确口述阈值与机制表述支撑。",
+      "limitations": [
+        "逐字稿使用33ms这一口述近似值；未展开不同帧率或掉帧时的多帧追帧处理。",
+        "逐字稿中“真”为ASR错字，按上下文修正为“帧”。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "逻辑帧运算在过帧时统一结算：过帧那一下结算完该帧逻辑，并把该帧计算内容统一记录为一个游戏时间（按delta time更新）；在过帧前当前帧接收到的操作命令会应用到下一个逻辑帧处理。",
+      "subject": "逻辑帧的运算与命令结算",
+      "condition": "操作命令在过帧前的当前帧内被接收",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "但是真正决定一帧运算的只有过帧那一下 这一下就会结算完所有的就是真逻辑 然后并且在这一次操作之内 他会把所有这一帧的计算的内容",
+          "t_start": 2083,
+          "t_end": 2097
+        },
+        {
+          "text": "都统一记录为一个时间 就是游戏时间按dota time更新 所以啊你的操作会 比如说我开技能应用到下一个逻辑帧进行处理",
+          "t_start": 2097,
+          "t_end": 2115
+        }
+      ],
+      "reason": "主播说明过帧瞬间统一结算帧逻辑，并说明操作例如开技能会送到下一逻辑帧处理；结合上下文可归纳为帧边界结算与命令进入下一逻辑帧。",
+      "limitations": [
+        "逐字稿将delta time转写为dota time，按上下文修正；具体引擎实现细节未展开。",
+        "“应用到下一个逻辑帧”与同帧内命令等效的边界需结合过帧时点理解。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "三条候选均围绕同一逻辑帧内的命令等效、33ms过帧阈值及过帧统一结算展开；逐字稿有明确讲师结论与阈值表述，ASR个别错字已按上下文规范化，未发现未闭合猜测或画面依赖残句，全部keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

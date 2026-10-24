@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_422",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:13:46+0900",
+  "source_sha256": "1b440dc6ae532bf76483868f33e305e7d44d4c09a3a52268ff2a723c2b1b15e1",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "放逐仓会将目标向前推进15格；在目标具有移动负荷或遇到不可移动的障碍后停止。",
+      "subject": "放逐仓",
+      "condition": "目标具有移动负荷，或遇到不可移动的障碍",
+      "scope": "entity_mechanism",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "他会向前123456789十十 一十二十三十四十五放油舱 在移动负荷或遇到不可移动的障碍后",
+          "t_start": 1323,
+          "t_end": 1358
+        }
+      ],
+      "reason": "逐字稿中主播从1数到15并提到放逐仓（ASR作“放油舱”）在移动负荷或不可移动障碍后的停止条件；该段为机制说明而非单纯实战叙述，核心格数有逐字稿支撑。",
+      "limitations": [
+        "逐字稿未显式出现“停止”一词，停止动作系根据“在……后”的停止条件语境补全，建议实机复核边界。",
+        "ASR将“放逐仓”识别为“放油舱”，回执中已按章节与语义规范为放逐仓。"
+      ],
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      }
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 的核心机制为放逐仓推进15格及停止条件，逐字稿中有从1数到15和停止条件语句；ASR错字已规范改写，未发现未闭合猜测或画面依赖残句，判定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

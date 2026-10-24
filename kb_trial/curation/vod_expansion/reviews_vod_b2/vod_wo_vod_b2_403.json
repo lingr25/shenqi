@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_403",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:07:48+0900",
+  "source_sha256": "b22335a4d12e8165f2c892101cebb4dbc3e64ff838cf4144bfd516f173dc46a0",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "损伤条累积到十次即爆条，累积九次不足以爆条",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ],
+      "reason": "逐字稿仅有“这个也是十次爆条 这也是十次爆条 九次暴不了调”的实战计数观察，未交代损伤类型、每次损伤数值、目标损伤条阈值或抗性等成立条件；将特定场景下的命中次数上升为损伤条通用爆条次数规则，缺少显式条件与可复现参数，属于未闭合的纯现象观察，不能作为可复用机制定论。"
+    }
+  ],
+  "review_note": "本工单唯一候选 c01 的逐字引文可对齐，但关键参数与适用范围缺失，无法支撑“十次爆条、九次不足”的通用结论，故整体裁定为 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

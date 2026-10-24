@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_721",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:06:50+0900",
+  "source_sha256": "6483332e5442f1788ce65d193ed5334f2be6ac490d9971975c37d4dc4a2aab9d",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "重量为1的游击队战士受到温蒂力道3的推力时，失衡速度为5.3。",
+      "subject": "游击队战士（重量1）",
+      "condition": "受到温蒂力道3的推力",
+      "scope": "entity_mechanism",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "游击队战士的重量是一 温蒂的推力是三 所以代表着他可以拥有5.3的失衡速度",
+          "t_start": 3427,
+          "t_end": 3452
+        }
+      ],
+      "reason": "上下文明确给出游击队战士重量为1、温蒂力道为3，并直接口述由此得到5.3的失衡速度；可将口语指代改写为自包含机制句。",
+      "limitations": [
+        "逐字稿仅口述重量、力道与失衡速度，未展示完整计算公式、单位及取整规则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "温蒂推游击队战士产生的5.3失衡速度除以0.1635，对应32帧失衡位。",
+      "subject": "温蒂推游击队战士产生的5.3失衡速度",
+      "condition": "该5.3失衡速度按0.1635进行换算",
+      "scope": "entity_mechanism",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "5.3的失衡速度除以除以0.1635的话",
+          "t_start": 3427,
+          "t_end": 3452
+        },
+        {
+          "text": "32帧失衡位",
+          "t_start": 3452,
+          "t_end": 3455
+        }
+      ],
+      "reason": "上下文明确把5.3失衡速度按0.1635换算，并在下一行口述为32帧失衡位；原始引文跨行，按行拆分后每段均逐字匹配。",
+      "limitations": [
+        "0.1635的物理含义及取整方式未在逐字稿中说明。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均有逐字稿直接支撑，且可整理为自包含的失衡速度与帧数换算命题。c02原始引文跨行，但终审回执已拆分为两条单行逐字证据，满足 Gate 2。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

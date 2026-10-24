@@ -1,0 +1,91 @@
+{
+  "workorder_id": "vod_wo_vod_b2_128",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:04:39+0900",
+  "source_sha256": "b2b45569e0d654c83d88190b801efa3401d28818bdc5071f4331db3ae54a670c",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "阻挡偏移计算的前提条件是当前被阻挡敌人的0.1半径范围内存在其他已被同干员阻挡的旧敌人。若前序敌人被击杀后，后续敌人走到原先空出的位置时，若与场上其他已阻挡敌人的距离大于0.1，则不会触发阻挡偏移旋转计算，表现为补位停留在原地；直到后续再有新敌人进入其0.1半径内，才会再次触发阻挡偏移。",
+      "subject": "地面阻挡偏移机制",
+      "condition": "同一干员阻挡多个敌人，新被阻挡敌人与在场已阻挡敌人距离在0.1以内/以外",
+      "scope": "universal",
+      "category": "位移/阻挡偏移",
+      "evidence": [
+        {
+          "text": "0.1半径范围内存在其他已被A阻挡的敌人 才会发生 后面这些事才会发生便利向量 便利敌人做权重",
+          "t_start": 6349,
+          "t_end": 6363
+        },
+        {
+          "text": "然后你把第一个敌人打死了 后面的敌人走到第一个敌人的位置的时候 他会发生阻挡偏移吗 不会 他会直接像补位一样就在这里呆着",
+          "t_start": 6574,
+          "t_end": 6588
+        },
+        {
+          "text": "然后等再有人再再过来的时候 他再发生阻挡偏移 对只有0.1半径之内 存在敌人的时候才会发生阻挡 才不是什么阻挡偏移",
+          "t_start": 6588,
+          "t_end": 6601
+        }
+      ],
+      "reason": "主播详细讲解了阻挡偏移机制的门槛条件（0.1半径触发判据），并在对话中明确确认了前序敌人死亡后后续敌人补位且不发生偏移的底层规则。",
+      "limitations": [
+        "需要同干员多阻挡场景且前序敌人已死亡/偏移后留出间隙"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "敌人 A/B/C 场景下的具体代数推演算例",
+      "verdict": "reject",
+      "failed_gates": [
+        "DUP",
+        "G1"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "reason": "属于直播教学中的特定抽象设题（A、B、C代号题目），本质核心机制（距离未达0.1不触发偏移）已完整包含在c01中，作为独立命题过于依赖特定题设代号，与c01重复。"
+    },
+    {
+      "local_id": "c03",
+      "topic": "敌人 D 在 C/B 存在情况下的向量推演算例",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "reason": "上下文为学员问答过程中的特定习题推演（A/B/C/D推导），主谓宾严重依赖黑板题目画图与代号，非通用自包含机制定论。"
+    }
+  ],
+  "review_note": "本片段为主播讲解阻挡偏移中遍历旧敌人的先决触发条件（0.1半径判定门槛），通过A/B/C/D黑板算例解释了为什么后来的敌人会原地补位而不偏移。底层通用机制抽取为c01保留，具体的算例和口头问答c02/c03予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

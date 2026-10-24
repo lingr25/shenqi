@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_370",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:57:24+0900",
+  "source_sha256": "d97e7a01b46e54bfe76b9ad4058c17a30630911d62f998f66e9b1b90a8d45aa2",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "map 工具给出全局时间会掩盖原文件内部写法",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "reason": "这是主播关于第三方查看工具（PRTS map/关卡查看器）与官方底层配置差异的主观教学评价与使用体验吐槽，属于元讨论与认知说明，而非具体的游戏内部运行机制规则，不具备知识库的规则定论价值。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "map 配置写法与鹰角原文件设计思路差异很大",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "reason": "属于对第三方工具可视化呈现方式的评价，不构成游戏本体的底层机制命题；其后半段展开的关卡波次相对间隔、借宿树洞count刷新逻辑才是本体机制，但上游候选命题仅抽取了工具评价部分。"
+    }
+  ],
+  "review_note": "本工单上游提取的两个候选命题均聚焦在对第三方关卡地图查看工具（map）的设计理念评价，属于元讨论/工具批评，不符合游戏本体机制命题的硬性闸门要求。逐字稿中实际蕴含的高价值机制（如关卡波次以相对时间间隔判定、借宿树洞根据击杀数直接截断count导致出怪时间前移、一帧一出怪导致的波次时间整体顺移）未被上游抽取为有效候选，因此本工单对已有候选统一判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

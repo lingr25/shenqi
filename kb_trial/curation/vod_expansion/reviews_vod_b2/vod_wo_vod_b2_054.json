@@ -1,0 +1,48 @@
+{
+  "workorder_id": "vod_wo_vod_b2_054",
+  "stem": "BV1GVeb6dEVw_p1_42029417572",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:32:15+0900",
+  "source_sha256": "da760883803facf50686d5c9e59b87bff792ad18c6638f6f7472570a30278dee",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "推拉位移中，单位移动的两帧之间虽然存在线性的计算磕墙，但没有中间落点，单位是从一个点位瞬移到另一个点位。",
+      "subject": "推拉位移中的单位",
+      "condition": "推拉机制按逐帧运算，考察相邻两帧之间的移动",
+      "scope": "universal",
+      "category": "位移/帧时序",
+      "evidence": [
+        {
+          "text": "移动的两帧之间 虽然会存在着一个线性的计算磕墙 但是的话是其实是没有中间落点的 他是从一个点位瞬移到另一个点位的",
+          "t_start": 203,
+          "t_end": 217
+        }
+      ],
+      "reason": "上下文明确说明推拉计算本质是按帧逐帧移动；该句直接给出结论：两帧之间没有中间落点，单位从一点位瞬移到另一点位，属于可复用底层机制。",
+      "limitations": [
+        "本句未给出线性磕墙的具体计算公式与触发阈值，仅说明中间落点不存在。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选 c01 的逐字引文与转写行完全一致；命题自包含，主体、条件与适用范围明确，且为讲师对推拉逐帧运算的定论，未涉及猜测或反问，故裁定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

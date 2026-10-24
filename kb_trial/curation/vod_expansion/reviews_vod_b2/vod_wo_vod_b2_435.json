@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_435",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T23:13:04+0900",
+  "source_sha256": "a704e108683191a1d2ed763e3e0cd2c34e0bcc6769b4e188658ef76d39e3c4ed",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙开启三技能后获得10发弹药；若场上没有敌人发生侵蚀损伤爆发，则不会消耗弹药，克莱门沙会持续进行物理输出。",
+      "subject": "克莱门沙三技能",
+      "condition": "克莱门沙开启三技能后，且场上没有敌人发生侵蚀损伤爆发",
+      "scope": "entity_mechanism",
+      "category": "状态效果/技能特例",
+      "evidence": [
+        {
+          "text": "克莱门沙开启技能后 123456789十十个弹药 场上没有侵蚀损伤 爆发时不会消耗弹药",
+          "t_start": 2658,
+          "t_end": 2675
+        },
+        {
+          "text": "克莱门沙将会持续进行物理输出",
+          "t_start": 2675,
+          "t_end": 2688
+        }
+      ],
+      "reason": "44:18 口播技能描述明确开启技能后弹药为十个，且场上没有侵蚀损伤爆发时不会消耗弹药；44:35 补充其会持续进行物理输出。该陈述属于三技能固有机制。",
+      "limitations": [
+        "逐字稿中的弹药数转写为「123456789十十个弹药」，本回执按上下文释读为10发；未与游戏面板原文交叉核验。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "克莱门沙开启三技能期间，全场任意敌人发生侵蚀损伤爆发时，会消耗一发弹药并对该敌人所在位置进行数次轰炸。",
+      "subject": "克莱门沙三技能",
+      "condition": "克莱门沙三技能开启期间，且全场任意敌人发生侵蚀损伤爆发",
+      "scope": "entity_mechanism",
+      "category": "状态效果/技能特例",
+      "evidence": [
+        {
+          "text": "一旦全场有任何敌人侵蚀损伤爆发时 都会消耗一发弹药 对该敌人所在的位置进行数次轰炸",
+          "t_start": 2675,
+          "t_end": 2688
+        }
+      ],
+      "reason": "44:35 技能描述口播明确说明全场任一敌人侵蚀损伤爆发时消耗一发弹药，并轰炸该敌人所在位置，符合自包含三元约束。",
+      "limitations": [
+        "逐字稿只称「数次轰炸」，未在本窗口给出每次爆发的精确轰炸次数。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均为技能描述口播，经逐字稿逐句核对，均可改写为自包含机制命题；无未定论猜测。c01 的弹药数字存在 ASR 噪声但上下文可释读，故保留并注明限制。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

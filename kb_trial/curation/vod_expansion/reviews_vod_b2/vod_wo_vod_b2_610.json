@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_610",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T13:57:55+0900",
+  "source_sha256": "e7d8b5413510c4dfc582cad453fd37d3947129a7806b3706c3cb7458ebc2864f",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "所有单位的地块相关判定均以地块属性为基础，并在该基础上叠加单位自身的特殊判定。",
+      "subject": "所有单位的地块判定系统",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "机制架构",
+      "evidence": [
+        {
+          "text": "就是每个人都是通过这些属性 然后再做一点自己的小判定做的",
+          "t_start": 606,
+          "t_end": 614
+        }
+      ],
+      "reason": "上下文先讨论红门属于可通行地块、火陈的龙有自身碰撞判定等例子，随后主播给出总括性结论：单位判定由地块通用属性与单位自身判定叠加构成；该结论不依赖画面即可理解，具备机制架构价值。",
+      "limitations": [
+        "未列出具体地块属性集合",
+        "未逐项验证所有单位的自定义判定差异"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本单唯一候选 c01 的引文可在 606s 行逐字匹配；上下文在讨论红门可通行地块、火陈的龙碰撞等自定义判定后给出总结，具备机制架构价值。原句「这些属性」依赖上下文，但可明确补全为「地块属性」并改写为自包含通用命题，故裁定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

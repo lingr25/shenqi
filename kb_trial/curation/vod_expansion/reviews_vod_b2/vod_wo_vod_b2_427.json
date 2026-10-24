@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_427",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T23:10:57+0900",
+  "source_sha256": "08e99ed2088fc19a8251651cd6194971836f0533a7091430e973b3c8c1d5042c",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "二技能总持续16秒，扣除1.5秒飞行后有效约14.5秒",
+      "verdict": "pending",
+      "reason": "逐字稿可定位『16S持续 但是要减1.5秒 这个东西的飞行』，能支撑16秒持续并扣除1.5秒飞行时间的推导；但上下文窗口内未出现具体干员名或技能全名，『二技能』与『这个东西』指代不明，无法补全为自包含的实体机制命题，需人工听审或上游补全主体。另提交的 evidence 结束秒数未按下一行时间戳标注（1730→1745、1707→1730），若入库需修正证据时间。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "本单仅有 c01。其算术结论有逐字稿支撑，但主体与技能名未在窗口内明确，不能形成可复用的自包含机制陈述；按关键信息仅可能来自画面而判 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

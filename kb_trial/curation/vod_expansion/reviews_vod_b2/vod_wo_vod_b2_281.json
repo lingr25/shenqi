@@ -1,0 +1,85 @@
+{
+  "workorder_id": "vod_wo_vod_b2_281",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed",
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:30:51+0900",
+  "source_sha256": "7de0a348a4777341f6f85da974625c08313f7b3a19bd68ee871b9e7cfa2939f8",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "攻击、防御、法术抗性、攻速与生命值等均属于属性；局内属性计算包含四则运算调整环节，即直接加、直接乘、最终加、最终乘四个乘区。",
+      "subject": "干员与敌人的属性结算机制",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "伤害结算",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "还是这个法术抗性 攻速生命值这些东西都属于属性 属性的话需要在那个",
+          "t_start": 787,
+          "t_end": 798
+        },
+        {
+          "text": "我们常说的四则运算是属性的调整环节之一 也就是局内的直接乘最终成嗯 直接加最终加这四个 而伤害的话就是非属性不具有这些东西",
+          "t_start": 830,
+          "t_end": 846
+        }
+      ],
+      "reason": "逐字稿中明确阐释了攻击、防御、法抗、攻速、生命值均归属于属性，且局内属性调整包含直接乘、最终乘、直接加、最终加的四则运算机制，符合底层通用机制定义。",
+      "limitations": [
+        "未涉及具体干员特例及局外符文的具体加算次序细节"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "claim": "伤害属于非属性数值，不具有属性的四则运算调整机制；伤害乘区在结算时通常为最终乘算，即使存在肉鸽中呈现加算的伤害效果，本质也是先将同类藏品数值归纳汇总后作为一个整体Buff参与乘算。",
+      "subject": "伤害结算乘区（非属性）",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "伤害结算",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "非属性的结算 更加看重这个东西本身的设计效果 比如说伤害伤害的话都是乘算的 最终乘算的即使是肉鸽那种加算的伤害 也更应该理解为是",
+          "t_start": 846,
+          "t_end": 864
+        },
+        {
+          "text": "鹰角对藏品的数值 进行一个统一的整理和处理工作 再然后的话以一整个Buff做一个乘算的伤害乘区",
+          "t_start": 864,
+          "t_end": 888
+        }
+      ],
+      "reason": "讲师明确对属性与非属性（伤害乘区）的结算逻辑进行了区分，指出伤害乘区通常为最终乘算，并说明了集成战略（肉鸽）中看似加算的增伤如何以整体Buff形式接入乘算乘区，逻辑自洽且有逐字稿连续文本支撑。",
+      "limitations": [
+        "肉鸽藏品内部加算后统一乘算的描述基于底层机制定性，未列出具体的藏品ID与算式"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "修正了c01中跨行截断导致的引文字符不匹配问题，精确提取第787行原始文本。两项命题均具有充分的底层规则价值与严格的单行逐字证据支撑。",
+  "repair_rounds": 1,
+  "unresolved_problems_auto_demoted": []
+}

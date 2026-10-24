@@ -1,0 +1,48 @@
+{
+  "workorder_id": "vod_wo_vod_b1_047",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:26:00+0900",
+  "source_sha256": "9a3358e1036b99593bf1cdcab381a4ad4fbfdfde7b376b1952eeb9f7609b1715",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "如果配置了路线预演，则在出怪前三秒会显示两条出怪路线，用于预演敌人将如何出怪。",
+      "subject": "路线预演",
+      "condition": "配置了路线预演",
+      "scope": "universal",
+      "category": "出怪时序",
+      "evidence": [
+        {
+          "text": "如果配置了这个路线预演的话 就会这样在三秒之前出来两条这样的路线 然后去掩饰他要这样出怪",
+          "t_start": 3598,
+          "t_end": 3629
+        }
+      ],
+      "reason": "逐字稿明确给出条件（配置路线预演）与结果（三秒之前显示两条路线并演示出怪方式），候选命题将其改写为自包含机制陈述，未引入逐字稿外的新参数。",
+      "limitations": [
+        "未交代不同模式或地图编辑配置下是否存在例外，也未说明“三秒”是否恒定。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 有直接逐字稿支撑，条件、时序、显示内容均可从原句读出；ASR 的“掩饰”按上下文规范为“预演/演示”，未改变结论。四闸门均通过，保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

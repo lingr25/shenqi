@@ -1,0 +1,99 @@
+{
+  "workorder_id": "vod_wo_vod_b2_065",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:38:05+0900",
+  "source_sha256": "094abaf6f3edd01084af0fcb636a5eca69a1c5a5dca464294a5dfcc8243811f4",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "墙体由一块一块的墙拼成，墙与墙之间存在拼接缝；按理论计算，该缝隙宽度为零。",
+      "subject": "墙体（关卡墙块拼接）",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "墙和墙之间实际上是有墙缝的",
+          "t_start": 508,
+          "t_end": 520
+        },
+        {
+          "text": "理论上来讲 这它们之间的缝隙是零",
+          "t_start": 681,
+          "t_end": 694
+        }
+      ],
+      "reason": "上下文说明墙由多块墙块拼成，且主播明确称理论上来讲墙块之间的缝隙为零；这是后续解释离散型失衡落点落在墙缝处的前提。",
+      "limitations": [
+        "逐字稿未给出具体碰撞体尺寸或引擎版本；视觉上画出的墙缝被主播称为夸张表示。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "离散型失衡的落点若正好位于两块墙的中间，左侧墙判定其应向右挤、右侧墙判定其应向左挤；两侧判定会在两墙权重平衡处相互冲突，使位移无法向外弹出。",
+      "subject": "离散型失衡的落点",
+      "condition": "落点正好位于两块墙的中间/墙缝处",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "这个才是方阵战士 是离散型",
+          "t_start": 615,
+          "t_end": 625
+        },
+        {
+          "text": "如果一个落点对于一颗墙 来一颗墙来讲 他应该往右挤",
+          "t_start": 508,
+          "t_end": 520
+        },
+        {
+          "text": "然后对于另一块墙来讲 他应该往左挤 也就是说如果这个落点在两块墙的中间 他会怎么样",
+          "t_start": 520,
+          "t_end": 533
+        },
+        {
+          "text": "总之就是会判定他在两个墙的这个 权重的平衡处 也就是中间位置",
+          "t_start": 743,
+          "t_end": 755
+        },
+        {
+          "text": "然后的话导致他无法向外弹出墙",
+          "t_start": 755,
+          "t_end": 769
+        }
+      ],
+      "reason": "逐字稿先说明落点相对两侧墙会被要求向相反方向挤出，后文将该疑问闭合为在两墙权重平衡处/中间位置判定，并导致无法向外弹出墙；属于有逐字稿支撑的机制推导。",
+      "limitations": [
+        "主播称具体权重计算过程不清楚，未给出精确公式或实测参数；结论需实机或引擎层面进一步复核。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均通过四闸门。c01 提供墙块拼接与理论零宽缝隙的几何前提；c02 说明离散型失衡落点落在两墙之间时方向判定冲突，并在后续逐字稿中闭合为权重平衡处判定及无法向外弹出。所有引文均可在对应转写行中字符级匹配，起止秒数按相邻行时间戳标定。c02 的具体权重计算未展开，作为限制项而非拒收。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

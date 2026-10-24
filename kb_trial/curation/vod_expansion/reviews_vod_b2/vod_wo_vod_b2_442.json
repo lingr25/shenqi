@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_442",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T23:14:48+0900",
+  "source_sha256": "3465c46cfaf03daccfeb1ec29e2f0155d568592ec4bde64315c4c11c728fe953",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙部署后，位于其部署朝向身前的敌人（包括被克莱门沙阻挡的敌人）对克莱门沙造成的物理伤害和法术伤害都会降低。",
+      "subject": "克莱门沙",
+      "condition": "克莱门沙部署后，敌人位于其部署朝向身前（含被克莱门沙阻挡的敌人）",
+      "scope": "entity_mechanism",
+      "category": "天赋/减伤",
+      "evidence": [
+        {
+          "text": "根据他的部署朝向所有在他身前的敌人 对他造成的物理和法术伤害都会降低 包括被他阻挡",
+          "t_start": 3017,
+          "t_end": 3050
+        }
+      ],
+      "reason": "逐字稿在 3017s 明确复述了克莱门沙部署后依据部署朝向对身前敌人提供减伤，并明确包括被其阻挡的敌人；主体、条件、作用范围完整，且非猜测或反问。",
+      "limitations": [
+        "逐字稿未给出具体减伤数值或倍率",
+        "未说明来自背后或侧面的伤害是否同样降低，仅明确身前与阻挡情形"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 为克莱门沙部署朝向减伤天赋的明确机制陈述，逐字稿 3017s 行内存在连续可字符级对齐的原句，三元约束完整，未发现未定论假说或开放疑问，判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

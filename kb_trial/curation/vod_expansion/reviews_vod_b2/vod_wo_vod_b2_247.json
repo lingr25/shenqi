@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_247",
+  "stem": "BV1L4ez6oEcc_p2_42060876088",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:21:54+0900",
+  "source_sha256": "e0d3c2b776c6497de1c249b4efa22e2e0a98a2684d94fe09b3a8dd0fd8ea5642",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "实际上有敌人会抢夺留声机，因此不能靠留声机抗住敌人慢慢打",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "该候选命题为实战临场惊呼与打法感叹（'有东西抢我留声机'），未指明具体哪种敌人具有抢夺留声机的机制/属性，缺乏明确的主体（G1、G3不通过）；同时属于现场实况反应与打法随口调整，不具备自包含、可复用的机制规则价值（G4不通过）。"
+    }
+  ],
+  "review_note": "工单中的言论仅为主播在实战中发现有未知单位在夺取留声机时的临场反应，并未具体讨论敌方单位名称、夺取机制的具体判定或数值规则，缺乏机制规则沉淀价值，予以驳回。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_187",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed",
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:54:05+0900",
+  "source_sha256": "e16f6fb0ebe49817632c11791c6cb196a539ccda49c6d5fa1cea05b6bbd547be",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "敌方单位寻路仇恨中的曼哈顿距离计算本质上只计算网格数而非实际物理路径长度：从本格到本格的路径点距离计为0，到相邻一格的距离计为1，中间实际行进轨迹无论如何曲折绕行均不增加该步骤的整数网格距离判定。",
+      "subject": "敌方单位寻路仇恨系统",
+      "condition": "计算串联路径点至终点的曼哈顿距离时",
+      "scope": "universal",
+      "category": "寻路机制",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "在曼哈顿寻路中是零距离 从本格到一格远的格子中 你不管路径点在哪里 他们在曼哈顿寻路中都是一距离",
+          "t_start": 1903,
+          "t_end": 1915
+        },
+        {
+          "text": "从本质上来讲不是路径长度的计算 它只看格子数 它只看格子数",
+          "t_start": 1942,
+          "t_end": 1955
+        }
+      ],
+      "reason": "上游候选仅提取了主播在灌水贤者关卡举例的特定个案数值（画面依赖且属于临时假设）；但上下文明确给出了底层通用的曼哈顿寻路计算定论：仇恨距离只以网格格子数计算，不看实际物理路径长度，因此改写为自包含的通用机制定论保留。",
+      "limitations": [
+        "仅适用于路径点串联曼哈顿距离的整数网格部分判定，不包含后续微观判定细节"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单候选 c01 原提炼局限于灌水贤者演示假设，改写为自包含的曼哈顿寻路仇恨整数格点计算通用规则。修复了跨行引文问题，严格从单行原样复制连续子串。",
+  "repair_rounds": 1,
+  "unresolved_problems_auto_demoted": []
+}

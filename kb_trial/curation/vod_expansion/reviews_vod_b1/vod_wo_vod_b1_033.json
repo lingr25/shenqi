@@ -1,0 +1,64 @@
+{
+  "workorder_id": "vod_wo_vod_b1_033",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:22:10+0900",
+  "source_sha256": "26acf15d0527a1133ebbe34a06b0cce0e64eb9043836f3cc98814ef2d7f3f75c",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "明日方舟出怪排序总数量计算规则要求：将各出怪项的 count 展开，并把牌子与路线预演按其发生时间展开，再将所有展开后的量统一纳入排序。",
+      "subject": "出怪排序系统（同时间排序/总数量计算）",
+      "condition": "在需要确定同一兵团内出怪、牌子与路线预演的先后顺序时",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "所以的话这个排序规则 就要把所有的这个count展开 然后把所有的那个就是牌子和 这个牌子和路线演示 按照时间对应的展开",
+          "t_start": 2732,
+          "t_end": 2748
+        },
+        {
+          "text": "然后把所有的量统一加进去进行排序",
+          "t_start": 2748,
+          "t_end": 2755
+        },
+        {
+          "text": "就是排序的总数量不是九 是所有的count 再加上所有的这些东西",
+          "t_start": 2755,
+          "t_end": 2769
+        },
+        {
+          "text": "他也是参与排序的东西 然后包括牌子 牌子也是一个同时间的 可以理解为出怪 他也是占这个出怪时间排序的东西",
+          "t_start": 2718,
+          "t_end": 2732
+        }
+      ],
+      "reason": "主播在逐字稿中明确总结排序规则：先展开所有 count，再把牌子和路线演示按时间对应展开，最后把所有量统一加入排序；后文还补充排序总数量不是固定为九，而是所有 count 再加上牌子、路线等量。该陈述是机制性结论，不依赖画面指涉，也无未闭合猜测。",
+      "limitations": [
+        "逐字稿未给出 count 具体展开公式、排序算法实现细节，以及牌子/路线预演精确时间戳的判定边界。",
+        "该结论来自主播讲解，仍需后续实机或数据验证具体排序实现。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单唯一候选 c01 在逐字稿中有连续、直接的机制性说明支撑：排序时需展开 count、牌子和路线预演并统一纳入排序总数量。该命题不依赖画面，引文可在转写行中逐字匹配，主体、条件与范围均可补全，且非猜测或反问，故判 keep。窗口中还提到隐藏出怪不占时间，但本工单无对应候选命题，未纳入 claims。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

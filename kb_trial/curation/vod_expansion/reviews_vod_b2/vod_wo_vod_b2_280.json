@@ -1,0 +1,58 @@
+{
+  "workorder_id": "vod_wo_vod_b2_280",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:30:21+0900",
+  "source_sha256": "0dae1ab407435bf2096515b5d17f428f7391bc4cbc496ba98c8afb0f546c3dd9",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在伤害计算的底层流程中，真实伤害与治疗不存在对应的抗性概念，其结算逻辑直接跳过抗性结算流程。",
+      "subject": "真实伤害与治疗",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "伤害结算",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "最本质的区别在于真伤没有抗性 真伤没有抗性",
+          "t_start": 715,
+          "t_end": 732
+        },
+        {
+          "text": "跳过抗性结算流程",
+          "t_start": 747,
+          "t_end": 761
+        },
+        {
+          "text": "真伤和治疗没有抗性",
+          "t_start": 770,
+          "t_end": 787
+        }
+      ],
+      "reason": "主播在系统讲解伤害结算流程（属性结算、抗性结算、伤害增减结算）时，明确指出物理（防御力减算）与法术（法抗百分比乘算）均有抗性环节，而真实伤害与治疗的核心底层逻辑是跳过抗性结算流程，属于全域通用的机制定论。",
+      "limitations": [
+        "不包括后续针对最终结算伤害的特殊百分比减伤/庇护/脆弱等非抗性乘区效果"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单中唯一候选命题 c01 讨论了底层伤害计算三流程中真实伤害与治疗的抗性结算跳过机制。逐字稿对应清晰且属于机制原理定论，四大闸门全部通过，予以收录。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

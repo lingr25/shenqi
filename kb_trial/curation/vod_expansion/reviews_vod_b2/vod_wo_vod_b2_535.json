@@ -1,0 +1,108 @@
+{
+  "workorder_id": "vod_wo_vod_b2_535",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:04:16+0900",
+  "source_sha256": "00778b32d85385a1539f01afae7c8cbcf3596c47824da3ea1e07809a6a7fc1c0",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "真言造成的伤害很多来自敌人之间的相互弹射。",
+      "subject": "真言造成的伤害",
+      "condition": "敌人之间存在可互相弹射命中的目标",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "因为那个真言那个伤害呀 他很多时候就是靠这个相互之间弹弹弹对吧 但是",
+          "t_start": 1483,
+          "t_end": 1498
+        }
+      ],
+      "reason": "逐字稿在比较组合总伤时明确说明真言伤害很多时候靠敌人之间相互弹射，属于真言固有伤害结算机制。",
+      "limitations": [
+        "未给出弹射伤害占比、弹射次数或触发距离阈值",
+        "“很多时候”为定性描述，无具体数值"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "真言的弹射坐标很难控制；当场上有多个强度相近且彼此距离很近的敌人时，这一点尤其明显。",
+      "subject": "真言的弹射坐标/目标选择",
+      "condition": "场上有多只强度相近且彼此距离很近的敌人",
+      "scope": "entity_mechanism",
+      "category": "索敌与弹射",
+      "evidence": [
+        {
+          "text": "这个坐标实际上是很难控制的 如果有好几只同样强度的怪过来对吧 然后的话两两之间都离得很近",
+          "t_start": 1498,
+          "t_end": 1513
+        }
+      ],
+      "reason": "逐字稿明确说坐标很难控制，并以多只同样强度怪、两两距离很近作为条件，属于对该机制操作性的结论。",
+      "limitations": [
+        "未给出“强度相近”和“距离很近”的判定阈值",
+        "未给出可复现的站位或时间参数"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c03",
+      "claim": "当三只强度相近的敌人近距离聚集时，真言的弹射会出现两侧敌人向中间弹、中间敌人向一侧弹的分布，导致其中一侧受到的伤害偏少。",
+      "subject": "真言对三只近距离聚集敌人的弹射伤害分布",
+      "condition": "三只强度相近的敌人彼此距离很近",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "如果有好几只同样强度的怪过来对吧 然后的话两两之间都离得很近",
+          "t_start": 1498,
+          "t_end": 1513
+        },
+        {
+          "text": "那么比如说三个三个的话 两边的都往中间弹 中间的往一边弹 那么就会有一边的 其实少一些伤害",
+          "t_start": 1513,
+          "t_end": 1525
+        }
+      ],
+      "reason": "逐字稿以三个目标为例说明弹射走向及其伤害分布不均，结合前文“同样强度、距离很近”可支撑该示例性机制结论。",
+      "limitations": [
+        "三目标示例未给出具体距离阈值和伤害数值",
+        "“一侧伤害偏少”为定性推导，未验证不同站位下是否始终成立"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "三条候选均围绕真言弹射伤害机制；逐字稿明确给出伤害来源、坐标难控条件以及三目标分布示例，未发现未闭合猜测或画面依赖。均保留，但参数与阈值缺失已在 limitations 标注。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

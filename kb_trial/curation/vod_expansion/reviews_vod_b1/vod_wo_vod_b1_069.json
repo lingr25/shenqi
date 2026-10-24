@@ -1,0 +1,96 @@
+{
+  "workorder_id": "vod_wo_vod_b1_069",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T00:05:36+0900",
+  "source_sha256": "f02f41dbcfad14291aadc96607fd196ab731167a8275a9bf0549665966998ede",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "惊蛰二技能文案中的「近战地块」指的是低地。",
+      "subject": "惊蛰二技能",
+      "condition": "高低地块只分为高地和低地两种",
+      "scope": "entity_mechanism",
+      "category": "地块判定",
+      "evidence": [
+        {
+          "text": "高低地设有高地和低地两种",
+          "t_start": 4896,
+          "t_end": 4903
+        },
+        {
+          "text": "惊蛰二三技能都是这个判定",
+          "t_start": 4896,
+          "t_end": 4903
+        },
+        {
+          "text": "惊蛰二技能说的近战地块不过就是低地",
+          "t_start": 4896,
+          "t_end": 4903
+        }
+      ],
+      "reason": "主播在讲解惊蛰判定时直接给出结论：高低地分为高地和低地两种，惊蛰二三技能共用该判定，因此惊蛰二技能文案中的「近战地块」就是低地。该句为结论式陈述，不是猜测或反问。",
+      "limitations": [
+        "仅限定于惊蛰二技能文案中的「近战地块」术语，不等同于所有技能中的近战地块定义。",
+        "逐字稿后续提到未许之地等地形高低地判定存在反直觉案例，但未否定此处对惊蛰二技能术语的映射。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "惊蛰三技能对应的是高地。",
+      "subject": "惊蛰三技能",
+      "condition": "高低地块只分为高地和低地两种",
+      "scope": "entity_mechanism",
+      "category": "地块判定",
+      "evidence": [
+        {
+          "text": "高低地设有高地和低地两种",
+          "t_start": 4896,
+          "t_end": 4903
+        },
+        {
+          "text": "惊蛰二三技能都是这个判定",
+          "t_start": 4896,
+          "t_end": 4903
+        },
+        {
+          "text": "三技能不过就是高地罢了",
+          "t_start": 4921,
+          "t_end": 4932
+        }
+      ],
+      "reason": "结合前文惊蛰二三技能共用高低地判定，以及「三技能不过就是高地罢了」的结论式表述，可确认惊蛰三技能对应的判定类型为高地。该句由主播在讲座语境中作为机制结论给出。",
+      "limitations": [
+        "仅限定于惊蛰三技能的高低地判定映射。",
+        "逐字稿未展开三技能原始文案的完整措辞，仅能确认其判定类型为高地。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单两条候选均为讲座中对惊蛰技能高低地判定的结论式说明，逐字稿有连续原文支撑，引文可在对应行中字符级匹配；主体、条件、范围均可补足为可复用机制命题，未发现未定论猜测或反问，故均判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

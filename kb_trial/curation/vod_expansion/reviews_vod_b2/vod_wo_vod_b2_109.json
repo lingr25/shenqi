@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_109",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T13:11:18+0900",
+  "source_sha256": "99c77b23b33a94ebbcf71d394771595e16755e984fb0db6a16726edfec1da800",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在双敌人索敌权重合成中，当两侧权重分别为 10 与 1、模长为 0.2 时，按勾股定理估算的向下距离约为 0.02。",
+      "subject": "双敌人索敌权重合成中的向下距离估算",
+      "condition": "两侧权重分别为 10 与 1，模长为 0.2，且夹角较小",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "这边是十 这边是一 然后的话模长是0.2 然后的话按照勾股定理",
+          "t_start": 4476,
+          "t_end": 4490
+        },
+        {
+          "text": "向下的这个距离大约就是0.02 也就是winter scar算的结果",
+          "t_start": 4490,
+          "t_end": 4501
+        },
+        {
+          "text": "然后取中间点估值也差不多就是0.02 因为这个夹角是比较小的 它这个误差并不大",
+          "t_start": 4501,
+          "t_end": 4512
+        }
+      ],
+      "reason": "逐字稿明确给出权重为十与一、模长0.2，并按勾股定理估算向下距离约0.02，且随后说明取中间点估值也约0.02、夹角小误差不大。该推导是白板计算课对索敌权重合成的近似计算，不依赖画面，参数与结论均有逐字稿支撑。",
+      "limitations": [
+        "0.02 为近似估值，非精确计算值。",
+        "逐字稿未完整给出通用公式的变量定义与精确推导步骤。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 是白板计算课中关于双敌人索敌权重合成的具体推导，逐字稿明确包含权重10/1、模长0.2、勾股定理及向下距离约0.02，且补充夹角小、误差不大；满足自包含、引文对齐、三元约束与无未定论假说，予以采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_471",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:29:30+0900",
+  "source_sha256": "33fbdabad9c7d313c300605375acfec6c432e514d827769f74891343d11bd143",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "核对到的3144点伤害数值与12次命中、8次平A的统计结果一致，没有出入。",
+      "verdict": "reject",
+      "reason": "证据引文不符合Gate 2：7039s/7044s的“3144”与7047s的“七五十二哎 没问题没问题”被跨行拼接，并非任何单行逐字稿中的字符级连续子串。该候选也只是对一次具体实战伤害读数的核对观察，未给出可复现的主体与条件，不具备可复用机制规则价值，违反Gate 4；主体/条件不明确且scope应为具体实例而非通用，违反Gate 3。",
+      "failed_gates": [
+        "G2",
+        "G3",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      }
+    }
+  ],
+  "review_note": "唯一候选c01为具体实战伤害读数核对观察，且证据引文跨行拼接、无法与逐字稿单行字符级对齐；不足以作为可复用机制命题，判reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

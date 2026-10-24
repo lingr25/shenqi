@@ -1,0 +1,169 @@
+{
+  "workorder_id": "vod_wo_vod_b2_505",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:53:25+0900",
+  "source_sha256": "53be32fc7b8e3ccf4001a88b2c3ab126da02de1d09c519bc9f553048c006f266",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "二技能的漩涡在爆炸后每秒触发一次，在二技能14.5秒持续时间内共触发14次。",
+      "subject": "二技能的漩涡",
+      "condition": "二技能持续期间，且漩涡已爆炸",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "二技能应该算是14.5秒 其实主要二技能有个什么问题呢 二技能如果范围内还有其他怪的话 他DA打不到那个自己锁的那俩人",
+          "t_start": 6429,
+          "t_end": 6444
+        },
+        {
+          "text": "然后还有漩涡",
+          "t_start": 6506,
+          "t_end": 6510
+        },
+        {
+          "text": "漩涡的话是炸完之后每秒一次",
+          "t_start": 6510,
+          "t_end": 6515
+        },
+        {
+          "text": "嗯14.5秒的持续的话是14套",
+          "t_start": 6515,
+          "t_end": 6521
+        }
+      ],
+      "reason": "上下文在讨论二技能总伤时先确认二技能约14.5秒，随后明确说漩涡爆炸后每秒一次、14.5秒持续共14套，因此可保留为二技能漩涡的触发段数结论。",
+      "limitations": [
+        "“14套”为主播口述测算值，未展示逐帧实测验证。",
+        "未说明爆炸后首次触发是否立即发生，也未展开目标数量对漩涡触发的影响。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "二技能持续期间包含24刀普攻与14次漩涡判定，攻击段数合计38下。",
+      "subject": "二技能",
+      "condition": "二技能持续期间",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "二技能应该算是14.5秒 其实主要二技能有个什么问题呢 二技能如果范围内还有其他怪的话 他DA打不到那个自己锁的那俩人",
+          "t_start": 6429,
+          "t_end": 6444
+        },
+        {
+          "text": "24刀",
+          "t_start": 6460,
+          "t_end": 6489
+        },
+        {
+          "text": "普攻",
+          "t_start": 6489,
+          "t_end": 6498
+        },
+        {
+          "text": "嗯14.5秒的持续的话是14套",
+          "t_start": 6515,
+          "t_end": 6521
+        },
+        {
+          "text": "24下和14项分为38下",
+          "t_start": 6824,
+          "t_end": 6832
+        }
+      ],
+      "reason": "上下文确认二技能约14.5秒，随后列出24刀、普攻和14套漩涡，并用“24下和14项分为38下”给出合计38下，因此该攻击段数拆分可作为二技能总伤模型参数保留。",
+      "limitations": [
+        "24刀普攻与14次漩涡均为该二技能特定配置下的口述测算值，未给出完整逐帧实测。",
+        "未说明所有普攻与漩涡判定是否均命中同一目标，也未展开爆条与目标数量对总段数的影响。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c03",
+      "claim": "当dot爆条次数设为5次时，二技能的总判定按爆条节点拆分为爆条前12下与爆条后26下，其中爆条前12下由4次漩涡判定和8次普攻组成。",
+      "subject": "二技能的总判定",
+      "condition": "dot爆条次数设为5次时",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "嗯按照现在的设置的话是五次DOTA",
+          "t_start": 6777,
+          "t_end": 6788
+        },
+        {
+          "text": "五次dot爆条 并且第五次的话",
+          "t_start": 6788,
+          "t_end": 6795
+        },
+        {
+          "text": "前12和后26",
+          "t_start": 6820,
+          "t_end": 6824
+        },
+        {
+          "text": "24下和14项分为38下",
+          "t_start": 6824,
+          "t_end": 6832
+        },
+        {
+          "text": "前12下的话是",
+          "t_start": 6832,
+          "t_end": 6846
+        },
+        {
+          "text": "四选五",
+          "t_start": 6846,
+          "t_end": 6850
+        },
+        {
+          "text": "八普攻",
+          "t_start": 6850,
+          "t_end": 6856
+        }
+      ],
+      "reason": "上下文先设定五次dot爆条，随后给出前12/后26与总38下，并继续拆出前12下为4漩涡加8普攻；与24+14=38相互印证，因此可保留为该爆条次数假设下的排轴/段数拆分结论。",
+      "limitations": [
+        "ASR将“四漩涡”识别为“四选五”，需人工听审确认；但上下文与4+8=12及总段数38吻合。",
+        "5次dot爆条是模型假设，并非所有实战中的固定值。",
+        "后26下的内部构成未在证据窗口中逐项展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本单为理论排轴/总伤模型讲解，三条候选均有逐字稿支撑且属于可复用数值结论；已将跨行口述拆成单行证据并校正时间戳。c03中ASR“四选五”按上下文与4+8=12还原为“四漩涡”，保留ASR限制说明。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

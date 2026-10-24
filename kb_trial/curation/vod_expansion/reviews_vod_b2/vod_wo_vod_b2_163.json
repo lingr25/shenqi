@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_163",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:22:35+0900",
+  "source_sha256": "5145c0ae6a54431382d36011fcb4e75867da634247dd25d2f047084fe2f0784c",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "关卡出怪波次逻辑中，敌方出现出怪警告牌（红圈/感叹号标记）会占用帧时，并且出牌子判定时会使后续出怪时序额外顺延一帧。",
+      "subject": "出怪警告牌与波次时序逻辑",
+      "condition": "出怪波次触发且包含路线警告牌判定",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "牌子会占一帧",
+          "t_start": 2765,
+          "t_end": 2779
+        },
+        {
+          "text": "除牌子的时候还会额外再加一帧",
+          "t_start": 3014,
+          "t_end": 3025
+        }
+      ],
+      "reason": "主播在系统总结同帧出怪与底层波次占用时序的研究结论，明确指出了路线演示和警告牌对出怪时序的延帧影响，且前后复述呼应，属于经测试得出的机制规律。",
+      "limitations": [
+        "语音转写中“除牌子”实际对应“出牌子”",
+        "具体同帧 Mono 快排的更深层排序需结合关卡波次原始数据解析"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "工单中的命题 c01 经受了实机测试结论与底层代码机制（Mono 快排、Wave 占用）的交叉验证，为不可忽视的底层时序判定规则。已根据上下文对规范术语进行了自包含改写，严格对齐逐字稿切片。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

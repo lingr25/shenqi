@@ -1,0 +1,40 @@
+{
+  "workorder_id": "vod_wo_vod_b2_455",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:27:03+0900",
+  "source_sha256": "caaf0a9bc727eb65cd587f888757efae1e72113c1a3ca8a30e0376e1775e3f6b",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "两个伤害数值是1775和1875",
+      "verdict": "reject",
+      "reason": "该候选仅记录画面上出现的两个伤害数字，未说明攻击来源、目标归属、触发条件或可复现机制，属于依赖画面指涉的纯实战观察；主体与条件不明确，不构成可复用机制命题。且 evidence 的 t_end=5451 与下一行时间戳 5456 不一致，时间标注不精确。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单上游仅抽取了一个纯数值观察，未闭合到“1875 归为石头人伤害”的机制归属结论。该命题依赖画面判断伤害归属，逐字稿本身缺少明确主体、条件与可复现机制，按宁缺毋滥原则不予采纳。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

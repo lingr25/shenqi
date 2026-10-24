@@ -1,0 +1,53 @@
+{
+  "workorder_id": "vod_wo_vod_b2_253",
+  "stem": "BV1L4ez6oEcc_p2_42060876088",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:24:06+0900",
+  "source_sha256": "91494d45df6450c4cb51ca244fc1993c7c214d7cb0625177982d749eb2e057cf",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "幕落开启技能后可以攻击到自身攻击范围之外的目标",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ],
+      "reason": "对应逐字稿 [6466s]「目落到底是什么情况 你也不清楚 感觉就是攻击范围有问题啊」及 [6473s]「他是不是重写攻击范围了」。主播以「感觉」「你也不清楚」「是不是」等措辞表达疑惑与反问，属未验证的开放猜测，并未形成可复用的机制定论，触犯 Gate 4。命题本身也仅是待验证的假说而非已确认事实。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "幕落的打数仍为三个、攻击范围为「零杠一」且选择器正常",
+      "verdict": "pending",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G2",
+        "G3"
+      ],
+      "reason": "上游把 [6482s]「他的打数很明显还是三个」、[6487s]「攻击范围零杠一」、[6498s]「选择器也正常」三行用空格拼成一条引文，违反 Gate 2 的字符级连续子串要求（应拆为三条独立 evidence）；同时「零杠一」究竟指 0.1 还是 0-1 无法从转写判定，缺少明确参数与可复现条件（Gate 3）。主播随即在 [6525s] 自述「主要是这只是个猜想 还得你确定啊」，讨论未闭合，故留待人工听审或实机验证。"
+    }
+  ],
+  "review_note": "本章节为幕落攻击范围异常的推导与实测课段。主播全程以猜测/反问推进（「感觉就是攻击范围有问题」「他是不是重写攻击范围了」「这只是个猜想」），直至窗口末尾仍在比较受击半径/索敌半径 2.0 等假说，未闭合出确定结论。c01 为主播疑惑与反问，触犯 Gate 4，判 reject；c02 虽记录打数=3、攻击范围「零杠一」、选择器正常等观察，但引文跨三行拼接且关键参数含义不明、讨论未闭合，判 pending。整单无 keep，顶层裁定 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

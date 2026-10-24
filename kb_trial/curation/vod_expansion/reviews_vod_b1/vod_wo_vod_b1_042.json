@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b1_042",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:24:43+0900",
+  "source_sha256": "e0a8a566939c90a472bb6101901322d8ec25b10bfead50e0a55f3e7f74414709",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "演示中的这个两波次关卡采用如下出怪层级结构：共2个波次，每个波次只有1个兵团，每个兵团包含39个小队。",
+      "subject": "演示中的两波次关卡的出怪层级结构",
+      "condition": "仅针对逐字稿中展示的该特定关卡配置",
+      "scope": "instance",
+      "category": "关卡配置/出怪结构",
+      "evidence": [
+        {
+          "text": "他有两个波次 一个波次里头只有一个兵团 一个兵团里头有39个小队",
+          "t_start": 3167,
+          "t_end": 3182
+        }
+      ],
+      "reason": "逐字稿在同一行明确给出该演示关卡的波次、兵团和小队数量，属于可核对的关卡配置观察；将其限定为该实例可避免推广到所有两波次关卡。",
+      "limitations": [
+        "不能据此推断所有两波次关卡都具有相同的兵团/小队数量。",
+        "逐字稿未说明该结构是否为关卡数据中的强制层级规则，也未说明每波次、兵团、小队的生成逻辑。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选 c01 的核心参数有逐字稿原句支撑。上游表述将其泛化为『两波次关卡』，但上下文只展示了一个具体两波次关卡，故改写为 instance 范围保留；不将『2波次—1兵团—39小队』推广为所有两波次关卡的通用规则。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

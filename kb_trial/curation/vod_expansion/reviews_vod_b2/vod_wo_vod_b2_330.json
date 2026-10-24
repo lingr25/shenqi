@@ -1,0 +1,115 @@
+{
+  "workorder_id": "vod_wo_vod_b2_330",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:44:05+0900",
+  "source_sha256": "f3453ca14771be69aed8e40947c9359211062d004131af7ce9ca82c96732e1b0",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "伤判环节不存在乘区概念；伤判 Buff 不是属性，不参与四则运算，除同名 Buff 互斥情形外，各 Buff 效果相互独立、没有数值叠加一说。",
+      "subject": "伤判环节中的 Buff（伤判效果）",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "商判的话他是没有乘区概念的 注意一个问题 商判没有乘区概念",
+          "t_start": 6098,
+          "t_end": 6112
+        },
+        {
+          "text": "然后的话他不是属性 没有四则运算 没有叠加一说 他是一个纯粹的相互独立的东西",
+          "t_start": 6136,
+          "t_end": 6150
+        }
+      ],
+      "reason": "讲师先明确伤判没有乘区概念，随后说明伤判 Buff 不是属性、无四则运算和数值叠加，属于底层伤判规则；同名互斥作为紧接的例外另由 c03 承载。",
+      "limitations": [
+        "同名 Buff 互斥例外见 c03；具体 Buff 优先级会随版本更新变化。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "伤判环节更注重 Buff 的叠加规则与优先级计算；Buff 结算同样满足先创建先结算的逻辑。",
+      "subject": "伤判环节中的 Buff 结算",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "没有城区概念的商判 他更注重的是Buff的叠加规则和优先级的计算",
+          "t_start": 6112,
+          "t_end": 6125
+        },
+        {
+          "text": "但是Buff的话就是另一套流程了 Buff也会满足",
+          "t_start": 6125,
+          "t_end": 6136
+        },
+        {
+          "text": "就是先创建先结算的逻辑",
+          "t_start": 6136,
+          "t_end": 6150
+        }
+      ],
+      "reason": "逐字稿明确伤判更注重 Buff 叠加规则与优先级，并说明 Buff 有另一套流程且满足先创建先结算。",
+      "limitations": [
+        "未展开完整优先级表；仅给出一般排序原则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c03",
+      "claim": "伤判环节中同名 Buff 之间存在互斥规则，相互之间只生效一个。",
+      "subject": "伤判环节中的同名 Buff",
+      "condition": "同名 Buff 同时存在",
+      "scope": "universal",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "但是如果是同名Buff的话 就会有相互之间只生效一个的问题",
+          "t_start": 6150,
+          "t_end": 6168
+        }
+      ],
+      "reason": "讲师在说明 Buff 独立后补充同名 Buff 会互斥、只生效一个，并举例停顿/停顿免疫，属于明确机制结论。",
+      "limitations": [
+        "未穷举所有同名 Buff 判定细节；后续例子涉及优先级影响。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "三条候选均围绕伤判 Buff 规则，逐字稿有明确结论；已修正上游时间戳并按单行拆引文。c01 与 c03 分别覆盖无乘区/非属性与同名互斥，c02 覆盖优先级与先创建先结算，不构成重复。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,85 @@
+{
+  "workorder_id": "vod_wo_vod_b2_605",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T13:57:22+0900",
+  "source_sha256": "e22bec7b03bfd42d9ca889905fdae94692a321dd075fe0ca0eb59a508f2b90f9",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "地块是否为高台由名为「高低地」的地块属性定义，高地指高台一类的地块。",
+      "subject": "地块属性「高低地」",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "地块属性/技能判定",
+      "evidence": [
+        {
+          "text": "判定高地 高地指的是高台一类的地块",
+          "t_start": 465,
+          "t_end": 474
+        },
+        {
+          "text": "这些看着比较高的地块 有一个属性叫高低地",
+          "t_start": 474,
+          "t_end": 494
+        },
+        {
+          "text": "高低地是用来定义说这个地块高不高 算不算高台的",
+          "t_start": 556,
+          "t_end": 574
+        }
+      ],
+      "reason": "逐字稿明确说明存在名为「高低地」的地块属性，并说明其用于定义地块是否算作高台；同时给出「高地指的是高台一类的地块」的口径。该命题为自包含的底层地块属性陈述，不依赖画面指涉。",
+      "limitations": [
+        "逐字稿未展开「高低地」属性的完整枚举、与其它地块属性的优先级关系。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "地块属性「高低地」参与火陈的龙与惊蛰二三技能的判定。",
+      "subject": "地块属性「高低地」",
+      "condition": "用于火陈的龙与惊蛰二、三技能进行地块判定时",
+      "scope": "entity_mechanism",
+      "category": "地块属性/技能判定",
+      "evidence": [
+        {
+          "text": "这个属性的话基本上就是火陈的龙这种判定 然后还有惊蛰那种判定 惊蛰呢惊蛰这种惊蛰的二三技能 这些判定",
+          "t_start": 494,
+          "t_end": 510
+        }
+      ],
+      "reason": "逐字稿在说明「高低地」属性后，明确将其与火陈的龙以及惊蛰二、三技能的判定关联起来。该句虽为口语表达，但已构成可复用的机制结论，且不依赖画面才能理解。",
+      "limitations": [
+        "逐字稿未展开这些技能具体如何比较「高低地」属性。",
+        "「火陈的龙」为转录中的称呼，正式名称需以游戏内文本为准。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本单两条候选均围绕「高低地」地块属性展开：c01 给出该属性的定义与高台口径，c02 给出该属性参与特定技能判定的范围。两条均有逐字稿原文支撑，未发现未闭合猜想或画面依赖残句，故均保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

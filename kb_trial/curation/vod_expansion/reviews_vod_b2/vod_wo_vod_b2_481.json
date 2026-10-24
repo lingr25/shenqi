@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_481",
+  "stem": "BV1BCpw6cENH_p3_42516023078",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:49:13+0900",
+  "source_sha256": "9d5473cfb84403356afc78b3ba2719c91162134ba95153fdb1d2e4c3dc96e776",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "三技能抱球后并非每次立即触发轰炸，存在未轰炸情况",
+      "verdict": "pending",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "引文可在 3243s 行中字符级匹配，G2 通过；但命题仅称“三技能”，未绑定具体干员/系统，脱离画面不自包含（G1）。“抱球后”与“迅速轰炸”的触发条件、时间窗口、CD/弹药消耗参数未明确，条件与范围不足（G3）。原文同时出现“好像有CD”并安排“待会统计一下报销时间”“确定一下弹药消耗的CD问题”，属于未闭合观察/推测，缺可复现参数（G4）。该议题具机制价值，但当前文本不足以形成定论，判 pending。"
+    }
+  ],
+  "review_note": "c01 的逐字引文对齐通过，但命题缺少具体主体与可复现触发参数，且讨论明确未闭合（需后续统计 CD/弹药消耗），不满足 keep 闸门；最终整单为 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

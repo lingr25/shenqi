@@ -1,0 +1,84 @@
+{
+  "workorder_id": "vod_wo_vod_b2_723",
+  "stem": "BV18BpG6LEtq_p1_42630319587",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:07:31+0900",
+  "source_sha256": "5e7100a1f0cfa8319ff971d12b951480479d5ee8bdb7f02cfae85b0007b60230",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "敌人高速位移磕墙时，磕墙会清除该敌人的速度",
+      "subject": "处于高速位移状态并撞墙的敌人",
+      "condition": "敌人处于高速位移状态并撞上墙体",
+      "scope": "universal",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "他速度太高 磕墙可对呀 磕墙 然后他就把速度给清了呀",
+          "t_start": 4283,
+          "t_end": 4295
+        }
+      ],
+      "reason": "上下文在排除速度上限等猜测后，将高速位移异常归因于磕墙，并明确说出磕墙后速度被清掉，属于有逐字稿支撑的机制结论。",
+      "limitations": [
+        "逐字稿后文还提到磕墙时速度会按平行/垂直墙体的分量进行衰减或磨损，因此“清除速度”宜理解为该实测中的高速分量被清零或显著重置，而非所有情况下无条件清空全部速度。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "在拉力弹道维持着的情况下，敌人磕墙不会退出失衡状态",
+      "subject": "受拉力弹道作用并撞墙的敌人",
+      "condition": "拉力弹道（拉力线）仍存在并维持作用",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "不会退出失衡的磕墙不会退出失衡的",
+          "t_start": 4283,
+          "t_end": 4295
+        },
+        {
+          "text": "有拉力弹道维持着 磕墙就不可能退出势头",
+          "t_start": 4295,
+          "t_end": 4304
+        },
+        {
+          "text": "只要还有这根线在的话 那个敌人就没有办法退出 适合",
+          "t_start": 4328,
+          "t_end": 4335
+        }
+      ],
+      "reason": "逐字稿先明确磕墙不会退出失衡，随后补充只要拉力弹道仍维持，磕墙就不可能退出势头，并再次用“只要还有这根线在”说明敌人无法退出。结合上下文，将ASR噪声“势头/适合”校正为“失衡”。",
+      "limitations": [
+        "“势头”“适合”为逐字稿ASR噪声，按上下文校正为“失衡”；具体拉力弹道来源与干员/装置名未在上游命题中完全限定，入库时应保留“拉力弹道仍存在”这一条件。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01、c02均有明确的逐字稿结论与可核验连续引文，通过四道硬性闸门。c01的“清除速度”需结合后文速度分量磨损机制理解；c02限定于拉力弹道/拉力线仍维持作用的机制分支。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

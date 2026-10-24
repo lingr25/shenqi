@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_143",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:05:00+0900",
+  "source_sha256": "6c1e6dace5e61e5420a6d2e49fda7020326f911697adf2c1f70dfe407ad3aac5",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "实体受到传送效果后仍会保留传送前的惯性（当前速度向量），传送机制本身不会清除其惯性。",
+      "subject": "实体（敌人）在传送机制下的惯性状态",
+      "condition": "受到传送效果作用时",
+      "scope": "universal",
+      "category": "寻路",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true,
+      "evidence": [
+        {
+          "text": "传送后仍然具有传送前的惯性 这一点在托老的那个无限加速中 也体现的很明显 按照正常来讲的话 就是加速到几十的速度",
+          "t_start": 702,
+          "t_end": 714
+        },
+        {
+          "text": "额是因为黍不会清除它的惯性",
+          "t_start": 759,
+          "t_end": 770
+        }
+      ],
+      "reason": "主播明确指出无论是一般传送还是黍的传送均不会清除惯性，传送后实体依然具有传送前的惯性，属于底层通用规则机制。",
+      "limitations": [
+        "实战中速度向量会随后受到寻路目标点加速度的逐帧修正"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "claim": "明日方舟中地面的最大基础加速度为10格/秒²，单位持续加速1秒后可达到10格/秒的速度。",
+      "subject": "地面移动单位的加速度限制",
+      "condition": "地面单位自主移动加速",
+      "scope": "universal",
+      "category": "寻路",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false,
+      "evidence": [
+        {
+          "text": "是需要有足够长的跑道的 方舟的地面加速最大的距离 最大的加速度是十 也就是说跑一秒才可以加速到十格每秒的速度",
+          "t_start": 714,
+          "t_end": 725
+        }
+      ],
+      "reason": "逐字稿中给出了明确的物理运动参数限制（最大加速度为10格/秒²），具有确定的规则价值和参数自包含性。",
+      "limitations": [
+        "依赖单位自身属性移速上限，需要足够长的等效跑道或机制配合才能跑满"
+      ]
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选命题均具备自包含的机制定论价值，逐字稿原文给出了明确陈述与参数支持，全部判定通过。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

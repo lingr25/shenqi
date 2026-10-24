@@ -1,0 +1,108 @@
+{
+  "workorder_id": "vod_wo_vod_b2_318",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed",
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:39:26+0900",
+  "source_sha256": "2b4a64d0c2d0ab4a6ba33238445a458f92e84f4726257202ac7b49f351499df0",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在属性数值计算完成且攻击力倍率提升之后，得到攻击力与防御力数值，结算才正式进入抗性结算流程。",
+      "subject": "伤害结算时序",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "抗性结算",
+      "evidence": [
+        {
+          "text": "在那个数值计算完之后 倍率提升之后 然后的话得到了攻击力 防御力 然后的话开始抗性结算流程",
+          "t_start": 4742,
+          "t_end": 4753
+        }
+      ],
+      "reason": "主播明确讲解了伤害结算宏观顺序：数值属性计算与倍率提升先进行，随后才进入抗性结算流程。符合Gate 1-4。",
+      "limitations": [
+        "未在此处细化具体攻击力倍率与各类不同倍率的合并规则"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c03",
+      "claim": "物理侧的防御与物理穿透是两个独立的属性，四则运算、局外加成等可以分别独立对防御和物理穿透生效；这两个属性各自计算完成后，才在抗性结算流程中共同结算为生效的防御力。",
+      "subject": "防御与物理穿透属性结算",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "抗性结算",
+      "evidence": [
+        {
+          "text": "一个是比如说先说物理吧 是防御是一个属性",
+          "t_start": 4840,
+          "t_end": 4855
+        },
+        {
+          "text": "然后的话物穿是一个属性",
+          "t_start": 4855,
+          "t_end": 4862
+        },
+        {
+          "text": "这是两个属性嗯嗯四则运算局外加成 这些东西都可以对防御生效 然后四则运算什么的也可以对误川生效 这两个属性各自计算完之后",
+          "t_start": 4862,
+          "t_end": 4878
+        },
+        {
+          "text": "然后才会在抗性结算流程中算到一起去 共同计算在这个环节中的防御力",
+          "t_start": 4878,
+          "t_end": 4896
+        }
+      ],
+      "reason": "清楚阐释了防御和物理穿透作为独立属性分别计算各自的四则运算与加成，并在后续抗性环节合并结算的底层规则，拆分单行引用后证据严格对齐逐字稿。",
+      "limitations": [
+        "未展开具体的穿透百分比与固定值结算优先级公式"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "抗性结算流程的展开环节说明",
+      "verdict": "reject",
+      "reason": "该候选命题为主播口头对PPT或讲解大纲结构的导读（'这个写法是很草率的 每一个环节还可以再展开'），陈述本身属于目录/框架性质的宏观概述，且其中属性面板值、倍率值与防御物穿的具体关系在c01和c03中已有更精确严谨的承载，单列本条缺乏具体机制规则闭合度，判定不通过G1和G4。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单主要探讨攻击/防御前序计算与抗性结算流程的时序划分，以及防御力与物理穿透作为独立属性分别走属性计算乘区再在抗性流程合并的底层机制。修正了c03因跨行拼接导致的引文校验错误，现各段证据均严格来源于单行连续子串。c01与c03论述清晰、证据完备，予以保留；c02系串讲过渡语，予以排除。",
+  "repair_rounds": 1,
+  "unresolved_problems_auto_demoted": []
+}

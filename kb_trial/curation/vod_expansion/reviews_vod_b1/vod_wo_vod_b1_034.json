@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b1_034",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:22:42+0900",
+  "source_sha256": "47793ba808e3e71e829dee988f84ab857340a4c30d6acafc91adeb55d0f36757",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "出怪排序的总数量并非固定为 9，而是由所有 count 展开后的条目，再加上牌子、路线演示等按时间对应展开的项共同构成。",
+      "subject": "出怪排序的总数量（参与排序的条目总数）",
+      "condition": "计算/展开关卡出怪排程序列时",
+      "scope": "universal",
+      "category": "出怪排程",
+      "evidence": [
+        {
+          "text": "所以的话这个排序规则 就要把所有的这个count展开 然后把所有的那个就是牌子和 这个牌子和路线演示 按照时间对应的展开",
+          "t_start": 2732,
+          "t_end": 2748
+        },
+        {
+          "text": "然后把所有的量统一加进去进行排序",
+          "t_start": 2748,
+          "t_end": 2755
+        },
+        {
+          "text": "就是排序的总数量不是九 是所有的count 再加上所有的这些东西",
+          "t_start": 2755,
+          "t_end": 2769
+        }
+      ],
+      "reason": "上下文在讲出怪排序规则时明确说先把所有 count 展开，再把牌子和路线演示按时间对应展开，最后把所有量统一加进去排序；随后给出结论：排序总数量不是九，而是所有 count 再加这些其他项。因此可归纳为出怪排序总数量的计算范围包含所有 count 与其他排序项。",
+      "limitations": [
+        "「其他项」在逐字稿窗口内只明确举到牌子和路线演示，是否还有未列明项需结合原讲义画面或后续文本确认。",
+        "「不是九」中的 9 所指的具体示例或字段背景未在逐字稿中展开，但总数量由所有 count 与其他项共同构成的核心结论明确。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅含 c01。该候选是出怪排序总数量计算范围的明确结论，逐字稿有连续文本支撑；虽含口语化指代，改写为自包含机制陈述后可 keep。未发现需排除的候选。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

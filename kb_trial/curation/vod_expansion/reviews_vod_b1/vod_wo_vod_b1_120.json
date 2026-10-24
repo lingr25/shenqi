@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b1_120",
+  "stem": "BV1cmaa6VEPR_p2_42252239801",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:58:39+0900",
+  "source_sha256": "030bd1c7e5b3837f11e8772ae747fc36b6d30dedd7e45659cb9e5afee2b83822",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "未许之地高台比地面低两个头导致视觉上难以判断为地面",
+      "verdict": "reject",
+      "reason": "该候选属于对特定地图视觉表现的主观观察（‘我感觉’、‘低两个头’），不是可复用机制定论；缺少可复现的精确参数与规则价值，违反 Gate 4。另，evidence[1] 的 t_end=74 不是逐字稿下一行时间戳（68s 下一行为 85s），时间标注不精确，违反 Gate 2。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "fail",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G2",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "整单仅一个候选，围绕未许之地高台视觉高度误判。逐字稿确有相应说法，但属于主播主观视觉观察与口语比较，不是机制规则；且证据二的时间标注与给定逐字稿窗口不一致。按宁缺毋滥原则拒绝。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

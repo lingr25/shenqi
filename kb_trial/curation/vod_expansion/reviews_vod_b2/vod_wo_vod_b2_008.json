@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_008",
+  "stem": "BV1PJeF6FETX_p1_41936683336",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:16:33+0900",
+  "source_sha256": "140d29a41bbd83f7bf2cbc4f6dba94de2e92d525bdeb96d7b31cb389358ec38f",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "黑流树海零件按代码中的 normal、rare、super rare 字段分为 N、R、SR 三种稀有度。",
+      "subject": "黑流树海零件稀有度系统",
+      "condition": "在黑流树海模式内",
+      "scope": "universal",
+      "category": "零件稀有度",
+      "evidence": [
+        {
+          "text": "所以我们会使用代码中的normal real super real来进行稀有度的划分",
+          "t_start": 3098,
+          "t_end": 3108
+        },
+        {
+          "text": "零件一共分为NRSR3种稀有度 N稀有度只有加工品和自然物",
+          "t_start": 3108,
+          "t_end": 3121
+        }
+      ],
+      "reason": "视频讲解先说明游戏文本描述与实际效果不符，随后明确采用代码中的 normal/rare/super rare 划分稀有度，并直接说明零件共分 N/R/SR 三种稀有度。逐字稿中的 real/reor 属 ASR 对 rare/super rare 的误转写；候选证据时间戳与本次 transcript_window 不一致，已按实际行校正。",
+      "limitations": [
+        "代码字段在逐字稿中被 ASR 转写为 real/reor，未提供原始解包文本截图。",
+        "本命题只覆盖稀有度分级，不覆盖各具体零件归属。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选 c01 为黑流树海零件稀有度分级，逐字稿有明确讲解与可定位原文支撑；修正 ASR 错字与时间戳后满足四闸门，予以 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

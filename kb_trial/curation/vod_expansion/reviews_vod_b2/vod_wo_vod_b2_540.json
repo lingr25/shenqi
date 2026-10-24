@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_540",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:04:44+0900",
+  "source_sha256": "3282fd7c8524e3e90f7c1cb635323683efb329067823387d90e395eedee0ab06",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "真言与酒神组合同时依赖高台位与地面位：缺少高台位时该组合难以发挥作用，缺少地面位时该组合也难以发挥作用。",
+      "subject": "真言与酒神组合",
+      "condition": "关卡同时存在可用高台位与地面位；缺少任一类型位置时该组合作用显著下降",
+      "scope": "entity_mechanism",
+      "category": "部署位置",
+      "evidence": [
+        {
+          "text": "没有高台真眼酒神也没什么用 没有地面的话 他俩没什么用",
+          "t_start": 1654,
+          "t_end": 1667
+        }
+      ],
+      "reason": "上下文在比较真言与酒神的生存和输出条件时，明确提出没有高台或没有地面时二者都难以发挥作用，并随后说明这是位置限制的公平性、抛开位置再比较操作难度。该结论具备明确主体、条件与适用范围，可作为特定组合的部署位置依赖结论保留。",
+      "limitations": [
+        "逐字稿中的“真眼”为ASR转写，按上下文理解为干员“真言”。",
+        "未说明具体需要多少高台位/地面位、站位范围或技能覆盖细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 的引文可在 1654s 原始逐字稿行中字符级连续匹配；命题已补全为“真言与酒神组合”的自包含陈述，条件明确为高台位与地面位缺失，范围限定为特定组合机制，且不属于未闭合猜测或反问，故保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

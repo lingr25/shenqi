@@ -1,0 +1,93 @@
+{
+  "workorder_id": "vod_wo_vod_b1_063",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T00:04:17+0900",
+  "source_sha256": "447baee32a63f051d69189b1349a3c3d18f6480a3bfc2c91eff0895883d6ea4d",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "传送带可以拉动处于隐匿状态的单位，即隐匿状态不会阻止传送带对该单位产生位移。",
+      "subject": "传送带（地块位移机制）",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "地块/状态效果",
+      "evidence": [
+        {
+          "text": "传送带能拉隐匿 传送带能拉隐匿",
+          "t_start": 4527,
+          "t_end": 4532
+        }
+      ],
+      "reason": "采纳理由：主播在弹幕问答中就直接以陈述句重复给出该结论（『传送带能拉隐匿』），主语明确为传送带，无猜测词、无疑问语气，且与本节『传送带隐匿』议题一致，属可复用的地块判定规则。",
+      "limitations": [
+        "逐字稿未说明隐匿的具体来源（干员技能、装置或形态），也未给出拉动速度、位移格数等参数。",
+        "未交代单位被拉动过程中隐匿状态是否延续、是否会被打破。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c03",
+      "claim": "传送带不能无视『不可选中』判定本身，其能够穿透的不可选中类型仅为隐匿一种。",
+      "subject": "传送带（地块判定机制）",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "地块/状态效果",
+      "evidence": [
+        {
+          "text": "然后也不能无视可选性 只是仅仅无视隐匿一种而已",
+          "t_start": 4536,
+          "t_end": 4551
+        }
+      ],
+      "reason": "采纳理由：紧接上一句同一话题（传送带对隐匿的作用），主播以陈述句明确划出边界——传送带不会无视『可选性/不可选中』这一属性本身，唯一穿透的不可选中类型是隐匿，构成可复用的机制限定而非猜测或反问。",
+      "limitations": [
+        "逐字稿未列举『不可选中』的其他具体类型，也未说明该结论的验证方式，仅为当场口述定论。",
+        "『可选性』为口播用语，规范术语（不可选中）为审查员按语义补全。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "传送带作用于隐匿单位时，伤害等其他效果均不生效",
+      "verdict": "pending",
+      "reason": "『那个伤害什么的都不生效』中的指示代词依赖当时画面指涉，逐字稿无法确定『伤害等效果』指哪一主体、哪一类地块效果（是传送带自身无附带效果，还是其他地块效果对隐匿单位不生效），关键参数与判定对象缺失、讨论未闭合，需人工听审或实机验证后再定论。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1",
+        "G3"
+      ]
+    }
+  ],
+  "review_note": "本节为弹幕问答中的『传送带与隐匿』议题。c01（传送带能拉动隐匿单位）与 c03（传送带不能无视不可选中判定，仅穿透隐匿一种）均为主播以陈述句给出的机制定论，主语、条件与适用范围明确，逐字引文与转写行完全对齐，两条互补构成『传送带对隐匿的生效范围与限制』，予以 keep。c02 虽同源同话题，但『伤害什么的』为画面依赖的口头指代，具体效果类型与判定主体在逐字稿中不可确定，判 pending。无重复命题，无被排除的猜测/反问类候选。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

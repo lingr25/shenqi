@@ -1,0 +1,100 @@
+{
+  "workorder_id": "vod_wo_vod_b2_606",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T13:57:19+0900",
+  "source_sha256": "9ab31474059ab2ffe6897694a1dd95af4cd2b245b90d7e8b6e005e0ebaba96ea",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门莎二技能的地块判定标准之一为地块的“高低地”属性，且高地地块不可选。",
+      "subject": "克莱门莎二技能",
+      "condition": "克莱门莎二技能选取目标地块时，候选地块具有“高低地”属性中的高地。",
+      "scope": "entity_mechanism",
+      "category": "技能特例/地块判定",
+      "evidence": [
+        {
+          "text": "克莱门沙的这个判定标准之一啊 他的要求是高低地啊 高地不行",
+          "t_start": 530,
+          "t_end": 544
+        }
+      ],
+      "reason": "上文从459s起明确在讨论克莱门莎二技能如何判定高台；530s主播直接说明其判定标准之一为高低地，并明确“高地不行”，属于技能地块判定的明确结论。",
+      "limitations": [
+        "逐字稿未给出“高低地”属性的代码字段名或与其他判定条件的优先级。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "克莱门莎二技能不能选取坑地块，也不能选取空想花庭临时步道的坑形态地块。",
+      "subject": "克莱门莎二技能",
+      "condition": "候选地块为坑或空想花庭临时步道的坑形态时。",
+      "scope": "entity_mechanism",
+      "category": "技能特例/地块判定",
+      "evidence": [
+        {
+          "text": "然后的话坑不行 空想花庭那个临时步道的坑形态不行",
+          "t_start": 530,
+          "t_end": 544
+        }
+      ],
+      "reason": "530s在同一段技能地块判定列举中连续说明“坑不行”以及“空想花庭那个临时步道的坑形态不行”，上下文对象仍是克莱门莎二技能的判定标准。",
+      "limitations": [
+        "逐字稿未区分不同类型坑的底层属性差异，也未说明与不可通行属性重叠时的判定顺序。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "克莱门莎二技能不能选取不可通行地块。",
+      "subject": "克莱门莎二技能",
+      "condition": "候选地块为不可通行地块时。",
+      "scope": "entity_mechanism",
+      "category": "技能特例/地块判定",
+      "evidence": [
+        {
+          "text": "然后的话那个不可通行地块不行",
+          "t_start": 544,
+          "t_end": 553
+        }
+      ],
+      "reason": "544s延续同一段克莱门莎二技能地块判定列举，明确说明不可通行地块不行，属于可复用的技能限制结论。",
+      "limitations": [
+        "逐字稿未说明不可通行属性与其他地块属性重叠时的优先级，也未列出全部不可选地块类型。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "三个候选均来自同一段围绕克莱门莎二技能地块判定的明确讲解，分别对应高低地、坑/空想花庭临时步道坑形态、不可通行地块三类限制；均有单行逐字稿连续引文支撑，未见未定论猜测或纯画面依赖，故全部 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

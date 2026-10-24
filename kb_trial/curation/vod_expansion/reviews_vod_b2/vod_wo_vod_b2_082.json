@@ -1,0 +1,96 @@
+{
+  "workorder_id": "vod_wo_vod_b2_082",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:45:01+0900",
+  "source_sha256": "7cbc2738ca3e84b914b9b91574be6754777974747b66b91ee12d3d733c24ef4d",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "解放者和钩索师触发额外阻挡判定时不会改变其三帧阻挡扫描周期，原有周期的自然阻挡帧仍会正常判定。",
+      "subject": "解放者与钩索师的额外阻挡判定",
+      "condition": "触发额外阻挡判定（如开启技能）",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "解放者和那个钩索师虽然会有额外的阻挡判定 但是也不会改 改变那个三帧扫描的应该有的时间",
+          "t_start": 2667,
+          "t_end": 2680
+        },
+        {
+          "text": "但是的话它的自然的阻挡帧会在147十 他在四帧的话还会有一次阻挡判定",
+          "t_start": 2694,
+          "t_end": 2704
+        },
+        {
+          "text": "就是额钩索师和那个解放者的阻挡帧 完全是额外的多出来的",
+          "t_start": 2704,
+          "t_end": 2721
+        }
+      ],
+      "reason": "逐字稿直接说明解放者与钩索师的额外阻挡判定不会改变三帧扫描应有的时间；后续又说明自然阻挡帧仍按原周期出现，额外判定是多出来的，支撑该结论。",
+      "limitations": [
+        "逐字稿中自然阻挡帧序列‘147十’存在 ASR 噪声，具体帧号需结合画面或更干净转写复核。",
+        "未穷举解放者与钩索师所有分支和额外阻挡触发方式。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "解放者在零帧部署时，若在二帧开启技能，会在三帧额外阻挡一次，该次额外阻挡判定不改变自然阻挡帧。",
+      "subject": "解放者",
+      "condition": "解放者零帧部署，且在第二帧开启技能",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "比如说如果是一个解放者 他在那个零帧部署 他应该在13147十这些帧去呃阻挡 然后的话假设你在二帧开了技能 它会在三帧阻挡一次",
+          "t_start": 2680,
+          "t_end": 2694
+        },
+        {
+          "text": "但是的话它的自然的阻挡帧会在147十 他在四帧的话还会有一次阻挡判定",
+          "t_start": 2694,
+          "t_end": 2704
+        },
+        {
+          "text": "就是额钩索师和那个解放者的阻挡帧 完全是额外的多出来的",
+          "t_start": 2704,
+          "t_end": 2721
+        }
+      ],
+      "reason": "逐字稿以解放者零帧部署、二帧开技能为例，明确三帧会额外阻挡一次；随后说明自然阻挡帧仍会在原周期帧出现，该额外判定不替代自然阻挡帧。",
+      "limitations": [
+        "示例中的初始自然阻挡帧‘13147十/147十’存在 ASR 噪声，具体帧号需复核。",
+        "仅覆盖零帧部署且二帧开技能的组合，未穷举其他情况。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01为通用机制结论，c02为其具体帧示例；两候选均有逐字稿原文支撑，证据可字符级匹配，通过四闸门。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b2_083",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:44:12+0900",
+  "source_sha256": "d7df004b41cecb768b33450f5f31dbbe4592b7ce1947ebe7ce91c243bc1a4bd7",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "钩索师与解放者的阻挡帧属于额外多出的阻挡判定，不计入常规阻挡帧时序。",
+      "subject": "钩索师、解放者的阻挡帧",
+      "condition": "当主体为钩索师或解放者并产生阻挡判定时",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "比如说如果是一个解放者 他在那个零帧部署 他应该在13147十这些帧去呃阻挡 然后的话假设你在二帧开了技能 它会在三帧阻挡一次",
+          "t_start": 2680,
+          "t_end": 2694
+        },
+        {
+          "text": "但是的话它的自然的阻挡帧会在147十 他在四帧的话还会有一次阻挡判定",
+          "t_start": 2694,
+          "t_end": 2704
+        },
+        {
+          "text": "钩索师和那个解放者的阻挡帧 完全是额外的多出来的",
+          "t_start": 2704,
+          "t_end": 2721
+        }
+      ],
+      "reason": "主播先以解放者零帧部署与二帧开技能为例说明阻挡判定帧，随后明确总结钩索师和解放者的阻挡帧是额外多出来的，可支撑其阻挡帧不按常规阻挡帧时序计入的结论。",
+      "limitations": [
+        "逐字稿未给出“常规阻挡帧时序”的精确定义与完整帧号，且例中帧号受 ASR 影响存在不清楚之处。",
+        "未列出钩索师与解放者所有具体触发场景。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "仅一条候选 c01。其命题有逐字稿明确总结支撑，可整理为钩索师/解放者的帧时序机制；上游 evidence 的秒数标注与窗口不符，已在回执中按逐字稿 [2704s] 行校正。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

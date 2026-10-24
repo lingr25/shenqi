@@ -1,0 +1,79 @@
+{
+  "workorder_id": "vod_wo_vod_b2_100",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T13:09:49+0900",
+  "source_sha256": "856fd4f71b430a052815f9b53de12fd3795e084411387085ba5dfa4dbf179538",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "阻挡偏移中的稳定阻挡位置（此前称为C点）指的是敌人被挤压位移完成、开始判定旋转时的位置。",
+      "subject": "稳定阻挡位置（阻挡偏移中的C点）",
+      "condition": "敌人被挤压位移完成并进入开始判定旋转的时刻",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "这里说的稳定阻挡位置就是之前我说的C 后续敌人进行阻挡偏移计算时 会获取B的位置为F 说的就是那个挤完之后开始判定旋转的时候",
+          "t_start": 3771,
+          "t_end": 3786
+        }
+      ],
+      "reason": "逐字稿明确将稳定阻挡位置等同于此前所称的C点，并说明其对应敌人挤完之后开始判定旋转的时候。",
+      "limitations": [
+        "变量C、F、B的命名依赖讲座前文，逐字稿窗口未给出完整定义。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "敌人的稳定阻挡位置会被记录为F点；后续进行阻挡偏移计算时，会获取B的位置为F，即使用该已记录位置作为基准。",
+      "subject": "敌人的稳定阻挡位置（F点）",
+      "condition": "稳定阻挡位置已被记录",
+      "scope": "universal",
+      "category": "位移",
+      "evidence": [
+        {
+          "text": "作为F点的位置会被记录 作为B点进行阻挡偏移计算时 获取B的位置会被获取为F",
+          "t_start": 3759,
+          "t_end": 3771
+        },
+        {
+          "text": "这里说的稳定阻挡位置就是之前我说的C 后续敌人进行阻挡偏移计算时 会获取B的位置为F 说的就是那个挤完之后开始判定旋转的时候",
+          "t_start": 3771,
+          "t_end": 3786
+        }
+      ],
+      "reason": "逐字稿说明作为F点的位置会被记录，并在后续阻挡偏移计算中以获取B的位置为F的方式使用；后文又确认稳定阻挡位置即C点。",
+      "limitations": [
+        "逐字稿对B点、F点、C点的变量关系口述较快，具体获取与记录的实现细节未展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均通过四大闸门。c01定义稳定阻挡位置为C点；c02说明该稳定阻挡位置被记录为F点，并作为后续阻挡偏移计算的基准。未发现未定论假说、反问或画面依赖残句。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

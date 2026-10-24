@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b1_106",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:54:57+0900",
+  "source_sha256": "18693b67b381b16573712ea31b85d2281e118706ad415029dbc0f814cfe57661",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "弹道不会因为飞出地图边界而消失",
+      "subject": "弹道",
+      "condition": "当弹道飞出地图边界/地图外时",
+      "scope": "universal",
+      "category": "弹道",
+      "evidence": [
+        {
+          "text": "弹道不会因为飞出地图而消失",
+          "t_start": 6629,
+          "t_end": 6637
+        },
+        {
+          "text": "弹道肯定不会因为飞出地图消失",
+          "t_start": 6646,
+          "t_end": 6665
+        }
+      ],
+      "reason": "主播在讨论火神龙/火陈能否飞出地图外时，明确两次断言弹道不会因飞出地图而消失。该陈述不依赖画面指涉，表达的是可复用的弹道与地图边界规则；后续对火神龙/火陈能否飞出地图的实测和疑问并不否定这一弹道结论。",
+      "limitations": [
+        "逐字稿未展示弹道飞出地图边界的实机验证过程。",
+        "未说明所有弹道类型、地图外坐标处理、是否仍参与碰撞或销毁判定等细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅有一条候选命题。逐字稿中主播两次明确断言弹道不会因飞出地图而消失；虽然火神龙/火陈能否飞出地图的实测未闭合，但该候选只取弹道规则本身，具备自包含机制价值，故保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

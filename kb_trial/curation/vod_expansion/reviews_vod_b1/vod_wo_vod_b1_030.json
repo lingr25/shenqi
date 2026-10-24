@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b1_030",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:21:33+0900",
+  "source_sha256": "1b09b1051756c0a17a5827c8d5e5579009fa17513584e97f41925a23d853a2e7",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "兵团总数量的变化会改变快排迭代过程中分团的次数，分团次数决定逆序的总次数，逆序总次数决定同一时间点上怪谁先谁后；即使是后面出的怪，也会因总数量的变化而受影响。",
+      "subject": "出怪排序中的兵团总数量",
+      "condition": "同一时间点存在多个出怪需要确定先后顺序时",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "同时的话也会存在着说怪的总数量 会影响他的同时间的排序",
+          "t_start": 2549,
+          "t_end": 2565
+        },
+        {
+          "text": "就是一个兵团的总数量 即使是后面出的怪也可以 也可能因为总数量的变化 从而影响这个就是快排的这个迭代过程中 分了几次团",
+          "t_start": 2565,
+          "t_end": 2579
+        },
+        {
+          "text": "分了就是逆序了几次 影响了逆序几次的总次数 从而影响他究竟是谁先谁后",
+          "t_start": 2579,
+          "t_end": 2598
+        }
+      ],
+      "reason": "上下文明确说明兵团/怪的总数量会影响同时间排序，并将其解释为快排迭代中分团次数、逆序总次数进而影响同一时间点出怪的先后；同时指出即使是后面出的怪也可能因总数量变化而受影响。引文与逐字稿对应行字符级一致。",
+      "limitations": [
+        "主播开场自述对底层实现了解有限，『快排』『分团』『逆序』属于解释性术语，未给出官方源码级证明。",
+        "该命题只覆盖总数量对同时间排序的影响；牌子、路线演示、隐藏出怪是否占用时间等由同段后续内容另行讨论。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选 c01 为可自包含的出怪排序机制命题，主体、条件与适用范围明确；逐字稿逐字引文可精确对齐，且主播给出了总数量影响同时间排序的因果解释。虽含解释性术语与了解有限的自我限定，但核心结论在上下文中已明确陈述，未构成未闭合猜测，故予 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,86 @@
+{
+  "workorder_id": "vod_wo_vod_b2_081",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:44:17+0900",
+  "source_sha256": "98621cb90e5151fbeeb4c96f188517c30239f3ffddfa9e2d27fd95cd3e1a68db",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "夜刀解除不可阻挡状态不等于立即开始阻挡：阻挡判定只发生在阻挡扫描帧（3A+1帧），因此夜刀在2秒20帧解除不可阻挡后，必须等到2秒22帧才会判定阻挡。",
+      "subject": "夜刀解除不可阻挡后的阻挡判定",
+      "condition": "夜刀在2秒20帧解除不可阻挡后",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "夜刀的不可阻挡结束 并不等于会直接开始阻挡他的 不可阻挡和无敌和其他的Buff是绑定的",
+          "t_start": 2621,
+          "t_end": 2638
+        },
+        {
+          "text": "它持续两秒20帧的无敌 但是呢因为阻挡帧在3A加一帧 它即使两秒20帧的时候解除了不可阻挡",
+          "t_start": 2638,
+          "t_end": 2649
+        },
+        {
+          "text": "它也必须要在两秒22帧才能够判定阻挡",
+          "t_start": 2649,
+          "t_end": 2662
+        }
+      ],
+      "reason": "逐字稿直接说明夜刀不可阻挡结束不等于直接开始阻挡，并给出无敌持续2秒20帧、阻挡帧为3A加一帧、因此2秒20帧解除不可阻挡后要到2秒22帧才判定阻挡。命题具有明确主体、条件与帧时序参数，属于可复用机制定论。",
+      "limitations": [
+        "逐字稿未展开A的具体取值及不同帧率下的换算方式",
+        "未说明其他干员或技能是否同样遵循该等待关系"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "夜刀在2秒21帧（解除不可阻挡后、阻挡判定前）处于可被索敌但尚未阻挡敌人的状态，会被远程敌人抬手攻击。",
+      "subject": "夜刀",
+      "condition": "夜刀在2秒21帧（解除不可阻挡后、阻挡判定前）",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "两秒21帧 就处于一个可以被索敌又不可阻挡的状态 从而被敌人远程抬手攻击",
+          "t_start": 2649,
+          "t_end": 2662
+        }
+      ],
+      "reason": "逐字稿明确描述夜刀在两秒21帧处于可被索敌但尚未开始阻挡的状态，并因此会被远程敌人抬手攻击。该结论与前一候选的阻挡扫描帧等待关系衔接，且不是开放猜测。",
+      "limitations": [
+        "未给出索敌帧与远程敌人抬手帧之间的精确帧数",
+        "未展开不同敌人射程或索敌条件对该现象的差异"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均有逐字稿直接支撑，已按单行连续子串重新给出合法证据。c01 与 c02 分别对应夜刀解除不可阻挡后的阻挡扫描等待和空档帧可索敌状态，二者互补而非重复；未发现未定论假说或纯实战叙述。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

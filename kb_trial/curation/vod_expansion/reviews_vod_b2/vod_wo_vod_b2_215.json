@@ -1,0 +1,70 @@
+{
+  "workorder_id": "vod_wo_vod_b2_215",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:58:54+0900",
+  "source_sha256": "c6dbe891861896be27145ea9fd7b11476ca01ef10953cbf505bd8ccc9bc87101",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在索敌排序处理流程中，系统的过滤处理顺序依次为：仇恨过滤器 → 二次过滤器 → 嘲讽过滤器。",
+      "subject": "索敌系统排序流程",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "索敌",
+      "evidence": [
+        {
+          "text": "但是与仇恨并过滤器并行的还有二次过滤器和嘲讽过滤器 其处理顺序是仇恨过滤器",
+          "t_start": 3856,
+          "t_end": 3869
+        },
+        {
+          "text": "二次过滤器和嘲讽过滤器 仇恨过滤器是以这些描写的规则做排序 然后二次过滤器是以某种Buff的 有无某种条件的有无",
+          "t_start": 3869,
+          "t_end": 3881
+        }
+      ],
+      "reason": "逐字稿明确指出处理顺序是仇恨过滤器、二次过滤器和嘲讽过滤器，并在后文具体说明了二次过滤器筛完之后再通过嘲讽过滤器排序的过程，属于明确的通用底层机制定论。",
+      "limitations": [
+        "若未开启嘲讽过滤器则不执行嘲讽排序阶段"
+      ],
+      "rewritten": true,
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      }
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "鹰角的仇恨过滤器存在多种类型，单一仇恨过滤器只是多种类型之一",
+      "verdict": "reject",
+      "reason": "口语漫谈过渡句，且命题表述过于宽泛抽象，缺乏具体参数和机制可复用价值，属于未展开的导引话语。",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      }
+    }
+  ],
+  "review_note": "c01完整且准确地概括了索敌过滤器三层顺序（仇恨→二次→嘲讽），逐字稿证据充分且可验证；c02系口语引入，无具体机制定论价值，予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

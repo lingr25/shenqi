@@ -1,0 +1,87 @@
+{
+  "workorder_id": "vod_wo_vod_b2_332",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:44:26+0900",
+  "source_sha256": "8b6f1c2ab642dfa0d80851be437fe4c8955f9cc79f952327d0c2398b7930b71a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "两个 Buff 优先级相同时，先后顺序由 Buff 的创建时间决定，创建更早的排在更前面。",
+      "subject": "同优先级的 Buff",
+      "condition": "两个 Buff 的优先级数值相同",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "没什么方便记的方法 就直接看那个PT或者做测试或者解包啊 或者自己能解包 自己解包 然后的话如果同优先级的话 看早晚创建的早晚",
+          "t_start": 6386,
+          "t_end": 6403
+        },
+        {
+          "text": "赫墨的不死之前 为什么 因为那个 因为四二是出生就带上了 赫默是打着打着架挂上了 那他当然比他更早 如果鹰角想让后莫比四二早的话啊",
+          "t_start": 6416,
+          "t_end": 6432
+        }
+      ],
+      "reason": "逐字稿明确说明同优先级时看创建早晚，并在不死 Buff 例子中以出生自带早于战斗中挂上说明更早创建者排在前面。",
+      "limitations": [
+        "逐字稿未给出 Buff 优先级数值本身如何确定，只讨论同优先级时的排序。",
+        "“创建时间”的具体计时粒度（帧/部署时点）未交代。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "在四二出生自带的不死 Buff 与赫默在战斗中挂上的不死 Buff 优先级相同时，因四二的不死 Buff 创建更早，四二的不死 Buff 排在赫默的不死 Buff 之前。",
+      "subject": "四二出生自带的不死 Buff 与赫默战斗中挂上的不死 Buff",
+      "condition": "两者优先级相同；四二的不死为出生自带；赫默的不死为战斗中挂上",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "比如说比如说什么呢 比如说不死吧 四二的不死 按理就是同优先级在那个就是谁在那个",
+          "t_start": 6403,
+          "t_end": 6416
+        },
+        {
+          "text": "赫墨的不死之前 为什么 因为那个 因为四二是出生就带上了 赫默是打着打着架挂上了 那他当然比他更早 如果鹰角想让后莫比四二早的话啊",
+          "t_start": 6416,
+          "t_end": 6432
+        }
+      ],
+      "reason": "逐字稿以四二和赫默的不死 Buff 为例：四二出生即带，赫默战斗中挂上；在同优先级前提下，创建更早的四二不死排在赫默不死之前。",
+      "limitations": [
+        "“四二/赫默的不死 Buff”具体技能或天赋名未在窗口中说明。",
+        "若优先级不同，则按优先级而非创建时间排序。",
+        "逐字稿有 ASR 异写（赫墨/后莫），规范名需人工核对。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两个候选均可由逐字稿窗口支撑：c01 是 Buff 同优先级时按创建时间排序的通用规则；c02 是该规则在四二与赫默不死 Buff 上的具体条件化推论。引文均逐字对齐，未发现未闭合猜测或画面依赖问题。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

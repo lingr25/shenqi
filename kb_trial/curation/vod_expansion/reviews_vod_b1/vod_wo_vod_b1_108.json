@@ -1,0 +1,58 @@
+{
+  "workorder_id": "vod_wo_vod_b1_108",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:55:52+0900",
+  "source_sha256": "5511d49dc6d0ae590a89f912d9748fa7b186328ab25f269f23c8a16e27423073",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "火陈不能飞出地图外；其实测中弹道尝试越过地图边界时不会成功飞离地图。",
+      "subject": "火陈（其弹道/龙）",
+      "condition": "火陈的弹道/龙尝试飞出地图边界时",
+      "scope": "entity_mechanism",
+      "category": "弹道",
+      "evidence": [
+        {
+          "text": "弹道肯定不会因为飞出地图消失 但是火陈可以可以飞出地图外吗",
+          "t_start": 6646,
+          "t_end": 6665
+        },
+        {
+          "text": "不行啊不行啊",
+          "t_start": 6694,
+          "t_end": 6699
+        },
+        {
+          "text": "不行的",
+          "t_start": 6637,
+          "t_end": 6646
+        }
+      ],
+      "reason": "上下文先提出疑问‘火陈可以可以飞出地图外吗’，随后主播在相同讨论中连续给出‘不行啊不行啊’和‘不行的’的实测反馈；该反馈紧接前述疑问，可支撑火陈不能飞出地图外的否定结论。",
+      "limitations": [
+        "未在逐字稿中交代具体地图、技能/部署参数与游戏版本；‘不行’的具体指代依赖上下文。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "候选命题由上下文中的实测问答支撑，引文可字符级对齐；将其改写为自包含的实体机制结论后保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

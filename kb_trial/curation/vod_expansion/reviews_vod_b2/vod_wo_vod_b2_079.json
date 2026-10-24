@@ -1,0 +1,86 @@
+{
+  "workorder_id": "vod_wo_vod_b2_079",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T11:43:49+0900",
+  "source_sha256": "cc52a72427058b8a006124a26d55052ed6c29cbd8d614f229e0949ffaf9f5778",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "钩索师职业在拉力弹道结束时额外进行一次阻挡判定；解放者职业在刚开启技能时额外强制进行一次阻挡判定。",
+      "subject": "钩索师与解放者（职业分支）",
+      "condition": "钩索师：拉力弹道结束时；解放者：刚开启技能时",
+      "scope": "entity_mechanism",
+      "category": "帧时序/技能特例",
+      "evidence": [
+        {
+          "text": "未阻挡的敌人 这个的话目前来讲没有反例 目前来讲没有返利 但是的话是否有不同于三帧阻挡呃 三帧扫描阻挡这个东西之外的东西是有的",
+          "t_start": 2403,
+          "t_end": 2419
+        },
+        {
+          "text": "是有的 那个钩索师会在拉力弹道结束时判定一次阻挡 然后的话那个解放者会在开技能之后 刚开技能的时候强制触发一次阻挡",
+          "t_start": 2419,
+          "t_end": 2434
+        }
+      ],
+      "reason": "上下文先提出三帧扫描之外存在其他阻挡触发，随后主播明确点名钩索师与解放者及其触发时点，属于特定职业分支的额外阻挡判定机制。",
+      "limitations": [
+        "逐字稿未给出额外判定发生的具体帧号或内部实现参数。",
+        "未说明该额外判定是否受阻挡数、可阻挡状态或目标可阻挡属性限制。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "干员的阻挡帧固定为部署之后的3N+1帧，部署后的下一帧为第一次阻挡判定，此后每三帧判定一次；一次强制触发的额外阻挡不会改变该阻挡帧。",
+      "subject": "干员的阻挡帧（阻挡扫描判定）",
+      "condition": "干员部署后；即使发生强制触发的额外阻挡",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "不是一次强制触发的阻挡 并不会改变阻挡帧 阻挡帧在无论在什么情况下都死板的既定的 按照部署的3N加一帧部署 下一帧是第一次",
+          "t_start": 2450,
+          "t_end": 2471
+        },
+        {
+          "text": "此后每三帧一次 也就是部署之后的3N加一帧 阻挡永远遵循这个逻辑 持续的判定自己可不可以阻挡敌人 可不可以阻挡 在不在范围之内",
+          "t_start": 2471,
+          "t_end": 2484
+        }
+      ],
+      "reason": "主播明确区分强制触发的索敌与强制触发的阻挡，并说明阻挡帧无论什么情况都按部署后的3N+1固定运行，从部署下一帧开始每三帧判定一次。",
+      "limitations": [
+        "逐字稿未明确3N+1中N的起始编号，只可确定部署下一帧为第一次、之后每三帧一次。",
+        "未穷举所有可能改变阻挡帧的特殊机制。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两条候选均通过四大闸门。c01记录钩索师与解放者的额外阻挡触发时点，属于特定职业分支机制；c02记录额外阻挡不改变固定阻挡帧的通用结论。二者可互相印证：额外阻挡判定存在，但固定三帧阻挡扫描帧仍按部署后的3N+1逻辑运行。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

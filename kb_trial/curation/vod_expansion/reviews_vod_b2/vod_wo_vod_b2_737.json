@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b2_737",
+  "stem": "BV18BpG6LEtq_p2_42631758665",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:09:52+0900",
+  "source_sha256": "309159ddb07e8f2dec594fa0e5bdea06779d3afc050d2293faa9ebf4aee0f11e",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "本次录制采用八帧撤",
+      "verdict": "reject",
+      "reason": "该候选只是主播对本次录制撤帧数的一次性实况说明/操作参数，并非可复用的机制陈述；主体与成立条件未落到具体游戏机制，且缺少可复现规则价值，触发 Gate 1、Gate 3、Gate 4。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "唯一候选 c01 的引文文本可在 662s 行逐字匹配，但内容仅为本次录制的撤帧设置/实况观察，不能构成自包含的可复用机制命题，故整单判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

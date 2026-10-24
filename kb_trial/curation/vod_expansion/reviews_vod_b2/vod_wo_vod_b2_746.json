@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_746",
+  "stem": "BV18BpG6LEtq_p2_42631758665",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T18:11:18+0900",
+  "source_sha256": "6f06a0d2cf841e7ab0103f60565dc9500879bc472a671bb244cda365eefcf9d4",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "双星地图中的传送路径点会使行进至该路径点的怪物发生传送。",
+      "subject": "双星地图的传送路径点",
+      "condition": "怪物行进至双星地图的传送路径点时",
+      "scope": "instance",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "但是双星的话又有路径点 传送路径点会让他传送的",
+          "t_start": 1853,
+          "t_end": 1865
+        }
+      ],
+      "reason": "上下文正在讨论双星地图的路径点，主播明确说明传送路径点会让目标传送；该陈述可改写为自包含的地图实例机制。",
+      "limitations": [
+        "逐字稿未给出传送路径点的具体坐标、触发半径或是否对所有敌人一致。",
+        "该结论仅适用于双星地图实例，不推广为全域寻路规则。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 引文在逐字稿中可逐字匹配，主体和适用地图明确；属于双星地图实例的寻路机制，保留为 instance 级结论。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

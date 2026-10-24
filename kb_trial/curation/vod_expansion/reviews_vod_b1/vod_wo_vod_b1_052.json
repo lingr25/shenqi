@@ -1,0 +1,93 @@
+{
+  "workorder_id": "vod_wo_vod_b1_052",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:28:33+0900",
+  "source_sha256": "be216bd7c2715738d069eb00bee3a1a3a0280e4bf34ba29eec9ed6c649565279",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "极少数单位带有出生状态机，表现为在蓝门原地不动一段时间。",
+      "subject": "带有出生状态机的单位",
+      "condition": "单位具有出生状态机并在蓝门出现时",
+      "scope": "entity_mechanism",
+      "category": "状态效果/帧时序",
+      "evidence": [
+        {
+          "text": "除了极少数有出生状态机的单位啊 就是会在原会在蓝门原地不动半天",
+          "t_start": 3749,
+          "t_end": 3762
+        }
+      ],
+      "reason": "主播明确区分出少数具有出生状态机的单位，并说明其出生阶段的表现是会在蓝门原地停留；后文也用空降兵、涤墨等例子继续讨论该机制。",
+      "limitations": [
+        "“极少数”和“半天”为口播模糊量，未给出完整单位清单与具体时长",
+        "未说明蓝门原地停留的具体帧数或状态机切换条件"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "干员具有出生状态机（落地动画），在落地动画期间不能攻击。",
+      "subject": "干员",
+      "condition": "干员处于落地动画（出生状态机）期间",
+      "scope": "universal",
+      "category": "状态效果/帧时序",
+      "evidence": [
+        {
+          "text": "干员是有出生状态机的 落地的一段动画对吧 这段动画是不能攻击的",
+          "t_start": 3762,
+          "t_end": 3780
+        }
+      ],
+      "reason": "主播直接说明干员有出生状态机，即落地动画，并明确该动画期间不能攻击；这是可复用的底层帧时序规则。",
+      "limitations": [
+        "主播随后提到存在例外，但本候选未展开具体例外单位与例外判定",
+        "未说明不能攻击的具体帧窗口及攻击类型"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c03",
+      "topic": "干员的落地动画不能攻击这一规则存在例外",
+      "verdict": "reject",
+      "reason": "所引原文“但是也有一些例外对吧”为主播反问/开放式确认，候选命题未给出具体例外单位、适用条件或判定参数，不满足显式条件约束，也不能形成可复用定论。",
+      "failed_gates": [
+        "G3",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      }
+    }
+  ],
+  "review_note": "c01、c02 均有逐字稿直接支撑，可作为出生状态机相关机制保留；c02 为干员通用落地动画不可攻击规则，c01 为少数单位出生状态机的表现。c03 仅从反问句抽取，例外对象与条件未具体化，故排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

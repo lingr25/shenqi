@@ -1,0 +1,81 @@
+{
+  "workorder_id": "vod_wo_vod_b2_533",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:03:25+0900",
+  "source_sha256": "ff9d91b173a3c220fa4f8c331c26b59192252540b4c165af477cdb17cf9523d2",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门沙的爆炸造成物理伤害和元素伤害，爆炸范围为四格。",
+      "subject": "克莱门沙的爆炸",
+      "condition": "克莱门沙触发爆炸时",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "造成物理伤害和元素伤害 四格炸",
+          "t_start": 1421,
+          "t_end": 1434
+        }
+      ],
+      "reason": "逐字稿明确描述了克莱门沙的爆炸伤害类型与范围：‘造成物理伤害和元素伤害 四格炸’。可抽象为可复用机制命题。",
+      "limitations": [
+        "逐字稿未说明爆炸触发方式及四格判定的精确边界；‘四格炸’为直播口语/ASR用词。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "克莱门沙打出输出的速度较慢。",
+      "verdict": "reject",
+      "reason": "属于主播对强度的主观体感评价；没有给出输出速度的可复现参数、参照基准或触发条件，不具备可复用机制规则价值，未通过 G3/G4。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c03",
+      "topic": "克莱门沙与珊比搭配效果好。",
+      "verdict": "reject",
+      "reason": "‘很配’是主观搭配评价，未说明具体机制联动、条件或参数，属于无参数实战/强度观点，未通过 G3/G4。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01 有逐字稿直接支撑且可整理为自包含机制命题，保留但限定其局限；c02、c03 均为强度/搭配主观评价，缺乏可复现机制参数与明确条件，按硬性闸门排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

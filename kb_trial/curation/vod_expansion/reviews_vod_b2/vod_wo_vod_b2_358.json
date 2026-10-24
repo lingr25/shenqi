@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_358",
+  "stem": "BV1xRho6DEAQ_p2_42226486217",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:53:23+0900",
+  "source_sha256": "7df9acb58ad2a61b5a5f381333791e755ea8de42ab7ad072aaae321493a17c5b",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在《明日方舟》的 waves 波次配置中，出怪时间按间隔时间累加定义；同一波次内若怪物数量大于 1，则后续怪物会按设置的间隔时间依次顺延生成。",
+      "subject": "waves 波次配置中的出怪时间",
+      "condition": "同一波次内怪物数量大于 1 且设置间隔时间",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "这个时间实际上是按照间隔定义的 比如说就是这是二 这是三 这加起来就是五 然后的话数量是一 间隔是一",
+          "t_start": 1553,
+          "t_end": 1570
+        },
+        {
+          "text": "这里数量如果不是一是二的话 间隔一的设置就会让下一个是四",
+          "t_start": 1570,
+          "t_end": 1580
+        }
+      ],
+      "reason": "主播在讲解 waves 波次设置参数时明确指出“时间实际上是按照间隔定义的”，并以数量为 1、间隔为 1 的设置为例说明数量改为 2 后“下一个是四”，支撑出怪时间按间隔累加、数量大于 1 时后续怪物顺延生成的结论。",
+      "limitations": [
+        "逐字稿只给出示例，未明确完整字段名、时间单位和具体数值计算上下文。",
+        "上游候选引文跨 1553s 与 1570s 两行拼接，本回执已拆分为两条连续行证据。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 命题有逐字稿机制讲解支撑，已补全为自包含陈述并将跨行引文拆分为两段逐字稿原文证据；未发现未定论猜测或反问，故判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

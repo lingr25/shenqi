@@ -1,0 +1,125 @@
+{
+  "workorder_id": "vod_wo_vod_b2_127",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T17:02:24+0900",
+  "source_sha256": "59073a950a14824baa829707ee858a81640960e728ab23829a894f569619e824",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在阻挡偏移的遍历处理中，遍历除当前敌人以外所有已被同一阻挡者阻挡的敌人时，会按被遍历敌人与当前敌人的距离分档：小于 0.1 格、0.1 至 0.4 格之间、以及 0.4 格以外。",
+      "subject": "阻挡偏移的遍历处理",
+      "condition": "遍历除当前敌人以外所有已被同一阻挡者阻挡的敌人时",
+      "scope": "universal",
+      "category": "位移/阻挡偏移",
+      "evidence": [
+        {
+          "text": "当我遍历C以外所有被A阻挡的敌人的时候",
+          "t_start": 6454,
+          "t_end": 6469
+        },
+        {
+          "text": "他的敌敌距离是小于0.1的",
+          "t_start": 6469,
+          "t_end": 6481
+        },
+        {
+          "text": "他的敌敌距离是小于0.1到0.4之间",
+          "t_start": 6481,
+          "t_end": 6490
+        },
+        {
+          "text": "是0.4以外会怎么样",
+          "t_start": 6490,
+          "t_end": 6496
+        }
+      ],
+      "reason": "6454 行说明遍历范围是 C 以外、被 A 阻挡的敌人；6469/6481/6490 行分别列出小于 0.1、0.1 到 0.4、0.4 以外的距离分支，支撑三档分档。",
+      "limitations": [
+        "逐字稿使用 A、C 作为抽象角色，未给出具体干员名；各档内部具体处理结果未在本段完整展开。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "在阻挡偏移的权重计算中，仅当 0.1 格半径内存在已被同一阻挡者阻挡的旧敌人时，位于 0.1 格半径之外且 0.4 格半径之内的敌人才会正常提供权重。",
+      "subject": "阻挡偏移的权重计算",
+      "condition": "0.1 格半径内存在已被同一阻挡者阻挡的旧敌人",
+      "scope": "universal",
+      "category": "位移/阻挡偏移",
+      "evidence": [
+        {
+          "text": "0.1半径范围内存在其他已被A阻挡的敌人 才会发生",
+          "t_start": 6349,
+          "t_end": 6363
+        },
+        {
+          "text": "只有你0.1半径之内有一个救敌人的时候 后0.1半径之外 0.4半径之内的敌人提供的全量才能正权重",
+          "t_start": 6550,
+          "t_end": 6561
+        },
+        {
+          "text": "才能正常的执行",
+          "t_start": 6561,
+          "t_end": 6574
+        }
+      ],
+      "reason": "6349 行给出前置条件：0.1 半径内存在其他已被 A 阻挡的敌人；6550/6561 行进一步说明只有满足该条件，0.1 到 0.4 半径内的敌人提供的权重才能正常执行。",
+      "limitations": [
+        "逐字稿中 ASR 将“旧敌人”写成“救敌人”、将“权重”写成“全量”，本命题按上下文规范化为机制术语；未给出权重数值公式。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c03",
+      "claim": "在阻挡偏移的遍历处理中，若当前敌人位于 0.4 格范围之外，则不会触发后续处理。",
+      "subject": "阻挡偏移的遍历处理",
+      "condition": "当前敌人位于 0.4 格范围之外",
+      "scope": "universal",
+      "category": "位移/阻挡偏移",
+      "evidence": [
+        {
+          "text": "C在0.4之外什么事也没有",
+          "t_start": 6536,
+          "t_end": 6550
+        }
+      ],
+      "reason": "6536 行明确指出 C 在 0.4 之外时“什么事也没有”，可归纳为超出 0.4 格范围不触发后续处理。",
+      "limitations": [
+        "“0.4 格范围”的参照对象由上下文推断为阻挡偏移判定中的距离阈值；逐字稿未在同句重复参照对象。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "三件候选均围绕阻挡偏移的距离分档与前置条件，逐字稿有明确机制陈述；已将 A/C 等抽象角色改写为功能角色，保留 ASR 原词作为证据。c02 的权重条件与 c03 的 0.4 外无处理均可与 c01 的分档互补，非重复。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

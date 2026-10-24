@@ -1,0 +1,38 @@
+{
+  "workorder_id": "vod_wo_vod_b2_209",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:57:31+0900",
+  "source_sha256": "31a5aeea38219c101d0cc16cc265539da22e946720b79dbd8dc2f9ac0412dc96",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "鹰角在多次版本更新中始终没有改动「仇恨上限1万秒」这一设定",
+      "verdict": "reject",
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "reason": "G1/G4不通过：主播明确提到该设定在实机中早因局内时间达到2000多秒触发2的32次方溢出而失效（'以现在的机制而言的话 他很早就炸了'、'总之现在的话这个1万不是很有意义'、'这里也不太确定'、'有很多bug'），且陈述主体是开发商更新行为而非游戏内独立机制规则，属于未定论的现象观察与推测，不具备知识库规则价值。"
+    }
+  ],
+  "review_note": "工单讨论的仇恨上限1万秒已被主播当场说明由于时间溢出机制而失效，且对具体溢出表现（2的31次方/32次方、先创建等）充满不确定词汇（'我记得是'、'可能是'、'也不太确定'、'修成什么样子'），属于 Gate 4 明确排除的未闭合讨论与未定论假说；同时该候选命题叙述开发商更新历史，不构成独立机制自包含规则。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

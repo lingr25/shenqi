@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_462",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:28:11+0900",
+  "source_sha256": "8e2aede7c8ecd7e94f3cd60a5ab124693a7dd5078d2ed804ad134db6a92d7f3a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "石头人测试中数值为2896的伤害记录发生在目标处于减防状态时，因此该条记录不能作为有效伤害数据计入统计。",
+      "subject": "石头人测试中数值为2896的伤害记录",
+      "condition": "该次伤害结算时目标已处于减防状态",
+      "scope": "instance",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "这个2896已经是打在茧房上的了",
+          "t_start": 6291,
+          "t_end": 6297
+        },
+        {
+          "text": "2896是这个已经打在减防上了 已经不能算了",
+          "t_start": 6302,
+          "t_end": 6312
+        }
+      ],
+      "reason": "上下文明确说明该2896记录发生在减防状态，主播据此排除该条数据；后一条引文直接给出“减防”与“不能算了”的结论，属于对错误计入数据的勘误。",
+      "limitations": [
+        "该结论仅作废特定数值2896的记录，未交代减防幅度或减防来源。",
+        "首条引文中的“茧房”疑似ASR误写，但后一条引文明确为“减防”。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01为对特定伤害数据的勘误：该次2896伤害因目标处于减防状态而不能计入统计。逐字稿有直接引文支撑，主体、条件与适用范围明确，判keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

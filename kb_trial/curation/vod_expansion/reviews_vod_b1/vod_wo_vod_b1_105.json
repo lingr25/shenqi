@@ -1,0 +1,70 @@
+{
+  "workorder_id": "vod_wo_vod_b1_105",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:55:43+0900",
+  "source_sha256": "2f03c17f95ebd39725c1bdc47a980b0380f821faae46d43fffad9f378ddd0311",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "领主（近卫分支）相比早期近卫拥有更大的攻击范围；当其攻击被判定/视为远程攻击时，攻击力降低至80%，形成以攻击力换取攻击范围的模板特性。",
+      "subject": "领主（近卫分支）",
+      "condition": "攻击被判定/视为远程攻击时",
+      "scope": "entity_mechanism",
+      "category": "干员模板特性",
+      "evidence": [
+        {
+          "text": "早期近卫都是这种手长 然后领主来了一个那么远的范围 哎呀那这么远当然得有点代价啦 这个攻击力就降低一下对吧",
+          "t_start": 6441,
+          "t_end": 6455
+        },
+        {
+          "text": "那这个视为远程攻击的话 攻击力就要降低至80% 他说视为近战攻击的话 就告诉你啊 我这个不减不减那个攻击力",
+          "t_start": 6386,
+          "t_end": 6417
+        }
+      ],
+      "reason": "逐字稿中先说明远程攻击判定会使攻击力降至80%、近战判定不减攻，随后用领主与早期近卫对比，指出领主范围更远并因此以降低攻击力为代价；两条证据合起来支持领主模板‘手长换降攻’的特性。",
+      "limitations": [
+        "逐字稿未给出领主具体攻击范围格数与所有受影响干员清单。",
+        "攻击力降低至80%适用于‘视为远程攻击’的判定，具体适用范围需以游戏内描述为准。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "领主因手长被下调的攻击力由技能效果重新抬回，形成「模板降攻、技能补攻」的补偿结构。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ],
+      "reason": "该条仅来自主播对设计意图的口语化评论‘技能再给你抬回来对吧’，未指明具体技能、数值或可复现触发条件，属于未闭合设计推断/纯设计观察，无法形成可复用机制定论。"
+    }
+  ],
+  "review_note": "c01 有明确逐字稿支撑，保留为领主模板的手长降攻特性；c02 的‘技能补攻’缺少具体技能和参数，仅作设计评论，排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

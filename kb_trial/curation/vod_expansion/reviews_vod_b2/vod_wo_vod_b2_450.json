@@ -1,0 +1,56 @@
+{
+  "workorder_id": "vod_wo_vod_b2_450",
+  "stem": "BV1BCpw6cENH_p2_42513075262",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:26:40+0900",
+  "source_sha256": "7f82382af982caaa4b12b0b5285a07b9716ec89218ece419cc5992642f4057d3",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "受测对象在三秒内被五次平A加三次DOT命中即可保证击杀。",
+      "verdict": "reject",
+      "reason": "引文与逐字稿可字符级对齐，但主语仅为依赖当前对局的“受测对象”，未给出目标名称、血量、防御、单次伤害等可复现条件；该句是特定实战击杀阈值断言，不是自包含、可复用机制命题，违反 G1/G3/G4。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "受测对象的最低击杀需求为三次平A加两次DOT。",
+      "verdict": "reject",
+      "reason": "引文与逐字稿可字符级对齐，但“三次平A两次dot就死”仍是对同一未具名受测对象的单局观察；“最低”缺少目标身份、伤害参数及对更低次数不死的闭合验证，不能作为可复用机制结论，违反 G1/G3/G4。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "两个候选的引文均能逐字对齐，但都依赖未具名受测对象与当前对局伤害阈值，缺少可复现参数和明确主体，属于特定实战观察而非可复用机制命题，故全部 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

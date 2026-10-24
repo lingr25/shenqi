@@ -1,0 +1,60 @@
+{
+  "workorder_id": "vod_wo_vod_b2_202",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:56:25+0900",
+  "source_sha256": "48102e2ae99d739bb33070350b3408746f514cb8e9f235dec464fe9a741fb9e7",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "酒神的 0.2 半径仇恨圆被划分为五档，单位落在同一档位内部时仇恨值等同。",
+      "subject": "酒神的 0.2 半径仇恨圆",
+      "condition": "单位处于同一仇恨档位内部",
+      "scope": "entity_mechanism",
+      "category": "索敌/仇恨分档",
+      "evidence": [
+        {
+          "text": "嗯这个要大一点 这是那个酒神的0.2半径圆 然后的话我们可以把它划分为五档 这是一档 零至0.1之间 0.1至0.2之间",
+          "t_start": 2901,
+          "t_end": 2915
+        },
+        {
+          "text": "然后的话后面还有三档 这是五个仇恨纷华 这是五个仇恨分华 在这五条之中仇恨都是等同的 在这五条仇恨呃",
+          "t_start": 2915,
+          "t_end": 2929
+        },
+        {
+          "text": "在这个五个分华内部仇恨都是等同的 所以的话同仇恨就会打 先创建 先创建的是一号2号或者3号",
+          "t_start": 2929,
+          "t_end": 2938
+        }
+      ],
+      "reason": "讲师明确将酒神的 0.2 半径圆划分为五档，并两次说明这些分档内部仇恨等同；该结论是后续 3 号索敌与同仇恨先创建判定的前提。",
+      "limitations": [
+        "逐字稿 ASR 将分档/分划转写为“纷华/分华”，不影响机制含义。",
+        "文本只明确给出 0-0.1、0.1-0.2 两个边界，其余三档的具体边界未在逐字稿中展开。",
+        "五档划分过程依赖讲师白板图示，但“同档内仇恨等同”这一结论有口头逐字稿支撑。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅一个候选。逐字稿明确支持酒神 0.2 半径仇恨圆划分为五档，且同一档位内部仇恨等同；ASR 错字不构成拒绝理由，判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

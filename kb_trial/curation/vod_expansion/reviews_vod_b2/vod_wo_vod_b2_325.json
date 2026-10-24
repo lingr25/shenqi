@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_325",
+  "stem": "BV1xRho6DEAQ_p1_42224124252",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:40:45+0900",
+  "source_sha256": "90085f495c67dc8e29e3d591b70e0ce90cc9483bbbb25cb1a2101316be68e535",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在红字判定中，缓存攻击力是不出红字的例外；祥子、艾拉这类采用缓存攻击力的干员会符合该例外，艾拉曾因此一度丢失红字。",
+      "subject": "缓存攻击力",
+      "condition": "在红字判定流程中，伤害涉及缓存攻击力时",
+      "scope": "universal",
+      "category": "红字判定例外",
+      "evidence": [
+        {
+          "text": "但是这里有很多例外啊 比如说那个缓存攻击力是不出红字的",
+          "t_start": 5599,
+          "t_end": 5610
+        },
+        {
+          "text": "缓存攻击力是不出红字的 比如说祥子和艾拉这种 所以爱拉一度丢了红字",
+          "t_start": 5610,
+          "t_end": 5624
+        }
+      ],
+      "reason": "主播在解释红字判定例外时明确给出“缓存攻击力不出红字”，并以祥子、艾拉为例说明艾拉曾因此丢失红字；该陈述是机制结论，不是反问或未闭合猜测。",
+      "limitations": [
+        "逐字稿未说明缓存攻击力的精确定义、触发方式和适用伤害类型。",
+        "“祥子”为逐字稿原文，未能在上下文中校正为规范干员名；艾拉在引文中转写为“爱拉”。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选 c01 是主播对红字判定例外的明确说明，逐字稿有连续原文支撑，可整理为自包含机制命题；未发现未闭合猜测或画面依赖问题，保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

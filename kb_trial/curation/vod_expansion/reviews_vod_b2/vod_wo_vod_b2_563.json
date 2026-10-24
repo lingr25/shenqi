@@ -1,0 +1,40 @@
+{
+  "workorder_id": "vod_wo_vod_b2_563",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:09:03+0900",
+  "source_sha256": "047f0a553ea9a2c2ee4925986ff944ea79ea54241a1258cf276609c522aaba55",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "逐下清点命中段数为九下并按九下计算",
+      "verdict": "reject",
+      "reason": "该候选只是对某次实战伤害核算中的手工逐下清点（“一下……九下”），未交代具体干员、技能、敌人、攻击段数来源及可复现条件，属于无明确参数的实战现象观察；且命题依赖现场指代，缺少明确主体、触发条件与适用范围，不能作为可复用机制定论。引文文字可与 3303 行对齐，但结束秒数未按下一行时间戳 3329 标注。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "工单仅含一个候选，核心内容为特定伤害核算中的命中次数清点，机制价值不足且主体、条件、适用范围缺失，不能 keep，故整单 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

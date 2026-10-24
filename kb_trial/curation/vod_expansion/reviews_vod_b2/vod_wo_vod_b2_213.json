@@ -1,0 +1,55 @@
+{
+  "workorder_id": "vod_wo_vod_b2_213",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-speed",
+  "reviewer_models_calls": [
+    "lingr-speed"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:58:21+0900",
+  "source_sha256": "c0f091e0746aad4eec75731d2ef72aafff91f6503bf1b025fab946b27cbc71f0",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "旧索敌机制下城防炮与青金因精度差异导致索敌目标不同",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "命题中‘左右盾位’指涉严重依赖实战演示画面的特定站位与关卡，未交代具体关卡与敌方实体名称，违反 Gate 1；且主播明确说明这是‘以前才这样’的‘老机制’，当前版本已不可复现，属于已失效的历史版本特定现象观察，缺乏现行规则价值，违反 Gate 4。"
+    },
+    {
+      "local_id": "c02",
+      "topic": "青金因精度不足导致的历史索敌异常已被修复",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G4"
+      ],
+      "reason": "陈述依赖 c01 的特定画面实战指涉；且‘时间仇恨已经改变、青金会正常索敌’仅为主播口头泛述，未给出当前版本时间仇恨的具体规则与参数，属于缺乏自包含规则价值的实况说明，违反 Gate 1 与 Gate 4。"
+    }
+  ],
+  "review_note": "本工单涉及的青金与城防炮索敌差异案例属于已随底层时间仇恨重构而被修复的历史旧机制现象，且逐字稿高度依赖视频画面的特定站位指涉（‘左右盾位’），不具备现行版本复现条件与自包含规则价值，故全数予以排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

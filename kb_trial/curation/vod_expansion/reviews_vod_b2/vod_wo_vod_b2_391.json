@@ -1,0 +1,60 @@
+{
+  "workorder_id": "vod_wo_vod_b2_391",
+  "stem": "BV1BCpw6cENH_p1_42510257112",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T21:04:37+0900",
+  "source_sha256": "6f02f603eccb368b57e1dbc73a46085f11513a464814be86017e4401af1e4a76",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "克莱门莎的第一天赋的攻击力倍率为1.35倍；该倍率参与伤害结算时按浮点数向上取整。",
+      "subject": "克莱门莎的第一天赋",
+      "condition": "第一天赋参与伤害结算时",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "1.35这个数感就对了",
+          "t_start": 1297,
+          "t_end": 1319
+        },
+        {
+          "text": "1.35",
+          "t_start": 1297,
+          "t_end": 1319
+        },
+        {
+          "text": "浮点数是23次方向上取整没有问题 逻辑闭环的",
+          "t_start": 1383,
+          "t_end": 1400
+        }
+      ],
+      "reason": "上下文在伤害反推计算后出现“1.35这个数感就对了”，随后明确“1.35”以及“浮点数是23次方向上取整没有问题 逻辑闭环的”，可支撑1.35倍率及浮点向上取整的结论；章节主题为第一天赋攻击力倍率，故将主体补全为克莱门莎的第一天赋。",
+      "limitations": [
+        "逐字稿未在本窗口逐项展示由伤害数字反推1.35的完整算式。",
+        "“23次方向”疑为转写噪声，具体浮点精度与取整实现细节未展开。",
+        "第一天赋触发概率未在本窗口给出。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 可保留，但需将上游跨行拼接的引文拆为两条，并补全干员主体；浮点精度相关转写存在噪声，已在 limitations 中标注。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

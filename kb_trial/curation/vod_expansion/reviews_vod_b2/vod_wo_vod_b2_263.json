@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_263",
+  "stem": "BV1L4ez6oEcc_p3_42061792207",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T20:26:41+0900",
+  "source_sha256": "2ea48507c22a0028423672da295d73c0171d5c6a81a369954022d7c3a99debb3",
+  "verdict": "pending",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "测试对象的移动速度为每秒0.8距离。",
+      "verdict": "reject",
+      "reason": "主体为模糊的“测试对象”，未给出具体干员、敌人或装置；后文主播明确说“哦不对不对 我要的是0.7来着 0.8直接撤了吧”，0.8并非最终定论。违反 Gate 1 自包含与 Gate 3 显式主体，且属未闭合参数。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ]
+    },
+    {
+      "local_id": "c02",
+      "topic": "在移动速度为每秒0.8距离的前提下，0.24移动距离对应0.3秒，换算为9帧。",
+      "verdict": "pending",
+      "reason": "换算本身在逐字稿中有明确支撑（0.24比0.8为0.3，0.3秒按30帧/秒为9帧），但关键前提速度0.8随后被主播修正为“我要的是0.7来着 0.8直接撤了吧”，且后文出现“不对 我搞错了”。讨论未闭合，正确速度参数需后续实机验证。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本工单两个候选均不能直接进入知识库。c01主体模糊且0.8后来被否定，判 reject；c02虽是闭合算术换算，但依赖的0.8速度前提在本段被主播修正，讨论未闭合，判 pending。因无 keep 且有 pending，顶层 verdict 为 pending。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

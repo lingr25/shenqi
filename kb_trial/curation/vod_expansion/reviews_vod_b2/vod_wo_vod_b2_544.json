@@ -1,0 +1,76 @@
+{
+  "workorder_id": "vod_wo_vod_b2_544",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:05:46+0900",
+  "source_sha256": "5faa8b3a07cf8a3585faed42b6e499bb2dda11b643a0b6fff7a41998ce8b1ac9",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在重排或评估克莱门沙的伤害构成时，其平A伤害的参考权重较低，而轰炸伤害是必须纳入考虑的伤害来源。",
+      "subject": "克莱门沙的平A伤害与轰炸伤害在伤害评估中的权重",
+      "condition": "在重排/评估克莱门沙的伤害构成时",
+      "scope": "entity_mechanism",
+      "category": "伤害结算",
+      "evidence": [
+        {
+          "text": "平A伤害没用 但是轰炸伤害是一个我觉得是不能不考虑的",
+          "t_start": 1821,
+          "t_end": 1832
+        },
+        {
+          "text": "全靠轰炸打输出也不会亏很多 首先你那个克莱门沙再怎么在安全位 只要他能打轰炸的话 他这个平A也必定能打出去",
+          "t_start": 1832,
+          "t_end": 1844
+        },
+        {
+          "text": "平A容易参假政 平A主要是哎平A主要是他要是算的高的话 是往那个持续时间长了算 但是有些时候我们又要那个他的输出DPS",
+          "t_start": 1859,
+          "t_end": 1879
+        }
+      ],
+      "reason": "主播在重排伤害的语境下明确对比平A与轰炸，随后以克莱门沙为例说明轰炸是重要且不可忽略的输出来源，平A则因持续时间/DPS口径问题容易失真；可将口语结论规范化为该干员伤害评估权重的机制性结论。",
+      "limitations": [
+        "未给出重排公式、权重数值或量化标准。",
+        "“平A伤害没用”是口语夸张，实际应理解为参考价值低或易受口径影响，而非平A完全无伤害。",
+        "未限定技能等级、敌人数量、护甲与增益等具体场景。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "克莱门沙全靠轰炸打输出可打出约20万伤害",
+      "verdict": "reject",
+      "reason": "属于纯实战数值观察，仅有“20万”这一孤立数值，缺少敌人类型/数量、技能等级、持续时间、增益与测试场景等可复现条件，无法形成可复用机制命题；按 Gate 4 排除纯实战现象观察。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01 在重排伤害语境下对克莱门沙平A与轰炸的权重给出可复用结论，经改写补齐主体后保留；c02 仅为孤立20万数值观察，缺少可复现条件，按 Gate 4 排除。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

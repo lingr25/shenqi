@@ -1,0 +1,81 @@
+{
+  "workorder_id": "vod_wo_vod_b2_183",
+  "stem": "BV1L4ez6oEcc_p1_42058057471",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T19:28:47+0900",
+  "source_sha256": "52161af08c1a60d00af66a8608e5e49b2ecefa7e1463bf75d3da43d0d24f2d42",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "被封死的宝藏钱箱不会提供10原石收益；只有由被召唤出来的怪携带的宝藏钱箱才会提供10原石收益。",
+      "subject": "宝藏钱箱",
+      "condition": "宝藏钱箱被封死；或宝藏钱箱由被召唤出来的怪携带",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "他是没有那个十原石的 只有你被召唤出来的怪的钱箱才会有十原石",
+          "t_start": 1724,
+          "t_end": 1735
+        }
+      ],
+      "reason": "上下文在讨论肉鸽“背山面水”三个箱子封住宝藏钱箱的情形，主播明确区分封死箱与召唤怪钱箱的10原石收益。",
+      "limitations": [
+        "仅基于主播口述，未给出完整敌人/地图ID。",
+        "“被召唤出来的怪”的具体召唤来源与可复现条件未完全交代。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "被封死的宝藏钱箱即使被击败，仍会提供1原石的保底收益。",
+      "subject": "被封死的宝藏钱箱",
+      "condition": "宝藏钱箱被封死且被击败（主播表述为“再这么死去”）",
+      "scope": "entity_mechanism",
+      "category": "状态效果",
+      "evidence": [
+        {
+          "text": "不过这个封死的箱子的话 他也有一个保底 如果他再这么死去的话",
+          "t_start": 1724,
+          "t_end": 1735
+        },
+        {
+          "text": "会给你一原石",
+          "t_start": 1735,
+          "t_end": 1746
+        }
+      ],
+      "reason": "同一段中主播明确称封死的箱子有保底，并在其死亡后给1原石，具备参数与条件。",
+      "limitations": [
+        "“再这么死去”的准确触发时点未展开。",
+        "上游引文跨行，已拆分为两条逐行证据。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01与c02分别记录宝藏钱箱被封死时缺失10原石、以及封死箱被击败后给1原石保底，二者互补而非重复；均按逐字稿可验证证据保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

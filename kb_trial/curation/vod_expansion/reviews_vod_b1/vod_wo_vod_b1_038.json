@@ -1,0 +1,48 @@
+{
+  "workorder_id": "vod_wo_vod_b1_038",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T22:23:24+0900",
+  "source_sha256": "956cce589414e37990f6bab9f496eafe1908ce4917ff3b2d62243ed3123fe9bb",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在《明日方舟》的出怪排程中，出怪时间按间隔计算，而不是按固定时间点定时触发。",
+      "subject": "出怪排程",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "出怪排程",
+      "evidence": [
+        {
+          "text": "所以的话就是要注重这个出怪理论 要注意这个出怪只是一个间隔 而不是一个定时",
+          "t_start": 2927,
+          "t_end": 2950
+        }
+      ],
+      "reason": "逐字稿中主播明确将出怪理论概括为“只是一个间隔 而不是一个定时”，这是对出怪排程性质的机制性结论；上下文还用隐藏最后一小队会导致下一兵团提前来说明排程按间隔推进，因此可保留为通用规则。",
+      "limitations": [
+        "未给出具体间隔计算方式、JSON字段或边界条件，仅确认为间隔式排程而非绝对定时。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "本单仅一个候选 c01。该候选有逐字稿直接支撑，且属于机制性结论而非临场猜测或反问；按自包含要求补全为规范陈述后，可通过四大闸门，裁定为 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

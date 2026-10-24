@@ -1,0 +1,71 @@
+{
+  "workorder_id": "vod_wo_vod_b1_089",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:51:14+0900",
+  "source_sha256": "b1713c8f59aed424a9620aea1c5fb8a210bec8083afe04389d7ccd113db96d80",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "恐惧移动在选取目标格时按地块类型识别候选地块，而非按路径识别；坑与蓝门类型的地块不会被选为恐惧移动的终点。",
+      "subject": "恐惧状态下的移动目标选取机制（终点格判定）",
+      "condition": "单位处于恐惧状态并选取移动目标格时",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "恐惧识别的就是那个暗的地块 而不是路径 终点空格会排除类型为坑与蓝门的地块",
+          "t_start": 5700,
+          "t_end": 5709
+        },
+        {
+          "text": "这里说的不能进门 说的不是不能进去 而是不能以蓝门作为终点",
+          "t_start": 5709,
+          "t_end": 5723
+        }
+      ],
+      "reason": "讲师在 5700 秒明确说恐惧识别的是地块而不是路径，终点空格排除类型为坑与蓝门的地块；5709 秒进一步限定蓝门被排除的是作为终点而非不可进入。因此可作为恐惧寻路目标选取的通用规则。",
+      "limitations": [
+        "逐字稿为课堂讲解，未给出底层代码或完整地块类型表。",
+        "蓝门仅被排除作为终点，后文明确指出单位仍可能通过标记蓝门对面格子而路过蓝门进入。",
+        "ASR 中“暗的地块”“终点空格”等表述需结合当时画面理解。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c02",
+      "topic": "恐惧移动排除蓝门是为了防止八个方向随机移动把单位送进蓝门",
+      "verdict": "reject",
+      "reason": "逐字稿后文 5709 秒明确修正：所谓不能进门并非不能进入，而是不能以蓝门作为终点；且若蓝门对面存在可标记格子，单位仍可路过蓝门进入。因此候选把排除蓝门的目的表述为“防止随机移动送进蓝门”与后文限定冲突，不能作为定论。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01 为可复用寻路规则，予以 keep；c02 虽在 5700 秒有原话，但被 5709 秒后文修正或限定，且与 c01 的终点排除关系重叠，判 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

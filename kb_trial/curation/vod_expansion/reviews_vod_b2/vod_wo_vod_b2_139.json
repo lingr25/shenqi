@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b2_139",
+  "stem": "BV1GVeb6dEVw_p3_42033611369",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T17:06:57+0900",
+  "source_sha256": "9189b657acb717f6e92edaa0d558355e2aaa259968fd657182acb57ee0d7bf0d",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "弑君者等具备瞬移闪现传送能力的敌人在阻挡发生后 2 帧进行传送，计算帧时序时需计入 2 帧的阻挡偏移。",
+      "subject": "弑君者等具备瞬移闪现传送能力的敌人",
+      "condition": "阻挡发生后",
+      "scope": "entity_mechanism",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "一个是敌人的传送 就是那种瞬移闪现 弑君者这种三桥那种 他们会在阻挡发生后两帧 然后进行传送 所以的话这里也要算两帧的阻挡偏移",
+          "t_start": 296,
+          "t_end": 310
+        }
+      ],
+      "reason": "逐字稿明确说明弑君者这类瞬移闪现敌人会在阻挡发生后两帧传送，并要求帧时序计算计入两帧阻挡偏移；属于可复用的敌人传送帧时序机制。",
+      "limitations": [
+        "逐字稿以弑君者等为例，未穷举所有具备瞬移闪现传送能力的敌人。",
+        "未进一步说明两帧偏移在具体判定流程中的边界细节。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "本工单仅 c01 一条候选。逐字稿引文可字符级对齐，主体、条件、范围明确，且属于机制结论而非猜测或纯实战观察，四大闸门均通过，判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

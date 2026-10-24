@@ -1,0 +1,76 @@
+{
+  "workorder_id": "vod_wo_vod_b2_570",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:10:53+0900",
+  "source_sha256": "f5cec1c25bbb8f96ed90567b637c5097cac8c1fd29ca8d3e0c3a7a3b74c0c7c0",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "攻速加成会缩短冷却时间，但不会缩短攻击动画；动画结束后的紧接抬手时机按加成后的攻速判断。",
+      "subject": "攻速加成效果",
+      "condition": "单位获得攻速加成时",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "动画结束的话是用加攻速判断的 加攻速可以加攻速冷却 但是不能能加攻速动画哦",
+          "t_start": 4021,
+          "t_end": 4032
+        }
+      ],
+      "reason": "上下文先问动画结束后紧跟着的抬手时机，随后明确说动画结束后的判断用加攻速，并区分加攻速可作用于冷却但不能作用于动画；据此保留并修正上游“动画结束的时刻”的歧义表述。",
+      "limitations": [
+        "逐字稿中的“冷却”未进一步区分技能冷却、攻击间隔或SP回复等具体系统。",
+        "动画结束后的紧接抬手判定仍需帧测或解包数据确认具体取整与阈值。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    },
+    {
+      "local_id": "c02",
+      "claim": "抬手之后获得的临时攻速加成可以缩短冷却时间，但不能缩短攻击动画。",
+      "subject": "抬手之后获得的临时攻速加成",
+      "condition": "临时攻速加成在抬手之后获得",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "临时的加攻速 抬手之后的加攻速 抬手之后临时的加攻速可以减少冷却 但是不能减少动画",
+          "t_start": 4032,
+          "t_end": 4046
+        }
+      ],
+      "reason": "逐字稿明确区分抬手后临时加攻速对冷却与动画的不同影响，属可复用机制结论。",
+      "limitations": [
+        "未说明临时攻速的来源、数值门槛与持续时间。",
+        "“冷却”和“动画”的具体结算窗口需结合角色/技能帧数据进一步确定。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "两候选均有字符级连续逐字稿支撑；c01 按上下文修正了“动画结束的时刻”这一容易误读的表述，保留为动画结束后紧接抬手时机；c02 保留抬手后临时攻速对冷却与动画不同作用的结论。未发现未闭合猜测或纯实战叙述。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

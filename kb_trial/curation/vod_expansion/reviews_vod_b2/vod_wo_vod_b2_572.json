@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_572",
+  "stem": "BV1KtHX6nEZS_p1_42574483316",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T12:11:06+0900",
+  "source_sha256": "701d65152a2c4d661610c5755525fc4b42deeef2010958a62018cff8d9a33d86",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "在三车计数法中，小车撤退后经过2帧，计数数值会发生一次变化；该变化源于计数采用四舍五入。",
+      "subject": "三车计数法中的小车撤退计数",
+      "condition": "使用三车计数法，且小车撤退后经过2帧",
+      "scope": "universal",
+      "category": "帧时序",
+      "evidence": [
+        {
+          "text": "一个车撤退之后两帧的时候会变数",
+          "t_start": 4169,
+          "t_end": 4187
+        },
+        {
+          "text": "这是因为四舍五入计数",
+          "t_start": 4187,
+          "t_end": 4190
+        }
+      ],
+      "reason": "逐字稿明确说明小车撤退后两帧会变数，并将其归因为四舍五入计数；该描述属于可复用的帧时序/计数机制。上游引文为跨行拼接，已按原始逐字稿拆分为两条连续行证据。",
+      "limitations": [
+        "逐字稿未进一步展开“计数数值”对应的具体系统或显示量，需结合三车计数法语境理解。",
+        "“四舍五入计数”未给出公式或边界样例，精确适用边界仍需实机验证。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 有明确逐字稿支撑，关键延时参数为2帧，原因表述为四舍五入计数；已修正上游跨行拼接证据，裁定 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

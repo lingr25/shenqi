@@ -1,0 +1,75 @@
+{
+  "workorder_id": "vod_wo_vod_b2_117",
+  "stem": "BV1GVeb6dEVw_p2_42032367721",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free",
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T15:32:23+0900",
+  "source_sha256": "96973f33648e2b03e0bf50ca3768b5ca5834e7b094ccecec6a50c9f9f3486bfa",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c02",
+      "claim": "在0.1距离阻挡且权重向量为(0,-1)、无边界限制的偏移计算中，单位经过阻挡偏移计算后最终位置不变（原地不动）。",
+      "subject": "受0.1距离阻挡偏移计算影响的单位（权重向量为(0,-1)）",
+      "condition": "0.1距离阻挡；权重向量为(0,-1)；无边界限制",
+      "scope": "instance",
+      "category": "位移/阻挡偏移",
+      "evidence": [
+        {
+          "text": "他归一是啥 他归一就是零负一",
+          "t_start": 5131,
+          "t_end": 5144
+        },
+        {
+          "text": "所以说他也是原地不动咯",
+          "t_start": 5162,
+          "t_end": 5177
+        },
+        {
+          "text": "无边界放缩到和原距离一样的位置嗯",
+          "t_start": 5189,
+          "t_end": 5209
+        }
+      ],
+      "reason": "转录中先确认权重向量归一化为(0,-1)，随后得出“原地不动”的结论，并说明无边界时放缩到与原距离相同的位置，支持单位最终位置不变。",
+      "limitations": [
+        "仅覆盖该计算例的参数组合；有边界或权重向量不同的情况未在窗口中说明。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "0.1距离阻挡的偏移计算流程为: 权重向量(0,-1)归一化后乘0.2得到目标点, 到达目标点后拉直敌五, 再放缩到0.0.7; 无边界时放缩到与原距离相同的位置。",
+      "verdict": "pending",
+      "reason": "流程描述具有机制价值，但“放缩到0.0.7”关键参数转写不清，“拉直敌五”语义不明，无法确认放缩目标值与步骤细节；需人工听审或实机验证，暂不采纳为定论。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "failed_gates": [
+        "G1"
+      ]
+    }
+  ],
+  "review_note": "c02可作为该计算例的实例结论采纳；c01因关键步骤和参数转写不清，判 pending。",
+  "repair_rounds": 1,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,59 @@
+{
+  "workorder_id": "vod_wo_vod_b1_107",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T07:55:18+0900",
+  "source_sha256": "a769b0ed3e92dbbc045a5f469778aaddb9e89c532e44c1795cd8b411698ca194",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "火神的龙无法飞出地图外。",
+      "subject": "火神的龙",
+      "condition": "火神的龙尝试飞出地图外时",
+      "scope": "entity_mechanism",
+      "category": "弹道",
+      "evidence": [
+        {
+          "text": "弹道不会因为飞出地图而消失 但是我不确定火神的龙能不能飞出地图外",
+          "t_start": 6629,
+          "t_end": 6637
+        },
+        {
+          "text": "不行啊不行啊",
+          "t_start": 6694,
+          "t_end": 6699
+        },
+        {
+          "text": "不行的",
+          "t_start": 6637,
+          "t_end": 6646
+        }
+      ],
+      "reason": "主播先提出火神的龙能否飞出地图外的待验证问题，随后在实测后以“不行啊不行啊”“不行的”确认结果，可归纳为火神的龙无法飞出地图外。",
+      "limitations": [
+        "逐字稿未交代测试地图、部署位置、朝向及该龙对应的具体技能/召唤物名称。",
+        "“火神的龙”为逐字稿中的表述，可能存在 ASR 识别误差。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "唯一候选为实测确认型机制结论；上下文明确围绕火神的龙能否飞出地图外进行验证，结果由“不行”确认。虽缺少地图与位置参数，但该命题本身是特定实体弹道的边界属性，具备实体机制层面的复用价值，故保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

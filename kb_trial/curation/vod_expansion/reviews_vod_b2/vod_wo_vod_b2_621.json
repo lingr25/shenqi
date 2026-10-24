@@ -1,0 +1,90 @@
+{
+  "workorder_id": "vod_wo_vod_b2_621",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T14:00:15+0900",
+  "source_sha256": "1253d0b5612ec6f80882cb2caa6ed048c053d926c0d41065219db22c4a80c98a",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "小猫蛋卷的重量是十重。",
+      "subject": "小猫蛋卷",
+      "condition": "未受减重/增重效果修正的基础状态",
+      "scope": "entity_mechanism",
+      "category": "重量",
+      "evidence": [
+        {
+          "text": "小猫蛋卷是十重的",
+          "t_start": 2444,
+          "t_end": 2451
+        }
+      ],
+      "reason": "逐字稿直接陈述小猫蛋卷为十重，属于该敌方单位可复用的基础重量参数。",
+      "limitations": [
+        "仅凭口播与转写，未展示游戏内数值面板；名称按转写保留，未核对官方名。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    },
+    {
+      "local_id": "c02",
+      "claim": "大君之触的重量是零重。",
+      "subject": "大君之触",
+      "condition": "未受减重/增重效果修正的基础状态",
+      "scope": "entity_mechanism",
+      "category": "重量",
+      "evidence": [
+        {
+          "text": "然后这个大君之触是零重的",
+          "t_start": 2451,
+          "t_end": 2472
+        }
+      ],
+      "reason": "逐字稿直接陈述大君之触为零重，属于该敌方单位可复用的基础重量参数。",
+      "limitations": [
+        "仅凭口播与转写，未展示游戏内数值面板；未进一步说明是否受其他重量修正影响。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [
+    {
+      "local_id": "c03",
+      "topic": "大君之触被「杰哥」减一后的重量",
+      "verdict": "pending",
+      "reason": "逐字稿作「被杰哥减一之后是一中」，无法确认是「一重」还是「负一重」；该结果与「大君之触是零重」基础值及后文「能算负的」存在解释冲突，关键参数需人工听审或实机验证。",
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "c01、c02 有逐字稿直接口播支撑，作为敌方单位基础重量保留；c03 因 ASR 转写与零重基础值、后文可算负之间的数值关系存在冲突，暂列 pending，待人工听审或实机复核。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

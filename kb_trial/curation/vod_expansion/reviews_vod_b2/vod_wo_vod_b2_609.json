@@ -1,0 +1,54 @@
+{
+  "workorder_id": "vod_wo_vod_b2_609",
+  "stem": "BV1gpp46QEwe_p1_42591784930",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T13:57:43+0900",
+  "source_sha256": "3dd2fc751a18f0f4492f6cb987c04e50b5934da7488f55a23b24757161346a49",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "红门与蓝门的碰撞判定是火陈及其龙形召唤物自身的特例判定，不是仅由地图地块通用属性决定的。",
+      "subject": "火陈及其龙形召唤物对红蓝门的碰撞判定",
+      "condition": "火陈的龙形召唤物进行移动并触发碰撞判定时",
+      "scope": "entity_mechanism",
+      "category": "门判定/技能特例",
+      "evidence": [
+        {
+          "text": "那个像火陈的龙会碰撞 红蓝门是火陈自己的判定",
+          "t_start": 591,
+          "t_end": 606
+        },
+        {
+          "text": "就是每个人都是通过这些属性 然后再做一点自己的小判定做的",
+          "t_start": 606,
+          "t_end": 614
+        }
+      ],
+      "reason": "上下文在讨论地块属性时先说明红门是可通行地块，随后指出火陈的龙会与红蓝门发生碰撞，并总结为火陈自己的判定；下一行补充每个单位都是在通用属性上做各自的小判定，支撑该命题属于火陈技能/召唤物的实体特例，而非通用地块规则。",
+      "limitations": [
+        "逐字稿未列出具体技能名或全部召唤物形态。",
+        "未说明其他干员或召唤物是否也存在同类红蓝门特例判定。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": true
+    }
+  ],
+  "excluded": [],
+  "review_note": "仅一条候选，逐字稿中可精确定位原句；命题有明确机制价值，改写为自包含且限定为火陈相关特例判定后保留。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

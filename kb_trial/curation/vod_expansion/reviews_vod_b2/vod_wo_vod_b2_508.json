@@ -1,0 +1,40 @@
+{
+  "workorder_id": "vod_wo_vod_b2_508",
+  "stem": "BV1BCpw6cENH_p4_42517005027",
+  "batch": "vod_b2",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-21T08:53:32+0900",
+  "source_sha256": "6c3da9f335f9a1d60337ffc97387b791438d00531a1ef3e140cefeb93f16cf3c",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "按最简输出最大化确定总伤计算前提时，站位方案为分开两个格子，且两个格子都有人。",
+      "verdict": "reject",
+      "reason": "候选命题缺少明确主体（未说明具体干员、技能或状态），依赖直播上下文才能理解，不满足 Gate 1；引文“按最简输出最大化 算最简输出最大化的话就是分开两个格子都有人”并非任一转写行内的连续子串，“都有人”来自另一行，属于跨行拼接，不满足 Gate 2；subject/condition/scope 未显式成立，且“按最简算”是计算前提/站位假设而非可复用机制规则，不满足 Gate 3；整体属于特定打法或计算约定，不构成经得起推敲的机制定论，不满足 Gate 4。",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "fail",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G2",
+        "G3",
+        "G4"
+      ]
+    }
+  ],
+  "review_note": "本单仅有 c01 一个候选，属于特定总伤计算前提与站位方案的口头假设，主体不明且引文跨行拼接，不能作为通用机制命题保留，裁定 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

@@ -1,0 +1,39 @@
+{
+  "workorder_id": "vod_wo_vod_b1_020",
+  "stem": "BV1cmaa6VEPR_p1_42251649424",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-19T21:21:43+0900",
+  "source_sha256": "e9ad70f207671cd0c70abe5fffcf31a8baede002b99576916fe830d5df49fd86",
+  "verdict": "reject",
+  "claims": [],
+  "excluded": [
+    {
+      "local_id": "c01",
+      "topic": "点五间隔会导致出怪数量为十只，而不是按常规出怪数量。",
+      "verdict": "reject",
+      "gate_checks": {
+        "G1": "fail",
+        "G2": "pass",
+        "G3": "fail",
+        "G4": "fail"
+      },
+      "failed_gates": [
+        "G1",
+        "G3",
+        "G4"
+      ],
+      "reason": "引文虽能在逐字稿中字符级匹配，但命题依赖上下文中的『这里』，未说明具体关卡、路线、出怪序列或『点五间隔』所属主体；『而不是按常规出怪数量』在逐字稿中没有依据。该候选是具体实战观察，缺少可复现条件和明确三元约束，不满足自包含命题与显式主体/条件/范围要求，且作为纯观察不具备可复用规则价值。"
+    }
+  ],
+  "review_note": "唯一候选 c01 仅为转写中的局部观察，关键指代和适用对象均未在逐字稿中闭合；引文对齐通过，但未通过自包含、三元约束和可复现规则要求，故全单 reject。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}

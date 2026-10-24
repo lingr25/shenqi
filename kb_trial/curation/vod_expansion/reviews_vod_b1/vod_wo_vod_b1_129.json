@@ -1,0 +1,49 @@
+{
+  "workorder_id": "vod_wo_vod_b1_129",
+  "stem": "BV1cmaa6VEPR_p2_42252239801",
+  "batch": "vod_b1",
+  "reviewer_model": "lingr-free",
+  "reviewer_models_calls": [
+    "lingr-free"
+  ],
+  "reviewer_gateway": "lingr.aitreez.com",
+  "prompt_file": "kb_trial/curation/vod_expansion/PROMPT.md",
+  "prompt_sha256": "50eae382d8410e8702328e241f091216951de9dd148928ef3d7d805560c01386",
+  "driver_version": "vod-review-driver-1.0",
+  "reviewed_at": "2026-10-20T08:13:51+0900",
+  "source_sha256": "8282362eff6a121545c3244a3c58df7bf5c867a7b9654f48b69484911d2ab9d0",
+  "verdict": "keep",
+  "claims": [
+    {
+      "local_id": "c01",
+      "claim": "墙体判定与真高台判定没有区别。",
+      "subject": "墙体判定与真高台判定",
+      "condition": "universal",
+      "scope": "universal",
+      "category": "寻路",
+      "evidence": [
+        {
+          "text": "对于墙体的判定和对于那个真高台的 对于不是对于地图边缘的判定 和对征高台的判定是没有区别的",
+          "t_start": 424,
+          "t_end": 437
+        }
+      ],
+      "reason": "424s 处主播明确总结墙体判定与真高台判定没有区别；前文 376-407s 用火陈的龙 13帧出生、19帧撞墙、20帧转头说明其正确判断地图边界且无异常，可作为该结论的上下文支撑。",
+      "limitations": [
+        "逐字稿中“对征高台”疑为“真高台”的 ASR 错字，已按上下文规范化。",
+        "结论主要来自主播口述与单次火陈龙撞墙/转头实测，未展示墙体与真高台判定的完整对照数据。"
+      ],
+      "gate_checks": {
+        "G1": "pass",
+        "G2": "pass",
+        "G3": "pass",
+        "G4": "pass"
+      },
+      "rewritten": false
+    }
+  ],
+  "excluded": [],
+  "review_note": "c01 满足四闸门：命题自包含，引文可在 424s 行逐字对齐，主体/条件/范围明确，且为明确结论而非未闭合猜测。该结论虽较概括，但逐字稿有直接口述与前后实测支撑，判 keep。",
+  "repair_rounds": 0,
+  "unresolved_problems_auto_demoted": []
+}
