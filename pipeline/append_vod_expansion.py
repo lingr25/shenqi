@@ -13,7 +13,8 @@ kb_trial/evidence.jsonl、kb_trial/docs.jsonl、kb_pilot_synth/** 等本地缓�
      任一条复核失败即整体中止，不强行并入；
   3. 按 kb_curation_build.py 相同的元数据格式写回 entry_count 与
      vod_expansion_manifest_{batch} 块，并刷新 curated_stats.json 中的计数字段；
-  4. 运行 kb_curation_quote_times.py 校准新增引文的行时间（幂等）。
+  4. 运行 kb_curation_quote_times.py 校准新增引文的行时间（幂等）；
+  5. 同步根目录副本 curated_high_quality.json（validate_release 要求字节一致）。
 
 不运行 kb_curation_evidence_apply.py（其 evidence_review_worklist.jsonl 未入库）；
 新增条目的审核状态为 loader 赋予的 review.status=agent_verified；本脚本按 QQ 扩展批次的同一口径
@@ -137,6 +138,8 @@ def main(argv=None):
             'output_sha256': sha256(CURATED),
         })
         STATS.write_text(json.dumps(st, ensure_ascii=False, indent=2, sort_keys=True), encoding='utf-8')
+    # validate_release.py requires the repo-root copy to be byte-identical
+    (ROOT / 'curated_high_quality.json').write_bytes(CURATED.read_bytes())
     print('written: %d entries' % len(entries))
     return 0
 
