@@ -55,4 +55,4 @@ python kb_curation_vod_expansion.py converge --batch <BATCH_ID>
 
 ### 步骤 4: 父审核与合并并入
 - 人工或父代理抽查验收后将清单状态标为 `approved`。
-- 运行 `python kb_curation_build.py`，`kb_curation_vod_loader.py` 自动发现并挂载增量条目（`id: vod_expansion:{batch}:{stem}:{local_id}`），审核状态赋予 `agent_verified`，上限诚实标明 `text-source-supported`。
+- 运行 `python kb_curation_build.py`，`kb_curation_vod_loader.py` 自动发现并挂载增量条目（`id: vod_expansion:{batch}:{stem}:{workorder_id}:{local_id}`），审核状态赋予 `agent_verified`，上限诚实标明 `text-source-supported`。

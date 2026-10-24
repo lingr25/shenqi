@@ -26,8 +26,10 @@ def _sha256_text(s: str) -> str:
     return hashlib.sha256(s.encode('utf-8')).hexdigest()
 
 
-def entry_id(batch: str, stem: str, local_id: str) -> str:
-    return f'vod_expansion:{batch}:{stem}:{local_id}'
+def entry_id(batch: str, stem: str, local_id: str, workorder_id: str) -> str:
+    # local_id (c01, c02, ...) is only unique within one workorder, and one stem spans many
+    # workorders, so the workorder id must be part of the entry id.
+    return f'vod_expansion:{batch}:{stem}:{workorder_id}:{local_id}'
 
 
 def manifest_is_approved(manifest: dict) -> bool:
@@ -95,7 +97,7 @@ def verify_vod_entry(item: dict, batch: str, workorders_dir: Path, reviews_dir: 
 
 def build_vod_entry(item: dict, batch: str):
     """Construct one curated entry dict from an approved manifest item."""
-    eid = entry_id(batch, item['stem'], item['local_id'])
+    eid = entry_id(batch, item['stem'], item['local_id'], item['workorder_id'])
     is_official = 'transcripts_txt' in item.get('source_file', '')
     source_layer = '官方AI字幕' if is_official else '云端ASR重转写(无官方字幕分P)'
     source_layers = ['official'] if is_official else ['asr']
@@ -138,6 +140,8 @@ def build_vod_entry(item: dict, batch: str):
             'batch': batch,
             'stem': item.get('stem'),
             'workorder_id': item.get('workorder_id'),
+            'trial_doc_id': item.get('workorder_id'),
+            'trial_rule_idx': item.get('local_id'),
             'manifest': f'kb_trial/curation/vod_expansion/approved_manifest_{batch}.json',
             'card_section': '规则',
         },
@@ -191,7 +195,7 @@ def load_vod_expansion_entries(batch: str, manifest_path: Path = None, require_a
     entries = []
 
     for item in mf.get('entries', []):
-        eid = entry_id(batch, item['stem'], item['local_id'])
+        eid = entry_id(batch, item['stem'], item['local_id'], item['workorder_id'])
         if eid in existing_set:
             report['failures'].append(f'{eid}: already present in existing curated set')
             continue
